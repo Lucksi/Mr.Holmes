@@ -1,10 +1,6 @@
 @media screen and (max-width: 1024px){
 
     body{
-        /*
-        background-color:white;*/
-        /*
-        background-color:rgba(20, 20, 117, 0.473);*/
         background-color: #1a2b34;
         animation: opac 1s 1;
     }
@@ -20,26 +16,7 @@
         height: 100px;
         width: 100px;
     }
-    
-    .navbar{
-        margin-top: 20px;
-        display: inline-block;
-    }
-    .navbar a{
-        padding: 10px 12px ;
-        font-size: x-large;
-        font-family: 'Courier New', Courier, monospace;
-        color: #ffffff;
-        background-color:transparent;
-        text-decoration: none;
-        font: bolder;
-    }
-    
-    .navbar a:hover{
-        background-color: #001aff;
-        color: #ffffff;
-        border-radius: 10px;
-    }
+ 
     p#sample{
         position:absolute;
         left:90px;
