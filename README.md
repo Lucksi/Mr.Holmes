@@ -11,7 +11,7 @@
 # SCREENSHOT
 ![Screenshot](Screenshot/Screenshot.png)
 # INSTALLATION:
-    git clone https://github.com/Lucksi/Mr.Holmes
+    git clone https://github.com/Lucksi/Mr.Holmes.git
     cd Mr.Holmes
     sudo ./install.sh
 
