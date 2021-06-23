@@ -1,0 +1,13 @@
+https://www.google.com/search?q=intitle:index of:/{}
+https://www.google.com/search?q=site:{} filetype:txt
+https://www.google.com/search?q=site:{} filetype:pdf
+https://www.google.com/search?q=site:{} filetype:log
+https://www.google.com/search?q=site:{} filetype:doc
+https://www.google.com/search?q=site:{} filetype:docx
+https://www.google.com/search?q=site:{} filetype:sqlite
+https://www.google.com/search?q=site:{} filetype:yaml
+https://www.google.com/search?q=site:{} filetype:json
+https://www.google.com/search?q=site:{} filetype:md
+https://www.google.com/search?q=site:{} intext:admin OR Admin
+https://www.google.com/search?q=site:{} intext:emails OR Emails OR EMAILS
+https://www.google.com/search?q=site:{} intitle:admin OR Admin
