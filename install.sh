@@ -15,7 +15,7 @@ function installer {
             sudo apt install python3-pip &> /dev/null | printf "$(tput setaf 15)\nINSTALLING PIP"
             sudo apt install zenity &> /dev/null | printf "$(tput setaf 15)\n\nINSTALLING ZENITY"
 			sudo apt install whois &> /dev/null | printf "$(tput setaf 15)\n\nINSTALLING WHOIS"
-			sudo pip3 install requests &> /dev/null | printf "$(tput setaf 6)\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+			sudo pip install -r requirements.txt &> /dev/null | printf "$(tput setaf 6)\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 			printf "$(tput setaf 2)\n\n[+]$(tput setaf 15)REQUIREMENTS INSTALLED SUCCESFULLY$(tput setaf 2)[+]"
 			printf "$(tput setaf 15)\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 			read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" recipient
@@ -59,7 +59,7 @@ function installer {
                   printf "$(tput setaf 15)\nINSERT YOUR UPDATE-PASSWORD \n\n"
                   read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
 				done
-				printf "$(tput setaf 6)\n\nCREATING CONFIGURATION FILE"
+				printf "$(tput setaf 6)\nCREATING CONFIGURATION FILE"
 				cd Configuration
 				echo "$recipient">Recipient.txt
 				echo "$password">Password.txt
@@ -70,14 +70,13 @@ function installer {
 				rm UNTILED.txt &> /dev/null
 				cd ../
 				cd Core
-				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
+				printf "GIVING PERMISSION TO LUNCH FOR CORE FILES"				
 				sudo chmod +x update.sh
 				cd Support
 				sudo chmod +x Notification.sh
 				cd ../
 				cd ../
 				cd ../
-				printf "\n\nEXTRACTING CURRENT PATH FOR FUTURE UPDATES"
 				echo "`pwd`">Mr.Holmes/Configuration/Update.txt
 				sleep 2
 				printf "$(tput setaf 2)\n\n[+]$(tput setaf 15)PROGRAM INSTALLED CORRECTLY$(tput setaf 2)[+]"

@@ -1,0 +1,2 @@
+phonenumbers==8.12.25
+requests==2.25.1
