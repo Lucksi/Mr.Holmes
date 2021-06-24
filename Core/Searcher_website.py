@@ -186,7 +186,7 @@ class Web:
         link = "https://www.google.com/maps/place/{},{}".format(lat2,lon2)
 		
 		
-        os.system("clear")
+        os.system("cls" if os.name == "nt" else "clear")
         print(Font.Color.GREEN + banner)
         print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "SEARCH INFORMATION FOR: {}".format(username))
         sleep(3)

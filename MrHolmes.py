@@ -32,7 +32,7 @@ class Main:
         while True:
             try:
                 Main.banner(r=True)
-                option = "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)MODIFY-UPDATE-PASSWORD\n(5)MODIFY-SENDER-MAIL\n(6)MODIFY-DESTINATION-MAIL\n(7)MODIFY-PASSWORD-MAIL\n(8)MODIFY-SMTP-SERVER\n(9)MODIFY-SMTP-PORT\n(10)MODIFY-UPDATE-PATH\n(11)UPDATE\n(12)EXIT "
+                option = "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)UPDATE\n(6)EXIT"
                 options = str(option)
                 print(Font.Color.GREEN + "[INSERT AN OPTION]")
                 print(Font.Color.WHITE + options)
@@ -49,23 +49,12 @@ class Main:
                     username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A DOMAIN OR A IP ADDRESS(IPv4/IPv6)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Searcher_website.Web.search(username)
                 elif sce == 4:
-                    config.Config.modify_update_pass()
+                    config.Config.main()
                 elif sce == 5:
-                    config.Config.modify_recipient()
-                elif sce == 6:
-                    config.Config.modify_destination()
-                elif sce == 7:
-                    config.Config.modify_password()
-                elif sce == 8:
-                    config.Config.modify_server()
-                elif sce == 9:
-                    config.Config.modify_port()
-                elif sce == 10:
-                    config.Config.modify_path()
-                elif sce == 11:
                     os.system("Core/./update.sh")
-                elif sce == 12:
-                    exit()    
+                elif sce == 6:
+                    print("\nHAVE A NICE DAY BYE:)\n")
+                    exit()
                 else:
                     Main.main()
             except ValueError:

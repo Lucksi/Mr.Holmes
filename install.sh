@@ -59,7 +59,7 @@ function installer {
                   printf "$(tput setaf 15)\nINSERT YOUR UPDATE-PASSWORD \n\n"
                   read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
 				done
-				printf "$(tput setaf 6)\nCREATING CONFIGURATION FILE"
+				printf "$(tput setaf 6)\n\nCREATING CONFIGURATION FILE"
 				cd Configuration
 				echo "$recipient">Recipient.txt
 				echo "$password">Password.txt
@@ -70,7 +70,7 @@ function installer {
 				rm UNTILED.txt &> /dev/null
 				cd ../
 				cd Core
-				printf "GIVING PERMISSION TO LUNCH FOR CORE FILES"				
+				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 				sudo chmod +x update.sh
 				cd Support
 				sudo chmod +x Notification.sh

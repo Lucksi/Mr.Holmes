@@ -12,14 +12,21 @@ function check {
   while [[ $attempts>0 ]];
     do
       read -p "$GREEN[#MR.HOLMES#]$WHITE-->" pass
+      while [[ $pass == "" ]]
+      do
+        printf "$LIGHTBLUE\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
+        read -p "$GREEN[#MR.HOLMES#]$WHITE-->" pass
+      done
       if [ "$pass" == "$Password" ];
         then
         printf "$LIGHTBLUE\nPASSWORD CORRECT!\n"
         update
       fi
         ((attempts=attempts-1))
-        printf "$LIGHTBLUE\nWRONG PASSWORD REMAINING $attempts ATTEMPTS\n\n"
+        printf "$LIGHTBLUE\nWRONG PASSWORD REMAINING: $attempts ATTEMPTS\n\n"
     done
+    printf "$WHITE\nYOU HAVE: $attempts PRESS ENTER TO EXIT"
+    read -p
     exit 1
 }
 
@@ -55,7 +62,7 @@ function update {
           exit 1
     fi
       printf "$WHITE\nPRESS ENTER TO EXIT"
-      read -p exi
+      read -p
       exit 1
 
   fi
@@ -63,5 +70,4 @@ function update {
     mv Mr.Holmes2 Mr.Holmes
     exit 1
 }
-
 check

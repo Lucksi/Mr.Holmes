@@ -1,6 +1,7 @@
 from Core.Support import Font
 import os
 import getpass
+import MrHolmes as holmes
 
 dest = "Configuration"
 
@@ -174,3 +175,34 @@ class Config:
             else:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
                 os.chdir("../")
+    
+    @staticmethod
+    def main():
+        while True:
+            os.system("cls" if os.name == "nt" else "clear")
+            f = open("Banners/Banner5.txt")
+            banner = f.read()
+            f.close()
+            print(Font.Color.GREEN + banner)
+            option = "(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MAIN-MENU"
+            options = str(option)
+            print(Font.Color.GREEN + "[INSERT AN OPTION]")
+            print(Font.Color.WHITE + options)
+            sce = int(input(Font.Color.GREEN + "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if sce == 1:
+                Config.modify_recipient()    
+            elif sce == 2:
+                Config.modify_destination()
+            elif sce == 3:
+                Config.modify_password()
+            elif sce == 4:
+                Config.modify_server()
+            elif sce == 5:
+                Config.modify_port()
+            elif sce == 6:
+                Config.modify_update_pass()
+            elif sce == 7:
+                Config.modify_path()
+            elif sce == 8:
+                inp = input("PRESS ENTER TO CONTINUE...")
+                holmes.Main.main()
