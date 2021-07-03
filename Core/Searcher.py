@@ -7,7 +7,6 @@ from Core.Support import Creds
 from Core.Support import Proxies
 from datetime import datetime
 from time import sleep
-from bs4 import BeautifulSoup
 
 class MrHolmes:
 
@@ -77,7 +76,6 @@ class MrHolmes:
             for data1 in sites:
                 site1 = sites[data1]["user"].replace("{}",username)
                 name = sites[data1]["name"]
-                error = sites[data1]["Error"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
                     searcher = requests.get(site1, headers=headers, proxies=http_proxy, timeout=None)
