@@ -7,6 +7,7 @@ from Core.Support import Creds
 from Core.Support import Proxies
 from datetime import datetime
 from time import sleep
+from bs4 import BeautifulSoup
 
 class MrHolmes:
 
@@ -39,7 +40,7 @@ class MrHolmes:
         }
         succ = 0
         failed = 0
-        nomefile = "Site_lists/Username/lists.txt"
+        nomefile = "Site_lists/Username/site_list.json"
         report = "Reports/Usernames/" + username + ".txt"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -47,9 +48,9 @@ class MrHolmes:
         if os.path.isfile(report):
             os.remove(report)
         f = open(report, "a")
-        f.write("SCANNING EXECUTED ON" + Date + "\r\n")
+        f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
         f.close()
-        f = open(nomefile, "r")
+        f = open(nomefile,)
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -71,37 +72,44 @@ class MrHolmes:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
-        for sites in f:
-            site = sites.rstrip("\n")
-            site = site.replace("{}", username)
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(site))
-            try:
-                searcher = requests.get(site, headers=headers, proxies=http_proxy, timeout=None)
-                status = str(searcher.status_code)
-                f = open(report, "a")
-                if searcher.status_code == 200:
-                    print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME FOUND WITH STATUS CODE:" + status)
-                    f.write(site + "\r\n")
-                    succ = succ + 1
-                    succ2 = str(succ)
-                else:
-                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME NOT FOUND WITH STATUS CODE:" + status)
-                    failed = failed + 1
-                    failed2 = str(failed)
-            except Exception as e:
-                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
-                searcher = requests.get(site, headers=headers, proxies=None, timeout=None)
-                status = str(searcher.status_code)
-                f = open(report, "a")
-                if searcher.status_code == 200:
-                    print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME FOUND WITH STATUS CODE:" + status)
-                    f.write(site + "\r\n")
-                    succ = succ + 1
-                    succ2 = str(succ)
-                else:
-                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME NOT FOUND WITH STATUS CODE:" + status)
-                    failed = failed + 1
-                    failed2 = str(failed)
+        data = json.loads(f.read())
+        for sites in data:
+            for data1 in sites:
+                site1 = sites[data1]["user"].replace("{}",username)
+                name = sites[data1]["name"]
+                error = sites[data1]["Error"]
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
+                try:
+                    searcher = requests.get(site1, headers=headers, proxies=http_proxy, timeout=None)
+                    status = str(searcher.status_code)
+                    f = open(report, "a")
+                   
+                    if searcher.status_code == 200:
+                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME: {} FOUND WITH STATUS CODE:".format(username) + status)
+                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "LINK: {}".format(site1))
+                        f.write(site1 + "\r\n")
+                        succ = succ + 1
+                        succ2 = str(succ)
+                    else:
+                        print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME: {} NOT FOUND WITH STATUS CODE:".format(username) + status)
+                        failed = failed + 1
+                        failed2 = str(failed)
+                except Exception as e:
+                    f = str(e)
+                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..{},TRYNG WITH NO PROXIES".format(f))
+                    searcher = requests.get(site1, headers=headers, proxies=None, timeout=None)
+                    status = str(searcher.status_code)
+                    f = open(report, "a")
+                    if searcher.status_code == 200:
+                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME: {} FOUND WITH STATUS CODE:".format(username) + status)
+                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "LINK: {}".format(site1))
+                        f.write(site1 + "\r\n")
+                        succ = succ + 1
+                        succ2 = str(succ)
+                    else:
+                        print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME:{} NOT FOUND WITH STATUS CODE:".format(username) + status)
+                        failed = failed + 1
+                        failed2 = str(failed)
 
         f.write("USERNAME FOUND IN: " + succ2 + " SITES" + "\r\n")
         f.write("USERNAME NOT FOUND IN: " + failed2 + " SITES" + "\r\n")

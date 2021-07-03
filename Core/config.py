@@ -155,7 +155,7 @@ class Config:
     @staticmethod
     def modify_update_pass():
         alert = int(input(
-            Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ARE YOU SURE TO MODIFY YOUR UPDATE-PATH?(1)YES(2)NO" + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ARE YOU SURE TO MODIFY YOUR UPDATE-PASSWORD?(1)YES(2)NO" + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             os.chdir(dest)
             nomefile = "Pass_Update.txt"
@@ -175,7 +175,7 @@ class Config:
             else:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
                 os.chdir("../")
-    
+
     @staticmethod
     def main():
         while True:
@@ -190,7 +190,7 @@ class Config:
             print(Font.Color.WHITE + options)
             sce = int(input(Font.Color.GREEN + "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if sce == 1:
-                Config.modify_recipient()    
+                Config.modify_recipient()
             elif sce == 2:
                 Config.modify_destination()
             elif sce == 3:
