@@ -1,12 +1,9 @@
 @import url("../CSS/index.css");
-@import url("../CSS/mobile.css");
 
 .links{
-    margin-top: 40px;
-    
-     
-}
+    margin-top: 40px;  
 
+}
 .links a{
     display: block;
     color: #faebd7;
@@ -14,9 +11,12 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: x-large;
     padding-top: 20px;
-
+}
+.links a:hover{
+    animation: dissolv 2s infinite;
 }
 
-.links a:hover{
-    color:#20b2aa
+@keyframes dissolv{
+    50%{color: #20b2aa;}
+    100%{color: #faebd7;}
 }
