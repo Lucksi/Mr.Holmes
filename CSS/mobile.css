@@ -1,6 +1,10 @@
-@media screen and (max-width: 1024px){
+@media screen and (max-width: 800px){
 
     body{
+        /*
+        background-color:white;*/
+        /*
+        background-color:rgba(20, 20, 117, 0.473);*/
         background-color: #1a2b34;
         animation: opac 1s 1;
     }
@@ -16,7 +20,26 @@
         height: 100px;
         width: 100px;
     }
- 
+    
+    .navbar{
+        margin-top: 20px;
+        display: inline-block;
+    }
+    .navbar a{
+        padding: 4px 4px ;
+        font-size:medium;
+        font-family: 'Courier New', Courier, monospace;
+        color: #ffffff;
+        background-color:transparent;
+        text-decoration: none;
+        font: bolder;
+    }
+    
+    .navbar a:hover{
+        background-color: #001aff;
+        color: #ffffff;
+        border-radius: 10px;
+    }
     p#sample{
         position:absolute;
         left:90px;
@@ -49,21 +72,12 @@
         margin-top: 10px;
         
     }
-
-    .cards a:hover{
-        text-decoration: none;
-        background-color: none;
-    }
     
     .cards img{
         display: block;
         height: 80px;
         width: 80px;
         margin-right: auto;
-    }
-
-    .cards img:hover{
-        background-color: none;
     }
     
     .cards p{
@@ -152,6 +166,25 @@
         font-size:13px;
         font-weight: bold;
         padding-bottom: 10px;
+    }
+
+    #btn{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: rgba(38, 97, 105, 0.466);
+        color: rgb(245, 245, 245);
+        height: 150px;
+        width: 250px;
+        border: 2px solid;
+        border-color: #000;
+        font-size: 24px;
+        border-radius: 10px;
+        text-decoration: none;
+    }
+    
+    #btn:hover{
+        background-color: transparent;
     }
     
     @keyframes opac{
