@@ -177,7 +177,7 @@ color: #ffffff;
 }
 
 #btn:hover{
-    background-color: transparent;
+    animation: dissolv 2s infinite;
 }
 
 
@@ -185,4 +185,9 @@ color: #ffffff;
     0%{opacity: 0;}
     50%{opacity: 0.5;}
     100%{opacity: 1;}
+}
+
+@keyframes dissolv{
+    50%{background-color: transparent;border-color: transparent;}
+    100%{background-color: rgba(38, 97, 105, 0.466);border-color: #000;}
 }
