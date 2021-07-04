@@ -13,8 +13,8 @@
 # INSTALLATION:
     git clone https://github.com/Lucksi/Mr.Holmes.git
     cd Mr.Holmes
-    sudo ./install.sh
-
+    sudo chmod +x install.sh
+    ./install.sh
 # USAGE:
     python3 MrHolmes.py
 # API KEY LINK:
