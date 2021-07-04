@@ -16,7 +16,7 @@
     sudo ./install.sh
 
 # USAGE:
-    python3 Mr.Holmes.py
+    python3 MrHolmes.py
 # API KEY LINK:
     https://whois.whoisxmlapi.com
 # VERSIONS LIST:
