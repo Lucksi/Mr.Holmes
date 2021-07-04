@@ -15,7 +15,7 @@ function installer {
             sudo apt install python3-pip &> /dev/null | printf "$(tput setaf 15)\nINSTALLING PIP"
             sudo apt install zenity &> /dev/null | printf "$(tput setaf 15)\n\nINSTALLING ZENITY"
 			sudo apt install whois &> /dev/null | printf "$(tput setaf 15)\n\nINSTALLING WHOIS"
-			sudo pip install -r requirements.txt &> /dev/null | printf "$(tput setaf 6)\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+			sudo pip3 install -r requirements.txt &> /dev/null | printf "$(tput setaf 6)\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 			printf "$(tput setaf 2)\n\n[+]$(tput setaf 15)REQUIREMENTS INSTALLED SUCCESFULLY$(tput setaf 2)[+]"
 			printf "$(tput setaf 15)\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 			read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" recipient
