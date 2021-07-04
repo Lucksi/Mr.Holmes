@@ -30,7 +30,7 @@ function installer {
 				do
                   printf "$(tput setaf 15)\nINSERT YOUR EMAIL PASSWORD\n\n"
                   read -sp"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" password
-                done
+                		done
 				printf "$(tput setaf 15)\n\nINSERT YOUR DESTINATION EMAIL\n\n"
 				read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" destination
 				while [ "$destination" = "" ];
@@ -50,15 +50,17 @@ function installer {
 				while [ "$port" = "" ];
 				do
                   printf "$(tput setaf 15)\nINSERT YOUR SMTP SERVER PORT \n\n"
-                  read -s -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" port
+                  read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" port
 				done
 				printf "$(tput setaf 15)\nINSERT YOUR UPDATE-PASSWORD\n\n"
-				read -s -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
+				read -sp"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
 				while [ "$up_pass" = "" ];
 				do
                   printf "$(tput setaf 15)\nINSERT YOUR UPDATE-PASSWORD \n\n"
-                  read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
+                  read -sp"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" up_pass
 				done
+				printf "$(tput setaf 15)\n\nINSERT YOUR WHO-IS API-KEY(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
+				read -p"$(tput setaf 2)[#MR.HOLMES#]$(tput setaf 15)-->" key
 				printf "$(tput setaf 6)\n\nCREATING CONFIGURATION FILE"
 				cd Configuration
 				echo "$recipient">Recipient.txt
@@ -69,8 +71,11 @@ function installer {
 				echo "$up_pass">Pass_Update.txt
 				rm UNTILED.txt &> /dev/null
 				cd ../
+				cd Api
+				echo "$key">api_key.txt
+				cd ../
 				cd Core
-				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
+				printf "\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 				sudo chmod +x update.sh
 				cd Support
 				sudo chmod +x Notification.sh
