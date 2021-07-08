@@ -81,6 +81,8 @@ class Web:
             f.write("\nWEBSITE DATA:" + "\r\n")
             f.write(results)
             f.close()
+	    num = None
+            number = False
         else:
             try:
                 print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "API KEY FOUND..")
