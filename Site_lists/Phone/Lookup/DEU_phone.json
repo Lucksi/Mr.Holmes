@@ -1,0 +1,34 @@
+[
+    {
+        "11880":{
+            "Error": "Message",
+            "text": "Einfach nochmal probieren!",
+            "name" : "11880",
+            "main" : "11880.com",
+            "url" : "https://www.11880.com/suche/{}/deutschland"
+            
+        },
+        
+        "TelefonABC":{
+            "Error": "Status-Code",
+            "name" : "TelefonABC",
+            "main" : "telefonabc.at",
+            "url" : "https://www.telefonabc.at/result.aspx?what={}"
+        },
+        
+        "GoYellow":{
+            "Error": "Message",
+            "text" : "Zu Ihrer Suche haben wir leider nichts gefunden.",
+            "name" : "GoYellow",
+            "main" : "goyellow.de",
+            "url" : "https://www.goyellow.de/suche/{}/-"
+        },
+        
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}"
+        }
+    }
+] 

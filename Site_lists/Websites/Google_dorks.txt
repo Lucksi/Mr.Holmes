@@ -1,4 +1,3 @@
-https://www.google.com/search?q=intitle:index of:/{}
 https://www.google.com/search?q=site:{} filetype:txt
 https://www.google.com/search?q=site:{} filetype:pdf
 https://www.google.com/search?q=site:{} filetype:log

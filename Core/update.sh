@@ -3,11 +3,9 @@ GREEN=$(tput setaf 2)
 LIGHTBLUE=$(tput setaf 6)
 WHITE=$(tput setaf 15)
 
-
 function check {
   attempts=5;
-  Password_path=$(<"Configuration/Pass_Update.txt")
-  Password="${Password_path//$'\n'/ }"
+  Password=$(sed -nr "/^\[Settings\]/ { :l /^Password[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" <Configuration/Configuration.ini)
   printf "$LIGHTBLUE\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
   while [[ $attempts>0 ]];
     do
@@ -32,8 +30,7 @@ function check {
 
 
 function update {
-  Update_path=$(<"Configuration/Update.txt")
-  Update_path="${Update_path//$'\n'/ }"
+  Update_path=$(sed -nr "/^\[Settings\]/ { :l /^Path[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" <Configuration/Configuration.ini)
   cd $Update_path
   mv Mr.Holmes Mr.Holmes2  &>/dev/null
   git clone https://github.com/Lucksi/Mr.Holmes &>/dev/null | printf "$WHITE\nUPDATING MR.HOLMES..\n"

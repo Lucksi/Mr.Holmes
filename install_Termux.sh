@@ -21,12 +21,12 @@ function installer {
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
 		then
-            sudo apt-get install python3 &> /dev/null | printf "${WHITE2}\nINSTALLING PYTHON3\n"
-            sudo apt-get install python3-pip &> /dev/null | printf "${WHITE2}\nINSTALLING PIP"
-            sudo apt-get install zenity &> /dev/null | printf "${WHITE2}\n\nINSTALLING ZENITY"
-			sudo apt-get install whois &> /dev/null | printf "${WHITE2}\n\nINSTALLING WHOIS"
-			sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE2}\n\nINSTALLING TRACEROUTE"
-			sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+            proot -0 pkg install python3 &> /dev/null | printf "${WHITE2}\nINSTALLING PYTHON3\n"
+            proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE2}\nINSTALLING PIP"
+            proot -0 pkg install zenity &> /dev/null | printf "${WHITE2}\n\nINSTALLING ZENITY"
+			proot -0 pkg install whois &> /dev/null | printf "${WHITE2}\n\nINSTALLING WHOIS"
+            proot -0 pkg install tracepath &> /dev/null | printf "${WHITE2}\n\nINSTALLING TRACEROUTE"
+			proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 			printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 			printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
@@ -92,9 +92,9 @@ function installer {
 				cd ../
 				cd Core
 				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
-				sudo chmod +x update.sh
+				proot -0 chmod +x update.sh
 				cd Support
-				sudo chmod +x Notification.sh
+				proot -0 chmod +x Notification.sh
 				cd ../
 				cd ../
 				cd ../

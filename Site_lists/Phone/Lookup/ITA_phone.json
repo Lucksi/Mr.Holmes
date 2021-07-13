@@ -1,0 +1,33 @@
+[
+    {
+        "PagineBianche":{
+            "Error": "Message",
+            "text": "Spiacenti. Nessun risultato trovato per ",
+            "name": "PagineBianche",
+            "main": "PagineBianche.it",
+            "url": "https://www.paginebianche.it/cerca-da-numero?qs={}"
+        },
+
+        "PaginGialle":{
+            "Error": "Message",
+            "text": "Spiacenti, non siamo riusciti a trovare",
+            "name": "PagineGialle",
+            "main": "PagineGialle.it",
+            "url": "https://www.paginegialle.it/ricerca/telefono-{}"
+        },
+
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}"
+        },
+
+        "NumReport":{
+            "Error": "Status-Code",
+            "name": "NumReport",
+            "main": "it.numreport.com",
+            "url": "https://it.numreport.com/{}"
+        }
+    }
+] 

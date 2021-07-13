@@ -19,13 +19,13 @@ class Main:
         f = open("Banners/Banner1.txt","r")
         banner = f.read()
         f.close()
-        print(Font.Color.WHITE + "------------------------------------------------------------------")
-        print(Font.Color.GREEN + banner + "                                                                 |")
-        print(Font.Color.WHITE + "A COMPLETE OSINT TOOL:)      " +      Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                     |\n                                                                 |")
-        print(Font.Color.WHITE + "[+]" + Font.Color.GREEN + "VERSION:" + version + Font.Color.WHITE + "                                                 |")
+        print(Font.Color.WHITE + "---------------------------------------------------------------------")
+        print(Font.Color.GREEN + banner + "|                                                                   |")
+        print(Font.Color.WHITE + "| A COMPLETE OSINT TOOL:)      " +      Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                      |\n|                                                                   |")
+        print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version + Font.Color.WHITE + "                                                   |")
         print(
-            Font.Color.YELLOW + "Instagram:lucks_022                                              |\nEMAIL:lukege287@gmail.com                                        |\nGIT-HUB:Lucksi                                                   |\nWebsite:https://sosuke.altervista.org                            |")
-        print(Font.Color.WHITE + "------------------------------------------------------------------")
+            Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|EMAIL:lukege287@gmail.com                                          |\n|GIT-HUB:Lucksi                                                     |\n|Website:https://sosuke.altervista.org                              |")
+        print(Font.Color.WHITE + "---------------------------------------------------------------------")
     
     @staticmethod
     def main():

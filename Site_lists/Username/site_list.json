@@ -6,221 +6,282 @@
             "main": "instagram.com",
             "user": "https://instagram.com/{}"
         },
+        
         "Git-Hub":{
             "Error": "Status-Code",
             "name": "Git-Hub",
             "main":"github.com",
             "user":"https://github.com/{}"
         },
+        
         "Facebook":{
             "Error": "Status-Code",
             "name": "Facebook",
             "main": "facebook.com",
             "user": "https://facebook.com/{}"
         },
+        
         "Tiktok":{
             "Error": "Status-Code",
             "name": "Tiktok",
             "main": "tiktok.com",
             "user": "https://tiktok.com/@{}"
         },
+        
         "Disqus":{
             "Error": "Status-Code",
             "name": "Disqus",
             "main": "disqus.com",
             "user": "https://disqus.com/{}"
         },
+        
         "Pinterest":{
             "Error": "Status-Code",
             "name": "Pinterest",
             "main": "pinterest.com",
             "user": "https://pinterest.com/{}"
         },
+        
         "Imgur":{
             "Error": "Status-Code",
+            "text": "We searched high and low, but we couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
             "name": "Imgur",
             "main": "imgur.com",
             "user": "https://imgur.com/user/{}"
         },
+        
         "YouTube":{
             "Error": "Status-Code",
+            "text" : "404 Not Found",
             "name": "YouTube",
             "main": "youtube.com",
             "user": "https://www.youtube.com/user/{}"
         },
+        
         "MySpace":{
             "Error": "Status-Code",
             "name": "MySpace",
             "main": "myspace.com",
             "user": "https://myspace.com/{}"
         },
+        
         "Tellonym":{
             "Error": "Status-Code",
             "name": "Tellonym",
             "main": "tellonym.me",
             "user": "https://tellonym.me/{}"
         },
+        
         "Telegram":{
             "Error": "Status-Code",
             "name": "Telegram",
             "main": "telegram.me",
             "user": "https://t.me/{}"
         },
+        
         "Wix":{
             "Error": "Status-Code",
             "name": "Wix",
             "main": "wix.com",
             "user":"https://{}.wix.com"
         },
+        
         "Spotify":{
             "Error": "Status-Code",
             "name": "Spotify",
             "main": "spotify.com",
             "user": "https://open.spotify.com/user/{}"    
         },
+        
         "Twitch":{
             "Error": "Status-Code",
             "name": "Twitch",
             "main": "twitch.tv",
             "user": "https://m.twitch.tv/{}"
         },
+        
         "Wattpad":{
             "Error": "Status-Code",
             "name": "Wattpad",
             "main": "wattpad.com",
             "user": "https://www.wattpad.com/user/{}"
         },
+        
         "Twitter":{
             "Error": "Status-Code",
             "name": "Twitter",
             "main": "twitter.com",
             "user": "https://twitter.com/{}"
         },
+        
         "FortniteTracker":{
             "Error": "Status-Code",
             "name": "FortniteTracker",
             "main": "fortnitetracker.com",
             "user": "https://fortnitetracker.com/profile/all/{}"
         },
+        
         "HackTheBox":{
             "Error": "Status-Code",
             "name": "HackTheBox",
             "main": "hackthebox.eu",
             "user": "https://forum.hackthebox.eu/profile/{}"
         },
+        
         "MyAnimeList":{
             "Error": "Status-Code",
             "name": "MyAnimeList",
             "main": "myanimelist.net",
             "user": "https://myanimelist.net/profile/{}"
         },
+        
         "Oracle":{
             "Error": "Status-Code",
             "name": "Oracle",
             "main": "community.oracle.com",
             "user": "https://community.oracle.com/people/{}"
         },
+        
         "SoundCloud":{
             "Error": "Status-Code",
             "name": "SoundCloud",
             "main": "soundcloud.com",
             "user": "https://soundcloud.com/{}"
         },
+        
         "Vimeo":{
             "Error": "Status-Code",
             "name": "Vimeo",
             "main": "vimeo.com",
             "user": "https://vimeo.com/{}"
         },
+        
         "Youpic":{
             "Error": "Status-Code",
             "name": "Youpic",
             "main": "youpic.com",
             "user": "https://youpic.com/photographer/{}/"
         },
+        
         "Gfycat":{
             "Error": "Status-Code",
             "name": "Gfycat",
             "main": "gfycat.com",
             "user": "https://gfycat.com/@{}"
         },
+        
         "Flickr":{
             "Error": "Status-Code",
             "name": "Flickr",
             "main": "flickr.com",
             "user": "https://www.flickr.com/photos/{}"
         },
+        
         "DeviantArt":{
             "Error": "Status-Code",
             "name": "DeviantArt",
             "main": "deviantart.com",
             "user": "https://www.deviantart.com/{}"
         },
+        
         "VKontakte":{
             "Error": "Status-Code",
             "name": "VKontakte",
-            "main" : "https://vk.com",
+            "main" : "vk.com",
             "user" : "https://vk.com/{}"
         },
+        
         "Reddit":{
             "Error": "Status-Code",
             "name": "Reddit",
-            "main": "https://www.reddit.com/",
+            "main": "reddit.com/",
             "user": "https://www.reddit.com/user/{}"
         },
         "9GAG":{
             "Error": "Status-Code",
             "name": "9GAG",
-            "main": "https://9gag.com",
+            "main": "9gag.com",
             "user": "https://9gag.com/u/{}"
         },
+        
         "Daylimotion":{
             "Error": "Status-Code",
             "name": "Dailymotion",
-            "main": "https://www.dailymotion.com",
+            "main": "dailymotion.com",
             "user": "https://www.dailymotion.com/{}"
         },
+        
         "Tumblr":{
             "Error": "Status-Code",
             "name": "Tumblr",
-            "main": "https://tumblr.com",
+            "main": "tumblr.com",
             "user": "https://{}.tumblr.com/"
         },
+        
         "SourceForge":{
             "Error": "Status-Code",
             "name": "SourceForge",
-            "main": "https://sourceforge.net/",
+            "main": "sourceforge.net/",
             "user": "https://sourceforge.net/u/{}"
         },
+        
         "PyPi":{
             "Error": "Status-Code",
             "name": "PyPi",
-            "main": "https://pypi.org",
+            "main": "pypi.org",
             "user": "https://pypi.org/user/{}"
         },
+        
         "GooglePlay":{
             "Error": "Status-Code",
             "name": "GooglePlay",
-            "main": "https://play.google.com/store",
+            "main": "play.google.com/store",
             "user": "https://play.google.com/store/apps/developer?id={}"
         },
+        
         "AboutMe":{
             "Error": "Status-Code",
             "name": "AboutMe",
-            "main": "https://about.me",
+            "main": "about.me",
             "user": "https://about.me/{}"
         },
+        
         "PokemonShowdown":{
             "Error": "Status-Code",
             "name": "Pokemon Showdown",
-            "main": "https://pokemonshowdown.com",
+            "main": "pokemonshowdown.com",
             "user": "https://pokemonshowdown.com/users/{}"
         },
+        
         "AminoApp":{
             "Error": "Status-Code",
             "name": "AminoApp",
-            "main": "https://aminoapps.com/",
+            "main": "aminoapps.com/",
             "user": "https://aminoapps.com/u/{}"
+        },
+        
+        "LolProfiles":{
+            "Error": "Message",
+            "text": "We could not find any results, please try again later or check your input.",
+            "name": "LolProfiles",
+            "main": "lolprofile.net",
+            "user": "https://lolprofile.net/search/world/{}"
+        },
+
+        "Nitter":{
+            "Error": "Message",
+            "text": "not found",
+            "name": "Nitter",
+            "main": "nitter.nixnet.services",
+            "user": "https://nitter.nixnet.services/{}"
+        },
+
+        "PsnProfiles":{
+            "Error": "Message",
+            "text": "Update User",
+            "name": "PsnProfiles",
+            "main": "psnprofiles.com",
+            "user": "https://psnprofiles.com/{}"
         }
     }
 ]

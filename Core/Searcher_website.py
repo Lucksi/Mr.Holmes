@@ -1,16 +1,76 @@
 import os
 import urllib 
 import json
+import requests
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Numbers
+from Core.Support import Proxies
 from time import sleep
 from datetime import datetime
+from configparser import ConfigParser
 
 
 class Web:
-    
 
+    
+    @staticmethod
+    def Robots(username,report):
+        headers = {
+            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
+        }
+        name = "Site_lists/Websites/Robots.json"
+        f = open (name,)
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "DOWNLOADING {} Robots.txt".format(username))
+        choice = int(input(
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            http_proxy = Proxies.proxy.final_proxis
+            http_proxy2 = Proxies.proxy.choice3
+            source = "http://ip-api.com/json/" + http_proxy2
+            access = urllib.request.urlopen(source)
+            content = access.read()
+            final = json.loads(content)
+            identity = "YOUR PROXY IP IS LOCATED IN: " + final ["regionName"]
+        else:
+            http_proxy = None
+            http_proxy2 = str(http_proxy)
+            identity="None"
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+        if identity != "None":
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+        else:
+            pass
+        robot = os.getcwd() + "/Reports/Websites/Robots/" + username + "_robots.txt"
+        final = json.loads(f.read())
+        for sites in final:
+            try:
+                url = sites["Robots"]["url"].replace("{}", username)
+                dork = requests.get(url,headers =headers, proxies=http_proxy, timeout=None, allow_redirects=True)
+                if dork.status_code == 200:
+                    open(robot, 'wb').write(dork.content)
+                    print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "ROBOTS SAVED ON: " + robot )
+                else:
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS UNABLE TO DOWNLOAD {} ROBOTS.TXT..SKIPPING".format(username))        
+            except Exception as e:
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
+                url = sites["Robots"]["url"].replace("{}", username)
+                dork = requests.get(url,headers =headers, proxies=None, timeout=None, allow_redirects=True)
+                if dork.status_code == 200:
+                    open(robot, 'wb').write(dork.content)
+                    print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "ROBOTS SAVED ON: " + robot)    
+                else:
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS UNABLE TO DOWNLOAD {} ROBOTS.TXT..SKIPPING".format(username))
+
+
+        choice = int(input(
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            Web.trace(username,report)
+        else:
+            pass
+    
+    
     @staticmethod
     def trace(username,report):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "DOING TRACEROUTE FOR: {}...".format(username))
@@ -23,7 +83,7 @@ class Web:
         f.write(results)
         f.close()
 
-
+   
     @staticmethod
     def google_dork(username,report,number,num):
         nomefile = "Site_lists/Websites/Google_dorks.txt"
@@ -58,19 +118,24 @@ class Web:
             pass
         f.close()
         choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.trace(username,report)
+            Web.Robots(username,report)
+        else:
+            choice = int(input(
+                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                Web.trace(username,report)
 
     @staticmethod
     def whois_lookup(username,report):
-        api = "Api/api_key.txt"
-        f = open(api,"r")
-        Key = f.read().rstrip("\n")
-        f.close()
+        api = "Configuration/Configuration.ini"
+        Parser = ConfigParser()
+        Parser.read(api)
+        Key = Parser ["Settings"]["Api_Key"]
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "LOOKING FOR WHO IS INFORMATION ABOUT: {}...".format(username))
         sleep(2)
-        if Key == "":
+        if Key == "None":
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "API KEY NOT FOUND DOING CLASSICAL WHOIS LOOKUP...")
             command = ("whois " + username)
             proces = os.popen(command)
@@ -81,7 +146,7 @@ class Web:
             f.write("\nWEBSITE DATA:" + "\r\n")
             f.write(results)
             f.close()
-	    num = None
+            num = None
             number = False
         else:
             try:
@@ -147,7 +212,8 @@ class Web:
                         f.write("\nPHONE NUMBER DATA:")
                         f.close()
                         print("")
-                        Numbers.Phony.Number(num,report)
+                        code = 0
+                        Numbers.Phony.Number(num,report,code)
                     else:
                         pass
                 else:
@@ -171,9 +237,14 @@ class Web:
             Web.google_dork(username,report,number,num)
         else:
             choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.trace(username,report)
+                Web.Robots(username,report)
+            else:
+                choice = int(input(
+                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if choice == 1:
+                    Web.trace(username,report)
     
     @staticmethod
     def search(username):
@@ -251,13 +322,24 @@ class Web:
             Font.Color.BLUE + " \n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A WHO-IS LOOKUP?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             Web.whois_lookup(username,report)
-       
         else:
             choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.trace(username,report)
+                Web.google_dork(username,report)
+            else:
+                choice = int(input(
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if choice == 1:
+                    Web.Robots(username,report)
+                else:
+                    choice = int(input(
+                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if choice == 1:
+                        Web.trace(username,report)
 
-        os.system("Core/Support/./Notification.sh")
+        f = open(report,"a")
+        f.write("\nSCANNING EXECUTED WITH Mr.Holmes")
+        f.close()
         print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " + os.getcwd() + "/" + report)
         Creds.Sender.mail(report, username)

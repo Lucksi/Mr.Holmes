@@ -3,6 +3,7 @@ from email.mime.base import MIMEBase
 from email.mime.text import MIMEText
 from Core.Support import Font
 from email.mime.multipart import MIMEMultipart
+from configparser import ConfigParser
 import smtplib
 
 class Sender:
@@ -13,27 +14,15 @@ class Sender:
         if mail == 1:
             print(
                 Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SENDING EMAIL PLEASE WAIT" + Font.Color.GREEN + "[+]")
-            f = open("Configuration/Recipient.txt", "r")
-            dent = f.read()
-            f.close()
-            f = open("Configuration/Password.txt", "r")
-            dent2 = f.read()
-            f.close()
-            f = open("Configuration/Destination.txt", "r")
-            dent3 = f.read()
-            f.close()
-            f = open("Configuration/Server.txt", "r")
-            dent4 = f.read().replace('\n', '')
-            f.close()
-            f = open("Configuration/Port.txt", "r")
-            dent5 = f.read().replace('\n', '')
-            f.close()
-            email = dent
-            password = dent2
-            destination = dent3
-            host = dent4
+            nomefile = "Configuration/Configuration.ini"
+            Parser = ConfigParser()
+            Parser.read(nomefile)            
+            email = Parser["Smtp"]["Email"]
+            password = Parser["Smtp"]["Password"]
+            destination = Parser["Smtp"]["Destination"]
+            host = Parser["Smtp"]["Server"]
             host2 = (str(host))
-            port = dent5
+            port = Parser["Smtp"]["Port"]
             port2 = (int(port))
             message = MIMEMultipart()
             message['From'] = "MR.HOLMES:"
@@ -48,11 +37,17 @@ class Sender:
             encoders.encode_base64(file)
             file.add_header("Content-Disposition", "attachment;filename=" + filename)
             message.attach(file)
-            server = smtplib.SMTP(host2, port2)
-            server.ehlo()
-            server.starttls()
-            server.login(email, password)
-            text = message.as_string()
-            server.sendmail(email, destination, text)
-            inp = input(Font.Color.WHITE + "\n[+]" + Font.Color.GREEN + "EMAIL SENT PRESS ENTER TO CONTINUE...")
-            server.close()
+            try:
+                server = smtplib.SMTP(host2, port2)
+                server.ehlo()
+                server.starttls()
+                server.login(email, password)
+                text = message.as_string()
+                server.sendmail(email, destination, text)
+                inp = input(Font.Color.WHITE + "\n[+]" + Font.Color.GREEN + "EMAIL SENT PRESS ENTER TO CONTINUE...")
+                server.close()
+            except smtplib.SMTPException:
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS LOOKS LIKE THE EMAIL HAS NOT BE SENT")
+                inp = input("\nPRESS ENTER TO CONTINUE")
+        elif mail == 2:
+            inp = input("\nPRESS ENTER TO CONTINUE")

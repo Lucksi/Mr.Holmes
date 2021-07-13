@@ -1,0 +1,18 @@
+[
+    {
+        "PagesJaunes":{
+            "Error": "Message",
+            "text": "Oups… nous n’avons pas encore de réponse à cette recherche !",
+            "name": "PagesJaunes",
+            "main": "pagesjaunes.fr",
+            "url": "https://www.pagesjaunes.fr/annuaireinverse/recherche?quoiqui={}"
+        },
+        
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}"
+        }    
+    }
+]

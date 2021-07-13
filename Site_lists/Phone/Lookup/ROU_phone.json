@@ -1,0 +1,26 @@
+[
+    {
+        "NumberVille":{
+            "Error": "Status-Code",
+            "name": "NumberVille",
+            "main": "numberville.com",
+            "url": "https://numberville.com/phone/rou+{}.html"
+        },
+        
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}"
+        },
+
+        "CarteTelefonae":{
+            "Error": "Message",
+            "text": "Niciun rezultat!",
+            "name": "CarteTelefonae",
+            "main": "carte-telefoane.info",
+            "url": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}"
+        }
+
+    }
+] 

@@ -1,12 +1,13 @@
 import os
-import requests
 import urllib 
 import json
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
+from Core.Support import Requests_Search
 from datetime import datetime
 from time import sleep
+
 
 class MrHolmes:
 
@@ -22,7 +23,7 @@ class MrHolmes:
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", username)
-            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + site)
+            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
             f = open(report,"a")
             f.write(site + "\n")
             sleep(2)
@@ -34,11 +35,7 @@ class MrHolmes:
         f = open("Banners/Banner2.txt","r")
         banner = f.read()
         f.close()
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-        }
-        succ = 0
-        failed = 0
+        subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
         report = "Reports/Usernames/" + username + ".txt"
         now = datetime.now()
@@ -48,6 +45,7 @@ class MrHolmes:
             os.remove(report)
         f = open(report, "a")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
+        f.write("USERNAME FOUND ON:\r\n")
         f.close()
         f = open(nomefile,)
         choice = int(input(
@@ -76,48 +74,22 @@ class MrHolmes:
             for data1 in sites:
                 site1 = sites[data1]["user"].replace("{}",username)
                 name = sites[data1]["name"]
+                error = sites[data1]["Error"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
-                    searcher = requests.get(site1, headers=headers, proxies=http_proxy, timeout=None)
-                    status = str(searcher.status_code)
-                    f = open(report, "a")
-                   
-                    if searcher.status_code == 200:
-                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME: {} FOUND WITH STATUS CODE:".format(username) + status)
-                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                        f.write(site1 + "\r\n")
-                        succ = succ + 1
-                        succ2 = str(succ)
-                    else:
-                        print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME: {} NOT FOUND WITH STATUS CODE:".format(username) + status)
-                        failed = failed + 1
-                        failed2 = str(failed)
+                   Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject) 
                 except Exception as e:
-                    f = str(e)
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..{},TRYNG WITH NO PROXIES".format(f))
-                    searcher = requests.get(site1, headers=headers, proxies=None, timeout=None)
-                    status = str(searcher.status_code)
-                    f = open(report, "a")
-                    if searcher.status_code == 200:
-                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "USERNAME: {} FOUND WITH STATUS CODE:".format(username) + status)
-                        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                        f.write(site1 + "\r\n")
-                        succ = succ + 1
-                        succ2 = str(succ)
-                    else:
-                        print(Font.Color.RED + "[!]" + Font.Color.WHITE + "USERNAME:{} NOT FOUND WITH STATUS CODE:".format(username) + status)
-                        failed = failed + 1
-                        failed2 = str(failed)
-
-        f.write("USERNAME FOUND IN: " + succ2 + " SITES" + "\r\n")
-        f.write("USERNAME NOT FOUND IN: " + failed2 + " SITES" + "\r\n")
-        f.close()
+                    http_proxy = "None"
+                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username) 
         count = 1
         if count == 1:
             choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 MrHolmes.Google_dork(username,report)
-            os.system("Core/Support/./Notification.sh")
             print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " + os.getcwd() + "/" + report)
+            f = open(report,"a")
+            f.write("\nSCANNING EXECUTED WITH Mr.Holmes")
+            f.close()
             Creds.Sender.mail(report, username)
