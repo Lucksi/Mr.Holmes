@@ -72,9 +72,9 @@ function installer {
 				done
 				printf "${WHITE}\n\nINSERT YOUR WHO-IS-XMLAPI-KEY(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
 				read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
-				if [ "$key" == "" ];
+				if [ "$key" = "" ];
 				then
-					 key="None"
+					key = "None"
 				fi
 				printf "${BLUE}\nCREATING CONFIGURATION FILE"
 				cd Configuration

@@ -74,7 +74,7 @@ function installer {
 				read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
 				if [ "$key" = "" ];
 				then
-					key="None"
+					key = "None"
 				fi
 				printf "${BLUE}\nCREATING CONFIGURATION FILE"
 				cd Configuration
