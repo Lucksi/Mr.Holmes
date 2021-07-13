@@ -74,7 +74,7 @@ function installer {
 				read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
 				if [ "$key" = "" ];
 				then
-					key = "None"
+					key="None"
 				fi
 				printf "${BLUE}\nCREATING CONFIGURATION FILE"
 				cd Configuration
@@ -93,9 +93,6 @@ function installer {
 				cd Core
 				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 				proot -0 chmod +x update.sh
-				cd Support
-				proot -0 chmod +x Notification.sh
-				cd ../
 				cd ../
 				cd ../
 				echo "Path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini

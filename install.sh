@@ -72,9 +72,9 @@ function installer {
 				done
 				printf "${WHITE}\n\nINSERT YOUR WHO-IS-XMLAPI-KEY(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
 				read -p"$GREEN[#MR.HOLMES#]$WHITE-->" key
-				if [ "$key" = "" ];
+				if [ "$key" == "" ];
 				then
-					key = "None"
+					 key="None"
 				fi
 				printf "${BLUE}\nCREATING CONFIGURATION FILE"
 				cd Configuration
@@ -93,9 +93,6 @@ function installer {
 				cd Core
 				printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 				sudo chmod +x update.sh
-				cd Support
-				sudo chmod +x Notification.sh
-				cd ../
 				cd ../
 				cd ../
 				echo "Path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
