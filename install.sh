@@ -23,7 +23,6 @@ function installer {
 		then
             sudo apt-get install python3 &> /dev/null | printf "${WHITE2}\nINSTALLING PYTHON3\n"
             sudo apt-get install python3-pip &> /dev/null | printf "${WHITE2}\nINSTALLING PIP"
-            sudo apt-get install zenity &> /dev/null | printf "${WHITE2}\n\nINSTALLING ZENITY"
 			sudo apt-get install whois &> /dev/null | printf "${WHITE2}\n\nINSTALLING WHOIS"
 			sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE2}\n\nINSTALLING TRACEROUTE"
 			sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."

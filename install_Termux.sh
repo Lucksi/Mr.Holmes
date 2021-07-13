@@ -23,7 +23,6 @@ function installer {
 		then
             proot -0 pkg install python3 &> /dev/null | printf "${WHITE2}\nINSTALLING PYTHON3\n"
             proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE2}\nINSTALLING PIP"
-            proot -0 pkg install zenity &> /dev/null | printf "${WHITE2}\n\nINSTALLING ZENITY"
 			proot -0 pkg install whois &> /dev/null | printf "${WHITE2}\n\nINSTALLING WHOIS"
             proot -0 pkg install tracepath &> /dev/null | printf "${WHITE2}\n\nINSTALLING TRACEROUTE"
 			proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
