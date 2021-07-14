@@ -80,7 +80,7 @@ function installer {
 				echo "[Smtp]">Configuration.ini
 				echo "Email = $recipient">>Configuration.ini
 				echo "Password = $password">>Configuration.ini
-				echo "Pestination = $destination">>Configuration.ini
+				echo "Destination = $destination">>Configuration.ini
 				echo "Server= $server">>Configuration.ini
 				echo "Port= $port">>Configuration.ini
 				echo "">>Configuration.ini
