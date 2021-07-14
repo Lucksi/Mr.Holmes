@@ -79,9 +79,9 @@ class MrHolmes:
                 try:
                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject) 
                 except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..{},TRYNG WITH NO PROXIES".format(f))
+                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
                     http_proxy = "None"
-                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username) 
+                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject)
         count = 1
         if count == 1:
             choice = int(input(
