@@ -58,13 +58,13 @@ class Web:
                 dork = requests.get(url,headers =headers, proxies=None, timeout=None, allow_redirects=True)
                 if dork.status_code == 200:
                     open(robot, 'wb').write(dork.content)
-                    print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "ROBOTS SAVED ON: " + robot)    
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "ROBOTS SAVED ON: " + robot)    
                 else:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS UNABLE TO DOWNLOAD {} ROBOTS.TXT..SKIPPING".format(username))
 
 
         choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             Web.trace(username,report)
         else:
@@ -97,7 +97,7 @@ class Web:
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", format)
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             f = open(report,"a")
             f.write(site + "\n")
             sleep(2)
@@ -109,7 +109,7 @@ class Web:
             for sites in f:
                 site = sites.rstrip("\n")
                 site = site.replace("{}", num)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
                 f = open(report,"a")
                 f.write(site + "\n")
                 sleep(2)
@@ -118,12 +118,12 @@ class Web:
             pass
         f.close()
         choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             Web.Robots(username,report)
         else:
             choice = int(input(
-                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 Web.trace(username,report)
 
@@ -173,20 +173,20 @@ class Web:
                 city2 = str(final["WhoisRecord"]["registrant"]["city"])
                 link = "https://www.google.com/maps/place/{} {}".format(street2,city2)
                 sleep(2)
-                print(Font.Color.YELLOW + "\n[+]" + Font.Color.WHITE + created)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + modified)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + expired)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + domain)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + organization)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + nation)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + nationCode)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + state)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + city)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + street)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + email)
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + telephone)
+                print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + created)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + modified)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + expired)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + domain)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + organization)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + nation)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + nationCode)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + state)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + city)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + street)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + email)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + telephone)
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING GOOGLE MAPS LINK...")
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + link)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + link)
                 f = open(report,"a")
                 f.write("\nWEBSITE DATA:" + "\r\n")
                 f.write(created + "\r\n")
@@ -206,7 +206,7 @@ class Web:
                 num = telephone2
                 if num != "":
                     number = True
-                    sc= int(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "PHONE NUMBER FOUND:{} WOULD YOU LIKE TO EXECUTE A SCAN(1)YES(2)NO".format(num)  + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    sc= int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "PHONE NUMBER FOUND:{} WOULD YOU LIKE TO EXECUTE A SCAN(1)YES(2)NO".format(num)  + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
                         f = open(report,"a")
                         f.write("\nPHONE NUMBER DATA:")
@@ -232,17 +232,17 @@ class Web:
                 f.write(results)
                 f.close()
         choice = int(input(
-             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             Web.google_dork(username,report,number,num)
         else:
             choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 Web.Robots(username,report)
             else:
                 choice = int(input(
-                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
                     Web.trace(username,report)
     
@@ -283,22 +283,22 @@ class Web:
         print(Font.Color.GREEN + banner)
         print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "SEARCH INFORMATION FOR: {}".format(username))
         sleep(3)
-        print(Font.Color.YELLOW + "\n[+]" + Font.Color.WHITE + ip)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + country)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + country_code)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + region)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + regionName)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + city)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + timezone)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + isp)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + org)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + asp)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + final_lat)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + final_lon)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + zip_data)
+        print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + ip)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country_code)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + region)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + regionName)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + city)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + timezone)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + isp)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + org)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + asp)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lat)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lon)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + zip_data)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING GOOGLE MAPS LINK...")
         sleep(2)
-        print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + link)
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + link)
         f = open(report,"a")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
         f.write(ip + "\r\n")

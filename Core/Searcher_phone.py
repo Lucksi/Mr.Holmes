@@ -26,7 +26,7 @@ class Phone_search:
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", numberf)
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             f = open(report,"a")
             f.write(site + "\n")
             sleep(2)
@@ -41,7 +41,7 @@ class Phone_search:
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", numberf)
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             f = open(report,"a")
             f.write(site + "\n")
             sleep(2)
@@ -79,6 +79,10 @@ class Phone_search:
             data = "Site_lists/Phone/Lookup/ROU_phone.json"
             country = "ROMANIA"
             token = True
+        elif nation == "CH":
+            data = "Site_lists/Phone/Lookup/SWIS_phone.json"
+            country = "SWITZERLAND"
+            token = True
         else:
             token = False
             country = "UNDEFINED"
@@ -90,7 +94,7 @@ class Phone_search:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SEARCHING PHONE NUMBER ON DIFFERENT SITES")
            
             sc = int(input(
-                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if sc == 1:
                 http_proxy = Proxies.proxy.final_proxis
                 http_proxy2 = Proxies.proxy.choice3
@@ -103,12 +107,13 @@ class Phone_search:
                 http_proxy = None
                 http_proxy2 = str(http_proxy)
                 identity="None"
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+            print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
             if identity != "None":
-                print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+                print(Font.Color.GREEN + "[v]" + Font.Color.WHITE + identity)
             else:
                 pass
-        
+            
+            successfull = []
             f = open (data,)
             data = json.loads(f.read())
             for sites in data:
@@ -120,17 +125,20 @@ class Phone_search:
                     error = sites[data1]["Error"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     try:
-                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject)
+                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject,successfull,name,)
                     except Exception as e:
                         print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject)
-        
+                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject,successfull,name,)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
+            for names in successfull:
+                print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
+
         else:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS LOOKS LIKE THERE IS NO LOOKUP FILE FOR NOW..SKIPPING:(")
         
         sleep (3)
-        dork = int(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE-DORK SEARCH?(1)YES(2)NO"+ Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        dork = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE-DORK SEARCH?(1)YES(2)NO"+ Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if dork == 1:
             Phone_search.Google_dork(number, report)
         else:

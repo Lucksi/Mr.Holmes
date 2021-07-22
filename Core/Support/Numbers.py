@@ -46,19 +46,19 @@ class Phony:
             carrierName = carrier.name_for_number(Phone, "en")
 
                     
-            print(Font.Color.YELLOW + "\n[+]" + Font.Color.WHITE + "INTERNATIONAL NUMBER: {}".format(international))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"LOCAL NUMBER: {}".format(localNumber))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"COUNTRY PREFIX: {}".format(numberCode))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"COUNTRY CODE: {}".format(numberNation))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"COUNTRY: {}".format(nation))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"AREA: {}".format(location))
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE +"CARRIER/ISP: {}".format(carrierName))
+            print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + "INTERNATIONAL NUMBER: {}".format(international))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"LOCAL NUMBER: {}".format(localNumber))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"COUNTRY PREFIX: {}".format(numberCode))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"COUNTRY CODE: {}".format(numberNation))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"COUNTRY: {}".format(nation))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"AREA/ZONE: {}".format(location))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"CARRIER/ISP: {}".format(carrierName))
             for timezoneResult in timezone.time_zones_for_number(Phone):
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "TIMEZONE: {}".format(timezoneResult))
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "TIMEZONE: {}".format(timezoneResult))
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "CHECKING THE AFFIDABILITY OF THE NUMBER")
             sleep(2)
             if phonenumbers.is_possible_number(Phone):
-                print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + "THIS NUMBER EXIST OR IS A VOIP NUMBER")
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "THIS NUMBER EXIST OR IS A VOIP NUMBER")
             else:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +"THIS NUMBER DOESN'T EXIST.")
             f = open(report,"a")
@@ -66,6 +66,8 @@ class Phony:
             f.write("LOCAL NUMBER: " + localNumber + "\n")
             f.write("COUNTRY PREFIX: " + numberCode + "\n")
             f.write("COUNTRY CODE: " + numberNation + "\n")
+            f.write("COUNTRY:" + nation + "\n")
+            f.write("AREA/ZONE" + location + "\n")
             f.write("CARRIER/ISP: " + carrierName + "\n")
             f.write("TIMEZONE: " + timezoneResult + "\n")
             f.close()

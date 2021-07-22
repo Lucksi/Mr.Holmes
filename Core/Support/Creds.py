@@ -10,7 +10,7 @@ class Sender:
     @staticmethod
     def mail(report,username):
         mail = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO RECIEVE A DATA-MAIL?(1)YES(2)NO" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO RECIEVE A DATA-MAIL?(1)YES(2)NO" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if mail == 1:
             print(
                 Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SENDING EMAIL PLEASE WAIT" + Font.Color.GREEN + "[+]")

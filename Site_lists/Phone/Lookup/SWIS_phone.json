@@ -1,0 +1,19 @@
+[
+    {
+        "Local.ch":{
+            "Error": "Message",
+            "text": "Sorry, we couldn't find any results for 41765552112 in switzerland",
+            "name": "Local.ch",
+            "main": "local.ch",
+            "url": "https://www.local.ch/en/q/switzerland/{}"
+        },
+
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}"
+        }
+    }
+
+]

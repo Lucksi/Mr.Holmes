@@ -78,14 +78,7 @@
             "main": "telegram.me",
             "user": "https://t.me/{}"
         },
-        
-        "Wix":{
-            "Error": "Status-Code",
-            "name": "Wix",
-            "main": "wix.com",
-            "user":"https://{}.wix.com"
-        },
-        
+    
         "Spotify":{
             "Error": "Status-Code",
             "name": "Spotify",
@@ -109,9 +102,10 @@
         
         "Twitter":{
             "Error": "Status-Code",
+            "text": "Hmm...this page doesn’t exist. Try searching for something else.",
             "name": "Twitter",
             "main": "twitter.com",
-            "user": "https://twitter.com/{}"
+            "user": "https://mobile.twitter.com/{}"
         },
         
         "FortniteTracker":{
@@ -253,13 +247,6 @@
             "user": "https://pokemonshowdown.com/users/{}"
         },
         
-        "AminoApp":{
-            "Error": "Status-Code",
-            "name": "AminoApp",
-            "main": "aminoapps.com/",
-            "user": "https://aminoapps.com/u/{}"
-        },
-        
         "LolProfiles":{
             "Error": "Message",
             "text": "We could not find any results, please try again later or check your input.",
@@ -282,6 +269,95 @@
             "name": "PsnProfiles",
             "main": "psnprofiles.com",
             "user": "https://psnprofiles.com/{}"
+        },
+        
+        "7Cups":{
+            "Error": "Status-Code",
+            "name": "7Cups",
+            "main": "7cups.com",
+            "user": "https://www.7cups.com/@"
+        },
+
+        "AskFM":{
+            "Error": "Message",
+            "text": "Well, apparently not anymore.",
+            "name": "AskFM",
+            "main": "ask.fm",
+            "user": "https://ask.fm/{}"
+        },
+        
+        "TwitchTracker":{
+            "Error": "Status-Code",
+            "name": "TwitchTracker",
+            "main": "twitchtracker.com",
+            "user": "https://twitchtracker.com/{}"
+        },
+
+        "LinkTree":{
+            "Error": "Status-Code",
+            "name": "LinkTree",
+            "main": "linktr.ee",
+            "user": "https://linktr.ee/{}"
+        },
+
+        "Patreon":{
+            "Error": "Status-Code",
+            "name": "Patreon",
+            "main": "patreon.com",
+            "user": "https://patreon.com/{}"
+        },
+
+        "Flipboard":{
+            "Error": "Status-Code",
+            "name": "Flipboard",
+            "main": "flipboard.com",
+            "user": "https://flipboard.com/@{}"
+        },
+
+        "BuyMeACoffee":{
+            "Error": "Status-Code",
+            "name": "BuyMeACoffee",
+            "main": "buymeacoffee.com",
+            "user": "https://www.buymeacoffee.com/{}"
+        },
+
+        "Interpals":{
+            "Error": "Message",
+            "text": "The requested user does not exist or is inactive",
+            "name": "Interpals",
+            "main": "interpals.net",
+            "user": "https://www.interpals.net/{}"
+        },
+
+        "TryHackMe":{
+            "Error": "Status-Code",
+            "name": "TryHackMe",
+            "main": "tryhackme.com",
+            "user": "https://tryhackme.com/p/{}"
+        },
+
+        "SteamCommunity":{
+            "Error": "Message",
+            "text": "The specified profile could not be found.",
+            "name": "SteamCommunity",
+            "main": "steamcommunity.com",
+            "user": "https://steamcommunity.com/id/{}"
+        },
+
+        "BitcoinForum":{
+            "Error": "Message",
+            "text": "The user whose profile you are trying to view does not exist.",
+            "name": "BitcoinForum",
+            "main": "bitcoinforum.com",
+            "user": "https://bitcoinforum.com/profile/{}"
+        },
+
+        "BitBucket":{
+            "Error": "Status-Code",
+            "name": "BitBucket",
+            "main": "bitbucket.org",
+            "user": "https://bitbucket.org/{}/"
         }
+
     }
 ]

@@ -23,7 +23,7 @@ class MrHolmes:
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", username)
-            print(Font.Color.YELLOW + "[+]" + Font.Color.WHITE + site)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             f = open(report,"a")
             f.write(site + "\n")
             sleep(2)
@@ -32,6 +32,7 @@ class MrHolmes:
 
     @staticmethod
     def search(username):
+        successfull = []
         f = open("Banners/Banner2.txt","r")
         banner = f.read()
         f.close()
@@ -69,6 +70,7 @@ class MrHolmes:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
+       
         data = json.loads(f.read())
         for sites in data:
             for data1 in sites:
@@ -77,15 +79,50 @@ class MrHolmes:
                 error = sites[data1]["Error"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
-                   Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject) 
+                   Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name) 
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
                     http_proxy = None
-                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject)
+                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name)
+        
+        Nsw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        
+        if Nsw == 1:
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+            if identity != "None":
+                print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+            else:
+                pass
+            nomefile = "Site_lists/Username/NSW_site_list.json"
+            f = open(nomefile,)
+            data = json.loads(f.read())
+            for sites in data:
+                for data1 in sites:
+                    site1 = sites[data1]["user"].replace("{}",username)
+                    name = sites[data1]["name"]
+                    error = sites[data1]["Error"]
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
+                    try:
+                        Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name) 
+                    except Exception as e:
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
+                        http_proxy = None
+                        Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name)
+        else:
+            pass
+        
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
+        sleep(3)
+        for names in successfull:
+            print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
+
+        if "Instagram" in successfull:
+            complete = "https://www.instagram.com/{}/?__a=1".format(username)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSTAGRAM PROFILE DATA(JSON FORMAT):" + complete)
         count = 1
         if count == 1:
             choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 MrHolmes.Google_dork(username,report)
             print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " + os.getcwd() + "/" + report)
