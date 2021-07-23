@@ -357,6 +357,13 @@
             "name": "BitBucket",
             "main": "bitbucket.org",
             "user": "https://bitbucket.org/{}/"
+        },
+
+        "ClubHouse":{
+            "Error": "Status-Code",
+            "name": "ClubHouse",
+            "main": "joinclubhouse.com",
+            "user": "https://joinclubhouse.com/@{}"
         }
 
     }
