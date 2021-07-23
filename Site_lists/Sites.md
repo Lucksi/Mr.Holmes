@@ -52,6 +52,17 @@
 ## BITCOINFORUM: https://bitcoinforum.com
 ## BITBUCKET: https://bitbucket.org
 ## CLUBHOUSE: https://joinclubhouse.com
+## BANDCAMP: https://www.bandcamp.com
+## BOOKCROSSING: https://www.bookcrossing.com
+## CHESS: https://www.chess.com
+## FANDOM: https://www.fandom.com
+## FREESOUND: https://freesound.org
+## PUBG: https://pubg.op.gg
+## EUW: "https://euw.op.gg
+## QUORA: https://www.quora.com
+## WIKIPEDIA: https://wikipedia.org
+## ALLMYLINKS: https://allmylinks.com
+## MEDIUM: https://medium.com
 
 <br>
 

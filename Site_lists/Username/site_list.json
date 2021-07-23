@@ -101,8 +101,8 @@
         },
         
         "Twitter":{
-            "Error": "Status-Code",
-            "text": "Hmm...this page doesn’t exist. Try searching for something else.",
+            "Error": "Message",
+            "text": "This account doesn’t exist Try searching for another.",
             "name": "Twitter",
             "main": "twitter.com",
             "user": "https://mobile.twitter.com/{}"
@@ -364,6 +364,86 @@
             "name": "ClubHouse",
             "main": "joinclubhouse.com",
             "user": "https://joinclubhouse.com/@{}"
+        },
+
+        "Bandcamp":{
+            "Error": "Status-Code",
+            "name": "Bandcamp",
+            "main": "bandcamp.com",
+            "user": "https://www.bandcamp.com/{}"
+        },
+
+        "Bookcrossing":{
+            "Error": "Status-Code",
+            "name": "Bookcrossing",
+            "main": "bookcrossing.com",
+            "user": "https://www.bookcrossing.com/mybookshelf/{}/"
+        },
+
+        "Chess":{
+            "Error": "Message",
+            "text": "The page you are looking for doesn’t exist",
+            "name": "Chess",
+            "main": "chess.com",
+            "user": "https://www.chess.com/member/{}"
+        },
+
+        "Fandom":{
+            "Error": "Status-Code",
+            "name": "Fandom",
+            "main": "fandom.com",
+            "user": "https://www.fandom.com/u/{}"
+        },
+
+        "Freesound":{
+            "Error": "Status-Code",
+            "name": "Freesound",
+            "main": "freesound.org",
+            "user": "https://freesound.org/people/{}"
+        },
+
+        "Pubg":{
+            "Error": "Message",
+            "text": "The player is not registered at OP.GG. Please check your spelling and search again.",
+            "name": "Pubg",
+            "main": "pubg.op.gg",
+            "user": "https://pubg.op.gg/user/{}"
+        },
+
+        "Euw":{
+            "Error": "Message",
+            "text": "This summoner is not registered at OP.GG. Please check spelling.",
+            "name": "Euw",
+            "main": "euw.op.gg",
+            "user": "https://euw.op.gg/summoner/userName={}"
+        },
+
+        "Quora":{
+            "Error": "Status-Code",
+            "name": "Quora",
+            "main": "quora.com",
+            "user": "https://www.quora.com/profile/{}"
+        },
+
+        "Wikipedia":{
+            "Error": "Status-Code",
+            "name": "Wikipedia",
+            "main": "wikipedia.org",
+            "user": "https://wikipedia.org/wiki/User:{}"
+        },
+
+        "AllMyLinks":{
+            "Error": "Status-Code",
+            "name": "AllMyLinks",
+            "main": "allmylinks.com",
+            "user": "https://allmylinks.com/{}"
+        },
+
+        "Medium": {
+            "Error": "Status-Code",
+            "name": "Medium",
+            "main": "medium.com",
+            "user": "https://{}.medium.com"
         }
 
     }
