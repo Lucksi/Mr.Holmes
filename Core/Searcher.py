@@ -85,15 +85,15 @@ class MrHolmes:
                     http_proxy = None
                     Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name)
         
-        Nsw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         
-        if Nsw == 1:
+        if Nsfw == 1:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
             if identity != "None":
                 print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
             else:
                 pass
-            nomefile = "Site_lists/Username/NSW_site_list.json"
+            nomefile = "Site_lists/Username/NSFW_site_list.json"
             f = open(nomefile,)
             data = json.loads(f.read())
             for sites in data:
