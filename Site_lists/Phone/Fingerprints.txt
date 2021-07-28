@@ -1,4 +1,5 @@
-https://www.google.com/search?q=site:instagram.com intext:{}
-https://www.google.com/search?q=site:twitter.com intext:{}
-https://www.google.com/search?q=site:facebook.com intext:{}
-https://www.google.com/search?q=site:vk.com intext:{}
+site:instagram.com intext:{}
+site:twitter.com intext:{}
+site:facebook.com intext:{}
+site:vk.com intext:{}
+site:linkedin.com intext:{}

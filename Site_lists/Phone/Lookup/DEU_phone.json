@@ -5,7 +5,8 @@
             "text": "Einfach nochmal probieren!",
             "name" : "11880",
             "main" : "11880.com",
-            "url" : "https://www.11880.com/suche/{}/deutschland"
+            "url" : "https://www.11880.com/suche/{}/deutschland",
+            "url2" : "https://www.11880.com/suche/{}/deutschland"
             
         },
         
@@ -13,7 +14,8 @@
             "Error": "Status-Code",
             "name" : "TelefonABC",
             "main" : "telefonabc.at",
-            "url" : "https://www.telefonabc.at/result.aspx?what={}"
+            "url" : "https://www.telefonabc.at/result.aspx?what={}",
+            "url2" : "https://www.telefonabc.at/result.aspx?what={}"
         },
         
         "GoYellow":{
@@ -21,14 +23,24 @@
             "text" : "Zu Ihrer Suche haben wir leider nichts gefunden.",
             "name" : "GoYellow",
             "main" : "goyellow.de",
-            "url" : "https://www.goyellow.de/suche/{}/-"
+            "url" : "https://www.goyellow.de/suche/{}/-",
+            "url2" : "https://www.goyellow.de/suche/{}/-"
         },
         
         "FreeLookup":{
             "Error": "Status-Code",
             "name": "FreeLookup",
             "main": "free-lookup.net",
-            "url": "https://free-lookup.net/{}"
+            "url": "https://free-lookup.net/{}",
+            "url2": "https://free-lookup.net/{}"
+        },
+
+        "WhoseNumber":{
+            "Error": "Status-Code",
+            "name": "WhoseNumber",
+            "main": "whosenumber.info",
+            "url": "https://whosenumber.info/{}",
+            "url2": "https://whosenumber.info/{}"
         }
     }
 ] 

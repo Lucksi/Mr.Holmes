@@ -5,7 +5,8 @@
             "text": "Spiacenti. Nessun risultato trovato per ",
             "name": "PagineBianche",
             "main": "PagineBianche.it",
-            "url": "https://www.paginebianche.it/cerca-da-numero?qs={}"
+            "url": "https://www.paginebianche.it/cerca-da-numero?qs={}",
+            "url2": "https://www.paginebianche.it/cerca-da-numero?qs={}"
         },
 
         "PaginGialle":{
@@ -13,21 +14,32 @@
             "text": "Spiacenti, non siamo riusciti a trovare",
             "name": "PagineGialle",
             "main": "PagineGialle.it",
-            "url": "https://www.paginegialle.it/ricerca/telefono-{}"
+            "url": "https://www.paginegialle.it/ricerca/telefono-{}",
+            "url2": "https://www.paginegialle.it/ricerca/telefono-{}"
         },
 
         "FreeLookup":{
             "Error": "Status-Code",
             "name": "FreeLookup",
             "main": "free-lookup.net",
-            "url": "https://free-lookup.net/{}"
+            "url": "https://free-lookup.net/{}",
+            "url2": "https://free-lookup.net/{}"
         },
 
         "NumReport":{
             "Error": "Status-Code",
             "name": "NumReport",
             "main": "it.numreport.com",
-            "url": "https://it.numreport.com/{}"
+            "url": "https://it.numreport.com/{}",
+            "url2": "https://it.numreport.com/{}"
+        },
+
+        "WhoseNumber":{
+            "Error": "Status-Code",
+            "name": "WhoseNumber",
+            "main": "whosenumber.info",
+            "url": "https://whosenumber.info/{}",
+            "url2": "https://whosenumber.info/{}"
         }
     }
 ] 

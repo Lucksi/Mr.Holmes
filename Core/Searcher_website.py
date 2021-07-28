@@ -41,7 +41,7 @@ class Web:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
-        robot = os.getcwd() + "/Reports/Websites/Robots/" + username + "_robots.txt"
+        robot = "Reports/Websites/Robots/" + username + "_robots.txt"
         final = json.loads(f.read())
         for sites in final:
             try:
@@ -236,6 +236,8 @@ class Web:
         if choice == 1:
             Web.google_dork(username,report,number,num)
         else:
+            num = None
+            number = False
             choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
@@ -323,10 +325,12 @@ class Web:
         if choice == 1:
             Web.whois_lookup(username,report)
         else:
+            num = None
+            number = False
             choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.google_dork(username,report)
+                Web.google_dork(username,report,number,num)
             else:
                 choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

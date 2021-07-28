@@ -5,14 +5,24 @@
             "text": "Oups… nous n’avons pas encore de réponse à cette recherche !",
             "name": "PagesJaunes",
             "main": "pagesjaunes.fr",
-            "url": "https://www.pagesjaunes.fr/annuaireinverse/recherche?quoiqui={}"
+            "url": "https://www.pagesjaunes.fr/annuaireinverse/recherche?quoiqui={}",
+            "url2": "https://www.pagesjaunes.fr/annuaireinverse/recherche?quoiqui={}"
         },
         
         "FreeLookup":{
             "Error": "Status-Code",
             "name": "FreeLookup",
             "main": "free-lookup.net",
-            "url": "https://free-lookup.net/{}"
-        }    
+            "url": "https://free-lookup.net/{}",
+            "url2": "https://free-lookup.net/{}"
+        },
+        
+        "WhoseNumber":{
+            "Error": "Status-Code",
+            "name": "WhoseNumber",
+            "main": "whosenumber.info",
+            "url": "https://whosenumber.info/{}",
+            "url2": "https://whosenumber.info/{}"
+        }
     }
 ]

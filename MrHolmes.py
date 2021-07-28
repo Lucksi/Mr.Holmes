@@ -1,5 +1,4 @@
 #!/usr/bin/python3
-# -*- coding: utf-8 -*-
 import os
 import random
 from Core.Support import Font
@@ -22,8 +21,7 @@ class Main:
         Quotes = [  "Quotes1.txt","Quotes4.txt","Quotes3.txt","Quotes7.txt",
                     "Quotes6.txt","Quotes2.txt","Quotes5.txt","Quotes8.txt",
                     "Quotes9.txt","Quotes10.txt","Quotes11.txt","Quotes12.txt",
-                    "Quotes13.txt","Quotes14.txt","Quotes15.txt","Quotes16.txt"
-                ]
+                    "Quotes13.txt","Quotes14.txt","Quotes15.txt","Quotes16.txt"  ]
         choice = random.choice(Quotes)
         f = open("Quotes/" + choice,"r", newline=None)
         text = f.read()
@@ -53,12 +51,24 @@ class Main:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ATTENTION SOME OF THE RESULTS MAY BE FALSE POSITIVES")
                     username = str(input(
                         Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNAME" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    while username == "" :
+                        username = str(input(
+                        Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNAME" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Searcher.MrHolmes.search(username)
+                
                 elif sce == 2:
-                    username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE PHONE NUMBER WITHOUT(+)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    username = str(input(
+                        Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE PHONE NUMBER WITHOUT(+)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    while username == "" :
+                        username = str(input(
+                            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE PHONE NUMBER WITHOUT(+)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Searcher_phone.Phone_search.searcher(username)
+                
                 elif sce == 3:
                     username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A DOMAIN OR A IP ADDRESS(IPv4/IPv6)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    while username == "":
+                        username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A DOMAIN OR A IP ADDRESS(IPv4/IPv6)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
                     Searcher_website.Web.search(username)
                 elif sce == 4:
                     config.Config.main()

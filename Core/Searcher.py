@@ -5,6 +5,7 @@ from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
 from Core.Support import Requests_Search
+from Core.Support import Scraper
 from datetime import datetime
 from time import sleep
 
@@ -18,7 +19,7 @@ class MrHolmes:
         f.write("\nGOOGLE DORKS LINKS:\n")
         f.close()
         print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
-        sleep(3)
+        sleep(2)
         f = open(nomefile,"r")
         for sites in f:
             site = sites.rstrip("\n")
@@ -33,6 +34,7 @@ class MrHolmes:
     @staticmethod
     def search(username):
         successfull = []
+        successfullName = []
         f = open("Banners/Banner2.txt","r")
         banner = f.read()
         f.close()
@@ -44,9 +46,10 @@ class MrHolmes:
         Date = "Date: " + str(dt_string)
         if os.path.isfile(report):
             os.remove(report)
+        
         f = open(report, "a")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
-        f.write("USERNAME FOUND ON:\r\n")
+        f.write("\nUSERNAME FOUND ON:\r\n")
         f.close()
         f = open(nomefile,)
         choice = int(input(
@@ -75,15 +78,16 @@ class MrHolmes:
         for sites in data:
             for data1 in sites:
                 site1 = sites[data1]["user"].replace("{}",username)
+                site2= sites[data1]["user2"].replace("{}", username)
                 name = sites[data1]["name"]
                 error = sites[data1]["Error"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
-                   Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name) 
+                   Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName) 
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
                     http_proxy = None
-                    Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name)
+                    Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName)
         
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         
@@ -95,19 +99,24 @@ class MrHolmes:
                 pass
             nomefile = "Site_lists/Username/NSFW_site_list.json"
             f = open(nomefile,)
+            
             data = json.loads(f.read())
             for sites in data:
                 for data1 in sites:
                     site1 = sites[data1]["user"].replace("{}",username)
+                    site2= sites[data1]["user2"].replace("{}", username)
                     name = sites[data1]["name"]
                     error = sites[data1]["Error"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     try:
-                        Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name) 
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName) 
                     except Exception as e:
-                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
-                        http_proxy = None
-                        Requests_Search.Search.search(error, report, site1, http_proxy, sites, data1, username, subject, successfull, name)
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")
+                        try:
+                            http_proxy = None
+                            Requests_Search.Search.search(error, report, site1, site2,  http_proxy, sites, data1, username, subject, successfull, name, successfullName)
+                        except Exception as e:
+                            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "CANNOT COMUNICATE WITH THE SERVER...SKIPPING")
         else:
             pass
         
@@ -116,9 +125,42 @@ class MrHolmes:
         for names in successfull:
             print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
 
-        if "Instagram" in successfull:
+        if "Instagram" in successfullName:
             complete = "https://www.instagram.com/{}/?__a=1".format(username)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSTAGRAM PROFILE DATA(JSON FORMAT):" + complete)
+        else:
+            pass
+        
+        if "Imgur" in successfullName:
+            Scraper.info.imgur(report, username)
+        else:
+            pass
+        
+        if "Pr0gramm" in successfullName:
+            Scraper.info.pr0gramm(report, username)
+        else:
+            pass
+        
+        if "BinarySearch" in successfullName:
+            Scraper.info.Binarysearch(report, username)
+        else:
+            pass 
+        
+        if "MixCloud" in successfullName:
+            Scraper.info.MixCloud(report,username)
+        else:
+            pass
+        
+        if "Nitter" in successfullName:
+            Scraper.info.nitter(report,username)
+        else:
+            pass
+
+        if "DockerHub" in successfullName:
+            Scraper.info.Dockerhub(report,username)
+        else:
+            pass
+        
         count = 1
         if count == 1:
             choice = int(input(

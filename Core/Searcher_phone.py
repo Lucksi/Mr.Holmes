@@ -114,6 +114,7 @@ class Phone_search:
                 pass
             
             successfull = []
+            successfullName = []
             f = open (data,)
             data = json.loads(f.read())
             for sites in data:
@@ -122,14 +123,15 @@ class Phone_search:
                     if name == "CarteTelefonae":
                         username = username.replace("40","")
                     site1 = sites[data1]["url"].replace("{}",username)
+                    site2 = sites[data1]["url2"].replace("{}",username)
                     error = sites[data1]["Error"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     try:
-                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject,successfull,name,)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName)
                     except Exception as e:
                         print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error,report,site1,http_proxy,sites,data1,username,subject,successfull,name,)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
             for names in successfull:
                 print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)

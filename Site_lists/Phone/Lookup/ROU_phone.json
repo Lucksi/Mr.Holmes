@@ -4,14 +4,24 @@
             "Error": "Status-Code",
             "name": "NumberVille",
             "main": "numberville.com",
-            "url": "https://numberville.com/phone/rou+{}.html"
+            "url": "https://numberville.com/phone/rou+{}.html",
+            "url2": "https://numberville.com/phone/rou+{}.html"
         },
         
         "FreeLookup":{
             "Error": "Status-Code",
             "name": "FreeLookup",
             "main": "free-lookup.net",
-            "url": "https://free-lookup.net/{}"
+            "url": "https://free-lookup.net/{}",
+            "url2": "https://free-lookup.net/{}"
+        },
+
+        "WhoseNumber":{
+            "Error": "Status-Code",
+            "name": "WhoseNumber",
+            "main": "whosenumber.info",
+            "url": "https://whosenumber.info/{}",
+            "url2": "https://whosenumber.info/{}"
         },
 
         "CarteTelefonae":{
@@ -19,7 +29,8 @@
             "text": "Niciun rezultat!",
             "name": "CarteTelefonae",
             "main": "carte-telefoane.info",
-            "url": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}"
+            "url": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}",
+            "url2": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}"
         }
 
     }

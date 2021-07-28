@@ -4,42 +4,40 @@
             "Error": "Status-Code",
             "name": "Instagram",
             "main": "instagram.com",
-            "user": "https://instagram.com/{}"
+            "user": "https://instagram.com/{}",
+            "user2": "https://instagram.com/{}"
         },
         
         "Git-Hub":{
             "Error": "Status-Code",
             "name": "Git-Hub",
-            "main":"github.com",
-            "user":"https://github.com/{}"
+            "main": "github.com",
+            "user": "https://github.com/{}",
+            "user2": "https://github.com/{}"
         },
         
         "Facebook":{
             "Error": "Status-Code",
             "name": "Facebook",
             "main": "facebook.com",
-            "user": "https://facebook.com/{}"
+            "user": "https://facebook.com/{}",
+            "user2": "https://facebook.com/{}"
         },
-        
-        "Tiktok":{
-            "Error": "Status-Code",
-            "name": "Tiktok",
-            "main": "tiktok.com",
-            "user": "https://tiktok.com/@{}"
-        },
-        
+         
         "Disqus":{
             "Error": "Status-Code",
             "name": "Disqus",
             "main": "disqus.com",
-            "user": "https://disqus.com/{}"
+            "user": "https://disqus.com/{}",
+            "user2": "https://disqus.com/{}"
         },
         
         "Pinterest":{
             "Error": "Status-Code",
             "name": "Pinterest",
             "main": "pinterest.com",
-            "user": "https://pinterest.com/{}"
+            "user": "https://pinterest.com/{}",
+            "user2": "https://pinterest.com/{}"
         },
         
         "Imgur":{
@@ -47,204 +45,207 @@
             "text": "We searched high and low, but we couldn’t find the page you're looking for. It may have been moved or deleted, or may never have existed at all.",
             "name": "Imgur",
             "main": "imgur.com",
-            "user": "https://imgur.com/user/{}"
-        },
-        
-        "YouTube":{
-            "Error": "Status-Code",
-            "text" : "404 Not Found",
-            "name": "YouTube",
-            "main": "youtube.com",
-            "user": "https://www.youtube.com/user/{}"
+            "user": "https://imgur.com/user/{}",
+            "user2": "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7"
         },
         
         "MySpace":{
             "Error": "Status-Code",
             "name": "MySpace",
             "main": "myspace.com",
-            "user": "https://myspace.com/{}"
+            "user": "https://myspace.com/{}",
+            "user2": "https://myspace.com/{}"
         },
         
         "Tellonym":{
             "Error": "Status-Code",
             "name": "Tellonym",
             "main": "tellonym.me",
-            "user": "https://tellonym.me/{}"
+            "user": "https://tellonym.me/{}",
+            "user2": "https://tellonym.me/{}"
         },
         
-        "Telegram":{
-            "Error": "Status-Code",
-            "name": "Telegram",
-            "main": "telegram.me",
-            "user": "https://t.me/{}"
-        },
-    
         "Spotify":{
             "Error": "Status-Code",
             "name": "Spotify",
             "main": "spotify.com",
-            "user": "https://open.spotify.com/user/{}"    
+            "user": "https://open.spotify.com/user/{}",
+            "user2": "https://open.spotify.com/user/{}"
         },
         
         "Twitch":{
             "Error": "Status-Code",
             "name": "Twitch",
             "main": "twitch.tv",
-            "user": "https://m.twitch.tv/{}"
+            "user": "https://m.twitch.tv/{}",
+            "user2": "https://m.twitch.tv/{}"
         },
         
         "Wattpad":{
             "Error": "Status-Code",
             "name": "Wattpad",
             "main": "wattpad.com",
-            "user": "https://www.wattpad.com/user/{}"
-        },
-        
-        "Twitter":{
-            "Error": "Message",
-            "text": "This account doesn’t exist Try searching for another.",
-            "name": "Twitter",
-            "main": "twitter.com",
-            "user": "https://mobile.twitter.com/{}"
+            "user": "https://www.wattpad.com/user/{}",
+            "user2": "https://www.wattpad.com/user/{}"
         },
         
         "FortniteTracker":{
             "Error": "Status-Code",
             "name": "FortniteTracker",
             "main": "fortnitetracker.com",
-            "user": "https://fortnitetracker.com/profile/all/{}"
+            "user": "https://fortnitetracker.com/profile/all/{}",
+            "user2": "https://fortnitetracker.com/profile/all/{}"
         },
         
         "HackTheBox":{
             "Error": "Status-Code",
             "name": "HackTheBox",
             "main": "hackthebox.eu",
-            "user": "https://forum.hackthebox.eu/profile/{}"
+            "user": "https://forum.hackthebox.eu/profile/{}",
+            "user2": "https://forum.hackthebox.eu/profile/{}"
         },
         
         "MyAnimeList":{
             "Error": "Status-Code",
             "name": "MyAnimeList",
             "main": "myanimelist.net",
-            "user": "https://myanimelist.net/profile/{}"
+            "user": "https://myanimelist.net/profile/{}",
+            "user2": "https://myanimelist.net/profile/{}"
         },
         
         "Oracle":{
             "Error": "Status-Code",
             "name": "Oracle",
             "main": "community.oracle.com",
-            "user": "https://community.oracle.com/people/{}"
+            "user": "https://community.oracle.com/people/{}",
+            "user2": "https://community.oracle.com/people/{}"
         },
         
         "SoundCloud":{
             "Error": "Status-Code",
             "name": "SoundCloud",
             "main": "soundcloud.com",
-            "user": "https://soundcloud.com/{}"
+            "user": "https://soundcloud.com/{}",
+            "user2": "https://soundcloud.com/{}"
         },
         
         "Vimeo":{
             "Error": "Status-Code",
             "name": "Vimeo",
             "main": "vimeo.com",
-            "user": "https://vimeo.com/{}"
+            "user": "https://vimeo.com/{}",
+            "user2": "https://vimeo.com/{}"
         },
         
         "Youpic":{
             "Error": "Status-Code",
             "name": "Youpic",
             "main": "youpic.com",
-            "user": "https://youpic.com/photographer/{}/"
+            "user": "https://youpic.com/photographer/{}/",
+            "user2": "https://youpic.com/photographer/{}/"
         },
         
         "Gfycat":{
             "Error": "Status-Code",
             "name": "Gfycat",
             "main": "gfycat.com",
-            "user": "https://gfycat.com/@{}"
+            "user": "https://gfycat.com/@{}",
+            "user2": "https://gfycat.com/@{}"
         },
         
         "Flickr":{
             "Error": "Status-Code",
             "name": "Flickr",
             "main": "flickr.com",
-            "user": "https://www.flickr.com/photos/{}"
+            "user": "https://www.flickr.com/photos/{}",
+            "user2": "https://www.flickr.com/photos/{}"
         },
         
         "DeviantArt":{
             "Error": "Status-Code",
             "name": "DeviantArt",
             "main": "deviantart.com",
-            "user": "https://www.deviantart.com/{}"
+            "user": "https://www.deviantart.com/{}",
+            "user2": "https://www.deviantart.com/{}"
         },
         
         "VKontakte":{
             "Error": "Status-Code",
             "name": "VKontakte",
             "main" : "vk.com",
-            "user" : "https://vk.com/{}"
+            "user" : "https://vk.com/{}",
+            "user2" : "https://vk.com/{}"
         },
         
         "Reddit":{
             "Error": "Status-Code",
             "name": "Reddit",
             "main": "reddit.com/",
-            "user": "https://www.reddit.com/user/{}"
+            "user": "https://www.reddit.com/user/{}",
+            "user2": "https://www.reddit.com/user/{}"
         },
         "9GAG":{
             "Error": "Status-Code",
             "name": "9GAG",
             "main": "9gag.com",
-            "user": "https://9gag.com/u/{}"
+            "user": "https://9gag.com/u/{}",
+            "user2": "https://9gag.com/u/{}"
         },
         
         "Daylimotion":{
             "Error": "Status-Code",
             "name": "Dailymotion",
             "main": "dailymotion.com",
-            "user": "https://www.dailymotion.com/{}"
+            "user": "https://www.dailymotion.com/{}",
+            "user2": "https://www.dailymotion.com/{}"
         },
         
         "Tumblr":{
             "Error": "Status-Code",
             "name": "Tumblr",
             "main": "tumblr.com",
-            "user": "https://{}.tumblr.com/"
+            "user": "https://{}.tumblr.com/",
+            "user2": "https://{}.tumblr.com/"
         },
         
         "SourceForge":{
             "Error": "Status-Code",
             "name": "SourceForge",
             "main": "sourceforge.net/",
-            "user": "https://sourceforge.net/u/{}"
+            "user": "https://sourceforge.net/u/{}",
+            "user2": "https://sourceforge.net/u/{}"
         },
         
         "PyPi":{
             "Error": "Status-Code",
             "name": "PyPi",
             "main": "pypi.org",
-            "user": "https://pypi.org/user/{}"
+            "user": "https://pypi.org/user/{}",
+            "user2": "https://pypi.org/user/{}"
         },
         
         "GooglePlay":{
             "Error": "Status-Code",
             "name": "GooglePlay",
             "main": "play.google.com/store",
-            "user": "https://play.google.com/store/apps/developer?id={}"
+            "user": "https://play.google.com/store/apps/developer?id={}",
+            "user2": "https://play.google.com/store/apps/developer?id={}"
         },
         
         "AboutMe":{
             "Error": "Status-Code",
             "name": "AboutMe",
             "main": "about.me",
-            "user": "https://about.me/{}"
+            "user": "https://about.me/{}",
+            "user2": "https://about.me/{}"
         },
         
         "PokemonShowdown":{
             "Error": "Status-Code",
             "name": "Pokemon Showdown",
             "main": "pokemonshowdown.com",
-            "user": "https://pokemonshowdown.com/users/{}"
+            "user": "https://pokemonshowdown.com/users/{}",
+            "user2": "https://pokemonshowdown.com/users/{}"
         },
         
         "LolProfiles":{
@@ -252,7 +253,8 @@
             "text": "We could not find any results, please try again later or check your input.",
             "name": "LolProfiles",
             "main": "lolprofile.net",
-            "user": "https://lolprofile.net/search/world/{}"
+            "user": "https://lolprofile.net/search/world/{}",
+            "user2": "https://lolprofile.net/search/world/{}"
         },
 
         "Nitter":{
@@ -260,7 +262,8 @@
             "text": "not found",
             "name": "Nitter",
             "main": "nitter.nixnet.services",
-            "user": "https://nitter.nixnet.services/{}"
+            "user": "https://nitter.nixnet.services/{}",
+            "user2": "https://nitter.nixnet.services/{}"
         },
 
         "PsnProfiles":{
@@ -268,14 +271,16 @@
             "text": "Update User",
             "name": "PsnProfiles",
             "main": "psnprofiles.com",
-            "user": "https://psnprofiles.com/{}"
+            "user": "https://psnprofiles.com/{}",
+            "user2": "https://psnprofiles.com/{}"
         },
         
         "7Cups":{
             "Error": "Status-Code",
             "name": "7Cups",
             "main": "7cups.com",
-            "user": "https://www.7cups.com/@"
+            "user": "https://www.7cups.com/@",
+            "user2": "https://www.7cups.com/@"
         },
 
         "AskFM":{
@@ -283,42 +288,48 @@
             "text": "Well, apparently not anymore.",
             "name": "AskFM",
             "main": "ask.fm",
-            "user": "https://ask.fm/{}"
+            "user": "https://ask.fm/{}",
+            "user2": "https://ask.fm/{}"
         },
         
         "TwitchTracker":{
             "Error": "Status-Code",
             "name": "TwitchTracker",
             "main": "twitchtracker.com",
-            "user": "https://twitchtracker.com/{}"
+            "user": "https://twitchtracker.com/{}",
+            "user2": "https://twitchtracker.com/{}"
         },
 
         "LinkTree":{
             "Error": "Status-Code",
             "name": "LinkTree",
             "main": "linktr.ee",
-            "user": "https://linktr.ee/{}"
+            "user": "https://linktr.ee/{}",
+            "user2": "https://linktr.ee/{}"
         },
 
         "Patreon":{
             "Error": "Status-Code",
             "name": "Patreon",
             "main": "patreon.com",
-            "user": "https://patreon.com/{}"
+            "user": "https://patreon.com/{}",
+            "user2": "https://patreon.com/{}"
         },
 
         "Flipboard":{
             "Error": "Status-Code",
             "name": "Flipboard",
             "main": "flipboard.com",
-            "user": "https://flipboard.com/@{}"
+            "user": "https://flipboard.com/@{}",
+            "user2": "https://flipboard.com/@{}"
         },
 
         "BuyMeACoffee":{
             "Error": "Status-Code",
             "name": "BuyMeACoffee",
             "main": "buymeacoffee.com",
-            "user": "https://www.buymeacoffee.com/{}"
+            "user": "https://www.buymeacoffee.com/{}",
+            "user2": "https://www.buymeacoffee.com/{}"
         },
 
         "Interpals":{
@@ -326,14 +337,16 @@
             "text": "The requested user does not exist or is inactive",
             "name": "Interpals",
             "main": "interpals.net",
-            "user": "https://www.interpals.net/{}"
+            "user": "https://www.interpals.net/{}",
+            "user2": "https://www.interpals.net/{}"
         },
 
         "TryHackMe":{
             "Error": "Status-Code",
             "name": "TryHackMe",
             "main": "tryhackme.com",
-            "user": "https://tryhackme.com/p/{}"
+            "user": "https://tryhackme.com/p/{}",
+            "user2": "https://tryhackme.com/p/{}"
         },
 
         "SteamCommunity":{
@@ -341,7 +354,8 @@
             "text": "The specified profile could not be found.",
             "name": "SteamCommunity",
             "main": "steamcommunity.com",
-            "user": "https://steamcommunity.com/id/{}"
+            "user": "https://steamcommunity.com/id/{}",
+            "user2": "https://steamcommunity.com/id/{}"
         },
 
         "BitcoinForum":{
@@ -349,35 +363,40 @@
             "text": "The user whose profile you are trying to view does not exist.",
             "name": "BitcoinForum",
             "main": "bitcoinforum.com",
-            "user": "https://bitcoinforum.com/profile/{}"
+            "user": "https://bitcoinforum.com/profile/{}",
+            "user2": "https://bitcoinforum.com/profile/{}"
         },
 
         "BitBucket":{
             "Error": "Status-Code",
             "name": "BitBucket",
             "main": "bitbucket.org",
-            "user": "https://bitbucket.org/{}/"
+            "user": "https://bitbucket.org/{}/",
+            "user2": "https://bitbucket.org/{}/"
         },
 
         "ClubHouse":{
             "Error": "Status-Code",
             "name": "ClubHouse",
             "main": "joinclubhouse.com",
-            "user": "https://joinclubhouse.com/@{}"
+            "user": "https://joinclubhouse.com/@{}",
+            "user2": "https://joinclubhouse.com/@{}"
         },
 
         "Bandcamp":{
             "Error": "Status-Code",
             "name": "Bandcamp",
             "main": "bandcamp.com",
-            "user": "https://www.bandcamp.com/{}"
+            "user": "https://www.bandcamp.com/{}",
+            "user2": "https://www.bandcamp.com/{}"
         },
 
         "Bookcrossing":{
             "Error": "Status-Code",
             "name": "Bookcrossing",
             "main": "bookcrossing.com",
-            "user": "https://www.bookcrossing.com/mybookshelf/{}/"
+            "user": "https://www.bookcrossing.com/mybookshelf/{}/",
+            "user2": "https://www.bookcrossing.com/mybookshelf/{}/"
         },
 
         "Chess":{
@@ -385,21 +404,24 @@
             "text": "The page you are looking for doesn’t exist",
             "name": "Chess",
             "main": "chess.com",
-            "user": "https://www.chess.com/member/{}"
+            "user": "https://www.chess.com/member/{}",
+            "user2": "https://www.chess.com/member/{}"
         },
 
         "Fandom":{
             "Error": "Status-Code",
             "name": "Fandom",
             "main": "fandom.com",
-            "user": "https://www.fandom.com/u/{}"
+            "user": "https://www.fandom.com/u/{}",
+            "user2": "https://www.fandom.com/u/{}"
         },
 
         "Freesound":{
             "Error": "Status-Code",
             "name": "Freesound",
             "main": "freesound.org",
-            "user": "https://freesound.org/people/{}"
+            "user": "https://freesound.org/people/{}",
+            "user2": "https://freesound.org/people/{}"
         },
 
         "Pubg":{
@@ -407,7 +429,8 @@
             "text": "The player is not registered at OP.GG. Please check your spelling and search again.",
             "name": "Pubg",
             "main": "pubg.op.gg",
-            "user": "https://pubg.op.gg/user/{}"
+            "user": "https://pubg.op.gg/user/{}",
+            "user2": "https://pubg.op.gg/user/{}"
         },
 
         "Euw":{
@@ -415,35 +438,107 @@
             "text": "This summoner is not registered at OP.GG. Please check spelling.",
             "name": "Euw",
             "main": "euw.op.gg",
-            "user": "https://euw.op.gg/summoner/userName={}"
+            "user": "https://euw.op.gg/summoner/userName={}",
+            "user2": "https://euw.op.gg/summoner/userName={}"
         },
 
         "Quora":{
             "Error": "Status-Code",
             "name": "Quora",
             "main": "quora.com",
-            "user": "https://www.quora.com/profile/{}"
+            "user": "https://www.quora.com/profile/{}",
+            "user2": "https://www.quora.com/profile/{}"
         },
 
         "Wikipedia":{
             "Error": "Status-Code",
             "name": "Wikipedia",
             "main": "wikipedia.org",
-            "user": "https://wikipedia.org/wiki/User:{}"
+            "user": "https://wikipedia.org/wiki/User:{}",
+            "user2": "https://wikipedia.org/wiki/User:{}"
         },
 
         "AllMyLinks":{
             "Error": "Status-Code",
             "name": "AllMyLinks",
             "main": "allmylinks.com",
-            "user": "https://allmylinks.com/{}"
+            "user": "https://allmylinks.com/{}",
+            "user2": "https://allmylinks.com/{}"
         },
 
         "Medium": {
             "Error": "Status-Code",
             "name": "Medium",
             "main": "medium.com",
-            "user": "https://{}.medium.com"
+            "user": "https://{}.medium.com",
+            "user2": "https://{}.medium.com"
+        },
+
+        "SkillShare":{
+            "Error": "Status-Code",
+            "name": "SkillShare",
+            "main": "skillshare.com",
+            "user": "https://www.skillshare.com/user/{}",
+            "user2": "https://www.skillshare.com/user/{}"
+        },
+
+        "Pr0gramm":{
+            "Error": "Status-Code",
+            "text": "{error: notFound, code: 404, msg: Not Found}",
+            "name": "Pr0gramm",
+            "main": "pr0gramm.com",
+            "user": "https://pr0gramm.com/user/{}",
+            "user2": "https://pr0gramm.com/api/profile/info?name={}"
+        },
+
+        "BinarySearch":{
+            "Error": "Message",
+            "text": "{}",
+            "name": "BinarySearch",
+            "main": "binarysearch.com",
+            "user": "https://binarysearch.com/@/{}",
+            "user2": "https://binarysearch.com/api/users/{}/profile"
+        },
+
+        "MixCloud":{
+            "Error": "Status-Code",
+            "name": "MixCloud",
+            "main": "mixcloud.com",
+            "user": "https://mixcloud.com/{}/",
+            "user2": "https://api.mixcloud.com/{}/"
+        },
+
+        "Archive.org":{
+            "Error": "Status-Code",
+            "name": "Archive.org",
+            "main": "archive.org",
+            "user": "https://archive.org/details/@{}",
+            "user2": "https://archive.org/details/@{}"
+        },
+
+        "Blogger":{
+            "Error": "Status-Code",
+            "name": "Blogger",
+            "main": "blogspot.com",
+            "user": "https://{}.blogspot.com",
+            "user2": "https://{}.blogspot.com"
+        },
+
+        "AudioJungle":{
+            "Error": "Status-Code",
+            "name": "AudioJungle",
+            "main": "audiojungle.net",
+            "user": "https://audiojungle.net/user/{}",
+            "user2": "https://audiojungle.net/user/{}"
+        },
+
+        "DockerHub":{
+            "Error": "Message",
+            "text": "Not Found",
+            "name": "DockerHub",
+            "main": "hub.docker.com",
+            "user": "https://hub.docker.com/u/{}/",
+            "user2": "https://hub.docker.com/v2/users/{}/"
         }
 
     }
