@@ -66,10 +66,15 @@
 ## (65) BLOGGER: https://blogspot.com
 ## (66) AUDIOJUNGLE: https://audiojungle.net
 ## (67) DOCKERHUB: https://hub.docker.com
+## (68) AMINOAPPS: https://aminoapps.com
+## (69) SUBLIMEFORUMS : https://forum.sublimetext.com
+## (70) SPARKPEOPLE : https://sparkpeople.com
+## (71) RAIDFORUMS : https://raidforums.com
+## (72) PCGAMER : https://pcgamer.com
 
 <br>
 
-# NSFW SITES :fire: :
+# NSFW SITES :underage: :
 ## (1) YOUPORN: https://youporn.com
 ## (2) PORNHUB: https://pornhub.com
 ## (3) TINDER: https://tinder.com
@@ -78,11 +83,10 @@
 ## (6) XVIDEOS: https://xvideos.com
 ## (7) STRIPCHAT: https://stripchat.com
 ## (8) BONGACAMS: https://pt.bongacams.com
-## (9) AMINOAPPS: https://aminoapps.com
 
 <br>
 
-# PHONE-NUMBER LOOKUP-SITES :phone: :
+# PHONE-NUMBER LOOKUP-SITES :iphone: :
 # ITALY :it: :
 ## (1) PAGINEGIALLE: https://www.paginebianche.it
 ## (2) PAGINEBIANCHE: https://www.paginebianche.it
@@ -108,7 +112,7 @@
 
 <br>
 
-# ROMAINA :romania: :
+# ROMANIA :romania: :
 ## (1) NUMBERVILLE: https://numberville.com
 ## (2) CARTETELEFONAE: https://www.carte-telefoane.info
 
@@ -125,4 +129,4 @@
 
 <br>
 
-# TOTAL: 90 SITES
+# TOTAL: 94 SITES

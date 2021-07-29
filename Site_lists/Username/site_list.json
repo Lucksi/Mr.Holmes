@@ -509,7 +509,8 @@
         },
 
         "Archive.org":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "cannot find account",
             "name": "Archive.org",
             "main": "archive.org",
             "user": "https://archive.org/details/@{}",
@@ -539,6 +540,48 @@
             "main": "hub.docker.com",
             "user": "https://hub.docker.com/u/{}/",
             "user2": "https://hub.docker.com/v2/users/{}/"
+        },
+
+        "AminoApps":{
+            "Error": "Status-Code",
+            "name": "AminoApps",
+            "main": "aminoapps.com/",
+            "user": "https://aminoapps.com/u/{}",
+            "user2": "https://aminoapps.com/u/{}"
+        },
+
+        "SublimeForum":{
+            "Error": "Status-Code",
+            "name": "SublimeForum",
+            "main": "sublimetext.com",
+            "user": "https://forum.sublimetext.com/u/{}",
+            "user2": "https://forum.sublimetext.com/u/{}"
+        },
+
+        "SparkPepole":{
+            "Error": "Message",
+            "text": "We couldn't find that user.",
+            "name": "SparkPeople",
+            "user": "https://www.sparkpeople.com/mypage.asp?id={}",
+            "user2": "https://www.sparkpeople.com/mypage.asp?id={}"
+        
+        },
+
+        "RaidForums":{
+            "Error": "Status-Code",
+            "name": "RaidForums",
+            "main": "raidforums.com",
+            "user": "https://raidforums.com/User-{}",
+            "user2": "https://raidforums.com/User-{}"
+        },
+
+        "Kik":{
+            "Error": "Message",
+            "text": "The page you requested was not found.",
+            "name": "Kik",
+            "main": "kik.me",
+            "user": "https://kik.me/{}",
+            "user2": "https://ws2.kik.com/user/{}"
         }
 
     }

@@ -64,14 +64,6 @@
             "main": "tinder.com",
             "user": "https://tinder.com/@{}",
             "user2": "https://tinder.com/@{}"
-        },
-
-        "AminoApps":{
-            "Error": "Status-Code",
-            "name": "AminoApps",
-            "main": "aminoapps.com/",
-            "user": "https://aminoapps.com/u/{}",
-            "user2": "https://aminoapps.com/u/{}"
         }
 
     }
