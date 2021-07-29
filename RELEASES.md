@@ -1,4 +1,4 @@
-# VERSION: 1.0.2
+# :heavy_check_mark: VERSION: 1.0.2
 **FUTURE VERSIONS WILL BE RELEASED SOON**
 ## IMPLEMENTS:
 - **SOCIAL NETWORK OSINT**
@@ -8,14 +8,14 @@
 
 <br>
 
-# VERSION: 1.0.3
+# :heavy_check_mark: VERSION: 1.0.3
 ## IMPLEMENTS:
 - **ADDED NEW WEBSITES**
 - **ADDED JSON STRUCTURE FOR WEBSITE-LISTS**
 
 <br>
 
-# VERSION: 1.0.4
+# :heavy_check_mark: VERSION: 1.0.4
 ## IMPLEMENTS:
 - **ADDED NEW WEBSITES**
 - **ADDED ROBOTS.TXT DOWNLOAD**
@@ -26,7 +26,7 @@
 
 <br>
 
-# VERSION: NUKE1.0.1
+# :heavy_check_mark: VERSION: NUKE1.0.1
 ## IMPLEMENTS:
 - **ADDED NEW WEBSITES**
 - **ADDED NSW WEBSITES**

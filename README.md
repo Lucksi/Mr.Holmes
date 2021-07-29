@@ -47,4 +47,4 @@
     https://lucksi.github.io/Mr.Holmes/Pages/versions.html
 <br>
 
-## <p align= center>MADE WITH :heart: BY LUCKSI :copyright: IN :it:</p>
+## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
