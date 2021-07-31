@@ -5,7 +5,8 @@
             "name": "XHamester",
             "main": "https://xhamster.com",
             "user": "https://xhamster.com/users/{}",
-            "user2": "https://xhamster.com/users/{}"
+            "user2": "https://xhamster.com/users/{}",
+            "exception": [" "]
         },
 
         "PornHub":{
@@ -13,7 +14,8 @@
             "name": "PornHub",
             "main": "https://pornhub.com",
             "user": "https://pornhub.com/users/{}",
-            "user2": "https://pornhub.com/users/{}"
+            "user2": "https://pornhub.com/users/{}",
+            "exception": [" "]
         },
 
         "YouPorn":{
@@ -21,7 +23,8 @@
             "name": "YouPorn",
             "main": "https://youporn.com",
             "user": "https://youporn.com/uservids/{}",
-            "user2": "https://youporn.com/uservids/{}"
+            "user2": "https://youporn.com/uservids/{}",
+            "exception": [" "]
         },
 
         "XVideos":{
@@ -29,7 +32,8 @@
             "name": "XVideos",
             "main": "https://xvideos.com/",
             "user": "https://xvideos.com/profiles/{}",
-            "user2": "https://xvideos.com/profiles/{}"
+            "user2": "https://xvideos.com/profiles/{}",
+            "exception": [" "]
         },
 
         "ChaturBate":{
@@ -37,7 +41,8 @@
             "name": "ChaturBate",
             "main": "https://chaturbate.com",
             "user": "https://chaturbate.com/{}",
-            "user2": "https://chaturbate.com/{}"
+            "user2": "https://chaturbate.com/{}",
+            "exception": [" "]
         },
 
         "StripChat":{
@@ -45,7 +50,8 @@
             "name": "StripChat",
             "main": "https://stripchat.com",
             "user": "https://stripchat.com/{}",
-            "user2": "https://stripchat.com/{}"
+            "user2": "https://stripchat.com/{}",
+            "exception": [" "]
         },
 
         "BongaCams":{
@@ -53,7 +59,8 @@
             "name": "BongaCams",
             "main": "https://pt.bongacams.com",
             "user": "https://pt.bongacams.com/profile/{}",
-            "user2": "https://pt.bongacams.com/profile/{}"
+            "user2": "https://pt.bongacams.com/profile/{}",
+            "exception": [" "]
         
         },
 
@@ -63,7 +70,8 @@
             "name": "Tinder",
             "main": "tinder.com",
             "user": "https://tinder.com/@{}",
-            "user2": "https://tinder.com/@{}"
+            "user2": "https://tinder.com/@{}",
+            "exception": [" "]
         }
 
     }

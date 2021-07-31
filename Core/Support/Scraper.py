@@ -11,10 +11,10 @@ destination = "Reports/Usernames/Profile_pics/"
 class info:
    
     @staticmethod
-    def imgur(report,username):
+    def imgur(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} IMGUR PROFILE...".format(username))
         url = "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7".format(username)
-        openurl = requests.get(url)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
         id_user = converted["id"]
@@ -53,10 +53,10 @@ class info:
         f.write("ACCOUNT-CREATED ON: {}\r\n".format(creation))
     
     @staticmethod
-    def pr0gramm(report,username):
+    def pr0gramm(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} PR0GRAMM PROFILE...".format(username))
         url = "https://pr0gramm.com/api/profile/info?name={}".format(username)
-        openurl = requests.get(url)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
         id_user = converted["user"]["id"]
@@ -93,10 +93,10 @@ class info:
     
     
     @staticmethod
-    def Binarysearch(report,username):
+    def Binarysearch(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} BINARYSEARCH PROFILE...".format(username))
         url = "https://binarysearch.com/api/users/{}/profile".format(username)
-        openurl = requests.get(url)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
         id_user = converted["user"]["id"]
@@ -128,10 +128,10 @@ class info:
         
         
     @staticmethod
-    def MixCloud(report,username):
+    def MixCloud(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} MIXCLOUD PROFILE...".format(username))
         url = "https://api.mixcloud.com/{}/".format(username)
-        openurl = requests.get(url)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
         user = converted["name"]
@@ -176,10 +176,10 @@ class info:
         f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
 
     @staticmethod
-    def nitter(report,username):
+    def Nitter(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} NITTER PROFILE...".format(username))
         url = " https://nitter.nixnet.services/{}".format(username)
-        openurl = requests.get(url, headers=headers)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = soup(openurl.content, "html.parser")
         user = reader.find("a",href=True,class_="profile-card-fullname")
         pic = reader.find("a", href=True ,class_= "profile-card-avatar")
@@ -222,10 +222,10 @@ class info:
 
 
     @staticmethod
-    def Dockerhub(report,username):
+    def Dockerhub(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} DOCKERHUB PROFILE...".format(username))
         url = "https://hub.docker.com/v2/users/{}/".format(username)
-        openurl = requests.get(url)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
         id_user = converted["id"]
@@ -234,8 +234,8 @@ class info:
         location = converted["location"]
         profile_creation = converted["date_joined"]
         account_type = converted["type"]
-        profile_pic = converted["gravatar_url"]
-        
+        profile_pic1 = converted["gravatar_url"]
+        profile_pic = profile_pic1.replace("&","0&")
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "ID: {}".format(id_user))
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL-NAME: {}".format(full_name))
@@ -262,4 +262,73 @@ class info:
         f.write("LOCATION: {}\r\n".format(location))
         f.write("CREATED-ON: {}\r\n".format(profile_creation))
         f.write("ACCOUNT-TYPE: {}\r\n".format(account_type))
+        f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+
+    @staticmethod
+    def Kik(report,username,http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} KIK PROFILE...".format(username))
+        url = "https://ws2.kik.com/user/{}".format(username)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
+        reader = openurl.text
+        converted = json.loads(reader)
+        name = converted["firstName"]
+        lastName = converted["lastName"]
+        profile_pic = converted["displayPic"]
+
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FIRST-NAME: {}".format(name))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LAST-NAME: {}".format(lastName))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+
+        download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        
+        if download == 1:
+            image = destination + "{}_Profile_pic_Kik.jpg".format(username)
+            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+            open(image, "wb").write(getter.content)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+        else:
+            pass
+        
+        f = open(report,"a")
+        f.write("\nKIK DATA:\n")
+        f.write("FIRST-NAME: {}\r\n".format(name))
+        f.write("LAST-NAME: {}\r\n".format(lastName))
+        f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+
+    @staticmethod
+    def GitLab(report,username,http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING GIT-LAB PROFILE...".format(username))
+        url = "https://gitlab.com/api/v4/users?username={}".format(username)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
+        reader = openurl.text
+        converted = json.loads(reader)
+        id_user = converted[0]["id"]
+        name = converted[0]["name"]
+        user = converted[0]["username"]
+        status = converted[0]["state"]
+        profile_pic = converted[0]["avatar_url".replace("&","0&")]
+        
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "ID: {}".format(id_user))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME: {}".format(name))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "STATUS: {}".format(status))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+        
+         
+        download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        
+        if download == 1:
+            image = destination + "{}_Profile_pic_GitLab.jpg".format(username)
+            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+            open(image, "wb").write(getter.content)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+        else:
+            pass
+        
+        f = open(report,"a")
+        f.write("\nGITLAB DATA:\n")
+        f.write("ID: {}\r\n".format(id_user))
+        f.write("NAME: {}\r\n".format(name))
+        f.write("USERNAME: {}\r\n".format(user))
+        f.write("STATUS: {}\r\n".format(status))
         f.write("PROFILE-PIC: {}\r\n".format(profile_pic))

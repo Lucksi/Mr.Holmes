@@ -107,9 +107,9 @@ class Phone_search:
                 http_proxy = None
                 http_proxy2 = str(http_proxy)
                 identity="None"
-            print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
             if identity != "None":
-                print(Font.Color.GREEN + "[v]" + Font.Color.WHITE + identity)
+                print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
             else:
                 pass
             
