@@ -211,7 +211,7 @@ class MrHolmes:
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
                     http_proxy = None
-                    Scraper.info.nitter(report, username , http_proxy)
+                    Scraper.info.Nitter(report, username , http_proxy)
             else:
                 pass
 
@@ -231,7 +231,7 @@ class MrHolmes:
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
                     http_proxy = None
-                    Scraper.info.kik(report, username , http_proxy)
+                    Scraper.info.Kik(report, username , http_proxy)
             else:
                 pass
 
@@ -241,7 +241,7 @@ class MrHolmes:
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
                     http_proxy = None
-                    Scraper.info.gitlab(report, username , http_proxy)
+                    Scraper.info.GitLab(report, username , http_proxy)
             else:
                 pass
         
