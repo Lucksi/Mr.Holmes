@@ -191,7 +191,7 @@ class MrHolmes:
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
                     http_proxy = None
-                    Scraper.info.binarysearch(report, username , http_proxy)
+                    Scraper.info.Binarysearch(report, username , http_proxy)
             else:
                 pass 
             
@@ -201,7 +201,7 @@ class MrHolmes:
                 except Exception as e:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
                     http_proxy = None
-                    Scraper.info.mixcloud(report, username , http_proxy)
+                    Scraper.info.MixCloud(report, username , http_proxy)
             else:
                 pass
             
