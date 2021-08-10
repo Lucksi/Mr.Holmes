@@ -384,7 +384,7 @@ class info:
         download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         
         if download == 1:
-            image = destination + "{}_Profile_pic_GitLab.jpg".format(username)
+            image = destination + "{}_Profile_pic_Wattpad.jpg".format(username)
             getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
             open(image, "wb").write(getter.content)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
