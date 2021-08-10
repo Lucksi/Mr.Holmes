@@ -10,20 +10,21 @@ from time import sleep
 class Phony:
    
     def Number(num,report,code):
-        print (Font.Color.GREEN + "[+]" + Font.Color.WHITE + "SCANNING NUMBER: {}...".format(num))
+        print (Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCANNING NUMBER: {}...".format(num))
         sleep(4)
         FormattedPhoneNumber = "+" + num
         try:
             Phone = phonenumbers.parse(FormattedPhoneNumber, None)
         except Exception as e:
-                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "NUMBER NOT FOUND")
+                inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "NUMBER NOT FOUND...PRESS ENTER TO CONTINUE")
                 holmes.Main.main()
         else:
             if not phonenumbers.is_valid_number(Phone):
-                print("THIS IS PROBABLY NOT A REAL PHONE-NUMBER")
-               
-            
+                reality = ("THIS IS PROBABLY NOT A REAL PHONE-NUMBER")
+                
             reality = "THIS IS PROBABLY A REAL PHONE NUMBER"
+            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + reality)
+            
             number = phonenumbers.format_number(
                             Phone, phonenumbers.PhoneNumberFormat.E164
                         ).replace("+", "")
@@ -44,7 +45,7 @@ class Phony:
             nation = geocoder.country_name_for_number(Phone, "en")
             location = geocoder.description_for_number(Phone, "en")
             carrierName = carrier.name_for_number(Phone, "en")
-
+            
                     
             print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + "INTERNATIONAL NUMBER: {}".format(international))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"LOCAL NUMBER: {}".format(localNumber))
@@ -53,14 +54,17 @@ class Phony:
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"COUNTRY: {}".format(nation))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"AREA/ZONE: {}".format(location))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +"CARRIER/ISP: {}".format(carrierName))
+            
             for timezoneResult in timezone.time_zones_for_number(Phone):
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "TIMEZONE: {}".format(timezoneResult))
+            
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "CHECKING THE AFFIDABILITY OF THE NUMBER")
             sleep(2)
             if phonenumbers.is_possible_number(Phone):
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "THIS NUMBER EXIST OR IS A VOIP NUMBER")
             else:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +"THIS NUMBER DOESN'T EXIST.")
+            
             f = open(report,"a")
             f.write("INTERNATIONAL NUMBER: " + international + "\n")
             f.write("LOCAL NUMBER: " + localNumber + "\n")
@@ -71,6 +75,7 @@ class Phony:
             f.write("CARRIER/ISP: " + carrierName + "\n")
             f.write("TIMEZONE: " + timezoneResult + "\n")
             f.close()
+            
             if code == 0:
                  pass
             elif code == 1:

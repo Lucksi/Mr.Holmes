@@ -6,7 +6,6 @@ from Core import Searcher
 from Core import config
 from Core import Searcher_phone
 from Core import Searcher_website
-from configparser import ConfigParser
 
 class Main:
     
@@ -21,18 +20,20 @@ class Main:
         Quotes = [  "Quotes1.txt","Quotes4.txt","Quotes3.txt","Quotes7.txt",
                     "Quotes6.txt","Quotes2.txt","Quotes5.txt","Quotes8.txt",
                     "Quotes9.txt","Quotes10.txt","Quotes11.txt","Quotes12.txt",
-                    "Quotes13.txt","Quotes14.txt","Quotes15.txt","Quotes16.txt"  ]
+                    "Quotes13.txt","Quotes14.txt","Quotes15.txt","Quotes16.txt",
+                    "Quotes17.txt","Quotes18.txt","Quotes19.txt","Quotes20.txt" ]
+        
         choice = random.choice(Quotes)
         f = open("Quotes/" + choice,"r", newline=None)
         text = f.read()
         f.close()
-        u = "|                           🇲​​​​​🇷​​​​​.🇭​​​​​🇴​​​​​🇱​​​​​🇲​​​​​🇪​​​​​🇸​​​​​                       |"    
+        u = "|\t\t\t   🇲​​​​​🇷​​​​​.🇭​​​​​🇴​​​​​🇱​​​​​🇲​​​​​🇪​​​​​🇸​​​​​\t\t\t    |"    
         print(Font.Color.WHITE + "---------------------------------------------------------------------")
         print(Font.Color.WHITE + u)
         print(Font.Color.GREEN + text                                                                
         +
         Font.Color.WHITE + "| A COMPLETE OSINT TOOL:)      " +      Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                      |\n|                                                                   |")
-        print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version + Font.Color.WHITE + "                                               |")
+        print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version + Font.Color.WHITE + "                                           |")
         print(
             Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|EMAIL:lukege287@gmail.com                                          |\n|GIT-HUB:Lucksi                                                     |\n|Website:https://sosuke.altervista.org                              |")
         print(Font.Color.WHITE + "---------------------------------------------------------------------")

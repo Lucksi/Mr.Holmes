@@ -5,7 +5,8 @@
             "name": "411",
             "main": "411.com",
             "url": "https://www.411.com/phone/{}",
-            "url2": "https://www.411.com/phone/{}"
+            "url2": "https://www.411.com/phone/{}",
+            "Scrapable": "False"
         },
         
         "WhitePages":{
@@ -13,7 +14,8 @@
             "name": "WhitePages",
             "main": "whitepages.com",
             "url": "https://www.whitepages.com/phone/{}",
-            "url2": "https://www.whitepages.com/phone/{}"
+            "url2": "https://www.whitepages.com/phone/{}",
+            "Scrapable": "False"
         },
         
         "FreeLookup":{
@@ -21,7 +23,8 @@
             "name": "FreeLookup",
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
-            "url2": "https://free-lookup.net/{}"
+            "url2": "https://free-lookup.net/{}",
+            "Scrapable": "False"
         },
         
         "8080":{
@@ -29,7 +32,8 @@
             "name": "8080",
             "main": "800notes.com",
             "url": "https://800notes.com/Phone.aspx/{}",
-            "url2": "https://800notes.com/Phone.aspx/{}"
+            "url2": "https://800notes.com/Phone.aspx/{}",
+            "Scrapable": "False"
         },
 
         "WhoseNumber":{
@@ -37,8 +41,8 @@
             "name": "WhoseNumber",
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
-            "url2": "https://whosenumber.info/{}"
+            "url2": "https://whosenumber.info/{}",
+            "Scrapable": "False"
         }
-
     }
 ] 

@@ -67,13 +67,46 @@
 ## (66) AUDIOJUNGLE: https://audiojungle.net
 ## (67) DOCKERHUB: https://hub.docker.com
 ## (68) AMINOAPPS: https://aminoapps.com
-## (69) SUBLIMEFORUMS : https://forum.sublimetext.com
-## (70) SPARKPEOPLE : https://sparkpeople.com
-## (71) RAIDFORUMS : https://raidforums.com
-## (72) KIK : https://kik.me
-## (73) GITLAB : "https://gitlab.com
-## (74) SIGNAL : https://community.signalusers.org
+## (69) SUBLIMEFORUMS: https://forum.sublimetext.com
+## (70) SPARKPEOPLE: https://sparkpeople.com
+## (71) RAIDFORUMS: https://raidforums.com
+## (72) KIK: https://kik.me
+## (73) GITLAB: "https://gitlab.com
+## (74) SIGNAL: https://community.signalusers.org
 ## (75) WIX: https://wix.com
+## (76) UNSPLASH: https://unsplash.com
+## (77) FACCIABUCO: https://facciabuco.com
+## (78) BEHANCE: https://behance.net
+## (79) HACKADAY: https://hackaday.io
+## (80) ELLO: https://ello.co
+## (81) JIMDO: https//jimdosite.com
+## (82) KEYBASE: https://keybase.io
+## (83) SLACK: https://slack.com
+## (84) CAMFROG: "https://camfrog.com
+## (85) YOUNOW: https://younow.com
+## (86) SHITPOSTBOT5000: https://www.shitpostbot.com
+## (87) SMULE: https://smule.com
+## (88) OURDJTALK: https://ourdjtalk.com
+## (89) NICOMMUNITYFORUM: https://www.native-instruments.com
+## (90) BUZZFEED: https://buzzfeed.com
+## (91) HOUSE-MIXES: https://www.house-mixes.com
+## (92) OSU!: https://osu.ppy.sh
+## (93) DRIBBLE: https://dribbble.com
+## (94) URLEBIRD: https://urlebird.com
+## (95) THEHANDBOOK: https://www.thehandbook.com
+## (96) LOOKBOOK: https://lookbook.nu
+## (97) CODEACADEMY: https://www.codecademy.com
+## (98) DEVCOMMUNITY: https://dev.to
+## (99) CODEWARS: https://www.codewars.com
+## (100) DRUPAL: https://www.drupal.org
+## (101) SEAPORT: https://forum.pixelfederation.com
+## (102) DIGGYSADVENTURE: https://forum.pixelfederation.com
+## (103) TRAINSTATION: https://forum.pixelfederation.com
+## (104) TRAINDTATION2: https://forum.pixelfederation.com
+## (105) PORTCITY: https://forum.pixelfederation.com
+## (106) VENMO: https://venmo.com
+## (107) THEMEFOREST: https://themeforest.net
+## (108) CBTNUGGETS: https://www.cbtnuggets.com 
 
 <br>
 
@@ -132,4 +165,4 @@
 
 <br>
 
-# TOTAL: 97 SITES
+# TOTAL: 130 SITES 

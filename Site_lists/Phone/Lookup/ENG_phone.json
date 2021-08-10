@@ -1,6 +1,5 @@
 [
     {
-        
         "FreeLookup":{
             "Error": "Status-Code",
             "name": "FreeLookup",
@@ -17,16 +16,7 @@
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
             "Scrapable": "False"
-        },
-
-        "CarteTelefonae":{
-            "Error": "Message",
-            "text": "Niciun rezultat!",
-            "name": "CarteTelefonae",
-            "main": "carte-telefoane.info",
-            "url": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}",
-            "url2": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}",
-            "Scrapable": "False"
         }
+        
     }
-] 
+]

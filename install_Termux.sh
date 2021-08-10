@@ -75,9 +75,17 @@ function installer {
 				then
 					key="None"
 				fi
+				printf "${WHITE}\n\nINSERT YOUR PROXY_LIST FULL-PATH(LEAVE EMPTY IF YOU WANT THE DEFAULT LIST)\n\n"
+				read -p"$GREEN[#MR.HOLMES#]$WHITE-->" proxies
+				if [ "$proxies" == "" ];
+				then
+					 proxies="Proxies/Proxy_list.txt"
+				fi
 				printf "${BLUE}\nCREATING CONFIGURATION FILE"
 				cd Configuration
-				echo "[Smtp]">Configuration.ini
+				echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">Configuration.ini
+				echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration.ini
+				echo "[Smtp]">>Configuration.ini
 				echo "Email = $recipient">>Configuration.ini
 				echo "Password = $password">>Configuration.ini
 				echo "Destination = $destination">>Configuration.ini
@@ -86,7 +94,8 @@ function installer {
 				echo "">>Configuration.ini
 				echo "[Settings]">>Configuration.ini
 				echo "Password = $up_pass">>Configuration.ini
-				echo "Api_Key = $key">>Configuration.ini 
+				echo "Api_Key = $key">>Configuration.ini
+				echo "Proxy_List" = $proxies>>Configuration.ini
 				rm UNTILED.txt &> /dev/null
 				cd ../
 				cd Core

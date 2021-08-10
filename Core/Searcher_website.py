@@ -6,6 +6,7 @@ from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Numbers
 from Core.Support import Proxies
+from Core.Support import Requests_Search
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
@@ -13,6 +14,81 @@ from configparser import ConfigParser
 
 class Web:
 
+    @staticmethod
+    def Reputation(username,report):
+        subject = "DOMAIN/WEBSITE/IP"
+        data = "Site_lists/Websites/Lookup.json"
+        f = open(report,"a")
+        f.write("\r\nMALICIOUS/FAKE LINK FOUND ON:\r\n")      
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SEARCHING WEBSITE/DOMAIN/IP ON DIFFERENT SITES")
+        sc = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if sc == 1:
+            http_proxy = Proxies.proxy.final_proxis
+            http_proxy2 = Proxies.proxy.choice3
+            source = "http://ip-api.com/json/" + http_proxy2
+            access = urllib.request.urlopen(source)
+            content = access.read()
+            final = json.loads(content)
+            identity = "YOUR PROXY IP IS LOCATED IN: {} ({}) ".format(final ["regionName"],final["country"])
+        else:
+            http_proxy = None
+            http_proxy2 = str(http_proxy)
+            identity="None"
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+        if identity != "None":
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+        else:
+             pass  
+        successfull = []
+        successfullName = []
+        ScraperSites = []
+        f = open (data,)
+        data = json.loads(f.read())
+        for sites in data:
+            for data1 in sites:
+                name = sites[data1]["name"]       
+                site1 = sites[data1]["url"].replace("{}",username)
+                site2 = sites[data1]["url2"].replace("{}",username)
+                error = sites[data1]["Error"]
+                is_scrapable = sites[data1]["Scrapable"]
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
+                try:
+                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+                except Exception as e:
+                    print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
+                    http_proxy = None
+                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+            
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
+            
+            if len(successfull):
+                for names in successfull:
+                    print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ATTENTION THIS WEBSITE/DOMAIN {} MAY BE DANGEROUS/HAVE SCAM CONTENT..¯\_(ツ)_/¯".format(username))
+            else:
+                print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + "GOOD LOOKS LIKE THIS WEBSITE/DOMAIN IS SAFE :)")
+                f = open(report,"a")
+                f.write("GOOD LOOKS LIKE THIS WEBSITE/DOMAIN IS SAFE :-)\r\n")
+                f.close()
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "FOR MAJOR INFORMATION CONSULT THESE LINKS...")
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.scamadviser.com/check-website/{}".format(username))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}".format(username))
+            
+            f = open(report,"a")
+            f.write("FOR MAJOR INFORMATION CONSULT THESE LINKS..:\n")
+            f.write("https://www.scamadviser.com/check-website/{}\r\n".format(username))
+            f.write("https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}".format(username))
+            f.close()
+            choice = int(input(
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                    Web.Robots(username,report)
+            else:
+                choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if choice == 1:
+                    Web.trace(username,report)
     
     @staticmethod
     def Robots(username,report):
@@ -23,7 +99,7 @@ class Web:
         f = open (name,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "DOWNLOADING {} Robots.txt".format(username))
         choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             http_proxy = Proxies.proxy.final_proxis
             http_proxy2 = Proxies.proxy.choice3
@@ -53,7 +129,7 @@ class Web:
                 else:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS UNABLE TO DOWNLOAD {} ROBOTS.TXT..SKIPPING".format(username))        
             except Exception as e:
-                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
+                print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                 url = sites["Robots"]["url"].replace("{}", username)
                 dork = requests.get(url,headers =headers, proxies=None, timeout=None, allow_redirects=True)
                 if dork.status_code == 200:
@@ -79,7 +155,7 @@ class Web:
         results = str(proces.read())
         print(results)
         f = open (report,"a")
-        f.write("\nTRACEROUTE SEQUENCE:" + "\r\n")
+        f.write("\n\nTRACEROUTE SEQUENCE:" + "\r\n")
         f.write(results)
         f.close()
 
@@ -118,14 +194,19 @@ class Web:
             pass
         f.close()
         choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.Robots(username,report)
+                Web.Reputation(username,report)
         else:
             choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.trace(username,report)
+                Web.Robots(username,report)
+            else:
+                choice = int(input(
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if choice == 1:
+                    Web.trace(username,report)
 
     @staticmethod
     def whois_lookup(username,report):
@@ -211,13 +292,13 @@ class Web:
                         f = open(report,"a")
                         f.write("\nPHONE NUMBER DATA:")
                         f.close()
-                        print("")
                         code = 0
                         Numbers.Phony.Number(num,report,code)
                     else:
                         pass
                 else:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "PHONE NUMBER NOT FOUND")
+                    number = False
             except Exception as e:
                 num = None
                 number = False
@@ -232,94 +313,100 @@ class Web:
                 f.write(results)
                 f.close()
         choice = int(input(
-             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
             Web.google_dork(username,report,number,num)
         else:
-            num = None
-            number = False
             choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.Robots(username,report)
+                Web.Reputation(username,report)
             else:
                 choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.trace(username,report)
-    
+                    Web.Robots(username,report)
+                else:
+                    choice = int(input(
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if choice == 1:
+                        Web.trace(username,report)
+        
     @staticmethod
     def search(username):
+        os.system("cls" if os.name == "nt" else "clear")
         report = "Reports/Websites/" + username + ".txt"
         f = open("Banners/Banner4.txt","r")
         banner = f.read()
         f.close()
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        Date = "Date: " + str(dt_string)
+        Date = "Date: " + str(dt_string)     
+        print(Font.Color.GREEN + banner)
         if os.path.isfile(report):
-            os.remove(report)  
+            os.remove(report)
+            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SEARCH INFORMATION FOR: {}".format(username))
+        sleep(3)
         source = "http://ip-api.com/json/" + username
         access = urllib.request.urlopen(source)
         content = access.read()
         final = json.loads(content)
-        ip= "IP: " + final ["query"]
-        country = "NATION: " + final ["country"]
-        country_code = "NATION-CODE: " + final ["countryCode"]
-        region = "REGION-CODE: " + final ["region"]
-        regionName = "REGION-NAME: " + final ["regionName"]
-        city = "CITY: " + final ["city"]
-        timezone = "TIMEZONE: " + final ["timezone"]
-        isp = "ISP: " + final ["isp"]
-        org = "ORG: " + final ["org"]
-        asp = "AS: " + final ["as"]
-        lat2 = str(final["lat"])
-        final_lat = "LAT: {}".format(lat2)
-        lon2 = str(final["lon"])
-        final_lon = "LONG: {}".format(lon2)
-        zip_data = "ZIP/POSTAL-CODE: " + final ["zip"]
-        link = "https://www.google.com/maps/place/{},{}".format(lat2,lon2)
-		
-		
-        os.system("cls" if os.name == "nt" else "clear")
-        print(Font.Color.GREEN + banner)
-        print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "SEARCH INFORMATION FOR: {}".format(username))
-        sleep(3)
-        print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + ip)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country_code)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + region)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + regionName)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + city)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + timezone)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + isp)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + org)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + asp)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lat)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lon)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + zip_data)
-        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING GOOGLE MAPS LINK...")
-        sleep(2)
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + link)
-        f = open(report,"a")
-        f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
-        f.write(ip + "\r\n")
-        f.write(country + "\r\n")
-        f.write(country_code + "\r\n")
-        f.write(region + "\r\n")
-        f.write(regionName + "\r\n")
-        f.write(city + "\r\n")
-        f.write(timezone + "\r\n")
-        f.write(isp + "\r\n")
-        f.write(org + "\r\n")
-        f.write(asp + "\r\n")
-        f.write(final_lat + "\r\n")
-        f.write(final_lon + "\r\n")
-        f.write(zip_data + "\r\n")
-        f.write("\nGOOGLE MAPS LINK:\r\n")
-        f.write(link + "\r\n")
-        f.write
-        f.close()
+        status = final["status"]
+        if status != "fail":
+            ip= "IP: " + final ["query"]
+            country = "NATION: " + final ["country"]
+            country_code = "NATION-CODE: " + final ["countryCode"]
+            region = "REGION-CODE: " + final ["region"]
+            regionName = "REGION-NAME: " + final ["regionName"]
+            city = "CITY: " + final ["city"]
+            timezone = "TIMEZONE: " + final ["timezone"]
+            isp = "ISP: " + final ["isp"]
+            org = "ORG: " + final ["org"]
+            asp = "AS: " + final ["as"]
+            lat2 = str(final["lat"])
+            final_lat = "LAT: {}".format(lat2)
+            lon2 = str(final["lon"])
+            final_lon = "LONG: {}".format(lon2)
+            zip_data = "ZIP/POSTAL-CODE: " + final ["zip"]
+            link = "https://www.google.com/maps/place/{},{}".format(lat2,lon2)
+            print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + ip)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + country_code)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + region)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + regionName)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + city)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + timezone)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + isp)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + org)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + asp)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lat)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + final_lon)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + zip_data)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING GOOGLE MAPS LINK...")
+            sleep(2)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + link)
+            f = open(report,"a")
+            f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
+            f.write(ip + "\r\n")
+            f.write(country + "\r\n")
+            f.write(country_code + "\r\n")
+            f.write(region + "\r\n")
+            f.write(regionName + "\r\n")
+            f.write(city + "\r\n")
+            f.write(timezone + "\r\n")
+            f.write(isp + "\r\n")
+            f.write(org + "\r\n")
+            f.write(asp + "\r\n")
+            f.write(final_lat + "\r\n")
+            f.write(final_lon + "\r\n")
+            f.write(zip_data + "\r\n")
+            f.write("\nGOOGLE MAPS LINK:\r\n")
+            f.write(link + "\r\n")
+            f.write
+            f.close()
+        else:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SERVER DOES NOT RESPONDING SKIPPING...¯\(°_o)/¯ ")
         choice = int(input(
             Font.Color.BLUE + " \n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A WHO-IS LOOKUP?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -328,19 +415,24 @@ class Web:
             num = None
             number = False
             choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 Web.google_dork(username,report,number,num)
             else:
                 choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.Robots(username,report)
+                    Web.Reputation(username,report)
                 else:
                     choice = int(input(
-                Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.trace(username,report)
+                        Web.Robots(username,report)
+                    else:
+                        choice = int(input(
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        if choice == 1:
+                            Web.trace(username,report)
 
         f = open(report,"a")
         f.write("\nSCANNING EXECUTED WITH Mr.Holmes")

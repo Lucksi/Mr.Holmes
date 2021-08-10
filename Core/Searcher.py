@@ -35,6 +35,7 @@ class MrHolmes:
     def search(username):
         successfull = []
         successfullName = []
+        ScraperSites = []
         f = open("Banners/Banner2.txt","r")
         banner = f.read()
         f.close()
@@ -44,14 +45,7 @@ class MrHolmes:
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
-        if os.path.isfile(report):
-            os.remove(report)
         
-        f = open(report, "a")
-        f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
-        f.write("\nUSERNAME FOUND ON:\r\n")
-        f.close()
-        f = open(nomefile,)
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -66,8 +60,18 @@ class MrHolmes:
             http_proxy = None
             http_proxy2 = str(http_proxy)
             identity="None"
-        os.system("clear")
+        
+        os.system("cls" if os.name == "nt" else "clear")
         print(Font.Color.GREEN + banner)
+        if os.path.isfile(report):
+            os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))
+        
+        f = open(report, "a")
+        f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
+        f.write("\nUSERNAME FOUND ON:\r\n")
+        f.close()
+        f = open(nomefile,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
         if identity != "None":
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
@@ -82,6 +86,7 @@ class MrHolmes:
                 name = sites[data1]["name"]
                 error = sites[data1]["Error"]
                 exception_char = sites[data1]["exception"]
+                is_scrapable = sites[data1]["Scrapable"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 for errors in exception_char:
                     if errors in username:
@@ -90,14 +95,14 @@ class MrHolmes:
                     else:
                         alert = "CORRECT"
                 if alert == "NOT-CORRECT":
-                    print(Font.Color.YELLOW2  + "[!]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
+                    print(Font.Color.YELLOW2  + "[U]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
                 else:
                     try:
-                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName) 
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites) 
                     except Exception as e:
-                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName)
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)
             
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         
@@ -117,6 +122,7 @@ class MrHolmes:
                     name = sites[data1]["name"]
                     error = sites[data1]["Error"]
                     exception_char = sites[data1]["exception"]
+                    is_scrapable = sites[data1]["Scrapable"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     for errors in exception_char:
                         if errors in username:
@@ -125,129 +131,143 @@ class MrHolmes:
                         else:
                             alert = "CORRECT"
                     if alert == "NOT-CORRECT":
-                        print(Font.Color.YELLOW2  + "[!]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
+                        print(Font.Color.YELLOW2  + "[U]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
                     else:
                         try:
-                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName) 
+                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites) 
                         except Exception as e:
-                            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..,TRYNG WITH NO PROXIES")
+                            print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                             http_proxy = None
-                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName)
+                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)
         else:
             pass
     
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
         sleep(3)
-        
-        for names in successfull:
-            print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
-        
-        choice = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE USER DATA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[*MR.HOLMES*]" + Font.Color.WHITE + "-->"))
-        
-        if choice == 1:
-            choice = int(input(
-            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if choice == 1:
-                http_proxy = Proxies.proxy.final_proxis
-                http_proxy2 = Proxies.proxy.choice3
-                source = "http://ip-api.com/json/" + http_proxy2
-                access = urllib.request.urlopen(source)
-                content = access.read()
-                final = json.loads(content)
-                identity = "YOUR PROXY IP IS LOCATED IN: " + final ["regionName"]
-            else:
-                http_proxy = None
-                http_proxy2 = str(http_proxy)
-                identity="None"
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
-            if identity != "None":
-                print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
-            else:
-                pass
-            
-            if "Imgur" in successfullName:
-                try:
-                    Scraper.info.imgur(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.imgur(report, username , http_proxy)
-            else:
-                pass
-            
-            if "Pr0gramm" in successfullName:
-                try:
-                    Scraper.info.pr0gramm(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.pr0gramm(report, username , http_proxy)
-            else:
-                pass
-            
-            if "BinarySearch" in successfullName:
-                try:
-                    Scraper.info.Binarysearch(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.Binarysearch(report, username , http_proxy)
-            else:
-                pass 
-            
-            if "MixCloud" in successfullName:
-                try:
-                    Scraper.info.MixCloud(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.MixCloud(report, username , http_proxy)
-            else:
-                pass
-            
-            if "Nitter" in successfullName:
-                try:
-                    Scraper.info.Nitter(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.Nitter(report, username , http_proxy)
-            else:
-                pass
-
-            if "DockerHub" in successfullName:
-                try:
-                    Scraper.info.Dockerhub(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.Dockerhub(report, username , http_proxy)
-            else:
-                pass
-
-            if "Kik" in successfullName:
-                try:
-                    Scraper.info.Kik(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.Kik(report, username , http_proxy)
-            else:
-                pass
-
-            if "GitLab" in successfullName:
-                try:
-                    Scraper.info.GitLab(report, username , http_proxy)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR...TRYNG WITH NO PROXIES")      
-                    http_proxy = None
-                    Scraper.info.GitLab(report, username , http_proxy)
-            else:
-                pass
-        
+        if len(successfull):
+            for names in successfull:
+                print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
         else:
-            pass
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE USERNAME: {} HAS NOT BEEN FOUND ON ANY WEBSITE..¯\_(ツ)_/¯".format(username))
+    
+        if len(ScraperSites):
         
+            choice = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE USER DATA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[*MR.HOLMES*]" + Font.Color.WHITE + "-->"))
+            
+            if choice == 1:
+                choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if choice == 1:
+                    http_proxy = Proxies.proxy.final_proxis
+                    http_proxy2 = Proxies.proxy.choice3
+                    source = "http://ip-api.com/json/" + http_proxy2
+                    access = urllib.request.urlopen(source)
+                    content = access.read()
+                    final = json.loads(content)
+                    identity = "YOUR PROXY IP IS LOCATED IN: " + final ["regionName"]
+                else:
+                    http_proxy = None
+                    http_proxy2 = str(http_proxy)
+                    identity="None"
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
+                if identity != "None":
+                    print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+                else:
+                    pass 
+                
+                if "Imgur" in ScraperSites:
+                    try:
+                        Scraper.info.Imgur(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Imgur(report, username , http_proxy)
+                else:
+                    pass
+                
+                if "Pr0gramm" in ScraperSites:
+                    try:
+                        Scraper.info.Pr0gramm(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Pr0gramm(report, username , http_proxy)
+                else:
+                    pass
+                
+                if "BinarySearch" in ScraperSites:
+                    try:
+                        Scraper.info.Binarysearch(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Binarysearch(report, username , http_proxy)
+                else:
+                    pass 
+                
+                if "MixCloud" in ScraperSites:
+                    try:
+                        Scraper.info.MixCloud(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.MixCloud(report, username , http_proxy)
+                else:
+                    pass
+                
+                if "Nitter" in ScraperSites:
+                    try:
+                        Scraper.info.Nitter(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Nitter(report, username , http_proxy)
+                else:
+                    pass
+
+                if "DockerHub" in ScraperSites:
+                    try:
+                        Scraper.info.Dockerhub(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Dockerhub(report, username , http_proxy)
+                else:
+                    pass
+
+                if "Kik" in ScraperSites:
+                    try:
+                        Scraper.info.Kik(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Kik(report, username , http_proxy)
+                else:
+                    pass
+
+                if "GitLab" in ScraperSites:
+                    try:
+                        Scraper.info.GitLab(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Gitlab(report, username , http_proxy)
+                else:
+                    pass
+                if "Wattpad" in ScraperSites:
+                    try:
+                        Scraper.info.Wattpad(report, username , http_proxy)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
+                        http_proxy = None
+                        Scraper.info.Wattpad(report, username , http_proxy)
+                else:
+                    pass
+            else:
+                pass
+        else:
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS LOOKS LIKE THERE IS NO SITE TO SCRAPE...¯\_(ツ)_/¯")
+            
         count = 1
         if count == 1:
             choice = int(input(

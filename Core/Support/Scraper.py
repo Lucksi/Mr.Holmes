@@ -11,7 +11,7 @@ destination = "Reports/Usernames/Profile_pics/"
 class info:
    
     @staticmethod
-    def imgur(report,username,http_proxy):
+    def Imgur(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} IMGUR PROFILE...".format(username))
         url = "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
@@ -53,7 +53,7 @@ class info:
         f.write("ACCOUNT-CREATED ON: {}\r\n".format(creation))
     
     @staticmethod
-    def pr0gramm(report,username,http_proxy):
+    def Pr0gramm(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} PR0GRAMM PROFILE...".format(username))
         url = "https://pr0gramm.com/api/profile/info?name={}".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
@@ -180,45 +180,51 @@ class info:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} NITTER PROFILE...".format(username))
         url = " https://nitter.nixnet.services/{}".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
-        reader = soup(openurl.content, "html.parser")
-        user = reader.find("a",href=True,class_="profile-card-fullname")
-        pic = reader.find("a", href=True ,class_= "profile-card-avatar")
-        profile_pic = "https://nitter.nixnet.services" +  pic["href"]
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER: " + user["href"].replace("/",""))
-        post_items = reader.find_all("li",class_="posts")
-        
-        for item in post_items:
-            posts = item.find("span",class_="profile-stat-num").text
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
-        follower_items = reader.find_all("li",class_="followers")
-        
-        for item in follower_items:
-            follower = item.find("span",class_="profile-stat-num").text
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLWERS: {}".format(follower))
-        followed_item = reader.find_all("li",class_="following")
-        
-        for item in followed_item:
-            followed = item.find("span",class_="profile-stat-num").text
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(followed))
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: "  + profile_pic)
-        
-        download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        
-        if download == 1:
-            image = destination + "{}_Profile_pic_Nitter.jpg".format(username)
-            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
-            open(image, "wb").write(getter.content)
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
-        else:
+        Blocked = 'User "{}" has been suspended'.format(username)
+        text = openurl.text
+        if Blocked in text:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "LOOKS LIKE THIS USER HAS BEEN BANNED..CANNOT SCRAPE DATA")
             pass
+        else:
+            reader = soup(openurl.content, "html.parser")
+            user = reader.find("a",href=True,class_="profile-card-fullname")
+            pic = reader.find("a", href=True ,class_= "profile-card-avatar")
+            profile_pic = "https://nitter.nixnet.services" +  pic["href"]
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER: " + user["href"].replace("/",""))
+            
+            post_items = reader.find_all("li",class_="posts")
+            for item in post_items:
+                posts = item.find("span",class_="profile-stat-num").text
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
+            
+            follower_items = reader.find_all("li",class_="followers")
+            for item in follower_items:
+                follower = item.find("span",class_="profile-stat-num").text
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLWERS: {}".format(follower))
+            
+            followed_item = reader.find_all("li",class_="following")
+            for item in followed_item:
+                followed = item.find("span",class_="profile-stat-num").text
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(followed))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: "  + profile_pic)
+            
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            
+            if download == 1:
+                image = destination + "{}_Profile_pic_Nitter.jpg".format(username)
+                getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+                open(image, "wb").write(getter.content)
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+            else:
+                pass
 
-        f = open(report,"a")
-        f.write("\nNITTER DATA:\n")
-        f.write("USERNAME: {}\r\n".format(user["href"].replace("/","")))
-        f.write("POSTS: {}\r\n".format(posts))
-        f.write("FOLLOWERS: {}\r\n".format(follower))
-        f.write("FOLLOWING: {}\r\n".format(followed))
-        f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+            f = open(report,"a")
+            f.write("\nNITTER DATA:\n")
+            f.write("USERNAME: {}\r\n".format(user["href"].replace("/","")))
+            f.write("POSTS: {}\r\n".format(posts))
+            f.write("FOLLOWERS: {}\r\n".format(follower))
+            f.write("FOLLOWING: {}\r\n".format(followed))
+            f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
 
 
     @staticmethod
@@ -271,33 +277,48 @@ class info:
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
         converted = json.loads(reader)
-        name = converted["firstName"]
-        lastName = converted["lastName"]
-        profile_pic = converted["displayPic"]
-
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FIRST-NAME: {}".format(name))
-        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LAST-NAME: {}".format(lastName))
+        info = []
+        profile = []
+        for values in converted:
+            name = converted[values]
+            if values == "displayPic":
+                found = True
+                profile.append(name)
+                break
+            else:
+                found = False
+                profile.append("None")  
+                info.append(name)
+        if found == True:
+            profile_pic = profile[3]
+        else:
+            profile_pic = "None"
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FIRST-NAME: {}".format(info[0]))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LAST-NAME: {}".format(info[1]))
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
         download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         
         if download == 1:
-            image = destination + "{}_Profile_pic_Kik.jpg".format(username)
-            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
-            open(image, "wb").write(getter.content)
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+            if profile_pic != "None":
+                image = destination + "{}_Profile_pic_Kik.jpg".format(username)
+                getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+                open(image, "wb").write(getter.content)
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+            else:
+                pass
         else:
             pass
         
         f = open(report,"a")
         f.write("\nKIK DATA:\n")
-        f.write("FIRST-NAME: {}\r\n".format(name))
-        f.write("LAST-NAME: {}\r\n".format(lastName))
+        f.write("FIRST-NAME: {}\r\n".format(info[0]))
+        f.write("LAST-NAME: {}\r\n".format(info[1]))
         f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
 
     @staticmethod
     def GitLab(report,username,http_proxy):
-        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING GIT-LAB PROFILE...".format(username))
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} GIT-LAB PROFILE...".format(username))
         url = "https://gitlab.com/api/v4/users?username={}".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
         reader = openurl.text
@@ -306,8 +327,8 @@ class info:
         name = converted[0]["name"]
         user = converted[0]["username"]
         status = converted[0]["state"]
-        profile_pic = converted[0]["avatar_url".replace("&","0&")]
-        
+        profile_pic = converted[0]["avatar_url"].replace("&","0&")
+       
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "ID: {}".format(id_user))
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME: {}".format(name))
@@ -326,9 +347,59 @@ class info:
             pass
         
         f = open(report,"a")
+        
         f.write("\nGITLAB DATA:\n")
         f.write("ID: {}\r\n".format(id_user))
         f.write("NAME: {}\r\n".format(name))
         f.write("USERNAME: {}\r\n".format(user))
         f.write("STATUS: {}\r\n".format(status))
+        f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+
+    def Wattpad(report,username,http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} WATTPAD PROFILE...".format(username))
+        url = "https://www.wattpad.com/api/v3/users/{}/".format(username)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
+        reader = openurl.text
+        converted = json.loads(reader)
+        user = converted["username"]
+        votes = converted["votesReceived"]
+        stories = converted["numStoriesPublished"]
+        creation = converted["createDate"]
+        followers = converted["numFollowers"]
+        following = converted["numFollowing"]
+        profile_pic = converted["avatar"]
+        bio = converted["description"]
+        gender = converted["gender"]
+
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(bio))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "GENDER: {}".format(gender))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "VOTES: {}".format(votes))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "CREATED-ON: {}".format(creation))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "STORIES: {}".format(stories))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(followers))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(following))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+
+        download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        
+        if download == 1:
+            image = destination + "{}_Profile_pic_GitLab.jpg".format(username)
+            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+            open(image, "wb").write(getter.content)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+        else:
+            pass
+        
+        f = open(report,"a")
+        
+        f.write("\nWATTPAD DATA:\n")
+        f.write("USERNAME: {}\r\n".format(user))
+        f.write("BIO: {}\r\n".format(bio))
+        f.write("GENDER: {}\r\n".format(gender))
+        f.write("VOTES: {}\r\n".format(votes))
+        f.write("CREATED-ON: {}\r\n".format(creation))
+        f.write("STORIES: {}\r\n".format(stories))
+        f.write("FOLLOWERS: {}\r\n".format(followers))
+        f.write("FOLLOWING: {}\r\n".format(following))
         f.write("PROFILE-PIC: {}\r\n".format(profile_pic))

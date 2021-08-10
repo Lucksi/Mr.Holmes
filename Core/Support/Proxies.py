@@ -1,8 +1,12 @@
 import random
+from configparser import ConfigParser
 
 class proxy:
     
-    Proxy_file = "Proxies/Proxy_list.txt"
+    nomefile = "Configuration/Configuration.ini"
+    Parser = ConfigParser()
+    Parser.read(nomefile) 
+    Proxy_file = Parser["Settings"]["Proxy_List"]
     f = open(Proxy_file,"r")
     value = f.readlines()
     f.close()

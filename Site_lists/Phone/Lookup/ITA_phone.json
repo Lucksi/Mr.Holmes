@@ -6,7 +6,8 @@
             "name": "PagineBianche",
             "main": "PagineBianche.it",
             "url": "https://www.paginebianche.it/cerca-da-numero?qs={}",
-            "url2": "https://www.paginebianche.it/cerca-da-numero?qs={}"
+            "url2": "https://www.paginebianche.it/cerca-da-numero?qs={}",
+            "Scrapable": "False"
         },
 
         "PaginGialle":{
@@ -15,7 +16,8 @@
             "name": "PagineGialle",
             "main": "PagineGialle.it",
             "url": "https://www.paginegialle.it/ricerca/telefono-{}",
-            "url2": "https://www.paginegialle.it/ricerca/telefono-{}"
+            "url2": "https://www.paginegialle.it/ricerca/telefono-{}",
+            "Scrapable": "False"
         },
 
         "FreeLookup":{
@@ -23,15 +25,8 @@
             "name": "FreeLookup",
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
-            "url2": "https://free-lookup.net/{}"
-        },
-
-        "NumReport":{
-            "Error": "Status-Code",
-            "name": "NumReport",
-            "main": "it.numreport.com",
-            "url": "https://it.numreport.com/{}",
-            "url2": "https://it.numreport.com/{}"
+            "url2": "https://free-lookup.net/{}",
+            "Scrapable": "False"
         },
 
         "WhoseNumber":{
@@ -39,7 +34,8 @@
             "name": "WhoseNumber",
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
-            "url2": "https://whosenumber.info/{}"
+            "url2": "https://whosenumber.info/{}",
+            "Scrapable": "False"
         }
     }
 ] 

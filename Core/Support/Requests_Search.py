@@ -5,7 +5,7 @@ from Core.Support import Font
 class Search:
     
     @staticmethod
-    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName):
+    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName,is_scrapable,ScraperSites):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
         }
@@ -18,8 +18,12 @@ class Search:
                 f.write(site1 + "\r\n")
                 successfull.append(site1)
                 successfullName.append(name)
-            else:
+                if is_scrapable == "True":
+                    ScraperSites.append(name)
+            elif searcher.status_code == 404:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE + "{}: {} NOT FOUND".format(subject,username))      
+            else:
+                print(Font.Color.BLUE + "[N]" + Font.Color.WHITE + "CONNECTION-ERROR..." )
         elif error == "Message":
             text = sites[data1]["text"]
             if  text in searcher.text:
@@ -30,3 +34,5 @@ class Search:
                 f.write(site1 + "\r\n")
                 successfull.append(site1)
                 successfullName.append(name)
+                if is_scrapable == "True":
+                    ScraperSites.append(name)

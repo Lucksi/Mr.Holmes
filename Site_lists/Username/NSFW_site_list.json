@@ -6,7 +6,8 @@
             "main": "https://xhamster.com",
             "user": "https://xhamster.com/users/{}",
             "user2": "https://xhamster.com/users/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "PornHub":{
@@ -15,7 +16,8 @@
             "main": "https://pornhub.com",
             "user": "https://pornhub.com/users/{}",
             "user2": "https://pornhub.com/users/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "YouPorn":{
@@ -24,7 +26,8 @@
             "main": "https://youporn.com",
             "user": "https://youporn.com/uservids/{}",
             "user2": "https://youporn.com/uservids/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "XVideos":{
@@ -33,7 +36,8 @@
             "main": "https://xvideos.com/",
             "user": "https://xvideos.com/profiles/{}",
             "user2": "https://xvideos.com/profiles/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "ChaturBate":{
@@ -42,7 +46,8 @@
             "main": "https://chaturbate.com",
             "user": "https://chaturbate.com/{}",
             "user2": "https://chaturbate.com/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "StripChat":{
@@ -51,7 +56,8 @@
             "main": "https://stripchat.com",
             "user": "https://stripchat.com/{}",
             "user2": "https://stripchat.com/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         },
 
         "BongaCams":{
@@ -60,7 +66,8 @@
             "main": "https://pt.bongacams.com",
             "user": "https://pt.bongacams.com/profile/{}",
             "user2": "https://pt.bongacams.com/profile/{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         
         },
 
@@ -71,8 +78,8 @@
             "main": "tinder.com",
             "user": "https://tinder.com/@{}",
             "user2": "https://tinder.com/@{}",
-            "exception": [" "]
+            "exception": [" "],
+            "Scrapable": "False"
         }
-
     }
 ]

@@ -12,7 +12,6 @@ from time import sleep
 
 class Phone_search:
 
-
     @staticmethod
     def Google_dork(numberf,report):
         nomefile = "Site_lists/Phone/Google_dorks.txt"
@@ -83,6 +82,10 @@ class Phone_search:
             data = "Site_lists/Phone/Lookup/SWIS_phone.json"
             country = "SWITZERLAND"
             token = True
+        elif nation == "GB":
+            data = "Site_lists/Phone/Lookup/ENG_phone.json"
+            country = "ENGLAND"
+            token = True
         else:
             token = False
             country = "UNDEFINED"
@@ -115,6 +118,7 @@ class Phone_search:
             
             successfull = []
             successfullName = []
+            ScraperSites = []
             f = open (data,)
             data = json.loads(f.read())
             for sites in data:
@@ -125,19 +129,22 @@ class Phone_search:
                     site1 = sites[data1]["url"].replace("{}",username)
                     site2 = sites[data1]["url2"].replace("{}",username)
                     error = sites[data1]["Error"]
+                    is_scrapable = sites[data1]["Scrapable"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     try:
-                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
                     except Exception as e:
-                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR..TRYNG WITH NO PROXIES")
+                        print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
-            for names in successfull:
-                print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
+            
+            if len(successfull):
+                for names in successfull:
+                    print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
 
         else:
-            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS LOOKS LIKE THERE IS NO LOOKUP FILE FOR NOW..SKIPPING:(")
+            print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "OPS LOOKS LIKE THERE IS NO LOOKUP FILE FOR NOW..SKIPPING")
         
         sleep (3)
         dork = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE-DORK SEARCH?(1)YES(2)NO"+ Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -148,7 +155,7 @@ class Phone_search:
 
     @staticmethod
     def searcher(username):
-        os.system("clear")
+        os.system("cls" if os.name == "nt" else "clear")
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -159,6 +166,7 @@ class Phone_search:
         report = "Reports/Phone/" + username + ".txt"
         if os.path.isfile(report):
             os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))
         f = open(report,"w")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\n")
         f.close()

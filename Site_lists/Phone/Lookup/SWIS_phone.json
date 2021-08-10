@@ -6,7 +6,8 @@
             "name": "Local.ch",
             "main": "local.ch",
             "url": "https://www.local.ch/en/q/switzerland/{}",
-            "url2": "https://www.local.ch/en/q/switzerland/{}"
+            "url2": "https://www.local.ch/en/q/switzerland/{}",
+            "Scrapable": "False"
         },
 
         "FreeLookup":{
@@ -14,7 +15,8 @@
             "name": "FreeLookup",
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
-            "url2": "https://free-lookup.net/{}"
+            "url2": "https://free-lookup.net/{}",
+            "Scrapable": "False"
         },
 
         "WhoseNumber":{
@@ -22,8 +24,8 @@
             "name": "WhoseNumber",
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
-            "url2": "https://whosenumber.info/{}"
+            "url2": "https://whosenumber.info/{}",
+            "Scrapable": "False"
         }
     }
-
 ]

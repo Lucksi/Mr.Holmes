@@ -1,0 +1,23 @@
+[
+    {
+        "UrlVir":{
+            "Error": "Message",
+            "text": "We have no data regarding the submitted host.",
+            "name": "UrlVir",
+            "main": "urlvir.com",
+            "url": "https://www.urlvir.com/search-host/{}/",
+            "url2": "https://www.urlvir.com/search-host/{}/",
+            "Scrapable": "False"
+        },
+
+        "Watchlist":{
+            "Error": "Message",
+            "text": "Keine Ergebnisse gefunden.",
+            "name": "Watchlist",
+            "main": "watchlist-internet.at",
+            "url": "https://www.watchlist-internet.at/search/?id=153&tx_kesearch_pi1%5Bsword%5D={}",
+            "url2": "https://www.watchlist-internet.at/search/?id=153&tx_kesearch_pi1%5Bsword%5D={}",
+            "Scrapable": "False"
+        }
+    }
+] 
