@@ -36,3 +36,15 @@ class Search:
                 successfullName.append(name)
                 if is_scrapable == "True":
                     ScraperSites.append(name)
+        elif error == "Response-Url":
+            response = sites[data1]["response"]
+            if searcher.url == response:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "{}: {} NOT FOUND".format(subject,username))
+            else:
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "{}: {} FOUND".format(subject,username))
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
+                f.write(site1 + "\r\n")
+                successfull.append(site1)
+                successfullName.append(name)
+                if is_scrapable == "True":
+                    ScraperSites.append(name)

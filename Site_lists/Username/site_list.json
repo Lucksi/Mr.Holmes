@@ -222,8 +222,8 @@
         },
         
         "Reddit":{
-            "Error": "Status-Code",
-            "text": "Sorry, nobody on Reddit goes by that name.",
+            "Error": "Message",
+            "text": "Reddit - Dive into anything",
             "name": "Reddit",
             "main": "reddit.com/",
             "user": "https://www.reddit.com/user/{}",
@@ -1104,6 +1104,28 @@
             "main": "cbtnuggets.com",
             "user": "https://www.cbtnuggets.com/trainers/{}",
             "user2": "https://www.cbtnuggets.com/trainers/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Periscope":{
+            "Error": "Message",
+            "text": "Sorry, this page doesn’t exist!",
+            "name": "Periscope",
+            "main": "pscp.tv",
+            "user": "https://www.pscp.tv/{}",
+            "user2": "https://www.pscp.tv/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "LiveStream":{
+            "Error": "Message",
+            "text": "Page Not Found (404)",
+            "name":"LiveStream",
+            "main": "livestream.com",
+            "user": "https://livestream.com/{}",
+            "user2": "https://livestream.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

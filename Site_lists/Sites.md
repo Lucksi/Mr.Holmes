@@ -79,7 +79,7 @@
 ## (78) BEHANCE: https://behance.net
 ## (79) HACKADAY: https://hackaday.io
 ## (80) ELLO: https://ello.co
-## (81) JIMDO: https//jimdosite.com
+## (81) JIMDO: https://jimdosite.com
 ## (82) KEYBASE: https://keybase.io
 ## (83) SLACK: https://slack.com
 ## (84) CAMFROG: "https://camfrog.com
@@ -107,7 +107,8 @@
 ## (106) VENMO: https://venmo.com
 ## (107) THEMEFOREST: https://themeforest.net
 ## (108) CBTNUGGETS: https://www.cbtnuggets.com 
-
+## (109) PERISCOPE: https://www.pscp.tv
+## (110) LIVESTREAM: https://livestream.com
 <br>
 
 # NSFW SITES :underage: :
@@ -119,6 +120,7 @@
 ## (6) XVIDEOS: https://xvideos.com
 ## (7) STRIPCHAT: https://stripchat.com
 ## (8) BONGACAMS: https://pt.bongacams.com
+## (9) LIVEJASMIN: https://livestream.com
 
 <br>
 

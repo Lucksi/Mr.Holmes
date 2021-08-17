@@ -67,8 +67,7 @@
             "user": "https://pt.bongacams.com/profile/{}",
             "user2": "https://pt.bongacams.com/profile/{}",
             "exception": [" "],
-            "Scrapable": "False"
-        
+            "Scrapable": "False"       
         },
 
         "Tinder":{
@@ -78,6 +77,28 @@
             "main": "tinder.com",
             "user": "https://tinder.com/@{}",
             "user2": "https://tinder.com/@{}",
+            "exception": [" "],
+            "Scrapable": "False"
+        },
+
+        "LiveJasmin":{
+            "Error": "Response-Url",
+            "response": "https://www.livejasmin.com/en/girls/",
+            "name": "LiveJasmin(Girls)",
+            "main": "livejasmin.com",
+            "user": "https://www.livejasmin.com/en/girls/{}",
+            "user2": "https://www.livejasmin.com/en/girls/{}",
+            "exception": [" "],
+            "Scrapable": "False"
+        },
+
+        "LiveJasmin2":{
+            "Error": "Response-Url",
+            "response": "https://www.livejasmin.com/en/girls/",
+            "name": "LiveJasmin(BOYS)",
+            "main": "livejasmin.com",
+            "user": "https://www.livejasmin.com/en/boys/{}",
+            "user2": "https://www.livejasmin.com/en/boys/{}",
             "exception": [" "],
             "Scrapable": "False"
         }
