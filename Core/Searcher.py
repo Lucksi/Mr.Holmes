@@ -79,7 +79,7 @@ class MrHolmes:
         nomefile = "Configuration/Configuration.ini"
         Parser = ConfigParser()
         Parser.read(nomefile)            
-        Conf_Log = Parser["Settings"]["Logs"]
+        Conf_Log = Parser["Settings"]["Show_Logs"]
         if Conf_Log == "True":
             file_Log = "Logs/Session_" + username + ".log"
             logging.basicConfig(filename= file_Log, filemode = "w", format="%(asctime)s %(message)s")
