@@ -68,7 +68,7 @@
 ## (67) DOCKERHUB: https://hub.docker.com
 ## (68) AMINOAPPS: https://aminoapps.com
 ## (69) SUBLIMEFORUMS: https://forum.sublimetext.com
-## (70) SPARKPEOPLE: https://sparkpeople.com
+## (70) MINECRAFT: https://www.minecraft.net
 ## (71) RAIDFORUMS: https://raidforums.com
 ## (72) KIK: https://kik.me
 ## (73) GITLAB: "https://gitlab.com
@@ -109,6 +109,7 @@
 ## (108) CBTNUGGETS: https://www.cbtnuggets.com 
 ## (109) PERISCOPE: https://www.pscp.tv
 ## (110) LIVESTREAM: https://livestream.com
+## (111) KO-FI: https://ko-fi.com
 <br>
 
 # NSFW SITES :underage: :

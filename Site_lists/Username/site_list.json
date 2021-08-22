@@ -696,16 +696,6 @@
             "Scrapable": "False"
         },
 
-        "SparkPepole":{
-            "Error": "Message",
-            "text": "We couldn't find that user.",
-            "name": "SparkPeople",
-            "user": "https://www.sparkpeople.com/mypage.asp?id={}",
-            "user2": "https://www.sparkpeople.com/mypage.asp?id={}",
-            "exception": [" "],
-            "Scrapable": "False"
-        },
-
         "RaidForums":{
             "Error": "Status-Code",
             "name": "RaidForums",
@@ -1126,6 +1116,27 @@
             "main": "livestream.com",
             "user": "https://livestream.com/{}",
             "user2": "https://livestream.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+        
+        "Minecraft":{
+            "Error": "Status-Code",
+            "name": "Minecraft",
+            "main": "https://api.mojang.com/users/profiles/minecraft/",
+            "user": "https://api.mojang.com/users/profiles/minecraft/{}",
+            "user2": "https://api.mojang.com/users/profiles/minecraft/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Ko-Fi":{
+            "Error": "Response-Url",
+            "response": "https://ko-fi.com/art?=redirect",
+            "name": "Ko-Fi",
+            "main": "ko-fi.com",
+            "user": "https://ko-fi.com/{}",
+            "user2": "https://ko-fi.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

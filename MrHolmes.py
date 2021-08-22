@@ -6,6 +6,7 @@ from Core import Searcher
 from Core import config
 from Core import Searcher_phone
 from Core import Searcher_website
+from Core.Support import Database
 
 class Main:
     
@@ -43,9 +44,9 @@ class Main:
         while True:
             try:
                 Main.banner(r=True)
-                option = "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)UPDATE\n(6)EXIT"
+                option = "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\n(5)DATABASE\t\t\t(6)UPDATE\n(7)EXIT\t\t\t\t(0)REFRESH-QUOTE"
                 options = str(option)
-                print(Font.Color.GREEN + "[INSERT AN OPTION 'PRESS 0 TO REFRESH THE QUOTE']")
+                print(Font.Color.GREEN + "[***INSERT AN OPTION***]")
                 print(Font.Color.WHITE + options)
                 sce = int(input(Font.Color.GREEN + "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if sce == 1:
@@ -74,8 +75,10 @@ class Main:
                 elif sce == 4:
                     config.Config.main()
                 elif sce == 5:
-                    os.system("Core/./update.sh")
+                    Database.Controller.Gui()
                 elif sce == 6:
+                    os.system("Core/./update.sh")
+                elif sce == 7:
                     print("\nHAVE A NICE DAY BYE:)\n")
                     exit()
                 elif sce == 0:

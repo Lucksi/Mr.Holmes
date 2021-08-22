@@ -1,6 +1,7 @@
 import os
 import urllib 
 import json
+import logging
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
@@ -8,6 +9,7 @@ from Core.Support import Requests_Search
 from Core.Support import Scraper
 from datetime import datetime
 from time import sleep
+from configparser import ConfigParser
 
 
 class MrHolmes:
@@ -45,7 +47,6 @@ class MrHolmes:
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
-        
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -59,14 +60,12 @@ class MrHolmes:
         else:
             http_proxy = None
             http_proxy2 = str(http_proxy)
-            identity="None"
-        
+            identity="None"        
         os.system("cls" if os.name == "nt" else "clear")
         print(Font.Color.GREEN + banner)
         if os.path.isfile(report):
             os.remove(report)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))
-        
         f = open(report, "a")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
         f.write("\nUSERNAME FOUND ON:\r\n")
@@ -77,7 +76,18 @@ class MrHolmes:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
-       
+        nomefile = "Configuration/Configuration.ini"
+        Parser = ConfigParser()
+        Parser.read(nomefile)            
+        Conf_Log = Parser["Settings"]["Logs"]
+        if Conf_Log == "True":
+            file_Log = "Logs/Session_" + username + ".log"
+            logging.basicConfig(filename= file_Log, filemode = "w", format="%(asctime)s %(message)s")
+            Logger = logging.getLogger()
+            Logger.setLevel(logging.DEBUG)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "LOGS ENABLED..FILE SAVED ON: {}".format(file_Log))
+        else:
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "LOGS DISABLED")
         data = json.loads(f.read())
         for sites in data:
             for data1 in sites:
@@ -102,10 +112,8 @@ class MrHolmes:
                     except Exception as e:
                         print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)
-            
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)           
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        
         if Nsfw == 1:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
             if identity != "None":
@@ -141,7 +149,6 @@ class MrHolmes:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)
         else:
             pass
-    
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
         sleep(3)
         if len(successfull):
@@ -219,7 +226,7 @@ class MrHolmes:
                             Scraper.info.Nitter(report, username , http_proxy)
                     else:
                         pass
-
+                    
                     if "DockerHub" in ScraperSites:
                         try:
                             Scraper.info.Dockerhub(report, username , http_proxy)
@@ -249,6 +256,7 @@ class MrHolmes:
                             Scraper.info.Gitlab(report, username , http_proxy)
                     else:
                         pass
+                    
                     if "Wattpad" in ScraperSites:
                         try:
                             Scraper.info.Wattpad(report, username , http_proxy)
@@ -264,9 +272,6 @@ class MrHolmes:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS LOOKS LIKE THERE IS NO SITE TO SCRAPE...¯\_(ツ)_/¯")
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE USERNAME: {} HAS NOT BEEN FOUND ON ANY WEBSITE..¯\_(ツ)_/¯".format(username))
-    
-        
-            
         count = 1
         if count == 1:
             choice = int(input(

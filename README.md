@@ -30,7 +30,11 @@
     ./install_Termux.sh
 <br>
 
-# :cyclone: USAGE:
+# :cyclone: USAGE LINUX/MAC:
+    sudo python3 MrHolmes.py
+<br>
+
+# :cyclone: USAGE TERMUX:
     python3 MrHolmes.py
 <br>
 
@@ -41,6 +45,10 @@
 # :cyclone: SETTINGS FOLDER:
 
     Configuration/Configuration.ini
+<br>
+
+# :heavy_exclamation_mark: ATTENTION
+### DATABASE NOT AVAIABLE ON TERMUX
 <br>
 
 # :cyclone: VERSIONS LIST:
