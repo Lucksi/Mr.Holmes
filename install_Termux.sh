@@ -72,7 +72,7 @@ function Options {
 	if [ $Logs == 2 ];
 		then
 		Logs="False"
-	elif [ $Logs == 1 ]
+	else [ $Logs == 1 ]
 		Logs="True"
 	fi
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"

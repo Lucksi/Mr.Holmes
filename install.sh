@@ -72,7 +72,7 @@ function Options {
 	if [ $Logs == 2 ];
 		then
 		Logs="False"
-	elif [ $Logs == 1 ]
+	else [ $Logs == 1 ]
 		Logs="True"
 	fi
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
@@ -91,9 +91,11 @@ function Options {
 	echo "Password = $up_pass">>Configuration.ini
 	echo "Api_Key = $key">>Configuration.ini 
 	echo "Proxy_List" = $proxies>>Configuration.ini
-	echo "Logs = $Logs">>Configuration.ini
+	echo "Show_Logs = $Logs">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
 }
+
+
 
 function installer {
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
@@ -122,7 +124,7 @@ function installer {
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
 		exit 1
-    fi
+	fi
 	printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
     exit 1
 }
