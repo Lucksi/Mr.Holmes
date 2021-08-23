@@ -16,9 +16,6 @@ class Phone_search:
     def Google_dork(numberf,report):
         nomefile = "Site_lists/Phone/Google_dorks.txt"
         fingerprints = "Site_lists/Phone/Fingerprints.txt"
-        f = open (report ,"a")
-        f.write("\nPOSSIBLE GOOGLE DORKS LINKS:\n")
-        f.close()
         print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
         sleep(3)
         f = open(nomefile,"r")
