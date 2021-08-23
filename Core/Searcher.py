@@ -2,6 +2,7 @@ import os
 import urllib 
 import json
 import logging
+import shutil
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
@@ -17,9 +18,6 @@ class MrHolmes:
     @staticmethod
     def Google_dork(username,report):
         nomefile = "Site_lists/Username/Google_dorks.txt"
-        f = open (report ,"a")
-        f.write("\nGOOGLE DORKS LINKS:\n")
-        f.close()
         print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
         sleep(2)
         f = open(nomefile,"r")
@@ -27,10 +25,7 @@ class MrHolmes:
             site = sites.rstrip("\n")
             site = site.replace("{}", username)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            f = open(report,"a")
-            f.write(site + "\n")
             sleep(2)
-        f.close()
         f.close()
 
     @staticmethod
@@ -43,7 +38,7 @@ class MrHolmes:
         f.close()
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
-        report = "Reports/Usernames/" + username + ".txt"
+        report = "GUI/Reports/Usernames/" + username + ".txt"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -154,7 +149,14 @@ class MrHolmes:
         if len(successfull):
             for names in successfull:
                 print(Font.Color.YELLOW +"[v]" + Font.Color.WHITE +  names)
-            if len(ScraperSites): 
+            if len(ScraperSites):
+                os.chdir("GUI/Reports/Usernames/Profile_pics")
+                if os.path.isdir(username):
+                    shutil.rmtree(username)
+                    os.mkdir(username)
+                else:
+                    os.mkdir(username)
+                os.chdir("../../../../")
                 choice = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE USER DATA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[*MR.HOLMES*]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
                     choice = int(input(

@@ -42,7 +42,7 @@
             </script>";
         }
         else {
-            $Complete_name = "../../Reports/Phone/{$File_name}.txt";
+            $Complete_name = "../Reports/Phone/{$File_name}.txt";
             if(file_exists($Complete_name)){
                 echo "
                 <script>
@@ -50,7 +50,8 @@
                 </script>";
                 echo "<p id = 'Const'>NUMBER DATA</p>";
                 echo "<div class = 'Data'>";
-                $data = fopen($Complete_name,"r")or die("Serbver");
+                echo "<p id = 'Const'>REPORT:</p>";
+                $data = fopen($Complete_name,"r")or die("Sever-Error");
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;

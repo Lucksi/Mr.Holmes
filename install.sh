@@ -105,11 +105,11 @@ function installer {
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
 		then
-        sudo apt-get install python3 &> /dev/null | printf "${WHITE2}\nINSTALLING PYTHON3\n"
-        sudo apt-get install python3-pip &> /dev/null | printf "${WHITE2}\nINSTALLING PIP"
-		sudo apt-get install whois &> /dev/null | printf "${WHITE2}\n\nINSTALLING WHOIS"
-		sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE2}\n\nINSTALLING TRACEROUTE"
-		sudo apt-get install php &> /dev/null | printf "${WHITE2}\n\nINSTALLING PHP"
+        sudo apt-get install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+        sudo apt-get install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
+		sudo apt-get install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
+		sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
+		sudo apt-get install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
 		sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 		printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 		Options

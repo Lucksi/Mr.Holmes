@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Username</title>
-        <link rel = "stylesheet" href = "../Css/Style.css">
+        <link rel = "stylesheet" href = "../Css/Username.css">
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>    
@@ -42,23 +42,39 @@
             </script>";
         }
         else {
-            $Complete_name = "../../Reports/Usernames/{$File_name}.txt";
+            $Complete_name = "../Reports/Usernames/{$File_name}.txt";
             if(file_exists($Complete_name)){
                 echo "
                 <script>
                 alert('USERNAME FOUND');
                 </script>";
                 echo "<p id = 'Const'>USERNAME DATA</p>";
+                echo "<div class = 'Wrapper'>";
                 echo "<div class = 'Data'>";
                 echo "<p>";
-                $data = fopen($Complete_name,"r")or die("Serbver");
+                $data = fopen($Complete_name,"r")or die("Server-Error");
+                echo "<p id = 'Const'>REPORT:</p>";
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;
                 }
                 fclose($data);
                 echo "</p>";
-                echo "\n</div>";    
+                echo "\n</div>";
+                echo "<div class = 'Data_img'>";
+                $Dir_Name = "../Reports/Usernames/Profile_pics/{$File_name}/";
+                if(file_exists($Dir_Name)){
+                    $image = glob($Dir_Name."*.jpg");
+                    echo "<p id = 'Const'>PROFILE-PICS:$File_Name</p>";
+                    foreach($image as $Content) {
+                        echo "<img src = '{$Content}' id = 'pics'>";
+                        echo "<br>";
+                    }
+                }
+                else{
+                    echo "<p>NOT FIND ANY PROFILE PIC FOR THIS USER";
+                }
+                echo "</div>";
             }
             else {
                 echo "

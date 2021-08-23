@@ -150,7 +150,7 @@ body{
     margin-right: auto;
     border: 3px solid;
     border-color: #000000;
-   
+    border-radius: 10px;
 }
 
 .Data p{

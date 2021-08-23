@@ -74,11 +74,12 @@ class Web:
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "FOR MAJOR INFORMATION CONSULT THESE LINKS...")
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.scamadviser.com/check-website/{}".format(username))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}".format(username))
-            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.islegitsite.com/check/{}".format(username))
             f = open(report,"a")
             f.write("FOR MAJOR INFORMATION CONSULT THESE LINKS..:\n")
             f.write("https://www.scamadviser.com/check-website/{}\r\n".format(username))
-            f.write("https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}".format(username))
+            f.write("https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}\r\n".format(username))
+            f.write("https://www.islegitsite.com/check/{}\r\n".format(username))
             f.close()
             choice = int(input(
                         Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -117,7 +118,7 @@ class Web:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
-        robot = "Reports/Websites/Robots/" + username + "_robots.txt"
+        robot = "GUI/Reports/Websites/Robots/" + username + "_robots.txt"
         final = json.loads(f.read())
         for sites in final:
             try:
@@ -174,8 +175,6 @@ class Web:
             site = sites.rstrip("\n")
             site = site.replace("{}", format)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            f = open(report,"a")
-            f.write(site + "\n")
             sleep(2)
         f.close()
         if number == True:
@@ -186,13 +185,9 @@ class Web:
                 site = sites.rstrip("\n")
                 site = site.replace("{}", num)
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-                f = open(report,"a")
-                f.write(site + "\n")
-                sleep(2)
             f.close()
         else:
             pass
-        f.close()
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -335,7 +330,7 @@ class Web:
     @staticmethod
     def search(username):
         os.system("cls" if os.name == "nt" else "clear")
-        report = "Reports/Websites/" + username + ".txt"
+        report = "GUI/Reports/Websites/" + username + ".txt"
         f = open("Banners/Banner4.txt","r")
         banner = f.read()
         f.close()

@@ -2,7 +2,7 @@
 <html>
     <head>
         <title>Websites</title>
-        <link rel = "stylesheet" href = "../Css/Style.css">
+        <link rel = "stylesheet" href = "../Css/Website.css">
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>    
@@ -42,7 +42,7 @@
             </script>";
         }
         else {
-            $Complete_name = "../../Reports/Websites/{$File_name}.txt";
+            $Complete_name = "../Reports/Websites/{$File_name}.txt";
             if(file_exists($Complete_name)){
                 echo "
                 <script>
@@ -50,14 +50,32 @@
                 </script>";
                 echo "<p id = 'Const'>WEBSITE DATA</p>";
                 echo "<div class = 'Data'>";
-                $data = fopen($Complete_name,"r")or die("Serbver");
+                echo "<p id = 'Const'>REPORT:</p>";
+                $data = fopen($Complete_name,"r")or die("Server-Error");
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;
                 }
                 fclose($data);
                 echo "</p>";
-                echo "\n</div>"; 
+                echo "\n</div>";
+                $Dir_Name = "../Reports/Websites/Robots/{$File_name}_robots.txt";
+                if(file_exists($Dir_Name)){
+                    echo "<div class = 'Data_rob'>";
+                    echo "<p id = 'Const'>ROBOTS.TXT:</p>";
+                    $data = fopen($Dir_Name,"r")or die("Server-Error");
+                    while (!feof($data)){
+                        $content = fgets($data);
+                        echo "<p>".$content;
+                    }
+                    fclose($data);
+                    echo "</p>";
+                    echo "\n</div>";
+                }
+                else{
+                    echo "<p>NOT ROBOTS.TXT FILE</p>";
+                }
+                echo "</div>";
             }
             else {
                 echo "

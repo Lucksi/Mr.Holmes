@@ -1,8 +1,7 @@
-import configparser
-from Core.Support import Font
 import os
 import getpass
 import MrHolmes as holmes
+from Core.Support import Font
 from configparser import ConfigParser
 
 dest = "Configuration"
@@ -262,6 +261,32 @@ class Config:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
                 os.chdir("../")
     
+    def modify_Log():
+        alert = int(input(
+            Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ARE YOU SURE TO MODIFY YOUR LOG OPTION?(1)YES(2)NO" + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if alert == 1:
+            os.chdir(dest)
+            if os.path.isfile(nomefile):
+                Parser = ConfigParser()
+                Parser.read(nomefile)
+                Logs = int(input(
+                        Font.Color.WHITE + "\nINSERT IF YOU WANT TO ENABLE LOGS FEATURE(1)YES(2)NO" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if Logs == 1:
+                    Logs = "True"
+                elif Logs == 2:
+                    Logs = "False"
+                else:
+                    os.chdir("../")
+                    Config.main()
+                Parser.set("Settings","show_Logs",Logs)
+                with open(nomefile, 'w') as configfile:
+                    Parser.write(configfile)
+                    print("\nPROXY-LIST CHANGED SUCCESSFULLY")
+                    out = input("\nPRESS ENTER TO EXIT")
+                    os.chdir("../")
+            else:
+                inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
+                os.chdir("../")
     
     @staticmethod
     def main():
@@ -271,7 +296,7 @@ class Config:
             banner = f.read()
             f.close()
             print(Font.Color.GREEN + banner)
-            option = "\n(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\n(10)MAIN-MENU"
+            option = "\n(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\n(10)MODIFY-LOGS\n(11)MAIN-MENU"
             options = str(option)
             print(Font.Color.GREEN + "[INSERT AN OPTION]")
             print(Font.Color.WHITE + options)
@@ -295,6 +320,8 @@ class Config:
             elif sce == 9:
                 Config.modify_proxy()
             elif sce == 10:
+                Config.modify_Log()
+            elif sce == 11:
                 inp = input("PRESS ENTER TO CONTINUE...")
                 holmes.Main.main()
             else:

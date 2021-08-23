@@ -8,16 +8,7 @@
             "url": "https://www.watchlist-internet.at/search/?id=153&tx_kesearch_pi1%5Bsword%5D={}",
             "url2": "https://www.watchlist-internet.at/search/?id=153&tx_kesearch_pi1%5Bsword%5D={}",
             "Scrapable": "False"
-        },
-
-        "IsLegitSite":{
-            "Error": "Message",
-            "text": "We found evidence that the website may be unsafe.",
-            "name": "IsLegitSite",
-            "main": "islegitsite.com",
-            "url": "https://www.islegitsite.com/check/{}",
-            "url2": "https://www.islegitsite.com/check/{}",
-            "Scrapable": "False"
         }
+
     }
 ] 

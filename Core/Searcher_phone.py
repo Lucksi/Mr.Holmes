@@ -26,10 +26,7 @@ class Phone_search:
             site = sites.rstrip("\n")
             site = site.replace("{}", numberf)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            f = open(report,"a")
-            f.write(site + "\n")
             sleep(2)
-        f.close()
         f.close()
         f = open (report ,"a")
         f.write("\nPOSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:\n")
@@ -163,7 +160,7 @@ class Phone_search:
         banner = f.read()
         f.close()
         print(Font.Color.GREEN + banner)
-        report = "Reports/Phone/" + username + ".txt"
+        report = "GUI/Reports/Phone/" + username + ".txt"
         if os.path.isfile(report):
             os.remove(report)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))
