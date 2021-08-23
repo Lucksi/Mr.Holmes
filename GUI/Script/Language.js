@@ -4,7 +4,7 @@
   ENGLISH*/
 
   function Italian_Username(){
-    const list = new Array ("Username", "Telefono", "Siti-Web");
+    const list = new Array ("Username", "Siti-Web", "Telefono");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -19,7 +19,7 @@
 }
 
 function English_Username(){
-    const list = new Array ("Username", "Phone-Numbers", "Websites");
+    const list = new Array ("Username", "Websites", "Phone-Numbers");
     const user =("Insert a Username...");
     const search = ("Search");
     const holder = ("English");
@@ -34,7 +34,7 @@ function English_Username(){
 }
 
 function Italian_Phone(){
-    const list = new Array ("Username", "Telefono", "Siti-Web");
+    const list = new Array ("Username", "Siti-Web", "Telefono");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -49,7 +49,7 @@ function Italian_Phone(){
 }
 
 function English_Phone(){
-    const list = new Array ("Username", "Phone-Numbers", "Websites");
+    const list = new Array ("Username", "Websites", "Phone-Numbers");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -64,7 +64,7 @@ function English_Phone(){
 }
 
 function Italian_Web(){
-    const list = new Array ("Username", "Numeri di Telefono", "Siti-Web");
+    const list = new Array ("Username", "Siti-Web", "Telefono");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -79,7 +79,7 @@ function Italian_Web(){
 }
 
 function English_Web(){
-    const list = new Array ("Username", "Phone-Numbers", "Websites");
+    const list = new Array ("Username", "Websites", "Phone-Numbers");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
