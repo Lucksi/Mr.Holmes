@@ -1,4 +1,4 @@
-@import url("Style.css");
+@import url("Dark_Style.css");
 
 .Wrapper {
     display: inline-block;
@@ -10,13 +10,12 @@
     justify-content: left;
     width: fit-content !important;
     border: 3px solid;
-    border-color: #000000;
+    border-color: #ffffff;
     border-radius: 10px;
 }
 
 .Data p {
     text-align: center;
-    color: #000000;
 }
 
 .Data_rob {
@@ -28,7 +27,7 @@
     margin-left: 50px;
     width: 500px;
     border: 3px solid;
-    border-color: #000000;
+    border-color: #ffffff;
     border-radius: 10px;
 }
 
@@ -36,5 +35,5 @@
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
-    color: #000000;
+    color: #ffffff;
 }

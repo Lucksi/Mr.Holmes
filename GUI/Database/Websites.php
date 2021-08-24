@@ -2,7 +2,32 @@
 <html>
     <head>
         <title>Websites</title>
-        <link rel = "stylesheet" href = "../Css/Website.css">
+        <?php
+            $mode_file = "../Theme/Mode.json";
+            if (file_exists($mode_file)){
+                $reader = file_get_contents($mode_file);
+                $parser = json_decode($reader,true); 
+                $color = $parser["Color"]["Background"];
+                if ($color == "Light"){
+                    echo '<link rel = "stylesheet" href = "../Css/Website.css">';
+                }
+                elseif ($color == "Dark"){
+                    echo '<link rel = "stylesheet" href = "../Css/Dark_Website.css">';
+                }
+                else {
+                    echo "<script>
+                    alert ('VALUE NOT VALID MODE DISPLAYED:LIGHT-MODE');
+                    </script>";
+                    echo '<link rel = "stylesheet" href = "../Css/Website.css">';
+                }
+            }
+            else {
+                echo "<script>
+                alert ('THEME FILE NOT FOUND MODE DISPLAYED:LIGHT-MODE');
+                </script>";
+                echo '<link rel = "stylesheet" href = "../Css/Websites.css">';
+            }
+        ?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>    

@@ -1,24 +1,24 @@
 body {
-    background-color: #ffffff !important;
+    background-color: #1a2b34 !important;
     animation: dissolvent 2s 1;
 }
 
 .Top-bar p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: #000000;
+    color: #ffffff;
     background-color: transparent;
     font-size: x-large;
     margin-top: -7px;
 }
 
-.Top-bar p:hover {
+.Top-bar p:hover{
     animation: joggle 2s infinite;
 }
 
 .Top-bar a {
     display: inline-block;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    color: #000000;
+    color: #ffffff;
     margin-top: none;
     margin-left: -10px;
     padding: 10px 10px 10px;
@@ -44,7 +44,7 @@ body {
     margin-top: -20px;
     right: 0px;
     text-align: center;
-    background-color:#ffffff;
+    background-color:#1a2b34;
     border: 2px solid;
     border-radius: 10px;
     border-color: #ffffff;
@@ -52,13 +52,13 @@ body {
 }
 
 .Content a {
-    color: #000000;
+    color: #ffffff;
     margin-left: 10px;
     text-decoration: none;
     display: block;
     font-size: medium;
     width: fit-content;
-    background-color: #ffffff;
+    background-color: transparent;
 
 }
 
@@ -105,7 +105,7 @@ body {
     width: 500px;
     height: 30px; 
     border: 2px solid;
-    border-color: black;
+    border-color: #000000;
     border-radius: 5px;
     font-size: large;
 }
@@ -120,11 +120,11 @@ body {
     animation: act_Border 3s infinite;
 }
 
-#Const{
+#Const {
     font-size: x-large;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #000000;
+    color: #ffffff;
 }
 
 #Const:hover {
@@ -149,7 +149,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     border: 3px solid;
-    border-color: #000000;
+    border-color: #ffffff;
     border-radius: 10px;
 }
 
@@ -157,22 +157,23 @@ body {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
+    color: #ffffff;
 }
 
 @keyframes joggle {
-    0%{color:#000000;}
-    50%{color:#0000ff;}
-    100%{color:#000000;}
+    0%{color:#ffffff;}
+    50%{color:#7cfc00;}
+    100%{color:#ffffff;}
 }
 
 @keyframes act {
-    0%{color:#0000ff;}
+    0%{color:#7cfc00;}
     50%{color:#ffa500;}
-    100%{color:#0000ff;}
+    100%{color:#7cfc00;}
 }
 
 @keyframes act_Border {
-    0%{border-color:#0000ff;}
+    0%{border-color:#7cfc00;}
     50%{border-color:#ffa500;}
     100%{border-color:#000000;}
 }

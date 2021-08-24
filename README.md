@@ -55,4 +55,31 @@
     https://lucksi.github.io/Mr.Holmes/Pages/versions.html
 <br>
 
+# :heavy_check_mark: GUI DARK/LIGHT MODE:
+    cd GUI
+    cd Theme
+    edit Mode.json
+    write:Light=(Light-Mode)
+    write:Dark=(Dark-Mode) 
+
+# MODE CODE EXAMPLE:
+    {
+        "Color": {
+            "Background": "Light"
+        }
+    }
+    
+
+<br>
+
+# :last_quarter_moon: DARK MODE:
+![Screenshot](Screenshot/Dark_Mode.png)
+
+<br>
+
+# :full_moon: LIGHT MODE:
+![Screenshot](Screenshot/Light_Mode.png)
+
+<br>
+
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
