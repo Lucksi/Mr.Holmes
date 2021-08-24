@@ -165,9 +165,6 @@ class Web:
     def google_dork(username,report,number,num):
         nomefile = "Site_lists/Websites/Google_dorks.txt"
         format = "www." + username
-        f = open (report ,"a")
-        f.write("\n\nPOSSIBLE GOOGLE DORKS LINKS:\n")
-        f.close()
         print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
         sleep(3)
         f = open(nomefile,"r")
