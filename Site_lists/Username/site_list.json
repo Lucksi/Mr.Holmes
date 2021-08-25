@@ -1139,6 +1139,16 @@
             "user2": "https://ko-fi.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "LeetCode":{
+            "Error": "Status-Code",
+            "name": "LeetCode",
+            "main": "leetcode.com",
+            "user": "https://leetcode.com/{}",
+            "user2": "https://leetcode.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]
