@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # AUTHOR: Lucksi
-# Copyright ©2021 Lucksi
+# Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 
 import os

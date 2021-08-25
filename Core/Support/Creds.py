@@ -1,3 +1,7 @@
+# AUTHOR: Lucksi
+# Copyright © 2021 Lucksi
+# License: GNU General Public License v3.0
+
 from email import encoders
 from email.mime.base import MIMEBase
 from email.mime.text import MIMEText

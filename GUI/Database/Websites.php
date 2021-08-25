@@ -1,3 +1,6 @@
+<!--AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0-->
 <!DOCTYPE html>
 <html>
     <head>
