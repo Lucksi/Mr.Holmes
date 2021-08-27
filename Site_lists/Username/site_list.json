@@ -27,8 +27,7 @@
             "user": "https://facebook.com/{}",
             "user2": "https://facebook.com/{}",
             "exception": [".","_"],
-            "Scrapable": "False"
-           
+            "Scrapable": "False"       
         },
          
         "Disqus":{
@@ -220,15 +219,15 @@
             "exception": [" "],
             "Scrapable": "False"
         },
-        
+
         "Reddit":{
             "Error": "Message",
-            "text": "Reddit - Dive into anything",
+            "text": "<title>Reddit - Dive into anything</title>",
             "name": "Reddit",
-            "main": "reddit.com/",
+            "main": "reddit.com",
             "user": "https://www.reddit.com/user/{}",
             "user2": "https://www.reddit.com/user/{}",
-            "exception": [" "],
+            "exception": [" ","/"],
             "Scrapable": "False"
         },
         
@@ -1147,6 +1146,27 @@
             "main": "leetcode.com",
             "user": "https://leetcode.com/{}",
             "user2": "https://leetcode.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "LinkGenie":{
+            "Error": "Status-Code",
+            "name": "LinkGenie",
+            "main": "linkgenie.co",
+            "user": "https://linkgenie.co/{}",
+            "user2": "https://linkgenie.co/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "New-Reddit":{
+            "Error": "Message",
+            "text": "<title>Reddit - Dive into anything</title>",
+            "name": "New-Reddit",
+            "main": "new.reddit.com",
+            "user": "https://new.reddit.com/user/{}",
+            "user2": "https://new.reddit.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

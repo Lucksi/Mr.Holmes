@@ -4,7 +4,7 @@
 ## (3) FACEBOOK: https://facebook.com
 ## (4) NITTER: https://nitter.nixnet.services
 ## (5) POKEMON-SHODOWN: https://pokemonshowdown.com
-## (6) REDDIT: https://www.reddit.com
+## (6) REDDIT: https://reddit.com
 ## (7) VIMEO: https://vimeo.com
 ## (8) PSNPROFILES: https://psnprofiles.com
 ## (9) INTERPALS: https://interpals.net
@@ -111,6 +111,8 @@
 ## (110) LIVESTREAM: https://livestream.com
 ## (111) KO-FI: https://ko-fi.com
 ## (112) LEETCODE: https://leetcode.com
+## (113) LINKGENIE: https://linkgenie.co
+## (114) NEW-REDDIT: https://new.reddit.com
 
 <br>
 
@@ -170,4 +172,6 @@
 
 <br>
 
-# TOTAL: 131 SITES
+# USERNAME SITES: 123
+# PHONE-NUMBER SITES: 14
+# TOTAL: 137 SITES
