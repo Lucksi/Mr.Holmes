@@ -1,3 +1,6 @@
+<!--AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0-->
 <?php
     $mode_file = "../Theme/Mode.json";
     if (file_exists($mode_file)) {
