@@ -3,5 +3,5 @@ function English(){
 }
 
 function Italiano(){
-    alert("Questo tool è stato creato da Lucksi in Sicilia Grazie per aver scaricato il mio tool")
+    alert("Questo tool è stato creato da Lucksi in Sicilia Grazie per aver scaricato il mio tool :)");
 }
