@@ -33,6 +33,7 @@ function English_Username(){
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
     const holder = ("English");
+    const photos = ("PROFILE-PICS");
     document.getElementById("Searcher").placeholder= user
     document.getElementById("But").innerHTML=(search);
     document.getElementById("Current").innerHTML=(holder);
@@ -42,6 +43,7 @@ function English_Username(){
         document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
         i=i++;
     }
+    document.getElementById("Const2").innerHTML=(photos);
     document.getElementById("error").innerHTML=(error);
 }
 
