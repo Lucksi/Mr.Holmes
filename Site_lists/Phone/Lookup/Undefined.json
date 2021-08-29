@@ -1,0 +1,21 @@
+[
+    {
+        "FreeLookup":{
+            "Error": "Status-Code",
+            "name": "FreeLookup",
+            "main": "free-lookup.net",
+            "url": "https://free-lookup.net/{}",
+            "url2": "https://free-lookup.net/{}",
+            "Scrapable": "False"
+        },
+
+        "WhoseNumber":{
+            "Error": "Status-Code",
+            "name": "WhoseNumber",
+            "main": "whosenumber.info",
+            "url": "https://whosenumber.info/{}",
+            "url2": "https://whosenumber.info/{}",
+            "Scrapable": "False"
+        }
+    }
+]

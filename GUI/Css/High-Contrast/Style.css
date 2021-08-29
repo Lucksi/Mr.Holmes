@@ -3,7 +3,7 @@ Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
 body {
-    background-color: #1a2b34 !important;
+    background-color: #000000 !important;
     animation: dissolvent 2s 1;
 }
 
@@ -114,7 +114,7 @@ p {
     width: 500px;
     height: 30px; 
     border: 2px solid;
-    border-color: #000000;
+    border-color: #ffffff;
     border-radius: 5px;
     font-size: large;
 }
@@ -129,7 +129,7 @@ p {
     animation: act_Border 3s infinite;
 }
 
-#Const, #Const2 {
+#Const , #Const2 {
     font-size: x-large;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -143,7 +143,7 @@ p {
 .Upper-card button {
     margin-bottom: 11px;
     margin-left:-8px;
-    height: 37px;
+    height: 41px;
     padding-left: 2px;
     border: 2px solid;
     border-color: #000000;

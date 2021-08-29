@@ -124,7 +124,7 @@ body {
     animation: act_Border 3s infinite;
 }
 
-#Const{
+#Const, #Const2 {
     font-size: x-large;
     text-align: center;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;

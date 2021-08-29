@@ -48,14 +48,12 @@ class Phone_search:
     
     @staticmethod
     def lookup(username,report):
-
         f = open(report, "a")
         f.write("\nPHONE NUMBER FOUND ON:\n")
         f.close()
         f = open("Temp/Code.txt","r", newline=None)
         nation= f.read().rstrip("\n")
         f.close()
-
         if nation == "US":
             data = "Site_lists/Phone/Lookup/USA_phone.json"
             country = "UNITED-STATES"
@@ -85,7 +83,8 @@ class Phone_search:
             country = "ENGLAND"
             token = True
         else:
-            token = False
+            token = True
+            data = "Site_lists/Phone/Lookup/Undefined.json"
             country = "UNDEFINED"
         number = str(username)
         os.remove("Temp/Code.txt")

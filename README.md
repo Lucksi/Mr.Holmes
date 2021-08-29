@@ -82,4 +82,9 @@
 
 <br>
 
+# :last_quarter_moon: HIGH-CONTRAST MODE:
+![Screenshot](Screenshot/High-Contrast_Mode.png)
+
+<br>
+
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>

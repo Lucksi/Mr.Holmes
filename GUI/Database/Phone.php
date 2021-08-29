@@ -31,7 +31,9 @@ License: GNU General Public License v3.0-->
         ?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
-        <script src = "../../Script/Language.js"></script>    
+        <script src = "../../Script/Language.js"></script>
+        <script src = "../../Script/Author.js"></script>
+        <script src = "../../Script/Themes.js"></script>
     </head>
     <body>
         <div class = "Top-bar">
@@ -47,10 +49,11 @@ License: GNU General Public License v3.0-->
                 <a href = "Username.php">Username</a>
                 <a href = "Websites.php">Websites</a>
                 <a href = "Phone.php">Phone-Numbers</a>
+                <a id = "change1" onclick= "English()">Author</a>
             </div>
         </div>
         <div class = "Upper-card">
-            <img src = "../Icon/Mr.Holmes.png">
+            <?php include("../Actions/Theme_Controller.php");?>
             <center>
             <form action = "" method="POST">
             <input type= "text" placeholder = "Insert a PhoneNumber..." id = "Searcher" name = "Searcher">
