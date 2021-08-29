@@ -78,10 +78,6 @@ class Phone_search:
             data = "Site_lists/Phone/Lookup/SWIS_phone.json"
             country = "SWITZERLAND"
             token = True
-        elif nation == "GB":
-            data = "Site_lists/Phone/Lookup/ENG_phone.json"
-            country = "ENGLAND"
-            token = True
         else:
             token = True
             data = "Site_lists/Phone/Lookup/Undefined.json"
