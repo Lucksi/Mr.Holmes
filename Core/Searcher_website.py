@@ -299,7 +299,7 @@ class Web:
                     with open(report_Coordinates,"w",encoding="utf-8") as output:
                         json.dump(data,output,ensure_ascii=False,indent=4)
                 except Exception as e:
-                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...\n")
+                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...")
                 num = telephone2
                 if num != "":
                     number = True
