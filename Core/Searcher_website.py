@@ -281,22 +281,25 @@ class Web:
                 f.write(email + "\r\n")
                 f.write(telephone + "\r\n")
                 f.close()
-                link_json = "https://nominatim.openstreetmap.org/search?q={}+{}&format=json".format(street2,city2).replace(" ","%20")
-                get_Coords = urllib.request.urlopen(link_json)
-                Reader = get_Coords.read()
-                parser = json.loads(Reader)
-                for value in parser:
-                    Lat = value["lat"]
-                    Lon = value["lon"]
-                report_Coordinates = "GUI/Reports/Websites/Coordinates/Street_Geolocation/" + username + ".json"
-                data = {
-                    "Geolocation":{
-                        "Latitude": Lat,
-                        "Longitude": Lon
+                try:
+                    link_json = "https://nominatim.openstreetmap.org/search?q={}+{}&format=json".format(street2,city2).replace(" ","%20")
+                    get_Coords = urllib.request.urlopen(link_json)
+                    Reader = get_Coords.read()
+                    parser = json.loads(Reader)
+                    for value in parser:
+                        Lat = value["lat"]
+                        Lon = value["lon"]
+                    report_Coordinates = "GUI/Reports/Websites/Coordinates/Street_Geolocation/" + username + ".json"
+                    data = {
+                        "Geolocation":{
+                            "Latitude": Lat,
+                            "Longitude": Lon
+                        }
                     }
-                }
-                with open(report_Coordinates,"w",encoding="utf-8") as output:
-                    json.dump(data,output,ensure_ascii=False,indent=4)
+                    with open(report_Coordinates,"w",encoding="utf-8") as output:
+                        json.dump(data,output,ensure_ascii=False,indent=4)
+                except Exception as e:
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...\n")
                 num = telephone2
                 if num != "":
                     number = True
@@ -313,7 +316,6 @@ class Web:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "PHONE NUMBER NOT FOUND")
                     number = False
             except Exception as e:
-     
                 num = None
                 number = False
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SOME OF THE DETAILS ARE NOT AVAIABLE DOING CLASSICAL WHO IS...")
