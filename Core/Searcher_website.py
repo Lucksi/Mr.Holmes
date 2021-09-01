@@ -313,10 +313,10 @@ class Web:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "PHONE NUMBER NOT FOUND")
                     number = False
             except Exception as e:
-                f = str(e)
+     
                 num = None
                 number = False
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SOME OF THE DETAILS ARE NOT AVAIABLE DOING CLASSICAL WHO IS..." + f)
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SOME OF THE DETAILS ARE NOT AVAIABLE DOING CLASSICAL WHO IS...")
                 command = ("whois " + username)
                 proces = os.popen(command)
                 results = str(proces.read())
