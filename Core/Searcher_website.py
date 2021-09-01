@@ -23,7 +23,7 @@ class Web:
         subject = "DOMAIN/WEBSITE/IP"
         data = "Site_lists/Websites/Lookup.json"
         f = open(report,"a")
-        f.write("\r\nMALICIOUS/FAKE LINK FOUND ON:\r\n")      
+        f.write("\nMALICIOUS/FAKE LINK FOUND ON:\n")    
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SEARCHING WEBSITE/DOMAIN/IP ON DIFFERENT SITES")
         sc = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO USE A PROXY 'IT MAY CAUSE SOME PROBLEMS AND THE PROCESS WILL SLOW DOWN'(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -47,6 +47,7 @@ class Web:
         successfull = []
         successfullName = []
         ScraperSites = []
+        Writable = False
         f = open (data,)
         data = json.loads(f.read())
         for sites in data:
@@ -55,14 +56,15 @@ class Web:
                 site1 = sites[data1]["url"].replace("{}",username)
                 site2 = sites[data1]["url2"].replace("{}",username)
                 error = sites[data1]["Error"]
+                main = sites[data1]["main"]
                 is_scrapable = sites[data1]["Scrapable"]
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
-                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
                 except Exception as e:
                     print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                     http_proxy = None
-                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
             
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
             
@@ -80,10 +82,10 @@ class Web:
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}".format(username))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "https://www.islegitsite.com/check/{}".format(username))
             f = open(report,"a")
-            f.write("FOR MAJOR INFORMATION CONSULT THESE LINKS..:\n")
-            f.write("https://www.scamadviser.com/check-website/{}\r\n".format(username))
-            f.write("https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}\r\n".format(username))
-            f.write("https://www.islegitsite.com/check/{}\r\n".format(username))
+            f.write("FOR MAJOR INFORMATION CONSULT THESE LINKS...\n")
+            f.write("https://www.scamadviser.com/check-website/{}\n".format(username))
+            f.write("https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}\n".format(username))
+            f.write("https://www.islegitsite.com/check/{}\n".format(username))
             f.close()
             choice = int(input(
                         Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A ROBOTS.TXT DOWNLOAD?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -248,7 +250,7 @@ class Web:
                 telephone2 = final["WhoisRecord"]["registrant"]["telephone"]
                 street2 = str(final["WhoisRecord"]["registrant"]["street1"])
                 city2 = str(final["WhoisRecord"]["registrant"]["city"])
-                link = "https://www.google.com/maps/place/{} {}".format(street2,city2)
+                link = "https://www.google.com/maps/place/{} {}".format(street2,city2) 
                 sleep(2)
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + created)
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + modified)
@@ -278,15 +280,30 @@ class Web:
                 f.write(street + "\r\n")
                 f.write(email + "\r\n")
                 f.write(telephone + "\r\n")
-                f.write(link + "\r\n")
                 f.close()
+                link_json = "https://nominatim.openstreetmap.org/search?q={}+{}&format=json".format(street2,city2).replace(" ","%20")
+                get_Coords = urllib.request.urlopen(link_json)
+                Reader = get_Coords.read()
+                parser = json.loads(Reader)
+                for value in parser:
+                    Lat = value["lat"]
+                    Lon = value["lon"]
+                report_Coordinates = "GUI/Reports/Websites/Coordinates/Street_Geolocation/" + username + ".json"
+                data = {
+                    "Geolocation":{
+                        "Latitude": Lat,
+                        "Longitude": Lon
+                    }
+                }
+                with open(report_Coordinates,"w",encoding="utf-8") as output:
+                    json.dump(data,output,ensure_ascii=False,indent=4)
                 num = telephone2
                 if num != "":
                     number = True
                     sc= int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "PHONE NUMBER FOUND:{} WOULD YOU LIKE TO EXECUTE A SCAN(1)YES(2)NO".format(num)  + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
                         f = open(report,"a")
-                        f.write("\nPHONE NUMBER DATA:")
+                        f.write("\nPHONE NUMBER DATA:\n")
                         f.close()
                         code = 0
                         Numbers.Phony.Number(num,report,code)
@@ -296,9 +313,10 @@ class Web:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "PHONE NUMBER NOT FOUND")
                     number = False
             except Exception as e:
+                f = str(e)
                 num = None
                 number = False
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SOME OF THE DETAILS ARE NOT AVAIABLE DOING CLASSICAL WHO IS...")
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SOME OF THE DETAILS ARE NOT AVAIABLE DOING CLASSICAL WHO IS..." + f)
                 command = ("whois " + username)
                 proces = os.popen(command)
                 results = str(proces.read())
@@ -332,6 +350,7 @@ class Web:
     def search(username):
         os.system("cls" if os.name == "nt" else "clear")
         report = "GUI/Reports/Websites/" + username + ".txt"
+        report_Ip = "GUI/Reports/Websites/Coordinates/Ip_Geolocation/" + username + ".json"
         f = open("Banners/Banner4.txt","r")
         banner = f.read()
         f.close()
@@ -397,10 +416,17 @@ class Web:
             f.write(final_lat + "\r\n")
             f.write(final_lon + "\r\n")
             f.write(zip_data + "\r\n")
-            f.write("\nGOOGLE MAPS LINK:\r\n")
-            f.write(link + "\r\n")
-            f.write
             f.close()
+            data = {
+                "Geolocation":{
+                    "Latitude":lat2.replace(" ","%20"),
+                    "Longitude":lon2.replace(" ","%20")
+                }
+            }
+            
+            with open(report_Ip,"w",encoding='utf-8') as outupt:
+                json.dump(data, outupt,ensure_ascii=False,indent=4)
+        
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS LOOKS LIKE SERVER DOES NOT RESPONDING SKIPPING...¯\(°_o)/¯ ")
         choice = int(input(

@@ -28,12 +28,12 @@ License: GNU General Public License v3.0-->
                 </script>";
                 echo '<link rel = "stylesheet" href = "../Css/Light/Style.css">';
             }
+            echo "\n";
         ?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>
         <script src = "../../Script/Author.js"></script>
-        <script src = "../../Script/Themes.js"></script>
     </head>
     <body>
         <div class = "Top-bar">

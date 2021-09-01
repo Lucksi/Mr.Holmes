@@ -33,7 +33,6 @@ License: GNU General Public License v3.0-->
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>
-        <script src = "../../Script/Themes.js"></script>
         <script src = "../../Script/Author.js"></script>
     </head>
     <body>

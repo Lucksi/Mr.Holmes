@@ -110,3 +110,33 @@ function English_Web(){
         i=i++;
     }
 }
+
+function Italian_Main(){
+    const list = new Array ("Username","Siti-Web", "Telefono")
+    const search = ("Cerca");
+    const holder = ("Italiano");
+    for (i=0;i<4;i++){
+        document.getElementsByTagName("button")[i].innerHTML=(search);
+        i=i++;
+    }
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Cards")[0].getElementsByTagName("p")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    document.getElementById("Current").innerHTML=(holder);
+}
+
+function English_Main(){
+    const list = new Array ("Username","Website", "Phone")
+    const search = ("Search");
+    const holder = ("English");
+    for (i=0;i<4;i++){
+        document.getElementsByTagName("button")[i].innerHTML=(search);
+        i=i++;
+    }
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Cards")[0].getElementsByTagName("p")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    document.getElementById("Current").innerHTML=(holder);
+}

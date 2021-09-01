@@ -73,6 +73,11 @@
 
 <br>
 
+# :heavy_check_mark: INTERACTIVE MAP HAS BEEN MADE WITH:
+## Leaflet: https://leafletjs.com
+
+<br>
+
 # :last_quarter_moon: DARK MODE:
 ![Screenshot](Screenshot/Dark_Mode.png)
 
@@ -87,5 +92,7 @@
 ![Screenshot](Screenshot/High-Contrast_Mode.png)
 
 <br>
+
+
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>

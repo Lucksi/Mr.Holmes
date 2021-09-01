@@ -1,3 +1,7 @@
+/*AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0*/
+
 function English(){
     alert("This tool has been made by Lucksi in Sicily a small Italian island Thank you for have downloaded my Tool :)");
 }

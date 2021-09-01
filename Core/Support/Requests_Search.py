@@ -8,7 +8,7 @@ from Core.Support import Font
 class Search:
     
     @staticmethod
-    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName,is_scrapable,ScraperSites):
+    def search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main):
        
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
@@ -19,7 +19,10 @@ class Search:
             if searcher.status_code == 200:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "{}: {} FOUND".format(subject,username))
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                f.write(site1 + "\r\n")
+                if Writable == True:
+                    f.write(site1 + "\r\n")
+                else:
+                    f.write("{}:{}\r\n".format(name,main))
                 successfull.append(site1)
                 successfullName.append(name)
                 if is_scrapable == "True":
@@ -35,7 +38,10 @@ class Search:
             else:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "{}: {} FOUND".format(subject,username))
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                f.write(site1 + "\r\n")
+                if Writable == True:
+                    f.write(site1 + "\r\n")
+                else:
+                    f.write("{}:{}\r\n".format(name,main))
                 successfull.append(site1)
                 successfullName.append(name)
                 if is_scrapable == "True":
@@ -48,7 +54,10 @@ class Search:
             else:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "{}: {} FOUND".format(subject,username))
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                f.write(site1 + "\r\n")
+                if Writable == True:
+                    f.write(site1 + "\r\n")
+                else:
+                    f.write("{}:{}\r\n".format(name,main))
                 successfull.append(site1)
                 successfullName.append(name)
                 if is_scrapable == "True":

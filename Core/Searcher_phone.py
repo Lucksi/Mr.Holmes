@@ -112,6 +112,7 @@ class Phone_search:
             successfull = []
             successfullName = []
             ScraperSites = []
+            Writable = True
             f = open (data,)
             data = json.loads(f.read())
             for sites in data:
@@ -121,15 +122,16 @@ class Phone_search:
                         username = username.replace("40","")
                     site1 = sites[data1]["url"].replace("{}",username)
                     site2 = sites[data1]["url2"].replace("{}",username)
+                    main = sites[data1]["main"]
                     error = sites[data1]["Error"]
                     is_scrapable = sites[data1]["Scrapable"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                     try:
-                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
                     except Exception as e:
                         print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites)
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
             
             if len(successfull):

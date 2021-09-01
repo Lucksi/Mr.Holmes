@@ -37,6 +37,7 @@ class MrHolmes:
         successfull = []
         successfullName = []
         ScraperSites = []
+        Writable = True
         f = open("Banners/Banner2.txt","r")
         banner = f.read()
         f.close()
@@ -93,6 +94,7 @@ class MrHolmes:
                 site1 = sites[data1]["user"].replace("{}",username)
                 site2= sites[data1]["user2"].replace("{}", username)
                 name = sites[data1]["name"]
+                main = sites[data1]["main"]
                 error = sites[data1]["Error"]
                 exception_char = sites[data1]["exception"]
                 is_scrapable = sites[data1]["Scrapable"]
@@ -107,11 +109,11 @@ class MrHolmes:
                     print(Font.Color.YELLOW2  + "[U]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
                 else:
                     try:
-                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites) 
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main) 
                     except Exception as e:
                         print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                         http_proxy = None
-                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)           
+                        Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)           
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n"+ Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Nsfw == 1:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "YOUR PROXY IP ADDRES IS: {} ".format(http_proxy2))
@@ -128,6 +130,7 @@ class MrHolmes:
                     site2= sites[data1]["user2"].replace("{}", username)
                     name = sites[data1]["name"]
                     error = sites[data1]["Error"]
+                    main = sites[data1]["main"]
                     exception_char = sites[data1]["exception"]
                     is_scrapable = sites[data1]["Scrapable"]
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
@@ -141,11 +144,11 @@ class MrHolmes:
                         print(Font.Color.YELLOW2  + "[U]" + Font.Color.WHITE + "USERNAME FORMAT NOT VALID..SKIPPING")   
                     else:
                         try:
-                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites) 
+                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main) 
                         except Exception as e:
                             print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                             http_proxy = None
-                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites)
+                            Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
         else:
             pass
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))

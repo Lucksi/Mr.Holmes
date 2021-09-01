@@ -28,12 +28,15 @@ License: GNU General Public License v3.0-->
                 </script>";
                 echo '<link rel = "stylesheet" href = "../Css/Light/Websites.css">';
             }
+            echo "\n";
         ?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A==" crossorigin=""/>
+        <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin=""></script>
         <meta charset ="UTF-8">
         <script src = "../../Script/Language.js"></script>
-        <script src = "../../Script/Themes.js"></script>
-        <script src = "../../Script/Author.js"></script> 
+        <script src = "../../Script/Author.js"></script>
+       
     </head>
     <body>
         <div class = "Top-bar">
@@ -88,23 +91,54 @@ License: GNU General Public License v3.0-->
                 fclose($data);
                 echo "</p>";
                 echo "\n</div>";
-                $Dir_Name = "../Reports/Websites/Robots/{$File_name}_robots.txt";
-                if(file_exists($Dir_Name)){
-                    echo "<div class = 'Data_rob'>";
-                    echo "<p id = 'Const'>ROBOTS.TXT:</p>";
-                    $data = fopen($Dir_Name,"r")or die("Server-Error");
-                    while (!feof($data)){
-                        $content = fgets($data);
-                        echo "<p>".$content;
-                    }
-                    fclose($data);
-                    echo "</p>";
-                    echo "\n</div>";
+                echo "<div class = 'Geo'>";
+                echo "<p id = 'Const'>IP-GEOLOCATION</p>";
+                $Ip_File = "../Reports/Websites/Coordinates/Ip_Geolocation/{$File_name}.json";
+                $reader = file_get_contents($Ip_File);
+                $parser = json_decode($reader,true);
+                $Latitude = $parser["Geolocation"]["Latitude"];
+                $Longitude = $parser["Geolocation"]["Longitude"];
+                echo "
+                    <div class = 'map' id='map'></div>
+                    <script>
+                    var map = L.map('map').setView([$Latitude,$Longitude], 14);
+                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                    }).addTo(map);
+        
+                    L.marker([$Latitude,$Longitude]).addTo(map)
+                        .bindPopup('Your Target is approximatley based in this Area.')
+                        .openPopup();
+                    
+                    </script>
+                   
+                    ";
+                $Street_File = "../Reports/Websites/Coordinates/Street_Geolocation/{$File_name}.json";
+                echo "<p id = 'Const'>STREET-GEOLOCATION</p>";
+                if(file_exists($Street_File)){
+                    $reader = file_get_contents($Street_File);
+                    $parser = json_decode($reader,true);
+                    $Latitude = $parser["Geolocation"]["Latitude"];
+                    $Longitude = $parser["Geolocation"]["Longitude"];
+                    echo "
+                        <div class = 'map' id='map2'></div>
+                        <script>
+                        var map2 = L.map('map2').setView([$Latitude,$Longitude], 14);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                        }).addTo(map2);
+            
+                        L.marker([$Latitude,$Longitude]).addTo(map2)
+                            .bindPopup('Your Target is approximatley based in this Area.')
+                            .openPopup();
+                        
+                        </script>
+                    
+                        ";
                 }
-                else{
-                    echo "<p>NOT ROBOTS.TXT FILE</p>";
+                else {
+                    echo "<p>NOT FOUND ANY STREET INFO</p>";
                 }
-                echo "</div>";
             }
             else {
                 echo "
@@ -118,6 +152,7 @@ License: GNU General Public License v3.0-->
         Checker();
     }
     ?>
+    
     <noscript>Please enable javascript</noscript>
     </body>
 </html>
