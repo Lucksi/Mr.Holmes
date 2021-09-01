@@ -50,16 +50,6 @@
             "Scrapable": "False"
         },
 
-        "StripChat":{
-            "Error": "Status-Code",
-            "name": "StripChat",
-            "main": "https://stripchat.com",
-            "user": "https://stripchat.com/{}",
-            "user2": "https://stripchat.com/{}",
-            "exception": [" "],
-            "Scrapable": "False"
-        },
-
         "BongaCams":{
             "Error": "Status-Code",
             "name": "BongaCams",
