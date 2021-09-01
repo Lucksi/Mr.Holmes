@@ -695,16 +695,6 @@
             "Scrapable": "False"
         },
 
-        "RaidForums":{
-            "Error": "Status-Code",
-            "name": "RaidForums",
-            "main": "raidforums.com",
-            "user": "https://raidforums.com/User-{}",
-            "user2": "https://raidforums.com/User-{}",
-            "exception": [" "],
-            "Scrapable": "False"
-        },
-
         "Kik":{
             "Error": "Message",
             "text": "The page you requested was not found.",

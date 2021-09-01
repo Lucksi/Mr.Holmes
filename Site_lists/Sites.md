@@ -69,7 +69,7 @@
 ## (68) AMINOAPPS: https://aminoapps.com
 ## (69) SUBLIMEFORUMS: https://forum.sublimetext.com
 ## (70) MINECRAFT: https://www.minecraft.net
-## (71) RAIDFORUMS: https://raidforums.com
+## (71) NEW-REDDIT: https://new.reddit.com
 ## (72) KIK: https://kik.me
 ## (73) GITLAB: "https://gitlab.com
 ## (74) SIGNAL: https://community.signalusers.org
@@ -112,7 +112,6 @@
 ## (111) KO-FI: https://ko-fi.com
 ## (112) LEETCODE: https://leetcode.com
 ## (113) LINKGENIE: https://linkgenie.co
-## (114) NEW-REDDIT: https://new.reddit.com
 
 <br>
 
@@ -123,9 +122,8 @@
 ## (4) CHATURBATE: https://chaturbate.com
 ## (5) XHAMSTER: https://xhamster.com
 ## (6) XVIDEOS: https://xvideos.com
-## (7) STRIPCHAT: https://stripchat.com
-## (8) BONGACAMS: https://pt.bongacams.com
-## (9) LIVEJASMIN: https://livestream.com
+## (7) BONGACAMS: https://pt.bongacams.com
+## (8) LIVEJASMIN: https://livestream.com
 
 <br>
 
@@ -172,6 +170,6 @@
 
 <br>
 
-# USERNAME SITES: 123
+# USERNAME SITES: 121
 # PHONE-NUMBER SITES: 14
-# TOTAL: 137 SITES
+# TOTAL: 135 SITES
