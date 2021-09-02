@@ -25,6 +25,7 @@ License: GNU General Public License v3.0*/
 #error p {
     text-align: center;
 }
+
 .Data_img {
     display: inline-block;
     position: absolute;
@@ -44,7 +45,7 @@ License: GNU General Public License v3.0*/
     margin-right: auto;
     height: 200px;
     width: 200px;
-    border: 3px solid;
+    border: 3px solid 3px solid;
     border-color: #ffffff;
     border-radius: 10px;
 }

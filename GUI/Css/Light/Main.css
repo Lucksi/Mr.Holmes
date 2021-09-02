@@ -8,7 +8,6 @@ License: GNU General Public License v3.0*/
     display: block;
     padding: 12px 14px 10px;
     margin-left: 30px;
-    animation: ascend 2s 1;
 }
 
 .Cards a {
@@ -21,12 +20,18 @@ License: GNU General Public License v3.0*/
     margin-right: auto;
     height: 40px;
     width: 60px;
-    margin-top: 200px;
+    margin-top: 125px;
+    color: #ffffff;
 }
 
 .Cards button:hover {
     background-color: #0000ff;
     color: #ffffff;
+}
+
+.Cards img {
+    height: 80px;
+    width: 80px;
 }
 
 #Username , #Website, #Phone {
@@ -51,8 +56,44 @@ License: GNU General Public License v3.0*/
     background-color: #935bfaf6;
 }
 
-@keyframes ascend {
-    0%{margin-bottom: 50px;}
-    50%{margin-top: 50px;}
-    100%{margin-top: none;}
+.Footer {
+    display:none;
+    margin-left: auto;
+    margin-right: auto;
+    animation: dissolvent 1s 1;
+}
+
+.Footer a {
+    text-decoration: none;
+}
+
+.Footer img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+    height: 70px;
+    width: auto;
+}
+
+#Exc {
+    height: 80px;
+    width: auto;
+}
+ 
+#Arrow {
+    margin-top: 10px;
+    width: 0px; 
+    height: 0px; 
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-width: 30px;
+    border-top: 30px solid #000000;
+}
+
+#Arrow:hover {
+    border-top: 30px solid #0000ff;
 }

@@ -23,6 +23,10 @@ License: GNU General Public License v3.0*/
     color: #000000;
 }
 
+#error p {
+    text-align: center;
+}
+
 .Data_img {
     display: inline-block;
     position: absolute;
