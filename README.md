@@ -30,19 +30,19 @@
     ./install_Termux.sh
 <br>
 
-# :cyclone: USAGE LINUX/MAC:
+#  USAGE LINUX/MAC:
     sudo python3 MrHolmes.py
 <br>
 
-# :cyclone: USAGE TERMUX:
+#  USAGE TERMUX:
     python3 MrHolmes.py
 <br>
 
-# :cyclone: API KEY LINK:
+# API KEY LINK:
     https://whois.whoisxmlapi.com
 <br>
 
-# :cyclone: SETTINGS FOLDER:
+# SETTINGS FOLDER:
 
     Configuration/Configuration.ini
 <br>
@@ -51,7 +51,7 @@
 ### DATABASE NOT AVAIABLE ON TERMUX
 <br>
 
-# :cyclone: VERSIONS LIST:
+# VERSIONS LIST:
     https://lucksi.github.io/Mr.Holmes/Pages/versions.html
 <br>
 
@@ -73,7 +73,7 @@
 
 <br>
 
-# :heavy_check_mark: INTERACTIVE MAP HAS BEEN MADE WITH:
+# INTERACTIVE MAP HAS BEEN MADE WITH:
 ## Leaflet: https://leafletjs.com
 
 <br>
