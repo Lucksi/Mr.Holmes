@@ -10,7 +10,7 @@
 ### This Tool is Not 100% Precise so it can fail somtimes. Also this tool is made for educational and research purposes only..use it wisely
 <br>
 
-# :cyclone: SCREENSHOT
+#  SCREENSHOT
 ![Screenshot](Screenshot/Screenshot.png)
 
 <br>
