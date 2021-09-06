@@ -29,8 +29,8 @@ License: GNU General Public License v3.0-->
                     <a href="Websites.php">Website</a>
                     <a href="Phone.php">Phone</a>
                     <a id = "change1" onclick="English()">Author</a>
-                    <a onclick="Italian_Username_Mobile()">Italiano</a>
-                    <a onclick="English_Username_Mobile()">English</a>
+                    <a onclick="Italian_Phone_Mobile()">Italiano</a>
+                    <a onclick="English_Phone_Mobile()">English</a>
                 </div>
             </div>
             <div class = "languages">
