@@ -2,6 +2,8 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
+@import url("Main.css");
+
 body {
     background-color: #1a2b34 !important;
     animation: dissolvent 2s 1;
@@ -191,4 +193,34 @@ p {
     0%{opacity: 0;}
     50%{opacity: 0.5;}
     100%{opacity: 1;}
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Data p {
+        font-size: 14px;
+    }
+
+    .Top-bar a {
+        display: block;
+        font-size: larger;
+    }
+    
+    .Hidden-bar {
+        display: block;
+    }
+     
+    .languages {
+        display: none;
+    }
+    
+    .Link {
+        display: none;
+    }
+
+    #Searcher {
+        margin-top: 60px;
+        width: 225px;
+        height: 30px; 
+    }
 }

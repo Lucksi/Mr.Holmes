@@ -19,7 +19,7 @@
     git clone https://github.com/Lucksi/Mr.Holmes
     cd Mr.Holmes
     sudo chmod +x install.sh
-    ./install.sh
+    sudo ./install.sh
 <br>
 
 # :heavy_check_mark: INSTALLATION TERMUX:
@@ -63,6 +63,8 @@
     write:Dark=(Dark-Mode) 
     write:High-Contrast(High-Contrast-Mode)
 
+<br>
+
 # MODE CODE EXAMPLE:
     {
         "Color": {
@@ -70,6 +72,34 @@
         }
     }
     
+
+<br>
+
+# :heavy_check_mark: GUI/USERNAME/PASSWORD:
+    cd GUI
+    cd Theme
+    edit Login.json
+    write:Status=Active/Deactive
+    write:Username=Your Username
+    write:Password=Your Password
+#
+
+<br>
+
+# MODE CODE EXAMPLE:
+    {
+        "Database": {
+            "Status": "Active",
+            "Username": "Admin",
+            "Password": "Qwerty123",
+        }
+    }
+
+<br>
+
+# DEFAULT USERNAME AND PASSWORD:
+    Username:Admin
+    Password:Qwerty123
 
 <br>
 

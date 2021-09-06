@@ -2,7 +2,47 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
+/*Style for Medium and Large Desktop Computer*/
 @import url("Style.css");
+
+.Hidden-bar {
+    display: none;
+}
+
+.Hidden-bar button {
+    display: block;
+    margin-top: -50px;
+    float: right;
+    width: fit-content;
+    border:2px solid;
+    border-color: #000000;
+    background-color: #008000;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.Hidden-bar button:hover {
+    background-color: #ffffff;
+    color: #000000;
+}
+
+.Options {
+    display: none;
+    background-color: #000000;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+    width: auto;
+}
+
+.Options a {
+    display:block;
+    color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    text-align: center;
+}
 
 .Cards {
     display: block;
@@ -94,5 +134,48 @@ License: GNU General Public License v3.0*/
 }
 
 #Arrow:hover {
-    border-top: 30px solid #00ffff;
+   animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+    0%{border-top:30px solid #ffffff;}
+    50%{border-top:30px solid #00ffff;}
+    100%{border-top:30px solid #ffffff;}
+}
+
+@media only screen and (min-width: 712px) and (max-width: 1024px) {
+    
+    .Hidden-bar {
+        display: none;
+    }
+
+    .Cards {
+        display: block;
+        padding: 10px 10px 8px;
+        margin-left: 20px;
+    }
+    
+    #Username , #Website, #Phone {
+        display: inline-block;
+        margin-left: 10px;
+        border: 3px solid;
+        height: fit-content;
+        width: 200px;
+        border-radius: 10px ;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Hidden-bar {
+        display: block;
+    }
+    
+    .Cards {
+        display: none;
+    }
+
+    .languages {
+        display: none;
+    }
 }

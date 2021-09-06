@@ -4,6 +4,47 @@ License: GNU General Public License v3.0*/
 
 @import url("Style.css");
 
+.Hidden-bar {
+    display: none;
+}
+
+.Hidden-bar button {
+    display: block;
+    margin-top: -50px;
+    float: right;
+    width: fit-content;
+    border:2px solid;
+    border-color: #000000;
+    background-color: #008000;
+    color: #ffffff;
+    border-radius: 10px;
+    border-color: #000000;
+    font-size: medium;
+}
+
+.Hidden-bar button:hover {
+    background-color: #0000ff;
+    color: #ffffff;
+}
+
+.Options {
+    display: none;
+    background-color: #000000;
+    width: auto;
+    border: 3px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+    width: auto;
+}
+
+.Options a {
+    display:block;
+    color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    text-align: center;
+}
+
 .Cards {
     display: block;
     padding: 12px 14px 10px;
@@ -95,5 +136,53 @@ License: GNU General Public License v3.0*/
 }
 
 #Arrow:hover {
-    border-top: 30px solid #0000ff;
+    animation: arrow 2s infinite;
+}
+
+@keyframes arrow {
+    0%{border-top:30px solid #000000;}
+    50%{border-top:30px solid #0000ff;}
+    100%{border-top:30px solid #000000;}
+}
+
+@media only screen and (min-width: 712px) and (max-width: 1024px) {
+    
+    .Hidden-bar {
+        display: none;
+    }
+
+    .Cards {
+        display: block;
+        padding: 10px 10px 8px;
+        margin-left: 20px;
+    }
+    
+    #Username , #Website, #Phone {
+        display: inline-block;
+        margin-left: 10px;
+        border: 3px solid;
+        height: fit-content;
+        width: 200px;
+        border-radius: 10px ;
+    }
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Hidden-bar {
+        display: block;
+    }
+    
+    .Hidden-bar:hover .Options {
+        display: block;
+        animation: dissolvent 2s 1;
+    }
+
+    .Cards {
+        display: none;
+    }
+
+    .languages {
+        display: none;
+    }
 }

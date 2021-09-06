@@ -140,3 +140,95 @@ function English_Main(){
     }
     document.getElementById("Current").innerHTML=(holder);
 }
+
+function Italian_Username_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const user =("Inserisci un Username...");
+    const search = ("Cerca");
+    const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
+    const photos = ("FOTO-PROFILO");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[0]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
+function English_Username_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const user =("Insert a Username...");
+    const search = ("Search");
+    const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
+    const photos = ("PROFILE-PICS");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );;
+    document.title=(list[0]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
+function Italian_Phone_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const user =("Inserisci un NumeroTelefonico...");
+    const search = ("Cerca");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[2]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function English_Phone_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const user =("Insert a PhoneNumber...");
+    const search = ("Search");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
+    document.title=(list[2]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function Italian_Web_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const user =("Inserisci un Sito web...");
+    const search = ("Cerca");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function English_Web_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const user =("Insert a Website...");
+    const search = ("Search");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}

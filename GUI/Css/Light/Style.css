@@ -2,9 +2,19 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
+@import url("Main.css");
+
 body {
     background-color: #ffffff !important;
     animation: dissolvent 2s 1;
+}
+
+Options a {
+    display:block;
+    color:#ffffff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: larger;
+    text-align: center;
 }
 
 .Top-bar p {
@@ -185,4 +195,46 @@ body {
     0%{opacity: 0;}
     50%{opacity: 0.5;}
     100%{opacity: 1;}
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Top-bar a {
+        display: block;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        color: #ffffff;
+        margin-top: none;
+        margin-left: auto;
+        margin-right: auto;
+        font-size:larger;
+        text-decoration: none;
+    }
+
+    .Hidden-bar {
+        display: block;
+    }
+    
+    .Hidden-bar:hover .Options {
+        display: block;
+        animation: dissolvent 2s 1;       
+    }
+    
+    .languages {
+        display: none;
+    }
+    
+    .Link {
+        display: none;
+    }
+
+    #Searcher {
+        width: 225px;
+        height: 30px; 
+    }
+
+    @keyframes joggle {
+        0%{color:#ffffff;}
+        50%{color:#0000ff;}
+        100%{color:#ffffff;}
+    }
 }

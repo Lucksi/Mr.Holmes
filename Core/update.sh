@@ -13,11 +13,10 @@ function check {
   printf "${LIGHTBLUE}\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
   while [[ $attempts>0 ]];
     do
-      read -p "$GREEN[#MR.HOLMES#]$WHITE-->" pass
       while [[ $pass == "" ]]
       do
         printf "${LIGHTBLUE}\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
-        read -p "$GREEN[#MR.HOLMES#]$WHITE-->" pass
+        read -sp "$GREEN[#MR.HOLMES#]$WHITE-->" pass
       done
       if [ "$pass" == "$Password" ];
         then

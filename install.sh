@@ -16,6 +16,7 @@ function banner {
 	echo "${GREEN}$reader"
 }
 
+
 function Options {
 	printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
@@ -79,6 +80,41 @@ function Options {
 	else [ $Logs == 1 ]
 		Logs="True"
 	fi
+	printf "${WHITE}\n\nWOULD YOU LIKE TO ACCESS YOUR DATABASE ON OTHER DEVICES(ON THE SAME NETWORK)?(1)YES(2)NO\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Token
+	if [ $Token == 2 ];
+		then
+		Token="False"
+	else [ $Token == 1 ]
+		Token="True"
+	fi
+	printf "${WHITE}\n\nWOULD YOU LIKE TO ADD SOME CREDENTIALS FOR ACCESS THE DATABASE?(1)YES(2)NO\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Access
+	if [ $Access == 2 ];
+		then
+		Access="False"
+	else [ $Token == 1 ]
+		Access="True"
+	fi
+	if [ "$Access" == "True" ];
+		then
+		echo '{
+	"Database":{
+		"Status": "Active",
+		"Username": "Admin",
+		"Password": "Qwerty123"
+	}
+}'>GUI/Credentials/Login.json
+	printf "\n${WHITE}YOUR DEFAULT CREDENTIALS ARE:\nUSERNAME:${GREEN}Admin\n${WHITE}PASSWORD:${GREEN}Qwerty123"
+	else [ "$Access" == "False" ]
+		echo '{
+	"Database":{
+		"Status": "Deactive",
+		"Username": "None",
+		"Password": "None"
+	}
+}'>GUI/Credentials/Login.json
+	fi
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
 	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">Configuration.ini
@@ -96,10 +132,9 @@ function Options {
 	echo "Api_Key = $key">>Configuration.ini 
 	echo "Proxy_List" = $proxies>>Configuration.ini
 	echo "Show_Logs = $Logs">>Configuration.ini
+	echo "Database"= "$Token">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
 }
-
-
 
 function installer {
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."

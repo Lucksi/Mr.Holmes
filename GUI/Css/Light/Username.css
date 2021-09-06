@@ -50,3 +50,23 @@ License: GNU General Public License v3.0*/
     border-color: #000000;
     border-radius: 10px;
 }
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Data p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Data_img {
+        display: block;
+        height: fit-content;
+        min-width:150px;
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }    
+}
