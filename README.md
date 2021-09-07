@@ -77,7 +77,7 @@
 
 # :heavy_check_mark: GUI/USERNAME/PASSWORD:
     cd GUI
-    cd Theme
+    cd Credentials
     edit Login.json
     write:Status=Active/Deactive
     write:Username=Your Username
