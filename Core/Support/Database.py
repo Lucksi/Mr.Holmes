@@ -33,5 +33,11 @@ class Controller:
         inp = input("\nPRESS ENTER TO STOP ")
         os.system ("killall  php > /dev/null 2>&1")
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "STOPPING DATABASE...")
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "DELETING TOKEN SESSION FILE...")
+        Token = "GUI/Session/Token.txt"
+        if os.path.isfile(Token):
+            os.remove(Token)
+        else:
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "TOKEN NOT FOUND...")
         sleep(3)
         Holmes.Main()
