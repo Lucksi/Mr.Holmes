@@ -1,8 +1,4 @@
 #!/bin/bash
-# AUTHOR: Lucksi
-# Copyright © 2021 Lucksi
-# License: GNU General Public License v3.0
-
 GREEN=$(tput setaf 2)
 LIGHTBLUE=$(tput setaf 6)
 WHITE=$(tput setaf 15)
@@ -13,20 +9,21 @@ function check {
   printf "${LIGHTBLUE}\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
   while [[ $attempts>0 ]];
     do
+      read -sp "$GREEN[#MR.HOLMES#]$WHITE-->" pass
       while [[ $pass == "" ]]
       do
-        printf "${LIGHTBLUE}\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
+        printf "${LIGHTBLUE}\n\nINSERT YOUR UPDATE PASSWORD YOU HAVE $attempts ATTEMPTS\n\n"
         read -sp "$GREEN[#MR.HOLMES#]$WHITE-->" pass
       done
       if [ "$pass" == "$Password" ];
         then
-        printf "${LIGHTBLUE}\nPASSWORD CORRECT!\n"
+        printf "${LIGHTBLUE}\n\nPASSWORD CORRECT!\n"
         update
       fi
         ((attempts=attempts-1))
-        printf "$LIGHTBLUE\nWRONG PASSWORD REMAINING: $attempts ATTEMPTS\n\n"
+        printf "$LIGHTBLUE\n\nWRONG PASSWORD REMAINING: $attempts ATTEMPTS\n\n"
     done
-    printf "${WHITE}\nYOU HAVE: $attempts PRESS ENTER TO EXIT"
+    printf "${WHITE}\n\nYOU HAVE: $attempts PRESS ENTER TO EXIT"
     read -p
     exit 1
 }
