@@ -17,7 +17,7 @@
             "user": "https://github.com/{}",
             "user2": "https://github.com/{}",
             "exception": [" "],
-            "Scrapable": "False"
+            "Scrapable": "True"
         },
         
         "Facebook":{

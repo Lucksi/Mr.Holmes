@@ -398,3 +398,61 @@ class info:
         f.write("STORIES: {}\r\n".format(stories))
         f.write("FOLLOWERS: {}\r\n".format(followers))
         f.write("FOLLOWING: {}\r\n".format(following))
+
+    @staticmethod
+    def Github(report,username,http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} GITHUB PROFILE...".format(username))
+        url = "https://api.github.com/users/{}".format(username)
+        openurl = requests.get(url,proxies=http_proxy,headers=headers)
+        reader = openurl.text
+        converted = json.loads(reader)
+        user = converted["login"]
+        repositories = converted["public_repos"]
+        gist = converted["public_gists"]
+        creation = converted["created_at"]
+        modification = converted["updated_at"]
+        followers = converted["followers"]
+        following = converted["following"]
+        profile_pic = converted["avatar_url"]
+        bio = converted["bio"]
+        blog = converted["blog"]
+        location = converted["location"]
+        name = converted["name"]
+
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(bio))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "REPOSITORIES: {}".format(repositories))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "GISTS: {}".format(gist))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "CREATED-ON: {}".format(creation))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LAST UPDATE: {}".format(modification))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(followers))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(following))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BLOG: {}".format(blog))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LOCATION: {}".format(location))
+        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME: {}".format(name))
+
+        download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        
+        if download == 1:
+            image = destination + "{}/_Profile_pic_GitHub.jpg".format(username)
+            getter = requests.get(profile_pic, headers=headers, allow_redirects=True)
+            open(image, "wb").write(getter.content)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PROFILE PIC SAVED ON: {}".format(image))
+        else:
+            pass
+        
+        f = open(report,"a")
+        
+        f.write("\nGIT-HUB DATA:\n")
+        f.write("USERNAME: {}\r\n".format(user))
+        f.write("BIO: {}\r\n".format(bio))
+        f.write("REPOSITORIES: {}\r\n".format(repositories))
+        f.write("GISTS: {}\r\n".format(gist))
+        f.write("CREATED-ON: {}\r\n".format(creation))
+        f.write("UPDATED-ON: {}\r\n".format(modification))
+        f.write("FOLLOWERS: {}\r\n".format(followers))
+        f.write("FOLLOWING: {}\r\n".format(following))
+        f.write("BLOG: {}\r\n".format(blog))
+        f.write("LOCATION: {}\r\n".format(location))
+        f.write("NAME: {}\r\n".format(name))
