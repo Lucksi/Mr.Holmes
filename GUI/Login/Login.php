@@ -6,11 +6,11 @@ License: GNU General Public License v3.0-->
     <head>
         <title>Login</title>
         <?php
-            include_once("../Actions/Theme_Controller.php");
+            require_once("../Actions/Theme_Controller.php");
             $File_Name = "Login.css";
             Body_Theme($File_Name);
         ?>
-        <?php include("../Actions/Credentials_Controller.php");?>
+        <?php require("../Actions/Credentials_Controller.php");?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.9">
@@ -18,7 +18,7 @@ License: GNU General Public License v3.0-->
     </head>
     <body>
         <div class = "Upper-card">
-            <?php include_once("../Actions/Theme_Controller.php");Image();?>
+            <?php require_once("../Actions/Theme_Controller.php");Image();?>
         </div>
         <center>
         <div class = "Container">
