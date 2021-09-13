@@ -5,7 +5,7 @@ License: GNU General Public License v3.0*/
 @import url("Main.css");
 
 body {
-    background-image: url("../../Icon/Kamui/Background.png");
+    background-image: url("../Icon/Uchiha/Background.png");
     background-repeat: no-repeat;
     background-position:left -20px top -20px;
     background-color: #000000 !important;
