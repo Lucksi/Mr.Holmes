@@ -11,13 +11,13 @@ License: GNU General Public License v3.0-->
             $File_Name = "Style.css";
             Body_Theme($File_Name);
         ?>
-        <link rel = "icon" href = "../Icon/Mr.Holmes.png">
+        <link rel = "icon" href = "../Icon/Base/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <meta name="theme-color" content="#000000">
-        <script src = "../../Script/Language.js"></script>
-        <script src = "../../Script/Author.js"></script>
-        <script src = "../../Script/Arrow.js"></script>
+        <script src = "../Script/Language.js"></script>
+        <script src = "../Script/Author.js"></script>
+        <script src = "../Script/Arrow.js"></script>
     </head>
     <body>
         <div class = "Top-bar">

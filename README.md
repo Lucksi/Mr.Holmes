@@ -62,6 +62,7 @@
     write:Light=(Light-Mode)
     write:Dark=(Dark-Mode) 
     write:High-Contrast(High-Contrast-Mode)
+    write:Uchiha(Uchiha-Mode)
 
 <br>
 
@@ -123,6 +124,9 @@
 
 <br>
 
+# Uchiha MODE:
+![Screenshot](Screenshot/Uchiha_Mode.png)
 
+<br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>

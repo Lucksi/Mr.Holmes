@@ -11,13 +11,13 @@ License: GNU General Public License v3.0-->
             $File_Name = "Main.css";
             Body_Theme($File_Name);
         ?>
-        <link rel = "icon" href = "../Icon/Mr.Holmes.png">
+        <link rel = "icon" href = "../Icon/Base/Mr.Holmes.png">
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <meta name="theme-color" content="#000000">
-        <script src = "../../Script/Language.js"></script>
-        <script src = "../../Script/Author.js"></script>
-        <script src = "../../Script/Arrow.js"></script>
+        <script src = "../Script/Language.js"></script>
+        <script src = "../Script/Author.js"></script>
+        <script src = "../Script/Arrow.js"></script>
     </head>
     <body>
         <div class = "Top-bar">
@@ -28,9 +28,9 @@ License: GNU General Public License v3.0-->
                     <a href="Username.php">Username</a>
                     <a href="Websites.php">Website</a>
                     <a href="Phone.php">Phone</a>
-                    <a id = "change1" onclick="English()">Author</a>
-                    <a onclick="Italian_Username_Mobile()">Italiano</a>
-                    <a onclick="English_Username_Mobile()">English</a>
+                    <a id = "change1" onclick="Play()">Author</a>
+                    <a onclick="Italian_Main_Mobile()">Italiano</a>
+                    <a onclick="English_Main_Mobile()">English</a>
                 </div>
             </div>
             <div class = "languages">
@@ -46,20 +46,7 @@ License: GNU General Public License v3.0-->
             <p id = "Const">A COMPLETE OSINT TOOL</p>
             <div class = "Cards">
                 <div id = "Username">
-                    <img src = "../Icon/social.png">
-                    <p id = "Const">USERNAME</p>
-                    <a href = "Username.php"><button>Search</button></a>
-                </div>
-                <div id = "Website">
-                    <img src = "../Icon/browser.png">
-                    <p id = "Const">WEBSITE</p>
-                    <a href = "Websites.php"><button>Search</button></a>
-                </div>
-                <div id = "Phone">
-                    <img src = "../Icon/phone.png">
-                    <p id = "Const">Phone</p>
-                    <a href = "Phone.php"><button>Search</button></a>
-                </div>
+                <?php require_once("../Actions/Theme_Controller.php");Cards()?>
             </div>
         </div>
         <a href = "#Footer" id = "Arrow" onclick="Active()"></a>

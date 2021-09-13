@@ -115,7 +115,7 @@ function Italian_Main(){
     const list = new Array ("Username","Siti-Web", "Telefono")
     const search = ("Cerca");
     const holder = ("Italiano");
-    for (i=0;i<4;i++){
+    for (i=0;i<5;i++){
         document.getElementsByTagName("button")[i].innerHTML=(search);
         i=i++;
     }
@@ -130,7 +130,7 @@ function English_Main(){
     const list = new Array ("Username","Website", "Phone")
     const search = ("Search");
     const holder = ("English");
-    for (i=0;i<4;i++){
+    for (i=0;i<5;i++){
         document.getElementsByTagName("button")[i].innerHTML=(search);
         i=i++;
     }
@@ -225,6 +225,26 @@ function English_Web_Mobile(){
     const search = ("Search");
     document.getElementById("Searcher").placeholder= user
     document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function Italian_Main_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function English_Main_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
