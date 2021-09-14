@@ -5,7 +5,7 @@ License: GNU General Public License v3.0*/
 @import url("Style.css");
 
 body{
-    background-image: url("../Icon/Uchiha/Background.png");
+    background-image: url("../../Icon/Uchiha/Background.png");
     background-repeat: no-repeat;
     background-position: left -20px top -60px;
     background-size: 600px;
