@@ -37,7 +37,7 @@ License: GNU General Public License v3.0-->
             $reader = file_get_contents($mode_file);
             $parser = json_decode($reader,true); 
             $color = $parser["Color"]["Background"];
-            if ($color == "Kamui"){
+            if ($color == "Uchiha"){
                 echo '
                 <img src = "../Icon/Uchiha/Sharingan.png"onclick="Play()">
                 <p id = "Const">USERNAME</p>
