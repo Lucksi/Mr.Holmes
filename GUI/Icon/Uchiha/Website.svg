@@ -1,0 +1,10 @@
+<!--AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0-->
+
+<svg height="100" width="100">
+  <circle cx="50" cy="50" r="45" stroke="black" stroke-width="7" fill="red"/>
+  <circle cx="50" cy="50" r="26" stroke="black" stroke-width="2" fill="red"/>
+  <circle cx="50" cy="50" r="4" stroke="black" stroke-width="10" fill="black"/>
+  <circle cx="30" cy="67" r="3" stroke="black" stroke-width="9" fill="black"/>
+</svg> 
