@@ -8,7 +8,7 @@ License: GNU General Public License v3.0*/
   ENGLISH*/
 
   function Italian_Username(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -28,7 +28,7 @@ License: GNU General Public License v3.0*/
 }
 
 function English_Username(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -48,7 +48,7 @@ function English_Username(){
 }
 
 function Italian_Phone(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -64,7 +64,7 @@ function Italian_Phone(){
 }
 
 function English_Phone(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User","Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -80,7 +80,7 @@ function English_Phone(){
 }
 
 function Italian_Web(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -96,7 +96,7 @@ function Italian_Web(){
 }
 
 function English_Web(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
@@ -142,7 +142,7 @@ function English_Main(){
 }
 
 function Italian_Username_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -160,7 +160,7 @@ function Italian_Username_Mobile(){
 }
 
 function English_Username_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -178,7 +178,7 @@ function English_Username_Mobile(){
 }
 
 function Italian_Phone_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     document.getElementById("Searcher").placeholder= user
@@ -192,7 +192,7 @@ function Italian_Phone_Mobile(){
 }
 
 function English_Phone_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     document.getElementById("Searcher").placeholder= user
@@ -206,7 +206,7 @@ function English_Phone_Mobile(){
 }
 
 function Italian_Web_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     document.getElementById("Searcher").placeholder= user
@@ -220,7 +220,7 @@ function Italian_Web_Mobile(){
 }
 
 function English_Web_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     document.getElementById("Searcher").placeholder= user
@@ -234,7 +234,7 @@ function English_Web_Mobile(){
 }
 
 function Italian_Main_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
     document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -244,7 +244,7 @@ function Italian_Main_Mobile(){
 }
 
 function English_Main_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
