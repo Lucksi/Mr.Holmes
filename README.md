@@ -81,6 +81,7 @@
     cd Credentials
     edit Login.json
     write:Status=Active/Deactive
+    edit Users.json
     write:Username=Your Username
     write:Password=Your Password
 #
@@ -88,14 +89,21 @@
 <br>
 
 # MODE CODE EXAMPLE:
+    Login.json
     {
         "Database": {
             "Status": "Active",
-            "Username": "Admin",
-            "Password": "Qwerty123",
         }
     }
-
+    Users.json
+    {
+        "Users":[
+            {
+                "Username": "Your Username,
+                "Password": "Your Password,
+            }
+        ]
+    }
 <br>
 
 # DEFAULT USERNAME AND PASSWORD:
