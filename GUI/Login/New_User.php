@@ -4,7 +4,7 @@ License: GNU General Public License v3.0-->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>Login</title>
+        <title>New User</title>
         <?php
             require_once("../Actions/Theme_Controller.php");
             $File_Name = "Login.css";
@@ -35,13 +35,12 @@ License: GNU General Public License v3.0-->
         <center>
         <div class = "Container">
             <form action = "" method = "POST">
-                <p id = "Const">LOGIN</p>
+                <p id = "Const">CREATE USER</p>
                 <p id = "Const">USERNAME</p>
                 <input type = "text" placeholder = "Username..."  name = "username">
                 <p id = "Const">PASSWORD</p>
                 <input type = "password" placeholder = "Password..." name = "password">
-                <button name = "Button">Submit</button>
-                <button name = "Button2">New User</button>
+                <button name = "Button2" id = "New_User">Submit</button>
             </form>
         </div>
         <center>

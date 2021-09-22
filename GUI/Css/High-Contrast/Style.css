@@ -85,16 +85,6 @@ p {
     font-size: medium;
 }
 
-.languages button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.languages:hover .Content {
-    display: block;
-
-}
-
 .Upper-card {
     margin-top: 30px;
     display: block;

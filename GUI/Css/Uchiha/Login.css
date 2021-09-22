@@ -34,9 +34,9 @@ License: GNU General Public License v3.0*/
 }
 
 .Container button {
-    display: block;
-    margin-left: auto;
+    display: inline-block;
     margin-right: auto;
+    margin-left: 10px;
     height: 30px;
     font-size: medium;
     background-color: green;
@@ -50,6 +50,10 @@ License: GNU General Public License v3.0*/
     
     .Container form {
         width: fit-content;
+    }
+    
+    .languages {
+        display: block;
     }
     
     .Container input {

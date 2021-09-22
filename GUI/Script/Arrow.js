@@ -33,3 +33,17 @@ function Deactive_Mobile(){
     document.getElementById("Options1").style.display="none";
     document.getElementById("Menu").setAttribute("onClick", "javascript: Active_Mobile();" );
 }
+
+function Active_Language(){
+    document.getElementById("Current").style.color="#000000";
+    document.getElementById("Current").style.backgroundColor="#ffffff";
+    document.getElementById("Content").style.display="block";
+    document.getElementById("Current").setAttribute("onClick", "javascript: Deactive_Language();" );
+}
+
+function Deactive_Language(){
+    document.getElementById("Current").style.color="#ffffff";
+    document.getElementById("Current").style.backgroundColor="#008000";
+    document.getElementById("Content").style.display="none";
+    document.getElementById("Current").setAttribute("onClick", "javascript: Active_Language();" );
+}

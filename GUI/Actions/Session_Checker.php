@@ -18,11 +18,11 @@ License: GNU General Public License v3.0-->
                 }
             }
             else {
-
+                header("Location: ");
             }
         }
         else {
-            exit(0);
+            die;
         }
     }
     Moderate();

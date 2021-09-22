@@ -28,14 +28,15 @@ License: GNU General Public License v3.0-->
                     <a href="Username.php">Username</a>
                     <a href="Websites.php">Website</a>
                     <a href="Phone.php">Phone</a>
+                    <a href="../Login/New_User.php">Create User</a>
                     <a id = "change1" onclick="English()">Author</a>
                     <a onclick="Italian_Phone_Mobile()">Italiano</a>
                     <a onclick="English_Phone_Mobile()">English</a>
                 </div>
             </div>
             <div class = "languages">
-                <button id = "Current">English</button>
-                <div class = "Content">
+                <button id = "Current" onclick="Active_Language()">English</button>
+                <div class = "Content" id = "Content">
                     <a onclick="Italian_Phone()">Italiano</a>
                     <a onclick="English_Phone()">English</a>
                 </div>
@@ -44,6 +45,7 @@ License: GNU General Public License v3.0-->
                 <a href = "Username.php">Username</a>
                 <a href = "Websites.php">Websites</a>
                 <a href = "Phone.php">Phone-Numbers</a>
+                <a href="../Login/New_User.php">Create User</a>
                 <a id = "change1" onclick= "English()">Author</a>
             </div>
         </div>

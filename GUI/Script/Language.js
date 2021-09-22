@@ -252,3 +252,21 @@ function English_Main_Mobile(){
         i=i++;
     }
 }
+
+function Italian_Login(){
+    const buttons = new Array("Invio","Crea Utente");
+    const holder = ("Italiano");
+    document.getElementById("Current").innerHTML=(holder);
+    for (i=0;buttons.length;i++){
+        document.getElementsByClassName("Container")[0].getElementsByTagName("Button")[i].innerHTML=(buttons[i]);
+    }
+}
+
+function English_Login(){
+    const buttons = new Array("Submit","New User");
+    const holder = ("English");
+    document.getElementById("Current").innerHTML=(holder);
+    for (i=0;buttons.length;i++){
+        document.getElementsByClassName("Container")[0].getElementsByTagName("Button")[i].innerHTML=(buttons[i]);
+    }
+}

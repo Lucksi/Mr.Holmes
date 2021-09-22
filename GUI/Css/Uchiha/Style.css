@@ -57,7 +57,7 @@ p {
     margin-top: -20px;
     right: 0px;
     text-align: center;
-    background-color:#1a2b34;
+    background-color:rgba(192, 197, 201, 0.288);
     border: 2px solid;
     border-radius: 10px;
     border-color: #ffffff;
@@ -86,16 +86,6 @@ p {
     color: #ffffff;
     border-radius: 10px;
     font-size: medium;
-}
-
-.languages button:hover {
-    background-color: #ffffff;
-    color: #000000;
-}
-
-.languages:hover .Content {
-    display: block;
-
 }
 
 .Upper-card {

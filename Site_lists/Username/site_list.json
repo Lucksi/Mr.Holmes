@@ -1159,6 +1159,46 @@
             "user2": "https://new.reddit.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "Vsco":{
+            "Error": "Status-Code",
+            "name": "Vsco",
+            "main": "vsco.co",
+            "user": "https://vsco.co/{}/gallery",
+            "user2": "https://vsco.co/{}/gallery",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Pastebin":{
+            "Error": "Status-Code",
+            "name": "Pastebin",
+            "main": "pastebin.com",
+            "user": "https://pastebin.com/u/{}",
+            "user2": "https://pastebin.com/u/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "RubyGems":{
+            "Error": "Status-Code",
+            "name": "RubyGems",
+            "main": "rubygems.org",
+            "user": "https://rubygems.org/profiles/{}",
+            "user2": "https://rubygems.org/profiles/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Asciinema":{
+            "Error": "Status-Code",
+            "name": "Asciinema",
+            "main": "asciinema.org",
+            "user": "https://asciinema.org/~{}",
+            "user2": "https://asciinema.org/~{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

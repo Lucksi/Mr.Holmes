@@ -112,6 +112,10 @@
 ## (111) KO-FI: https://ko-fi.com
 ## (112) LEETCODE: https://leetcode.com
 ## (113) LINKGENIE: https://linkgenie.co
+## (114) VSCO: https://vsco.co
+## (115) PASTEBIN: https://pastebin.com
+## (116) RUBYGEMS: https://rubygems.org
+## (117) ASCIINEMA: https://asciinema.org
 
 <br>
 
@@ -170,6 +174,6 @@
 
 <br>
 
-# USERNAME SITES: 121
+# USERNAME SITES: 125
 # PHONE-NUMBER SITES: 14
-# TOTAL: 135 SITES
+# TOTAL: 139 SITES

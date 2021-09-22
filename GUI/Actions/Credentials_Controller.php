@@ -8,13 +8,16 @@ License: GNU General Public License v3.0-->
     function Confront_Creds(){
         global $Input_username;
         global $Input_Password;
-        $Login_file = "../Credentials/Login.json";
+        $Login_file = "../Credentials/Users.json";
         $Reader = file_get_contents($Login_file);
         $Parser = json_decode($Reader,true);
-        $Username_1 = $Parser["Database"]["Username"];
-        $Password_1 = $Parser["Database"]["Password"];
-        $Session_File = "../Session/Token.txt";
-        if ($Username_1 == $Input_username and $Password_1 == $Input_Password){
+        foreach($Parser["Users"] as $Data){
+            if($Input_username == $Data["Username"] and $Input_Password == $Data["Password"]){
+                $Flag = 1;
+            }
+        }
+        if ($Flag == 1){
+            $Session_File = "../Session/Token.txt";
             header("Location: ../Database/Main.php");
             $Creator = fopen($Session_File,"w")or die("SESSION-ERROR");
             fwrite($Creator,"LOG FOR YOUR CURRENT SESSION_THIS WILL EXPIRE ONCE YOU QUIT YOUR SESSION");
@@ -28,7 +31,7 @@ License: GNU General Public License v3.0-->
         }
     }
     
-    function Check_Creds() {
+    function Check_Creds(){
         global $Input_username;
         global $Input_Password;
         if ($Input_Password == "" and $Input_username == ""){
@@ -42,7 +45,55 @@ License: GNU General Public License v3.0-->
             Confront_Creds();
         }  
     }
-    if (isset($_POST["Button"])){
+
+    function Create_User(){
+        global $Input_username;
+        global $Input_Password;
+        $Flag = 0;
+        $Database = "../Credentials/Users.json";
+        if(file_exists($Database)){
+            $Reader = file_get_contents($Database);
+            $Parser = json_decode($Reader,true);
+            $Credentials = $Parser["Users"];
+            if ($Input_Password == "" and $Input_username == ""){
+                echo "
+                <script>
+                alert('USERNAME OR PASSWORD NOT INSERTED');
+                </script>
+                ";
+            }
+            else {
+                foreach($Parser["Users"] as $Data){
+                    if($Input_username == $Data["Username"]){
+                        $Flag = 1;
+                    }
+                }
+                if ($Flag == 1){
+                    echo "<script>
+                    alert('OPS USER $Input_username ALREADY EXIST');
+                    </script>";
+                }
+                else {
+                    echo "<script>
+                    alert('USER $Input_username CREATED');
+                    </script>";
+                    $json_string = file_get_contents($Database);
+                    $json = json_decode($json_string, true);
+                    array_push($json["Users"], array("Username" => "$Input_username", "Password" => "$Input_Password"));
+                    $strNew = json_encode($json,JSON_PRETTY_PRINT);
+                    file_put_contents($Database, $strNew);
+                }
+            }
+        }
+        else {
+            echo "<script>alert('ESSENTIAL FILE NOT FOUND EXIT')</script>";        
+            die;
+        }
+    }
+    if(isset($_POST["Button2"])){
+       Create_User();
+    }
+    elseif(isset($_POST["Button"])){
         Check_Creds();              
     } 
 ?>
