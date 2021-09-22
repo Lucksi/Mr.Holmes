@@ -16,7 +16,6 @@ function banner {
 	echo "${GREEN}$reader"
 }
 
-
 function Options {
 	printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
@@ -100,20 +99,32 @@ function Options {
 		then
 		echo '{
 	"Database":{
-		"Status": "Active",
-		"Username": "Admin",
-		"Password": "Qwerty123"
+		"Status": "Active"
 	}
 }'>GUI/Credentials/Login.json
-	printf "\n${WHITE}YOUR DEFAULT CREDENTIALS ARE:\nUSERNAME:${GREEN}Admin\n${WHITE}PASSWORD:${GREEN}Qwerty123"
+    echo '{
+	"Users":[
+        {
+		"Username": "Admin",
+		"Password": "Qwerty123"
+        }
+    ]
+}'>GUI/Credentials/Users.json
+	printf "\n\n${WHITE}YOUR DEFAULT CREDENTIALS ARE:\nUSERNAME:${GREEN}Admin\n${WHITE}PASSWORD:${GREEN}Qwerty123\n\n"
 	else [ "$Access" == "False" ]
 		echo '{
 	"Database":{
 		"Status": "Deactive",
-		"Username": "None",
-		"Password": "None"
 	}
 }'>GUI/Credentials/Login.json
+    echo '{
+	"Users":[
+        {
+		"Username": "",
+		"Password": ""
+        }
+    ]
+}'>GUI/Credentials/Users.json
 	fi
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
