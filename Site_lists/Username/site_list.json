@@ -1199,6 +1199,47 @@
             "user2": "https://asciinema.org/~{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "Milkshake":{
+            "Error": "Status-Code",
+            "name": "Milkshake",
+            "main": "milkshake.app",
+            "user": "https://msha.ke/{}",
+            "user2": "https://msha.ke/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "MyMonat":{
+            "Error": "Status-Code",
+            "name": "MyMonat",
+            "main": "mymonat.com",
+            "user": "https://{}.mymonat.com/",
+            "user2": "https://{}.mymonat.com/",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "WordPress":{
+            "Error": "Message",
+            "text": "doesn&apos;t&nbsp;exist",
+            "name": "WordPress",
+            "main": "wordpress.com",
+            "user": "https://{}.wordpress.com",
+            "user2": "https://{}.wordpress.com",
+            "exception": [" ","/","_"],
+            "Scrapable": "False"
+        },
+
+        "Gitee":{
+            "Error": "Status-Code",
+            "name": "Gitee",
+            "main": "gitee.com",
+            "user": "https://gitee.com/{}",
+            "user2": "https://gitee.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

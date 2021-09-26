@@ -116,6 +116,10 @@
 ## (115) PASTEBIN: https://pastebin.com
 ## (116) RUBYGEMS: https://rubygems.org
 ## (117) ASCIINEMA: https://asciinema.org
+## (118) MILKSHAKE: https://milkshake.app
+## (119) MYMONAT: https://mymonat.com
+## (120) WORDPRESS: https://{}.wordpress.com
+## (121) GITEE: https://gitee.com
 
 <br>
 
@@ -174,6 +178,6 @@
 
 <br>
 
-# USERNAME SITES: 125
+# USERNAME SITES: 129
 # PHONE-NUMBER SITES: 14
-# TOTAL: 139 SITES
+# TOTAL: 143 SITES
