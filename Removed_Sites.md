@@ -36,4 +36,12 @@
 
 <br>
 
+## REDDIT: https://reddit.com
+     gives always positive response even if the user doesn't exist
+
+<br>
+
+## NEW-REDDIT: https://new.reddit.com
+     gives always positive response even if the user doesn't exist
+
 ## THESE WEBSITES ARE NOT AVAIBLE FOR NOW AND MAY COME BACK IN THE FUTURES

@@ -4,7 +4,7 @@
 ## (3) FACEBOOK: https://facebook.com
 ## (4) NITTER: https://nitter.nixnet.services
 ## (5) POKEMON-SHODOWN: https://pokemonshowdown.com
-## (6) REDDIT: https://reddit.com
+## (6) SPEEDRUN: https://www.speedrun.com
 ## (7) VIMEO: https://vimeo.com
 ## (8) PSNPROFILES: https://psnprofiles.com
 ## (9) INTERPALS: https://interpals.net
@@ -69,7 +69,7 @@
 ## (68) AMINOAPPS: https://aminoapps.com
 ## (69) SUBLIMEFORUMS: https://forum.sublimetext.com
 ## (70) MINECRAFT: https://www.minecraft.net
-## (71) NEW-REDDIT: https://new.reddit.com
+## (71) SPLITS.IO: https://splits.io
 ## (72) KIK: https://kik.me
 ## (73) GITLAB: "https://gitlab.com
 ## (74) SIGNAL: https://community.signalusers.org
@@ -120,6 +120,9 @@
 ## (119) MYMONAT: https://mymonat.com
 ## (120) WORDPRESS: https://{}.wordpress.com
 ## (121) GITEE: https://gitee.com
+## (122) SCRATCH: https://scratch.mit.edu
+## (123) NPM: https://www.npmjs.com
+## (124) MSTDN: https://mstdn.io
 
 <br>
 
@@ -178,6 +181,6 @@
 
 <br>
 
-# USERNAME SITES: 129
+# USERNAME SITES: 132
 # PHONE-NUMBER SITES: 14
-# TOTAL: 143 SITES
+# TOTAL: 146 SITES

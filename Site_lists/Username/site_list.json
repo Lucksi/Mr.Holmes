@@ -219,17 +219,6 @@
             "exception": [" "],
             "Scrapable": "False"
         },
-
-        "Reddit":{
-            "Error": "Message",
-            "text": "<title>Reddit - Dive into anything</title>",
-            "name": "Reddit",
-            "main": "reddit.com",
-            "user": "https://www.reddit.com/user/{}",
-            "user2": "https://www.reddit.com/user/{}",
-            "exception": [" ","/"],
-            "Scrapable": "False"
-        },
         
         "9GAG":{
             "Error": "Status-Code",
@@ -1150,17 +1139,6 @@
             "Scrapable": "False"
         },
 
-        "New-Reddit":{
-            "Error": "Message",
-            "text": "<title>Reddit - Dive into anything</title>",
-            "name": "New-Reddit",
-            "main": "new.reddit.com",
-            "user": "https://new.reddit.com/user/{}",
-            "user2": "https://new.reddit.com/user/{}",
-            "exception": [" ","/"],
-            "Scrapable": "False"
-        },
-
         "Vsco":{
             "Error": "Status-Code",
             "name": "Vsco",
@@ -1238,6 +1216,56 @@
             "main": "gitee.com",
             "user": "https://gitee.com/{}",
             "user2": "https://gitee.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Scratch":{
+            "Error": "Status-Code",
+            "name": "Scratch",
+            "main": "scratch.mit.edu",
+            "user": "https://scratch.mit.edu/users/{}",
+            "user2": "https://scratch.mit.edu/users/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Npm":{
+            "Error": "Status-Code",
+            "name": "Npm",
+            "main": "npmjs.com",
+            "user": "https://www.npmjs.com/~{}",
+            "user2": "https://www.npmjs.com/~{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Mstdn":{
+            "Error": "Status-Code",
+            "name": "Mstdn",
+            "main": "mstdn.io",
+            "user": "https://mstdn.io/@{}",
+            "user2": "https://mstdn.io/@{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Splits.io":{
+            "Error": "Status-Code",
+            "name": "Splits.io",
+            "main": "splits.io",
+            "user": "https://splits.io/users/{}",
+            "user2": "https://splits.io/users/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Speedrun":{
+            "Error": "Status-Code",
+            "name": "Speedrun",
+            "main": "speedrun.com",
+            "user": "https://www.speedrun.com/user/{}",
+            "user2": "https://www.speedrun.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }
