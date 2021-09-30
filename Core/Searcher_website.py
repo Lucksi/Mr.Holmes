@@ -64,7 +64,10 @@ class Web:
                 except Exception as e:
                     print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
                     http_proxy = None
-                    Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
+                    try:
+                        Requests_Search.Search.search(error,report,site1,site2,http_proxy,sites,data1,username,subject,successfull,name,successfullName,is_scrapable,ScraperSites,Writable,main)
+                    except Exception as e:
+                        print(Font.Color.BLUE + "\n[N]"+ Font.Color.WHITE + "CANNOT REACH THIS SITE SKIPPING...")
             
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "{}: {} FOUNDS ON:".format(subject,username))
             
