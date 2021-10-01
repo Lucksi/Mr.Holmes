@@ -39,7 +39,7 @@ License: GNU General Public License v3.0-->
             $color = $parser["Color"]["Background"];
             if ($color == "Uchiha"){
                 echo '
-                <img src = "../Icon/Uchiha/Sharingan.png"onclick="Play()">
+                <img src = "../Icon/Uchiha/Username.png"onclick="Play()">
                 <p id = "Const">USERNAME</p>
                 <a href = "Username.php"><button>Search</button></a>
             </div>
@@ -101,7 +101,7 @@ License: GNU General Public License v3.0-->
                 echo "<img src = '../Icon/High-Contrast/Mr.Holmes_Contrast.png'>\n";
             }
             elseif ($color == "Uchiha"){
-                echo "<img src = '../Icon/Uchiha/Sharingan.png'onclick='Play()'>";
+                echo "<img src = '../Icon/Uchiha/Rinnegan.png'onclick='Play()'>";
             }
             else {
                 echo "<img src = '../Icon/Base/Mr.Holmes.png'>";

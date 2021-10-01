@@ -5,10 +5,7 @@ License: GNU General Public License v3.0*/
 @import url("Main.css");
 
 body {
-    background-image: url("../../Icon/Uchiha/Background.png");
-    background-repeat: no-repeat;
-    background-position:left -20px top -20px;
-    background-color: #000000 !important;
+    background-color: #000000da !important;
     animation: dissolvent 2s 1;
 }
 
@@ -203,10 +200,6 @@ p {
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {
-    
-    body {
-        background-position:center top -20px;
-    }
     .Top-bar a {
         display: block;
         font-size: larger;

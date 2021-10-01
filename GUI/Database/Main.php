@@ -36,7 +36,7 @@ License: GNU General Public License v3.0-->
             </div>
             <div class = "languages">
                 <button id = "Current"onclick="Active_Language()">English</button>
-                <div class = "Content">
+                <div class = "Content" id = "Content">
                     <a onclick="Italian_Main()">Italiano</a>
                     <a onclick="English_Main()">English</a>
                 </div>
@@ -54,9 +54,10 @@ License: GNU General Public License v3.0-->
         <div class = "Footer" id = "Footer" name = "Footer">
             <p id = "Const">MY-CONTACTS</p>
             <div class = "Board">
-                <a href = "https://instagram.com/lucks_022"><img src = "../Icon/instagram.png" id = "Exc"></a>
-                <a href = "mailto:lukege287@gmail.com"><img src = "../Icon/Email.png"></a>
-                <a href = "https://github.com/Lucksi"><img src = "../Icon/Git-hub.png"></a>
+                <a href = "https://instagram.com/lucks_022" target = "blank"><img src = "../Icon/instagram.png" id = "Exc"></a>
+                <a href = "mailto:lukege287@gmail.com" target = "blank"><img src = "../Icon/Email.png"></a>
+                <a href = "https://github.com/Lucksi" target = "blank"><img src = "../Icon/Git-hub.png"></a>
+                <a href = "https://www.linkedin.com/in/luca-garofalo-7261ba21a" target = "blank"><img src = "../Icon/linkedin.png"></a>
             </div>
         </div>
     </body>

@@ -36,7 +36,7 @@ License: GNU General Public License v3.0-->
             </div>
             <div class = "languages">
                 <button id = "Current" onclick="Active_Language()">English</button>
-                <div class = "Content">
+                <div class = "Content" id = "Content">
                     <a onclick="Italian_Username()">Italiano</a>
                     <a onclick="English_Username()">English</a>
                 </div>

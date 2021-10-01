@@ -4,13 +4,6 @@ License: GNU General Public License v3.0*/
 
 @import url("Style.css");
 
-body{
-    background-image: url("../../Icon/Uchiha/Background.png");
-    background-repeat: no-repeat;
-    background-position: left -20px top -60px;
-    background-size: 600px;
-}
-
 .Hidden-bar {
     display: none;
 }
@@ -175,10 +168,6 @@ body{
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {
-    
-    body {
-        background-position:center top -20px;
-    }
     
     .Hidden-bar {
         display: block;
