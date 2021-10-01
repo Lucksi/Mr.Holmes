@@ -100,7 +100,7 @@
         "Users":[
             {
                 "Username": "Your Username,
-                "Password": "Your Password
+                "Password": "Your Password,
             }
         ]
     }
