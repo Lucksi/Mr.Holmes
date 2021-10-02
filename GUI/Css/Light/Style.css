@@ -201,6 +201,17 @@ Options a {
         text-decoration: none;
     }
 
+    .Content a {
+        color: #000000;
+        margin-left: 10px;
+        text-decoration: none;
+        display: block;
+        font-size: medium;
+        width: fit-content;
+        background-color: #ffffff93;
+    
+    }
+
     .Hidden-bar {
         display: block;
     }
@@ -224,8 +235,8 @@ Options a {
     }
 
     @keyframes joggle {
-        0%{color:#ffffff;}
+        0%{color:#000000;}
         50%{color:#0000ff;}
-        100%{color:#ffffff;}
+        100%{color:#000000;}
     }
 }

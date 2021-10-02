@@ -33,9 +33,9 @@ License: GNU General Public License v3.0*/
     color: #000000;
 }
 .Container button {
-    display: block;
-    margin-left: auto;
+    display: inline-block;
     margin-right: auto;
+    margin-left: 10px;
     height: 30px;
     font-size: medium;
     background-color: green;
@@ -46,9 +46,15 @@ License: GNU General Public License v3.0*/
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {
+
     .Container form {
         width: fit-content;
     }
+
+    .languages {
+        display: block;
+    }
+
     .Container input {
         min-width: 200px;
         max-width: 300px;
