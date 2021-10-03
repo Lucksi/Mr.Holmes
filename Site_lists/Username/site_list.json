@@ -1268,6 +1268,56 @@
             "user2": "https://www.speedrun.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "GameSpot":{
+            "Error": "Status-Code",
+            "name": "GameSpot",
+            "main": "gamespot.com",
+            "user": "https://www.gamespot.com/profile/{}",
+            "user2": "https://www.gamespot.com/profile/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "HubPages":{
+            "Error": "Status-Code",
+            "name": "HubPages",
+            "main": "hubpages.com",
+            "user": "https://hubpages.com/@{}",
+            "user2": "https://hubpages.com/@{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Opensource":{
+            "Error": "Status-Code",
+            "name": "Opensource",
+            "main": "opensource.com",
+            "user": "https://opensource.com/users/{}",
+            "user2": "https://opensource.com/users/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "OpenStreetMap":{
+            "Error": "Status-Code",
+            "name": "OpenStreetMap",
+            "main": "openstreetmap.org",
+            "user": "https://www.openstreetmap.org/user/{}",
+            "user2": "https://www.openstreetmap.org/user/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "SlideShare":{
+            "Error": "Status-Code",
+            "name": "SlideShare",
+            "main": "slideshare.net",
+            "user": "https://slideshare.net/{}",
+            "user2": "https://slideshare.net/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

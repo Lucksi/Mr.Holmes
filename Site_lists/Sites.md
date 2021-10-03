@@ -123,6 +123,11 @@
 ## (122) SCRATCH: https://scratch.mit.edu
 ## (123) NPM: https://www.npmjs.com
 ## (124) MSTDN: https://mstdn.io
+## (125) HUBPAGES: https://hubpages.com
+## (126) GAMESPOT: https://www.gamespot.com
+## (127) OPENSOURCE: https://opensource.com
+## (128) OPENSTREETMAP: https://www.openstreetmap.org
+## (129) SLIDESHARE: https://slideshare.net
 
 <br>
 
@@ -181,6 +186,6 @@
 
 <br>
 
-# USERNAME SITES: 132
+# USERNAME SITES: 137
 # PHONE-NUMBER SITES: 14
-# TOTAL: 146 SITES
+# TOTAL: 151 SITES
