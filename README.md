@@ -15,9 +15,6 @@
   <img src = "https://img.shields.io/badge/Made%20with-Shell-1f425f.svg">
 </p>
 
-<br>
-<br>
-
 # :mag: Mr.Holmes 
 
 ### Mr.Holmes is a information gathering tool (OSINT). Is main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.
