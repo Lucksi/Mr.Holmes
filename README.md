@@ -142,7 +142,7 @@
 <br>
 
 <p align = "center">
-<img src="Screenshot/Dark.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
+<img src="Screenshot/Dark.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
 <br>
@@ -153,7 +153,7 @@
 <br>
 
 <p align = "center">
-<img src="Screenshot/Light.jpg" height ="500px" width = "300px" border = "5px" style="border-color:gray;">
+<img src="Screenshot/Light.jpg" height ="490px" width = "300px" border = "5px" style="border-color:gray;">
 </p>
 
 
