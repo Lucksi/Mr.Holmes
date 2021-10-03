@@ -2,7 +2,23 @@
   <img width="200" height="200" src="Icon/Mr.Holmes.png">
 </p>
 
+<br>
+
+<img src = "https://img.shields.io/github/stars/Lucksi/Mr.Holmes">
+<img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
+<img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
+<img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
+<img src = "https://img.shields.io/badge/Made%20with-Python-1f425f.svg">
+<img src = "https://img.shields.io/badge/Made%20with-Php-1f425f.svg">
+<img src = "https://img.shields.io/badge/Made%20with-Css-1f425f.svg">
+<img src = "https://img.shields.io/badge/Made%20with-Javascript-1f425f.svg">
+<img src = "https://img.shields.io/badge/Made%20with-Shell-1f425f.svg">
+
+<br>
+<br>
+
 # :mag: Mr.Holmes 
+
 ### Mr.Holmes is a information gathering tool (OSINT). Is main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.
 <br>
 
