@@ -8,11 +8,6 @@
   <img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
   <img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
-  <img src = "https://img.shields.io/badge/Made%20with-Python-1f425f.svg">
-  <img src = "https://img.shields.io/badge/Made%20with-Php-1f425f.svg">
-  <img src = "https://img.shields.io/badge/Made%20with-Css-1f425f.svg">
-  <img src = "https://img.shields.io/badge/Made%20with-Javascript-1f425f.svg">
-  <img src = "https://img.shields.io/badge/Made%20with-Shell-1f425f.svg">
 </p>
 
 # :mag: Mr.Holmes 
