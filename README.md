@@ -2,7 +2,6 @@
   <img width="200" height="200" src="Icon/Mr.Holmes.png">
 </p>
 
-<br>
 <p align = "center">
   <img src = "https://img.shields.io/github/stars/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
