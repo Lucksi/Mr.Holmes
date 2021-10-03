@@ -24,21 +24,26 @@
 <br>
 
 # :heavy_check_mark: INSTALLATION LINUX/MAC:
+```bash
     git clone https://github.com/Lucksi/Mr.Holmes
     cd Mr.Holmes
     sudo chmod +x install.sh
     sudo ./install.sh
+```
 <br>
 
 # :heavy_check_mark: INSTALLATION TERMUX:
+```bash
     pkg install proot
     git clone https://github.com/Lucksi/Mr.Holmes
     cd Mr.Holmes
     proot -0 chmod +x install_Termux.sh
     ./install_Termux.sh
+```
 <br>
 
 #  USAGE LINUX/MAC:
+
     sudo python3 MrHolmes.py
 <br>
 
@@ -64,6 +69,7 @@
 <br>
 
 # :heavy_check_mark: GUI DARK/LIGHT MODE:
+```bash
     cd GUI
     cd Theme
     edit Mode.json
@@ -71,20 +77,21 @@
     write:Dark=(Dark-Mode) 
     write:High-Contrast(High-Contrast-Mode)
     write:Uchiha(Uchiha-Mode)
-
+```
 <br>
 
 # MODE CODE EXAMPLE:
+```json
     {
         "Color": {
             "Background": "Light"
         }
     }
-    
-
+```
 <br>
 
 # :heavy_check_mark: GUI/USERNAME/PASSWORD:
+```bash
     cd GUI
     cd Credentials
     edit Login.json
@@ -92,26 +99,30 @@
     edit Users.json
     write:Username=Your Username
     write:Password=Your Password
-#
-
+```
 <br>
 
 # MODE CODE EXAMPLE:
+```json
     Login.json
+    
     {
         "Database": {
             "Status": "Active",
         }
     }
+    
     Users.json
+    
     {
         "Users":[
             {
-                "Username": "Your Username,
-                "Password": "Your Password,
+                "Username": "Your Username",
+                "Password": "Your Password",
             }
         ]
     }
+```
 <br>
 
 # DEFAULT USERNAME AND PASSWORD:
@@ -130,8 +141,21 @@
 
 <br>
 
+<p align = "center">
+<img src="Screenshot/Dark.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
+</p>
+
+<br>
+
 # :full_moon: LIGHT MODE:
 ![Screenshot](Screenshot/Light_Mode.png)
+
+<br>
+
+<p align = "center">
+<img src="Screenshot/Light.jpg" height ="500px" width = "300px" border = "5px" style="border-color:gray;">
+</p>
+
 
 <br>
 
@@ -140,8 +164,21 @@
 
 <br>
 
+<p align = "center">
+<img src="Screenshot/High-Contrast.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
+</p>
+
+
+<br>
+
 # Uchiha MODE:
 ![Screenshot](Screenshot/Uchiha_Mode.png)
+
+<br>
+
+<p align = "center">
+<img src="Screenshot/Uchiha.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
+</p>
 
 <br>
 
