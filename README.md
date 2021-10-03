@@ -3,7 +3,7 @@
 </p>
 
 <br>
-<p align = "left">
+<p align = "center">
   <img src = "https://img.shields.io/github/stars/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/forks/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/badge/Maintained%3F-yes-green.svg">
