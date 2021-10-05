@@ -25,25 +25,24 @@
 
 # :heavy_check_mark: INSTALLATION LINUX/MAC:
 ```bash
-    git clone https://github.com/Lucksi/Mr.Holmes
-    cd Mr.Holmes
-    sudo chmod +x install.sh
-    sudo ./install.sh
+git clone https://github.com/Lucksi/Mr.Holmes
+cd Mr.Holmes
+sudo chmod +x install.sh
+sudo ./install.sh
 ```
 <br>
 
 # :heavy_check_mark: INSTALLATION TERMUX:
 ```bash
-    pkg install proot
-    git clone https://github.com/Lucksi/Mr.Holmes
-    cd Mr.Holmes
-    proot -0 chmod +x install_Termux.sh
-    ./install_Termux.sh
+pkg install proot
+git clone https://github.com/Lucksi/Mr.Holmes
+cd Mr.Holmes
+proot -0 chmod +x install_Termux.sh
+./install_Termux.sh
 ```
 <br>
 
 #  USAGE LINUX/MAC:
-
     sudo python3 MrHolmes.py
 <br>
 
@@ -70,58 +69,58 @@
 
 # :heavy_check_mark: GUI DARK/LIGHT MODE:
 ```bash
-    cd GUI
-    cd Theme
-    edit Mode.json
-    write:Light=(Light-Mode)
-    write:Dark=(Dark-Mode) 
-    write:High-Contrast(High-Contrast-Mode)
-    write:Uchiha(Uchiha-Mode)
+cd GUI
+cd Theme
+edit Mode.json
+write:Light=(Light-Mode)
+write:Dark=(Dark-Mode) 
+write:High-Contrast(High-Contrast-Mode)
+write:Uchiha(Uchiha-Mode)
 ```
 <br>
 
-# MODE CODE EXAMPLE:
+# Mode.json CODE EXAMPLE:
 ```json
-    {
-        "Color": {
-            "Background": "Light"
-        }
+{
+    "Color": {
+        "Background": "Light"
     }
+}
 ```
 <br>
 
 # :heavy_check_mark: GUI/USERNAME/PASSWORD:
 ```bash
-    cd GUI
-    cd Credentials
-    edit Login.json
-    write:Status=Active/Deactive
-    edit Users.json
-    write:Username=Your Username
-    write:Password=Your Password
+cd GUI
+cd Credentials
+edit Login.json
+write:Status=Active/Deactive
+edit Users.json
+write:Username=Your Username
+write:Password=Your Password
 ```
 <br>
 
-# MODE CODE EXAMPLE:
+# Login.json CODE EXAMPLE:
+```json    
+{
+    "Database": {
+        "Status": "Active"
+    }
+}
+```
+<br>
+
+# Users.json CODE EXAMPLE
 ```json
-    Login.json
-    
-    {
-        "Database": {
-            "Status": "Active",
+{
+    "Users":[
+        {
+            "Username": "Your Username",
+            "Password": "Your Password"
         }
-    }
-    
-    Users.json
-    
-    {
-        "Users":[
-            {
-                "Username": "Your Username",
-                "Password": "Your Password",
-            }
-        ]
-    }
+    ]
+}
 ```
 <br>
 
@@ -142,7 +141,7 @@
 <br>
 
 <p align = "center">
-<img src="Screenshot/Dark.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
+<img src="Screenshot/Dark.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
 <br>
@@ -153,7 +152,7 @@
 <br>
 
 <p align = "center">
-<img src="Screenshot/Light.jpg" height ="490px" width = "300px" border = "5px" style="border-color:gray;">
+<img src="Screenshot/Light.jpg" height ="500px" width = "300px" border = "5px" style="border-color:gray;">
 </p>
 
 
@@ -183,3 +182,4 @@
 <br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi

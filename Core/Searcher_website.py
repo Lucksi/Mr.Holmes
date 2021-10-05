@@ -299,6 +299,11 @@ class Web:
                             "Longitude": Lon
                         }
                     }
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GETTING LOCATION GEODATA...")
+                    sleep(2)
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
+                    sleep(2)
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
                     with open(report_Coordinates,"w",encoding="utf-8") as output:
                         json.dump(data,output,ensure_ascii=False,indent=4)
                 except Exception as e:
