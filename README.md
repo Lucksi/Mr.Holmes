@@ -182,7 +182,4 @@ write:Password=Your Password
 <br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
-
-<br>
-
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi</p>
