@@ -31,7 +31,6 @@ function check {
     exit 1
 }
 
-
 function update {
   Update_path=$(sed -nr "/^\[Settings\]/ { :l /^Path[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" <Configuration/Configuration.ini)
   cd $Update_path

@@ -7,11 +7,20 @@ import getpass
 import MrHolmes as holmes
 from Core.Support import Font
 from configparser import ConfigParser
+from Core.Support import Clear
 
 dest = "Configuration"
 nomefile = "Configuration.ini"
 
 class Config:
+
+    @staticmethod
+    def Banner():
+        Clear.Screen.Clear()
+        f = open("Banners/Banner5.txt")
+        banner = f.read()
+        f.close()
+        print(Font.Color.GREEN + banner)
 
     @staticmethod
     def modify_recipient():
@@ -295,11 +304,7 @@ class Config:
     @staticmethod
     def main():
         while True:
-            os.system("cls" if os.name == "nt" else "clear")
-            f = open("Banners/Banner5.txt")
-            banner = f.read()
-            f.close()
-            print(Font.Color.GREEN + banner)
+            Config.Banner()
             option = "\n(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\n(10)MODIFY-LOGS\n(11)MAIN-MENU"
             options = str(option)
             print(Font.Color.GREEN + "[INSERT AN OPTION]")

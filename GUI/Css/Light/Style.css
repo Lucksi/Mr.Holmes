@@ -15,6 +15,7 @@ Options a {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
     text-align: center;
+    animation: joggle,1s,infinite;
 }
 
 .Top-bar p {
@@ -235,8 +236,8 @@ Options a {
     }
 
     @keyframes joggle {
-        0%{color:#000000;}
+        0%{color:#ffffff;}
         50%{color:#0000ff;}
-        100%{color:#000000;}
+        100%{color:#ffffff;}
     }
 }

@@ -30,6 +30,7 @@ License: GNU General Public License v3.0-->
                     <a href="Username.php">Username</a>
                     <a href="Websites.php">Website</a>
                     <a href="Phone.php">Phone</a>
+                    <a href = "Ports.php">Port</a>
                     <a href="../Login/New_User.php">Create User</a>
                     <a id = "change1" onclick="English()">Author</a>
                     <a onclick="Italian_Web_Mobile()">Italiano</a>
@@ -45,9 +46,10 @@ License: GNU General Public License v3.0-->
             </div>
             <div class = "Link">
                 <a href = "Username.php">Username</a>
-                <a href = "Websites.php">Websites</a>
-                <a href = "Phone.php">Phone-Numbers</a>
-                <a href="../Login/New_User.php">Create User</a>
+                <a href = "Websites.php">Website</a>
+                <a href = "Phone.php">Phone</a>
+                <a href = "Ports.php">Port</a>
+                <a href ="../Login/New_User.php">Create User</a>
                 <a  id = "change2" onclick= "English()">Author</a>
             </div>
         </div>

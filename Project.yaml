@@ -1,11 +1,11 @@
 # YAML EXPLANATION FILE #
 
 Name: Mr.Holmes
-Languages: Python,Shell-script,Javascript,Php,Css
+Languages: Python,Shell-script,Javascript,Php,Css,Powershell,Batch
 Python-Version: Python3 
 Author: Lucksi
 Project-site: https://lucksi.github.io/Mr.Holmes
 Download: git clone https://github.com/Lucksi/Mr.Holmes
 Platforms: Linux/MacOS/Termux
-Version: Nuke1.0.1(V4)
+Version: Nuke1.0.1(V5.Alpha)
 License: GNU General Public License v3.0

@@ -47,8 +47,8 @@ License: GNU General Public License v3.0*/
 
 .Cards {
     display: block;
-    padding: 12px 14px 10px;
-    margin-left: 20px;
+    padding: 10px 14px 10px;
+    margin-left: 10px;
     animation: ascend 2s 1;
 }
 
@@ -77,7 +77,7 @@ License: GNU General Public License v3.0*/
 
 #Username , #Website, #Phone {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 3px solid;
     height: fit-content;
     width: 300px;
@@ -171,13 +171,14 @@ License: GNU General Public License v3.0*/
     
     .Hidden-bar {
         display: block;
+        animation: dissolvent 2s 1;
     }
 
     .Hidden-bar:hover .Options {
         display: block;
         animation: dissolvent 2s 1;
     }
-
+    
     .Cards {
         display: none;
     }

@@ -11,12 +11,21 @@ from Core.Support import Creds
 from Core.Support import Numbers
 from Core.Support import Proxies
 from Core.Support import Requests_Search
+from Core.Support import Clear
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
 
 
 class Web:
+
+    @staticmethod
+    def Banner():
+        Clear.Screen.Clear()
+        f = open("Banners/Banner4.txt","r")
+        banner = f.read()
+        f.close()
+        print(Font.Color.GREEN + banner)
 
     @staticmethod
     def Reputation(username,report):
@@ -160,7 +169,10 @@ class Web:
     @staticmethod
     def trace(username,report):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "DOING TRACEROUTE FOR: {}...".format(username))
-        command = ("traceroute " + username)
+        if os.name == "nt":
+            command = ("tracert" + username)
+        else:
+            command = ("traceroute " + username)
         proces = os.popen(command)
         results = str(proces.read())
         print(results)
@@ -361,13 +373,10 @@ class Web:
         os.system("cls" if os.name == "nt" else "clear")
         report = "GUI/Reports/Websites/" + username + ".txt"
         report_Ip = "GUI/Reports/Websites/Coordinates/Ip_Geolocation/" + username + ".json"
-        f = open("Banners/Banner4.txt","r")
-        banner = f.read()
-        f.close()
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)     
-        print(Font.Color.GREEN + banner)
+        Web.Banner()
         if os.path.isfile(report):
             os.remove(report)
             print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))

@@ -47,7 +47,6 @@ License: GNU General Public License v3.0*/
 .Cards {
     display: block;
     padding: 12px 14px 10px;
-    margin-left: 30px;
 }
 
 .Cards a {
@@ -73,9 +72,9 @@ License: GNU General Public License v3.0*/
     width: 80px;
 }
 
-#Username , #Website, #Phone {
+#Username, #Website, #Phone, #Ports {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 3px solid;
     height: fit-content;
     width: 300px;
@@ -95,13 +94,16 @@ License: GNU General Public License v3.0*/
     background-color: #350f7c;
 }
 
+#Ports{
+    background-color: #00ffff23;
+}
+
 .Footer {
     display:none;
     margin-left: auto;
     margin-right: auto;
-    animation: dissolvent 1s 1;
+    animation: dissolvent,1s,1;   
 }
-
 .Footer a {
     text-decoration: none;
 }
@@ -155,9 +157,9 @@ License: GNU General Public License v3.0*/
         margin-left: 20px;
     }
     
-    #Username , #Website, #Phone {
+    #Username, #Website, #Phone, #Ports {
         display: inline-block;
-        margin-left: 10px;
+        margin-left: 5px;
         border: 3px solid;
         height: fit-content;
         width: 200px;
@@ -169,6 +171,12 @@ License: GNU General Public License v3.0*/
     
     .Hidden-bar {
         display: block;
+        animation: dissolvent,2s,1;
+    }
+
+    .Hidden-bar:hover .Options {
+        display: block;
+        animation: dissolvent,2s,1;
     }
     
     .Cards {

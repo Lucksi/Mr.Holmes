@@ -8,7 +8,7 @@ License: GNU General Public License v3.0*/
   ENGLISH*/
 
   function Italian_Username(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -28,7 +28,7 @@ License: GNU General Public License v3.0*/
 }
 
 function English_Username(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -48,7 +48,7 @@ function English_Username(){
 }
 
 function Italian_Phone(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -64,7 +64,7 @@ function Italian_Phone(){
 }
 
 function English_Phone(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User","Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User","Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -80,7 +80,7 @@ function English_Phone(){
 }
 
 function Italian_Web(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -97,7 +97,7 @@ function Italian_Web(){
 }
 
 function English_Web(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
@@ -113,11 +113,45 @@ function English_Web(){
     }
 }
 
-function Italian_Main(){
-    const list = new Array ("Username","Siti-Web", "Telefono")
+function Italian_Port(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const user =("Inserisci un Host...");
     const search = ("Cerca");
     const holder = ("Italiano");
-    for (i=0;i<5;i++){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("Current").innerHTML=(holder);
+    document.getElementById("change2").setAttribute( "onClick", "javascript: Italiano();" );
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function English_Port(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const user =("Insert a Host...");
+    const search = ("Search");
+    const holder = ("English");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("Current").innerHTML=(holder);
+    document.getElementById("change2").setAttribute( "onClick", "javascript: English();" );
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function Italian_Main(){
+    const list = new Array ("Username","Siti-Web", "Telefono", "Porte")
+    const search = ("Cerca");
+    const holder = ("Italiano");
+    for (i=0;i<6;i++){
         document.getElementsByTagName("button")[i].innerHTML=(search);
         i=i++;
     }
@@ -129,10 +163,10 @@ function Italian_Main(){
 }
 
 function English_Main(){
-    const list = new Array ("Username","Website", "Phone")
+    const list = new Array ("Username","Website", "Phone", "Port")
     const search = ("Search");
     const holder = ("English");
-    for (i=0;i<5;i++){
+    for (i=0;i<6;i++){
         document.getElementsByTagName("button")[i].innerHTML=(search);
         i=i++;
     }
@@ -144,7 +178,7 @@ function English_Main(){
 }
 
 function Italian_Username_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -162,7 +196,7 @@ function Italian_Username_Mobile(){
 }
 
 function English_Username_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -180,7 +214,7 @@ function English_Username_Mobile(){
 }
 
 function Italian_Phone_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     document.getElementById("Searcher").placeholder= user
@@ -194,7 +228,7 @@ function Italian_Phone_Mobile(){
 }
 
 function English_Phone_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     document.getElementById("Searcher").placeholder= user
@@ -208,7 +242,7 @@ function English_Phone_Mobile(){
 }
 
 function Italian_Web_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     document.getElementById("Searcher").placeholder= user
@@ -222,7 +256,7 @@ function Italian_Web_Mobile(){
 }
 
 function English_Web_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     document.getElementById("Searcher").placeholder= user
@@ -235,8 +269,36 @@ function English_Web_Mobile(){
     }
 }
 
+function Italian_Port_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const user =("Inserisci un Host...");
+    const search = ("Cerca");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
+function English_Port_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const user =("Insert a Host...");
+    const search = ("Search");
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
+    document.title=(list[1]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+}
+
 function Italian_Main_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
     document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -246,7 +308,7 @@ function Italian_Main_Mobile(){
 }
 
 function English_Main_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){

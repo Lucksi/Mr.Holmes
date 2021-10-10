@@ -43,6 +43,7 @@ License: GNU General Public License v3.0*/
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: larger;
     text-align: center;
+    animation: joggle,2s,infinite;
 }
 
 .Cards {
@@ -75,9 +76,9 @@ License: GNU General Public License v3.0*/
     width: 80px;
 }
 
-#Username , #Website, #Phone {
+#Username, #Website, #Phone, #Ports {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 3px solid;
     height: fit-content;
     width: 300px;
@@ -95,6 +96,10 @@ License: GNU General Public License v3.0*/
 
 #Phone {
     background-color: #935bfaf6;
+}
+
+#Ports {
+    background-color: #0d4a4ec7;
 }
 
 .Footer {
@@ -157,7 +162,7 @@ License: GNU General Public License v3.0*/
         margin-left: 20px;
     }
     
-    #Username , #Website, #Phone {
+    #Username , #Website, #Phone, #Ports {
         display: inline-block;
         margin-left: 10px;
         border: 3px solid;
@@ -171,6 +176,7 @@ License: GNU General Public License v3.0*/
     
     .Hidden-bar {
         display: block;
+        animation: dissolvent 2s 1;
     }
     
     .Hidden-bar:hover .Options {

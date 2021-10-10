@@ -32,6 +32,15 @@ sudo ./install.sh
 ```
 <br>
 
+# :heavy_check_mark: INSTALLATION WINDOWS:
+```bash
+git clone https://github.com/Lucksi/Mr.Holmes
+open Cmd as An administrator
+cd Mr.Holmes
+Install.cmd
+```
+<br>
+
 # :heavy_check_mark: INSTALLATION TERMUX:
 ```bash
 pkg install proot
@@ -46,7 +55,7 @@ proot -0 chmod +x install_Termux.sh
     sudo python3 MrHolmes.py
 <br>
 
-#  USAGE TERMUX:
+#  USAGE TERMUX/WINDOWS:
     python3 MrHolmes.py
 <br>
 
@@ -60,7 +69,12 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENTION
-### DATABASE NOT AVAIABLE ON TERMUX
+### DATABASE NOT AVAIABLE ON TERMUX AND WINDOWS
+<br>
+
+# :heavy_exclamation_mark: ATTENTION ON WINDOWS
+### IF PYTHON WONT INSTALL YOU HAVE TO DOWNLOAD IT MANUALLY:
+    
 <br>
 
 # VERSIONS LIST:
@@ -182,4 +196,4 @@ write:Password=Your Password
 <br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi</p>
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi

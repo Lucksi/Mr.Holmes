@@ -12,12 +12,20 @@ from Core.Support import Creds
 from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Scraper
+from Core.Support import Clear
 from datetime import datetime
 from time import sleep
 from configparser import ConfigParser
 
-
 class MrHolmes:
+
+    @staticmethod
+    def Banner():
+        Clear.Screen.Clear()
+        f = open("Banners/Banner2.txt","r")
+        banner = f.read()
+        f.close()
+        print(Font.Color.GREEN + banner)
 
     @staticmethod
     def Google_dork(username,report):
@@ -38,9 +46,7 @@ class MrHolmes:
         successfullName = []
         ScraperSites = []
         Writable = True
-        f = open("Banners/Banner2.txt","r")
-        banner = f.read()
-        f.close()
+        MrHolmes.Banner()
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
         report = "GUI/Reports/Usernames/" + username + ".txt"
@@ -61,8 +67,6 @@ class MrHolmes:
             http_proxy = None
             http_proxy2 = str(http_proxy)
             identity="None"        
-        os.system("cls" if os.name == "nt" else "clear")
-        print(Font.Color.GREEN + banner)
         if os.path.isfile(report):
             os.remove(report)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}.txt".format(username))

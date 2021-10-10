@@ -11,10 +11,19 @@ from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
 from Core.Support import Requests_Search
+from Core.Support import Clear
 from time import sleep
 
 
 class Phone_search:
+
+    @staticmethod
+    def Banner():
+        Clear.Screen.Clear()
+        f = open("Banners/Banner3.txt")
+        banner = f.read()
+        f.close()
+        print(Font.Color.GREEN + banner)
 
     @staticmethod
     def Google_dork(numberf,report):
@@ -153,14 +162,10 @@ class Phone_search:
 
     @staticmethod
     def searcher(username):
-        os.system("cls" if os.name == "nt" else "clear")
+        Phone_search.Banner()
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
-        f = open("Banners/Banner3.txt")
-        banner = f.read()
-        f.close()
-        print(Font.Color.GREEN + banner)
         report = "GUI/Reports/Phone/" + username + ".txt"
         if os.path.isfile(report):
             os.remove(report)

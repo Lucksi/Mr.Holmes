@@ -129,7 +129,7 @@ p {
 }
 
 #Const:hover {
-    animation: joggle 2s infinite;
+    animation: joggle,2s,infinite;   
 }
 
 .Upper-card button {

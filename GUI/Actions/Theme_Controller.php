@@ -52,6 +52,11 @@ License: GNU General Public License v3.0-->
                 <img src = '../Icon/Base/phone.png'>
                 <p id = 'Const'>Phone</p>
                 <a href = 'Phone.php'><button>Search</button></a>
+            </div>
+            <div id = 'Ports'>
+                <img src = '../Icon/Base/Ports.png'>
+                <p id = 'Const'>Ports</p>
+                <a href = 'Ports.php'><button>Search</button></a>
             </div>";
             }
             else {
@@ -69,6 +74,11 @@ License: GNU General Public License v3.0-->
                 <img src = '../Icon/$color/Phone.png'onclick='Play()'>
                 <p id = 'Const'>Phone</p>
                 <a href = 'Phone.php'><button>Search</button></a>
+            </div>
+            <div id = 'Username'>
+                <img src = '../Icon/$color/Ports.png'onclick='Play()'>
+                <p id = 'Const'>Ports</p>
+                <a href = 'Ports.php'><button>Search</button></a>
             </div>";
             }
         }
@@ -87,6 +97,11 @@ License: GNU General Public License v3.0-->
             <img src = '../Icon/Base/phone.png'>
             <p id = 'Const'>Phone</p>
             <a href = 'Phone.php'><button>Search</button></a>
+        </div>
+        <div id = 'Ports'>
+            <img src = '../Icon/Base/Ports.png'>
+            <p id = 'Const'>Ports</p>
+            <a href = 'Ports.php'><button>Search</button></a>
         </div>";
         }   
     }

@@ -75,9 +75,9 @@ License: GNU General Public License v3.0*/
     width: 80px;
 }
 
-#Username , #Website, #Phone {
+#Username, #Website, #Phone, #Ports {
     display: inline-block;
-    margin-left: 20px;
+    margin-left: 10px;
     border: 3px solid;
     height: fit-content;
     width: 300px;
@@ -95,6 +95,10 @@ License: GNU General Public License v3.0*/
 
 #Phone {
     background-color: #350f7c;
+}
+
+#Ports {
+    background-color: #350f7c5b;
 }
 
 .Footer {
@@ -153,8 +157,6 @@ License: GNU General Public License v3.0*/
     .Hidden-bar {
         display: none;
     }
-
-    
     
     .Cards {
         display: block;
@@ -162,7 +164,7 @@ License: GNU General Public License v3.0*/
         margin-left: 20px;
     }
     
-    #Username , #Website, #Phone {
+    #Username, #Website, #Phone, #Ports {
         display: inline-block;
         margin-left: 10px;
         border: 3px solid;
@@ -173,8 +175,10 @@ License: GNU General Public License v3.0*/
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {
+    
     .Hidden-bar {
         display: block;
+        animation: dissolvent 2s 1;
     }
 
     .Hidden-bar:hover .Options {
