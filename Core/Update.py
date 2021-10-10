@@ -32,7 +32,7 @@ class Downloader:
     def Update():
         Path = Parser["Settings"]["Path"]
         os.system("cd {}".format(Path))
-        #os.system(Path + "Mr.Holmes/Core/Support/Path.bat")#
+
         os.system("rename Mr.Holmes Mr.Holmes2")
         os.system("git clone https://github.com/Lucksi/Mr.Holmes 2>NUL >NUL")
         choice = int(input(Font.Color.WHITE + "\nWOULD YOU LIKE TO DELETE THE OLD FILES?(1)YES(2)NO\n\n"))
