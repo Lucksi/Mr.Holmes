@@ -17,7 +17,7 @@ function banner {
 }
 
 function Packet_Installer {
-	proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
+	proot -0 pkg install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
 	proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
     proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
 	proot -0 pkg install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
