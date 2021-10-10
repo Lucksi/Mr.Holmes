@@ -16,6 +16,17 @@ function banner {
 	echo "${GREEN}$reader"
 }
 
+function Packet_Installer {
+	proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
+	proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+    proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
+	proot -0 pkg install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
+    proot -0 pkg install tracepath &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
+    proot -0 pkg install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
+	proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
+}
+
 function Options {
 	printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
@@ -108,13 +119,7 @@ function installer {
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
 		then
-        proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-        proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
-		proot -0 pkg install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
-        proot -0 pkg install tracepath &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
-        proot -0 pkg install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
-		proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
-		printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
+		Packet_Installer
 		Options
 		cd ../
 		cd Core
