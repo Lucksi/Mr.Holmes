@@ -6,17 +6,20 @@
 import os
 import random
 from Core.Support import Font
+from Core.Support import Clear
 from Core import Searcher
 from Core import config
 from Core import Searcher_phone
 from Core import Searcher_website
+from Core import Port_Scanner
+from Core import Update
 from Core.Support import Database
 
 class Main:
-    
+
     @staticmethod
     def banner(r):
-        os.system("cls" if os.name == "nt" else "clear")
+        Clear.Screen.Clear()
         f = open("Version/Version.txt", "r", newline=None)
         for line in f:
             r = line.replace("\n", "")
@@ -27,30 +30,32 @@ class Main:
                     "Quotes9.txt","Quotes10.txt","Quotes11.txt","Quotes12.txt",
                     "Quotes13.txt","Quotes14.txt","Quotes15.txt","Quotes16.txt",
                     "Quotes17.txt","Quotes18.txt","Quotes19.txt","Quotes20.txt" ]
-        
         choice = random.choice(Quotes)
         f = open("Quotes/" + choice,"r", newline=None)
         text = f.read()
         f.close()
-        u = "|\t\t\t   🇲​​​​​🇷​​​​​.🇭​​​​​🇴​​​​​🇱​​​​​🇲​​​​​🇪​​​​​🇸​​​​​\t\t\t    |"    
+        if os.name == "nt":
+            u = "|\t\t\t    MR.HOLMES\t\t\t\t    |"
+        else:
+            u = "|\t\t\t   🇲​​​​​🇷​​​​​.🇭​​​​​🇴​​​​​🇱​​​​​🇲​​​​​🇪​​​​​🇸​​​​​\t\t\t    |"
         print(Font.Color.WHITE + "---------------------------------------------------------------------")
         print(Font.Color.WHITE + u)
-        print(Font.Color.GREEN + text                                                                
+        print(Font.Color.GREEN + text
         +
         Font.Color.WHITE + "| A COMPLETE OSINT TOOL:)      " +      Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                      |\n|                                                                   |")
         print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version + Font.Color.WHITE + "                                           |")
         print(
             Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|EMAIL:lukege287@gmail.com                                          |\n|GIT-HUB:Lucksi                                                     |\n|Website:https://sosuke.altervista.org                              |")
         print(Font.Color.WHITE + "---------------------------------------------------------------------")
-    
+
     @staticmethod
     def main():
         while True:
             try:
                 Main.banner(r=True)
-                option = "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\n(5)DATABASE\t\t\t(6)UPDATE\n(7)EXIT\t\t\t\t(0)REFRESH-QUOTE"
+                option = "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\n(5)DATABASE\t\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)EXIT"
                 options = str(option)
-                print(Font.Color.GREEN + "[***INSERT AN OPTION***]")
+                print(Font.Color.GREEN + "[INSERT AN OPTION 'PRESS 0 TO REFRESH THE QUOTE']")
                 print(Font.Color.WHITE + options)
                 sce = int(input(Font.Color.GREEN + "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if sce == 1:
@@ -61,7 +66,7 @@ class Main:
                         username = str(input(
                         Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNAME" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Searcher.MrHolmes.search(username)
-                
+
                 elif sce == 2:
                     username = str(input(
                         Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE PHONE NUMBER WITHOUT(+)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -69,20 +74,28 @@ class Main:
                         username = str(input(
                             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT THE PHONE NUMBER WITHOUT(+)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Searcher_phone.Phone_search.searcher(username)
-                
+
                 elif sce == 3:
                     username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A DOMAIN OR A IP ADDRESS(IPv4/IPv6)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     while username == "":
                         username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A DOMAIN OR A IP ADDRESS(IPv4/IPv6)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-
                     Searcher_website.Web.search(username)
                 elif sce == 4:
                     config.Config.main()
                 elif sce == 5:
                     Database.Controller.Gui()
                 elif sce == 6:
-                    os.system("Core/./update.sh")
+                    if os.name == "nt":
+                       #os.system("cd Core && update.cmd")#
+                       Update.Downloader.Check_Creds()
+                    else:
+                        os.system("Core/./update.sh")
                 elif sce == 7:
+                    username = input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A HOST TO SCAN" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")
+                    while username == "":
+                        username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "INSERT A HOST TO SCAN " + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Port_Scanner.Ports.Main(username)
+                elif sce == 8:
                     print("\nHAVE A NICE DAY BYE:)\n")
                     exit()
                 elif sce == 0:
