@@ -12,12 +12,24 @@ from Core.Support import Numbers
 from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Clear
+from Core.Support import Scanner
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
 
 
 class Web:
+
+    @staticmethod
+    def Ports(username,report):
+        f = open(report,"a")
+        f.write("\r\nOPEN PORTS:\r\n")
+        f.close()
+        Scanner.Port.Scan(username,report)
+        choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            Web.trace(username,report)
 
     @staticmethod
     def Banner():
@@ -105,9 +117,14 @@ class Web:
                     Web.Robots(username,report)
             else:
                 choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.trace(username,report)
+                   Web.Ports(username,report)
+                else:
+                    choice = int(input(
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if choice == 1:
+                        Web.trace(username,report)
     
     @staticmethod
     def Robots(username,report):
@@ -157,13 +174,17 @@ class Web:
                 else:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE + "OPS UNABLE TO DOWNLOAD {} ROBOTS.TXT..SKIPPING".format(username))
 
-
         choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.trace(username,report)
+            Web.Ports(username,report)
         else:
-            pass
+            choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                Web.trace(username,report)
+            else:
+                pass
     
     
     @staticmethod
@@ -217,9 +238,14 @@ class Web:
                 Web.Robots(username,report)
             else:
                 choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.trace(username,report)
+                   Web.Ports(username,report)
+                else:
+                    choice = int(input(
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if choice == 1:
+                        Web.trace(username,report)
 
     @staticmethod
     def whois_lookup(username,report):
@@ -364,9 +390,14 @@ class Web:
                     Web.Robots(username,report)
                 else:
                     choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.trace(username,report)
+                        Web.Ports(username,report)
+                    else:
+                        choice = int(input(
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        if choice == 1:
+                            Web.trace(username,report)
         
     @staticmethod
     def search(username):
@@ -471,9 +502,14 @@ class Web:
                         Web.Robots(username,report)
                     else:
                         choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                         if choice == 1:
-                            Web.trace(username,report)
+                            Web.Ports(username,report)
+                        else:
+                            choice = int(input(
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            if choice == 1:
+                                Web.trace(username,report)
 
         f = open(report,"a")
         f.write("\nSCANNING EXECUTED WITH Mr.Holmes")

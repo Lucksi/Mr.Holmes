@@ -14,7 +14,7 @@ class Port:
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "THIS PORT IS: " + Font.Color.GREEN + "OPEN")
             Open_Ports.append(port)
             f = open(report,"a")
-            f.write("Port: {}".format(port))
+            f.write("Port: {}\n".format(port))
             f.close()
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + "THIS PORT IS: " + Font.Color.RED + "CLOSED")
