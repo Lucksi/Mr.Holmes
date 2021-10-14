@@ -274,6 +274,7 @@ class Config:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
                 os.chdir("../")
     
+    @staticmethod
     def modify_Log():
         alert = int(input(
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ARE YOU SURE TO MODIFY YOUR LOG OPTION?(1)YES(2)NO" + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -294,13 +295,41 @@ class Config:
                 Parser.set("Settings","show_Logs",Logs)
                 with open(nomefile, 'w') as configfile:
                     Parser.write(configfile)
-                    print("\nPROXY-LIST CHANGED SUCCESSFULLY")
+                    print("\nLOGS OPTION CHANGED SUCCESSFULLY")
                     out = input("\nPRESS ENTER TO EXIT")
                     os.chdir("../")
             else:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
                 os.chdir("../")
     
+    @staticmethod
+    def modify_Database_Visibility():
+        alert = int(input(
+            Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ARE YOU SURE TO MODIFY YOUR DATABSE SETTING?(1)YES(2)NO" + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if alert == 1:
+            os.chdir(dest)
+            if os.path.isfile(nomefile):
+                Parser = ConfigParser()
+                Parser.read(nomefile)
+                Data = int(input(
+                        Font.Color.WHITE + "\nINSERT IF YOU WANT TO ENABLE YOUR DATABASE ON OTHER DEVICES(1)YES(2)NO" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if Data == 1:
+                    Data = "True"
+                elif Data == 2:
+                    Data = "False"
+                else:
+                    os.chdir("../")
+                    Config.main()
+                Parser.set("Settings","Database",Data)
+                with open(nomefile, 'w') as configfile:
+                    Parser.write(configfile)
+                    print("\nDATABASE OPTION CHANGED SUCCESSFULLY")
+                    out = input("\nPRESS ENTER TO EXIT")
+                    os.chdir("../")
+            else:
+                inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE")
+                os.chdir("../")
+
     @staticmethod
     def main():
         while True:
