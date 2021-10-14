@@ -334,7 +334,7 @@ class Config:
     def main():
         while True:
             Config.Banner()
-            option = "\n(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\n(10)MODIFY-LOGS\n(11)MAIN-MENU"
+            option = "\n(1)MODIFY-SENDER-MAIL\n(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\n(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\n(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\n(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\n(10)MODIFY-LOGS\n(11)MODIFY-DATABASE\n(12)MAIN-MENU"
             options = str(option)
             print(Font.Color.GREEN + "[INSERT AN OPTION]")
             print(Font.Color.WHITE + options)
@@ -360,6 +360,8 @@ class Config:
             elif sce == 10:
                 Config.modify_Log()
             elif sce == 11:
+                Config.modify_Database_Visibility()
+            elif sce == 12:
                 inp = input("PRESS ENTER TO CONTINUE...")
                 holmes.Main.main()
             else:
