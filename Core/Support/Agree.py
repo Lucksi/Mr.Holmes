@@ -15,6 +15,7 @@ class One_time:
             if choice == "Y" or choice == "y":
                 f = open("Configuration/Agreement.txt","w")
                 f.write("Agreement Accepted")
+                f.close()
             elif choice == "N" or choice == "n":
                 print(Font.Color.RED + "\nYOU HAVE TO AGREE THIS TERME IN ORDER TO USE THIS TOOL\n")
                 exit()
