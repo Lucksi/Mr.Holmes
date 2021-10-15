@@ -1318,6 +1318,26 @@
             "user2": "https://slideshare.net/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "RateYourMusic":{
+            "Error": "Status-Code",
+            "name": "RateYourMusic",
+            "main": "https://rateyourmusic.com",
+            "user": "https://rateyourmusic.com/~{}",
+            "user2": "https://rateyourmusic.com/~{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "NotABug.org":{
+            "Error": "Status-Code",
+            "name": "NotABug.org",
+            "main":"notabug.org",
+            "user": "https://notabug.org/{}",
+            "user2": "https://notabug.org/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

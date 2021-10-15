@@ -128,6 +128,8 @@
 ## (127) OPENSOURCE: https://opensource.com
 ## (128) OPENSTREETMAP: https://www.openstreetmap.org
 ## (129) SLIDESHARE: https://slideshare.net
+## (130) RATEYOURMUSIC: https://rateyourmusic.com
+## (131) NOTABUH: https://notabug.org
 
 <br>
 
@@ -186,6 +188,6 @@
 
 <br>
 
-# USERNAME SITES: 137
+# USERNAME SITES: 139
 # PHONE-NUMBER SITES: 14
-# TOTAL: 151 SITES
+# TOTAL: 153 SITES

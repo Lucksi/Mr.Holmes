@@ -14,8 +14,16 @@ from Core import Searcher_website
 from Core import Port_Scanner
 from Core import Update
 from Core.Support import Database
+from Core.Support import Agree
 
 class Main:
+
+    @staticmethod
+    def Checker():
+        if os.path.exists("Configuration/Agreement.txt"):
+            pass
+        else:
+            Agree.One_time.Agreement()
 
     @staticmethod
     def banner(r):
@@ -52,6 +60,7 @@ class Main:
     def main():
         while True:
             try:
+                Main.Checker()
                 Main.banner(r=True)
                 option = "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\n(5)DATABASE\t\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)EXIT"
                 options = str(option)
