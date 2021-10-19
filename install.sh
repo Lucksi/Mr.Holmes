@@ -125,7 +125,7 @@ function Options {
 	else [ "$Access" == "False" ]
 		echo '{
 	"Database":{
-		"Status": "Deactive",
+		"Status": "Deactive"
 	}
 }'>GUI/Credentials/Login.json
     echo '{
