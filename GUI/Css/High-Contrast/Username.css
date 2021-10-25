@@ -17,13 +17,36 @@ License: GNU General Public License v3.0*/
     border-color: #ffff;
     border-radius: 10px;
 }
+.Data2 {
+    display:inline-block;
+    position: absolute;
+    margin-bottom: 500px;
+    margin-left: 15px;
+    width: fit-content !important;
+    border: 3px solid;
+    margin-top: 10px !important;
+    border-color: #ffff;
+    border-radius: 10px;
+}
+
+.Data2 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #ffff;
+    font-size: large;
+}
 
 .Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    color: #ffff;
+    font-size: large;
 }
 
 #error p {
     text-align: center;
+    color: #ffff;
+    font-size: large;
 }
 
 .Data_img {
@@ -32,8 +55,8 @@ License: GNU General Public License v3.0*/
     margin-top: -2px;
     margin-right: auto;
     margin-bottom: 500px;
-    margin-left: 100px;
-    width: 500px;
+    margin-left: 590px;
+    width: 300px;
     border: 3px solid;
     border-color: #ffffff;
     border-radius: 10px;
@@ -56,8 +79,26 @@ License: GNU General Public License v3.0*/
         min-width: fit-content;
         max-width: 350px;
     }
+
+    .Data2 {
+        display:block;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: none;
+        margin-right: auto;
+        width: fit-content !important;
+        border: 3px solid;
+        margin-top: 10px !important;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
         
     .Data p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Data2 p {
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 14px;
     }
@@ -65,12 +106,13 @@ License: GNU General Public License v3.0*/
     .Data_img {
         display: block;
         height: fit-content;
-        min-width: 200px;
-        max-width: 300px;
+        margin-top: 2200px;
+        min-width:150px;
+        max-width: 320px;
         margin-right: auto;
         margin-left: auto;
         border: 3px solid;
         border-color: #ffffff;
         border-radius: 10px;
-    }
+    }    
 }

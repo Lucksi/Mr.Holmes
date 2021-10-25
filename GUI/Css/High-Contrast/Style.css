@@ -145,21 +145,39 @@ p {
     font-size: medium;
 }
 
-.Data {
+.Datap {
     display:table;
-    margin-left: auto;
+    margin-left: 150px;
     margin-right: auto;
     border: 3px solid;
     border-color: #ffffff;
     border-radius: 10px;
 }
 
-.Data p {
+.Dataf {
+    display:table;
+    margin-left: 700px;
+    margin-top: -630px;
+    margin-right: auto;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Datap p {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
     color: #ffffff;
 }
+
+.Dataf p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+    color: #ffffff;
+}
+
 
 @keyframes joggle {
     0%{color:#ffffff;}
@@ -190,6 +208,37 @@ p {
     .Top-bar a {
         display: block;
         font-size: larger;
+    }
+
+    .Datap {
+        display:table;
+        margin-left:auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .Dataf {
+        display:table;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
+    
+    .Datap p {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Dataf p {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
     }
     
     .Hidden-bar {

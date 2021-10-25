@@ -15,11 +15,35 @@ License: GNU General Public License v3.0*/
     width: fit-content !important;
     border: 3px solid;
     border-color: #ffff;
+    background-color: rgba(192, 197, 201, 0.288);
     border-radius: 10px;
 }
 
-.Data p {
+.Data2 {
+    display:inline-block;
+    position: absolute;
+    margin-bottom: 500px;
+    margin-left: 5px;
+    width: fit-content !important;
+    border: 3px solid;
+    margin-top: 10px !important;
+    border-color: #ffff;
+    background-color: rgba(192, 197, 201, 0.288);
+    border-radius: 10px;
+}
+
+.Data2 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    color: #ffff;
+    font-size: large;
+}
+
+.Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #ffff;
+    font-size: large;
 }
 
 #error p {
@@ -32,8 +56,8 @@ License: GNU General Public License v3.0*/
     margin-top: -2px;
     margin-right: auto;
     margin-bottom: 500px;
-    margin-left: 100px;
-    width: 500px;
+    margin-left: 570px;
+    width: 300px;
     border: 3px solid;
     border-color: #ffffff;
     background-color: rgba(192, 197, 201, 0.288);
@@ -57,6 +81,24 @@ License: GNU General Public License v3.0*/
         min-width: fit-content;
         max-width: 350px;
     }
+
+    .Data2 {
+        display:block;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: -20px;
+        margin-right: auto;
+        width: fit-content !important;
+        border: 3px solid;
+        margin-top: 10px !important;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .Data2 p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
         
     .Data p {
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -66,6 +108,7 @@ License: GNU General Public License v3.0*/
     .Data_img {
         display: block;
         height: fit-content;
+        margin-top: 2200px;
         min-width: 200px;
         max-width: 300px;
         margin-right: auto;

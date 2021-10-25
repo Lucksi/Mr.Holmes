@@ -55,6 +55,11 @@ License: GNU General Public License v3.0*/
         max-width: 220px;
     }
 
+    .Data p {
+        text-align: center;
+        font-size: 14px;
+    }
+
     .map {
         display: block;
         margin-right: auto;

@@ -150,16 +150,32 @@ Options a {
     font-size: medium;
 }
 
-.Data {
+.Datap {
     display:table;
-    margin-left: auto;
+    margin-left: 150px;
     margin-right: auto;
     border: 3px solid;
     border-color: #000000;
     border-radius: 10px;
 }
 
-.Data p {
+.Dataf {
+    display:table;
+    margin-left: 700px;
+    margin-top: -630px;
+    margin-right: auto;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+.Datap p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: large;
+}
+
+.Dataf p {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: large;
@@ -222,6 +238,37 @@ Options a {
         animation: dissolvent 2s 1;       
     }
     
+    .Datap {
+        display:table;
+        margin-left:auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+    
+    .Dataf {
+        display:table;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+    
+    .Datap p {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Dataf p {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
     .languages {
         display: none;
     }
@@ -233,11 +280,5 @@ Options a {
     #Searcher {
         width: 225px;
         height: 30px; 
-    }
-
-    @keyframes joggle {
-        0%{color:#ffffff;}
-        50%{color:#0000ff;}
-        100%{color:#ffffff;}
     }
 }

@@ -9,9 +9,10 @@ License: GNU General Public License v3.0*/
     padding: 10px 12px;
 }
 
-.Data {
+.Data{
     display:inline-block;
     justify-content: left;
+    margin-left: 10px;
     width: fit-content !important;
     border: 3px solid;
     border-color: #000000;
@@ -19,8 +20,28 @@ License: GNU General Public License v3.0*/
 }
 
 .Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: #000000;
+}
+
+.Data2 {
+    display:inline-block;
+    position: absolute;
+    margin-bottom: 500px;
+    margin-left: 30px;
+    width: fit-content !important;
+    border: 3px solid;
+    margin-top: 10px !important;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+.Data2 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #000000;
+    font-size: large;
 }
 
 #error p {
@@ -33,8 +54,8 @@ License: GNU General Public License v3.0*/
     margin-top: -2px;
     margin-right: auto;
     margin-bottom: 500px;
-    margin-left: 100px;
-    width: 500px;
+    margin-left: 620px;
+    width: 300px;
     border: 3px solid;
     border-color: #000000;
     border-radius: 10px;
@@ -57,16 +78,35 @@ License: GNU General Public License v3.0*/
         font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 14px;
     }
+
+    .Data2 {
+        display:block;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: -20px;
+        margin-right: auto;
+        width: fit-content !important;
+        border: 3px solid;
+        margin-top: 10px !important;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+
+    .Data2 p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
     
     .Data_img {
         display: block;
         height: fit-content;
+        margin-top: 2200px;
         min-width:150px;
-        max-width: 300px;
+        max-width: 320px;
         margin-right: auto;
         margin-left: auto;
         border: 3px solid;
-        border-color: #ffffff;
+        border-color: #000000;
         border-radius: 10px;
     }    
 }

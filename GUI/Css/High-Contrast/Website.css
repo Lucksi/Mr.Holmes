@@ -14,7 +14,9 @@ License: GNU General Public License v3.0*/
 }
 
 .Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
+    color: #ffffff;
 }
 
 .Geo {
@@ -53,6 +55,11 @@ License: GNU General Public License v3.0*/
         height: 200px;
         min-width: 100px;
         max-width: 220px;
+    }
+
+    .Data p {
+        text-align: center;
+        font-size: 14px;
     }
 
     .map {
