@@ -3,6 +3,7 @@ intext:({})filetype:txt
 intext:({})filetype:csv
 intext:({})filetype:pdf
 intext:({})filetype:doc
+intext:({})filetype:docx
 intext:({})filetype:log
 intitle:({})filetype:txt
 intitle:({})filetype:csv

@@ -1,0 +1,26 @@
+{} mime:txt
+{} mime:pdf
+{} mime:csv
+{} mime:doc
+{} mime:docx
+{} mime:log
+{} && (!Email | !email | !E-mail | !e-mail )
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:txt
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:pdf
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:csv
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:doc
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:docx
+{} && (!Email | !email | !E-mail | !e-mail ) && mime:log
+{} && (!Password | !password | !PASSWORD ) && mime:txt
+{} && (!Password | !password | !PASSWORD ) && mime:pdf
+{} && (!Password | !password | !PASSWORD ) && mime:csv
+{} && (!Password | !password | !PASSWORD ) && mime:doc
+{} && (!Password | !password | !PASSWORD ) && mime:docx
+{} && (!Password | !password | !PASSWORD ) && mime:log
+title:{}
+title:{} && mime:txt
+title:{} && mime:pdf
+title:{} && mime:csv
+title:{} && mime:doc
+title:{} && mime:docx
+title:{} && mime:log

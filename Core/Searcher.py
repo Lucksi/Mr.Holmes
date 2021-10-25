@@ -13,6 +13,7 @@ from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Scraper
 from Core.Support import Clear
+from Core.Support import Dorks
 from datetime import datetime
 from time import sleep
 from configparser import ConfigParser
@@ -28,17 +29,29 @@ class MrHolmes:
         print(Font.Color.GREEN + banner)
 
     @staticmethod
-    def Google_dork(username,report):
+    def Google_dork(username):
+        report = "GUI/Reports/Usernames/Dorks/{}_Dorks.txt".format(username)
         nomefile = "Site_lists/Username/Google_dorks.txt"
-        print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
-        sleep(2)
-        f = open(nomefile,"r")
-        for sites in f:
-            site = sites.rstrip("\n")
-            site = site.replace("{}", username)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            sleep(2)
-        f.close()
+        Type = "GOOGLE"
+        if os.path.isfile(report):
+            os.remove(report)
+        else:
+            pass
+        Dorks.Search.dork(username,report,nomefile,Type)
+    
+    @staticmethod
+    def Yandex_dork(username):
+        report = "GUI/Reports/Usernames/Dorks/{}_Dorks.txt".format(username)
+        nomefile = "Site_lists/Username/Yandex_dorks.txt"
+        Type = "YANDEX"
+        Dorks.Search.dork(username,report,nomefile,Type)
+    
+    @staticmethod
+    def Bing_dork(username):
+        report = "GUI/Reports/Usernames/Dorks/Bing_{}_Dorks.txt".format(username)
+        nomefile = "Site_lists/Username/Bing_dorks.txt"
+        Type = "BING"
+        Dorks.Search.dork(username,report,nomefile,Type)
 
     @staticmethod
     def search(username):
@@ -306,7 +319,8 @@ class MrHolmes:
             choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                MrHolmes.Google_dork(username,report)
+                MrHolmes.Google_dork(username)
+                MrHolmes.Yandex_dork(username)
             print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " + os.getcwd() + "/" + report)
             f = open(report,"a")
             f.write("\nSCANNING EXECUTED WITH Mr.Holmes")

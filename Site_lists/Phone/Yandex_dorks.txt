@@ -1,0 +1,13 @@
+{} mime:txt
+{} mime:pdf
+{} mime:csv
+{} mime:doc
+{} mime:log
+{} mime:docx
+title:{}
+title:{} && mime:txt
+title:{} && mime:pdf
+title:{} && mime:csv
+title:{} && mime:doc
+title:{} && mime:docx
+title:{} && mime:log

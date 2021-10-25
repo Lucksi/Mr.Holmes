@@ -13,6 +13,7 @@ from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Clear
 from Core.Support import Scanner
+from Core.Support import Dorks
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
@@ -202,20 +203,15 @@ class Web:
         f.write(results)
         f.close()
 
-   
     @staticmethod
-    def google_dork(username,report,number,num):
+    def google_dork(username,number,num):
+        report = "GUI/Reports/Websites/Dorks/{}_dorks.txt".format(username)
         nomefile = "Site_lists/Websites/Google_dorks.txt"
         format = "www." + username
-        print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
-        sleep(3)
-        f = open(nomefile,"r")
-        for sites in f:
-            site = sites.rstrip("\n")
-            site = site.replace("{}", format)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            sleep(2)
-        f.close()
+        username = format
+        Type = "GOOGLE"
+        Dorks.Search.dork(username,report,nomefile,Type)
+        Web.yandex_dork(username,number,num,report)
         if number == True:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING LINK FOR {} PHONE NUMBER {}...".format(username,num))
             phonen = "Site_lists/Websites/phoneNumbers_dork.txt"
@@ -246,6 +242,12 @@ class Web:
                         Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A TRACEROUTE SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
                         Web.trace(username,report)
+
+    @staticmethod
+    def yandex_dork(username,number,num,report):
+        nomefile = "Site_lists/Websites/Yandex_dorks.txt"
+        Type = "YANDEX"
+        Dorks.Search.dork(username,report,nomefile,Type)
 
     @staticmethod
     def whois_lookup(username,report):
@@ -345,7 +347,7 @@ class Web:
                     with open(report_Coordinates,"w",encoding="utf-8") as output:
                         json.dump(data,output,ensure_ascii=False,indent=4)
                 except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...")
+                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...{}")
                 num = telephone2
                 if num != "":
                     number = True
@@ -377,7 +379,7 @@ class Web:
         choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK ATTACK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.google_dork(username,report,number,num)
+            Web.google_dork(username,number,num)
         else:
             choice = int(input(
                     Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -489,7 +491,7 @@ class Web:
             choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.google_dork(username,report,number,num)
+                Web.google_dork(username,number,num)
             else:
                 choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

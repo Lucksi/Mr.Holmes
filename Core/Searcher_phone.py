@@ -12,6 +12,7 @@ from Core.Support import Creds
 from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Clear
+from Core.Support import Dorks
 from time import sleep
 
 
@@ -26,35 +27,57 @@ class Phone_search:
         print(Font.Color.GREEN + banner)
 
     @staticmethod
-    def Google_dork(numberf,report):
+    def Google_dork(username):
+        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(username)
         nomefile = "Site_lists/Phone/Google_dorks.txt"
         fingerprints = "Site_lists/Phone/Fingerprints.txt"
-        print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE GOOGLE DORKS LINK...")
-        sleep(3)
-        f = open(nomefile,"r")
-        for sites in f:
-            site = sites.rstrip("\n")
-            site = site.replace("{}", numberf)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            sleep(2)
-        f.close()
-        f = open (report ,"a")
+        if os.path.isfile(report):
+            os.remove(report)
+        else:
+            pass
+        Type = "GOOGLE"
+        Dorks.Search.dork(username, report, nomefile, Type)
+        f = open(report, "a")
         f.write("\nPOSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:\n")
         f.close()
-        print(Font.Color.GREEN + "\n[+]" +Font.Color.WHITE + "GENERATING POSSIBLE PHONE-FINGERPRINTS LINK ON SOCIAL MEDIAS...")
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "GENERATING POSSIBLE PHONE-FINGERPRINTS LINK ON SOCIAL MEDIAS...")
         sleep(3)
-        f = open(fingerprints,"r")
+        f = open(fingerprints, "r")
         for sites in f:
             site = sites.rstrip("\n")
-            site = site.replace("{}", numberf)
+            site = site.replace("{}", username)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            f = open(report,"a")
+            f = open(report, "a")
             f.write(site + "\n")
             sleep(2)
         f.close()
         f.close()
-    
-    
+      
+    @staticmethod
+    def Yandex_dork(username):
+        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(username)
+        nomefile = "Site_lists/Phone/Yandex_dorks.txt"
+        fingerprints = "Site_lists/Phone/Yandex_Fingerprints.txt"
+        Type = "YANDEX"
+        Dorks.Search.dork(username, report, nomefile, Type)
+        f = open(report, "a")
+        f.write("\nPOSSIBLE PHONE-FINGERPRINTS LINKS ON SOCIAL MEDIAS:\n")
+        f.close()
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "GENERATING POSSIBLE PHONE-FINGERPRINTS LINK ON SOCIAL MEDIAS...")
+        sleep(3)
+        f = open(fingerprints, "r")
+        for sites in f:
+            site = sites.rstrip("\n")
+            site = site.replace("{}", username)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
+            f = open(report, "a")
+            f.write(site + "\n")
+            sleep(2)
+        f.close()
+        f.close()
+
     @staticmethod
     def lookup(username,report):
         f = open(report, "a")
@@ -156,7 +179,8 @@ class Phone_search:
         sleep (3)
         dork = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE-DORK SEARCH?(1)YES(2)NO"+ Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if dork == 1:
-            Phone_search.Google_dork(number, report)
+            Phone_search.Google_dork(username)
+            Phone_search.Yandex_dork(username)
         else:
             pass
 

@@ -1,0 +1,9 @@
+site:{} mime:txt
+site:{} mime:pdf
+site:{} mime:log
+site:{} mime:doc
+site:{} mime:docx
+site:{} mime:sqlite
+site:{} mime:yaml
+site:{} mime:json
+site:{}
