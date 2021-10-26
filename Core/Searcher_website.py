@@ -42,6 +42,7 @@ class Web:
 
     @staticmethod
     def Reputation(username,report):
+        report = "GUI/Reports/Websites/" + username + ".txt"
         subject = "DOMAIN/WEBSITE/IP"
         data = "Site_lists/Websites/Lookup.json"
         f = open(report,"a")
@@ -206,13 +207,19 @@ class Web:
     @staticmethod
     def google_dork(username,number,num):
         report = "GUI/Reports/Websites/Dorks/{}_dorks.txt".format(username)
+        if os.path.isfile(report):
+            os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}_Dorks.txt".format(username))
+        else:
+            pass
         nomefile = "Site_lists/Websites/Google_dorks.txt"
-        format = "www." + username
-        username = format
         Type = "GOOGLE"
         Dorks.Search.dork(username,report,nomefile,Type)
-        Web.yandex_dork(username,number,num,report)
+        Web.yandex_dork(username,report)
         if number == True:
+            f = open(report,"a")
+            f.write("\nGENERATING LINK FOR {} PHONE NUMBER {}...\n".format(username,num))
+            f.close()
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GENERATING LINK FOR {} PHONE NUMBER {}...".format(username,num))
             phonen = "Site_lists/Websites/phoneNumbers_dork.txt"
             f = open(phonen,"r")
@@ -220,9 +227,14 @@ class Web:
                 site = sites.rstrip("\n")
                 site = site.replace("{}", num)
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
+                f = open(report,"a")
+                f.write(site + "\n")
+                f.close()
+                sleep(2)
             f.close()
         else:
             pass
+        report = "GUI/Reports/Websites/" + username + ".txt"
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -244,7 +256,7 @@ class Web:
                         Web.trace(username,report)
 
     @staticmethod
-    def yandex_dork(username,number,num,report):
+    def yandex_dork(username,report):
         nomefile = "Site_lists/Websites/Yandex_dorks.txt"
         Type = "YANDEX"
         Dorks.Search.dork(username,report,nomefile,Type)
@@ -347,6 +359,7 @@ class Web:
                     with open(report_Coordinates,"w",encoding="utf-8") as output:
                         json.dump(data,output,ensure_ascii=False,indent=4)
                 except Exception as e:
+                    f = str(e)
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPS SOMETHING WENT WRONG CANNOT ACQUIRE GEODATA SKIPPING...")
                 num = telephone2
                 if num != "":
@@ -492,6 +505,7 @@ class Web:
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A GOOGLE DORK SCAN?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 Web.google_dork(username,number,num)
+              
             else:
                 choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO PERFORM A DOMAIN REPUTATION CHECK?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

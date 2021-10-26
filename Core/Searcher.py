@@ -35,6 +35,7 @@ class MrHolmes:
         Type = "GOOGLE"
         if os.path.isfile(report):
             os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}_Dorks.txt".format(username))
         else:
             pass
         Dorks.Search.dork(username,report,nomefile,Type)

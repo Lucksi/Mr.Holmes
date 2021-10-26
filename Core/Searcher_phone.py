@@ -33,6 +33,7 @@ class Phone_search:
         fingerprints = "Site_lists/Phone/Fingerprints.txt"
         if os.path.isfile(report):
             os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "REMOVING OLD {}_Dorks.txt".format(username))
         else:
             pass
         Type = "GOOGLE"
