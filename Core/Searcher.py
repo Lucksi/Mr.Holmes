@@ -286,7 +286,7 @@ class MrHolmes:
                         except Exception as e:
                             print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")      
                             http_proxy = None
-                            Scraper.info.Gitlab(report, username , http_proxy)
+                            Scraper.info.GitLab(report, username , http_proxy)
                     else:
                         pass
                     
