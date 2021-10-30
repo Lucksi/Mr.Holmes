@@ -1,0 +1,72 @@
+/*AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+.Data {
+    display:inline-block;
+    justify-content: left;
+    width: fit-content !important;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Data p {
+    text-align: center;
+    font-size: medium;
+}
+
+.Geo {
+    display: inline-block;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 500px;
+    margin-left: 50px;
+}
+
+.Geo p {
+    display: block;
+    margin-top: 20px;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: x-large;
+}
+
+.map {
+    display: block;
+    justify-content: left;
+    border:2px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+    height: 605px;
+    width: 580px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Geo {
+        margin-top: 40px;
+        display: block;
+        height: 200px;
+        min-width: 100px;
+        max-width: 220px;
+    }
+
+    .Data p {
+        text-align: center;
+        font-size: 14px;
+    }
+
+    .map {
+        display: block;
+        margin-right: auto;
+        margin-left: -50px;
+        height: 400px;
+        min-width: 150px;
+        max-width: 305px;
+    }
+}

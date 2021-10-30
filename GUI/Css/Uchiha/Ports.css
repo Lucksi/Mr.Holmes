@@ -1,0 +1,30 @@
+/*AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+.Data {
+    display:table;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content !important;
+    border: 3px solid;
+    border-color: #ffffff;
+    background-color: rgba(192, 197, 201, 0.288);
+    border-radius: 10px;
+}
+
+.Data p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    color: #ffffff;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Data p {
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,112 @@
+/*AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+.Wrapper {
+    display: inline-block;
+    padding: 10px 12px;
+}
+
+.Data{
+    display:inline-block;
+    justify-content: left;
+    width: fit-content !important;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: medium;
+}
+
+.Data2 {
+    display:inline-block;
+    position: absolute;
+    margin-bottom: 500px;
+    margin-left: 50px;
+    width: fit-content !important;
+    border: 3px solid;
+    margin-top: 10px !important;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Data2 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #ffffff;
+    font-size: medium;
+}
+
+#error p {
+    text-align: center;
+}
+
+.Data_img {
+    display: inline-block;
+    position: absolute;
+    margin-top: -2px;
+    margin-right: auto;
+    margin-bottom: 500px;
+    margin-left: 590px;
+    width: 300px;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Data_img img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 200px;
+    width: 200px;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Data p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .Data2 {
+        display:block;
+        position: absolute;
+        margin-top: 50px;
+        margin-left: -20px;
+        margin-right: auto;
+        width: fit-content !important;
+        border: 3px solid;
+        margin-top: 10px !important;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .Data2 p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Data_img {
+        display: block;
+        height: fit-content;
+        margin-top: 2200px;
+        min-width:150px;
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }    
+}
