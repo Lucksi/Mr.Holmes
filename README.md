@@ -145,7 +145,7 @@ cd Language
 edit Language.json
 write:Italian
 write:English 
-write:François
+write:Français
 ```
 <br>
 
