@@ -138,6 +138,27 @@ write:Password=Your Password
 ```
 <br>
 
+# :heavy_check_mark: LANGUAGE SETTINGS:
+```bash
+cd GUI
+cd Language
+edit Language.json
+write:Italian
+write:English 
+write:François
+```
+<br>
+
+# Language.json CODE EXAMPLE:
+```json
+{
+    "Language": {
+        "Preference": "English"
+    }
+}
+```
+<br>
+
 # DEFAULT USERNAME AND PASSWORD:
     Username:Admin
     Password:Qwerty123

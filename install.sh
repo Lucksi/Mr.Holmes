@@ -121,7 +121,7 @@ function Options {
         }
     ]
 }'>GUI/Credentials/Users.json
-	printf "\n\n${WHITE}YOUR DEFAULT CREDENTIALS ARE:\nUSERNAME:${GREEN}Admin\n${WHITE}PASSWORD:${GREEN}Qwerty123\n\n"
+	printf "\n${WHITE}YOUR DEFAULT CREDENTIALS ARE:\nUSERNAME:${GREEN}Admin\n${WHITE}PASSWORD:${GREEN}Qwerty123\n"
 	else [ "$Access" == "False" ]
 		echo '{
 	"Database":{
@@ -137,6 +137,39 @@ function Options {
     ]
 }'>GUI/Credentials/Users.json
 	fi
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRENCH\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	while [ $Language == "" ];
+		do
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	done
+	if [ $Language == 1 ];
+		then
+		echo '{
+    "Language":{
+        "Preference":"English"
+    }
+}'>GUI/Language/Language.json
+   	mode="English"
+	elif [ $Language == 2 ];
+	then
+		echo '{
+    "Language":{
+        "Preference":"Italian"
+    }
+}'>GUI/Language/Language.json
+	mode="Italian"
+	elif [ $Language == 3 ];
+	then
+		echo '{
+    "Language":{
+        "Preference":"Français"
+    }
+}'>GUI/Language/Language.json
+	mode="FRANÇAIS"
+	fi
+	printf "\n${WHITE}GUI LANGUAGE:${GREEN}$mode\n"
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
 	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">Configuration.ini
