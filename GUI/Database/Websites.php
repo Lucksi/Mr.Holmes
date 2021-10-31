@@ -39,7 +39,7 @@ License: GNU General Public License v3.0-->
                     <a id = "change1" onclick="English()">Author</a>
                     <a onclick="Italian_Web_Mobile()">Italiano</a>
                     <a onclick="English_Web_Mobile()">English</a>
-                    <a onclick="French_Web_Mobile()">French</a>
+                    <a onclick="French_Web_Mobile()">Français</a>
                 </div>
             </div>
             <div class = "languages">
@@ -47,7 +47,7 @@ License: GNU General Public License v3.0-->
                 <div class = "Content" id = "Content">
                     <a onclick="Italian_Web()">Italiano</a>
                     <a onclick="English_Web()">English</a>
-                    <a onclick="French_Web()">French</a>
+                    <a onclick="French_Web()">Français</a>
                 </div>
             </div>
             <div class = "Link">
