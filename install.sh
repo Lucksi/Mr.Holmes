@@ -137,7 +137,7 @@ function Options {
     ]
 }'>GUI/Credentials/Users.json
 	fi
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRENCH\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ $Language == "" ];
 		do

@@ -539,7 +539,7 @@ function French_User(){
     const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
     const buttons = new Array("Envoi");
     const holder = ("Français");
-    const Targ = ("Créér User")
+    const Targ = ("CRÉÉR USER")
     document.getElementById("Current").innerHTML=(holder);
     for (i=0;i<list.length;i++){
         document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
@@ -590,7 +590,7 @@ function French_User_Mobile(){
     const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
     const buttons = new Array("Envoi");
     const holder = ("French");
-    const Targ = ("Créér User");
+    const Targ = ("CRÉÉR USER");
     document.getElementById("Current").innerHTML=(holder);
     for (i=0;i<buttons.length;i++){
         document.getElementsByClassName("Container")[0].getElementsByTagName("Button")[i].innerHTML=(buttons[i]);
