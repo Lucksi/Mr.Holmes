@@ -1,14 +1,14 @@
-site:{} filetype:txt
-site:{} filetype:pdf
-site:{} filetype:log
-site:{} filetype:doc
-site:{} filetype:docx
-site:{} filetype:sqlite
-site:{} filetype:yaml
-site:{} filetype:json
-site:{} filetype:md
-site:{} intext:admin OR Admin
-site:{} intext:emails OR Emails OR EMAILS
-site:{} intitle:admin OR Admin
+site:www.{} filetype:txt
+site:www.{} filetype:pdf
+site:www.{} filetype:log
+site:www.{} filetype:doc
+site:www.{} filetype:docx
+site:www.{} filetype:sqlite
+site:www.{} filetype:yaml
+site:www.{} filetype:json
+site:www.{} filetype:md
+site:www.{} intext:admin OR Admin
+site:www.{} intext:emails OR Emails OR EMAILS
+site:www.{} intitle:admin OR Admin
 intext:({})
 inurl:({})
