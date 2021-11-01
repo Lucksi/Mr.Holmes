@@ -1338,6 +1338,38 @@
             "user2": "https://notabug.org/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "Moikrug":{
+            "Error": "Message",
+            "text": "Ошибка 404",
+            "name": "Moikrug",
+            "main": "https://career.habr.com",
+            "user": "https://career.habr.com/{}",
+            "user2": "https://career.habr.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "NewGrounds":{
+            "Error": "Status-Code",
+            "name": "NewGrounds",
+            "main": "newgrounds.com",
+            "user": "https://{}.newgrounds.com",
+            "user2": "https://{}.newgrounds.com",
+            "exception": [" ",".","_"],
+            "Scrapable": "False"
+        },
+
+        "Roblox":{
+            "Error": "Response-Url",
+            "response": "https://www.roblox.com/request-error?code=404",
+            "name": "Roblox",
+            "main": "roblox.com",
+            "user": "https://www.roblox.com/user.aspx?username={}",
+            "user2": "https://www.roblox.com/user.aspx?username={}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

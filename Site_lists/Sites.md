@@ -130,6 +130,9 @@
 ## (129) SLIDESHARE: https://slideshare.net
 ## (130) RATEYOURMUSIC: https://rateyourmusic.com
 ## (131) NOTABUH: https://notabug.org
+## (132) MOIKRUG: https://career.habr.com
+## (133) NEWGROUNDS: https://newgrounds.com
+## (134) ROBLOX: https://www.roblox.com
 
 <br>
 
@@ -188,6 +191,6 @@
 
 <br>
 
-# USERNAME SITES: 139
+# USERNAME SITES: 142
 # PHONE-NUMBER SITES: 14
-# TOTAL: 153 SITES
+# TOTAL: 156 SITES
