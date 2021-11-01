@@ -1344,7 +1344,7 @@
             "Error": "Message",
             "text": "Ошибка 404",
             "name": "Moikrug",
-            "main": "https://career.habr.com",
+            "main": "career.habr.com",
             "user": "https://career.habr.com/{}",
             "user2": "https://career.habr.com/{}",
             "exception": [" ","/"],
