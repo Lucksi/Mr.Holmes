@@ -1,5 +1,5 @@
-site:instagram.com intext:{}
-site:twitter.com intext:{}
-site:facebook.com intext:{}
-site:vk.com intext:{}
-site:linkedin.com intext:{}
+site:www.instagram.com intext:{}
+site:www.twitter.com intext:{}
+site:www.facebook.com intext:{}
+site:www.vk.com intext:{}
+site:www.linkedin.com intext:{}

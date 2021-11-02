@@ -16,6 +16,83 @@ function banner {
 	echo "${GREEN}$reader"
 }
 
+function Preference {
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	while [ $Language == "" ];
+		do
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	done
+	if [ $Language == 1 ];
+		then
+		echo '{
+    "Language":{
+        "Preference":"English"
+    }
+}'>GUI/Language/Language.json
+   	mode="ENGLISH"
+	elif [ $Language == 2 ];
+	then
+		echo '{
+    "Language":{
+        "Preference":"Italian"
+    }
+}'>GUI/Language/Language.json
+	mode="ITALIANO"
+	elif [ $Language == 3 ];
+	then
+		echo '{
+    "Language":{
+        "Preference":"Français"
+    }
+}'>GUI/Language/Language.json
+	mode="FRANÇAIS"
+	fi
+	printf "\n${WHITE}GUI LANGUAGE:${GREEN}$mode\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Theme
+	while [ $Language == "" ];
+		do
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	done
+	if [ $Theme == 1 ];
+		then
+		echo '{
+    "Color":{
+        "Background":"Light"
+    }
+}'>GUI/Theme/Mode.json
+   	mode="LIGHT"
+	elif [ $Theme == 2 ];
+	then
+		echo '{
+    "Color":{
+        "Background":"Dark"
+    }
+}'>GUI/Theme/Mode.json
+	mode="DARK"
+	elif [ $Theme == 3 ];
+	then
+		echo '{
+    "Color":{
+        "Background":"High-Contrast"
+    }
+}'>GUI/Theme/Mode.json
+	mode="HIGH-CONTRAST"
+	elif [ $Theme == 4 ];
+	then
+		echo '{
+    "Color":{
+        "Background":"UCHIHA"
+    }
+}'>GUI/Theme/Mode.json
+	mode="UCHIHA"
+	fi
+	printf "\n${WHITE}GUI THEME:${GREEN}$mode\n"
+}
+
 function Packet_Installer {
 	sudo apt-get install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
 	sudo apt-get install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
@@ -137,39 +214,7 @@ function Options {
     ]
 }'>GUI/Credentials/Users.json
 	fi
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
-	while [ $Language == "" ];
-		do
-		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
-		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
-	done
-	if [ $Language == 1 ];
-		then
-		echo '{
-    "Language":{
-        "Preference":"English"
-    }
-}'>GUI/Language/Language.json
-   	mode="English"
-	elif [ $Language == 2 ];
-	then
-		echo '{
-    "Language":{
-        "Preference":"Italian"
-    }
-}'>GUI/Language/Language.json
-	mode="Italian"
-	elif [ $Language == 3 ];
-	then
-		echo '{
-    "Language":{
-        "Preference":"Français"
-    }
-}'>GUI/Language/Language.json
-	mode="FRANÇAIS"
-	fi
-	printf "\n${WHITE}GUI LANGUAGE:${GREEN}$mode\n"
+	Preference
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
 	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">Configuration.ini
