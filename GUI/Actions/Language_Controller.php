@@ -1,4 +1,23 @@
+<!--AUTHOR: Lucksi
+Copyright © 2021 Lucksi
+License: GNU General Public License v3.0-->
 <?php
+    function Get_Screen_size($Modality,$Lang){
+        if ($Modality == "Login"){
+            echo "<body onload = {$Lang}_{$Modality}()>";
+        }
+        else{
+            echo "<script>
+            if(screen.width > 711){
+                document.write('<body onload = {$Lang}_{$Modality}()>');
+            }
+            else{
+                document.write('<body onload = {$Lang}_{$Modality}_Mobile()>');
+            }
+            </script>";
+        }
+    }
+
     function Get_Language($Modality){
         $Language_file = "../Language/Language.json";
         if (file_exists($Language_file)){
@@ -6,64 +25,20 @@
             $Parser = json_decode($reader,true);
             $Language = $Parser["Language"]["Preference"];
             if ($Language == "Italian"){
-                if ($Modality == "Login"){
-                    echo "<body onload = Italian_{$Modality}()>";
-                }
-                else{
-                    echo "<script>
-                    if(screen.width > 711){
-                        document.write('<body onload = Italian_{$Modality}()>');
-                    }
-                    else{
-                        document.write('<body onload = Italian_{$Modality}_Mobile()>');
-                    }
-                    </script>";
-                }
+                $Lang = "Italian";
+                Get_Screen_size($Modality,$Lang);
             }
             elseif($Language == "English") {
-                if ($Modality == "Login"){
-                    echo "<body onload = English_{$Modality}()>";
-                }
-                else{
-                    echo "<script>
-                    if(screen.width > 711){
-                        document.write('<body onload = English_{$Modality}()>');
-                    }
-                    else{
-                        document.write('<body onload = English_{$Modality}_Mobile()>');
-                    }
-                    </script>";
-                }
+                $Lang = "English";
+                Get_Screen_size($Modality,$Lang);
             }
             elseif($Language == "Français") {
-                if ($Modality == "Login"){
-                    echo "<body onload = French_{$Modality}()>";
-                }
-                else{
-                    echo "<script>
-                    if(screen.width > 711){
-                        document.write('<body onload = French_{$Modality}()>');
-                    }
-                    else{
-                        document.write('<body onload = French_{$Modality}_Mobile()>');
-                    }
-                    </script>";
-                }
+                $Lang = "French";
+                Get_Screen_size($Modality,$Lang);
             }
             else{
-                if ($Modality == "Login"){
-                    echo "<body onload = English_{$Modality}()>";
-                }
-                else{
-                    echo "<script>
-                    if(screen.width > 711){
-                        document.write('<body onload = English_{$Modality}()>');
-                    }
-                    else{
-                        document.write('<body onload = English_{$Modality}_Mobile()>');
-                    }
-                    </script>";
-                }
+                $Lang = "English";
+                Get_Screen_size($Modality,$Lang);
                 echo "
                 <script>
                     alert('LANGUAGE NOT FOUND SET ENGLISH BY DEFAULT...');
