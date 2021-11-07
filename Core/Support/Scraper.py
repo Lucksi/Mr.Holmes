@@ -179,7 +179,7 @@ class info:
     @staticmethod
     def Nitter(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} NITTER PROFILE...".format(username))
-        url = " https://nitter.nixnet.services/{}".format(username)
+        url = "https://nitter.net/{}".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
         Blocked = 'User "{}" has been suspended'.format(username)
         text = openurl.text
@@ -190,7 +190,7 @@ class info:
             reader = soup(openurl.content, "html.parser")
             user = reader.find("a",href=True,class_="profile-card-fullname")
             pic = reader.find("a", href=True ,class_= "profile-card-avatar")
-            profile_pic = "https://nitter.nixnet.services" +  pic["href"]
+            profile_pic = "https://nitter.net" +  pic["href"]
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER: " + user["href"].replace("/",""))
             
             post_items = reader.find_all("li",class_="posts")
