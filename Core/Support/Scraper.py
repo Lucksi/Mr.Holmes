@@ -351,6 +351,7 @@ class info:
         f.write("USERNAME: {}\r\n".format(user))
         f.write("STATUS: {}\r\n".format(status))
 
+    @staticmethod
     def Wattpad(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} WATTPAD PROFILE...".format(username))
         url = "https://www.wattpad.com/api/v3/users/{}/".format(username)
