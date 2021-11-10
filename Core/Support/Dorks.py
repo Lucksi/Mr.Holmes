@@ -1,3 +1,7 @@
+# AUTHOR: Lucksi
+# Copyright © 2021 Lucksi
+# License: GNU General Public License v3.0
+
 from Core.Support import Font
 from time import sleep
 
