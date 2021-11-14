@@ -87,7 +87,7 @@ License: GNU General Public License v3.0-->
         }
         else {
             echo "<script>alert('ESSENTIAL FILE NOT FOUND EXIT')</script>";        
-            die;
+            exit(0);
         }
     }
     if(isset($_POST["Button2"])){

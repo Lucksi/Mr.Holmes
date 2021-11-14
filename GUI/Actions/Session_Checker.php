@@ -22,7 +22,7 @@ License: GNU General Public License v3.0-->
             }
         }
         else {
-            die;
+            exit(0);
         }
     }
     Moderate();
