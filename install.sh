@@ -17,7 +17,7 @@ function banner {
 }
 
 function Preference {
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ $Language == "" ];
 		do
@@ -85,7 +85,7 @@ function Preference {
 	then
 		echo '{
     "Color":{
-        "Background":"Uchiha"
+        "Background":"UCHIHA"
     }
 }'>GUI/Theme/Mode.json
 	mode="UCHIHA"
@@ -239,7 +239,7 @@ function Options {
 function installer {
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
 	sleep 2
-	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBITIUN FOUND:$DIST${GREEN}[+]"
+	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBUTION FOUND:$DIST${GREEN}[+]"
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 

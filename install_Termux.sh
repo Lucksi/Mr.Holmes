@@ -114,7 +114,7 @@ function Options {
 function installer {
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
 	sleep 2
-	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBITIUN FOUND:$DIST${GREEN}[+]"
+	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBUTION FOUND:$DIST${GREEN}[+]"
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
