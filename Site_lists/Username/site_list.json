@@ -315,9 +315,9 @@
             "Error": "Message",
             "text": "not found",
             "name": "Nitter",
-            "main": "nitter.net",
-            "user": "https://nitter.net/{}",
-            "user2": "https://nitter.net/{}",
+            "main": "nitter.nixnet.services",
+            "user": "https://nitter.nixnet.services/{}",
+            "user2": "https://nitter.nixnet.services/{}",
             "exception": [" "],
             "Scrapable": "True"
         },
