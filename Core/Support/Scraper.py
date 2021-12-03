@@ -179,7 +179,7 @@ class info:
     @staticmethod
     def Nitter(report,username,http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "SCRAPING {} NITTER PROFILE...".format(username))
-        url = "https://nitter.net/{}".format(username)
+        url = "https://nitter.nixnet.services/{}".format(username)
         openurl = requests.get(url,proxies=http_proxy,headers=headers)
         Blocked = 'User "{}" has been suspended'.format(username)
         text = openurl.text
