@@ -190,7 +190,7 @@ class info:
             reader = soup(openurl.content, "html.parser")
             user = reader.find("a",href=True,class_="profile-card-fullname")
             pic = reader.find("a", href=True ,class_= "profile-card-avatar")
-            profile_pic = "https://nitter.net" +  pic["href"]
+            profile_pic = "https://nitter.nixnet.services" +  pic["href"]
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER: " + user["href"].replace("/",""))
             
             post_items = reader.find_all("li",class_="posts")
