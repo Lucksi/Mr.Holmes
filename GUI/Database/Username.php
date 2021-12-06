@@ -34,7 +34,6 @@ License: GNU General Public License v3.0-->
                     <a href="Phone.php"></a>
                     <a href ="Ports.php"></a>
                     <a href="New_User.php"></a>
-                    <a href= "Contacts.php"></a>
                     <a id = "change1"></a>
                     <a onclick="Italian_Username_Mobile()">Italiano</a>
                     <a onclick="English_Username_Mobile()">English</a>
