@@ -44,11 +44,15 @@ p {
     animation: act 2s infinite;
 }
 
-.languages {
+.languages{
     display: block;
 }
 
-.Content {
+.Themes{
+    display: inline-block;
+}
+
+.Content,.Content2 {
     display: none;
     position: absolute;
     margin-top: -20px;
@@ -61,7 +65,11 @@ p {
     animation: opac 1s 1;
 }
 
-.Content a {
+.Content2{
+    margin-right:120px ;
+}
+
+.Content a, .Content2 a {
     color: #ffffff;
     margin-left: 10px;
     text-decoration: none;
@@ -72,7 +80,7 @@ p {
 
 }
 
-.languages button {
+.languages button, .Themes button {
     display: block;
     margin-top: -45px;
     float: right;
@@ -83,6 +91,11 @@ p {
     color: #ffffff;
     border-radius: 10px;
     font-size: medium;
+}
+
+.Themes button{
+    margin-top: -58px;
+    margin-left: 1100px;
 }
 
 .Upper-card {
@@ -162,7 +175,7 @@ p {
 .Dataf {
     display:table;
     margin-left: 700px;
-    margin-top: -630px;
+    margin-top: -560px;
     margin-right: auto;
     border: 3px solid;
     border-color: #ffffff;
@@ -214,7 +227,6 @@ p {
     70%{transform: rotate(270deg);}
     80%{transform: rotate(300deg);}
     100%{transform:rotate(360deg);}
-
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {

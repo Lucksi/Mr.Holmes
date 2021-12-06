@@ -5,6 +5,9 @@ License: GNU General Public License v3.0-->
 <html>
     <head>
         <title>Phone</title>
+        <script src = "../Script/Language.js"></script>
+        <script src = "../Script/Author.js"></script>
+        <script src = "../Script/Arrow.js"></script>
         <?php
             require("../Actions/Session_Checker.php");
             require_once("../Actions/Theme_Controller.php");
@@ -15,9 +18,6 @@ License: GNU General Public License v3.0-->
         <meta charset ="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=0.9">
         <meta name="theme-color" content="#000000">
-        <script src = "../Script/Language.js"></script>
-        <script src = "../Script/Author.js"></script>
-        <script src = "../Script/Arrow.js"></script>
     </head>
     <?php
         require_once("../Actions/Language_Controller.php");
@@ -29,19 +29,19 @@ License: GNU General Public License v3.0-->
             <div class = "Hidden-bar">
                 <button id = "Menu" onclick="Active_Mobile()">MENU</button>
                 <div class="Options" id ="Options1">
-                    <a href="Username.php">Username</a>
-                    <a href="Websites.php">Website</a>
-                    <a href="Phone.php">Phone</a>
-                    <a href = "Ports.php">Ports</a>
-                    <a href= "New_User.php">Create User</a>
-                    <a id = "change1" onclick="English()">Author</a>
+                    <a href="Username.php"></a>
+                    <a href="Websites.php"></a>
+                    <a href="Phone.php"></a>
+                    <a href = "Ports.php"></a>
+                    <a href= "New_User.php"></a>
+                    <a id = "change1"></a>
                     <a onclick="Italian_Phone_Mobile()">Italiano</a>
                     <a onclick="English_Phone_Mobile()">English</a>
                     <a onclick="French_Phone_Mobile()">Français</a>
                 </div>
             </div>
             <div class = "languages">
-                <button id = "Current" onclick="Active_Language()">English</button>
+                <button id = "Current" onclick="Active_Language()"></button>
                 <div class = "Content" id = "Content">
                     <a onclick="Italian_Phone()">Italiano</a>
                     <a onclick="English_Phone()">English</a>
@@ -49,12 +49,12 @@ License: GNU General Public License v3.0-->
                 </div>
             </div>
             <div class = "Link">
-                <a href = "Username.php">Username</a>
-                <a href = "Websites.php">Website</a>
-                <a href = "Phone.php">Phone</a>
-                <a href = "Ports.php">Port</a>
-                <a href= "New_User.php">Create User</a>
-                <a id = "change2">Author</a>
+                <a href = "Username.php"></a>
+                <a href = "Websites.php"></a>
+                <a href = "Phone.php"></a>
+                <a href = "Ports.php"></a>
+                <a href= "New_User.php"></a>
+                <a id = "change2"></a>
             </div>
         </div>
         <div class = "Upper-card">
