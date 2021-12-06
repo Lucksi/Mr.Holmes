@@ -363,7 +363,7 @@ class Config:
                 Config.modify_Database_Visibility()
             elif sce == 12:
                 inp = input("PRESS ENTER TO CONTINUE...")
-                holmes.Main.main()
+                holmes.Main.Menu()
             else:
                 inp = input(Font.Color.RED + "[!]" + Font.Color.WHITE + "WRONG OPTION PRESS ENTER TO CONTINUE...")
-                holmes.Main.main()
+                Config.main()

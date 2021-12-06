@@ -3,7 +3,6 @@
 # License: GNU General Public License v3.0
 
 import os
-import MrHolmes as Holmes
 import socket
 from Core.Support import Font
 from time import sleep
@@ -44,4 +43,3 @@ class Controller:
             else:
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "TOKEN NOT FOUND...")
             sleep(3)
-            Holmes.Main()

@@ -2,8 +2,8 @@
 # Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 
-import MrHolmes as holmes
 import phonenumbers
+import MrHolmes as holmes
 from phonenumbers import carrier
 from phonenumbers import geocoder
 from phonenumbers import timezone
@@ -21,7 +21,7 @@ class Phony:
             Phone = phonenumbers.parse(FormattedPhoneNumber, None)
         except Exception as e:
                 inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "NUMBER NOT FOUND...PRESS ENTER TO CONTINUE")
-                holmes.Main.main()
+                holmes.Main.Menu()
         else:
             if not phonenumbers.is_valid_number(Phone):
                 reality = ("THIS IS PROBABLY NOT A REAL PHONE-NUMBER")
