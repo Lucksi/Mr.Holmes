@@ -113,7 +113,6 @@ function Set_Language_Phone(list,user,search,holder,Auth){
     document.getElementById("Searcher").placeholder = user
     document.getElementById("But").innerHTML = (search);
     document.getElementById("Current").innerHTML = (holder);
-    document.getElementById("change2").setAttribute("onClick", "javascript: Italiano();");
     document.title = (list[2]);
     for (i = 0; i < list.length; i++) {
         document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML = (list[i]);
@@ -189,7 +188,6 @@ function Set_Language_Web(list,user,search,holder,Auth){
     document.getElementById("Searcher").placeholder= user
     document.getElementById("But").innerHTML=(search);
     document.getElementById("Current").innerHTML=(holder);
-    document.getElementById("change2").setAttribute( "onClick", "javascript: Italiano();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
         document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
@@ -265,7 +263,6 @@ function Set_Language_Port(list,user,search,holder,Auth){
     document.getElementById("Searcher").placeholder= user
     document.getElementById("But").innerHTML=(search);
     document.getElementById("Current").innerHTML=(holder);
-    document.getElementById("change2").setAttribute( "onClick", "javascript: Italiano();" );
     document.title=(list[3]);
     for (i=0;i<list.length;i++){
         document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
