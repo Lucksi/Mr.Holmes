@@ -73,5 +73,6 @@ License: GNU General Public License v3.0-->
             </form>
         </div>
         <center>
+        <noscript>Please enable javascript</noscript>
     </body>
 </html>
