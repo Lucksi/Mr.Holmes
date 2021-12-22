@@ -88,7 +88,7 @@ function Preference {
         "Background":"UCHIHA"
     }
 }'>GUI/Theme/Mode.json
-	mode="UCHIHA"
+	mode="Uchiha"
 	fi
 	printf "\n${WHITE}GUI THEME:${GREEN}$mode\n"
 }
