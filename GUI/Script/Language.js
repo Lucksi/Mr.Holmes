@@ -1,4 +1,4 @@
-/*AUTHOR: Lucksi
+/*AUTHOR: Luca Garofalo (Lucksi)
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
@@ -46,7 +46,7 @@ function Set_Language_Username_Mobile(user,search,list,photos,error,Auth){
 }
 
 function Italian_Username(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -57,7 +57,7 @@ function Italian_Username(){
 }
 
 function English_Username(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -68,7 +68,7 @@ function English_Username(){
 }
 
 function French_Username(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrer a Username...");
     const search = ("Rechercher");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -79,7 +79,7 @@ function French_Username(){
 }
 
 function Italian_Username_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Username...");
     const search = ("Cerca");
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
@@ -89,7 +89,7 @@ function Italian_Username_Mobile(){
 }
 
 function English_Username_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -99,7 +99,7 @@ function English_Username_Mobile(){
 }
 
 function French_Username_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrer a Username...");
     const search = ("Rechercher");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -133,7 +133,7 @@ function Set_Language_Phone_Mobile(user,list,search,Auth){
 }
 
 function Italian_Phone(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -142,7 +142,7 @@ function Italian_Phone(){
 }
 
 function English_Phone(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -151,7 +151,7 @@ function English_Phone(){
 }
 
 function French_Phone(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Enterer a Telephoné...");
     const search = ("Rechercher");
     const holder = ("Français");
@@ -160,7 +160,7 @@ function French_Phone(){
 }
 
 function Italian_Phone_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un NumeroTelefonico...");
     const search = ("Cerca");
     const Auth = ("javascript:Italiano();");
@@ -168,7 +168,7 @@ function Italian_Phone_Mobile(){
 }
 
 function English_Phone_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -176,7 +176,7 @@ function English_Phone_Mobile(){
 }
 
 function French_Phone_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrer a Telephoné...");
     const search = ("Rechercher");
     const Auth = ("javascript:French();");
@@ -208,7 +208,7 @@ function Set_Language_Web_Mobile(list,user,search,Auth){
 }
 
 function Italian_Web(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -217,7 +217,7 @@ function Italian_Web(){
 }
 
 function English_Web(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
@@ -226,7 +226,7 @@ function English_Web(){
 }
 
 function French_Web(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrer a site...");
     const search = ("Rechercher");
     const holder = ("Français");
@@ -235,7 +235,7 @@ function French_Web(){
 }
 
 function Italian_Web_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Sito web...");
     const search = ("Cerca");
     const Auth = ("javascript:Italiano();");
@@ -243,7 +243,7 @@ function Italian_Web_Mobile(){
 }
 
 function English_Web_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -251,7 +251,7 @@ function English_Web_Mobile(){
 }
 
 function French_Web_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrere a Site...");
     const search = ("Rechercher");
     const Auth = ("javascript:French();");
@@ -283,7 +283,7 @@ function Set_Language_Port_Mobile(list,user,search,Auth){
 }
 
 function Italian_Port(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Host...");
     const search = ("Cerca");
     const holder = ("Italiano");
@@ -292,7 +292,7 @@ function Italian_Port(){
 }
 
 function English_Port(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const holder = ("English");
@@ -301,7 +301,7 @@ function English_Port(){
 }
 
 function French_Port(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrere a Host...");
     const search = ("Rechercher");
     const holder = ("Français");
@@ -310,7 +310,7 @@ function French_Port(){
 }
 
 function Italian_Port_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const user =("Inserisci un Host...");
     const search = ("Cerca");
     const Auth = ("javascript:Italiano();")
@@ -318,7 +318,7 @@ function Italian_Port_Mobile(){
 }
 
 function English_Port_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const Auth = ("javascript:English();")
@@ -326,7 +326,7 @@ function English_Port_Mobile(){
 }
 
 function French_Port_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const user =("Entrere a Host...");
     const search = ("Rechercher");
     const Auth = ("javascript:French();")
@@ -334,45 +334,53 @@ function French_Port_Mobile(){
 }
 
 /*MAIN*/
-function Set_Language_Main(list,search,holder,Auth){
+function Set_Language_Main(list,search,holder,Auth,create,show){
     for (i=0;i<list.length;i++){
         document.getElementsByClassName("Cards")[0].getElementsByTagName("p")[i].innerHTML=(list[i]);
         i=i++;
     }
     document.getElementById("Current").innerHTML=(holder);
-    for (i=0;i<6;i++){
+    for (i=0;i<5;i++){
         document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[i].innerHTML=(search);
         i=i++;
     }
+    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[5].innerHTML=(create);
+    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[6].innerHTML=(show);
     Set_Author_Lang(Auth);
 }
 
 function Italian_Main(){
-    const list = new Array ("Username","Siti-Web", "Telefono", "Porte")
+    const list = new Array ("Username","Siti-Web", "Telefono", "Porte","E-Mail", "Crea Utente","Autore")
     const search = ("Cerca");
+    const create = ("Crea");
+    const show = ("Mostra");
     const holder = ("Italiano");
     const Auth = ("javascript:Italiano();")
-    Set_Language_Main(list,search,holder,Auth);
+    Set_Language_Main(list,search,holder,Auth,create,show);
 }
 
 function English_Main(){
-    const list = new Array ("Username","Website", "Phone", "Port")
+    const list = new Array ("Username","Website", "Phone", "Port", "E-Mail", "Create User", "Author")
     const search = ("Search");
+    const create = ("Create");
+    const show = ("Show");
     const holder = ("English");
     const Auth = ("javascript:English();")
-    Set_Language_Main(list,search,holder,Auth);
+    Set_Language_Main(list,search,holder,Auth,create,show);
 }
 
 function French_Main(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes")
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur")
     const search = ("Rechercher");
+    const create = ("Creèr");
+    const show = ("Montrer");
     const holder = ("Français");
     const Auth = ("javascript:French();")
-    Set_Language_Main(list,search,holder,Auth);   
+    Set_Language_Main(list,search,holder,Auth,create,show);   
 }
 
 function Italian_Main_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     document.getElementById("change1").setAttribute( "onClick", "javascript: Italiano();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -382,7 +390,7 @@ function Italian_Main_Mobile(){
 }
 
 function English_Main_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -392,7 +400,7 @@ function English_Main_Mobile(){
 }
 
 function French_Main_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     document.getElementById("change1").setAttribute( "onClick", "javascript: French();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -458,7 +466,7 @@ function Set_Language_New_User_Mobile(list,buttons,Targ,Auth){
 }
 
 function Italian_User(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const buttons = new Array("Invio");
     const holder = ("Italiano");
     const Targ = ("CREA UTENTE");
@@ -467,7 +475,7 @@ function Italian_User(){
 }  
 
 function English_User(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const buttons = new Array("Submit");
     const holder = ("English");
     const Targ = ("CREATE USER");
@@ -476,7 +484,7 @@ function English_User(){
 }
 
 function French_User(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const buttons = new Array("Envoi");
     const holder = ("Français");
     const Targ = ("CRÉÉR USER");
@@ -485,7 +493,7 @@ function French_User(){
 }
 
 function Italian_User_Mobile(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "Crea Utente", "Autore");
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
     const buttons = new Array("Invio");
     const Targ = ("CREA UTENTE");
     const Auth = ("javascript:Italiano();");
@@ -493,7 +501,7 @@ function Italian_User_Mobile(){
 }
 
 function English_User_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
     const buttons = new Array("Submit");
     const Targ = ("CREATE USER");
     const Auth = ("javascript:English();");
@@ -501,9 +509,84 @@ function English_User_Mobile(){
 }
 
 function French_User_Mobile(){
-    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "Créér User", "Auteur");
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
     const buttons = new Array("Envoi");
     const Targ = ("CRÉÉR USER");
     const Auth = ("javascript:French();");
     Set_Language_New_User_Mobile(list,buttons,Targ,Auth);
+}
+
+/*E-Mail*/
+function Set_Language_Email(list,user,search,holder,Auth){
+    document.getElementById("Searcher").placeholder = user
+    document.getElementById("But").innerHTML = (search);
+    document.getElementById("Current").innerHTML = (holder);
+    document.title = (list[2]);
+    for (i = 0; i < list.length; i++) {
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML = (list[i]);
+        i = i++;
+    }
+    Set_Author_Lang(Auth);
+}
+
+function Set_Language_Email_Mobile(list,user,search,Auth){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.title=(list[2]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang_Mobile(Auth);
+}
+
+function Italian_Email(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
+    const user =("Inserisci un E-Mail...");
+    const search = ("Cerca");
+    const holder = ("Italiano");
+    const Auth = ("javascript:Italiano();");
+    Set_Language_Email(list,user,search,holder,Auth);
+}
+
+function English_Email(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const user =("Insert a E-Mail...");
+    const search = ("Search");
+    const holder = ("English");
+    const Auth = ("javascript:English();");
+    Set_Language_Email(list,user,search,holder,Auth);
+}
+
+function French_Email(){
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
+    const user =("Enterer a E-Mail...");
+    const search = ("Rechercher");
+    const holder = ("Français");
+    const Auth = ("javascript:French();");
+    Set_Language_Email(list,user,search,holder,Auth);
+}
+
+function Italian_Email_Mobile(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente", "Autore");
+    const user =("Inserisci un E-Mail...");
+    const search = ("Cerca");
+    const Auth = ("javascript:Italiano();");
+    Set_Language_Email_Mobile(list,user,search,Auth);
+}
+
+function English_Email_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const user =("Insert a E-Mail...");
+    const search = ("Search");
+    const Auth = ("javascript:English();");
+    Set_Language_Email_Mobile(list,user,search,Auth);
+}
+
+function French_Email_Mobile(){
+    const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Auteur");
+    const user =("Entrer a E-Mail...");
+    const search = ("Rechercher");
+    const Auth = ("javascript:French();");
+    Set_Language_Email_Mobile(list,user,search,Auth);
 }
