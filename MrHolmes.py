@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-# AUTHOR: Lucksi
+# AUTHOR: Luca Garofalo (Lucksi)
 # Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 
@@ -16,4 +16,7 @@ if __name__ == "__main__":
        Main.Menu()
     except KeyboardInterrupt:
         print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + "LOOKS LIKE YOU HIT 'CTRL-C' EXIT...")
+        exit()
+    except ModuleNotFoundError as Error:
+        print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + "INTERNAL ERROR MODULE: {} NOT FOUND".format(str(Error)))
         exit()
