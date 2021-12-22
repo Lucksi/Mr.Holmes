@@ -1,5 +1,5 @@
 #!/bin/bash
-# AUTHOR: Lucksi
+# AUTHOR: Luca Garofalo (Lucksi)
 # Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 
