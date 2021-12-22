@@ -85,10 +85,10 @@ function Preference {
 	then
 		echo '{
     "Color":{
-        "Background":"UCHIHA"
+        "Background":"Uchiha"
     }
 }'>GUI/Theme/Mode.json
-	mode="Uchiha"
+	mode="UCHIHA"
 	fi
 	printf "\n${WHITE}GUI THEME:${GREEN}$mode\n"
 }
