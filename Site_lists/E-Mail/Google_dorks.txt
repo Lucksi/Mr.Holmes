@@ -1,0 +1,21 @@
+intext:{}
+intext:({})filetype:txt
+intext:({})filetype:csv
+intext:({})filetype:pdf
+intext:({})filetype:doc
+intext:({})filetype:docx
+intext:({})filetype:log
+intext:{}(Password OR password OR PASSWORD)
+intext:{}(Password OR password OR PASSWORD)filetype:txt
+intext:{}(Password OR password OR PASSWORD)filetype:csv
+intext:{}(Password OR password OR PASSWORD)filetype:pdf
+intext:{}(Password OR password OR PASSWORD)filetype:doc
+intext:{}(Password OR password OR PASSWORD)filetype:docx
+intext:{}(Password OR password OR PASSWORD)filetype:log
+intitle:({})filetype:txt
+intitle:({})filetype:csv
+intitle:({})filetype:pdf
+intitle:({})filetype:doc
+intitle:({})filetype:docx
+intitle:({})filetype:log
+inurl:{}

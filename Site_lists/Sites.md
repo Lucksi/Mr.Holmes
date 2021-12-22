@@ -133,6 +133,9 @@
 ## (132) MOIKRUG: https://career.habr.com
 ## (133) NEWGROUNDS: https://newgrounds.com
 ## (134) ROBLOX: https://www.roblox.com
+## (135) LISTAL: https://www.listal.com
+## (136) HACKERONE: https://hackerone.com
+## (137) BUGCROWD: https://bugcrowd.com
 
 <br>
 
@@ -191,6 +194,6 @@
 
 <br>
 
-# USERNAME SITES: 142
+# USERNAME SITES: 145
 # PHONE-NUMBER SITES: 14
-# TOTAL: 156 SITES
+# TOTAL: 159 SITES

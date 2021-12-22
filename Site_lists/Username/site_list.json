@@ -7,7 +7,7 @@
             "user": "https://instagram.com/{}",
             "user2": "https://instagram.com/{}",
             "exception": [" "],
-            "Scrapable": "False"
+            "Scrapable": "True"
         },
         
         "Git-Hub":{
@@ -315,7 +315,7 @@
             "Error": "Message",
             "text": "not found",
             "name": "Nitter",
-            "main": "nitter.nixnet.services",
+            "main": "nitter.net",
             "user": "https://nitter.nixnet.services/{}",
             "user2": "https://nitter.nixnet.services/{}",
             "exception": [" "],
@@ -920,7 +920,7 @@
             "user": "https://urlebird.com/user/{}/",
             "user2": "https://urlebird.com/user/{}/",
             "exception": [" ","/"],
-            "Scrapable": "False"
+            "Scrapable": "True"
         },
 
        "TheHandbook":{
@@ -1045,7 +1045,7 @@
         },
 
         "Venmo":{
-            "Error": "Message",
+            "Error": "Status-Code",
             "text": "Venmo | Page Not Found",
             "name": "Venmo",
             "main": "venmo.com",
@@ -1368,6 +1368,37 @@
             "main": "roblox.com",
             "user": "https://www.roblox.com/user.aspx?username={}",
             "user2": "https://www.roblox.com/user.aspx?username={}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Listal":{
+            "Error": "Response-Url",
+            "response": "https://www.listal.com",
+            "name": "Listal.com",
+            "main": "listal.com",
+            "user": "https://{}.listal.com",
+            "user2": "https://{}.listal.com",
+            "exception": [" ",".","_"],
+            "Scrapable": "False"
+        },
+
+        "HackerOne":{
+            "Error": "Status-Code",
+            "name": "HackerOne",
+            "main": "hackerone.com",
+            "user": "https://hackerone.com/{}",
+            "user2": "https://hackerone.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "BugCrowd":{
+            "Error": "Status-Code",
+            "name": "BugCrowd",
+            "main": "bugcrowd.com",
+            "user": "https://bugcrowd.com/{}",
+            "user2": "https://bugcrowd.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

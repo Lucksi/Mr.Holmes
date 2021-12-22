@@ -1,0 +1,13 @@
+[
+    {
+        "HaveiBeenPowned":{
+            "name": "HaveiBeenPowned",
+            "url": "https://api.haveibeenpwned.com/unifiedsearch/{}"
+        },
+
+        "IntelligenceX":{
+            "name": "IntelligenceX",
+            "url": "https://intelx.io/?s={}"
+        }
+    }
+] 

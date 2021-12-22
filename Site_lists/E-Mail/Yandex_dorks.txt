@@ -1,0 +1,20 @@
+{} mime:txt
+{} mime:pdf
+{} mime:csv
+{} mime:doc
+{} mime:docx
+{} mime:log
+{} && (!Password | !password | !PASSWORD ) && mime:txt
+{} && (!Password | !password | !PASSWORD ) && mime:pdf
+{} && (!Password | !password | !PASSWORD ) && mime:csv
+{} && (!Password | !password | !PASSWORD ) && mime:doc
+{} && (!Password | !password | !PASSWORD ) && mime:docx
+{} && (!Password | !password | !PASSWORD ) && mime:log
+title:{}
+title:{} && mime:txt
+title:{} && mime:pdf
+title:{} && mime:csv
+title:{} && mime:doc
+title:{} && mime:docx
+title:{} && mime:log
+inurl:{}
