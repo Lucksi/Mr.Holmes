@@ -1,4 +1,4 @@
-/*AUTHOR: Lucksi
+/*AUTHOR: Luca Garofalo (Lucksi)
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0*/
 
@@ -192,6 +192,18 @@ Options a {
     text-align: center;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: medium;
+}
+
+#Alert{
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: x-large;
+    color: #ff0000;
+}
+
+.NoScript p{
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: x-large;
+    color: #000000;
 }
 
 @keyframes joggle {

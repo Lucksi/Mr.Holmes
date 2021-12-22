@@ -1,4 +1,4 @@
-<!--AUTHOR: Lucksi
+<!--AUTHOR: Luca Garofalo (Lucksi)
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <!DOCTYPE html>
@@ -34,6 +34,7 @@ License: GNU General Public License v3.0-->
                     <a href="Websites.php"></a>
                     <a href="Phone.php"></a>
                     <a href="Ports.php"></a>
+                    <a href="Email.php"></a>
                     <a href="New_User.php"></a>
                     <a id = "change1"></a>
                     <a onclick="Italian_User_Mobile()">Italiano</a>
@@ -54,10 +55,16 @@ License: GNU General Public License v3.0-->
                 <a href = "Websites.php"></a>
                 <a href = "Phone.php"></a>
                 <a href = "Ports.php"></a>
+                <a href = "Email.php"></a>
                 <a href= "New_User.php"></a>
                 <a id = "change2"></a>
             </div>
         </div>
+        <?php 
+            require_once("../Actions/Javascript_Controller.php");NoScript_Navbar();
+            echo"<br>"; 
+            require_once("../Actions/Javascript_Controller.php");NoScript_Alert();
+        ?>
         <div class = "Upper-card">
             <?php require_once("../Actions/Theme_Controller.php");Image();?>
         </div>
@@ -73,6 +80,5 @@ License: GNU General Public License v3.0-->
             </form>
         </div>
         <center>
-        <noscript>Please enable javascript</noscript>
     </body>
 </html>

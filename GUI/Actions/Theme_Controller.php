@@ -1,4 +1,4 @@
-<!--AUTHOR: Lucksi
+<!--AUTHOR: Luca Garofalo (Lucksi)
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <?php    
@@ -10,7 +10,7 @@ License: GNU General Public License v3.0-->
             $color = $parser["Color"]["Background"];
             $Style_name = "../Css/$color/$File_Name";
             if (file_exists($Style_name)) {
-                echo '<link rel = "stylesheet" href ="'.$Style_name.'">';
+                echo '<link rel = "stylesheet" id = "Theme" href ="'.$Style_name.'">';
                 if ($color == "Uchiha"){
                     echo ' <script src = "../Script/Audio.js"></script>';
                 }         
@@ -39,70 +39,119 @@ License: GNU General Public License v3.0-->
             $color = $parser["Color"]["Background"];
             if ($color == "Light" or $color == "Dark" or $color == "High-Contrast"){
                 echo "
-                <img src = '../Icon/Base/social.png'>
+                <img class = 'Mod' src = '../Icon/Base/social.png'>
                 <p id = 'Const'>USERNAME</p>
-                <a href = 'Username.php'><button>Search</button></a>
+                <a href = 'Username.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Website'>
-                <img src = '../Icon/Base/browser.png'>
+                <img class = 'Mod' src = '../Icon/Base/browser.png'>
                 <p id = 'Const'>WEBSITE</p>
-                <a href = 'Websites.php'><button>Search</button></a>
+                <a href = 'Websites.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Phone'>
-                <img src = '../Icon/Base/phone.png'>
+                <img class = 'Mod' src = '../Icon/Base/phone.png'>
                 <p id = 'Const'>Phone</p>
-                <a href = 'Phone.php'><button>Search</button></a>
+                <a href = 'Phone.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Ports'>
-                <img src = '../Icon/Base/Ports.png'>
+                <img class = 'Mod' src = '../Icon/Base/Ports.png'>
                 <p id = 'Const'>Ports</p>
-                <a href = 'Ports.php'><button>Search</button></a>
+                <a href = 'Ports.php'><button class = But>Search</button></a>
+            </div>
+            <br>
+            <br>
+            <div id = 'Username'>
+                <img class = 'Mod'  src = '../Icon/Base/Email.png'>
+                <p id = 'Const' id = But>Email</p>
+                <a href = 'Email.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/Base/User.png'>
+                <p id = 'Const'>CREATE-USER</p>
+                <a href = 'New_User.php'><button class = But>Create</button></a>
+            </div>
+            <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>AUTHOR</p>
+                <a id = 'change2'><button class = But>Show</button></a>
             </div>";
             }
             else {
                 echo "
-                <img src = '../Icon/$color/Username.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Username.png'onclick='Play()'>
                 <p id = 'Const'>USERNAME</p>
-                <a href = 'Username.php'><button>Search</button></a>
+                <a href = 'Username.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Website'>
-                <img src = '../Icon/$color/Website.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Website.png'onclick='Play()'>
                 <p id = 'Const'>WEBSITE</p>
-                <a href = 'Websites.php'><button>Search</button></a>
+                <a href = 'Websites.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Phone'>
-                <img src = '../Icon/$color/Phone.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Phone.png'onclick='Play()'>
                 <p id = 'Const'>Phone</p>
-                <a href = 'Phone.php'><button>Search</button></a>
+                <a href = 'Phone.php'><button class = But>Search</button></a>
             </div>
-            <div id = 'Username'>
-                <img src = '../Icon/$color/Ports.png'onclick='Play()'>
+            <div id = 'Ports'>
+                <img class = 'Mod' src = '../Icon/$color/Ports.png'onclick='Play()'>
                 <p id = 'Const'>Ports</p>
-                <a href = 'Ports.php'><button>Search</button></a>
+                <a href = 'Ports.php'><button class = But>Search</button></a>
+            </div>
+            <br>
+            <br>
+            <div id = 'Username'>
+                <img class = 'Mod'  src = '../Icon/$color/Email.png'onclick='Play()'>
+                <p id = 'Const' id = But>Email</p>
+                <a href = 'Email.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/$color/User.png'onclick='Play()'>
+                <p id = 'Const'>CREATE-USER</p>
+                <a href = 'New_User.php'><button class = But>Create</button></a>
+            </div>
+            <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/$color/Author.png'onclick='Play()'>
+                <p id = 'Const'>AUTHOR</p>
+                <a id = 'change2'><button class = But>Show</button></a>
             </div>";
             }
         }
         else {
             echo "
-            <img src = '../Icon/Base/social.png'>
+            <img class = 'Mod' src = '../Icon/Base/social.png'>
             <p id = 'Const'>USERNAME</p>
-            <a href = 'Username.php'><button>Search</button></a>
-        </div>
-        <div id = 'Website'>
-            <img src = '../Icon/Base/browser.png'>
-            <p id = 'Const'>WEBSITE</p>
-            <a href = 'Websites.php'><button>Search</button></a>
-        </div>
-        <div id = 'Phone'>
-            <img src = '../Icon/Base/phone.png'>
-            <p id = 'Const'>Phone</p>
-            <a href = 'Phone.php'><button>Search</button></a>
-        </div>
-        <div id = 'Ports'>
-            <img src = '../Icon/Base/Ports.png'>
-            <p id = 'Const'>Ports</p>
-            <a href = 'Ports.php'><button>Search</button></a>
-        </div>";
+            <a href = 'Username.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/Base/browser.png'>
+                <p id = 'Const'>WEBSITE</p>
+                <a href = 'Websites.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/Base/phone.png'>
+                <p id = 'Const'>Phone</p>
+                <a href = 'Phone.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Ports'>
+                <img class = 'Mod' src = '../Icon/Base/Ports.png'>
+                <p id = 'Const'>Ports</p>
+                <a href = 'Ports.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Username'>
+                <img class = 'Mod'  src = '../Icon/Base/Email.png'>
+                <p id = 'Const' id = But>Email</p>
+                <a href = 'Email.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/Base/User.png'>
+                <p id = 'Const'>CREATE-USER</p>
+                <a href = 'New_User.php'><button class = But>Create</button></a>
+            </div>
+            <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>AUTHOR</p>
+                <a id = 'change2'><button class = But>Show</button></a>
+            </div>";
         }   
     }
     
@@ -116,14 +165,14 @@ License: GNU General Public License v3.0-->
                 echo "<img src = '../Icon/Base/Logo.png'>";
             }
             elseif ($color == "Uchiha"){
-                echo "<img src = '../Icon/Uchiha/Logo.png'onclick='Play()'>";
+                echo "<img id = 'Main_img' src = '../Icon/Uchiha/Logo.png'onclick='Play()'>";
             }
             else {
-                echo "<img src = '../Icon/$color/Logo.png'>";
+                echo "<img id = 'Main_img' src = '../Icon/$color/Logo.png'>";
             }
         }
         else {
-            echo "<img src = '../Icon/Base/Logo.png'>";
+            echo "<img id = 'Main_img' src = '../Icon/Base/Logo.png'>";
         }   
     }
    

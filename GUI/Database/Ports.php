@@ -1,4 +1,4 @@
-<!--AUTHOR: Lucksi
+<!--AUTHOR: Luca Garofalo (Lucksi)
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <!DOCTYPE html>
@@ -33,6 +33,7 @@ License: GNU General Public License v3.0-->
                     <a href="Websites.php"></a>
                     <a href="Phone.php"></a>
                     <a href = "Ports.php"></a>
+                    <a href= "Email.php"></a>
                     <a href="New_User.php"></a>
                     <a id = "change1" onclick="English()"></a>
                     <a onclick="Italian_Port_Mobile()">Italiano</a>
@@ -53,10 +54,12 @@ License: GNU General Public License v3.0-->
                 <a href = "Websites.php"></a>
                 <a href = "Phone.php"></a>
                 <a href = "Ports.php"></a>
+                <a href = "Email.php"></a>
                 <a href="New_User.php"></a>
                 <a id = "change2"></a>
             </div>
         </div>
+        
         <div class = "Upper-card">
             <?php require_once("../Actions/Theme_Controller.php");Image()?>
             <center>
