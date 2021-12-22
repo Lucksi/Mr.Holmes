@@ -3,9 +3,9 @@
 Name: Mr.Holmes
 Languages: Python,Shell-script,Javascript,Php,Css,Powershell,Batch
 Python-Version: Python3 
-Author: Lucksi
+Author: Luca Garofalo (Lucks)i
 Project-site: https://lucksi.github.io/Mr.Holmes
 Download: git clone https://github.com/Lucksi/Mr.Holmes
-Platforms: Linux/MacOS/Termux
-Version: Nuke1.0.1(V5.Alpha)
+Platforms: Linux/MacOS/Termux/Windows
+Version: Nuke1.0.1(V6)
 License: GNU General Public License v3.0
