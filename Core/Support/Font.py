@@ -1,4 +1,4 @@
-# AUTHOR: Lucksi
+# AUTHOR: Luca GarofaloLucksi
 # Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 

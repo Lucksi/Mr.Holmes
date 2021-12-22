@@ -1,25 +1,24 @@
-# AUTHOR: Lucksi
+# AUTHOR: Luca Garofalo (Lucksi)
 # Copyright © 2021 Lucksi
 # License: GNU General Public License v3.0
 
 import os
 from Core.Support import Font
 from Core.Support import Clear
-from Core.Support import Scanner
+from Core.Support.Websites import Scanner
 from Core.Support import Creds
+from Core.Support import Banner_Selector as banner
 from datetime import datetime
 
+
 class Ports:
-    
+
     @staticmethod
     def Banner():
         Clear.Screen.Clear()
-        nomefile = "Banners/Banner7.txt"
-        f = open(nomefile,"r")
-        banner = f.read()
-        f.close()
-        print(Font.Color.GREEN + banner)
-    
+        Folder = "Banners/Ports"
+        banner.Random.Get_Banner(Folder)
+
     @staticmethod
     def Main(username):
         Ports.Banner()
@@ -28,15 +27,17 @@ class Ports:
         Date = "Date: " + str(dt_string)
         report = "GUI/Reports/Ports/{}.txt".format(username)
         if os.path.exists(report):
-            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + "DELETING OLD {}.txt".format(username))
+            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
+                  "DELETING OLD {}.txt".format(username))
             os.remove(report)
         f = open(report, "a")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\r\n")
         f.write("OPEN PORTS:\r\n")
         f.close()
-        Scanner.Port.Scan(username,report)
-        print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " + os.getcwd() + "/" + report)
-        f = open(report,"a")
+        Scanner.Port.Scan(username, report)
+        print(Font.Color.WHITE + "\nREPORT WRITTEN IN: " +
+              os.getcwd() + "/" + report)
+        f = open(report, "a")
         f.write("\nSCANNING EXECUTED WITH Mr.Holmes")
         f.close()
         Creds.Sender.mail(report, username)
