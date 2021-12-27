@@ -2,6 +2,7 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0--> 
 <?php
+    
     function Checker() {
         $File_name = $_POST["Searcher"];
         if ($File_name == "") {

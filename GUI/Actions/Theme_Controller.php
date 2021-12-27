@@ -2,6 +2,7 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <?php    
+    
     function Body_Theme($File_Name){
         $mode_file = "../Theme/Mode.json";
         if (file_exists($mode_file)) {

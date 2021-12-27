@@ -63,7 +63,7 @@ Options a {
     margin-top: -20px;
     right: 0px;
     text-align: center;
-    background-color:#ffffff;
+    background-color:#141212;
     border: 2px solid;
     border-radius: 10px;
     border-color: #ffffff;
@@ -169,6 +169,7 @@ Options a {
     margin-right: auto;
     border: 3px solid;
     border-color: #000000;
+    background-color: #5983e663;
     border-radius: 10px;
 }
 
@@ -179,6 +180,7 @@ Options a {
     margin-right: auto;
     border: 3px solid;
     border-color: #000000;
+    background-color: #5983e663;
     border-radius: 10px;
 }
 

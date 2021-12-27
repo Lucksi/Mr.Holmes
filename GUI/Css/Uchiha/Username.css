@@ -7,32 +7,40 @@ License: GNU General Public License v3.0*/
 .Wrapper {
     display: inline-block;
     padding: 10px 12px;
+    margin-bottom: 50px;
+}
+
+.Wrapper2 {
+    display: inline-block;
+    position: static;
+    padding: 10px 12px;
 }
 
 .Data {
     display:inline-block;
     justify-content: left;
-    width: fit-content !important;
+    min-width: 758px;
+    max-width: fit-content;
     border: 3px solid;
     border-color: #ffff;
     background-color: rgba(192, 197, 201, 0.288);
     border-radius: 10px;
 }
 
-.Data2 {
-    display:inline-block;
-    position: absolute;
-    margin-bottom: 500px;
-    margin-left: 50px;
+.Data2,.Data3{
+    display:table;
+    margin-top: none;
+    margin-left: auto;
+    margin-right: auto;
     width: fit-content !important;
     border: 3px solid;
-    margin-top: 10px !important;
+    margin-top: 100px;
     border-color: #ffff;
     background-color: rgba(192, 197, 201, 0.288);
     border-radius: 10px;
 }
 
-.Data2 p {
+.Data2 p, .Data3 p{
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: #ffff;
@@ -42,9 +50,10 @@ License: GNU General Public License v3.0*/
 .Data p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
-    color: #ffff;
+    color: #ffffff;
     font-size: medium;
 }
+
 
 #error p {
     text-align: center;
@@ -56,8 +65,21 @@ License: GNU General Public License v3.0*/
     margin-top: -2px;
     margin-right: auto;
     margin-bottom: 500px;
-    margin-left: 620px;
-    width: 300px;
+    margin-left: 100px;
+    width: 400px;
+    border: 3px solid;
+    border-color: #ffffff;
+    background-color: rgba(192, 197, 201, 0.288);
+    border-radius: 10px;
+}
+.Data_img2{
+    margin-left: none;
+    margin-right: none;
+    margin-top: 10px;
+    height: fit-content;
+    min-width: 600px;
+    max-width: 1300px;
+    position: static;
     border: 3px solid;
     border-color: #ffffff;
     background-color: rgba(192, 197, 201, 0.288);
@@ -75,22 +97,58 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
+.Data_img2 img {
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+    border: 3px solid;
+    border-color: #ffffff;
+    border-radius: 10px;
+}
+
+.Data_img2 a :hover, .Data_img a :hover{
+    animation: joggleImg 2s infinite;
+}
+
+#Main_pics{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:50px;
+    height: 250px;
+    width: auto;
+}
+
+@keyframes joggleImg{
+    0%{border-color: #ffffff;}
+    50%{border-color: rgba(255, 45, 8, 0.555);}
+    100%{border-color: #ffffff;}
+}
+
 @media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Wrapper{
+        margin-bottom: 200px;
+    }
+
     
     .Data {
         min-width: fit-content;
         max-width: 350px;
     }
-
+    
     .Data2 {
-        display:block;
+        display:table;
         position: absolute;
-        margin-top: 50px;
         margin-left: -20px;
         margin-right: auto;
+        margin-top: 200px;
         width: fit-content !important;
         border: 3px solid;
-        margin-top: 10px !important;
         border-color: #ffffff;
         border-radius: 10px;
     }
@@ -105,14 +163,39 @@ License: GNU General Public License v3.0*/
         font-size: 14px;
     }
     
-    .Data_img {
-        display: block;
+    .Data_img , .Data_img2 {
+        display: table;
         height: fit-content;
-        margin-top: 2200px;
+        margin-top: none;
         min-width: 150px;
         max-width: 300px;
         margin-right: auto;
         margin-left: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+        margin-bottom: 200px;
+    }
+
+    .Data3{
+        margin-top: 4000px;
+    }
+
+    .Data_img2{
+        display: table;
+        position: absolute;
+        margin-top: 1300px;
+        min-width: 150px;
+        width: 400px;
+        margin-bottom: 3000px;
+    }
+
+    .Data_img2 img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
         border: 3px solid;
         border-color: #ffffff;
         border-radius: 10px;

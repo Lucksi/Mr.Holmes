@@ -11,6 +11,7 @@ License: GNU General Public License v3.0*/
     border: 3px solid;
     border-color: #ffffff;
     border-radius: 10px;
+    background-color: #1a07076c;
 }
 
 .Data p {
@@ -42,6 +43,7 @@ License: GNU General Public License v3.0*/
     justify-content: left;
     border:2px solid;
     border-color: #ffffff;
+    background-color: #1a07076c;
     border-radius: 10px;
     height: 605px;
     width: 580px;

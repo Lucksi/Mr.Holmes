@@ -2,6 +2,7 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0--> 
 <?php
+    
     function Active(){
         $Login_file = "Credentials/Login.json";
         if (file_exists($Login_file)){
@@ -22,5 +23,5 @@ License: GNU General Public License v3.0-->
            exit(0);
         }
     }
-Active()
+    Active()
 ?>

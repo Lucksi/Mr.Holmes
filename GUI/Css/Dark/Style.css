@@ -58,6 +58,7 @@ p {
     border: 2px solid;
     border-radius: 10px;
     border-color: #ffffff;
+    background-color: #1a07076c;
     animation: opac 1s 1;
 }
 
@@ -151,6 +152,7 @@ p {
     margin-right: auto;
     border: 3px solid;
     border-color: #ffffff;
+    background-color: #1a07076c;
     border-radius: 10px;
 }
 
@@ -161,6 +163,7 @@ p {
     margin-right: auto;
     border: 3px solid;
     border-color: #ffffff;
+    background-color: #1a07076c;
     border-radius: 10px;
 }
 

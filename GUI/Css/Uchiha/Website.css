@@ -10,10 +10,12 @@ License: GNU General Public License v3.0*/
     width: fit-content !important;
     border: 3px solid;
     border-color: #ffffff;
+    background-color: rgba(192, 197, 201, 0.288);
     border-radius: 10px;
 }
 
 .Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     font-size: medium;
 }

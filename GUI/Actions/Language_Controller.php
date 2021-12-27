@@ -2,6 +2,7 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <?php
+    
     function Get_Screen_size($Modality,$Lang){
         if ($Modality == "Login"){
             echo "<body onload = {$Lang}_{$Modality}()>";

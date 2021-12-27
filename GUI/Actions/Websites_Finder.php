@@ -2,6 +2,7 @@
 Copyright © 2021 Lucksi
 License: GNU General Public License v3.0-->
 <?php
+    
     $File_name = $_POST["Searcher"];
     
     function Maps_Generator(){
