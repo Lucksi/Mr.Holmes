@@ -39,7 +39,8 @@ License: GNU General Public License v3.0*/
     margin-top: none;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content !important;
+    min-width: 758px;
+    max-width: fit-content !important;
     border: 3px solid;
     margin-top: 100px;
     border-color: #ffffff;
@@ -68,7 +69,7 @@ License: GNU General Public License v3.0*/
     width: 300px;
     border: 3px solid;
     border-color: #ffffff;
-    background-color: #cdd5e618;
+    background-color: #1a07076c;
     border-radius: 10px;
 }
 
@@ -142,15 +143,15 @@ License: GNU General Public License v3.0*/
     }
     
     .Data2 {
-        display:block;
+        display:table;
         position: absolute;
         margin-left: -20px;
         margin-right: auto;
-        margin-top: 4400px;
-        width: fit-content !important;
+        margin-top: 200px;
+        min-width: 300px;
+        max-width: 400px;
         border: 3px solid;
         border-color: #ffffff;
-        background-color: #cdd5e618;
         border-radius: 10px;
     }
 
@@ -165,7 +166,7 @@ License: GNU General Public License v3.0*/
     }
     
     .Data_img , .Data_img2 {
-        display: block;
+        display: table;
         height: fit-content;
         margin-top: none;
         min-width: 150px;
@@ -175,14 +176,23 @@ License: GNU General Public License v3.0*/
         border: 3px solid;
         border-color: #ffffff;
         border-radius: 10px;
-        margin-bottom: 200px;
+        margin-bottom: 800px;
+    }
+
+    .Data3{
+        display: table;
+        margin-top: 4500px;
+        min-width: 300px;
+        max-width: 400px;
     }
 
     .Data_img2{
+        display: table;
         position: absolute;
-        margin-top: 1700px;
-        margin-bottom: 1000px;
-        max-width: 300px;
+        margin-top: 1500px;
+        min-width: 150px;
+        width: 400px;
+        margin-bottom: 3000px;
     }
 
     .Data_img2 img {

@@ -178,7 +178,8 @@ License: GNU General Public License v3.0*/
     }
 
     .Data3{
-        margin-top: 4000px;
+        display: table;
+        margin-top: 4500px;
     }
 
     .Data_img2{
