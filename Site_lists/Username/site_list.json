@@ -660,7 +660,7 @@
             "main": "hub.docker.com",
             "user": "https://hub.docker.com/u/{}/",
             "user2": "https://hub.docker.com/v2/users/{}/",
-            "exception": [" "],
+            "exception": [" ",".","/","_"],
             "Scrapable": "True"
         },
 
@@ -888,7 +888,7 @@
             "main": "house-mixes.com",
             "user": "https://www.house-mixes.com/profile/{}",
             "user2": "https://www.house-mixes.com/profile/{}",
-            "exception": [" ","/"],
+            "exception": [" ","/",".","_","-"],
             "Scrapable": "False"
         },
 
@@ -945,12 +945,13 @@
         },
 
         "CodeAccademy":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "Profile Not Found | Codecademy",
             "name": "CodeAccademy",
             "main": "codecademy.com",
             "user": "https://www.codecademy.com/profiles/{}",
             "user2": "https://www.codecademy.com/profiles/{}",
-            "exception": [" ","/"],
+            "exception": [" ","/","_","."],
             "Scrapable": "False"
         },
 
@@ -1115,7 +1116,7 @@
             "main": "ko-fi.com",
             "user": "https://ko-fi.com/{}",
             "user2": "https://ko-fi.com/{}",
-            "exception": [" ","/"],
+            "exception": [" ","/","."],
             "Scrapable": "False"
         },
 
@@ -1399,6 +1400,17 @@
             "main": "bugcrowd.com",
             "user": "https://bugcrowd.com/{}",
             "user2": "https://bugcrowd.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "RaidForum":{
+            "Error": "Message",
+            "text": "The member you specified is either invalid or doesn't exist.",
+            "name": "RaidForum",
+            "main": "raidforums.com",
+            "user": "https://raidforums.com/User-{}",
+            "user2": "https://raidforums.com/User-{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }
