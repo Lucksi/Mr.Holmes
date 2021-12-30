@@ -26,10 +26,7 @@
 
 <br>
 
-## RAIDFORUMS:https://raidforums.com
-    too much time for getting a response
 
-<br>
 
 ## STRIPCHAT: https://stripchat.com
     gives always connection error
