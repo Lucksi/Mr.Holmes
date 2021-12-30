@@ -136,6 +136,7 @@
 ## (135) LISTAL: https://www.listal.com
 ## (136) HACKERONE: https://hackerone.com
 ## (137) BUGCROWD: https://bugcrowd.com
+## (138) RAIDFORUMS: https://raidforums.com
 
 <br>
 
@@ -194,6 +195,6 @@
 
 <br>
 
-# USERNAME SITES: 145
+# USERNAME SITES: 146
 # PHONE-NUMBER SITES: 14
-# TOTAL: 159 SITES
+# TOTAL: 160 SITES
