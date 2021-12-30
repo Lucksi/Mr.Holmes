@@ -1404,10 +1404,10 @@
             "Scrapable": "False"
         },
 
-        "RaidForum":{
+        "RaidForums":{
             "Error": "Message",
             "text": "The member you specified is either invalid or doesn't exist.",
-            "name": "RaidForum",
+            "name": "RaidForums",
             "main": "raidforums.com",
             "user": "https://raidforums.com/User-{}",
             "user2": "https://raidforums.com/User-{}",
