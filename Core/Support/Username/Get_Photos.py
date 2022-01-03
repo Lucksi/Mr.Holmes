@@ -35,96 +35,133 @@ class Downloader:
             details = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                 "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             url = "https://www.picuki.com/profile/{}".format(username)
-            openurl = requests.get(url, proxies=http_proxy, headers=headers)
+            openurl = requests.get(
+                url, proxies=http_proxy, headers=headers)
             reader = soup(openurl.content, "html.parser")
             profile = reader.find_all("div", class_="photo")
+
             i = 1
             j = 1
             d = 1
             t = 1
-            
+
             while i <= range_band:
                 for image in profile:
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                          "DOWNLOAD IMAGE NUMBER:{}...".format(str(i)))
-                    profile_pic = image.find("img", class_="post-image")["src"]
-                    image = folder + "/Pic_{}.jpg".format(str(i))
-                    getter = requests.get(
-                        profile_pic, headers=headers, allow_redirects=True)
-                    open(image, "wb").write(getter.content)
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                          "DOWNLOAD SUCCESSFULL..")
-                    i = i+1
+                    try:
+                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                              "DOWNLOAD IMAGE NUMBER:{}...".format(str(i)))
+                        profile_pic = image.find(
+                            "img", class_="post-image")["src"]
+                        image = folder + "/Pic_{}.jpg".format(str(i))
+                        getter = requests.get(
+                            profile_pic, headers=headers, allow_redirects=True)
+                        open(image, "wb").write(getter.content)
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                              "DOWNLOAD SUCCESSFULL..")
+                        i = i+1
+                    except ConnectionError:
+                        print(
+                            Font.Color.RED + "[!]" + Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                        continue
+                    except Exception as e:
+                        print(
+                            Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                        continue
 
             if details == 1:
                 description = reader.find_all("div", class_="photo-info")
                 while j <= range_band:
                     for info in description:
-                        filename = folder + \
-                            "/Post_{}_details.txt".format(str(j))
-                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                              "CHECKING POST {} DETAILS...".format(str(j)))
-                        tagged = info.find(
-                            "a", href=True, class_="user-nickname mt-6")
-                        descr = info.find(
-                            "div", class_="photo-description").text
-                        location = info.find(
-                            "div", class_="photo-location").text
-                        print(Font.Color.YELLOW +
-                              "[v]" + Font.Color.WHITE + "TAGGED USERS: {}".format(tagged))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "DESCRIPTION: {}".format(descr.strip()))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "LOCATION: {}".format(location.strip()))
-                        
-                        f = open(filename, "w")
-                        f.write("POST DATA:\n")
-                        f.write("TAGGED USERS: {}\r\n".format(tagged))
-                        f.write("DESCRIPTION: {}\r\n".format(descr.strip()))
-                        f.write("LOCATION: {}\r\n".format(location.strip()))
-                        f.close()
-                        j = j+1
-                        sleep(2)
+                        try:
+                            filename = folder + \
+                                "/Post_{}_details.txt".format(str(j))
+                            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                                  "CHECKING POST {} DETAILS...".format(str(j)))
+                            descr = info.find(
+                                "div", class_="photo-description").text
+                            location = info.find(
+                                "div", class_="photo-location").text
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "DESCRIPTION: {}".format(descr.strip()))
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "LOCATION: {}".format(location.strip()))
 
-                footer = reader.find_all("div", class_="likes_comments_photo")
+                            f = open(filename, "w")
+                            f.write("POST N°{} DATA:\n".format(str(j)))
+                            f.write("DESCRIPTION: {}\r\n".format(descr.strip()))
+                            f.write("LOCATION: {}\r\n".format(
+                                location.strip()))
+                            f.close()
+                            j = j+1
+                            sleep(2)
+                        except ConnectionError:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            continue
+                        except Exception as e:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            continue
+
+                footer = reader.find_all(
+                    "div", class_="likes_comments_photo")
                 while d <= range_band:
                     for info in footer:
-                        filename = folder + \
-                            "/Post_{}_details.txt".format(str(d))
-                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                              "CHECKING POST {} LIKES AND COMMENTS...".format(str(d)))
-                        likes = info.find("div", class_="likes_photo").text
-                        comments = info.find(
-                            "div", class_="comments_photo").text
-                        time = info.find()
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "LIKES: {}".format(likes.strip()))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "COMMENTS: {}".format(comments.strip()))
+                        try:
+                            filename = folder + \
+                                "/Post_{}_details.txt".format(str(d))
+                            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                                  "CHECKING POST {} LIKES AND COMMENTS...".format(str(d)))
+                            likes = info.find("div", class_="likes_photo").text
+                            comments = info.find(
+                                "div", class_="comments_photo").text
+                            time = info.find()
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "LIKES: {}".format(likes.strip()))
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "COMMENTS: {}".format(comments.strip()))
 
-                        f = open(filename, "a")
-                        f.write("LIKES: {}\r\n".format(likes.strip()))
-                        f.write("COMMENTS: {}\r\n".format(comments.strip()))
-                        f.close()
-                        d = d+1
-                        sleep(2)
+                            f = open(filename, "a")
+                            f.write("LIKES: {}\r\n".format(likes.strip()))
+                            f.write("COMMENTS: {}\r\n".format(
+                                comments.strip()))
+                            f.close()
+                            d = d+1
+                            sleep(2)
+                        except ConnectionError:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            continue
+                        except Exception as e:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            continue
 
                 Time = reader.find_all("div", class_="time")
                 while t <= range_band:
                     for info in Time:
-                        filename = folder + \
-                            "/Post_{}_details.txt".format(str(t))
-                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                              "CHECKING POST {} PUBLISHED TIME ...".format(str(t)))
-                        time = info.find("span").text
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "POSTED: {}".format(time.strip()))
+                        try:
+                            filename = folder + \
+                                "/Post_{}_details.txt".format(str(t))
+                            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                                  "CHECKING POST {} PUBLISHED TIME ...".format(str(t)))
+                            time = info.find("span").text
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "POSTED: {}".format(time.strip()))
 
-                        f = open(filename, "a")
-                        f.write("POSTED: {}\r\n".format(time.strip()))
-                        f.close()
-                        t = t+1
-                        sleep(2)
+                            f = open(filename, "a")
+                            f.write("POSTED: {}\r\n".format(time.strip()))
+                            f.close()
+                            t = t+1
+                            sleep(2)
+                        except ConnectionError:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            continue
+                        except Exception as e:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            continue
 
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       "POSTS DETAILS SAVED ON: {}...".format(folder))
