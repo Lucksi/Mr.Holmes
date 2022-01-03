@@ -1,7 +1,7 @@
-<!--AUTHOR: Luca Garofalo (Lucksi)
-Copyright © 2021 Lucksi
-License: GNU General Public License v3.0-->
 <?php    
+    /*AUTHOR: Luca Garofalo (Lucksi)
+    Copyright © 2021 Lucksi
+    License: GNU General Public License v3.0*/ 
     
     function Body_Theme($File_Name){
         $mode_file = "../Theme/Mode.json";

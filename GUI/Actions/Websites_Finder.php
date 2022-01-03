@@ -1,10 +1,10 @@
-<!--AUTHOR: Luca Garofalo (Lucksi)
-Copyright © 2021 Lucksi
-License: GNU General Public License v3.0-->
 <?php
+    /*AUTHOR: Luca Garofalo (Lucksi)
+    Copyright © 2021 Lucksi
+    License: GNU General Public License v3.0*/ 
     
     $File_name = $_POST["Searcher"];
-    
+
     function Maps_Generator(){
         global $File_name;
         echo "<div class = 'Geo'>";

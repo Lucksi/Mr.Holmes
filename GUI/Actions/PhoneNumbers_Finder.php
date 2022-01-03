@@ -1,7 +1,25 @@
-<!--AUTHOR: Luca Garofalo (Lucksi)
-Copyright © 2021 Lucksi
-License: GNU General Public License v3.0--> 
 <?php
+    /*AUTHOR: Luca Garofalo (Lucksi)
+    Copyright © 2021 Lucksi
+    License: GNU General Public License v3.0*/ 
+
+    function get_dorks(){
+        if(file_exists($Complete_name)){
+            echo "<div class = 'Dataf'>";
+            echo "<p id = 'Const'>DORKS:</p>";
+            $data = fopen($Complete_name,"r")or die("Sever-Error");
+            while (!feof($data)){
+                $content = fgets($data);
+                echo "<p>".$content;
+            }
+            fclose($data);
+            echo "</p>";
+            echo "\n</div>";     
+        }
+        else{
+            echo "\n\t\t\t<p id align = 'center' = 'error'>NOT FIND ANY DORK FOR THIS NUMBER</p>";
+        }
+    }
     
     function Checker() {
         $File_name = $_POST["Searcher"];
@@ -30,18 +48,7 @@ License: GNU General Public License v3.0-->
                 echo "</p>";
                 echo "\n</div>";
                 $Complete_name = "../Reports/Phone/Dorks/{$File_name}_dorks.txt";
-                if(file_exists($Complete_name)){
-                    echo "<div class = 'Dataf'>";
-                    echo "<p id = 'Const'>DORKS:</p>";
-                    $data = fopen($Complete_name,"r")or die("Sever-Error");
-                    while (!feof($data)){
-                        $content = fgets($data);
-                        echo "<p>".$content;
-                    }
-                    fclose($data);
-                    echo "</p>";
-                    echo "\n</div>";     
-                }
+                get_dorks($Complete_name);
             }
             else {
                 echo "

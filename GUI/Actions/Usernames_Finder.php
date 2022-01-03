@@ -1,7 +1,7 @@
-<!--AUTHOR: Luca Garofalo (Lucksi)
-Copyright © 2021 Lucksi
-License: GNU General Public License v3.0-->
-<?php 
+<?php
+    /*AUTHOR: Luca Garofalo (Lucksi)
+    Copyright © 2021 Lucksi
+    License: GNU General Public License v3.0*/ 
     
     function Get_Dorks($Complete_name){
         if(file_exists($Complete_name)){
@@ -17,7 +17,7 @@ License: GNU General Public License v3.0-->
             echo "\n\t\t</div>";
         }
         else{
-            echo "\n\t\t\t<p id align = 'center' = 'error'>NOT FIND ANY DORK FOR THIS USER</p>";
+            echo "\n\t\t\t<p id = 'error' align = 'center'>NOT FIND ANY DORK FOR THIS USER</p>";
         }
     }
 
