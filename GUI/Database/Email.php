@@ -17,7 +17,7 @@ License: GNU General Public License v3.0-->
             }
             else{
                 require("../Actions/Session_Checker.php");
-                $Link = "../Database/Main.php";
+                $Link = "../Database/Email.php";
                 Moderate($Link);
             }
             require_once("../Actions/Theme_Controller.php");
