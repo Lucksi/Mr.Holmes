@@ -3,7 +3,7 @@
     Copyright © 2021 Lucksi
     License: GNU General Public License v3.0*/ 
     
-    function Moderate(){
+    function Moderate($Link){
         $Session_Token = "../Session/Token.txt";
         $Login_file = "../Credentials/Login.json";
         if(file_exists($Login_file)){    
@@ -19,12 +19,12 @@
                 }
             }
             else {
-                header("Location: ");
+                header("Location: {$Link}");
             }
         }
         else {
             exit(0);
         }
     }
-    Moderate();
+    Moderate($Link);
 ?>

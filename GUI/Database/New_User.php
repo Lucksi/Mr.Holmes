@@ -9,7 +9,17 @@ License: GNU General Public License v3.0-->
         <script src = "../Script/Arrow.js"></script>
         <script src = "../Script/Author.js"></script>
         <?php
-            require("../Actions/Session_Checker.php");
+            $exception = "/firefox/i";
+            $accepted = "/chrome/i";
+            $browser = $_SERVER["HTTP_USER_AGENT"];
+            if(preg_match($exception,$browser)){
+     
+            }
+            else{
+                require("../Actions/Session_Checker.php");
+                $Link = "../Database/Main.php";
+                Moderate($Link);
+            }
             require_once("../Actions/Theme_Controller.php");
             $File_Name = "New_User.css";
             Body_Theme($File_Name);
