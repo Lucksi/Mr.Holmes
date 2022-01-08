@@ -1,5 +1,5 @@
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 function Banner(){
@@ -9,7 +9,82 @@ function Banner(){
 
 function Packet_Installer(){
     Write-Host "`nINSTALLING PYTHON3..."
-    Install-Package python3 -Scope CurrentUser | Out-Null
+    Install-Module -Name Python3  -Scope CurrentUser | Out-Null
+    Write-Host "`nINSTALLING PHP..."
+    Install-Package Php -Scope CurrentUser | Out-Null
+    Write-Host "`nUNPACKING PHP..."
+    Install-Php -Scope CurrentUser | Out-Null
+}
+
+function Preferences(){
+    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIAN`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    while($Language -eq ""){
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIAN`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    }
+    if($Language -eq 1){
+        '{
+            "Language":{
+                "Preference": "English"
+            }
+        }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
+        $mode = "ENGLISH"
+    }
+    elseif ($Language -eq 2) {
+        '{
+            "Language":{
+                "Preference": "Italian"
+            }
+        }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
+        $mode = "ITALIANO"
+    }
+    elseif ($Language -eq 3) {
+        '{
+            "Language":{
+                "Preference": "Français"
+            }
+        }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
+        $mode = "FRANÇAIS"
+    }
+
+    Write-Host "`nGUI-LANGUAGE:$mode"
+    $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n(4)UCHIHA`n`n[#MR.HOLMES#]-->"
+    while($Color -eq ""){
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n(4)UCHIHA`n`n[#MR.HOLMES#]-->"
+    }
+    if($Color -eq 1){
+        '{
+            "Color":{
+                "Background": "Light"
+            }
+        }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
+        $mode = "LIGHT"
+    }
+    elseif ($color -eq 2) {
+        '{
+            "Color":{
+                "Background": "Dark"
+            }
+        }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
+        $mode = "DARK"
+    }
+    elseif ($Color -eq 3) {
+        '{
+            "Color":{
+                "Background": "High-Contrast"
+            }
+        }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
+        $mode = "HIGH-CONTRAST"
+    }
+    elseif ($color -eq 4) {
+        '{
+            "Color":{
+                "Background": "Uchiha"
+            }
+        }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
+        $mode = "UCHIHA"
+    }
+
+    Write-Host "`nGUI-THEME:$mode"
 }
 
 function Options(){
@@ -71,7 +146,7 @@ function Options(){
             "Database":{
                 "Status": "Active"
             }
-        }' | Out-File -FilePath .\GUI\Credentials\Login.json
+        }' | Out-File -FilePath .\GUI\Credentials\Login.json -Encoding Ascii
         '{
             "Users":[
                 {
@@ -79,7 +154,7 @@ function Options(){
                 "Password": "Qwerty123"
                 }
             ]
-        }' | Out-File -FilePath .\GUI\Credentials\Users.json
+        }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
         Write-Host "`nYOUR DEFAULT CREDENTIALS ARE:`nUSERNAME: Admin`nPASSWORD: Qwerty123"
     }
     elseif ($Access -eq "False") {
@@ -87,7 +162,7 @@ function Options(){
             "Database":{
                 "Status": "Deactive"
             }
-        }' | Out-File -FilePath .\GUI\Credentials\Login.json
+        }' | Out-File -FilePath .\GUI\Credentials\Login.json -Encoding Ascii
         '{
             "Users":[
                 {
@@ -95,8 +170,9 @@ function Options(){
                 "Password": "None"
                 }
             ]
-        }' | Out-File -FilePath .\GUI\Credentials\Users.json
+        }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
+    Preferences;
     ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE" | Out-File -FilePath .\Configuration/Configuration.ini -Encoding Ascii
     ";BUT DO NOT CHANGE THE PARAMETERS NAME" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
@@ -125,8 +201,9 @@ function installer(){
         Start-Process -FilePath .\Win_File\Req.cmd
         Write-Host "`nTHANK YOU FOR HAVE INSTALLED Mr.Holmes" -ForegroundColor Green
     }
-    elseif ( $DECISION -eq 2) {
+    else{
         Write-Host "`nINSTALLATION INTERRUPTED...EXIT" -ForegroundColor Green
+        Exit-PSSession;
     }
 }
 Banner;
