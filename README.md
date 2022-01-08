@@ -37,7 +37,6 @@ sudo ./install.sh
 # :heavy_check_mark: INSTALLATION WINDOWS:
 ```bash
 git clone https://github.com/Lucksi/Mr.Holmes
-open Cmd as An administrator
 cd Mr.Holmes
 Install.cmd
 ```
@@ -55,10 +54,22 @@ proot -0 chmod +x install_Termux.sh
 
 #  USAGE LINUX/MAC:
     sudo python3 MrHolmes.py
+    OR:
+    cd Launchers
+    Execute Launcher.sh
+
 <br>
 
 #  USAGE TERMUX/WINDOWS:
     python3 MrHolmes.py
+<br>
+
+#  USAGE WINDOWS:
+    python MrHolmes.py
+    OR
+    cd Launchers
+    Execute Win_Launcher.exe
+
 <br>
 
 # API KEY LINK:
@@ -71,11 +82,11 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENTION
-### DATABASE NOT AVAIABLE ON TERMUX AND WINDOWS
+### DATABASE NOT AVAIABLE ON TERMUX
 <br>
 
 # :heavy_exclamation_mark: ATTENTION ON WINDOWS
-### IF PYTHON WONT INSTALL YOU HAVE TO DOWNLOAD IT MANUALLY:
+### IF PYTHON AND PHP WONT INSTALL YOU HAVE TO DOWNLOAD THEM MANUALLY:
     
 <br>
 
@@ -219,4 +230,4 @@ write:François
 <br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: © 2021 Lucksi
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 

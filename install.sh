@@ -1,6 +1,6 @@
 #!/bin/bash
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 . /etc/os-release
@@ -9,6 +9,19 @@ BLUE=$(tput setaf 6)
 GREEN=$(tput setaf 2)
 WHITE=$(tput setaf 15)
 LIGHTGREEN=$(tput setaf 10)
+RED=$(tput setaf 1)
+ROOT=$(id -u)
+
+function Check_Root {
+	if [ $ROOT -ne 0 ]; 
+		then
+	 	clear
+		banner
+		printf "${RED}\n\n[!]${WHITE}SORRY THIS SCRIPT MUST BE EXECUTED AS A ROOT\n\n"
+	 	exit 1
+	fi
+	installer
+}
 
 function banner {
 	clear
@@ -43,13 +56,13 @@ function Preference {
 	elif [ $Language == 3 ];
 	then
 		echo '{
-    "Language":{
-        "Preference":"Français"
-    }
+	"Language":{
+		"Preference":"Français"
+	}
 }'>GUI/Language/Language.json
-	mode="FRANÇAIS"
+		mode="FRANÇAIS"
 	fi
-	printf "\n${WHITE}GUI LANGUAGE:${GREEN}$mode\n"
+	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}$mode\n"
 	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Theme
 	while [ $Language == "" ];
@@ -90,7 +103,7 @@ function Preference {
 }'>GUI/Theme/Mode.json
 	mode="UCHIHA"
 	fi
-	printf "\n${WHITE}GUI THEME:${GREEN}$mode\n"
+	printf "\n${WHITE}GUI-THEME:${GREEN}$mode\n"
 }
 
 function Packet_Installer {
@@ -237,11 +250,17 @@ function Options {
 }
 
 function installer {
+	banner
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
 	sleep 2
 	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBUTION FOUND:$DIST${GREEN}[+]"
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
+	while [ "$confvar" == "" ];
+		do
+		printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
+		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
+	done
 	if [ $confvar == 1 ]; 
 		then
         Packet_Installer
@@ -251,15 +270,17 @@ function installer {
 		printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 		sudo chmod +x update.sh
 		cd ../
+		cd Launchers
+		sudo chmod +x Launcher.sh
+		cd ../
 		cd ../
 		echo "Path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
-		exit 1
+		exit 0
 	fi
 	printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
     exit 1
 }
-banner
-installer
+Check_Root

@@ -3,7 +3,8 @@
 Name: Mr.Holmes
 Languages: Python,Shell-script,Javascript,Php,Css,Powershell,Batch
 Python-Version: Python3 
-Author: Luca Garofalo (Lucks)i
+Author: Luca Garofalo (Lucksi)
+Copyright: (C) 2021-2022
 Project-site: https://lucksi.github.io/Mr.Holmes
 Download: git clone https://github.com/Lucksi/Mr.Holmes
 Platforms: Linux/MacOS/Termux/Windows

@@ -1,6 +1,7 @@
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
+
 
 import json
 import requests
@@ -63,7 +64,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nIMGUR DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
             f.write("USERNAME: {}\r\n".format(user))
@@ -75,7 +76,7 @@ class info:
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + "CONNECTION ERROR")
-            pass
+            pass 
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
@@ -117,7 +118,7 @@ class info:
             print(Font.Color.YELLOW + "[v]" +
                   Font.Color.WHITE + "LIKES: {}".format(likes))
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nPR0GRAMM DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
             f.write("USERNAME: {}\r\n".format(user))
@@ -170,7 +171,7 @@ class info:
             print(Font.Color.YELLOW + "[v]" +
                   Font.Color.WHITE + "MAJOR: {}".format(major))
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nBINARYSEARCH DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
             f.write("USERNAME: {}\r\n".format(user))
@@ -242,7 +243,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nMIXCLOUD DATA:\n")
             f.write("USERNAME: {}\r\n".format(usern2))
             f.write("NAME: {}\r\n".format(user))
@@ -307,7 +308,7 @@ class info:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
-                f = open(report, "a")
+                f = open(report, "a", encoding="utf-8")
                 f.write("\nINSTAGRAM DATA:\n")
                 f.write("USERNAME: {}\r\n".format(user))
                 f.write("NAME: {}\r\n".format(name))
@@ -347,12 +348,12 @@ class info:
 
                   if Photos == 1:
                         Posts = float(posts.replace(",", ''))
-                  try:
-                     Get_Photos.Downloader.Instagram(
-                        username, http_proxy, Posts)
-                  except ConnectionError:
-                        print(Font.Color.RED +
-                              "\n[!]" + Font.Color.WHITE + "CONNECTION ERROR")
+                        try:
+                              Get_Photos.Downloader.Instagram(
+                                    username, http_proxy, Posts)
+                        except ConnectionError:
+                              print(Font.Color.RED +
+                                    "\n[!]" + Font.Color.WHITE + "CONNECTION ERROR")
                   else:
                      pass
 
@@ -415,7 +416,7 @@ class info:
                 else:
                     pass
 
-                f = open(report, "a")
+                f = open(report, "a", encoding="utf-8")
                 f.write("\nNITTER DATA:\n")
                 f.write("USERNAME: {}\r\n".format(
                     user["href"].replace("/", "")))
@@ -480,7 +481,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nDOCKERHUB DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
             f.write("USERNAME: {}\r\n".format(user))
@@ -545,7 +546,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nKIK DATA:\n")
             f.write("FIRST-NAME: {}\r\n".format(info[0]))
             f.write("LAST-NAME: {}\r\n".format(info[1]))
@@ -597,7 +598,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
 
             f.write("\nGITLAB DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
@@ -677,7 +678,7 @@ class info:
             else:
                 pass
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
 
             f.write("\nWATTPAD DATA:\n")
             f.write("USERNAME: {}\r\n".format(user))
@@ -774,7 +775,7 @@ class info:
                       "PROFILE PIC SAVED ON: {}".format(image))
             else:
                 pass
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nGIT-HUB DATA:\n")
             f.write("USERNAME: {}\r\n".format(user))
             f.write("BIO: {}\r\n".format(bio))
@@ -836,7 +837,7 @@ class info:
             print(Font.Color.YELLOW +
                   "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nURLEBIRD DATA:\n")
             f.write("USERNAME: {}\r\n".format(user))
             f.write("NAME: {}\r\n".format(name))
@@ -886,7 +887,7 @@ class info:
             print(Font.Color.YELLOW + "[v]" +
                   Font.Color.WHITE + "USERNAME: {}".format(user))
 
-            f = open(report, "a")
+            f = open(report, "a", encoding="utf-8")
             f.write("\nMINECRAFT DATA:\n")
             f.write("ID: {}\r\n".format(id_user))
             f.write("USERNAME: {}\r\n".format(user))

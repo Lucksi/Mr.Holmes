@@ -1,5 +1,5 @@
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 import os
@@ -220,7 +220,7 @@ class Web:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "DOING TRACEROUTE FOR: {}...".format(username))
         if os.name == "nt":
-            command = ("tracert" + username)
+            command = ("tracert " + username)
         else:
             command = ("traceroute " + username)
         proces = os.popen(command)
@@ -301,19 +301,23 @@ class Web:
               "LOOKING FOR WHO IS INFORMATION ABOUT: {}...".format(username))
         sleep(2)
         if Key == "None":
-            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                  "API KEY NOT FOUND DOING CLASSICAL WHOIS LOOKUP...")
-            command = ("whois " + username)
-            proces = os.popen(command)
-            results = str(proces.read())
-            final = results + command
-            print(Font.Color.WHITE + results)
-            f = open(report, "a")
-            f.write("\nWEBSITE DATA:" + "\r\n")
-            f.write(results)
-            f.close()
-            num = None
-            number = False
+            if (os.name != "nt"):
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                    "API KEY NOT FOUND DOING CLASSICAL WHOIS LOOKUP...")
+                command = ("whois " + username)
+                proces = os.popen(command)
+                results = str(proces.read())
+                final = results + command
+                print(Font.Color.WHITE + results)
+                f = open(report, "a")
+                f.write("\nWEBSITE DATA:" + "\r\n")
+                f.write(results)
+                f.close()
+                num = None
+                number = False
+            else:
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                    "API KEY NOT FOUND CLASSICAL WHOIS LOOKUP NOT SUPPORTED ON WINDOWS...")
         else:
             try:
                 print(Font.Color.GREEN + "[+]" +

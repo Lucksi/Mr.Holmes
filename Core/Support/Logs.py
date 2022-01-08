@@ -1,8 +1,9 @@
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 import logging
+import os
 from configparser import ConfigParser
 from Core.Support import Font
 
@@ -18,8 +19,12 @@ class Log:
         if Conf_Log == "True":
             file_Log = "Logs/{}/Session_{}.log".format(folder, username)
             try:
-                logging.basicConfig(filename=file_Log, filemode="w",
-                                    format="%(asctime)s %(message)s", force=True)
+                if (os.name != "nt"):
+                    logging.basicConfig(filename=file_Log, filemode="w",
+                                        format="%(asctime)s %(message)s", force=True)
+                else:
+                    logging.basicConfig(filename=file_Log, filemode="w",
+                                        format="%(asctime)s %(message)s")
                 Logger = logging.getLogger()
                 Logger.setLevel(logging.DEBUG)
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +

@@ -1,6 +1,7 @@
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright © 2021 Lucksi
+# Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
+
 
 import os
 import requests
@@ -62,10 +63,12 @@ class Downloader:
                     except ConnectionError:
                         print(
                             Font.Color.RED + "[!]" + Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                        i = i+1
                         continue
                     except Exception as e:
                         print(
                             Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                        i = i+1
                         continue
 
             if details == 1:
@@ -86,7 +89,7 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   "LOCATION: {}".format(location.strip()))
 
-                            f = open(filename, "w")
+                            f = open(filename, "w", encoding="utf-8")
                             f.write("POST N°{} DATA:\n".format(str(j)))
                             f.write("DESCRIPTION: {}\r\n".format(descr.strip()))
                             f.write("LOCATION: {}\r\n".format(
@@ -97,10 +100,12 @@ class Downloader:
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            j = j+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            j = j+1
                             continue
 
                 footer = reader.find_all(
@@ -131,10 +136,12 @@ class Downloader:
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            d = d+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            d = d+1
                             continue
 
                 Time = reader.find_all("div", class_="time")
@@ -157,10 +164,12 @@ class Downloader:
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            t = t+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            t = t+1
                             continue
 
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
