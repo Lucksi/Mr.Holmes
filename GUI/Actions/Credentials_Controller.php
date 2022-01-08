@@ -1,6 +1,6 @@
 <?php
     /*AUTHOR: Luca Garofalo (Lucksi)
-    Copyright © 2021 Lucksi
+    Copyright (C) 2021-2022 Lucksi
     License: GNU General Public License v3.0*/ 
     
     $Input_username = $_POST["username"];
@@ -9,6 +9,7 @@
     function Confront_Creds(){
         global $Input_username;
         global $Input_Password;
+        $Flag = 0;
         $Login_file = "../Credentials/Users.json";
         $Reader = file_get_contents($Login_file);
         $Parser = json_decode($Reader,true);
@@ -25,6 +26,7 @@
             fclose($Creator);
         }
         else {
+            header("Location: ../Login/Login.php");
             echo "
             <script>
             alert('USERNAME OR PASSWORD INCORRECT');
@@ -36,6 +38,7 @@
         global $Input_username;
         global $Input_Password;
         if ($Input_Password == "" and $Input_username == ""){
+            header("Location: ../Login/Login.php");
             echo "
             <script>
             alert('USERNAME OR PASSWORD NOT INSERTED');

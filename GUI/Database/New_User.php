@@ -1,24 +1,21 @@
 <!--AUTHOR: Luca Garofalo (Lucksi)
-Copyright © 2021 Lucksi
+Copyright (C) 2021-2022 Lucksi
 License: GNU General Public License v3.0-->
 <!DOCTYPE html>
 <html>
     <head>
         <title>New User</title>
         <script src = "../Script/Language.js"></script>
-        <script src = "../Script/Arrow.js"></script>
         <script src = "../Script/Author.js"></script>
+        <script src = "../Script/Arrow.js"></script>
         <?php
             $exception = "/firefox/i";
-            $accepted = "/chrome/i";
             $browser = $_SERVER["HTTP_USER_AGENT"];
             if(preg_match($exception,$browser)){
      
             }
             else{
                 require("../Actions/Session_Checker.php");
-                $Link = "../Database/New_User.php";
-                Moderate($Link);
             }
             require_once("../Actions/Theme_Controller.php");
             $File_Name = "New_User.css";

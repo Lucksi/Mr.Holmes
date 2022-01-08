@@ -1,9 +1,10 @@
 <?php
     /*AUTHOR: Luca Garofalo (Lucksi)
-    Copyright © 2021 Lucksi
+    Copyright (C) 2021-2022 Lucksi
     License: GNU General Public License v3.0*/ 
     
-    function Moderate($Link){
+    function Moderate(){
+        error_reporting(0);
         $Session_Token = "../Session/Token.txt";
         $Login_file = "../Credentials/Login.json";
         if(file_exists($Login_file)){    
@@ -19,12 +20,12 @@
                 }
             }
             else {
-                header("Location: {$Link}");
+                header("Location: ");
             }
         }
         else {
             exit(0);
         }
     }
-    Moderate($Link);
+    Moderate();
 ?>

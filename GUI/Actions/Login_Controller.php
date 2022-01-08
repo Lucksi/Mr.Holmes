@@ -1,6 +1,6 @@
 <?php
     /*AUTHOR: Luca Garofalo (Lucksi)
-    Copyright © 2021 Lucksi
+    Copyright (C) 2021-2022 Lucksi
     License: GNU General Public License v3.0*/ 
     
     function Active(){
@@ -9,7 +9,7 @@
             $reader = file_get_contents($Login_file);
             $Parser = json_decode($reader,true);
             $Status = $Parser["Database"]["Status"];
-            if ($Status == "Active"){
+            if (($Status == "Active")){
                 header("Location: ../Login/Login.php");
             }
             elseif(($Status == "Deactive")) {
