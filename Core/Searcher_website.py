@@ -318,6 +318,8 @@ class Web:
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                     "API KEY NOT FOUND CLASSICAL WHOIS LOOKUP NOT SUPPORTED ON WINDOWS...")
+                num = None
+                number = False
         else:
             try:
                 print(Font.Color.GREEN + "[+]" +
