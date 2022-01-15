@@ -137,6 +137,7 @@
 ## (136) HACKERONE: https://hackerone.com
 ## (137) BUGCROWD: https://bugcrowd.com
 ## (138) RAIDFORUMS: https://raidforums.com
+## (139) QUOTEV: https://www.quotev.com
 
 <br>
 
@@ -195,6 +196,6 @@
 
 <br>
 
-# USERNAME SITES: 146
+# USERNAME SITES: 147
 # PHONE-NUMBER SITES: 14
-# TOTAL: 160 SITES
+# TOTAL: 161 SITES
