@@ -10,7 +10,6 @@ License: GNU General Public License v3.0-->
             $File_Name = "Login.css";
             Body_Theme($File_Name);
         ?>
-        <?php require("../Actions/Credentials_Controller.php");?>
         <link rel = "icon" href = "../Icon/Mr.Holmes.png">
         <script src = "../Script/Language.js"></script>
         <script src = "../Script/Arrow.js"></script>
@@ -39,7 +38,7 @@ License: GNU General Public License v3.0-->
         </div>
         <center>
         <div class = "Container">
-            <form action = "" method = "POST">
+            <form action = "../Actions/Credentials_Controller.php" method = "POST">
                 <p id = "Const">LOGIN</p>
                 <p id = "Const">USERNAME</p>
                 <input type = "text" placeholder = "Username..."  name = "username">
