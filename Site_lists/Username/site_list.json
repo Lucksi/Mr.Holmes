@@ -7,17 +7,19 @@
             "user": "https://instagram.com/{}",
             "user2": "https://instagram.com/{}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://www.picuki.com/profile/{}"
         },
         
-        "Git-Hub":{
+        "GitHub":{
             "Error": "Status-Code",
             "name": "GitHub",
             "main": "github.com",
             "user": "https://github.com/{}",
             "user2": "https://github.com/{}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://api.github.com/users/{}"
         },
         
         "Facebook":{
@@ -57,7 +59,8 @@
             "user": "https://imgur.com/user/{}",
             "user2": "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7"
         },
         
         "MySpace":{
@@ -107,7 +110,8 @@
             "user": "https://www.wattpad.com/user/{}",
             "user2": "https://www.wattpad.com/user/{}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://www.wattpad.com/api/v3/users/{}/"
         },
         
         "FortniteTracker":{
@@ -315,11 +319,12 @@
             "Error": "Message",
             "text": "not found",
             "name": "Nitter",
-            "main": "nitter.net",
-            "user": "https://nitter.nixnet.services/{}",
-            "user2": "https://nitter.nixnet.services/{}",
+            "main": "nitter.domain.glass",
+            "user": "https://nitter.domain.glass/{}",
+            "user2": "https://nitter.domain.glass/{}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://nitter.domain.glass/{}"
         },
 
         "PsnProfiles":{
@@ -598,7 +603,8 @@
             "user": "https://pr0gramm.com/user/{}",
             "user2": "https://pr0gramm.com/api/profile/info?name={}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://pr0gramm.com/api/profile/info?name={}"
         },
 
         "BinarySearch":{
@@ -609,7 +615,8 @@
             "user": "https://binarysearch.com/@/{}",
             "user2": "https://binarysearch.com/api/users/{}/profile",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://binarysearch.com/api/users/{}/profile"
         },
 
         "MixCloud":{
@@ -619,7 +626,8 @@
             "user": "https://mixcloud.com/{}/",
             "user2": "https://api.mixcloud.com/{}/",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://api.mixcloud.com/{}/"
         },
 
         "Archive.org":{
@@ -661,7 +669,8 @@
             "user": "https://hub.docker.com/u/{}/",
             "user2": "https://hub.docker.com/v2/users/{}/",
             "exception": [" ",".","/","_"],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://hub.docker.com/v2/users/{}/"
         },
 
         "AminoApps":{
@@ -692,7 +701,8 @@
             "user": "https://kik.me/{}",
             "user2": "https://ws2.kik.com/user/{}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://ws2.kik.com/user/{}"
         },
 
         "Signal":{
@@ -714,7 +724,8 @@
             "user": "https://gitlab.com/{}",
             "user2": "https://gitlab.com/api/v4/users?username={}",
             "exception": [" "],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://gitlab.com/api/v4/users?username={}"
         },
 
         "Wix":{
@@ -913,14 +924,15 @@
             "Scrapable": "False"
         },
 
-        "Urlebird":{
+        "UrleBird":{
             "Error": "Status-Code",
             "name": "UrleBird",
             "main": "urlebird.com",
             "user": "https://urlebird.com/user/{}/",
             "user2": "https://urlebird.com/user/{}/",
             "exception": [" ","/"],
-            "Scrapable": "True"
+            "Scrapable": "True",
+            "Scrapable_url": "https://urlebird.com/user/{}/"
         },
 
        "TheHandbook":{
@@ -1102,11 +1114,12 @@
         "Minecraft":{
             "Error": "Status-Code",
             "name": "Minecraft",
-            "main": "https://api.mojang.com/users/profiles/minecraft/",
+            "main": "api.mojang.com",
             "user": "https://api.mojang.com/users/profiles/minecraft/{}",
             "user2": "https://api.mojang.com/users/profiles/minecraft/{}",
             "exception": [" ","/"],
-            "Scrapable": "False"
+            "Scrapable": "True",
+            "Scrapable_url": "https://api.mojang.com/users/profiles/minecraft/{}"
         },
 
         "Ko-Fi":{
@@ -1411,6 +1424,16 @@
             "main": "raidforums.com",
             "user": "https://raidforums.com/User-{}",
             "user2": "https://raidforums.com/User-{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Quotev":{
+            "Error": "Status-Code",
+            "name": "Quotev",
+            "main": "quotev.com",
+            "user": "https://www.quotev.com/{}",
+            "user2": "https://www.quotev.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

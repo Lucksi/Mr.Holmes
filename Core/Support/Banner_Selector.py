@@ -4,6 +4,7 @@
 
 import random
 from Core.Support import Font
+import tkinter
 
 
 class Random:
@@ -11,7 +12,13 @@ class Random:
     @staticmethod
     def Get_Banner(Folder):
         List = ["Banner1.txt", "Banner2.txt", "Banner3.txt"]
-        choice = random.choice(List)
+        screen = tkinter.Tk()
+        Size = screen.winfo_screenwidth()
+        screen.destroy()
+        if Size <= 711:
+            choice = List[2]
+        else:
+            choice = random.choice(List)
         f = open(Folder + "/" + choice, "r", newline=None)
         banner = f.read()
         f.close()

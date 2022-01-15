@@ -17,7 +17,7 @@ headers = {
 class Downloader:
 
     @staticmethod
-    def Instagram(username, http_proxy, Posts):
+    def Instagram(url, username, http_proxy, Posts):
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -35,7 +35,6 @@ class Downloader:
 
             details = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                 "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            url = "https://www.picuki.com/profile/{}".format(username)
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers)
             reader = soup(openurl.content, "html.parser")

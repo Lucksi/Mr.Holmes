@@ -18,11 +18,29 @@ destination = "GUI/Reports/Usernames/Profile_pics/"
 class info:
 
     @staticmethod
+    def Profile_Pic(username, destination, profile_pic, SiteName):
+        image = destination + \
+            "{}/_Profile_pic_{}.jpg".format(username, SiteName)
+        getter = requests.get(
+            profile_pic, headers=headers, allow_redirects=True)
+        open(image, "wb").write(getter.content)
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "PROFILE PIC SAVED ON: {}".format(image))
+
+    @staticmethod
+    def Get_Url(username, Name):
+        filename = "Site_lists/Username/site_list.json"
+        reader = open(filename,)
+        parser = json.loads(reader.read())
+        site = parser[0][Name]["Scrapable_url"].replace("{}", username)
+        return site
+
+    @staticmethod
     def Imgur(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} IMGUR PROFILE...".format(username))
-        url = "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7".format(
-            username)
+        url = info.Get_Url(username, "Imgur")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -54,13 +72,8 @@ class info:
             download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_Imgur.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                SiteName = "Imgur"
+                info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -76,7 +89,7 @@ class info:
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + "CONNECTION ERROR")
-            pass 
+            pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
@@ -86,7 +99,8 @@ class info:
     def Pr0gramm(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} PR0GRAMM PROFILE...".format(username))
-        url = "https://pr0gramm.com/api/profile/info?name={}".format(username)
+        url = info.Get_Url(username, "Pr0gramm")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -143,7 +157,8 @@ class info:
     def Binarysearch(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} BINARYSEARCH PROFILE...".format(username))
-        url = "https://binarysearch.com/api/users/{}/profile".format(username)
+        url = info.Get_Url(username, "BinarySearch")
+        url
         openurl = requests.get(url, proxies=http_proxy, headers=headers)
         try:
             reader = openurl.text
@@ -195,7 +210,8 @@ class info:
     def MixCloud(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} MIXCLOUD PROFILE...".format(username))
-        url = "https://api.mixcloud.com/{}/".format(username)
+        url = info.Get_Url(username, "MixCloud")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=30)
         try:
@@ -233,13 +249,8 @@ class info:
             download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PIC?(1)YES(2)NO".format(
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_MixCloud.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                SiteName = "MixCloud"
+                info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -268,8 +279,8 @@ class info:
     def Instagram(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} INSTAGRAM PROFILE...".format(username))
-        url = "https://www.picuki.com/profile/{}".format(username)
-
+        url = info.Get_Url(username, "Instagram")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=None)
         try:
@@ -322,13 +333,8 @@ class info:
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
                 if download == 1:
-                    image = destination + \
-                        "{}/_Profile_pic_Instagram.jpg".format(username)
-                    getter = requests.get(
-                        profile_pic, headers=headers, allow_redirects=True)
-                    open(image, "wb").write(getter.content)
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                          "PROFILE PIC SAVED ON: {}".format(image))
+                    SiteName = "Instagram"
+                    info.Profile_Pic(username, destination, profile_pic, SiteName)
                 else:
                     pass
         except ConnectionError:
@@ -343,25 +349,26 @@ class info:
             pass
         finally:
             if Flag == True:
-                  Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PHOTOS?(1)YES(2)NO".format(
-                  username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO DOWNLOAD {} PROFILE PHOTOS?(1)YES(2)NO".format(
+                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
-                  if Photos == 1:
-                        Posts = float(posts.replace(",", ''))
-                        try:
-                              Get_Photos.Downloader.Instagram(
-                                    username, http_proxy, Posts)
-                        except ConnectionError:
-                              print(Font.Color.RED +
-                                    "\n[!]" + Font.Color.WHITE + "CONNECTION ERROR")
-                  else:
-                     pass
+                if Photos == 1:
+                    Posts = float(posts.replace(",", ''))
+                    try:
+                        Get_Photos.Downloader.Instagram(url,
+                                                        username, http_proxy, Posts)
+                    except ConnectionError:
+                        print(Font.Color.RED +
+                              "\n[!]" + Font.Color.WHITE + "CONNECTION ERROR")
+                else:
+                    pass
 
     @staticmethod
     def Nitter(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} NITTER PROFILE...".format(username))
-        url = "https://nitter.nixnet.services/{}".format(username)
+        url = info.Get_Url(username, "Nitter")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -376,7 +383,7 @@ class info:
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
                 pic = reader.find("a", href=True, class_="profile-card-avatar")
-                profile_pic = "https://nitter.nixnet.services" + pic["href"]
+                profile_pic = "https://nitter.domain.glass" + pic["href"]
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                       "USER: " + user["href"].replace("/", ""))
 
@@ -406,13 +413,8 @@ class info:
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
                 if download == 1:
-                    image = destination + \
-                        "{}/_Profile_pic_Nitter.jpg".format(username)
-                    getter = requests.get(
-                        profile_pic, headers=headers, allow_redirects=True)
-                    open(image, "wb").write(getter.content)
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                          "PROFILE PIC SAVED ON: {}".format(image))
+                    SiteName = "Nitter"
+                    info.Profile_Pic(username, destination, profile_pic, SiteName)
                 else:
                     pass
 
@@ -438,7 +440,8 @@ class info:
     def Dockerhub(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} DOCKERHUB PROFILE...".format(username))
-        url = "https://hub.docker.com/v2/users/{}/".format(username)
+        url = info.Get_Url(username, "DockerHub")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -471,13 +474,8 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_DockerHub.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                 SiteName = "DockerHub"
+                 info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -490,23 +488,27 @@ class info:
             f.write("CREATED-ON: {}\r\n".format(profile_creation))
             f.write("ACCOUNT-TYPE: {}\r\n".format(account_type))
             f.close()
-
-        except Exception as e:
+        except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + "CONNECTION ERROR")
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + "SOMETHING WENT WRONG")
             pass
 
     @staticmethod
     def Kik(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} KIK PROFILE...".format(username))
-        url = "https://ws2.kik.com/user/{}".format(username)
+        url = info.Get_Url(username, "Kik")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
             reader = openurl.text
             converted = json.loads(reader)
-            info = []
+            target = []
             profile = []
             for values in converted:
                 name = converted[values]
@@ -517,15 +519,15 @@ class info:
                 else:
                     found = False
                     profile.append("None")
-                    info.append(name)
+                    target.append(name)
             if found == True:
                 profile_pic = profile[3]
             else:
                 profile_pic = "None"
             print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "FIRST-NAME: {}".format(info[0]))
+                  "[v]" + Font.Color.WHITE + "FIRST-NAME: {}".format(target[0]))
             print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "LAST-NAME: {}".format(info[1]))
+                  "[v]" + Font.Color.WHITE + "LAST-NAME: {}".format(target[1]))
             print(Font.Color.YELLOW +
                   "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
@@ -534,13 +536,8 @@ class info:
 
             if download == 1:
                 if profile_pic != "None":
-                    image = destination + \
-                        "{}/_Profile_pic_Kik.jpg".format(username)
-                    getter = requests.get(
-                        profile_pic, headers=headers, allow_redirects=True)
-                    open(image, "wb").write(getter.content)
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                          "PROFILE PIC SAVED ON: {}".format(image))
+                    SiteName = "Kik"
+                    info.Profile_Pic(username, destination, profile_pic, SiteName)
                 else:
                     pass
             else:
@@ -548,20 +545,25 @@ class info:
 
             f = open(report, "a", encoding="utf-8")
             f.write("\nKIK DATA:\n")
-            f.write("FIRST-NAME: {}\r\n".format(info[0]))
-            f.write("LAST-NAME: {}\r\n".format(info[1]))
+            f.write("FIRST-NAME: {}\r\n".format(target[0]))
+            f.write("LAST-NAME: {}\r\n".format(target[1]))
             f.close()
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + "CONNECTION ERROR")
+            pass
 
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + "CONNECTION ERROR")
+                  Font.Color.WHITE + "SOMETHING WENT WRONG..")
             pass
 
     @staticmethod
     def GitLab(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} GIT-LAB PROFILE...".format(username))
-        url = "https://gitlab.com/api/v4/users?username={}".format(username)
+        url = info.Get_Url(username, "GitLab")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -588,13 +590,8 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_GitLab.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                  SiteName = "GitLab"
+                  info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -620,7 +617,8 @@ class info:
     def Wattpad(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} WATTPAD PROFILE...".format(username))
-        url = "https://www.wattpad.com/api/v3/users/{}/".format(username)
+        url = info.Get_Url(username, "Wattpad")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -668,13 +666,8 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_Wattpad.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                  SiteName = "Wattpad"
+                  info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -707,7 +700,8 @@ class info:
         try:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   "SCRAPING {} GITHUB PROFILE...".format(username))
-            url = "https://api.github.com/users/{}".format(username)
+            url = info.Get_Url(username, "GitHub")
+            url
             openurl = requests.get(url, proxies=http_proxy,
                                    headers=headers, timeout=15)
             reader = openurl.text
@@ -766,13 +760,8 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_GitHub.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                  SiteName = "GitHub"
+                  info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
             f = open(report, "a", encoding="utf-8")
@@ -807,7 +796,8 @@ class info:
     def UrleBird(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} URLEBIRD PROFILE...".format(username))
-        url = "https://urlebird.com/user/{}/".format(username)
+        url = info.Get_Url(username, "UrleBird")
+        url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
@@ -850,13 +840,8 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                image = destination + \
-                    "{}/_Profile_pic_Urlebird.jpg".format(username)
-                getter = requests.get(
-                    profile_pic, headers=headers, allow_redirects=True)
-                open(image, "wb").write(getter.content)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      "PROFILE PIC SAVED ON: {}".format(image))
+                  SiteName = "UrleBird"
+                  info.Profile_Pic(username, destination, profile_pic, SiteName)
             else:
                 pass
 
@@ -873,8 +858,8 @@ class info:
     def Minecraft(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} MINECRAFT PROFILE...".format(username))
-        url = "https://api.mojang.com/users/profiles/minecraft/{}".format(
-            username)
+        url = info.Get_Url(username, "Minecraft")
+        url
         openurl = requests.get(url, proxies=http_proxy, headers=headers)
         try:
             reader = openurl.text

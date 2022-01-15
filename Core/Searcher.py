@@ -361,6 +361,19 @@ class MrHolmes:
                             Scraper.info.Github(report, username, http_proxy)
                     else:
                         pass
+
+                    if "Minecraft" in ScraperSites:
+                        try:
+                            Scraper.info.Minecraft(
+                                report, username, http_proxy)
+                        except Exception as e:
+                            print(
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + "CONNECTION-ERROR...TRYNG WITH NO PROXIES")
+                            http_proxy = None
+                            Scraper.info.Minecraft(
+                                report, username, http_proxy)
+                    else:
+                        pass
                 else:
                     pass
             else:
