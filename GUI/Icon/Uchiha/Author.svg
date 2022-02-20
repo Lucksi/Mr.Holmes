@@ -1,0 +1,11 @@
+<!--AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2021-2022 Lucksi
+License: GNU General Public License v3.0-->
+ 
+<svg height="100" width="100">
+  <circle cx="50" cy="50" r="45" stroke="black" stroke-width="5" fill="red"/>
+  <circle cx="50" cy="50" r="38" stroke="white" stroke-width="2" fill="red"/>
+  <circle cx="50" cy="50" r="27" stroke="white" stroke-width="2" fill="red"/>
+  <circle cx="50" cy="50" r="15" stroke="white" stroke-width="2" fill="red"/>
+  <circle cx="50" cy="50" r="2" stroke="white" stroke-width="4" fill="white"/>
+</svg> 
