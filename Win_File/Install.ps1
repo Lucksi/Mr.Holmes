@@ -17,9 +17,9 @@ function Packet_Installer(){
 }
 
 function Preferences(){
-    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIAN`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
     while($Language -eq ""){
-        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIAN`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
     }
     if($Language -eq 1){
         '{
@@ -40,7 +40,7 @@ function Preferences(){
     elseif ($Language -eq 3) {
         '{
             "Language":{
-                "Preference": "Français"
+                "Preference": "French"
             }
         }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
         $mode = "FRANÇAIS"
@@ -172,23 +172,42 @@ function Options(){
             ]
         }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
+    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n`n[#MR.HOLMES#]-->"
+    while($Lang -eq ""){
+        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n`n[#MR.HOLMES#]-->"
+    }
+    if($Lang -eq 1){
+        $Cli = "english"
+        $Mode = "ENGLISH"
+    }
+    else if($Lang -eq 2){
+        $Cli = "italian"
+        $Mode = "ITALIANO"
+    }
+    else if($Lang -eq 3){
+        $Cli = "french"
+        $Mode = "FRANÇAIS"
+    }
+    Write-Host "`nCLI-LANGUAGE:$Mode"
     Preferences;
-    ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE" | Out-File -FilePath .\Configuration/Configuration.ini -Encoding Ascii
+    ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER" | Out-File -FilePath .\Configuration/Configuration.ini -Encoding Ascii
+    ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE" | Out-File -FilePath .\Configuration/Configuration.ini -Append -Encoding Ascii
     ";BUT DO NOT CHANGE THE PARAMETERS NAME" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "[Smtp]" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Email= $Email" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Password= $Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Destination= $Destination" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Server= $Server" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Port= $Port" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "email= $Email" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "password= $Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "destination= $Destination" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "server= $Server" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "port= $Port" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "[Settings]" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Password= $Update_Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Api_Key= $Api" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Proxy_List= $Proxy_List" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Show_Logs= $Log_Session" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
-    "Database= $Token" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "password= $Update_Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "api_key= $Api" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "proxy_list= $Proxy_List" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "show_logs= $Log_Session" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "database= $Token" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "language= $Cli" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
 }
 
 function installer(){

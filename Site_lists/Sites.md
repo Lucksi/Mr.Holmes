@@ -138,6 +138,7 @@
 ## (137) BUGCROWD: https://bugcrowd.com
 ## (138) RAIDFORUMS: https://raidforums.com
 ## (139) QUOTEV: https://www.quotev.com
+## (140) JOINROLL: https://joinroll.com
 
 <br>
 
@@ -196,6 +197,6 @@
 
 <br>
 
-# USERNAME SITES: 147
+# USERNAME SITES: 148
 # PHONE-NUMBER SITES: 14
-# TOTAL: 161 SITES
+# TOTAL: 162 SITES

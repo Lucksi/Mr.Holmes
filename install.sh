@@ -30,7 +30,7 @@ function banner {
 }
 
 function Preference {
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ $Language == "" ];
 		do
@@ -57,7 +57,7 @@ function Preference {
 	then
 		echo '{
 	"Language":{
-		"Preference":"Français"
+		"Preference":"French"
 	}
 }'>GUI/Language/Language.json
 		mode="FRANÇAIS"
@@ -227,25 +227,50 @@ function Options {
     ]
 }'>GUI/Credentials/Users.json
 	fi
+	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	while [ $Language == "" ];
+		do
+		printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
+	done
+	if [ $Language == 1 ];
+		then
+		Lang="english"
+		mode="ENGLISH"
+
+	elif [ $Language == 2 ];
+		then
+		Lang="italian"
+		mode="ITALIANO" 
+
+	elif [ $Language == 3 ];
+		then
+		Lang="french"
+		mode="FRANÇAIS"
+	fi
+	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
 	Preference
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
-	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">Configuration.ini
+	echo ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER">Configuration.ini
+	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">>Configuration.ini
 	echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration.ini
 	echo "">>Configuration.ini
 	echo "[Smtp]">>Configuration.ini
-	echo "Email = $recipient">>Configuration.ini
-	echo "Password = $password">>Configuration.ini
-	echo "Destination = $destination">>Configuration.ini
-	echo "Server= $server">>Configuration.ini
-	echo "Port= $port">>Configuration.ini
+	echo "email = $recipient">>Configuration.ini
+	echo "password = $password">>Configuration.ini
+	echo "destination = $destination">>Configuration.ini
+	echo "server= $server">>Configuration.ini
+	echo "port= $port">>Configuration.ini
 	echo "">>Configuration.ini
 	echo "[Settings]">>Configuration.ini
-	echo "Password = $up_pass">>Configuration.ini
-	echo "Api_Key = $key">>Configuration.ini 
-	echo "Proxy_List" = $proxies>>Configuration.ini
-	echo "Show_Logs = $Logs">>Configuration.ini
-	echo "Database"= "$Token">>Configuration.ini
+	echo "password = $up_pass">>Configuration.ini
+	echo "api_key = $key">>Configuration.ini
+	echo "proxy_list" = $proxies>>Configuration.ini
+	echo "show_logs = $Logs">>Configuration.ini
+	echo "database"= "$Token">>Configuration.ini
+	echo "language"= "$Lang">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
 }
 

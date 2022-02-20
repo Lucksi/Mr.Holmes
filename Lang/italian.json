@@ -1,0 +1,310 @@
+{
+    "Copyright-Notices":{
+        "Author": "Luca Garofalo (Lucksi)",
+        "Copyright": "(C) 2021-2022 Lucksi",
+        "License": "GPL-3.0 License"
+    },
+
+    "Default":{
+        "Continue": "\nPREMI INVIO PER CONTINUARE",
+        "choice": "VUOI UTILIZZARE UN PROXY 'POTREBBE CAUSARE DEI PROBLEMI E IL PROCESSO POTREBBE RALLENTARE'(1)SI(2)NO\n\n",
+        "Proxy": "IL TUO PROXY IP E: {}",
+        "ProxyLoc": "IL TUO PROXY IP E LOCALIZZATO IN: {} ({})",
+        "Dorks": "VUOI EFFETTUARE UNA RICERCA GOOGLE/YANDEX DORK?(1)SI(2)NO\n\n",
+        "Connection_Error1": "ERRORE DI CONNESSIONE...RIPROVO SENZA PROXY",
+        "Connection_Error2": "ERRORE DI CONNESSIONE",
+        "Error": "QUALCOSA E ANDATO STORTO",
+        "Site_Error": "IMPOSSIBILE RAGGIUGERE IL SITO...",
+        "TotFound": "{}: {} TROVATO SU:",
+        "Found": "{} {} TROVATO",
+        "NotFound": "{} {} NON TROVATO",
+        "Logs": "LOGS ABILITATI.. FILE SALVATO SU: {}",
+        "Report": "\nREPORT SALVATO IN: ",
+        "KeyError": "SEMBRA CHE TU ABBIA PREMUTO UNA OPZIONE NON VALITA..USCITA  ",
+        "ValueError": "SEMBRA CHE TU ABBIA PREMUTO UN TASTO SBAGLIATO..USCITA  ",
+        "Delete": "ELIMINO IL VECCHIO {}.txt",
+        "Attempt": "PROVO SU: {}",
+        "Internal": "ERRORE INTERNO MODULO {} NON TROVATO",
+        "KeyC": "SEMBRA CHE TU ABBIA PREMUTO CTRL-C STO USCENDO..."
+    },
+
+    "Dorks":{
+        "Remove": "RIMOZIONE DEL VECCHIO {}_Dorks.txt",
+        "Generation": "GENERAZIONE DI POSSIBILI {} DORKS LINK"
+    },
+
+    "Eula":{
+        "Text": "\nQUESTO TOOL È STATO CREATO SOLO A SCOPO EDUCATIVO E DI RICERCA NON MI ASSUMO\nALCUNA RESPONSABILITÀ PER QUALUNQUE USO IMPROPRIO DI QUESTO TOOL USALO CON BUON SENSO\n\nPREMI",
+        "Agree": "PER ACCETTARE O",
+        "Disagree": "PER DECLINARE\n\n",
+        "Alert": "\nDEVI ACCETTARE QUESTA EULA PER USARE QUESTO TOOL\n"
+    },
+
+    "Main":{
+        "Text": "[INSERISCI UNA OPZIONE 'PREMI 0 PER UNA CITAZIONE RANDOM']",
+        "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURAZIONE\n(5)DATABASE\t\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\n(9)ESCI",
+        "Alert": "ATTENZIONE ALCUNI RISULTATI POSSO RISULTARE FALSI POSITIVI",
+        "Username": "INSERISCI UN USERNAME",
+        "Phone": "INSERT UN NUMERO TELEFONICO SENZA(+)",
+        "Site": "INSERISCI UN DOMINIO O UN INDIRIZZO IP(IPv4/IPv6)",
+        "Port": "INSERISCI UN HOST",
+        "Email": "INSERISCI UN INDIRIZZO E-MAIL",
+        "Exit": "\nGRAZIE PER AVER USATO MR.HOLMES.. BYE:)\n",
+        "Value_Error": "SEMBRA CHE TU ABBIA PREMUTO UN'OPZIONE SBAGLIATA USCITA..."
+    },
+
+    "Username":[
+        {
+            "Default":{
+                "Not_Valid": "USERNAME FORMAT NON VALIDO..SKIPPING",
+                "Nsfw": "VUOI EFFETTUARE UNO SCAN NEI SITI NSFW?(1)SI(2)NO\n\n",
+                "Scraper": "VUOI EFFETUARE UNO SCRAPE DEI DATI?(1)SI(2)NO\n\n",
+                "TotFound": "USERNAME TROVATO SU:",
+                "Profile_Pic": "VUOI SCARICARE LA FOTO PROFILO DI {}?(1)SI(2)NO",
+                "Saved": "FOTO PROFILO SALVATA IN: {}",
+                "NoScrape": "OPS SEMBRA CHE NON C'E NESSUN SITO PER FARE SCRAPING...",
+                "NoFound": "OPS SEMBRA CHE L'USERNAME: {} NON E STATO TROVATO IN NESSUN SITO..",
+                "Pics": "VUOI SCARICARE I POST DI {}?(1)SI(2)NO",
+                "Details": "VUOI SCARICARE I DETTAGLI DEI POST?(1)SI(2)NO\n\n"
+            },
+        
+            "Instagram":{
+                "Download_Full": "DOWNLOAD {} INSTAGRAM POSTS",
+                "Download_Partial": "DOWNLOAD {} PRIMI 12 POST INSTAGRAM",
+                "Download": "DOWNLOAD POST NUMERO {}",
+                "Details": "CERCO I DETTAGLI DEL POST {}...",
+                "Likes/Comments": "CERCO I LIKE E I COMMENTI DEL POST {} ...",
+                "Data": "CERCO LA DATA DI PUBBLICAZIONE DEL POST {} ...",
+                "TotDetails": "POST DETAILS SALVATI IN: {}",
+                "Image": "IMMAGINI SALVATE IN: {}",
+                "NoPost": "QUESTO USER NON HA POST IMPOSSIBILE SCARICARE FOTO",
+                "Private": "SEMBRA CHE QUESTO PROFILO SIA PRIVATO IMPOSSIBILE EFFETTUARE LO SCRAPING"
+            },
+
+            "Nitter":{
+                "Blocked": "OPS SEMBRA CHE QUESTO UTENTE SIA STATO BANNATO IMPOSSIBILE EFFETUARE LO SCRAPING"
+            }
+        }
+    ],
+    
+    "Website":[
+        {
+            "Default":{
+                "Search": "RICERCA DI INFORMAZIONI PER: {}",
+                "ServerError": "OPS SEMBRA CHE IL SERVER NON STIA RISPONDENDO...",
+                "Robots": "ROBOTS SALVATO IN: {}",
+                "NoRobots": "OPS IMPOSSIBILE SCARICARE {} ROBOTS.TXT..",
+                "Secure": "QUESTO SITO/DOMINIO {} SEMBRA SICURO :",
+                "Unsecure": "ATTENZIONE QUESTO SITO/DOMINIO {} SEMBRA PERICOLOSO/POTREBBE AVERE DEI CONTENUTI DI SCAM..",
+                "Info": "PER MAGGIORI INFORMAZIONI CONSULTA QUESTI LINK...",
+                "Traceroute": "ESEGUO TRACEROUTE PER: {}...",
+                "Research": "RICERCA DI {} IN DIVERSI SITI",
+                "Whois": "RICERCA DI INFORMAZIONI WHOIS PER {}",
+                "NoWhois": "API KEY NON TROVATA IMPOSSIBILE FARE IL CLASSICO WHOIS LOOKUP SU WINDOWS",
+                "Maps": "GENERAZIONE GOOGLE MAPS LINK...",
+                "Geo": "OTTENENDO I DATI DI GEOLOCALIZZAZIONE...",
+                "NoGeo": "OPS QUALCOSA E ANDATO STORTO IMPOSSIBILE OTTENERE GEOLOCALIZZAZIONE",
+                "Phone": "GENERO I LINK PER IL NUMERO DI {}: {}",
+                "NoRespone": "OPS SEMBRA CHE IL SERVER NON STIA RISPONDENDO..."
+            },
+
+            "Questions":{
+                "Traceroute": "VUOI ESEGUIRE UN TRACEROUTE SCAN?(1)SI(2)NO\n\n",
+                "Whois": "VUOI ESEGUIRE UN WHOIS LOOKUP?(1)SI(2)NO\n\n",
+                "Repu": "VUOI ESEGUIRE UN REPUTATION SCAN?(1)SI(2)NO\n\n",
+                "Robots": "VUOI ESEGUIRE UN DOWNLOAD DEL ROBOTS.TXT?(1)SI(2)NO\n\n",
+                "Ports": "VUOI ESEGUIRE UN PORT SCAN?(1)SI(2)NO\n\n"
+            },
+
+            "Parameters":{
+                "KeyFound": "API KEY TROVATO",
+                "KeyNoFound": "API KEY NON TROVATO ESEGUO IL CLASSICO WHOIS LOOKUP",
+                "PhoneFound": "NUMERO TELEFONICO TROVATO: {} VUOI ESEGUIRE UNO SCAN?(1)SI(2)NO",
+                "PhoneNotFound": "NUMERO TELEFONICO NON TROVATO...",
+                "Error": "OPS SEMBRA CHE ALCUNE INFORMAZIONI NON SIANO DISPONIBILI ESEGUO IL CLASSICO WHOIS "
+            }
+        }
+    ],
+
+    "Phone":{
+        "Error": "NUMERO NON TROVATO...PREMI INVIO PER CONTINUARE",
+        "Scan": "SCANNING DEL NUMERO: {}...",
+        "Real": "QUESTO E PROBABILMENTE UN VERO NUMERO DI TELEFONO",
+        "NoReal": "QUESTO PROBABILMENTE NON E UN VERO NUMERO DI TELEFONO",
+        "Affidability": "CONTROLLO DELL'AFFIDABILITA DEL NUMERO",
+        "Exist": "QUESTO NUMERO ESISTE O E UN NUMERO VOIP",
+        "NoExist": "QUESTO NUMERO NON ESISTE.",
+        "NotFound": "OPS SEMBRA CHE QUESTO NUMERO NON E STATO TROVATO",
+        "NotFound2": "NUMERO NON TROVATO...PREMI INVIO PER CONTINUARE",
+        "FingerPrints": "GENERAZIONE DI POSSIBILI FOOTPRINGS LINK...",
+        "Search": "CERCO IL NUMERO {} IN DIVERSI SITI",
+        "Country": "NAZIONALITA DEL NUMERO:{}"
+    },
+
+    "Ports":{
+        "Text": "INSERISCI UNA OPZIONE\n(1)SETTA UN DA PORTA/A PORTA\n(2)SCANNING DI TUTTE LE POSSIBILI PORTE\n(3)SCANNING DI PORTE SPECIFICHE\n(4)MAIN-MENU\n\n",
+        "Host": "CONTROLLO PORTE DI: {}",
+        "Check": "CONTROLLO LA PORTA:{}",
+        "Port": "QUESTA PORTA {} E: ",
+        "Open": "APERTA",
+        "Closed": "CHIUSA",
+        "Pstart": "INSERISCI LA PORTA DA CUI INIZIARE\n\n",
+        "Pfinish": "INSERT LA PORTA CON CUI FINIRE\n\n",
+        "Amounts": "INSERISCI IL NUMERO DELLE PORTE\n\n",
+        "Number": "INSERISCI LA PORTA\n\n",
+        "HostPort": "CONTROLLO LE PORTE DI: {}",
+        "OpenPorts": "ELENCO DELLE PORTE APERTE PER: {}",
+        "NoPorts": "OPS SEMBRA CHE NON CI SIANO PORTE APERTE PER: {}",
+        "Error": "IMPOSSIBILE COMUNICARE CON L'HOST"
+    },
+
+    "Email":{
+        "Check": "CONTROLLO SE {} E UNA MAIL VALIDA",
+        "Valid": "QUESTA EMAIL E VALIDA",
+        "NotValid": "QUESTA EMAIL NON E VALIDA",
+        "Link": "GENERAZIONE {} LINK"
+    },
+
+    "RecapEmail":{
+        "Sender": "VUOI RICEVERE UNA DATA-EMAIL?(1)SI(2)NO",
+        "InProgress": "STO INVIANDO LA MAIL...",
+        "Sent": "EMAIL INVIATA CON SUCCESSO",
+        "NotSent": "OPS SEMBRA CHE L'EMAIL NON SIA STATA INVIATA"
+    },
+
+    "Database":{
+        "Active": "ATTIVAZIONE DEL DATABASE...",
+        "Link": "DATABASE INIZIATO SU: ",
+        "Quit": "\nPREMI INVIO PER DISATTIVARE",
+        "Stop": "DISATTIVAZIONE DEL DATABASE",
+        "Del_Token": "RIMOZIONE DEL TOKEN..",
+        "Token": "TOKEN NON TROVATO",
+        "NoRoot": "DEVI ESSERE ROOT PER ATTIVARE IL DATABASE"
+    },
+
+    "Configuration":[
+        {
+            "Main":{
+                "Text": "[INSERISCI UN OPZIONE]",
+                "Options": "\n(1)MODIFICA-SENDER-MAIL\n(2)MODIFICA-DESTINATION-MAIL\n(3)MODIFICA-PASSWORD-MAIL\n(4)MODIFICA-SMTP-SERVER\n(5)MODIFICA-SMTP-PORT\n(6)MODIFICA-UPDATE-PASSWORD\n(7)MODIFICA-UPDATE-PATH\n(8)MODIFICA-API-KEY\n(9)MODIFICA-PROXY-LIST-PATH\n(10)MODIFICA-LOGS\n(11)MODIFICA-DATABASE\n(12)MODIFICA-LINGUA\n(13)MAIN-MENU",
+                "Error": "FILE NON TROVATO\n\nPREMI INVIO PER CONTINUARE",
+                "Exit": "\nPREMI INVIO PER USCIRE"
+            },
+            
+            "Email":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA TUA RECIPIENT EMAIL?(1)YES(2)NO",
+                "Modify": "\nINSERISCI LA RECIPIENT-EMAIL(INSERT NONE PER ANNULLARE)",
+                "NotChanged": " \nRECIPIENT-EMAIL NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nEMAIL CAMBIATA CON SUCCESSO",
+                "Choice2": "SEI SICURE DI VOLER CAMBIARE LA TUA DESTINATION EMAIL?(1)YES(2)NO",
+                "Modify2": "\nINSERISCI LA DESTINATION-EMAIL(INSERT NONE FOR QUITTING)",
+                "NotChanged2": " \nDESTINATION-EMAIL NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed2": "\nEMAIL CAMBIATA CON SUCCESSO"
+            },
+
+            "Password":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA TUA RECIPIENT EMAIL PASSWORD?(1)YES(2)NO",
+                "Modify": "\nINSERISCI LA PASSWORD(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": "\nPASSWORD NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nPASSWORD CAMBIATA CON SUCCESSO",
+                "Choice2": "SEI SICURE DI VOLER CAMBIARE LA TUA UPDATE PASSWORD?(1)YES(2)NO",
+                "Modify2": "\nINSERISCI LA UPDATE PASSWORD(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged2": "\nUPDATE PASSWORD NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed2": "\nUPDATE PASSWORD CAMBIATA CON SUCCESSO"
+            },
+
+            "Smtp":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE IL TUO SMTP-SERVER?(1)YES(2)NO",
+                "Modify": "\nINSERISCI L'SMTP-SERVER(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": " \nSMTP-SERVER NON CAMBIATO PREMI INVIO PER USCIRE",
+                "Changed": "\nSMTP-SERVER CAMBIATO CON SUCCESSO",
+                "Choice2": "SEI SICURE DI VOLER CAMBIARE LA TUA SMTP-PORT?(1)YES(2)NO",
+                "Modify2": "\nINSERISCI L'SMTP-PORT(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged2": " \nSMTP-PORT NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed2": "\nSMTP-PORT CAMBIATA CON SUCCESSO"
+            },
+
+            "Update-Path":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA TUA UPDATE PATH?(1)YES(2)NO",
+                "Modify": "\nINSERISCI LA UPDATE PATH(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": " \nUPDATE PATH NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nUPDATE PATH CAMBIATA CON SUCCESSO"
+            },
+
+            "Api":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA TUA API KEY?(1)YES(2)NO",
+                "Modify": "\nINSERISCI LA TUA API KEY(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": " \nAPI KEY NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nAPI KEY CAMBIATA CON SUCCESSO"
+            },
+
+            "Proxy":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA TUA PROXY LIST?(1)YES(2)NO",
+                "Modify": "\nINSERISCI LA TUA PROXY LIST(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": " \nPROXY LIST NON CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nPROXY LIST CAMBIATA CON SUCCESSO"
+            },
+
+            "Logs":{
+                "Choice": "SEI SICURO DI VOLER MODIFICARE LA TUA LOG OPTION?(1)YES(2)NO",
+                "Modify": "\nINSERISCI SE VUOI ABILITARE I LOGS(1)YES(2)NO",
+                "Changed": "\nLOGS OPTION CAMBIATA CON SUCCESSO"
+            },
+
+            "Database":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LE IMPOSTAZIONI DEL DATABASE?(1)YES(2)NO",
+                "Modify": "\nINSERT SE VUOI RENDERE VISIBILE IL DATABASE AD ALTRI DISPOSITIVI(CONNESSI ALLA TUA RETE)(1)YES(2)NO",
+                "Changed": "\nDATABASE OPTION CHANGED SUCCESSFULLY"
+            },
+
+            "Lang":{
+                "Choice": "SEI SICURO DI VOLER CAMBIARE LA LINGUA DI DEFAULT?(1)OUI(2)NO",
+                "Modify": "\nINSERISCI LA LINGUA(INSERISCI NONE PER ANNULLARE)",
+                "NotChanged": "\nLA LINGUA DI DEFAULT NON E STATA CAMBIATA PREMI INVIO PER USCIRE",
+                "Changed": "\nLINGUA MODIFICATA CORRETTAMENTE"
+            }
+        }
+    ],
+
+   "Update":{
+        "Insert": "INSERISCI LA TUA UPDATE PASSWORD HAI {} TENTATIVI",
+        "Wrong": "PASSWOR ERRATA HAI {} TENTATIVI",
+        "Failed": "HAI {} TENTATIVI PREMI INVIO PER CONTINUE",
+        "Choice": "VUOI CANCELLARE I VECCHI FILE?(1)SI(2)NO\n\n",
+        "Delete": "\nSTO ELIMINANDO I VECCHI FILE DI MR.HOLMES",
+        "Keep": "\nVECCHI FILE NON ELIMINATI",
+        "Success": "\nMR.HOLMES AGGIORNATO CORRETTAMENTE"
+    },
+
+    "Report":[
+        {
+            "Default":{
+                "Date": "SCANNING ESEGUITO IN DATA:\n{}",
+                "By": "\nSCANNING ESEGUITO CON Mr.Holmes"
+            },
+
+            "Username":{
+                "Found": "\nUSERNAME TROVATO SU:\r\n"
+            },
+
+            "Phone":{
+                "Found": "\nNUMERO TROVATO SU:\n",
+                "FingerPrints": "\nPOSSIBLI PHONE-FINGERPRINTS LINK SUI SOCIAL MEDIA:\n"
+            },
+
+            "Website":{
+                "Malicious": "\nMALICIOUS/FAKE LINK TROVATO SU:\n",
+                "Safe": "QUESTO SITO/DOMINIO SEMBRA SICURO\r\n",
+                "Info": "PER MAGGIORI INFORMAZIONI CONSULTA I SEGUENTI LINK...\n",
+                "PhoneLink": "\nLINK PER IL NUMERO DI {}: {}\n",
+                "Ports": "\r\nPORTE APERTE:\r\n"
+            },
+
+            "Email":{
+                "Link": "\nGENERAZIONE {} LINK",
+                "Valid": "\n\nQUESTA EMAIL E VALIDA",
+                "Invalid": "\n\nQUESTA EMAIL NON E VAILDA"
+            }
+        }
+    ]
+}

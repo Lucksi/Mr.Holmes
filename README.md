@@ -13,7 +13,7 @@
 
 # :mag: Mr.Holmes 
 
-### Mr.Holmes is a information gathering tool (OSINT). Is main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.
+### Mr.Holmes is a information gathering tool (OSINT). The main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER
@@ -178,6 +178,13 @@ write:François
 
 <br>
 
+# AVAIABLE LANGUAGES:
+    Italiano 🇮🇹 
+    English 🏴󠁧󠁢󠁥󠁮󠁧󠁿
+    Français 🇫🇷
+
+<br>
+
 # INTERACTIVE MAP HAS BEEN MADE WITH:
 ## Leaflet: https://leafletjs.com
 
@@ -226,6 +233,13 @@ write:François
 <p align = "center">
 <img src="Screenshot/Uchiha.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
+
+<br>
+
+## <p align = center> STARGAZERS OVER TIME 
+
+
+[![Stargazers over time](https://starchart.cc/Lucksi/Mr.Holmes.svg)](https://starchart.cc/Lucksi/Mr.Holmes)
 
 <br>
 

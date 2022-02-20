@@ -1436,6 +1436,17 @@
             "user2": "https://www.quotev.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "JoinRoll":{
+            "Error": "Response-Url",
+            "response": "https://joinroll.com",
+            "name": "JoinRoll",
+            "main": "joinroll.com",
+            "user": "https://creators.joinroll.com/{}",
+            "user2": "https://creators.joinroll.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
         }
     }
 ]

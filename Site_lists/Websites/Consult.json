@@ -1,0 +1,15 @@
+[
+    {
+        "ScamAdviser":{
+            "url": "https://www.scamadviser.com/check-website/{}"
+        },
+
+        "SslTrust":{
+            "url": "https://www.ssltrust.com.au/ssl-tools/website-security-check?domain={}"
+        },
+
+        "IsLegitSite":{
+            "url": "https://www.islegitsite.com/check/{}"
+        }
+    }
+] 

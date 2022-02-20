@@ -11,7 +11,8 @@
         },
 
         "WhoseNumber":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "No comments for this phone number",
             "name": "WhoseNumber",
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
