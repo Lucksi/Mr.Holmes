@@ -5,6 +5,10 @@
 
 from Core.Support import Menu
 from Core.Support import Font
+from Core.Support import Language
+
+filename = Language.Translation.Get_Language()
+filename
 
 class Main:
 
@@ -15,8 +19,8 @@ if __name__ == "__main__":
     try:
        Main.Menu()
     except KeyboardInterrupt:
-        print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + "LOOKS LIKE YOU HIT 'CTRL-C' EXIT...")
+        print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "KeyC", "None"))
         exit()
     except ModuleNotFoundError as Error:
-        print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + "INTERNAL ERROR MODULE: {} NOT FOUND".format(str(Error)))
+        print(Font.Color.RED + "\n\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Internal", "None").format(str(Error)))
         exit()
