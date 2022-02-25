@@ -180,11 +180,11 @@ function Options(){
         $Cli = "english"
         $Mode = "ENGLISH"
     }
-    else if($Lang -eq 2){
+    elseif($Lang -eq 2){
         $Cli = "italian"
         $Mode = "ITALIANO"
     }
-    else if($Lang -eq 3){
+    elseif($Lang -eq 3){
         $Cli = "french"
         $Mode = "FRANÇAIS"
     }
