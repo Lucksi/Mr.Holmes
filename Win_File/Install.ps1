@@ -172,10 +172,10 @@ function Options(){
             ]
         }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
-    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n`n[#MR.HOLMES#]-->"
-    while($Lang -eq ""){
-        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n`n[#MR.HOLMES#]-->"
-    }
+    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    
+
+
     if($Lang -eq 1){
         $Cli = "english"
         $Mode = "ENGLISH"
