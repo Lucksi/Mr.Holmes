@@ -31,9 +31,9 @@ class Log:
                 Logger = logging.getLogger()
                 Logger.setLevel(logging.DEBUG)
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename,"Default","Logs","None").format(file_Log))
+                      Language.Translation.Translate_Language(filename,"Logs","Enabled","None").format(file_Log))
             finally:
                 logging.shutdown()
         else:
             print(Font.Color.BLUE + "\n[I]" +
-                  Font.Color.WHITE + "LOGS DISABLED")
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Logs","Disabled","None"))
