@@ -5,7 +5,7 @@
             "name": "Instagram",
             "main": "instagram.com",
             "user": "https://instagram.com/{}",
-            "user2": "https://instagram.com/{}",
+            "user2": "https://www.picuki.com/profile/{}",
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://www.picuki.com/profile/{}"
@@ -84,7 +84,8 @@
         },
         
         "Spotify":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "Spotify- Web Player",
             "name": "Spotify",
             "main": "spotify.com",
             "user": "https://open.spotify.com/user/{}",
@@ -851,7 +852,8 @@
         },
 
         "Smule":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "Smule | Page Not Found (404)",
             "name": "Smule",
             "main": "smule.com",
             "user": "https://www.smule.com/{}",
@@ -1445,6 +1447,28 @@
             "main": "joinroll.com",
             "user": "https://creators.joinroll.com/{}",
             "user2": "https://creators.joinroll.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Vbox7":{
+            "Error": "Message",
+            "text": "Vbox7 - Тази страница не е намерена - Vbox7",
+            "name": "Vbox7",
+            "main": "vbox7.com",
+            "user": "https://www.vbox7.com/user:{}",
+            "user2": "https://www.vbox7.com/user:{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "Bitchute":{
+            "Error": "Message",
+            "text": "404 - Page not found",
+            "name": "Bitchute",
+            "main": "bitchute.com",
+            "user": "https://www.bitchute.com/channel/{}/",
+            "user2": "https://www.bitchute.com/channel/{}/",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

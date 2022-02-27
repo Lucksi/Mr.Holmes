@@ -139,6 +139,8 @@
 ## (138) RAIDFORUMS: https://raidforums.com
 ## (139) QUOTEV: https://www.quotev.com
 ## (140) JOINROLL: https://joinroll.com
+## (141) VBOX7: https://www.vbox7.com
+## (142) BITCHUTE: https://www.bitchute.com
 
 <br>
 
@@ -197,6 +199,6 @@
 
 <br>
 
-# USERNAME SITES: 148
+# USERNAME SITES: 150
 # PHONE-NUMBER SITES: 14
-# TOTAL: 162 SITES
+# TOTAL: 164 SITES

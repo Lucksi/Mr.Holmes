@@ -18,7 +18,6 @@
         "TotFound": "{}: {} TROVATO SU:",
         "Found": "{} {} TROVATO",
         "NotFound": "{} {} NON TROVATO",
-        "Logs": "LOGS ABILITATI.. FILE SALVATO SU: {}",
         "Report": "\nREPORT SALVATO IN: ",
         "KeyError": "SEMBRA CHE TU ABBIA PREMUTO UNA OPZIONE NON VALITA..USCITA  ",
         "ValueError": "SEMBRA CHE TU ABBIA PREMUTO UN TASTO SBAGLIATO..USCITA  ",
@@ -31,6 +30,11 @@
     "Dorks":{
         "Remove": "RIMOZIONE DEL VECCHIO {}_Dorks.txt",
         "Generation": "GENERAZIONE DI POSSIBILI {} DORKS LINK"
+    },
+
+    "Logs":{
+        "Enabled": "LOGS ABILITATI.. FILE SALVATO SU: {}",
+        "Disabled": "LOGS DISABILITATI"
     },
 
     "Eula":{

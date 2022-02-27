@@ -18,7 +18,6 @@
         "TotFound": "{}: {} FOUND ON:",
         "Found": "{} {} FOUND",
         "NotFound": "{} {} NOT FOUND",
-        "Logs" : "LOGS ENABLED.. FILE SAVED ON: {}",
         "Report": "\nREPORT WRITTEN IN: ",
         "KeyError": "LOOKS LIKE YOU PRESS AN INVALID OPTION..EXIT  ",
         "ValueError": "LOOKS LIKE YOU PRESS AN INVALID KEY..EXIT  ",
@@ -31,6 +30,11 @@
     "Dorks":{
         "Remove": "REMOVE OLD {}_Dorks.txt",
         "Generation": "GENERATING POSSIBLE {} DORKS LINK..."
+    },
+
+    "Logs":{
+        "Enabled": "LOGS ENABLED.. FILE SAVED ON: {}",
+        "Disabled": "LOGS DISABLED"
     },
 
     "Eula":{
