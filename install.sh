@@ -109,6 +109,7 @@ function Preference {
 function Packet_Installer {
 	sudo apt-get install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
 	sudo apt-get install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+	sudo apt-get install python3-tk &> /dev/null | printf "${WHITE}\nINSTALLING TKINTER\n"
     sudo apt-get install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
 	sudo apt-get install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
 	sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
