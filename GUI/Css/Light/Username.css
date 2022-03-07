@@ -34,7 +34,7 @@ License: GNU General Public License v3.0*/
     font-size: medium;
 }
 
-.Data2, .Data3 {
+.Data2, .Data3, .Data4 {
     display:table;
     margin-top: none;
     margin-left: auto;
@@ -45,6 +45,19 @@ License: GNU General Public License v3.0*/
     border-color: #000000;
     background-color: #5983e663;
     border-radius: 10px;
+}
+
+.map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid;
+    border-color: #000000;
+    background-color:#5983e663;
+    border-radius: 10px;
+    height: 300px;
+    width: 500px;
+    margin-bottom: 20px;
 }
 
 .Data2 p, .Data3 p {
@@ -86,7 +99,7 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
-.Data_img img {
+.Data_img img, .Data4 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -95,6 +108,13 @@ License: GNU General Public License v3.0*/
     border: 3px solid;
     border-color: #000000;
     border-radius: 10px;
+}
+
+.Data4 img{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 300px;
+    width: 300px;
 }
 
 .Data_img2 img {
@@ -182,6 +202,13 @@ License: GNU General Public License v3.0*/
         margin-top: 4500px;
     }
 
+    .Data4{
+        display: table;
+        margin-top: 1000px;
+        min-width: 300px;
+        max-width: 400px;
+    }
+
     .Data_img2{
         display: table;
         position: absolute;
@@ -200,5 +227,23 @@ License: GNU General Public License v3.0*/
         border: 3px solid;
         border-color: #000000;
         border-radius: 10px;
+    }
+
+    .Data4 img{
+        margin-bottom: 30px;
+        height: 200px;
+        width: 200px;
+    }
+
+    .map{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border:2px solid;
+        border-color: #000000;
+        background-color: #1a07076c;
+        border-radius: 10px;
+        height: 300px;
+        width: 300px;
     }
 }

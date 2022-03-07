@@ -29,8 +29,10 @@
         if(file_exists($Dir_Name)){
             $image = glob($Dir_Name."*.jpg");
             $details = glob($Dir_Name."*.txt");
+            $geo = glob($Dir_Name."*.json");
             $i = 0;
             $j = 0;
+            $g = 0;
             $count_P = 0;
             $count_D = 0;
             
@@ -60,8 +62,37 @@
                 echo "<hr>";
             }
             echo "</div>";
+            echo "<div class = 'Data4'>";
+            echo "<p id = 'Const2'>{$Argument_Name} GEOLOCATION:</p>";
+            foreach($geo as $Data){
+                $g = $g +1;
+                $format_name = str_replace("$Dir_Name","",$Data);
+                $complete_name = str_replace(".json","",$format_name);
+                $final = str_replace("_GeoData","",$complete_name);
+                $final_name = str_replace("_","N°",$final);
+                $number = str_replace("PostN°","",$final_name);
+                /*echo "<p align = 'center'>$final_name</p>";*/
+                $Content = "../Reports/Usernames/Profile_pics/{$File_name}/Instagram_Photo/Pic_$number.jpg";
+                echo "<img src = '{$Content}' id = 'pics' abbr title = 'Post N°$number'></a>";
+                $reader = file_get_contents($Data);
+                $parser = json_decode($reader,true);
+                $Latitude = $parser["Geolocation"]["Latitude"];
+                $Longitude = $parser["Geolocation"]["Longitude"];
+                echo "
+                <div class = 'map' id='map{$g}'></div>
+                <script>
+                var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
+                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                }).addTo(map);
+
+                L.marker([$Latitude,$Longitude]).addTo(map)
+                .bindPopup('Post°{$number} is approximatley based in this Area.')
+                .openPopup();
+                </script>";
+                echo "<hr>";
+            }
         }
-        
         else{
             echo "\n\t\t\t<p align = 'center' id = 'error'>NOT FIND ANY $Argument_Name FOR THIS USER</p>";
         }
