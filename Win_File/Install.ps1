@@ -87,27 +87,49 @@ function Preferences(){
     Write-Host "`nGUI-THEME:$mode"
 }
 
-function Options(){
-    $Email = Read-Host -Prompt "`nINSERT YOUR EMAIL ADDRESS`n`n[#MR.HOLMES#]-->"
-    while($Email -eq ""){
+function Mail_Options(){
+    $Opt = Read-Host -Prompt "`nWOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
+    while($Opt -eq ""){
+        $Email = Read-Host -Prompt "`nWOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
+    }
+    if ($Opt -eq 1){
+        $Status = "Enabled"
         $Email = Read-Host -Prompt "`nINSERT YOUR EMAIL ADDRESS`n`n[#MR.HOLMES#]-->"
-    }
-    $Password = Read-Host -Prompt "`nINSERT YOUR EMAIL PASSWORD`n`n[#MR.HOLMES#]-->"
-    while($Password -eq ""){
+        while($Email -eq ""){
+            $Email = Read-Host -Prompt "`nINSERT YOUR EMAIL ADDRESS`n`n[#MR.HOLMES#]-->"
+        }
         $Password = Read-Host -Prompt "`nINSERT YOUR EMAIL PASSWORD`n`n[#MR.HOLMES#]-->"
-    }
-    $Destination = Read-Host -Prompt "`nINSERT YOUR DESTINATION EMAIL`n`n[#MR.HOLMES#]-->"
-    while($Destination -eq ""){
+        while($Password -eq ""){
+            $Password = Read-Host -Prompt "`nINSERT YOUR EMAIL PASSWORD`n`n[#MR.HOLMES#]-->"
+        }
         $Destination = Read-Host -Prompt "`nINSERT YOUR DESTINATION EMAIL`n`n[#MR.HOLMES#]-->"
-    }
-    $Server = Read-Host -Prompt "`nINSERT YOUR SMTP-SERVER`n`n[#MR.HOLMES#]-->"
-    while($Server -eq ""){
+        while($Destination -eq ""){
+            $Destination = Read-Host -Prompt "`nINSERT YOUR DESTINATION EMAIL`n`n[#MR.HOLMES#]-->"
+        }
         $Server = Read-Host -Prompt "`nINSERT YOUR SMTP-SERVER`n`n[#MR.HOLMES#]-->"
-    }
-    $Port = Read-Host -Prompt "`nINSERT YOUR SMTP SERVER-PORT`n`n[#MR.HOLMES#]-->"
-    while($Port -eq ""){
+        while($Server -eq ""){
+            $Server = Read-Host -Prompt "`nINSERT YOUR SMTP-SERVER`n`n[#MR.HOLMES#]-->"
+        }
         $Port = Read-Host -Prompt "`nINSERT YOUR SMTP SERVER-PORT`n`n[#MR.HOLMES#]-->"
+        while($Port -eq ""){
+            $Port = Read-Host -Prompt "`nINSERT YOUR SMTP SERVER-PORT`n`n[#MR.HOLMES#]-->"
+        }
     }
+    elseif($Opt -eq 2){
+        $Status ="Disabled"
+		$Email ="None"
+		$Password ="None"
+		$Destination ="None"
+		$Server ="None"
+		$Port ="None"
+    }
+    else{
+        Mail_Options
+    }
+   
+}
+
+function Options(){
     $Update_Password = Read-Host -Prompt "`nINSERT YOUR UPDATE PASSWORD`n`n[#MR.HOLMES#]-->"
     while($Update_Password -eq ""){
         $Update_Password = Read-Host -Prompt "`nINSERT YOUR UPDATE PASSWORD`n`n[#MR.HOLMES#]-->"
@@ -121,6 +143,9 @@ function Options(){
         $Proxy_List = "Proxies/Proxy_list.txt"
     }
     $Log_Session = Read-Host -Prompt "`nWOULD YOU LIKE TO SAVE YOUR LOG SESSION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
+    while ($Log_Session -eq ""){
+        $Log_Session = Read-Host -Prompt "`nWOULD YOU LIKE TO SAVE YOUR LOG SESSION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
+    }
     if($Log_Session -eq 1){
         $Log_Session = "True"
     }
@@ -135,6 +160,9 @@ function Options(){
         $Token = "False"
     }
     $Access = Read-Host -Prompt "`nWOULD YOU LIKE TO ADD SOME CREDENTIALS FOR ACCESS THE DATABASE?(1)YES(2)NO`n`n[#MR.HOLMES]-->"
+    while($Access -eq ""){
+        $Access = Read-Host -Prompt "`nWOULD YOU LIKE TO ADD SOME CREDENTIALS FOR ACCESS THE DATABASE?(1)YES(2)NO`n`n[#MR.HOLMES]-->"
+    }
     if ($Access -eq 1){
         $Access = "True"
     }
@@ -173,9 +201,9 @@ function Options(){
         }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
     $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
-    
-
-
+    while($Lang -eq ""){
+        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    }
     if($Lang -eq 1){
         $Cli = "english"
         $Mode = "ENGLISH"
@@ -195,6 +223,7 @@ function Options(){
     ";BUT DO NOT CHANGE THE PARAMETERS NAME" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "[Smtp]" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "status= $Status" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "email= $Email" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "password= $Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "destination= $Destination" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
@@ -215,6 +244,7 @@ function installer(){
     $DECISION = Read-Host -Prompt "`n[#MR.HOLMES#]-->"
     if ( $DECISION -eq 1 ){
         Packet_Installer;
+        Mail_Options;
         Options;
         Write-Host "INSTALLING-PYTHON-REQUIREMENTS..." -ForegroundColor Blue
         Start-Process -FilePath .\Win_File\Req.cmd

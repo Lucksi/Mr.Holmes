@@ -32,7 +32,7 @@ function banner {
 function Preference {
 	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
-	while [ $Language == "" ];
+	while [ "$Language" == "" ];
 		do
 		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
@@ -65,7 +65,7 @@ function Preference {
 	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}$mode\n"
 	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Theme
-	while [ $Language == "" ];
+	while [ "$Language" == "" ];
 		do
 		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
@@ -118,42 +118,68 @@ function Packet_Installer {
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }
 
+function Mail_Options {
+	printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
+	while [ "$Opt" = "" ];
+		do
+        printf "${BLUE}\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
+	done
+	if [ $Opt == 1 ];
+		then
+		status="Enabled"
+		printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
+		while [ "$recipient" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR RECIPIENT EMAIL\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
+		done
+		printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
+		read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
+		while [ "$password" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
+			read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
+		done
+		printf "${WHITE}\n\nINSERT YOUR DESTINATION EMAIL\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
+		while [ "$destination" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR DESTINATION EMAIL\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
+		done
+		printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
+		while [ "$server" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
+		done
+		printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT EX 768\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
+		while [ "$port" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT \n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
+		done
+	elif [ $Opt == 2 ];
+		then
+		printf "${GREEN}\n[+]${WHITE}SKIPPING...\n"
+		status="Disabled"
+		recipient="None"
+		password="None"
+		destination="None"
+		server="None"
+		port="None"
+	else
+		Mail_Options
+	fi
+	:
+}
+
 function Options {
-	printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
-	while [ "$recipient" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR RECIPIENT EMAIL\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
-	done
-	printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
-	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
-	while [ "$password" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
-        read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
-    done
-	printf "${WHITE}\n\nINSERT YOUR DESTINATION EMAIL\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
-	while [ "$destination" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR DESTINATION EMAIL\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
-	done
-	printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
-	while [ "$server" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
-	done
-	printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT EX 768\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
-	while [ "$port" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT \n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
-	done
 	printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
 	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
 	while [ "$up_pass" = "" ];
@@ -175,6 +201,11 @@ function Options {
 	fi
 	printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
+	while [ "$Logs" == "" ];
+		do
+		printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
+	done
 	if [ $Logs == 2 ];
 		then
 		Logs="False"
@@ -183,6 +214,11 @@ function Options {
 	fi
 	printf "${WHITE}\n\nWOULD YOU LIKE TO ACCESS YOUR DATABASE ON OTHER DEVICES(ON THE SAME NETWORK)?(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Token
+	while [ "$Token" == "" ];
+		do
+		printf "${WHITE}\n\nWOULD YOU LIKE TO ACCESS YOUR DATABASE ON OTHER DEVICES(ON THE SAME NETWORK)?(1)YES(2)NO\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Token
+	done
 	if [ $Token == 2 ];
 		then
 		Token="False"
@@ -191,6 +227,11 @@ function Options {
 	fi
 	printf "${WHITE}\n\nWOULD YOU LIKE TO ADD SOME CREDENTIALS FOR ACCESS THE DATABASE?(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Access
+	while [ "$Access" == "" ];
+		do
+		printf "${WHITE}\n\nWOULD YOU LIKE TO ADD SOME CREDENTIALS FOR ACCESS THE DATABASE?(1)YES(2)NO\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Access
+	done
 	if [ $Access == 2 ];
 		then
 		Access="False"
@@ -230,7 +271,7 @@ function Options {
 	fi
 	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
-	while [ $Language == "" ];
+	while [ "$Language" == "" ];
 		do
 		printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
@@ -259,6 +300,7 @@ function Options {
 	echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration.ini
 	echo "">>Configuration.ini
 	echo "[Smtp]">>Configuration.ini
+	echo "status = $status">>Configuration.ini
 	echo "email = $recipient">>Configuration.ini
 	echo "password = $password">>Configuration.ini
 	echo "destination = $destination">>Configuration.ini
@@ -290,6 +332,7 @@ function installer {
 	if [ $confvar == 1 ]; 
 		then
         Packet_Installer
+		Mail_Options
 		Options
 		cd ../
 		cd Core

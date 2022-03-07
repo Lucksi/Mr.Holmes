@@ -29,41 +29,63 @@ function Packet_Installer {
 }
 
 function Options {
-	printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
-	while [ "$recipient" = "" ];
+	printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION\n(1)YES\n(NO)\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
+	while [ "$Opt" = "" ];
 		do
-        printf "${WHITE}\nINSERT YOUR RECIPIENT EMAIL\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
+        printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION\n(1)YES\n(NO)\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
 	done
-	printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
-	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
-	while [ "$password" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
-        read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
-    done
-	printf "${WHITE}\n\nINSERT YOUR DESTINATION EMAIL\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
-	while [ "$destination" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR DESTINATION EMAIL\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
-	done
-	printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
-	while [ "$server" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
-	done
-	printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT EX 768\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
-	while [ "$port" = "" ];
-		do
-        printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT \n\n"
-        read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
-	done
+	if [ $Opt == 1 ];
+		then
+		status="Enabled"
+		printf "${WHITE}\n\nINSERT YOUR RECIPIENT EMAIL\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
+		while [ "$recipient" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR RECIPIENT EMAIL\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" recipient
+		done
+		printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
+		read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
+		while [ "$password" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR EMAIL PASSWORD\n\n"
+			read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" password
+		done
+		printf "${WHITE}\n\nINSERT YOUR DESTINATION EMAIL\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
+		while [ "$destination" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR DESTINATION EMAIL\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" destination
+		done
+		printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
+		while [ "$server" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR SMTP SERVER EX smtp.test.com\n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" server
+		done
+		printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT EX 768\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
+		while [ "$port" = "" ];
+			do
+			printf "${WHITE}\nINSERT YOUR SMTP SERVER PORT \n\n"
+			read -p"$GREEN[#MR.HOLMES#]$WHITE-->" port
+		done
+	elif [ $Opt == 2 ];
+		then
+		printf("${GREEN}\n[+]${WHITE}SKIPPING...")
+		status="Disabled"
+		recipient="None"
+		password="None"
+		destination="None"
+		server="None"
+		port="None"
+	else;
+		Options
+	fi
 	printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
 	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
 	while [ "$up_pass" = "" ];
@@ -88,7 +110,7 @@ function Options {
 	if [ $Logs == 2 ];
 		then
 		Logs="False"
-	else [ $Logs == 1 ]
+	elif [ $Logs == 1 ]
 		Logs="True"
 	fi
 	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
@@ -121,6 +143,7 @@ function Options {
 	echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration.ini
 	echo "">>Configuration.ini
 	echo "[Smtp]">>Configuration.ini
+	echo "status = $status">>Configuration.ini
 	echo "email = $recipient">>Configuration.ini
 	echo "password = $password">>Configuration.ini
 	echo "destination = $destination">>Configuration.ini
