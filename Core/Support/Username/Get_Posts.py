@@ -138,6 +138,7 @@ class Downloader:
                                         LangFile, "Username", "Instagram", "NoGeoData"))
                             f.close()
                             j = j+1
+                            sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
