@@ -124,10 +124,17 @@ class MrHolmes:
             http_proxy2 = Proxies.proxy.choice3
             source = "http://ip-api.com/json/" + http_proxy2
             access = urllib.request.urlopen(source)
-            content = access.read()
-            final = json.loads(content)
-            identity = Language.Translation.Translate_Language(
-                filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
+            try:
+                content = access.read()
+                final = json.loads(content)
+                identity = Language.Translation.Translate_Language(
+                    filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
+            except Exception as e:
+                print("SOMETHING WENT WRONG SORRY")
+                http_proxy = None
+                http_proxy2 = str(http_proxy)
+                identity = "None"
+
         else:
             http_proxy = None
             http_proxy2 = str(http_proxy)

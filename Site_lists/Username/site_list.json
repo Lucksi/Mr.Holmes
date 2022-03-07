@@ -1211,7 +1211,7 @@
             "main": "mymonat.com",
             "user": "https://{}.mymonat.com/",
             "user2": "https://{}.mymonat.com/",
-            "exception": [" ","/"],
+            "exception": [" ","/",".","_"],
             "Scrapable": "False"
         },
 
@@ -1222,7 +1222,7 @@
             "main": "wordpress.com",
             "user": "https://{}.wordpress.com",
             "user2": "https://{}.wordpress.com",
-            "exception": [" ","/","_"],
+            "exception": [" ","/","_","."],
             "Scrapable": "False"
         },
 
@@ -1469,6 +1469,16 @@
             "main": "bitchute.com",
             "user": "https://www.bitchute.com/channel/{}/",
             "user2": "https://www.bitchute.com/channel/{}/",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "OpenSea":{
+            "Error": "Status-Code",
+            "name": "OpenSea",
+            "main": "opensea.io",
+            "user": "https://opensea.io/{}",
+            "user2": "https://opensea.io/{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         }

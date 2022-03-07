@@ -401,6 +401,37 @@ class Config:
                 os.chdir("../")
         else:
             os.chdir("../")
+    
+    @staticmethod
+    def modify_Email_Status():
+        os.chdir(dest)
+        alert = int(input(
+            Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Configuration","Mail_Status","Choice")  + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if alert == 1:
+            if os.path.isfile(nomefile):
+                Parser = ConfigParser()
+                Parser.read(nomefile)
+                Enabled = int(input(
+                    Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Configuration","Mail_Status","Modify")  + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if Enabled == 1:
+                    Data = "Enabled"
+                elif Enabled == 2:
+                    Data = "Disabled"
+                else:
+                    os.chdir("../")
+                    Config.main()
+                Parser.set("Smtp", "status", Data)
+                with open(nomefile, 'w') as configfile:
+                    Parser.write(configfile)
+                    print(Language.Translation.Translate_Language(filename,"Configuration","Mail_Status","Changed"))
+                    out = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
+                    os.chdir("../")
+            else:
+                inp = input(
+                    Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Configuration","Main","Error"))
+                os.chdir("../")
+        else:
+            os.chdir("../")
 
     @staticmethod
     def main():
@@ -439,6 +470,8 @@ class Config:
             elif sce == 12:
                 Config.modify_Language()
             elif sce == 13:
+                Config.modify_Email_Status()
+            elif sce == 14:
                 inp = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
                 holmes.Main.Menu()
             else:

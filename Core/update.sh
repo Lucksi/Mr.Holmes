@@ -33,7 +33,7 @@ function check {
 }
 
 function update {
-  Update_path=$(sed -nr "/^\[Settings\]/ { :l /^Path[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" <Configuration/Configuration.ini)
+  Update_path=$(sed -nr "/^\[Settings\]/ { :l /^path[ ]*=/ { s/.*=[ ]*//; p; q;}; n; b l;}" <Configuration/Configuration.ini)
   cd $Update_path
   mv Mr.Holmes Mr.Holmes2  &>/dev/null
   git clone https://github.com/Lucksi/Mr.Holmes &>/dev/null | printf "$WHITE\nUPDATING MR.HOLMES..\n"

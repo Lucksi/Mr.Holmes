@@ -5,6 +5,8 @@
 
 import os
 import requests
+import urllib
+import json
 from Core.Support import Font
 from Core.Support import Language
 from bs4 import BeautifulSoup as soup
@@ -65,12 +67,12 @@ class Downloader:
                         i = i+1
                     except ConnectionError:
                         print(
-                            Font.Color.RED + "[!]" + Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                            Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                         i = i+1
                         continue
                     except Exception as e:
                         print(
-                            Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                            Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                         i = i+1
                         continue
 
@@ -91,23 +93,58 @@ class Downloader:
                                   "DESCRIPTION: {}".format(descr.strip()))
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   "LOCATION: {}".format(location.strip()))
-
                             f = open(filename, "w", encoding="utf-8")
                             f.write("POST N°{} DATA:\n".format(str(j)))
                             f.write("DESCRIPTION: {}\r\n".format(descr.strip()))
                             f.write("LOCATION: {}\r\n".format(
                                 location.strip()))
+                            if location.strip() == "":
+                                pass
+                            else:
+                                jsonfile = folder + \
+                                    "/Post_{}_GeoData.json".format(str(j))
+                                final_loc = location.strip()
+                                format_loc = final_loc.replace(" ", "+")
+                                req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
+                                    format_loc)
+                                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                                      Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "GeoData").format(str(j)))
+                                url = urllib.request.urlopen(req)
+                                try:
+                                    Reader = url.read()
+                                    parser = json.loads(Reader)
+                                    Lat = parser[0]["lat"]
+                                    Lon = parser[0]["lon"]
+                                    data = {
+                                        "Geolocation": {
+                                            "Latitude": Lat,
+                                            "Longitude": Lon
+                                        }
+                                    }
+                                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                          "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
+                                    sleep(2)
+                                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                          "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
+                                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                          "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
+                                    with open(jsonfile, "w", encoding="utf-8") as output:
+                                        json.dump(data, output,
+                                                  ensure_ascii=False, indent=4)
+                                except Exception as e:
+                                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                                        LangFile, "Username", "Instagram", "NoGeoData"))
                             f.close()
                             j = j+1
                             sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             j = j+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             j = j+1
                             continue
 
@@ -138,12 +175,12 @@ class Downloader:
                             sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             d = d+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             d = d+1
                             continue
 
@@ -166,12 +203,12 @@ class Downloader:
                             sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "CONNECTION ERROR..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             t = t+1
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + "SOMETHING WENT WRONG..SKIPPING")
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             t = t+1
                             continue
 
