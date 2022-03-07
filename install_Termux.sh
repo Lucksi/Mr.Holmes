@@ -176,7 +176,7 @@ function installer {
 		proot -0 chmod +x update.sh
 		cd ../
 		cd ../
-		echo "Path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
+		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
