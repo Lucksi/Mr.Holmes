@@ -109,6 +109,7 @@ class Downloader:
                                     format_loc)
                                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                                       Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "GeoData").format(str(j)))
+                                sleep(2)
                                 url = urllib.request.urlopen(req)
                                 try:
                                     Reader = url.read()
@@ -126,6 +127,7 @@ class Downloader:
                                     sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
+                                    sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
                                     with open(jsonfile, "w", encoding="utf-8") as output:
@@ -136,7 +138,6 @@ class Downloader:
                                         LangFile, "Username", "Instagram", "NoGeoData"))
                             f.close()
                             j = j+1
-                            sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
