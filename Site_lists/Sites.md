@@ -141,6 +141,7 @@
 ## (140) JOINROLL: https://joinroll.com
 ## (141) VBOX7: https://www.vbox7.com
 ## (142) BITCHUTE: https://www.bitchute.com
+## (143) OPENSEA: https://opensea.io
 
 <br>
 
@@ -199,6 +200,6 @@
 
 <br>
 
-# USERNAME SITES: 150
+# USERNAME SITES: 151
 # PHONE-NUMBER SITES: 14
-# TOTAL: 164 SITES
+# TOTAL: 165 SITES
