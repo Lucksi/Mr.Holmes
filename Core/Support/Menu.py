@@ -44,10 +44,7 @@ class Main:
         f = open("Quotes/" + choice, "r", newline=None)
         text = f.read()
         f.close()
-        if os.name == "nt":
-            u = "|\t\t\t    MR.HOLMES\t\t\t\t    |"
-        else:
-            u = "|\t\t\t   🇲​​​​​🇷​​​​​.🇭​​​​​🇴​​​​​🇱​​​​​🇲​​​​​🇪​​​​​🇸​​​​​\t\t\t    |"
+        u = "|\t\t\t    MR.HOLMES\t\t\t\t    |"
         print(Font.Color.WHITE +
               "---------------------------------------------------------------------")
         print(Font.Color.WHITE + u)
