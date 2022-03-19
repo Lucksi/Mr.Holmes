@@ -33,7 +33,7 @@ class Downloader:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Download_Partial").format(username))
                 range_band = 12
-            folder = "GUI/Reports/Usernames/Profile_pics/{}/Instagram_Photo".format(
+            folder = "GUI/Reports/Usernames/{}/Profile_pics/Instagram_Photo".format(
                 username)
             if os.path.isdir(folder):
                 os.rmdir(folder)

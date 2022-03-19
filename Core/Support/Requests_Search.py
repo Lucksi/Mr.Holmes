@@ -3,6 +3,7 @@
 # License: GNU General Public License v3.0
 
 import requests
+import json
 from Core.Support import Font
 from Core.Support import Language
 
@@ -13,7 +14,7 @@ filename
 class Search:
 
     @staticmethod
-    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main):
+    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file):
 
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
@@ -78,3 +79,22 @@ class Search:
                 successfullName.append(name)
                 if is_scrapable == "True":
                     ScraperSites.append(name)
+
+        f = open(json_file, "w")
+        f.write('''{
+                "List":[
+
+                ]
+                    
+                }''')
+        f.close()
+
+        for element in successfull:
+            data = {
+                "site": "{}".format(element)
+            }
+            with open(json_file, 'r+') as file:
+                file_data = json.load(file)
+                file_data["List"].append(data)
+                file.seek(0)
+                json.dump(file_data, file, indent=4)

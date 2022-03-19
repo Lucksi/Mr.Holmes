@@ -156,6 +156,7 @@ class Phone_search:
             successfullName = []
             ScraperSites = []
             Writable = True
+            json_file = "GUI/Reports/Phone/{}.json".format(username)
             f = open(data,)
             data = json.loads(f.read())
             for sites in data:
@@ -172,14 +173,14 @@ class Phone_search:
                         Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Attempt", "None").format(name))
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))

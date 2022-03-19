@@ -13,7 +13,6 @@ from bs4 import BeautifulSoup as soup
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
 }
-destination = "GUI/Reports/Usernames/Profile_pics/"
 
 filename = Language.Translation.Get_Language()
 filename
@@ -22,9 +21,8 @@ filename
 class info:
 
     @staticmethod
-    def Profile_Pic(username, destination, profile_pic, SiteName):
-        image = destination + \
-            "{}/_Profile_pic_{}.jpg".format(username, SiteName)
+    def Profile_Pic(username, profile_pic, SiteName):
+        image = "GUI/Reports/Usernames/{}/Profile_pics/Profile_pic_{}.jpg".format(username,SiteName)
         getter = requests.get(
             profile_pic, headers=headers, allow_redirects=True)
         open(image, "wb").write(getter.content)
@@ -77,7 +75,7 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
                 SiteName = "Imgur"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 
@@ -254,7 +252,7 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
                 SiteName = "MixCloud"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 
@@ -338,7 +336,7 @@ class info:
 
                 if download == 1:
                     SiteName = "Instagram"
-                    info.Profile_Pic(username, destination,
+                    info.Profile_Pic(username,
                                      profile_pic, SiteName)
                 else:
                     pass
@@ -349,7 +347,7 @@ class info:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None")+ str(e))
             Flag = False
             pass
         finally:
@@ -419,7 +417,7 @@ class info:
 
                 if download == 1:
                     SiteName = "Nitter"
-                    info.Profile_Pic(username, destination,
+                    info.Profile_Pic(username,
                                      profile_pic, SiteName)
                 else:
                     pass
@@ -481,7 +479,7 @@ class info:
 
             if download == 1:
                 SiteName = "DockerHub"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 
@@ -543,7 +541,7 @@ class info:
             if download == 1:
                 if profile_pic != "None":
                     SiteName = "Kik"
-                    info.Profile_Pic(username, destination,
+                    info.Profile_Pic(username, 
                                      profile_pic, SiteName)
                 else:
                     pass
@@ -598,7 +596,7 @@ class info:
 
             if download == 1:
                 SiteName = "GitLab"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 
@@ -674,7 +672,7 @@ class info:
 
             if download == 1:
                 SiteName = "Wattpad"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 
@@ -699,7 +697,7 @@ class info:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
 
     @staticmethod
@@ -768,7 +766,7 @@ class info:
 
             if download == 1:
                 SiteName = "GitHub"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
             f = open(report, "a", encoding="utf-8")
@@ -848,7 +846,7 @@ class info:
 
             if download == 1:
                 SiteName = "UrleBird"
-                info.Profile_Pic(username, destination, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass
 

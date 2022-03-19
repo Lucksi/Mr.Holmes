@@ -80,6 +80,7 @@ class Web:
         successfullName = []
         ScraperSites = []
         Writable = False
+        json_file = "GUI/Reports/Websites/{}.json".format(username)
         f = open(data,)
         data = json.loads(f.read())
         for sites in data:
@@ -94,17 +95,17 @@ class Web:
                       "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
                     Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                  subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                  subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                 except Exception as e:
                     print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE +
                           Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                     http_proxy = None
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                     except Exception as e:
                         print(
-                            Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "SiteError", "None"))
+                            Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
 
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "TotFound", "None").format(subject, username))
@@ -429,7 +430,7 @@ class Web:
                 except Exception as e:
                     f = str(e)
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                          Language.Translation.Translate_Language(filename, "Websites", "Default", "NoGeo"))
+                          Language.Translation.Translate_Language(filename, "Website", "Default", "NoGeo"))
                 num = telephone2
                 if num != "":
                     number = True
@@ -467,22 +468,22 @@ class Web:
             Web.google_dork(username, number, num)
         else:
             choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Websites", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
                 Web.Reputation(username, report)
             else:
                 choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Websites", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
                     Web.Robots(username, report)
                 else:
                     choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Websites", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
                         Web.Ports(username, report)
                     else:
                         choice = int(input(
-                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Websites", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                         if choice == 1:
                             Web.trace(username, report)
 

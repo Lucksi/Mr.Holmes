@@ -26,7 +26,7 @@ filename
 class MrHolmes:
 
     @staticmethod
-    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy):
+    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice):
         f = open(nomefile,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
@@ -34,6 +34,8 @@ class MrHolmes:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
         else:
             pass
+        json_file = "GUI/Reports/Usernames/{}/{}.json".format(
+                username, username)
         data = json.loads(f.read())
         for sites in data:
             for data1 in sites:
@@ -58,17 +60,37 @@ class MrHolmes:
                 else:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
+                if choice == 1:
+                    http_proxy = Proxies.proxy.final_proxis
+                    http_proxy2 = Proxies.proxy.choice3
+                    source = "http://ip-api.com/json/" + http_proxy2
+                    access = urllib.request.urlopen(source)
+                    try:
+                        content = access.read()
+                        final = json.loads(content)
+                        identity = Language.Translation.Translate_Language(
+                            filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
+                    except Exception as e:
+                        print("SOMETHING WENT WRONG SORRY")
+                        http_proxy = None
+                        http_proxy2 = str(http_proxy)
+                        identity = "None"
+
+                else:
+                    http_proxy = None
+                    http_proxy2 = str(http_proxy)
+                    identity = "None"
 
     @staticmethod
     def Banner():
@@ -113,7 +135,13 @@ class MrHolmes:
         MrHolmes.Banner()
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
-        report = "GUI/Reports/Usernames/" + username + ".txt"
+        folder = "GUI/Reports/Usernames/" + username + "/"
+        if os.path.isdir(folder):
+            shutil.rmtree(folder)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        os.mkdir(folder)
+        report = folder + username + ".txt"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -146,17 +174,19 @@ class MrHolmes:
         folder = "Username"
         Logs.Log.Checker(username, folder)
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "Date").format(Date) + "\r\n")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Username", "Found"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Default", "Date").format(Date) + "\r\n")
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Username", "Found"))
         f.close()
         MrHolmes.Controll(username, nomefile, identity, report, subject,
-                          successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy)
+                          successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice)
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Nsfw") +
                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Nsfw == 1:
             nomefile = "Site_lists/Username/NSFW_site_list.json"
             MrHolmes.Controll(username, nomefile, identity, report, subject,
-                              successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy)
+                              successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice)
         else:
             pass
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -166,12 +196,12 @@ class MrHolmes:
             for names in successfull:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + names)
             if len(ScraperSites):
-                os.chdir("GUI/Reports/Usernames/Profile_pics")
-                if os.path.isdir(username):
-                    shutil.rmtree(username)
-                    os.mkdir(username)
+                os.chdir("GUI/Reports/Usernames/{}".format(username))
+                if os.path.isdir("Profile_pics"):
+                    shutil.rmtree("Profile_pics")
+                    os.mkdir("Profile_pics")
                 else:
-                    os.mkdir(username)
+                    os.mkdir("Profile_pics")
                 os.chdir("../../../../")
                 choice = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                              Font.Color.GREEN + "[*MR.HOLMES*]" + Font.Color.WHITE + "-->"))
@@ -368,8 +398,9 @@ class MrHolmes:
                 MrHolmes.Google_dork(username)
                 MrHolmes.Yandex_dork(username)
             print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-                  os.getcwd() + "/" + report)
+                  report)
             f = open(report, "a")
-            f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "By"))
+            f.write(Language.Translation.Translate_Language(
+                filename, "Report", "Default", "By"))
             f.close()
             Creds.Sender.mail(report, username)
