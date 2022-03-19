@@ -3,6 +3,7 @@ Copyright (C) 2021-2022 Lucksi
 License: GNU General Public License v3.0*/
 
 @import url("Main.css");
+@import url("Username.css");
 
 body {
     background-color: #000000 !important;

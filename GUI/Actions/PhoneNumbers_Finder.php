@@ -20,6 +20,20 @@
             echo "\n\t\t\t<p id align = 'center' = 'error'>NOT FIND ANY DORK FOR THIS NUMBER</p>";
         }
     }
+
+    function Get_List($File_name,$Complete_name){
+        echo "<div class = 'Wrapper2'>";
+        echo "\n\t\t<div class = 'Data_img3'>";
+        echo "<p id = 'Const2'>ENTITIES:</p>";
+        $Json_file = str_replace(".txt",".json",$Complete_name);
+        $Reader = file_get_contents($Json_file);
+        $Parser = json_decode($Reader,true);
+        foreach($Parser["List"] as $Data){
+            $link = $Data["site"];
+            echo "<a href = '$link' target = 'blank'><img src = '../Icon/Entities/Phone.png'></a>";
+        }
+        echo "</div>";
+    }
     
     function Checker() {
         $File_name = $_POST["Searcher"];
@@ -49,6 +63,10 @@
                 echo "\n</div>";
                 $Complete_name = "../Reports/Phone/Dorks/{$File_name}_dorks.txt";
                 get_dorks($Complete_name);
+                $Complete_name = "../Reports/Phone/{$File_name}.txt";
+                echo "<center>";
+                Get_List($File_name,$Complete_name);
+                echo "</center>";
             }
             else {
                 echo "

@@ -86,7 +86,7 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
-.Data_img2{
+.Data_img2, .Data_img3{
     margin-left: none;
     margin-right: none;
     margin-top: 10px;
@@ -118,7 +118,7 @@ License: GNU General Public License v3.0*/
     width: 300px;
 }
 
-.Data_img2 img {
+.Data_img2 img, .Data_img3 img {
     display: inline-block;
     margin-left: 100px;
     margin-right: none;
@@ -130,6 +130,12 @@ License: GNU General Public License v3.0*/
     border-color: #ffffff;
     border-radius: 10px;
 }
+
+.Data_img3 img{
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 10px;
+ }
 
 .Data_img2 a :hover, .Data_img a :hover{
     animation: joggleImg 2s infinite;
@@ -249,5 +255,9 @@ License: GNU General Public License v3.0*/
         border-radius: 10px;
         height: 300px;
         width: 300px;
+    }
+
+    .Data_img3{
+        display: none;
     }
 }

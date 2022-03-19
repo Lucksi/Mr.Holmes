@@ -3,6 +3,7 @@ Copyright (C) 2021-2022 Lucksi
 License: GNU General Public License v3.0*/
 
 @import url("Main.css");
+@import url("Username.css");
 
 body {
     background-color: #1a2b34 !important;
@@ -228,6 +229,8 @@ p {
         border: 3px solid;
         border-color: #ffffff;
         border-radius: 10px;
+        min-width: fit-content;
+        max-width: 350px;
     }
 
     .Datap p {

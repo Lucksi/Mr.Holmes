@@ -50,6 +50,20 @@
              echo "<p>NOT FOUND ANY STREET INFO</p>";
         }
     }
+
+    function Get_List($File_name,$Complete_name){
+        echo "<div class = 'Wrapper2'>";
+        echo "\n\t\t<div class = 'Data_img3'>";
+        echo "<p id = 'Const2'>ENTITIES:</p>";
+        $Json_file = str_replace(".txt",".json",$Complete_name);
+        $Reader = file_get_contents($Json_file);
+        $Parser = json_decode($Reader,true);
+        foreach($Parser["List"] as $Data){
+            $link = $Data["site"];
+            echo "<a href = '$link' target = 'blank'><img src = '../Icon/Entities/Web.png'></a>";
+        }
+        echo "</div>";
+    }
     
     function Checker() {
         global $File_name;   
@@ -78,6 +92,10 @@
                 echo "</p>";
                 echo "\n</div>";
                 Maps_Generator();
+                echo "</div>";
+                echo "<center>";
+                Get_List($File_name,$Complete_name);
+                echo "</center>";
             }
             else {
                 echo "

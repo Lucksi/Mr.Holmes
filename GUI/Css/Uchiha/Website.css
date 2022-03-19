@@ -45,7 +45,7 @@ License: GNU General Public License v3.0*/
     border-color: #ffffff;
     border-radius: 10px;
     height: 605px;
-    width: 580px;
+    width: 500px;
 }
 
 @media only screen and (min-width: 200px) and (max-width: 711px) {

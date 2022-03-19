@@ -21,11 +21,25 @@
         }
     }
 
+    function Get_List($File_name,$Complete_name){
+        echo "<div class = 'Wrapper2'>";
+        echo "\n\t\t<div class = 'Data_img3'>";
+        echo "<p id = 'Const2'>SOCIALS:</p>";
+        $Json_file = str_replace(".txt",".json",$Complete_name);
+        $Reader = file_get_contents($Json_file);
+        $Parser = json_decode($Reader,true);
+        foreach($Parser["List"] as $Data){
+            $link = $Data["site"];
+            echo "<a href = '$link' target = 'blank'><img src = '../Icon/Entities/Social.png'></a>";
+        }
+        echo "</div>";
+    }
+
     function Get_Posts($File_name,$Folder_name,$Argument_Name){
         echo "<div class = 'Wrapper2'>";
         echo "\n\t\t<div class = 'Data_img2'>";
         echo "<p id = 'Const2'>$Argument_Name:</p>";
-        $Dir_Name = "../Reports/Usernames/Profile_pics/{$File_name}/{$Folder_name}/";
+        $Dir_Name = "../Reports/Usernames/{$File_name}/Profile_pics/{$Folder_name}/";
         if(file_exists($Dir_Name)){
             $image = glob($Dir_Name."*.jpg");
             $details = glob($Dir_Name."*.txt");
@@ -44,16 +58,16 @@
                 $j = $j +1;
             }
             
-            echo "<a href = '../Reports/Usernames/Profile_pics/{$File_name}/_Profile_pic_Instagram.jpg' target = 'blank'><img src = '../Reports/Usernames/Profile_pics/{$File_name}/_Profile_pic_Instagram.jpg' id = 'Main_pics' abbr title = 'Instagram Profile_pic'></a>";
+            echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_Instagram.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_Instagram.jpg' id = 'Main_pics' abbr title = 'Instagram Profile_pic'></a>";
             for ($count_P = 1; $count_P<=$i; $count_P ++){
-                $Content = "../Reports/Usernames/Profile_pics/{$File_name}/Instagram_Photo/Pic_$count_P.jpg";
+                $Content = "../Reports/Usernames/{$File_name}/Profile_pics/Instagram_Photo/Pic_$count_P.jpg";
                 echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$count_P'></a>";
             }
             echo "</div>";
             echo "<div class = 'Data3'>";
             echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
             for ($count_D = 1; $count_D<=$j; $count_D ++){
-                $Text = "../Reports/Usernames/Profile_pics/{$File_name}/Instagram_Photo/Post_{$count_D}_details.txt";
+                $Text = "../Reports/Usernames/{$File_name}/Profile_pics/Instagram_Photo/Post_{$count_D}_details.txt";
                 $opener = fopen($Text,"r");
                 while(!feof($opener)){
                     $reader = fgets($opener);
@@ -72,7 +86,7 @@
                 $final_name = str_replace("_","N°",$final);
                 $number = str_replace("PostN°","",$final_name);
                 /*echo "<p align = 'center'>$final_name</p>";*/
-                $Content = "../Reports/Usernames/Profile_pics/{$File_name}/Instagram_Photo/Pic_$number.jpg";
+                $Content = "../Reports/Usernames/{$File_name}/Profile_pics/Instagram_Photo/Pic_$number.jpg";
                 echo "<img src = '{$Content}' id = 'pics' abbr title = 'Post N°$number'></a>";
                 $reader = file_get_contents($Data);
                 $parser = json_decode($reader,true);
@@ -108,7 +122,7 @@
             </script>";
         }
         else {
-            $Complete_name = "../Reports/Usernames/{$File_name}.txt";
+            $Complete_name = "../Reports/Usernames/{$File_name}/{$File_name}.txt";
             if(file_exists($Complete_name)){
                 echo "
                 <script>
@@ -127,9 +141,9 @@
                 echo "</p>";
                 echo "\n\t\t</div>";
                 echo "\n\t\t<div class = 'Data_img'>";
-                $Dir_Name = "../Reports/Usernames/Profile_pics/{$File_name}/";
+                $Dir_Name = "../Reports/Usernames/{$File_name}/Profile_pics/";
                 if(file_exists($Dir_Name)){
-                     $image = glob($Dir_Name."*.jpg");
+                    $image = glob($Dir_Name."*.jpg");
                     echo "\t\t\t<p id = 'Const2'>PROFILE-PICS:$File_name</p>";
                     foreach($image as $Content) {
                         echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$Content'></a>";
@@ -143,6 +157,9 @@
                 echo "</div>";
                 $Folder_name = "Instagram_Photo";
                 $Argument_Name = "INSTAGRAM-POSTS";
+                echo "<center>";
+                Get_List($File_name,$Complete_name);
+                echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
                 $Complete_name = "../Reports/Usernames/Dorks/{$File_name}_Dorks.txt";
