@@ -1453,7 +1453,7 @@
 
         "Vbox7":{
             "Error": "Message",
-            "text": "Vbox7 - Тази страница не е намерена - Vbox7",
+            "text": "Грешка 404",
             "name": "Vbox7",
             "main": "vbox7.com",
             "user": "https://www.vbox7.com/user:{}",
