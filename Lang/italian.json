@@ -91,7 +91,7 @@
                 "Blocked": "OPS SEMBRA CHE QUESTO UTENTE SIA STATO BANNATO IMPOSSIBILE EFFETUARE LO SCRAPING",
                 "Details": "CERCO IL TWEEET N {}...",
                 "Download_Full": "DOWNLOAD {} TWITTES",
-                "Download_Partial": "DOWNLOAD {} PRIMI 20 TWITTES",
+                "Download_Partial": "DOWNLOAD {} PRIMI 12 TWITTES",
                 "No_Image": "NESSUNA IMMAGINE TROVATA\n",
                 "Yes_Image": "IMMAGINE {} TROVATA\n",
                 "No_Desc": "NESSUNA DESCRIZIONE TROVATA",

@@ -91,7 +91,7 @@
                 "Blocked": "LOOKS LIKE THIS USER HAS BEEN BANNED..CANNOT SCRAPE DATA",
                 "Details": "CHECKING TWEEET N {}...",
                 "Download_Full": "DOWNLOAD {} TWITTES",
-                "Download_Partial": "DOWNLOAD {} FIRST 20 TWITTES",
+                "Download_Partial": "DOWNLOAD {} FIRST 12 TWITTES",
                 "No_Image": "NO IMAGE HAS BEEN FOUND\n",
                 "Yes_Image": "IMAGE {} FOUND\n",
                 "No_Desc": "NO DESCRIPTION HAS BEEN FOUND",
