@@ -69,7 +69,10 @@
                 "NoScrape": "OPS LOOKS LIKE THERE IS NO SITE TO SCRAPE...",
                 "NoFound": "OPS LOOKS LIKE USERNAME: {} HAS NOT BEEN FOUND ON ANY WEBSITE..",
                 "Pics": "WOULD YOU LIKE TO DOWNLOAD {} POSTS?(1)YES(2)NO",
-                "Details": "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS(1)YES(2)NO\n\n"
+                "Details": "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS(1)YES(2)NO\n\n",
+                "TotDetails": "POST DETAILS SAVED ON: {}",
+                "Image": "IMAGES SAVED ON: {}",
+                "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS"
             },
             
             "Instagram":{
@@ -79,16 +82,20 @@
                 "Details": "CHECKING POST {} DETAILS...",
                 "Likes/Comments": "CHECKING POST {} LIKES AND COMMENTS...",
                 "Data": "CHECKING POST {} PUBLICATION DATE...",
-                "TotDetails": "POST DETAILS SAVED ON: {}",
-                "Image": "IMAGES SAVED ON: {}",
-                "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS",
                 "Private": "LOOKS LIKE THIS USER IS PRIVATE..CANNOT SCRAPE DATA",
                 "GeoData": "CHECKING POST {} GEODATA (ATTENTION COORDINATES MAY NOT BE 100% ACCURATES)",
                 "NoGeoData": "IMPOSSIBLE CHECKING GEODATA"
             },
             
-            "Nitter":{
-                "Blocked": "LOOKS LIKE THIS USER HAS BEEN BANNED..CANNOT SCRAPE DATA"
+            "Twitter":{
+                "Blocked": "LOOKS LIKE THIS USER HAS BEEN BANNED..CANNOT SCRAPE DATA",
+                "Details": "CHECKING TWEEET N {}...",
+                "Download_Full": "DOWNLOAD {} TWITTES",
+                "Download_Partial": "DOWNLOAD {} FIRST 20 TWITTES",
+                "No_Image": "NO IMAGE HAS BEEN FOUND\n",
+                "Yes_Image": "IMAGE {} FOUND\n",
+                "No_Desc": "NO DESCRIPTION HAS BEEN FOUND",
+                "Protected": "THIS ACCOUNT HAS IS TWEET PROTECTED..CANNOT SCRAPE DATA"
             }
         }
     ],

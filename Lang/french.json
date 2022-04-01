@@ -69,7 +69,10 @@
                 "NoScrape": "OPS SEMBLE COMME IL N'Y A AUCUN SITE POUR FAIRE SCRAPE...",
                 "NoFound": "OPS SEMBLE CETTE USERNAME: {} IL N'Y A TROUVE SUR AUCUN WEBSITE..",
                 "Pics": "EST CE QUE TU VOULEZ DOWNLOAD {} POSTS?(1)OUI(2)NO",
-                "Details": "EST CE QUE TU VOULEZ DOWNLOAD POST-DETAILS(1)OUI(2)NO\n\n"
+                "Details": "EST CE QUE TU VOULEZ DOWNLOAD POST-DETAILS(1)OUI(2)NO\n\n",
+                "TotDetails": "POST DETAILS REGISTREZ SUR: {}",
+                "Image": "IMAGES REGISTREZ SUR: {}",
+                "NoPost": "CETTE USER N'Y A PAS AUCUN POST..IMPOSSIBILE DOWNLOAD PROFILE PICS",
             },
 
             "Instagram":{
@@ -79,16 +82,20 @@
                 "Details": "CHERCHER POST {} DETAILS...",
                 "Likes/Comments": "CHERCHER POST {} LIKES AND COMMENTS...",
                 "Data": "CHERCHER POST {} PUBLICATION DATE...",
-                "TotDetails": "POST DETAILS REGISTREZ SUR: {}",
-                "Image": "IMAGES REGISTREZ SUR: {}",
-                "NoPost": "CETTE USER N'Y A PAS AUCUN POST..IMPOSSIBILE DOWNLOAD PROFILE PICS",
-                "Private": "CETTE USER EST PRIVATE..IMPOSSOBLE FAIRE UNE DATA SCRAPE",
+                "Private": "CETTE USER EST PRIVATE..IMPOSSIBILE FAIRE UNE DATA SCRAPE",
                 "GeoData": "CHERCHER POST {} GEODATA (ATTENTION LES COORDONNEES PEUVENT NE PAS ETRE EXACTES A 100 %)",
                 "NoGeoData": "IMPOSSIBILE PRENDRE LES GEODATA"
             },
 
-            "Nitter":{
-                "Blocked": "CETTE USER A ETE BANNED..IMPOSSIBILE FARE UNE DATA SCRAPE"
+            "Twitter":{
+                "Blocked": "CETTE USER A ETE BANNED..IMPOSSIBILE FARE UNE DATA SCRAPE",
+                "Details": "CHECKING TWEEET N {}...",
+                "Download_Full": "DOWNLOAD {} TWITTES",
+                "Download_Partial": "DOWNLOAD {} FIRST 20 TWITTES",
+                "No_Image": "NO IMAGE HAS BEEN FOUND\n",
+                "Yes_Image": "IMAGE {} FOUND\n",
+                "No_Desc": "NO DESCRIPTION HAS BEEN FOUND",
+                "Protected": "CETTE USER A LES TWEETS SÉCURISÉS..IMPOSSIBILE FAIRE UNE DATA SCRAPE"
             }
         }
     ],

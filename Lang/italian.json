@@ -69,7 +69,10 @@
                 "NoScrape": "OPS SEMBRA CHE NON C'E NESSUN SITO PER FARE SCRAPING...",
                 "NoFound": "OPS SEMBRA CHE L'USERNAME: {} NON E STATO TROVATO IN NESSUN SITO..",
                 "Pics": "VUOI SCARICARE I POST DI {}?(1)SI(2)NO",
-                "Details": "VUOI SCARICARE I DETTAGLI DEI POST?(1)SI(2)NO\n\n"
+                "Details": "VUOI SCARICARE I DETTAGLI DEI POST?(1)SI(2)NO\n\n",
+                "NoPost": "QUESTO USER NON HA POST IMPOSSIBILE SCARICARE FOTO",
+                "TotDetails": "POST DETAILS SALVATI IN: {}",
+                "Image": "IMMAGINI SALVATE IN: {}"
             },
         
             "Instagram":{
@@ -79,16 +82,20 @@
                 "Details": "CERCO I DETTAGLI DEL POST {}...",
                 "Likes/Comments": "CERCO I LIKE E I COMMENTI DEL POST {} ...",
                 "Data": "CERCO LA DATA DI PUBBLICAZIONE DEL POST {} ...",
-                "TotDetails": "POST DETAILS SALVATI IN: {}",
-                "Image": "IMMAGINI SALVATE IN: {}",
-                "NoPost": "QUESTO USER NON HA POST IMPOSSIBILE SCARICARE FOTO",
                 "Private": "SEMBRA CHE QUESTO PROFILO SIA PRIVATO IMPOSSIBILE EFFETTUARE LO SCRAPING",
                 "GeoData": "PRENDO I GEODATA DEL POST {} (ATTENZIONE LE COORDINATE POTREBBERO NON ESSERE PRECISE AL 100%)",
                 "NoGeoData": "IMPOSSIBILE PRENDERE I GEODATA"
             },
 
-            "Nitter":{
-                "Blocked": "OPS SEMBRA CHE QUESTO UTENTE SIA STATO BANNATO IMPOSSIBILE EFFETUARE LO SCRAPING"
+            "Twitter":{
+                "Blocked": "OPS SEMBRA CHE QUESTO UTENTE SIA STATO BANNATO IMPOSSIBILE EFFETUARE LO SCRAPING",
+                "Details": "CERCO IL TWEEET N {}...",
+                "Download_Full": "DOWNLOAD {} TWITTES",
+                "Download_Partial": "DOWNLOAD {} PRIMI 20 TWITTES",
+                "No_Image": "NESSUNA IMMAGINE TROVATA\n",
+                "Yes_Image": "IMMAGINE {} TROVATA\n",
+                "No_Desc": "NESSUNA DESCRIZIONE TROVATA",
+                "Protected": "QUESTO ACCOUNT HA I TWEET PROTETTI IMPOSSIBILE EFFETTUARE LO SCRAPING"
             }
         }
     ],
