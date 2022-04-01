@@ -278,7 +278,7 @@ class Web:
             f.close()
         else:
             pass
-        report = "GUI/Reports/Websites/" + username + ".txt"
+        report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
