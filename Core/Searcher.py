@@ -2,6 +2,7 @@
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
+from encodings import utf_8
 import os
 import urllib
 import json
@@ -36,6 +37,8 @@ class MrHolmes:
             pass
         json_file = "GUI/Reports/Usernames/{}/{}.json".format(
                 username, username)
+        json_file2 = "GUI/Reports/Usernames/{}/{}.json".format(
+                username, "Name")
         data = json.loads(f.read())
         for sites in data:
             for data1 in sites:
@@ -60,14 +63,14 @@ class MrHolmes:
                 else:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
@@ -234,25 +237,29 @@ class MrHolmes:
                         try:
                             Scraper.info.Instagram(
                                 report, username, http_proxy)
-                        except Exception as e:
+                        except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Instagram(
                                 report, username, http_proxy)
+                        except Exception as e:
+                            pass
                     else:
                         pass
 
-                    if "UrleBird" in ScraperSites:
+                    if "TikTok" in ScraperSites:
                         try:
-                            Scraper.info.UrleBird(
+                            Scraper.info.TikTok(
                                 report, username, http_proxy)
-                        except Exception as e:
+                        except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.UrleBird(
+                            Scraper.info.TikTok(
                                 report, username, http_proxy)
+                        except Exception as e:
+                            pass
                     else:
                         pass
 
@@ -302,14 +309,17 @@ class MrHolmes:
                     else:
                         pass
 
-                    if "Nitter" in ScraperSites:
+                    if "Twitter" in ScraperSites:
                         try:
-                            Scraper.info.Nitter(report, username, http_proxy)
-                        except Exception as e:
+                            Scraper.info.Twitter(report, username, http_proxy)
+                        except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Nitter(report, username, http_proxy)
+                            Scraper.info.Twitter(report, username, http_proxy)
+                        except Exception as e:
+                            print(str(e))
+                            pass
                     else:
                         pass
 

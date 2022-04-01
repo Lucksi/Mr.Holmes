@@ -5,6 +5,7 @@
 import os
 import urllib
 import json
+import shutil
 from datetime import datetime
 from Core.Support.Phone import Numbers
 from Core.Support import Font
@@ -156,7 +157,9 @@ class Phone_search:
             successfullName = []
             ScraperSites = []
             Writable = True
-            json_file = "GUI/Reports/Phone/{}.json".format(username)
+            json_file = "GUI/Reports/Phone/{}/{}.json".format(username,username)
+            json_file2 = "GUI/Reports/Phone/{}/{}.json".format(
+               username,"Name")
             f = open(data,)
             data = json.loads(f.read())
             for sites in data:
@@ -173,14 +176,14 @@ class Phone_search:
                         Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Attempt", "None").format(name))
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file,json_file2)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
@@ -213,11 +216,13 @@ class Phone_search:
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
-        report = "GUI/Reports/Phone/" + username + ".txt"
-        if os.path.isfile(report):
-            os.remove(report)
+        folder = "GUI/Reports/Phone/" + username + "/"
+        if os.path.isdir(folder):
+            shutil.rmtree(folder)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        os.mkdir(folder)
+        report = folder + username + ".txt"
         f = open(report, "w")
         f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "Date").format(Date) + "\n")
         f.close()

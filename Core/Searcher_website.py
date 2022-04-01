@@ -6,6 +6,7 @@ import os
 import urllib
 import json
 import requests
+import shutil
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support.Phone import Numbers
@@ -46,7 +47,7 @@ class Web:
 
     @staticmethod
     def Reputation(username, report):
-        report = "GUI/Reports/Websites/" + username + ".txt"
+        #report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
         subject = "DOMAIN/WEBSITE/IP"
         data = "Site_lists/Websites/Lookup.json"
         f = open(report, "a")
@@ -80,7 +81,9 @@ class Web:
         successfullName = []
         ScraperSites = []
         Writable = False
-        json_file = "GUI/Reports/Websites/{}.json".format(username)
+        json_file = "GUI/Reports/Websites/{}/{}.json".format(username,username)
+        json_file2 = "GUI/Reports/Websites/{}/{}.json".format(
+                username,"Name")
         f = open(data,)
         data = json.loads(f.read())
         for sites in data:
@@ -95,14 +98,14 @@ class Web:
                       "\n[+]" + Font.Color.WHITE + "TRYING ON: {} ".format(name))
                 try:
                     Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                  subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                  subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                 except Exception as e:
                     print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE +
                           Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                     http_proxy = None
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
@@ -406,7 +409,7 @@ class Web:
                     get_Coords = urllib.request.urlopen(link_json)
                     Reader = get_Coords.read()
                     parser = json.loads(Reader)
-                    for value in parser:
+                    for value in parser:    
                         Lat = value["lat"]
                         Lon = value["lon"]
                     report_Coordinates = "GUI/Reports/Websites/Coordinates/Street_Geolocation/" + \
@@ -490,16 +493,18 @@ class Web:
     @staticmethod
     def search(username):
         os.system("cls" if os.name == "nt" else "clear")
-        report = "GUI/Reports/Websites/" + username + ".txt"
+        Web.Banner()
+        folder = "GUI/Reports/Websites/" + username + "/"
+        if os.path.isdir(folder):
+            shutil.rmtree(folder)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        os.mkdir(folder)
+        report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
         report_Ip = "GUI/Reports/Websites/Coordinates/Ip_Geolocation/" + username + ".json"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
-        Web.Banner()
-        if os.path.isfile(report):
-            os.remove(report)
-            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-                  Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Website", "Default", "Search").format(username))
         sleep(3)

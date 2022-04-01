@@ -192,6 +192,11 @@ write:François
 
 <br>
 
+# USERNAME ENTITIES:
+## Le Icone sulla Cartella /GUI/Icon/Entities/Site_Icon sono state prese da: https://www.iconfinder.com/ tutti i diritti vanno ai loro rispettivi creatori
+
+<br>
+
 # :last_quarter_moon: DARK MODE:
 ![Screenshot](../Screenshot/Dark_Mode.png)
 

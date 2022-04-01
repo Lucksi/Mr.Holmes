@@ -106,7 +106,7 @@ write:Uchiha(Uchiha-Mode)
 ```
 <br>
 
-# Mode.json CODE EXAMPLE:
+# :heavy_check_mark: Mode.json CODE EXAMPLE:
 ```json
 {
     "Color": {
@@ -128,7 +128,7 @@ write:Password=Your Password
 ```
 <br>
 
-# Login.json CODE EXAMPLE:
+# :heavy_check_mark: Login.json CODE EXAMPLE:
 ```json    
 {
     "Database": {
@@ -138,7 +138,7 @@ write:Password=Your Password
 ```
 <br>
 
-# Users.json CODE EXAMPLE
+# :heavy_check_mark: Users.json CODE EXAMPLE
 ```json
 {
     "Users":[
@@ -162,7 +162,7 @@ write:François
 ```
 <br>
 
-# Language.json CODE EXAMPLE:
+# :heavy_check_mark: Language.json CODE EXAMPLE:
 ```json
 {
     "Language": {
@@ -187,6 +187,11 @@ write:François
 
 # INTERACTIVE MAP HAS BEEN MADE WITH:
 ## Leaflet: https://leafletjs.com
+
+<br>
+
+# USERNAME ENTITIES:
+## icons on folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all rights goes to their respective creators
 
 <br>
 

@@ -316,12 +316,12 @@
             "Scrapable": "False"
         },
 
-        "Nitter":{
+        "Twitter":{
             "Error": "Message",
             "text": "not found",
-            "name": "Nitter",
-            "main": "nitter.domain.glass",
-            "user": "https://nitter.domain.glass/{}",
+            "name": "Twitter",
+            "main": "twitter.com",
+            "user": "https://mobile.twitter.com/{}",
             "user2": "https://nitter.domain.glass/{}",
             "exception": [" "],
             "Scrapable": "True",
@@ -926,11 +926,11 @@
             "Scrapable": "False"
         },
 
-        "UrleBird":{
+        "Tiktok":{
             "Error": "Status-Code",
-            "name": "UrleBird",
-            "main": "urlebird.com",
-            "user": "https://urlebird.com/user/{}/",
+            "name": "Tiktok",
+            "main": "tiktok.com",
+            "user": "https://www.tiktok.com/@{}",
             "user2": "https://urlebird.com/user/{}/",
             "exception": [" ","/"],
             "Scrapable": "True",
@@ -1132,16 +1132,6 @@
             "user": "https://ko-fi.com/{}",
             "user2": "https://ko-fi.com/{}",
             "exception": [" ","/","."],
-            "Scrapable": "False"
-        },
-
-        "LeetCode":{
-            "Error": "Status-Code",
-            "name": "LeetCode",
-            "main": "leetcode.com",
-            "user": "https://leetcode.com/{}",
-            "user2": "https://leetcode.com/{}",
-            "exception": [" ","/"],
             "Scrapable": "False"
         },
 
@@ -1415,17 +1405,6 @@
             "main": "bugcrowd.com",
             "user": "https://bugcrowd.com/{}",
             "user2": "https://bugcrowd.com/{}",
-            "exception": [" ","/"],
-            "Scrapable": "False"
-        },
-
-        "RaidForums":{
-            "Error": "Message",
-            "text": "The member you specified is either invalid or doesn't exist.",
-            "name": "RaidForums",
-            "main": "raidforums.com",
-            "user": "https://raidforums.com/User-{}",
-            "user2": "https://raidforums.com/User-{}",
             "exception": [" ","/"],
             "Scrapable": "False"
         },

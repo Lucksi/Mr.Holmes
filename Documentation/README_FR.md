@@ -192,6 +192,11 @@ write:François
 
 <br>
 
+# USERNAME ENTITIES:
+## Les icônes sur le dossier GUI/Icon/Entities/Site_Icon proviennent de : https://www.iconfinder.com/ tous les droits reviennent à leurs créateurs respectifs
+
+<br>
+
 # :last_quarter_moon: DARK MODE:
 ![Screenshot](../Screenshot/Dark_Mode.png)
 

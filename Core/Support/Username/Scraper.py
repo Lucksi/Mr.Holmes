@@ -367,10 +367,10 @@ class info:
                     pass
 
     @staticmethod
-    def Nitter(report, username, http_proxy):
+    def Twitter(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-              "SCRAPING {} NITTER PROFILE...".format(username))
-        url = info.Get_Url(username, "Nitter")
+              "SCRAPING {} TWITTER PROFILE...".format(username))
+        url = info.Get_Url(username, "Twitter")
         url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
@@ -379,9 +379,11 @@ class info:
             text = openurl.text
             if Blocked in text:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Username", "Nitter", "Blocked"))
+                      Language.Translation.Translate_Language(filename, "Username", "Twitter", "Blocked"))
+                Flag = False
                 pass
             else:
+                Flag = True
                 reader = soup(openurl.content, "html.parser")
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
@@ -416,14 +418,14 @@ class info:
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
                 if download == 1:
-                    SiteName = "Nitter"
+                    SiteName = "Twitter"
                     info.Profile_Pic(username,
                                      profile_pic, SiteName)
                 else:
                     pass
 
                 f = open(report, "a", encoding="utf-8")
-                f.write("\nNITTER DATA:\n")
+                f.write("\nTWITTER DATA:\n")
                 f.write("USERNAME: {}\r\n".format(
                     user["href"].replace("/", "")))
                 f.write("POSTS: {}\r\n".format(posts))
@@ -434,11 +436,33 @@ class info:
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            Flag = False
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            Flag = False
             pass
+        finally:
+            if Flag == True:
+                Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Pics").format(
+                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if Photos == 1:
+                  Private = "This account&#x27;s tweets are protected."
+                  text = openurl.text
+                  if Private in text:
+                      print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                      Language.Translation.Translate_Language(filename, "Username", "Twitter", "Protected").format(username))
+                  else:
+                    Posts = float(posts.replace(",",''))
+                    try:
+                        Get_Posts.Downloader.Twitter(url,
+                                                        username, http_proxy, Posts)
+                    except ConnectionError:
+                        print(Font.Color.RED +
+                              "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                else:
+                    pass
 
     @staticmethod
     def Dockerhub(report, username, http_proxy):
@@ -560,7 +584,7 @@ class info:
 
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
 
     @staticmethod
@@ -798,10 +822,10 @@ class info:
             pass
 
     @staticmethod
-    def UrleBird(report, username, http_proxy):
+    def TikTok(report, username, http_proxy):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-              "SCRAPING {} URLEBIRD PROFILE...".format(username))
-        url = info.Get_Url(username, "UrleBird")
+              "SCRAPING {} TIKTOK PROFILE...".format(username))
+        url = info.Get_Url(username, "TikTok")
         url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
@@ -833,7 +857,7 @@ class info:
                   "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
             f = open(report, "a", encoding="utf-8")
-            f.write("\nURLEBIRD DATA:\n")
+            f.write("\nTIKTOK DATA:\n")
             f.write("USERNAME: {}\r\n".format(user))
             f.write("NAME: {}\r\n".format(name))
             f.write("LIKES: {}\r\n".format(like))
