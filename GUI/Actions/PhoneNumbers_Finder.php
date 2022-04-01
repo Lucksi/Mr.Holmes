@@ -60,7 +60,7 @@
             </script>";
         }
         else {
-            $Complete_name = "../Reports/Phone/{$File_name}.txt";
+            $Complete_name = "../Reports/Phone/{$File_name}/{$File_name}.txt";
             if(file_exists($Complete_name)){
                 echo "
                 <script>
@@ -79,7 +79,7 @@
                 echo "\n</div>";
                 $Complete_name = "../Reports/Phone/Dorks/{$File_name}_dorks.txt";
                 get_dorks($Complete_name);
-                $Complete_name = "../Reports/Phone/{$File_name}.txt";
+                $Complete_name = "../Reports/Phone/{$File_name}/{$File_name}.txt";
                 echo "<center>";
                 Get_List($File_name,$Complete_name);
                 echo "</center>";
