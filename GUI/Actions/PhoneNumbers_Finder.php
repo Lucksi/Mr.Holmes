@@ -26,12 +26,28 @@
         echo "\n\t\t<div class = 'Data_img3'>";
         echo "<p id = 'Const2'>ENTITIES:</p>";
         $Json_file = str_replace(".txt",".json",$Complete_name);
+        $Json_file2 = str_replace("{$File_name}.json","Name.json",$Json_file);
+        $Reader2 = file_get_contents($Json_file2);
+        $Parser2 = json_decode($Reader2,true);
         $Reader = file_get_contents($Json_file);
         $Parser = json_decode($Reader,true);
+        $Name_arr = array();
+        $Image_arr = array();
+        $Placeholder = array();
         foreach($Parser["List"] as $Data){
             $link = $Data["site"];
-            echo "<a href = '$link' target = 'blank'><img src = '../Icon/Entities/Phone.png'></a>";
+            array_push($Name_arr,$Data["site"]);
         }
+        foreach($Parser2["Names"] as $Data){
+            $link2 = $Data["name"];
+            array_push($Placeholder,$link2);
+            $image =  "../Icon/Entities/Phone.png";
+            array_push($Image_arr,$image);
+        }
+        foreach($Name_arr as $Data  => $value){
+                $link2 = $Data["name"];
+                echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '{$Image_arr[$Data]}'abbr title = '{$Placeholder[$Data]}'></a>";                
+            }
         echo "</div>";
     }
     

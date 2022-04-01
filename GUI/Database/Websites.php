@@ -90,6 +90,5 @@ License: GNU General Public License v3.0-->
         </div>
     </form>
     <?php require("../Actions/Websites_Finder.php");?>
-    <noscript>Please enable javascript</noscript>
     </body>
 </html>

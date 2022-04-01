@@ -134,6 +134,8 @@ License: GNU General Public License v3.0*/
     border-radius: 20px;
     margin-left: 40px;
     margin-right: 10px;
+    height: 110px;
+    width: 110px;
  }
 
 .Data_img2 a :hover, .Data_img a :hover{
