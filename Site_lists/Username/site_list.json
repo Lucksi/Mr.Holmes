@@ -322,10 +322,10 @@
             "name": "Twitter",
             "main": "twitter.com",
             "user": "https://mobile.twitter.com/{}",
-            "user2": "https://nitter.domain.glass/{}",
+            "user2": "https://nitter.net/{}",
             "exception": [" "],
             "Scrapable": "True",
-            "Scrapable_url": "https://nitter.domain.glass/{}"
+            "Scrapable_url": "https://nitter.net/{}"
         },
 
         "PsnProfiles":{
