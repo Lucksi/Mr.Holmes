@@ -388,7 +388,7 @@ class info:
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
                 pic = reader.find("a", href=True, class_="profile-card-avatar")
-                profile_pic = "https://nitter.domain.glass" + pic["href"]
+                profile_pic = url.replace("/"+username,"") + pic["href"]
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                       "USER: " + user["href"].replace("/", ""))
 

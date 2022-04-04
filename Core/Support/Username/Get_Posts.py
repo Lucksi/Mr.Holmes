@@ -249,98 +249,100 @@ class Downloader:
             i = 1
             j = 1
             profile = reader.find_all("div", class_="timeline-item")
-           
+
             for info in profile:
-                    try:
-                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                              Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Details").format(str(i)))
-                        image_try = info.find("a", class_="still-image")
+                try:
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                          Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Details").format(str(i)))
+                    image_try = info.find("a", class_="still-image")
+                    sleep(2)
+                    if image_try != None:
+                        post = info.find(
+                            "a", class_="still-image")["href"]
+                        print(
+                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
+                        profile_pic = url.replace(
+                            username+"/search", "") + post.replace("/pic/", "pic/")
+                        image = folder + "/Pic_{}.jpg".format(str(j))
+                        getter = requests.get(
+                            profile_pic, headers=headers, allow_redirects=True)
+                        open(image, "wb").write(getter.content)
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                              "DOWNLOAD SUCCESSFULL..")
+                        j = j+1
                         sleep(2)
-                        if image_try != None:
-                            post = info.find(
-                                "a", class_="still-image")["href"]
-                            print(
-                                Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
-                            profile_pic = "https://nitter.domain.glass" + post
-                            image = folder + "/Pic_{}.jpg".format(str(j))
-                            getter = requests.get(
-                                profile_pic, headers=headers, allow_redirects=True)
-                            open(image, "wb").write(getter.content)
-                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                  "DOWNLOAD SUCCESSFULL..")
-                            j = j+1
-                            sleep(2)
-                        else:
-                            poster_pics = info.find_all(
-                                "div", class_="card-image")
-                            if poster_pics != None:
-                                for data in poster_pics:
-                                    print(
-                                        Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(i)))
-                                    post = data.find("img")["src"]
-                                    profile_pic = "https://nitter.domain.glass" + post
-                                    image = folder + \
-                                        "/Pic_{}.jpg".format(str(j))
-                                    getter = requests.get(
-                                        profile_pic, headers=headers, allow_redirects=True)
-                                    open(image, "wb").write(getter.content)
-                                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                          "DOWNLOAD SUCCESSFULL..")
-                                    j = j+1
-                                    sleep(2)
-                            else:
-                                print(Font.Color.RED +
-                                      "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Image"))
-                        text = info.find(
-                            "div", class_="tweet-content media-body").text
-                        if text:
-                            desc = info.find(
-                                "div", class_="tweet-content media-body").text
-                            print(
-                                Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "DESCRIPTION: {}".format(desc))
+                    else:
+                        poster_pics = info.find_all(
+                            "div", class_="card-image")
+                        if poster_pics != None:
+                            for data in poster_pics:
+                                print(
+                                    Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(i)))
+                                post = data.find("img")["src"]
+                                profile_pic = url.replace(
+                                    username + "/search", "") + post.replace("/pic/", "pic/")
+                                image = folder + \
+                                    "/Pic_{}.jpg".format(str(j))
+                                getter = requests.get(
+                                    profile_pic, headers=headers, allow_redirects=True)
+                                open(image, "wb").write(getter.content)
+                                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                      "DOWNLOAD SUCCESSFULL..")
+                                j = j+1
+                                sleep(2)
                         else:
                             print(Font.Color.RED +
-                                  "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Desc"))
-                        footer = info.find_all("span", class_="tweet-stat")
-                        comment = footer[0].get_text()
-                        likes = footer[1].get_text()
-                        retweet = footer[2].get_text()
-                        quote = footer[3].get_text()
+                                  "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Image"))
+                    text = info.find(
+                        "div", class_="tweet-content media-body").text
+                    if text:
+                        desc = info.find(
+                            "div", class_="tweet-content media-body").text
                         print(
-                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "COMMENTS: {}".format(comment))
-                        print(Font.Color.YELLOW +
-                              "[v]" + Font.Color.WHITE + "LIKES: {}".format(likes))
-                        print(
-                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "RETWEETS: {}".format(retweet))
-                        print(Font.Color.YELLOW +
-                              "[v]" + Font.Color.WHITE + "QUOTES: {}".format(quote))
-                        date = info.find("span", class_="tweet-date").text
-                        print(Font.Color.YELLOW +
-                              "[v]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
-                        filename = folder + \
-                            "/Post_{}_details.txt".format(str(i))
-                        f = open(filename, "w", encoding="utf-8")
-                        f.write("POST N°{} DATA:\n".format(str(i)))
-                        f.write("DESCRIPTION: {}\r\n".format(text))
-                        f.write("COMMENTS: {}\r\n".format(comment))
-                        f.write("LIKES: {}\r\n".format(likes))
-                        f.write("RETWEETS: {}\r\n".format(retweet))
-                        f.write("QUOTES: {}\r\n".format(quote))
-                        f.write("POSTED ON: {}\r\n".format(date))
-                        i = i+1
-                        sleep(2)
-                        if i == range_band + 1:
-                            break
-                    except ConnectionError:
-                        print(Font.Color.RED + "[!]" +
-                              Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
-                        i = i+1
-                        continue
-                    except Exception as e:
-                        print(Font.Color.RED + "[!]" +
-                              Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
-                        i = i+1
-                        continue
+                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "DESCRIPTION: {}".format(desc))
+                    else:
+                        print(Font.Color.RED +
+                              "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Desc"))
+                    footer = info.find_all("span", class_="tweet-stat")
+                    comment = footer[0].get_text()
+                    likes = footer[1].get_text()
+                    retweet = footer[2].get_text()
+                    quote = footer[3].get_text()
+                    print(
+                        Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "COMMENTS: {}".format(comment))
+                    print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "LIKES: {}".format(likes))
+                    print(
+                        Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "RETWEETS: {}".format(retweet))
+                    print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "QUOTES: {}".format(quote))
+                    date = info.find("span", class_="tweet-date").text
+                    print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
+                    filename = folder + \
+                        "/Post_{}_details.txt".format(str(i))
+                    f = open(filename, "w", encoding="utf-8")
+                    f.write("POST N°{} DATA:\n".format(str(i)))
+                    f.write("DESCRIPTION: {}\r\n".format(text))
+                    f.write("COMMENTS: {}\r\n".format(comment))
+                    f.write("LIKES: {}\r\n".format(likes))
+                    f.write("RETWEETS: {}\r\n".format(retweet))
+                    f.write("QUOTES: {}\r\n".format(quote))
+                    f.write("POSTED ON: {}\r\n".format(date))
+                    i = i+1
+                    sleep(2)
+                    if i == range_band + 1:
+                        break
+                except ConnectionError:
+                    print(Font.Color.RED + "[!]" +
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
+                    i = i+1
+                    continue
+                except Exception as e:
+                    print(Font.Color.RED + "[!]" +
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                    i = i+1
+                    continue
         else:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
