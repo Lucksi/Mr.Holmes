@@ -184,6 +184,26 @@ p {
     color: #ffffff;
 }
 
+.map {
+    display: block;
+    justify-content: left;
+    border:2px solid;
+    border-color: #ffffff;
+    background-color: #1a07076c;
+    border-radius: 10px;
+    height: 605px;
+    width: 500px;
+}
+
+.Geo {
+    display: inline-block;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: auto;
+    margin-bottom: 500px;
+    margin-left: 100px;
+}
+
 #Alert{
     font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
     font-size: x-large;
@@ -276,5 +296,22 @@ p {
         margin-top: 60px;
         width: 225px;
         height: 30px; 
+    }
+
+    .Geo {
+        margin-top: 1450px;
+        display: block;
+        height: 200px;
+        min-width: 100px;
+        max-width: 220px;
+    }
+
+    .map {
+        display: block;
+        margin-right: auto;
+        margin-left: -60px;
+        height: 400px;
+        min-width: 150px;
+        max-width: 305px;
     }
 }
