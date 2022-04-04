@@ -435,44 +435,55 @@ class Config:
 
     @staticmethod
     def main():
-        while True:
-            Config.Banner()
-            filename = Language.Translation.Get_Language()
-            filename
-            option = Language.Translation.Translate_Language(filename,"Configuration","Main","Options")
-            options = str(option)
-            print(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Text"))
-            print(Font.Color.WHITE + options)
-            sce = int(input(Font.Color.GREEN +
-                      "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if sce == 1:
-                Config.modify_recipient()
-            elif sce == 2:
-                Config.modify_destination()
-            elif sce == 3:
-                Config.modify_password()
-            elif sce == 4:
-                Config.modify_server()
-            elif sce == 5:
-                Config.modify_port()
-            elif sce == 6:
-                Config.modify_update_pass()
-            elif sce == 7:
-                Config.modify_path()
-            elif sce == 8:
-                Config.modify_key()
-            elif sce == 9:
-                Config.modify_proxy()
-            elif sce == 10:
-                Config.modify_Log()
-            elif sce == 11:
-                Config.modify_Database_Visibility()
-            elif sce == 12:
-                Config.modify_Language()
-            elif sce == 13:
-                Config.modify_Email_Status()
-            elif sce == 14:
-                inp = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
-                holmes.Main.Menu()
+        filename = Language.Translation.Get_Language()
+        filename
+        if (os.name!= "nt"):
+            if os.geteuid() == 0:
+                Conf = True
             else:
-                Config.main()
+                Conf = False
+        else:
+            Conf = True
+        if Conf == True:
+            while True:
+                Config.Banner()
+                option = Language.Translation.Translate_Language(filename,"Configuration","Main","Options")
+                options = str(option)
+                print(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Text"))
+                print(Font.Color.WHITE + options)
+                sce = int(input(Font.Color.GREEN +
+                        "\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if sce == 1:
+                    Config.modify_recipient()
+                elif sce == 2:
+                    Config.modify_destination()
+                elif sce == 3:
+                    Config.modify_password()
+                elif sce == 4:
+                    Config.modify_server()
+                elif sce == 5:
+                    Config.modify_port()
+                elif sce == 6:
+                    Config.modify_update_pass()
+                elif sce == 7:
+                    Config.modify_path()
+                elif sce == 8:
+                    Config.modify_key()
+                elif sce == 9:
+                    Config.modify_proxy()
+                elif sce == 10:
+                    Config.modify_Log()
+                elif sce == 11:
+                    Config.modify_Database_Visibility()
+                elif sce == 12:
+                    Config.modify_Language()
+                elif sce == 13:
+                    Config.modify_Email_Status()
+                elif sce == 14:
+                    inp = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
+                    holmes.Main.Menu()
+                else:
+                    Config.main()
+        else:
+            inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Configuration","Main","NoRoot"))
+            holmes.Main.Menu()
