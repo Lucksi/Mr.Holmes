@@ -106,18 +106,6 @@ function Preference {
 	printf "\n${WHITE}GUI-THEME:${GREEN}$mode\n"
 }
 
-function Mac_Packet_Installer {
-	sudo brew install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
-	sudo brew install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-	sudo brew install python3-tk &> /dev/null | printf "${WHITE}\nINSTALLING TKINTER\n"
-    sudo brew install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
-	sudo brew install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
-	sudo brew install inetutils-traceroute &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
-	sudo brew install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
-	sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
-	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
-}
-
 function Packet_Installer {
 	sudo apt-get install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
 	sudo apt-get install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
