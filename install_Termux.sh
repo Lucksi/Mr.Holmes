@@ -81,7 +81,7 @@ function Options {
 		destination="None"
 		server="None"
 		port="None"
-	else;
+	else
 		Options
 	fi
 	printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
