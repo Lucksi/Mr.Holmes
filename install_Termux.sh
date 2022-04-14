@@ -27,11 +27,11 @@ function Packet_Installer {
 }
 
 function Options {
-	printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION\n(1)YES\n(NO)\n\n"
+	printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
 	while [ "$Opt" = "" ];
 		do
-        printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION\n(1)YES\n(NO)\n\n"
+        printf "${BLUE}\n\n[?]${WHITE}WOULD YOU LIKE TO ENABLE EMAIL-OPTION(1)YES(2)(NO)\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Opt
 	done
 	if [ $Opt == 1 ];
@@ -108,12 +108,13 @@ function Options {
 	if [ $Logs == 2 ];
 		then
 		Logs="False"
-	elif [ $Logs == 1 ]
+	elif [ $Logs == 1 ];
+		then
 		Logs="True"
 	fi
-	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIAN\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
-	while [ $Language == "" ];
+	while [ "$Language" == "" ];
 		do
 		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
