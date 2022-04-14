@@ -3,8 +3,6 @@
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
-. /etc/os-release
-DIST="$ID"
 BLUE=$(tput setaf 6)
 GREEN=$(tput setaf 2)
 WHITE=$(tput setaf 15)
@@ -76,7 +74,7 @@ function Options {
 		done
 	elif [ $Opt == 2 ];
 		then
-		printf("${GREEN}\n[+]${WHITE}SKIPPING...")
+		printf "${GREEN}\n[+]${WHITE}SKIPPING..."
 		status="Disabled"
 		recipient="None"
 		password="None"
@@ -161,9 +159,6 @@ function Options {
 
 
 function installer {
-	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
-	sleep 2
-	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBUTION FOUND:$DIST${GREEN}[+]"
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
