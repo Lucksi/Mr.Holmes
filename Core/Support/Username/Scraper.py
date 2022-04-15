@@ -24,10 +24,14 @@ class info:
     def Profile_Pic(username, profile_pic, SiteName):
         image = "GUI/Reports/Usernames/{}/Profile_pics/Profile_pic_{}.jpg".format(username,SiteName)
         getter = requests.get(
-            profile_pic, headers=headers, allow_redirects=True)
-        open(image, "wb").write(getter.content)
-        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                profile_pic, headers=headers, allow_redirects=True)
+        try:
+             open(image, "wb").write(getter.content)
+             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "PROFILE PIC SAVED ON: {}".format(image))
+        except Exception as e:
+            print("error" + str(e))
+
 
     @staticmethod
     def Get_Url(username, Name):
@@ -869,7 +873,7 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
             if download == 1:
-                SiteName = "UrleBird"
+                SiteName = "TikTok"
                 info.Profile_Pic(username, profile_pic, SiteName)
             else:
                 pass

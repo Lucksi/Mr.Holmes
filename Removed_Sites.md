@@ -41,4 +41,11 @@
 ## RAIDFORUMS: https://raidforums.com
      gives always positive response even if the user doesn't exist
 
+<br>
+
+## SPOTIFY: https://open.spotify.com
+      gives always positive response even if the user doesn't exist
+
+<br>
+
 ## THESE WEBSITES ARE NOT AVAIBLE FOR NOW AND MAY COME BACK IN THE FUTURES

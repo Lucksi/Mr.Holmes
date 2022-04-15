@@ -265,31 +265,49 @@ class Downloader:
                             username+"/search", "") + post.replace("/pic/", "pic/")
                         image = folder + "/Pic_{}.jpg".format(str(j))
                         getter = requests.get(
-                            profile_pic, headers=headers, allow_redirects=True)
-                        open(image, "wb").write(getter.content)
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "DOWNLOAD SUCCESSFULL..")
-                        j = j+1
-                        sleep(2)
+                            profile_pic, headers=headers, allow_redirects=False)
+                        try:
+                            open(image, "wb").write(getter.content)
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "DOWNLOAD SUCCESSFULL..")
+                            j = j+1
+                            sleep(2)
+                        except ConnectionError:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
+                            continue
+                        except Exception as e:
+                            print(Font.Color.RED + "[!]" +
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                            continue
                     else:
                         poster_pics = info.find_all(
                             "div", class_="card-image")
                         if poster_pics != None:
                             for data in poster_pics:
                                 print(
-                                    Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(i)))
+                                    Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                                 post = data.find("img")["src"]
                                 profile_pic = url.replace(
                                     username + "/search", "") + post.replace("/pic/", "pic/")
                                 image = folder + \
                                     "/Pic_{}.jpg".format(str(j))
                                 getter = requests.get(
-                                    profile_pic, headers=headers, allow_redirects=True)
-                                open(image, "wb").write(getter.content)
-                                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                      "DOWNLOAD SUCCESSFULL..")
-                                j = j+1
-                                sleep(2)
+                                    profile_pic, headers=headers, allow_redirects=False)
+                                try:
+                                    open(image, "wb").write(getter.content)
+                                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                          "DOWNLOAD SUCCESSFULL..")
+                                    j = j+1
+                                    sleep(2)
+                                except ConnectionError:
+                                    print(Font.Color.RED + "[!]" +
+                                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
+                                    continue
+                                except Exception as e:
+                                    print(Font.Color.RED + "[!]" +
+                                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                                    continue
                         else:
                             print(Font.Color.RED +
                                   "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Image"))

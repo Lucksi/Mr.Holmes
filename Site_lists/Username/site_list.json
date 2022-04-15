@@ -83,17 +83,6 @@
             "Scrapable": "False"
         },
         
-        "Spotify":{
-            "Error": "Message",
-            "text": "Spotify- Web Player",
-            "name": "Spotify",
-            "main": "spotify.com",
-            "user": "https://open.spotify.com/user/{}",
-            "user2": "https://open.spotify.com/user/{}",
-            "exception": [" "],
-            "Scrapable": "False"
-        },
-        
         "Twitch":{
             "Error": "Status-Code",
             "name": "Twitch",
@@ -926,9 +915,9 @@
             "Scrapable": "False"
         },
 
-        "Tiktok":{
+        "TikTok":{
             "Error": "Status-Code",
-            "name": "Tiktok",
+            "name": "TikTok",
             "main": "tiktok.com",
             "user": "https://www.tiktok.com/@{}",
             "user2": "https://urlebird.com/user/{}/",
@@ -1458,6 +1447,16 @@
             "main": "opensea.io",
             "user": "https://opensea.io/{}",
             "user2": "https://opensea.io/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False"
+        },
+
+        "HeyLink.me":{
+            "Error": "Status-Code",
+            "name": "HeyLink.me",
+            "main": "heylink.me",
+            "user": "https://heylink.me/{}/",
+            "user2": "https://heylink.me/{}/",
             "exception": [" ","/"],
             "Scrapable": "False"
         }
