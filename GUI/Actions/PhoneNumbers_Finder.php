@@ -25,22 +25,49 @@
         echo "<br>";
         echo "<div class = 'Geo'>";
         echo "<p id = 'Const'>PHONE-GEOLOCATION</p>";
-        $Ip_File = "../Reports/Phone/{$File_name}/GeoLocation.json";
-        $reader = file_get_contents($Ip_File);
+        $Area_File = "../Reports/Phone/{$File_name}/Area_GeoLocation.json";
+        $Time_Zone_File = "../Reports/Phone/{$File_name}/Zone_GeoLocation.json";
+        $reader = file_get_contents($Area_File);
         $parser = json_decode($reader,true);
         $Latitude = $parser["Geolocation"]["Latitude"];
         $Longitude = $parser["Geolocation"]["Longitude"];
+        $reader2 = file_get_contents($Time_Zone_File);
+        $parser2 = json_decode($reader2,true);
+        $Latitude2 = $parser2["Geolocation"]["Latitude"];
+        $Longitude2 = $parser2["Geolocation"]["Longitude"];
+        $MarkLat ="";
+        $MarkLon="";
+        if (file_exists($Area_File)){
+            $MarkLat = $Latitude;
+            $MarkLon = $Longitude;
+            $Area_Marker =  "var marker = new L.marker([$Latitude,$Longitude]).addTo(map)
+            .bindPopup('Your Target Area approximatley based in this Area.')
+            .openPopup();";
+        }
+        else{
+            $Area_Marker = "";
+        }
+        if (file_exists($Time_Zone_File)){
+            if ($MarkLat == "" &&  $MarkLon == ""){
+                $MarkLat = $Latitude2;
+                $MarkLon = $Longitude2;
+            }
+            $Area_Marker2 =  "var marker = new L.marker([$Latitude2,$Longitude2]).addTo(map)
+            .bindPopup('Your Target Zone approximatley based in this Area.')
+            .openPopup();";
+        }
+        else{
+            $Area_Marker2 = "";
+        }
         echo "
         <div class = 'map' id='map'></div>
         <script>
-        var map = L.map('map').setView([$Latitude,$Longitude], 14);
+        var map = L.map('map').setView([$MarkLat,$MarkLon], 7);
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
         attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
         }).addTo(map);
-
-        L.marker([$Latitude,$Longitude]).addTo(map)
-        .bindPopup('Your Target is approximatley based in this Area.')
-        .openPopup();
+        $Area_Marker
+        $Area_Marker2
         </script>";
     }
 

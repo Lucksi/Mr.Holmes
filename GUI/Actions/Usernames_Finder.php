@@ -67,73 +67,97 @@
             $image = glob($Dir_Name."*.jpg");
             $details = glob($Dir_Name."*.txt");
             $geo = glob($Dir_Name."*.json");
+            $fold = glob("$Dir_Name*" ,GLOB_ONLYDIR);
             $i = 0;
-            $j = 0;
             $g = 0;
-            $count_P = 0;
-            $count_D = 0;
-            
-            foreach($image as $Content){
-                $i = $i +1;
-            }
-
-            foreach($details as $Datas){
-                $j = $j +1;
-            }
+            $n = 1;
+            $n1 = 1;
+            $j = 0;
             
             $profile_pic = str_replace("_Posts","",$Folder_name);
-            echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
-            for ($count_P = 1; $count_P<=$i; $count_P ++){
-                $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/Pic_$count_P.jpg";
-                if (file_exists($Content)){
-                    echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$count_P'></a>";
+            if(getimagesize("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg") == false){
+                            
+            }
+            else{
+                /*echo "\t\t\t<a href = '{$profile_pic}' target = 'blank'><img src = '{$profile_pic}' id = 'pics' abbr title = '$profile_pic'></a>";
+                echo "<br>";*/
+                echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_{$profile_pic}.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
+            }
+            #echo "<a href = ../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
+            
+            foreach(array_reverse($image) as $Content1){
+                $i = $i +1;
+                $img1 = $Content1;
+                if (file_exists($img1)){
+                    if(getimagesize($img1) == false){
+
+                    }
+                    else{
+                        echo "\t\t\t<a href = '{$img1}'target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
+                    }
                 }
                 else{
-
+                    echo "none";
                 }
             }
             echo "</div>";
             echo "<div class = 'Data3'>";
             echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
-            for ($count_D = 1; $count_D<=$j; $count_D ++){
-                $Text = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/Post_{$count_D}_details.txt";
-                $opener = fopen($Text,"r");
+            
+            foreach(array_reverse($fold) as $Content => $value){
+                $b = 0;
+                $data_file = glob("$value/*"."txt");
+                if ($Folder_name == "Instagram_Posts"){
+                    $cut_img = str_replace("$value/","",$data_file[$b]);
+                    $img = str_replace(".txt",".jpg",$cut_img);
+                    $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
+                    echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
+                }
+                $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
                 while(!feof($opener)){
                     $reader = fgets($opener);
                     echo "<p>$reader</p>";
-                }
+                }                
                 echo "<hr>";
+                $n1 = $n1 +1 ;
             }
             echo "</div>";
             if ($Folder_name == "Instagram_Posts"){
                 echo "<div class = 'Data4'>";
                 echo "<p id = 'Const2'>{$Argument_Name} GEOLOCATION:</p>";
-                foreach($geo as $Data){
-                    $g = $g +1;
-                    $format_name = str_replace("$Dir_Name","",$Data);
+                foreach(array_reverse($fold) as $Content => $value){
+                    $b = 0;
+                    $data_file = glob("$value/*"."json");
+                    $format_name = str_replace("$Dir_Name","",$data_file);
                     $complete_name = str_replace(".json","",$format_name);
-                    $final = str_replace("_GeoData","",$complete_name);
-                    $final_name = str_replace("_","N°",$final);
-                    $number = str_replace("PostN°","",$final_name);
-                    $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/Pic_$number.jpg";
-                    echo "<img src = '{$Content}' id = 'pics' abbr title = 'Post N°$number'></a>";
-                    $reader = file_get_contents($Data);
-                    $parser = json_decode($reader,true);
-                    $Latitude = $parser["Geolocation"]["Latitude"];
-                    $Longitude = $parser["Geolocation"]["Longitude"];
-                    echo "
-                    <div class = 'map' id='map{$g}'></div>
-                    <script>
-                    var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
-                    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                    attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
-                    }).addTo(map);
+                    $cut_img = str_replace("$value/","",$data_file[$b]);
+                    if(file_exists($data_file[$b])){
+                        $img = str_replace(".json",".jpg",$cut_img);
+                        $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
+                        echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
+                        $reader = file_get_contents($data_file[$b]);
+                        $parser = json_decode($reader,true);
+                        $Latitude = $parser["Geolocation"]["Latitude"];
+                        $Longitude = $parser["Geolocation"]["Longitude"];
+                        echo "
+                        <div class = 'map' id='map{$g}'></div>
+                        <script>
+                        var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
+                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                        attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                        }).addTo(map);
+    
+                        L.marker([$Latitude,$Longitude]).addTo(map)
+                        .bindPopup('Post°{$n} is approximatley based in this Area.')
+                        .openPopup();
+                        </script>";
+                        echo "<hr>";
+                        $g = $g +1;
+                    }
+                    else{
 
-                    L.marker([$Latitude,$Longitude]).addTo(map)
-                    .bindPopup('Post°{$number} is approximatley based in this Area.')
-                    .openPopup();
-                    </script>";
-                    echo "<hr>";
+                    }
+                    $n = $n + 1;
                 }
             }
         } 
@@ -179,8 +203,13 @@
                     foreach($image as $Content) {
                         $abbr_1 = str_replace("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_","",$Content);
                         $abbr_2 = str_replace(".jpg","",$abbr_1);
-                        echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$abbr_2'></a>";
-                        echo "<br>";
+                        if(getimagesize($Content) == false){
+                            
+                        }
+                        else{
+                            echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$abbr_2'></a>";
+                            echo "<br>";
+                        }
                     }
                 }
                 else{

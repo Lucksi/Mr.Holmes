@@ -100,7 +100,7 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
-.Data_img img, .Data4 img {
+.Data_img img, .Data4 img, .Data3 img {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -111,7 +111,7 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
-.Data4 img{
+.Data4 img, .Data3 img{
     margin-top: 20px;
     margin-bottom: 30px;
     height: 300px;

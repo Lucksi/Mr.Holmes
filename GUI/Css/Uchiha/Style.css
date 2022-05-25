@@ -342,4 +342,9 @@ p {
         min-width: 150px;
         max-width: 305px;
     }
+
+    body{
+        background-color: #000000da !important;
+        animation: dissolvent 2s 1;
+    }
 }
