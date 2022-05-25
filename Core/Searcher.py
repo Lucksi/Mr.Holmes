@@ -96,10 +96,10 @@ class MrHolmes:
                     identity = "None"
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Username"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
     def Google_dork(username):
@@ -130,21 +130,28 @@ class MrHolmes:
         Dorks.Search.dork(username, report, nomefile, Type)
 
     @staticmethod
-    def search(username):
+    def search(username,Mode):
         successfull = []
         successfullName = []
         ScraperSites = []
         Writable = True
-        MrHolmes.Banner()
+        MrHolmes.Banner(Mode)
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
         folder = "GUI/Reports/Usernames/" + username + "/"
-        if os.path.isdir(folder):
-            shutil.rmtree(folder)
+        #if os.path.isdir(folder):
+        #    shutil.rmtree(folder)
+        #    print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+        #          Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        report = folder + username + ".txt"
+        if os.path.exists(report):
+            os.remove(report)
+            os.remove(folder + "Name.json")
+            os.remove(report.replace(".txt",".json"))
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
-        os.mkdir(folder)
-        report = folder + username + ".txt"
+        else:
+            os.mkdir(folder)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -200,9 +207,14 @@ class MrHolmes:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + names)
             if len(ScraperSites):
                 os.chdir("GUI/Reports/Usernames/{}".format(username))
+                #if os.path.isdir("Profile_pics"):
+                #    shutil.rmtree("Profile_pics")
+                #    os.mkdir("Profile_pics")
+                #else:
+                #    os.mkdir("Profile_pics")
+                #os.chdir("../../../../")
                 if os.path.isdir("Profile_pics"):
-                    shutil.rmtree("Profile_pics")
-                    os.mkdir("Profile_pics")
+                    pass
                 else:
                     os.mkdir("Profile_pics")
                 os.chdir("../../../../")

@@ -344,6 +344,9 @@ function installer {
 		cd ../
 		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
 		sleep 2
+		printf "\n\nSETTING CLI INTERFACE..."
+		echo "Desktop">Mr.Holmes/Display/Display.txt
+		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
 		exit 0

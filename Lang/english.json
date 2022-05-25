@@ -46,7 +46,9 @@
 
     "Main":{
         "Text": "[INSERT AN OPTION 'PRESS 0 TO REFRESH THE QUOTE']",
+        "MobileText": "[INSERT AN OPTION]",
         "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\n(5)DATABASE\t\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\n(9)EXIT",
+        "MobileOptions":"(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)DATABASE\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)EXIT",
         "Alert": "ATTENTION SOME OF THE RESULTS MAY BE FALSE POSITIVES",
         "Username": "INSERT THE USERNAME",
         "Phone": "INSERT THE PHONE NUMBER WITHOUT(+)",
@@ -72,7 +74,10 @@
                 "Details": "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS(1)YES(2)NO\n\n",
                 "TotDetails": "POST DETAILS SAVED ON: {}",
                 "Image": "IMAGES SAVED ON: {}",
-                "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS"
+                "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS",
+                "Check": "CHECKING IF {}.jpg EXIST...",
+                "CheckTrue": "IMAGE EXIST SKIPPING",
+                "CheckFalse": "IMAGE DOESNT EXIST DOWNLOADING..."
             },
             
             "Instagram":{
@@ -84,7 +89,8 @@
                 "Data": "CHECKING POST {} PUBLICATION DATE...",
                 "Private": "LOOKS LIKE THIS USER IS PRIVATE..CANNOT SCRAPE DATA",
                 "GeoData": "CHECKING POST {} GEODATA (ATTENTION COORDINATES MAY NOT BE 100% ACCURATES)",
-                "NoGeoData": "IMPOSSIBLE CHECKING GEODATA"
+                "NoGeoData": "IMPOSSIBLE CHECKING GEODATA",
+                "FoldFound": "INSTAGRAM POSTS ALREADY FOUND WOULD YOU LIKE TO DELETE THEME?(1)YES(2)NO"
             },
             
             "Twitter":{

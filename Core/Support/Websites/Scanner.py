@@ -62,6 +62,7 @@ class Port:
             Ports_List = []
             amount = 0
             Def = False
+            i = 0
             amount = int(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Ports", "Amounts", "None") +
                                Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             while amount == "":
@@ -74,23 +75,28 @@ class Port:
                     port = int(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Ports", "Number", "None") +
                                      Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 Ports_List.append(port)
-        try:
-            if Def:
-                for port in range(Min, Max):
-                    Port.Get_Port(Server, report, port, Open_Ports)
+        elif nPorts == 4:
+            inp = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
+            #holmes.Main.Menu(Mode)
+        if nPorts != 4:
+            try:
+                if Def:
+                    for port in range(Min, Max):
+                        Port.Get_Port(Server, report, port, Open_Ports)
+                else:
+                    for port in Ports_List:
+                        Port.Get_Port(Server, report, port, Open_Ports)
+            except Exception as e:
+                print(Font.Color.RED +
+                    "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Ports", "Error", "None"))
+            if len(Open_Ports):
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                    Language.Translation.Translate_Language(filename, "Ports", "OpenPorts", "None").format(username))
+                sleep(4)
+                for ports in Open_Ports:
+                    print(Font.Color.YELLOW +
+                        "[v]" + Font.Color.WHITE + "PORT: {}".format(ports))
+            
             else:
-                for port in Ports_List:
-                    Port.Get_Port(Server, report, port, Open_Ports)
-        except Exception as e:
-            print(Font.Color.RED +
-                  "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Ports", "Error", "None"))
-        if len(Open_Ports):
-            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                  Language.Translation.Translate_Language(filename, "Ports", "OpenPorts", "None").format(username))
-            sleep(4)
-            for ports in Open_Ports:
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PORT: {}".format(ports))
-        else:
-            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                  Language.Translation.Translate_Language(filename, "Ports", "NoPorts", "None").format(username))
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                    Language.Translation.Translate_Language(filename, "Ports", "NoPorts", "None").format(username))

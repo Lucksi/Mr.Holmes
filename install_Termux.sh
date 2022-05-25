@@ -10,7 +10,7 @@ LIGHTGREEN=$(tput setaf 10)
 
 function banner {
 	clear
-	reader=$(<"Banners/Banner6.txt")
+	reader=$(<"Banners/Banner3.txt")
 	echo "${GREEN}$reader"
 }
 
@@ -83,6 +83,7 @@ function Options {
 	else
 		Options
 	fi
+	printf "\n"
 	printf "${WHITE}\nINSERT YOUR UPDATE-PASSWORD\n\n"
 	read -sp"$GREEN[#MR.HOLMES#]$WHITE-->" up_pass
 	while [ "$up_pass" = "" ];
@@ -172,6 +173,7 @@ function installer {
 		cd ../
 		cd ../
 		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
+		echo "Mobile">Mr.Holmes/Display/Display.txt
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"

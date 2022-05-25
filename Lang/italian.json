@@ -46,7 +46,9 @@
 
     "Main":{
         "Text": "[INSERISCI UNA OPZIONE 'PREMI 0 PER UNA CITAZIONE RANDOM']",
+        "MobileText": "[INSERISCI UNA OPZIONE]",
         "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURAZIONE\n(5)DATABASE\t\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\n(9)ESCI",
+        "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURAZIONE\n(5)DATABASE\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)ESCI",
         "Alert": "ATTENZIONE ALCUNI RISULTATI POSSO RISULTARE FALSI POSITIVI",
         "Username": "INSERISCI UN USERNAME",
         "Phone": "INSERT UN NUMERO TELEFONICO SENZA(+)",
@@ -72,7 +74,10 @@
                 "Details": "VUOI SCARICARE I DETTAGLI DEI POST?(1)SI(2)NO\n\n",
                 "NoPost": "QUESTO USER NON HA POST IMPOSSIBILE SCARICARE FOTO",
                 "TotDetails": "POST DETAILS SALVATI IN: {}",
-                "Image": "IMMAGINI SALVATE IN: {}"
+                "Image": "IMMAGINI SALVATE IN: {}",
+                "Check": "CONTROLLO SE {}.jpg ESISTE...",
+                "CheckTrue": "L'IMMAGINE ESISTE SKIPPO..",
+                "CheckFalse": "L'IMMAGINE NON ESISTE ESEGUO IL DOWNLOAD..."
             },
         
             "Instagram":{
@@ -84,7 +89,8 @@
                 "Data": "CERCO LA DATA DI PUBBLICAZIONE DEL POST {} ...",
                 "Private": "SEMBRA CHE QUESTO PROFILO SIA PRIVATO IMPOSSIBILE EFFETTUARE LO SCRAPING",
                 "GeoData": "PRENDO I GEODATA DEL POST {} (ATTENZIONE LE COORDINATE POTREBBERO NON ESSERE PRECISE AL 100%)",
-                "NoGeoData": "IMPOSSIBILE PRENDERE I GEODATA"
+                "NoGeoData": "IMPOSSIBILE PRENDERE I GEODATA",
+                "FoldFound": "SONO GIA STATI TROVATI DEI POST VUOI CANCELLARLI(SE SI TENGONO I NUOVI POST VERRANNO AGGIUNTI)?(1)YES(2)NO"
             },
 
             "Twitter":{

@@ -19,7 +19,44 @@ filename
 
 class Phony:
 
-    def Number(num, report, code):
+    @staticmethod
+    def Get_GeoLocation(zone, param1, param2, jsonfile,num):
+        req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
+            zone)
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              Language.Translation.Translate_Language(filename, "Phone", "Geo", "None").format(num))
+        sleep(2)
+        url = urllib.request.urlopen(req)
+        try:
+            Reader = url.read()
+            parser = json.loads(Reader)
+            Lat = parser[0]["lat"]
+            Lon = parser[0]["lon"]
+            data = {
+                "Geolocation": {
+                     "Latitude": Lat,
+                     "Longitude": Lon
+                }
+            }
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                  "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
+            sleep(2)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                  "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
+            sleep(2)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                  "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
+            datafile = open(jsonfile, "a", encoding="utf-8")
+            json.dump(data, datafile,
+                      ensure_ascii=False, indent=4)
+            datafile.close()
+
+        except Exception as e:
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                filename, "Phone", "NoGeo", "None" + str(e)))
+
+    @staticmethod
+    def Number(num, report, code, Mode):
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Phone", "Scan", "None").format(num))
         sleep(4)
@@ -29,15 +66,15 @@ class Phony:
         except Exception as e:
             inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                         Language.Translation.Translate_Language(filename, "Phone", "NotFound2", "None"))
-            holmes.Main.Menu()
+            holmes.Main.Menu(Mode)
         else:
             if not phonenumbers.is_valid_number(Phone):
                 reality = (Language.Translation.Translate_Language(
                     filename, "Phone", "NoReal", "None"))
-
-            reality = Language.Translation.Translate_Language(
-                filename, "Phone", "Real", "None")
-            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + reality)
+            else:
+                reality = Language.Translation.Translate_Language(
+                    filename, "Phone", "Real", "None")
+                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + reality)
 
             number = phonenumbers.format_number(
                 Phone, phonenumbers.PhoneNumberFormat.E164
@@ -80,7 +117,8 @@ class Phony:
                       "[v]" + Font.Color.WHITE + "TIMEZONE N°{}: {}".format(i, timezoneResult))
                 i = i+1
             sleep(2)
-            jsonfile = report.replace(num + ".txt", "GeoLocation.json")
+            jsonfile = report.replace(num + ".txt", "Area_GeoLocation.json")
+            jsonfile2 =  report.replace(num + ".txt", "Zone_GeoLocation.json")
             if location != "":
                 if " " in location:
                     zone = location.split(" ", 1)[1]
@@ -88,45 +126,18 @@ class Phony:
                     zone = location
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "Area", "None"))
+                Phony.Get_GeoLocation(zone,"Lat1","Long1",jsonfile,num)
             else:
-                zone = timezoneResult.split("/", 1)[-1]
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "NoArea", "None"))
+            zone = timezoneResult.split("/", 1)[-1]
+            
             if zone != "Unknown":
-                req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
-                    zone)
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Phone", "Geo", "None").format(num))
-                sleep(2)
-                url = urllib.request.urlopen(req)
-                try:
-                    Reader = url.read()
-                    parser = json.loads(Reader)
-                    Lat = parser[0]["lat"]
-                    Lon = parser[0]["lon"]
-                    data = {
-                        "Geolocation": {
-                            "Latitude": Lat,
-                            "Longitude": Lon
-                        }
-                    }
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                          "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
-                    sleep(2)
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                          "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
-                    sleep(2)
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                          "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
-                    with open(jsonfile, "w", encoding="utf-8") as output:
-                        json.dump(data, output,
-                                  ensure_ascii=False, indent=4)
-                except Exception as e:
-                    print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
-                        filename, "Phone", "NoGeo", "None"))
+                Phony.Get_GeoLocation(zone,"Lat","Long",jsonfile2,num)
+            
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Phone", "NoGeo", "None").format(number))
+                      Language.Translation.Translate_Language(filename, "Phone", "NoZone", "None").format(number))
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Phone", "Affidability", "None"))
             sleep(2)

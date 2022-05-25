@@ -18,14 +18,14 @@ filename
 class Ports:
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Ports"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
-    def Main(username):
-        Ports.Banner()
+    def Main(username,Mode):
+        Ports.Banner(Mode)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)

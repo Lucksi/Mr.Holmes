@@ -26,10 +26,10 @@ filename
 class Phone_search:
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Phone"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
     def Google_dork(username):
@@ -177,7 +177,7 @@ class Phone_search:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
                                                       subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
-                    except Exception as e:
+                    except ConnectionError:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
@@ -186,7 +186,10 @@ class Phone_search:
                                                           subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file,json_file2)
                         except Exception as e:
                             print(
-                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None") + str(e))
+                    except Exception as e:
+                            print(
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None") + str(e))
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "TotFound", "None").format(subject, username))
 
@@ -211,8 +214,8 @@ class Phone_search:
             pass
 
     @staticmethod
-    def searcher(username):
-        Phone_search.Banner()
+    def searcher(username,Mode):
+        Phone_search.Banner(Mode)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -228,7 +231,7 @@ class Phone_search:
         f.close()
         num = username
         code = 1
-        Numbers.Phony.Number(num, report, code)
+        Numbers.Phony.Number(num, report, code, Mode)
         Phone_search.lookup(username, report)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)

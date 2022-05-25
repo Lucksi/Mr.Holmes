@@ -20,10 +20,10 @@ filename
 class Config:
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Configuration"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
     def modify_recipient():
@@ -434,7 +434,7 @@ class Config:
             os.chdir("../")
 
     @staticmethod
-    def main():
+    def main(Mode):
         filename = Language.Translation.Get_Language()
         filename
         if (os.name!= "nt"):
@@ -446,7 +446,7 @@ class Config:
             Conf = True
         if Conf == True:
             while True:
-                Config.Banner()
+                Config.Banner(Mode)
                 option = Language.Translation.Translate_Language(filename,"Configuration","Main","Options")
                 options = str(option)
                 print(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Text"))
@@ -481,9 +481,9 @@ class Config:
                     Config.modify_Email_Status()
                 elif sce == 14:
                     inp = input(Language.Translation.Translate_Language(filename,"Configuration","Main","Exit"))
-                    holmes.Main.Menu()
+                    holmes.Main.Menu(Mode)
                 else:
                     Config.main()
         else:
             inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Configuration","Main","NoRoot"))
-            holmes.Main.Menu()
+            holmes.Main.Menu(Mode)

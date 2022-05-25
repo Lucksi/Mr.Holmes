@@ -5,6 +5,7 @@
 
 import os
 import json
+from Core.Searcher import MrHolmes
 import MrHolmes as holmes
 from Core.Support import Font
 from Core.Support import Creds
@@ -22,10 +23,10 @@ filename
 class Mail_search:
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/E-Mail"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
     def Google_dork(username):
@@ -47,7 +48,7 @@ class Mail_search:
         Dorks.Search.dork(username, report, nomefile, Type)
 
     @staticmethod
-    def searcher(username, report):
+    def searcher(username, report,Mode):
         nomefile = "Temp/E-Mail/Code.txt"
         if os.path.isfile(nomefile):
             list_file = "Site_lists/E-Mail/Lists.json"
@@ -68,11 +69,11 @@ class Mail_search:
             f.close()
             os.remove(nomefile)
         else:
-            holmes.Main.Menu()
+            holmes.Main.Menu(Mode)
 
     @staticmethod
-    def Search(username):
-        Mail_search.Banner()
+    def Search(username,Mode):
+        Mail_search.Banner(Mode)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -85,7 +86,7 @@ class Mail_search:
         f.write("SCANNING EXECUTED ON:\n" + Date + "\n")
         f.close()
         mail.Validator.Mail(username, report)
-        Mail_search.searcher(username, report)
+        Mail_search.searcher(username, report, Mode)
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:

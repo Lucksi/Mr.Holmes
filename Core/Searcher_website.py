@@ -22,6 +22,7 @@ from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
 
+
 filename = Language.Translation.Get_Language()
 filename
 
@@ -40,10 +41,10 @@ class Web:
             Web.trace(username, report)
 
     @staticmethod
-    def Banner():
+    def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Websites"
-        banner.Random.Get_Banner(Folder)
+        banner.Random.Get_Banner(Folder,Mode)
 
     @staticmethod
     def Reputation(username, report):
@@ -306,7 +307,7 @@ class Web:
         Dorks.Search.dork(username, report, nomefile, Type)
 
     @staticmethod
-    def whois_lookup(username, report):
+    def whois_lookup(username, report, Mode):
         api = "Configuration/Configuration.ini"
         Parser = ConfigParser()
         Parser.read(api)
@@ -444,7 +445,7 @@ class Web:
                         f.write("\nPHONE NUMBER DATA:\n")
                         f.close()
                         code = 0
-                        Numbers.Phony.Number(num, report, code)
+                        Numbers.Phony.Number(num, report, code, Mode)
                     else:
                         pass
                 else:
@@ -491,9 +492,9 @@ class Web:
                             Web.trace(username, report)
 
     @staticmethod
-    def search(username):
+    def search(username,Mode):
         os.system("cls" if os.name == "nt" else "clear")
-        Web.Banner()
+        Web.Banner(Mode)
         folder = "GUI/Reports/Websites/" + username + "/"
         if os.path.isdir(folder):
             shutil.rmtree(folder)
@@ -579,7 +580,7 @@ class Web:
         choice = int(input(
             Font.Color.BLUE + " \n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Whois") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.whois_lookup(username, report)
+            Web.whois_lookup(username, report, Mode)
         else:
             num = None
             number = False

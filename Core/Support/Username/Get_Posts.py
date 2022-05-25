@@ -7,6 +7,7 @@ import os
 import requests
 import urllib
 import json
+import shutil
 from Core.Support import Font
 from Core.Support import Language
 from bs4 import BeautifulSoup as soup
@@ -36,9 +37,15 @@ class Downloader:
             folder = "GUI/Reports/Usernames/{}/Profile_pics/Instagram_Posts".format(
                 username)
             if os.path.isdir(folder):
-                os.rmdir(folder)
-            os.mkdir(folder)
-
+                keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
+                            Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if keep == 1:
+                    shutil.rmtree(folder)
+                    os.mkdir(folder)
+                else:
+                    pass
+            else:
+                os.mkdir(folder)
             details = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                 Language.Translation.Translate_Language(LangFile, "Username", "Default", "Details") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             openurl = requests.get(
@@ -50,6 +57,7 @@ class Downloader:
             j = 1
             d = 1
             t = 1
+            arr_name = []
 
             while i <= range_band:
                 for image in profile:
@@ -58,12 +66,27 @@ class Downloader:
                               Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Download").format(str(i)))
                         profile_pic = image.find(
                             "img", class_="post-image")["src"]
-                        image = folder + "/Pic_{}.jpg".format(str(i))
-                        getter = requests.get(
-                            profile_pic, headers=headers, allow_redirects=True)
-                        open(image, "wb").write(getter.content)
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                              "DOWNLOAD SUCCESSFULL..")
+                        name = image.find("a")["href"].replace(
+                            "https://www.picuki.com/media/", "")
+                        arr_name.append(name)
+                        print(
+                            Font.Color.GREEN + "[+]" + Font.Color.WHITE + "POST ID: {}".format(name))
+                        image = folder + "/{}.jpg".format(name)
+                        print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
+                            Language.Translation.Translate_Language(LangFile, "Username", "Default", "Check").format(name))
+                        sleep(2)
+                        if os.path.exists(image):
+                            print(
+                                Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Default", "CheckTrue"))
+                            sleep(2)
+                        else:
+                            print(
+                                Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Default", "CheckFalse"))
+                            getter = requests.get(
+                                profile_pic, headers=headers, allow_redirects=True)
+                            open(image, "wb").write(getter.content)
+                            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+                                  "DOWNLOAD SUCCESSFULL..")
                         i = i+1
                     except ConnectionError:
                         print(
@@ -72,7 +95,7 @@ class Downloader:
                         continue
                     except Exception as e:
                         print(
-                            Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                            Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                         i = i+1
                         continue
 
@@ -81,8 +104,13 @@ class Downloader:
                 while j <= range_band:
                     for info in description:
                         try:
-                            filename = folder + \
-                                "/Post_{}_details.txt".format(str(j))
+                            data_fold = folder + "/" + arr_name[j-1]
+                            if os.path.isdir(data_fold):
+                                shutil.rmtree(data_fold)
+
+                            os.mkdir(data_fold)
+                            filename = data_fold + \
+                                "/{}.txt".format(arr_name[j-1])
                             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Details").format(str(j)))
                             descr = info.find(
@@ -94,15 +122,15 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   "LOCATION: {}".format(location.strip()))
                             f = open(filename, "w", encoding="utf-8")
-                            f.write("POST N°{} DATA:\n".format(str(j)))
+                            f.write("POST ID {} DATA:\n".format(str(name)))
                             f.write("DESCRIPTION: {}\r\n".format(descr.strip()))
                             f.write("LOCATION: {}\r\n".format(
-                                location.strip()))
+                                    location.strip()))
                             if location.strip() == "":
                                 pass
                             else:
-                                jsonfile = folder + \
-                                    "/Post_{}_GeoData.json".format(str(j))
+                                jsonfile = data_fold + \
+                                    "/{}.json".format(arr_name[j-1])
                                 final_loc = location.strip()
                                 format_loc = final_loc.replace(" ", "+")
                                 req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
@@ -146,17 +174,17 @@ class Downloader:
                             continue
                         except Exception as e:
                             print(Font.Color.RED + "[!]" +
-                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                                  Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                             j = j+1
                             continue
-
                 footer = reader.find_all(
                     "div", class_="likes_comments_photo")
                 while d <= range_band:
                     for info in footer:
                         try:
-                            filename = folder + \
-                                "/Post_{}_details.txt".format(str(d))
+                            data_fold = folder + "/" + arr_name[d-1]
+                            filename = data_fold + \
+                                "/{}.txt".format(arr_name[d-1])
                             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Likes/Comments").format(str(d)))
                             likes = info.find("div", class_="likes_photo").text
@@ -171,7 +199,7 @@ class Downloader:
                             f = open(filename, "a")
                             f.write("LIKES: {}\r\n".format(likes.strip()))
                             f.write("COMMENTS: {}\r\n".format(
-                                comments.strip()))
+                                    comments.strip()))
                             f.close()
                             d = d+1
                             sleep(2)
@@ -190,8 +218,9 @@ class Downloader:
                 while t <= range_band:
                     for info in Time:
                         try:
-                            filename = folder + \
-                                "/Post_{}_details.txt".format(str(t))
+                            data_fold = folder + "/" + arr_name[t-1]
+                            filename = data_fold + \
+                                "/{}.txt".format(arr_name[t-1])
                             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Data").format(str(t)))
                             time = info.find("span").text
@@ -213,7 +242,8 @@ class Downloader:
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             t = t+1
                             continue
-
+                else:
+                    pass
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Default", "TotDetails").format(folder))
             else:
@@ -240,7 +270,7 @@ class Downloader:
             folder = "GUI/Reports/Usernames/{}/Profile_pics/Twitter_Posts".format(
                 username)
             if os.path.isdir(folder):
-                os.rmdir(folder)
+                shutil.rmtree(folder)
             os.mkdir(folder)
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
@@ -337,7 +367,9 @@ class Downloader:
                     date = info.find("span", class_="tweet-date").text
                     print(Font.Color.YELLOW +
                           "[v]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
-                    filename = folder + \
+                    data_fold = folder + "/" + "Pic_{}".format(str(i))
+                    os.mkdir(data_fold)
+                    filename = data_fold + \
                         "/Post_{}_details.txt".format(str(i))
                     f = open(filename, "w", encoding="utf-8")
                     f.write("POST N°{} DATA:\n".format(str(i)))
@@ -350,6 +382,9 @@ class Downloader:
                     i = i+1
                     sleep(2)
                     if i == range_band + 1:
+                        f = open(data_fold + "Max_Counter.txt", "w")
+                        f.write("{}".format(str(i)))
+                        f.close()
                         break
                 except ConnectionError:
                     print(Font.Color.RED + "[!]" +
@@ -358,7 +393,7 @@ class Downloader:
                     continue
                 except Exception as e:
                     print(Font.Color.RED + "[!]" +
-                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                     i = i+1
                     continue
         else:
