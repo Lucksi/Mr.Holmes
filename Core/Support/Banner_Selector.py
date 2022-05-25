@@ -8,7 +8,6 @@ from Core.Support import Font
 
 class Random:
 
-    @staticmethod
     def Get_Banner(Folder,Mode):
         List = ["Banner1.txt", "Banner2.txt", "Banner3.txt"]
         if Mode == "Desktop":
