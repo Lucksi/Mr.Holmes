@@ -25,7 +25,9 @@
 
 <br>
 
-<img src = "Screenshot/Termux.png" height = "400px" width = "300px" style = "display:block; margin-left:auto;margin-right:auto;">
+<p align = "center">
+<img src = "Screenshot/Termux.png" height = "400px" width = "300px">
+</p>
 
 <br>
 
