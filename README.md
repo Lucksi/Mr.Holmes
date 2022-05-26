@@ -25,6 +25,10 @@
 
 <br>
 
+<img src = "Screenshot/Termux.png" height = "400px" width = "300px" style = "display:block; margin-left:auto;margin-right:auto;">
+
+<br>
+
 # :heavy_check_mark: INSTALLATION LINUX/MAC:
 ```bash
 git clone https://github.com/Lucksi/Mr.Holmes
