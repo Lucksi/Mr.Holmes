@@ -28,7 +28,7 @@ class info:
         try:
              open(image, "wb").write(getter.content)
              print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-              "PROFILE PIC SAVED ON: {}".format(image))
+              Language.Translation.Translate_Language(filename,"Username","Default","Saved").format(image))
         except Exception as e:
             print("error" + str(e))
 

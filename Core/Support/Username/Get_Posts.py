@@ -86,7 +86,7 @@ class Downloader:
                                 profile_pic, headers=headers, allow_redirects=True)
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                  "DOWNLOAD SUCCESSFULL..")
+                                  Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
                         i = i+1
                     except ConnectionError:
                         print(
@@ -299,7 +299,7 @@ class Downloader:
                         try:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                  "DOWNLOAD SUCCESSFULL..")
+                                  Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
                             j = j+1
                             sleep(2)
                         except ConnectionError:
