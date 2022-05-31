@@ -75,9 +75,9 @@
                 "TotDetails": "POST DETAILS REGISTREZ SUR: {}",
                 "Image": "IMAGES REGISTREZ SUR: {}",
                 "NoPost": "CETTE USER N'Y A PAS AUCUN POST..IMPOSSIBILE DOWNLOAD PROFILE PICS",
-                "Check": "CHECKING IF {}.jpg EXIST...",
-                "CheckTrue": "IMAGE EXIST SKIPPING",
-                "CheckFalse": "IMAGE DOESNT EXIST DOWNLOADING..."
+                "Check": "VERIFIER SI {}.jpg EXISTE...",
+                "CheckTrue": "IMAGE EXISTE SAUTANT",
+                "CheckFalse": "IMAGE N'EXISTE PAS TÉLÉCHARGEMENT..."
             },
 
             "Instagram":{
