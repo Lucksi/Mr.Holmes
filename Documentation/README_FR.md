@@ -26,7 +26,7 @@
 <br>
 
 <p align = "center">
-<img src = "Screenshot/Termux.png" height = "400px" width = "300px">
+<img src = "../Screenshot/Termux.png" height = "400px" width = "300px">
 </p>
 
 <br>
