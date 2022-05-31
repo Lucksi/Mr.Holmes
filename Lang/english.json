@@ -77,7 +77,8 @@
                 "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS",
                 "Check": "CHECKING IF {}.jpg EXIST...",
                 "CheckTrue": "IMAGE EXIST SKIPPING",
-                "CheckFalse": "IMAGE DOESNT EXIST DOWNLOADING..."
+                "CheckFalse": "IMAGE DOESNT EXIST DOWNLOADING...",
+                "Success": "DOWNLOAD SUCCESSFULL"
             },
             
             "Instagram":{

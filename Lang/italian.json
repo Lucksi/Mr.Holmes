@@ -77,7 +77,8 @@
                 "Image": "IMMAGINI SALVATE IN: {}",
                 "Check": "CONTROLLO SE {}.jpg ESISTE...",
                 "CheckTrue": "L'IMMAGINE ESISTE SKIPPO..",
-                "CheckFalse": "L'IMMAGINE NON ESISTE ESEGUO IL DOWNLOAD..."
+                "CheckFalse": "L'IMMAGINE NON ESISTE ESEGUO IL DOWNLOAD...",
+                "Success": "DOWNLOAD EFFETTUATO CON SUCCESSO"
             },
         
             "Instagram":{

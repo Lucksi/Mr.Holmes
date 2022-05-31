@@ -77,7 +77,8 @@
                 "NoPost": "CETTE USER N'Y A PAS AUCUN POST..IMPOSSIBILE DOWNLOAD PROFILE PICS",
                 "Check": "VERIFIER SI {}.jpg EXISTE...",
                 "CheckTrue": "IMAGE EXISTE SAUTANT",
-                "CheckFalse": "IMAGE N'EXISTE PAS TÉLÉCHARGEMENT..."
+                "CheckFalse": "IMAGE N'EXISTE PAS TÉLÉCHARGEMENT...",
+                "Success": "TELECHARGEMENT REUSSI"
             },
 
             "Instagram":{
@@ -90,7 +91,7 @@
                 "Private": "CETTE USER EST PRIVATE..IMPOSSIBILE FAIRE UNE DATA SCRAPE",
                 "GeoData": "CHERCHER POST {} GEODATA (ATTENTION LES COORDONNEES PEUVENT NE PAS ETRE EXACTES A 100 %)",
                 "NoGeoData": "IMPOSSIBILE PRENDRE LES GEODATA",
-                "FoldFound": "INSTAGRAM POSTS ALREADY FOUND WOULD YOU LIKE TO DELETE THEME?(1)YES(2)NO"
+                "FoldFound": "INSTAGRAM POSTS A ETE TROUVE ESR CE QUE TU VOULEZ SUPPRIMER LE POSTS?(1)OUI(2)NO"
             },
 
             "Twitter":{
