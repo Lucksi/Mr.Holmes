@@ -99,7 +99,7 @@
                 "Details": "CHERCHER TWITTE N {}...",
                 "Download_Full": "TELECHARGE {} TWITTES",
                 "Download_Partial": "TELECHARGE {} PREMIERE 12 TWITTES",
-                "No_Image": "NO IMAGE A ETE PAS TROUVE\n",
+                "No_Image": "NO IMAGE A ETE TROUVE\n",
                 "Yes_Image": "IMAGE {} TROUVE\n",
                 "No_Desc": "NO DESCRIPTION A ETE TROUVE",
                 "Protected": "CETTE USER A LES TWEETS SÉCURISÉS..IMPOSSIBILE FAIRE UNE DATA SCRAPE"
