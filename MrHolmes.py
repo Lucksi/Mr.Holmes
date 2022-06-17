@@ -1,4 +1,5 @@
 #!/usr/bin/python3
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -25,10 +26,10 @@ class Main:
             elif conf == "Mobile":
                 pass
             else:
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "LOOKS LIKE THERE IS AN INVALID OPTION ACCEPTED ONLY 'Desktop' OR 'Mobile' EXIT...")
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE +  Language.Translation.Translate_Language(filename, "Default", "DisplayError", "None"))
                 exit()
         else:
-             print(Font.Color.RED + "[!]" + Font.Color.WHITE + "FILE HAS NOT BEEN FOUND {} EXIT...".format(Interface_file))
+             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "NoDisplay", "None") .format(Interface_file))
         return conf
 
     def Menu(Mode):

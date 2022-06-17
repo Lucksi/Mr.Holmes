@@ -1,3 +1,4 @@
+::ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 ::AUTHOR: Luca Garofalo (Lucksi)
 ::Copyright (C) 2021-2022 Lucksi
 ::License: GNU General Public License v3.0

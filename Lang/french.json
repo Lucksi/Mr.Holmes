@@ -24,7 +24,11 @@
         "Delete": "ELIMINATION DE L'ANCIEN {}.txt",
         "Attempt": "RECHERCHER SUR: {}",
         "Internal": "ERREUR INTERNE LE MODULE {} N'EST PAST TROUVEE",
-        "KeyC": "SEMBLE QUE VOUS AVEZ APPUYÉ SUR CTRL-C EXIT..."
+        "NoDisplay": "LE FILE {} N'ETE PAS TROUVEE QUITTER...",
+        "KeyC": "SEMBLE QUE VOUS AVEZ APPUYÉ SUR CTRL-C QUITTER...",
+        "Map": "MAP REGISTREZ SUR: {}",
+        "Generated": "MAP GENERER PARA MR.HOLMES",
+        "DisplayError": "IL SEMBLE QU'IL Y A UNE OPTION INVALIDE ACCEPTEE UNIQUEMENT 'Desktop' OU 'Mobile'\n\nQUITTER..."
     },
 
     "Dorks":{
@@ -99,7 +103,7 @@
                 "Details": "CHERCHER TWITTE N {}...",
                 "Download_Full": "TELECHARGE {} TWITTES",
                 "Download_Partial": "TELECHARGE {} PREMIERE 12 TWITTES",
-                "No_Image": "NO IMAGE A ETE TROUVE\n",
+                "No_Image": "NO IMAGE A ETE PAS TROUVE\n",
                 "Yes_Image": "IMAGE {} TROUVE\n",
                 "No_Desc": "NO DESCRIPTION A ETE TROUVE",
                 "Protected": "CETTE USER A LES TWEETS SÉCURISÉS..IMPOSSIBILE FAIRE UNE DATA SCRAPE"
@@ -160,7 +164,9 @@
         "Search": "RECHERHCHER NUMERO {} SUR PLUS SITES",
         "Country": "NUMERO NATIONALITE:{}",
         "Area": "AREA TROUVE",
+        "Zone": "TIMEZONE TROUVE",
         "NoArea": "AREA N'ETE PAS TROUVE",
+        "NoZone": "TIMEZONE N'ETE PAS TROUVE",
         "Geo": "PRENANT LA GEOLOCALOISATION APPROXIMATIVE DU NUMERO {}",
         "NoGeo":"IMPOSSIBLE OBTENIR LA GEOLOCALOISATION APPROXIMATIVE DU NUMERO {}"
     },
@@ -190,7 +196,7 @@
     },
 
     "RecapEmail":{
-        "Disabled": "REPORT-EMAIL OPTION EST DISABILITEE C'EST NE PAS POSSIBILE INVOI L'EMAIL\nENTREZ INVOI PUR CONTINUE",
+        "Disabled": "REPORT-EMAIL OPTION EST DISABILITEE C'EST NE PAS POSSIBILE INVOI L'EMAIL\n\nENTREZ INVOI PUR CONTINUE",
         "Sender": "EST CE QUE TU VOULEZ TO RECEIVE UNE DATA-EMAIL?(1)YES(2)NO",
         "InProgress": "ENVOI DE EMAIL..",
         "Sent": "EMAIL ENVOI CORRETEMENT..\nENTRZ ENVOI POUR CONTINUE",

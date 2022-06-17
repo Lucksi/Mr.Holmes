@@ -257,4 +257,9 @@ write:François
 <br>
 
 ## <p align= center>CREER AVEC :heart: PAR LUCKSI IN :it:</p>
+<center>
+
+## CRÉATEUR ORIGINAL: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a>
+</center>
+
 ## <p align = center>LICENCE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 

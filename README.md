@@ -255,4 +255,9 @@ write:François
 <br>
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 
+<center>
+
+## ORIGINAL CREATOR: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a>
+</center>
+
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi
