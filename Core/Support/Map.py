@@ -42,12 +42,12 @@ class Creation:
                     L.marker([{},{}]).addTo(map).bindPopup('Number is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Username", "Default", "Generated"),image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Map").format(map_file))
+              Language.Translation.Translate_Language(LangFile, "Default", "Map", "None").format(map_file))
 
     @staticmethod
     def mapPhone(jsonfile, Lat, Lon, num,Type):
@@ -80,12 +80,12 @@ class Creation:
                     L.marker([{},{}]).addTo(map).bindPopup('Post is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Username", "Default", "Generated"),link,icon,num,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),link,icon,num,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Map").format(map_file))
+              Language.Translation.Translate_Language(LangFile,"Default", "Map", "None").format(map_file))
 
     @staticmethod
     def mapWeb(jsonfile, Lat, Lon, username):
@@ -112,9 +112,9 @@ class Creation:
                     L.marker([{},{}]).addTo(map).bindPopup('Post is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Username", "Default", "Generated"),username,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),username,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Map").format(map_file))
+              Language.Translation.Translate_Language(LangFile,"Default", "Map", "None").format(map_file))
