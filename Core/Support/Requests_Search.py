@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -78,7 +79,7 @@ class Search:
                 successfullName.append(name)
                 if is_scrapable == "True":
                     ScraperSites.append(name)
-      
+
         d = open(json_file2, "w")
         d.write('''{
                     "Names":[
@@ -86,7 +87,7 @@ class Search:
                     ]
                 }''')
         d.close()
-        
+
         f = open(json_file, "w")
         f.write('''{
                     "List":[
@@ -104,7 +105,7 @@ class Search:
                 file_data2["Names"].append(data)
                 file2.seek(0)
                 json.dump(file_data2, file2, indent=4)
-        
+
         for element in successfull:
             data = {
                 "site": "{}".format(element)
@@ -114,4 +115,3 @@ class Search:
                 file_data["List"].append(data)
                 file.seek(0)
                 json.dump(file_data, file, indent=4)
-        

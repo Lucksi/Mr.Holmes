@@ -1,11 +1,10 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
-
 import os
 import json
-from Core.Searcher import MrHolmes
 import MrHolmes as holmes
 from Core.Support import Font
 from Core.Support import Creds
@@ -14,6 +13,7 @@ from Core.Support import Dorks
 from Core.Support.Mail import Mail_Validator as mail
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import Notification
 from time import sleep
 from datetime import datetime
 
@@ -97,6 +97,10 @@ class Mail_search:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         f = open(report, "a")
-        f.write("\nSCANNING EXECUTED WITH Mr.Holmes")
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Default", "By"))
         f.close()
+        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
+              os.getcwd() + "/" + report)
+        Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)

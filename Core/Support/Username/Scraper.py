@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -22,16 +23,16 @@ class info:
 
     @staticmethod
     def Profile_Pic(username, profile_pic, SiteName):
-        image = "GUI/Reports/Usernames/{}/Profile_pics/Profile_pic_{}.jpg".format(username,SiteName)
+        image = "GUI/Reports/Usernames/{}/Profile_pics/Profile_pic_{}.jpg".format(
+            username, SiteName)
         getter = requests.get(
-                profile_pic, headers=headers, allow_redirects=True)
+            profile_pic, headers=headers, allow_redirects=True)
         try:
-             open(image, "wb").write(getter.content)
-             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-              Language.Translation.Translate_Language(filename,"Username","Default","Saved").format(image))
+            open(image, "wb").write(getter.content)
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Username", "Default", "Saved").format(image))
         except Exception as e:
             print("error" + str(e))
-
 
     @staticmethod
     def Get_Url(username, Name):
@@ -293,8 +294,24 @@ class info:
             Blocked = 'Profile is private.'.format(username)
             text = openurl.text
             if Blocked in text:
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                       Language.Translation.Translate_Language(filename, "Username", "Instagram", "Private"))
+                url = "https://imginn.com/{}/".format(username)
+                openurl2 = requests.get(url, proxies=http_proxy,
+                               headers=headers, timeout=None)
+                reader = soup(openurl2.content, "html.parser")
+                name = reader.find("div",class_="img")
+                profile_pic = name.find("img")["src"]
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+                download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if download == 1:
+                    SiteName = "Instagram"
+                    info.Profile_Pic(username,
+                                     profile_pic, SiteName)
+                else:
+                    pass
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                      Language.Translation.Translate_Language(filename, "Username", "Instagram", "Private"))
                 Flag = False
                 pass
             else:
@@ -351,7 +368,7 @@ class info:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None")+ str(e))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
             pass
         finally:
@@ -363,7 +380,7 @@ class info:
                     Posts = float(posts.replace(",", ''))
                     try:
                         Get_Posts.Downloader.Instagram(url,
-                                                        username, http_proxy, Posts)
+                                                       username, http_proxy, Posts)
                     except ConnectionError:
                         print(Font.Color.RED +
                               "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
@@ -392,7 +409,7 @@ class info:
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
                 pic = reader.find("a", href=True, class_="profile-card-avatar")
-                profile_pic = url.replace("/"+username,"") + pic["href"]
+                profile_pic = url.replace("/"+username, "") + pic["href"]
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                       "USER: " + user["href"].replace("/", ""))
 
@@ -452,19 +469,19 @@ class info:
                 Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Pics").format(
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if Photos == 1:
-                  Private = "This account&#x27;s tweets are protected."
-                  text = openurl.text
-                  if Private in text:
-                      print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Username", "Twitter", "Protected").format(username))
-                  else:
-                    Posts = float(posts.replace(",",''))
-                    try:
-                        Get_Posts.Downloader.Twitter(url,
-                                                        username, http_proxy, Posts)
-                    except ConnectionError:
-                        print(Font.Color.RED +
-                              "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                    Private = "This account&#x27;s tweets are protected."
+                    text = openurl.text
+                    if Private in text:
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                              Language.Translation.Translate_Language(filename, "Username", "Twitter", "Protected").format(username))
+                    else:
+                        Posts = float(posts.replace(",", ''))
+                        try:
+                            Get_Posts.Downloader.Twitter(url,
+                                                         username, http_proxy, Posts)
+                        except ConnectionError:
+                            print(Font.Color.RED +
+                                  "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
                 else:
                     pass
 
@@ -569,7 +586,7 @@ class info:
             if download == 1:
                 if profile_pic != "None":
                     SiteName = "Kik"
-                    info.Profile_Pic(username, 
+                    info.Profile_Pic(username,
                                      profile_pic, SiteName)
                 else:
                     pass

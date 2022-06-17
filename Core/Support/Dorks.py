@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -11,7 +12,7 @@ filename
 
 
 class Search:
-    
+
     @staticmethod
     def dork(username, report, nomefile, Type):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +

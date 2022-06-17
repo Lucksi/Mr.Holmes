@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -8,7 +9,7 @@ from email.mime.text import MIMEText
 from Core.Support import Font
 from email.mime.multipart import MIMEMultipart
 from configparser import ConfigParser
-from Core.Support import Language 
+from Core.Support import Language
 import smtplib
 import re as Regex
 
@@ -76,4 +77,4 @@ class Sender:
                     LangFile, "RecapEmail", "NotValid", "None"))
         else:
             inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
-                    LangFile, "RecapEmail", "Disabled", "None"))
+                LangFile, "RecapEmail", "Disabled", "None"))

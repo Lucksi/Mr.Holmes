@@ -1,12 +1,11 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
-from encodings import utf_8
 import os
 import urllib
 import json
-import shutil
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import Proxies
@@ -17,6 +16,7 @@ from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import Notification
 from datetime import datetime
 from time import sleep
 
@@ -36,9 +36,9 @@ class MrHolmes:
         else:
             pass
         json_file = "GUI/Reports/Usernames/{}/{}.json".format(
-                username, username)
+            username, username)
         json_file2 = "GUI/Reports/Usernames/{}/{}.json".format(
-                username, "Name")
+            username, "Name")
         data = json.loads(f.read())
         for sites in data:
             for data1 in sites:
@@ -99,7 +99,7 @@ class MrHolmes:
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Username"
-        banner.Random.Get_Banner(Folder,Mode)
+        banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
     def Google_dork(username):
@@ -130,7 +130,7 @@ class MrHolmes:
         Dorks.Search.dork(username, report, nomefile, Type)
 
     @staticmethod
-    def search(username,Mode):
+    def search(username, Mode):
         successfull = []
         successfullName = []
         ScraperSites = []
@@ -139,7 +139,7 @@ class MrHolmes:
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
         folder = "GUI/Reports/Usernames/" + username + "/"
-        #if os.path.isdir(folder):
+        # if os.path.isdir(folder):
         #    shutil.rmtree(folder)
         #    print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
         #          Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
@@ -147,7 +147,7 @@ class MrHolmes:
         if os.path.exists(report):
             os.remove(report)
             os.remove(folder + "Name.json")
-            os.remove(report.replace(".txt",".json"))
+            os.remove(report.replace(".txt", ".json"))
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         else:
@@ -207,12 +207,12 @@ class MrHolmes:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + names)
             if len(ScraperSites):
                 os.chdir("GUI/Reports/Usernames/{}".format(username))
-                #if os.path.isdir("Profile_pics"):
+                # if os.path.isdir("Profile_pics"):
                 #    shutil.rmtree("Profile_pics")
                 #    os.mkdir("Profile_pics")
-                #else:
+                # else:
                 #    os.mkdir("Profile_pics")
-                #os.chdir("../../../../")
+                # os.chdir("../../../../")
                 if os.path.isdir("Profile_pics"):
                     pass
                 else:
@@ -425,4 +425,6 @@ class MrHolmes:
             f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))
             f.close()
+            Notification.Notifier.Start(Mode)
+            #os.system("java Core/Support/Notification/Notification.java")
             Creds.Sender.mail(report, username)

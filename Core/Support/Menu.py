@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -66,16 +67,18 @@ class Main:
             r = line.replace("\n", "")
         version = f.read() + r
         f.close()
-        file_banner = "Banners/Banner2.txt"
+        list = ["Banners/Banner2.txt", "Banners/Banner4.txt"]
+        file_banner = random.choice(list)
         f = open(file_banner, "r", newline=None)
         text = f.read()
         f.close()
-        print (Font.Color.GREEN + text)
-        print(Font.Color.WHITE + "A COMPLETE OSINT TOOL:)      " + Font.Color.BANNER + "CODED BY LUCKSI" +Font.Color.RESET)
-        print(Font.Color.WHITE + "\n[+]" + Font.Color.GREEN + "VERSION:" + version)
+        print(Font.Color.GREEN + text)
+        print(Font.Color.WHITE + "A COMPLETE OSINT TOOL:)      " +
+              Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET)
+        print(Font.Color.WHITE + "\n[+]" +
+              Font.Color.GREEN + "VERSION:" + version)
         print(
             Font.Color.YELLOW + "Instagram:lucks_022\nEMAIL:lukege287@gmail.com\nGIT-HUB:Lucksi\nTwitter:@Lucksi_22\nLinkedin:https://www.linkedin.com/in/Lucksi\n")
-    
 
     @staticmethod
     def main(Mode):
@@ -110,7 +113,7 @@ class Main:
                     while username == "":
                         username = str(input(
                             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Username", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    Searcher.MrHolmes.search(username,Mode)
+                    Searcher.MrHolmes.search(username, Mode)
 
                 elif (sce == 2):
                     username = str(input(
@@ -118,7 +121,7 @@ class Main:
                     while username == "":
                         username = str(input(
                             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Phone", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    Searcher_phone.Phone_search.searcher(username,Mode)
+                    Searcher_phone.Phone_search.searcher(username, Mode)
 
                 elif sce == 3:
                     username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Site", "None") +
@@ -126,7 +129,7 @@ class Main:
                     while username == "":
                         username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Site", "None") +
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    Searcher_website.Web.search(username,Mode)
+                    Searcher_website.Web.search(username, Mode)
                 elif sce == 4:
                     config.Config.main(Mode)
                 elif sce == 5:
@@ -142,14 +145,14 @@ class Main:
                     while username == "":
                         username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Port", "None") +
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    Port_Scanner.Ports.Main(username,Mode)
+                    Port_Scanner.Ports.Main(username, Mode)
                 elif sce == 8:
                     username = input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Email", "None") +
                                      Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")
                     while username == "":
                         username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Email", "None") +
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    E_Mail.Mail_search.Search(username,Mode)
+                    E_Mail.Mail_search.Search(username, Mode)
                 elif sce == 9:
                     print(Language.Translation.Translate_Language(
                         filename, "Main", "Exit", "None"))

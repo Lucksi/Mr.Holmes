@@ -1,22 +1,28 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 import random
 from Core.Support import Font
+from Core.Support import Language
+
+filename = Language.Translation.Get_Language()
+filename
 
 
 class Random:
 
-    def Get_Banner(Folder,Mode):
-        List = ["Banner1.txt", "Banner2.txt", "Banner3.txt"]
+    def Get_Banner(Folder, Mode):
         if Mode == "Desktop":
-            choice = random.choice(List)
+            List = ["Banner1.txt", "Banner2.txt", "Banner3.txt"]
         elif Mode == "Mobile":
-            choice = List[2]
+            List = ["Banner4.txt", "Banner5.txt"]
         else:
-            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "LOOKS LIKE THERE IS AN INVALID OPTION ACCEPTED ONLY 'Desktop' OR 'Mobile' EXIT...")
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                filename, "Default", "DisplayError", "None"))
             exit()
+        choice = random.choice(List)
         f = open(Folder + "/" + choice, "r", newline=None)
         banner = f.read()
         f.close()

@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -10,6 +11,7 @@ from Core.Support import Language
 
 filename = Language.Translation.Get_Language()
 filename
+
 
 class Log:
 
@@ -31,9 +33,9 @@ class Log:
                 Logger = logging.getLogger()
                 Logger.setLevel(logging.DEBUG)
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename,"Logs","Enabled","None").format(file_Log))
+                      Language.Translation.Translate_Language(filename, "Logs", "Enabled", "None").format(file_Log))
             finally:
                 logging.shutdown()
         else:
             print(Font.Color.BLUE + "\n[I]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename,"Logs","Disabled","None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Logs", "Disabled", "None"))

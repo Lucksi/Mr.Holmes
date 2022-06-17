@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -18,6 +19,8 @@ from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import Map
+from Core.Support import Notification
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
@@ -26,13 +29,16 @@ from configparser import ConfigParser
 filename = Language.Translation.Get_Language()
 filename
 
+Type = "Web"
+
 
 class Web:
 
     @staticmethod
     def Ports(username, report):
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Website", "Ports"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Website", "Ports"))
         f.close()
         Scanner.Port.Scan(username, report)
         choice = int(input(
@@ -44,7 +50,7 @@ class Web:
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Websites"
-        banner.Random.Get_Banner(Folder,Mode)
+        banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
     def Reputation(username, report):
@@ -52,7 +58,8 @@ class Web:
         subject = "DOMAIN/WEBSITE/IP"
         data = "Site_lists/Websites/Lookup.json"
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Website", "Malicious"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Website", "Malicious"))
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Website", "Default", "Research").format(username))
         sc = int(input(
@@ -82,9 +89,10 @@ class Web:
         successfullName = []
         ScraperSites = []
         Writable = False
-        json_file = "GUI/Reports/Websites/{}/{}.json".format(username,username)
+        json_file = "GUI/Reports/Websites/{}/{}.json".format(
+            username, username)
         json_file2 = "GUI/Reports/Websites/{}/{}.json".format(
-                username,"Name")
+            username, "Name")
         f = open(data,)
         data = json.loads(f.read())
         for sites in data:
@@ -123,7 +131,8 @@ class Web:
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Website", "Default", "Secure").format(username))
                 f = open(report, "a")
-                f.write(Language.Translation.Translate_Language(filename, "Report", "Website", "Safe"))
+                f.write(Language.Translation.Translate_Language(
+                    filename, "Report", "Website", "Safe"))
                 f.close()
             consultFile = "Site_lists/Websites/Consult.json"
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
@@ -135,7 +144,8 @@ class Web:
                     site1 = sites[data1]["url"].replace("{}", username)
                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site1)
             f = open(report, "a")
-            f.write(Language.Translation.Translate_Language(filename, "Report", "Website", "Info"))
+            f.write(Language.Translation.Translate_Language(
+                filename, "Report", "Website", "Info"))
             for sites in data:
                 for data1 in sites:
                     site1 = sites[data1]["url"].replace("{}", username)
@@ -203,21 +213,21 @@ class Web:
             except Exception as e:
                 try:
                     print(Font.Color.BLUE + "\n[N]" + Font.Color.WHITE +
-                        Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                          Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                     url = sites["Robots"]["url"].replace("{}", username)
                     dork = requests.get(
                         url, headers=headers, proxies=None, timeout=None, allow_redirects=True)
                     if dork.status_code == 200:
                         open(robot, 'wb').write(dork.content)
                         print(Font.Color.YELLOW +
-                            "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Default", "Robots").format(robot))
+                              "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Default", "Robots").format(robot))
                     else:
                         print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                            Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
+                              Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
                 except Exception as e:
-                     print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                            Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
-        
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                          Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
+
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -279,7 +289,7 @@ class Web:
             f.close()
         else:
             pass
-        report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
+        report = "GUI/Reports/Websites/{}/{}.txt".format(username, username)
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -410,7 +420,7 @@ class Web:
                     get_Coords = urllib.request.urlopen(link_json)
                     Reader = get_Coords.read()
                     parser = json.loads(Reader)
-                    for value in parser:    
+                    for value in parser:
                         Lat = value["lat"]
                         Lon = value["lon"]
                     report_Coordinates = "GUI/Reports/Websites/Coordinates/Street_Geolocation/" + \
@@ -431,21 +441,28 @@ class Web:
                           "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
                     with open(report_Coordinates, "w", encoding="utf-8") as output:
                         json.dump(data, output, ensure_ascii=False, indent=4)
+                    Map.Creation.mapWeb(report_Coordinates, Lat, Lon, username)
                 except Exception as e:
                     f = str(e)
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                          Language.Translation.Translate_Language(filename, "Website", "Default", "NoGeo"))
+                          Language.Translation.Translate_Language(filename, "Website", "Default", "NoGeo") + f)
                 num = telephone2
                 if num != "":
                     number = True
+                    #phone_report = 
                     sc = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneFound").format(
                         num) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
-                        f = open(report, "a")
+                        folder = folder  = "GUI/Reports/Websites/{}/{}".format(username,num)
+                        if os.path.exists(folder):
+                            shutil.rmtree(folder)
+                        os.mkdir(folder)
+                        report2 = folder + "/{}.txt".format(num)
+                        f = open(report2, "w")
                         f.write("\nPHONE NUMBER DATA:\n")
                         f.close()
                         code = 0
-                        Numbers.Phony.Number(num, report, code, Mode)
+                        Numbers.Phony.Number(num, report2, code, Mode, Type, username)
                     else:
                         pass
                 else:
@@ -453,6 +470,7 @@ class Web:
                           "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneNotFound"))
                     number = False
             except Exception as e:
+                print(str(e))
                 num = None
                 number = False
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
@@ -492,7 +510,7 @@ class Web:
                             Web.trace(username, report)
 
     @staticmethod
-    def search(username,Mode):
+    def search(username, Mode):
         os.system("cls" if os.name == "nt" else "clear")
         Web.Banner(Mode)
         folder = "GUI/Reports/Websites/" + username + "/"
@@ -501,7 +519,7 @@ class Web:
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         os.mkdir(folder)
-        report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
+        report = "GUI/Reports/Websites/{}/{}.txt".format(username, username)
         report_Ip = "GUI/Reports/Websites/Coordinates/Ip_Geolocation/" + username + ".json"
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -549,7 +567,8 @@ class Web:
             sleep(2)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + link)
             f = open(report, "a")
-            f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "Date").format(Date) + "\r\n")
+            f.write(Language.Translation.Translate_Language(
+                filename, "Report", "Default", "Date").format(Date) + "\r\n")
             f.write(ip + "\r\n")
             f.write(country + "\r\n")
             f.write(country_code + "\r\n")
@@ -573,7 +592,7 @@ class Web:
 
             with open(report_Ip, "w", encoding='utf-8') as outupt:
                 json.dump(data, outupt, ensure_ascii=False, indent=4)
-
+            Map.Creation.mapWeb(report_Ip,lat2, lon2, username)
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Website", "Default", "NoResponse"))
@@ -610,8 +629,10 @@ class Web:
                                 Web.trace(username, report)
 
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "By"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Default", "By"))
         f.close()
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
+        Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)

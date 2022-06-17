@@ -1,3 +1,4 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
@@ -17,10 +18,13 @@ from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import Notification
 from time import sleep
 
 filename = Language.Translation.Get_Language()
 filename
+
+Type = "Phone"
 
 
 class Phone_search:
@@ -29,7 +33,7 @@ class Phone_search:
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Phone"
-        banner.Random.Get_Banner(Folder,Mode)
+        banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
     def Google_dork(username):
@@ -45,7 +49,8 @@ class Phone_search:
         Type = "GOOGLE"
         Dorks.Search.dork(username, report, nomefile, Type)
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Phone", "FingerPrints"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Phone", "FingerPrints"))
         f.close()
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Phone", "FingerPrints", "None"))
@@ -69,7 +74,8 @@ class Phone_search:
         Type = "YANDEX"
         Dorks.Search.dork(username, report, nomefile, Type)
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Phone", "FingerPrints"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Phone", "FingerPrints"))
         f.close()
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Phone", "FingerPrints", "None"))
@@ -157,9 +163,10 @@ class Phone_search:
             successfullName = []
             ScraperSites = []
             Writable = True
-            json_file = "GUI/Reports/Phone/{}/{}.json".format(username,username)
+            json_file = "GUI/Reports/Phone/{}/{}.json".format(
+                username, username)
             json_file2 = "GUI/Reports/Phone/{}/{}.json".format(
-               username,"Name")
+                username, "Name")
             f = open(data,)
             data = json.loads(f.read())
             for sites in data:
@@ -183,13 +190,13 @@ class Phone_search:
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file,json_file2)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None") + str(e))
                     except Exception as e:
-                            print(
-                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None") + str(e))
+                        print(
+                            Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None") + str(e))
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "TotFound", "None").format(subject, username))
 
@@ -214,7 +221,7 @@ class Phone_search:
             pass
 
     @staticmethod
-    def searcher(username,Mode):
+    def searcher(username, Mode):
         Phone_search.Banner(Mode)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -227,15 +234,18 @@ class Phone_search:
         os.mkdir(folder)
         report = folder + username + ".txt"
         f = open(report, "w")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "Date").format(Date) + "\n")
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Default", "Date").format(Date) + "\n")
         f.close()
         num = username
         code = 1
-        Numbers.Phony.Number(num, report, code, Mode)
+        Numbers.Phony.Number(num, report, code, Mode, Type, username)
         Phone_search.lookup(username, report)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(filename, "Report", "Default", "By"))
+        f.write(Language.Translation.Translate_Language(
+            filename, "Report", "Default", "By"))
         f.close()
+        Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)

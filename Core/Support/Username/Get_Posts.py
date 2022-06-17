@@ -1,7 +1,7 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
-
 
 import os
 import requests
@@ -12,6 +12,7 @@ from Core.Support import Font
 from Core.Support import Language
 from bs4 import BeautifulSoup as soup
 from time import sleep
+from Core.Support import Map
 
 headers = {
     'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
@@ -145,25 +146,27 @@ class Downloader:
                                     Lat = parser[0]["lat"]
                                     Lon = parser[0]["lon"]
                                     data = {
-                                        "Geolocation": {
-                                            "Latitude": Lat,
-                                            "Longitude": Lon
+                                            "Geolocation": {
+                                                "Latitude": Lat,
+                                                "Longitude": Lon
+                                            }
                                         }
-                                    }
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                          "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
+                                            "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
                                     sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                          "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
+                                            "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
                                     sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                          "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
+                                            "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
                                     with open(jsonfile, "w", encoding="utf-8") as output:
-                                        json.dump(data, output,
-                                                  ensure_ascii=False, indent=4)
+                                            json.dump(data, output,
+                                                    ensure_ascii=False, indent=4)
+                                    image2 = arr_name[j-1]
+                                    Map.Creation.mapPost(data_fold,Lat,Lon,image2)
                                 except Exception as e:
                                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
-                                        LangFile, "Username", "Instagram", "NoGeoData"))
+                                        LangFile, "Username", "Instagram", "NoGeoData") + str(e))
                             f.close()
                             j = j+1
                             sleep(2)
@@ -271,7 +274,21 @@ class Downloader:
                 username)
             if os.path.isdir(folder):
                 shutil.rmtree(folder)
+                #keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
+                #            Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                #if keep == 1:
+                #    shutil.rmtree(folder)
+                #    os.mkdir(folder)
+                #else:
+                #    Maxname = folder + "/Max_Counter.txt"
+                #    f = open(Maxname,"r",newline=None)
+                #    value = f.read()
+                #    f.close()
+                #    number = int(value)
+                #    number2 = number
+            #else:
             os.mkdir(folder)
+                #number = range_band
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
 
@@ -293,6 +310,7 @@ class Downloader:
                             Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                         profile_pic = url.replace(
                             username+"/search", "") + post.replace("/pic/", "pic/")
+                        print(profile_pic)
                         image = folder + "/Pic_{}.jpg".format(str(j))
                         getter = requests.get(
                             profile_pic, headers=headers, allow_redirects=False)
@@ -301,6 +319,7 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
                             j = j+1
+                            #number = number + 1
                             sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
@@ -320,8 +339,7 @@ class Downloader:
                                 post = data.find("img")["src"]
                                 profile_pic = url.replace(
                                     username + "/search", "") + post.replace("/pic/", "pic/")
-                                image = folder + \
-                                    "/Pic_{}.jpg".format(str(j))
+                                image = folder + "/Pic_{}.jpg".format(str(j))
                                 getter = requests.get(
                                     profile_pic, headers=headers, allow_redirects=False)
                                 try:
@@ -329,6 +347,7 @@ class Downloader:
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "DOWNLOAD SUCCESSFULL..")
                                     j = j+1
+                                    #number = number +1
                                     sleep(2)
                                 except ConnectionError:
                                     print(Font.Color.RED + "[!]" +
@@ -341,6 +360,7 @@ class Downloader:
                         else:
                             print(Font.Color.RED +
                                   "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Image"))
+                    
                     text = info.find(
                         "div", class_="tweet-content media-body").text
                     if text:
@@ -380,11 +400,12 @@ class Downloader:
                     f.write("QUOTES: {}\r\n".format(quote))
                     f.write("POSTED ON: {}\r\n".format(date))
                     i = i+1
+                    #number2 = number2 + 1
                     sleep(2)
                     if i == range_band + 1:
-                        f = open(data_fold + "Max_Counter.txt", "w")
-                        f.write("{}".format(str(i)))
-                        f.close()
+                    #    f = open(data_fold + "/Max_Counter.txt", "w")
+                    #    f.write("{}".format(str(i)))
+                    #    f.close()
                         break
                 except ConnectionError:
                     print(Font.Color.RED + "[!]" +

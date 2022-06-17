@@ -1,8 +1,11 @@
+# ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
 import phonenumbers
+import os
+import shutil
 import MrHolmes as holmes
 import json
 import urllib
@@ -11,6 +14,7 @@ from phonenumbers import geocoder
 from phonenumbers import timezone
 from Core.Support import Font
 from Core.Support import Language
+from Core.Support import Map
 from time import sleep
 
 filename = Language.Translation.Get_Language()
@@ -20,7 +24,7 @@ filename
 class Phony:
 
     @staticmethod
-    def Get_GeoLocation(zone, param1, param2, jsonfile,num):
+    def Get_GeoLocation(zone, param1, param2, jsonfile, num, Type):
         req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
             zone)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -34,8 +38,8 @@ class Phony:
             Lon = parser[0]["lon"]
             data = {
                 "Geolocation": {
-                     "Latitude": Lat,
-                     "Longitude": Lon
+                    "Latitude": Lat,
+                    "Longitude": Lon
                 }
             }
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
@@ -50,13 +54,21 @@ class Phony:
             json.dump(data, datafile,
                       ensure_ascii=False, indent=4)
             datafile.close()
+            Map.Creation.mapPhone(jsonfile, Lat, Lon, num, Type)
 
         except Exception as e:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
-                filename, "Phone", "NoGeo", "None" + str(e)))
+                filename, "Phone", "NoGeo", "None") + str(e))
 
     @staticmethod
-    def Number(num, report, code, Mode):
+    def Number(num, report, code, Mode, Type, username):
+        #if Type == "Web":
+            #folder  = "GUI/Reports/Websites/{}/{}".format(username,num)
+            #if os.path.exists(folder):
+            #    shutil.rmtree(folder)
+            #os.mkdir(folder)
+            #report = folder + "/{}.txt".format(num)
+            #folder  = "GUI/Reports/Websites/{}/{}.txt".format(username,num)
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Phone", "Scan", "None").format(num))
         sleep(4)
@@ -117,24 +129,26 @@ class Phony:
                       "[v]" + Font.Color.WHITE + "TIMEZONE N°{}: {}".format(i, timezoneResult))
                 i = i+1
             sleep(2)
-            jsonfile = report.replace(num + ".txt", "Area_GeoLocation.json")
-            jsonfile2 =  report.replace(num + ".txt", "Zone_GeoLocation.json")
             if location != "":
+                jsonfile = report.replace(
+                    num + ".txt", "Area_GeoLocation.json")
                 if " " in location:
                     zone = location.split(" ", 1)[1]
                 else:
                     zone = location
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "Area", "None"))
-                Phony.Get_GeoLocation(zone,"Lat1","Long1",jsonfile,num)
+                Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
             else:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "NoArea", "None"))
             zone = timezoneResult.split("/", 1)[-1]
-            
+
             if zone != "Unknown":
-                Phony.Get_GeoLocation(zone,"Lat","Long",jsonfile2,num)
-            
+                jsonfile = report.replace(
+                    num + ".txt", "Zone_GeoLocation.json")
+                Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
+
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "NoZone", "None").format(number))
