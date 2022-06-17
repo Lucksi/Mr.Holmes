@@ -1,5 +1,6 @@
 <?php
-    /*AUTHOR: Luca Garofalo (Lucksi)
+    /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+    AUTHOR: Luca Garofalo (Lucksi)
     Copyright 2021-2022 Lucksi
     License: GNU General Public License v3.0*/ 
     
@@ -133,6 +134,7 @@
                     $cut_img = str_replace("$value/","",$data_file[$b]);
                     if(file_exists($data_file[$b])){
                         $img = str_replace(".json",".jpg",$cut_img);
+                        $id = str_replace(".jpg","",$img);
                         $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
                         echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
                         $reader = file_get_contents($data_file[$b]);
@@ -148,7 +150,7 @@
                         }).addTo(map);
     
                         L.marker([$Latitude,$Longitude]).addTo(map)
-                        .bindPopup('Post°{$n} is approximatley based in this Area.')
+                        .bindPopup('Post id: {$id} is approximatley based in this Area.')
                         .openPopup();
                         </script>";
                         echo "<hr>";
