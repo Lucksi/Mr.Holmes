@@ -80,11 +80,8 @@
                             
             }
             else{
-                /*echo "\t\t\t<a href = '{$profile_pic}' target = 'blank'><img src = '{$profile_pic}' id = 'pics' abbr title = '$profile_pic'></a>";
-                echo "<br>";*/
                 echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_{$profile_pic}.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
             }
-            #echo "<a href = ../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
             
             foreach(array_reverse($image) as $Content1){
                 $i = $i +1;
