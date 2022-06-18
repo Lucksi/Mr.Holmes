@@ -426,5 +426,4 @@ class MrHolmes:
                 filename, "Report", "Default", "By"))
             f.close()
             Notification.Notifier.Start(Mode)
-            #os.system("java Core/Support/Notification/Notification.java")
             Creds.Sender.mail(report, username)

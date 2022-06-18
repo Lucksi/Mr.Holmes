@@ -4,8 +4,6 @@
 # License: GNU General Public License v3.0
 
 import phonenumbers
-import os
-import shutil
 import MrHolmes as holmes
 import json
 import urllib
@@ -62,13 +60,6 @@ class Phony:
 
     @staticmethod
     def Number(num, report, code, Mode, Type, username):
-        #if Type == "Web":
-            #folder  = "GUI/Reports/Websites/{}/{}".format(username,num)
-            #if os.path.exists(folder):
-            #    shutil.rmtree(folder)
-            #os.mkdir(folder)
-            #report = folder + "/{}.txt".format(num)
-            #folder  = "GUI/Reports/Websites/{}/{}.txt".format(username,num)
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Phone", "Scan", "None").format(num))
         sleep(4)
@@ -145,6 +136,8 @@ class Phony:
             zone = timezoneResult.split("/", 1)[-1]
 
             if zone != "Unknown":
+                print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE +
+                      Language.Translation.Translate_Language(filename, "Phone", "Zone", "None"))
                 jsonfile = report.replace(
                     num + ".txt", "Zone_GeoLocation.json")
                 Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)

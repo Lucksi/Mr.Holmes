@@ -274,21 +274,7 @@ class Downloader:
                 username)
             if os.path.isdir(folder):
                 shutil.rmtree(folder)
-                #keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
-                #            Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                #if keep == 1:
-                #    shutil.rmtree(folder)
-                #    os.mkdir(folder)
-                #else:
-                #    Maxname = folder + "/Max_Counter.txt"
-                #    f = open(Maxname,"r",newline=None)
-                #    value = f.read()
-                #    f.close()
-                #    number = int(value)
-                #    number2 = number
-            #else:
             os.mkdir(folder)
-                #number = range_band
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
 
@@ -319,7 +305,6 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
                             j = j+1
-                            #number = number + 1
                             sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
@@ -400,12 +385,8 @@ class Downloader:
                     f.write("QUOTES: {}\r\n".format(quote))
                     f.write("POSTED ON: {}\r\n".format(date))
                     i = i+1
-                    #number2 = number2 + 1
                     sleep(2)
                     if i == range_band + 1:
-                    #    f = open(data_fold + "/Max_Counter.txt", "w")
-                    #    f.write("{}".format(str(i)))
-                    #    f.close()
                         break
                 except ConnectionError:
                     print(Font.Color.RED + "[!]" +

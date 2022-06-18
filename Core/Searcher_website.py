@@ -449,7 +449,6 @@ class Web:
                 num = telephone2
                 if num != "":
                     number = True
-                    #phone_report = 
                     sc = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneFound").format(
                         num) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
