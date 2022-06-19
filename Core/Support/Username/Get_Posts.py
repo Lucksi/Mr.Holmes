@@ -296,7 +296,6 @@ class Downloader:
                             Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                         profile_pic = url.replace(
                             username+"/search", "") + post.replace("/pic/", "pic/")
-                        print(profile_pic)
                         image = folder + "/Pic_{}.jpg".format(str(j))
                         getter = requests.get(
                             profile_pic, headers=headers, allow_redirects=False)
@@ -332,7 +331,6 @@ class Downloader:
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "DOWNLOAD SUCCESSFULL..")
                                     j = j+1
-                                    #number = number +1
                                     sleep(2)
                                 except ConnectionError:
                                     print(Font.Color.RED + "[!]" +
