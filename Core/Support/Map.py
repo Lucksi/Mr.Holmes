@@ -32,7 +32,7 @@ class Creation:
             <body>
                 <center>
                     <p id = "Const">POST ID: {}</p>
-                    <img src = "../{}.jpg" height="350px" width="350px" style="border: 3px solid;border-radius:20px;border-color:#ffffff;">
+                    <a href = "../{}.jpg" target = "blank"><img src = "../{}.jpg" height="350px" width="350px" style="border: 3px solid;border-radius:20px;border-color:#ffffff;"></a>
                 </center>
                 <br>
                 <div class = "map" id="map"></div>
@@ -42,7 +42,7 @@ class Creation:
                     L.marker([{},{}]).addTo(map).bindPopup('Number is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
