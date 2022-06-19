@@ -108,12 +108,12 @@ function Preference {
 }
 
 function Packet_Installer {
-	sudo apt-get install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
-	sudo apt-get install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-    sudo apt-get install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
-	sudo apt-get install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
-	sudo apt-get install inetutils-traceroute &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
-	sudo apt-get install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
+	sudo apt-get install git -y &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
+	sudo apt-get install python3 -y &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+    sudo apt-get install python3-pip -y &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
+	sudo apt-get install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
+	sudo apt-get install inetutils-traceroute -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
+	sudo apt-get install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
 	sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }
