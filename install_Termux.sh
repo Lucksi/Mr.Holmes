@@ -16,13 +16,12 @@ function banner {
 }
 
 function Packet_Installer {
-	proot -0 pkg install git &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
-	proot -0 pkg install python3 &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-    proot -0 pkg install python3-pip &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
-	proot -0 pkg install whois &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
-    proot -0 pkg install tracepath &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
-    proot -0 pkg install php &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
-	proot -0 pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
+	pkg install git -y &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
+	pkg install python -y &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
+	pkg install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
+        pkg install tracepath -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
+        pkg install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
+	pip3 install -r ~/Mr.Holmes/requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }
 
