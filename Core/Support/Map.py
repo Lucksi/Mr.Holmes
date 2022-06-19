@@ -39,10 +39,10 @@ class Creation:
                 <script>
                     var map = L.map("map").setView([{},{}], 14);
                     L.tileLayer('https://{}.tile.openstreetmap.org/{}/{}/{}.png',{}.addTo(map);
-                    L.marker([{},{}]).addTo(map).bindPopup('Number is approximatley based in this Area.').openPopup();
+                    L.marker([{},{}]).addTo(map).bindPopup('Post id {} is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon, image2)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
@@ -77,10 +77,10 @@ class Creation:
                 <script>
                     var map = L.map("map").setView([{},{}], 14);
                     L.tileLayer('https://{}.tile.openstreetmap.org/{}/{}/{}.png',{}.addTo(map);
-                    L.marker([{},{}]).addTo(map).bindPopup('Post is approximatley based in this Area.').openPopup();
+                    L.marker([{},{}]).addTo(map).bindPopup('Number {} is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),link,icon,num,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),link,icon,num,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon, num)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
@@ -90,6 +90,7 @@ class Creation:
     @staticmethod
     def mapWeb(jsonfile, Lat, Lon, username):
         map_file = jsonfile.replace(".json", ".html")
+        name = map_file.replace(".html","")
         content = '''
         <!--{}-->
         <html>
@@ -109,10 +110,10 @@ class Creation:
                 <script>
                     var map = L.map("map").setView([{},{}], 14);
                     L.tileLayer('https://{}.tile.openstreetmap.org/{}/{}/{}.png',{}.addTo(map);
-                    L.marker([{},{}]).addTo(map).bindPopup('Post is approximatley based in this Area.').openPopup();
+                    L.marker([{},{}]).addTo(map).bindPopup('{} is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),username,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),username,Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon,username)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
