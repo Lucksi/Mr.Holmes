@@ -3,9 +3,9 @@
 # Copyright (C) 2021-2022 Lucksi
 # License: GNU General Public License v3.0
 
-
 import json
 import requests
+from stem import Flag
 from Core.Support import Font
 from Core.Support.Username import Get_Posts
 from Core.Support import Language
@@ -296,9 +296,9 @@ class info:
             if Blocked in text:
                 url = "https://imginn.com/{}/".format(username)
                 openurl2 = requests.get(url, proxies=http_proxy,
-                               headers=headers, timeout=None)
+                                        headers=headers, timeout=None)
                 reader = soup(openurl2.content, "html.parser")
-                name = reader.find("div",class_="img")
+                name = reader.find("div", class_="img")
                 profile_pic = name.find("img")["src"]
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
@@ -850,6 +850,8 @@ class info:
         url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
+        Posts = 0
+        Flag = True
         try:
             reader = soup(openurl.content, "html.parser")
             user = reader.find("h1", class_="user").text
@@ -861,6 +863,10 @@ class info:
             like = reader.find("div", class_="col-auto").text
             profile = reader.find_all(
                 "div", class_="col-md-auto justify-content-center text-center")
+            postsect = reader.find_all("div", class_="info3")
+            for post in postsect:
+                Posts = Posts + 1
+
             for image in profile:
                 profile_pic = image.find("img")["src"]
 
@@ -898,11 +904,27 @@ class info:
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            Flag = False
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            Flag = False
             pass
+        finally:
+            if Flag == True:
+                Video = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Pics").format(
+                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
+                if Video == 1:
+                    try:
+                        Get_Posts.Downloader.TikTok(
+                            url, username, http_proxy, Posts)
+                    except ConnectionError:
+                        print(Font.Color.RED +
+                              "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                else:
+                    pass
 
     @staticmethod
     def Minecraft(report, username, http_proxy):

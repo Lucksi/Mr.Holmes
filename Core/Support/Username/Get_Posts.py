@@ -39,7 +39,7 @@ class Downloader:
                 username)
             if os.path.isdir(folder):
                 keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
-                            Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                                 Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if keep == 1:
                     shutil.rmtree(folder)
                     os.mkdir(folder)
@@ -74,7 +74,7 @@ class Downloader:
                             Font.Color.GREEN + "[+]" + Font.Color.WHITE + "POST ID: {}".format(name))
                         image = folder + "/{}.jpg".format(name)
                         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-                            Language.Translation.Translate_Language(LangFile, "Username", "Default", "Check").format(name))
+                              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Check").format(name))
                         sleep(2)
                         if os.path.exists(image):
                             print(
@@ -87,7 +87,7 @@ class Downloader:
                                 profile_pic, headers=headers, allow_redirects=True)
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                  Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
+                                  Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
                         i = i+1
                     except ConnectionError:
                         print(
@@ -146,24 +146,25 @@ class Downloader:
                                     Lat = parser[0]["lat"]
                                     Lon = parser[0]["lon"]
                                     data = {
-                                            "Geolocation": {
-                                                "Latitude": Lat,
-                                                "Longitude": Lon
-                                            }
+                                        "Geolocation": {
+                                            "Latitude": Lat,
+                                            "Longitude": Lon
                                         }
+                                    }
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                            "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
+                                          "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
                                     sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                            "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
+                                          "LONGITUDE:" + Font.Color.GREEN + " {}".format(Lon))
                                     sleep(2)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                            "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
+                                          "GOOGLE MAPS LINK: https://www.google.it/maps/place/{},{}".format(Lat, Lon))
                                     with open(jsonfile, "w", encoding="utf-8") as output:
-                                            json.dump(data, output,
-                                                    ensure_ascii=False, indent=4)
+                                        json.dump(data, output,
+                                                  ensure_ascii=False, indent=4)
                                     image2 = arr_name[j-1]
-                                    Map.Creation.mapPost(data_fold,Lat,Lon,image2)
+                                    Map.Creation.mapPost(
+                                        data_fold, Lat, Lon, image2)
                                 except Exception as e:
                                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                                         LangFile, "Username", "Instagram", "NoGeoData") + str(e))
@@ -302,7 +303,7 @@ class Downloader:
                         try:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                                  Language.Translation.Translate_Language(LangFile,"Username","Default","Success"))
+                                  Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
                             j = j+1
                             sleep(2)
                         except ConnectionError:
@@ -343,7 +344,7 @@ class Downloader:
                         else:
                             print(Font.Color.RED +
                                   "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "No_Image"))
-                    
+
                     text = info.find(
                         "div", class_="tweet-content media-body").text
                     if text:
@@ -396,6 +397,105 @@ class Downloader:
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                     i = i+1
                     continue
+        else:
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
+
+    @staticmethod
+    def TikTok(url, username, http_proxy, Posts):
+        if Posts > 0:
+            if Posts <= 12:
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                      Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "Download_Full").format(username))
+                range_band = Posts
+            else:
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                      Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "Download_Partial").format(username))
+                range_band = 12
+            folder = "GUI/Reports/Usernames/{}/Profile_pics/TikTok_Posts".format(
+                username)
+            if os.path.isdir(folder):
+                keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
+                                 Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if keep == 1:
+                    shutil.rmtree(folder)
+                    os.mkdir(folder)
+                else:
+                    pass
+            else:
+                os.mkdir(folder)
+            i = 1
+            openurl = requests.get(
+                url, proxies=http_proxy, headers=headers, allow_redirects=True)
+            reader = soup(openurl.content, "html.parser")
+            postsect = reader.find_all("div", class_="info3")
+            for video in postsect:
+                try:
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                          Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "Download").format(str(i)))
+                    title = video.find_all("a")[1]["href"]
+                    openurl2 = requests.get(
+                        title, headers=headers, allow_redirects=True)
+                    reader2 = soup(openurl2.content, "html.parser")
+                    video = reader2.find("video")["src"]
+                    name = title.replace("https://urlebird.com/video/", "")
+                    filename = folder + "/" + name.replace("/", ".mp4")
+                    foldername = folder + "/" + name.replace("/", "")
+                    print(Font.Color.GREEN + "[+]" + Font.Color.WHITE +
+                          "VIDEO ID {}".format(name.replace("/", "")))
+                    print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                        LangFile, "Username", "Default", "Check") .format(name.replace("/", ".mp4")))
+                    if os.path.exists(foldername):
+                        print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                            LangFile, "Username", "Default", "VideoCheckTrue"))
+                    else:
+                        print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                            LangFile, "Username", "Default", "VideoCheckFalse"))
+                        os.mkdir(foldername)
+                        report = foldername + "/" + name.replace("/", ".txt")
+                        getter = requests.get(
+                            video, headers=headers, allow_redirects=True)
+                        open(filename, "wb").write(getter.content)
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                            LangFile, "Username", "Default", "Success"))
+                      
+                        details = reader2.find("video").text
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +
+                              "DETAILS: {}".format(details.replace("\n", "")))
+                        
+                        date = reader2.find("h6").text
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
+                         
+                        if '<div class="music">' in openurl2.text :
+                            music = reader2.find("div", class_="music").text
+                            print(
+                            Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SONG: {}".format(music.replace("\n", "")))
+                        else:
+                            music = "\nNONE"
+                            print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                            LangFile, "Username", "TikTok", "NoSong")) 
+                        f = open(report, "w", encoding="utf-8")
+                        f.write("TITLE: {}\n".format(name))
+                        f.write("DETAILS: {}".format(details.replace("\n", "")))
+                        f.write("\nPOSTED ON: {}".format(date))
+                        f.write("SONG: {}".format(music.replace("\n", "")))
+                        f.close()
+                    i = i+1
+                    if i == range_band + 1:
+                        break
+        
+                except ConnectionError:
+                    print(Font.Color.RED + "[!]" +
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
+                    i = i+1
+                    continue
+                except Exception as e:
+                    print(Font.Color.RED + "[!]" +
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
+                    i = i+1
+                    continue
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                          Language.Translation.Translate_Language(LangFile, "Username", "Default", "Video").format(folder))
         else:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
