@@ -78,10 +78,14 @@
                 "Details": "EST CE QUE TU VOULEZ TELECHARGE POST-DETAILS(1)OUI(2)NO\n\n",
                 "TotDetails": "POST DETAILS REGISTREZ SUR: {}",
                 "Image": "IMAGES REGISTREZ SUR: {}",
+                "Video": "VIDEO REGISTREZ SUR: {}",
                 "NoPost": "CETTE USER N'Y A PAS AUCUN POST..IMPOSSIBILE TELECHARGE PROFILE PICS",
                 "Check": "VERIFIER SI {}.jpg EXISTE...",
-                "CheckTrue": "IMAGE EXISTE SAUTANT",
-                "CheckFalse": "IMAGE N'EXISTE PAS TÉLÉCHARGEMENT...",
+                "CheckTrue": "IMAGE EXISTE SAUTANT...",
+                "CheckFalse": "IMAGE N'EXISTE PAS TELECHARGEMENT...",
+                "VideoCheck": "VERIFIER SI {} EXISTE...",
+                "VideoCheckTrue": "VIDEO EXISTE SAUTANT..",
+                "VideoCheckFalse": "VIDEO N'EXISTE PAS TELECHARGEMENT...",
                 "Success": "TELECHARGEMENT REUSSI"
             },
 
@@ -95,7 +99,7 @@
                 "Private": "CETTE USER EST PRIVATE..IMPOSSIBILE FAIRE UNE DATA SCRAPE",
                 "GeoData": "CHERCHER POST {} GEODATA (ATTENTION LES COORDONNEES PEUVENT NE PAS ETRE EXACTES A 100 %)",
                 "NoGeoData": "IMPOSSIBILE PRENDRE LES GEODATA",
-                "FoldFound": "INSTAGRAM POSTS A ETE TROUVE ESR CE QUE TU VOULEZ SUPPRIMER LE POSTS?(1)OUI(2)NO"
+                "FoldFound": "INSTAGRAM POSTS A ETE TROUVE EST CE QUE TU VOULEZ SUPPRIMER LE POSTS?(1)OUI(2)NO"
             },
 
             "Twitter":{
@@ -107,6 +111,14 @@
                 "Yes_Image": "IMAGE {} TROUVE\n",
                 "No_Desc": "NO DESCRIPTION A ETE TROUVE",
                 "Protected": "CETTE USER A LES TWEETS SÉCURISÉS..IMPOSSIBILE FAIRE UNE DATA SCRAPE"
+            },
+
+            "TikTok":{
+                "Download_Full": "DOWNLOAD {} TIKTOKS",
+                "Download_Partial": "DOWNLOAD {} PREMIER 12 TIKTOK",
+                "Download":"DOWNLOAD VIDEO NUMERO {}",
+                "FoldFound": "VIDEO A ETE TROUVE EST CE QUE TU VOULEZ SUPPRIMER LE VIDEOS?(1)OUI(2)NO(SE SI TENGONO I NUOVI VIDEO VERRANNO AGGIUNTI)",
+                "NoSong": "CHANSON N'ETE PAS TROUVE"
             }
         }
     ],

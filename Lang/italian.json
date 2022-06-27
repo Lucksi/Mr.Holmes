@@ -79,9 +79,13 @@
                 "NoPost": "QUESTO USER NON HA POST IMPOSSIBILE SCARICARE FOTO",
                 "TotDetails": "POST DETAILS SALVATI IN: {}",
                 "Image": "IMMAGINI SALVATE IN: {}",
+                "Video": "VIDEO SALVATI IN: {}",
                 "Check": "CONTROLLO SE {}.jpg ESISTE...",
                 "CheckTrue": "L'IMMAGINE ESISTE SKIPPO..",
                 "CheckFalse": "L'IMMAGINE NON ESISTE ESEGUO IL DOWNLOAD...",
+                "VideoCheck": "CONTROLLO SE {} ESISTE...",
+                "VideoCheckTrue": "IL VIDEO ESISTE SKIPPO..",
+                "VideoCheckFalse": "IL VIDEO NON ESISTE ESEGUO IL DOWNLOAD...",
                 "Success": "DOWNLOAD EFFETTUATO CON SUCCESSO"
             },
         
@@ -107,6 +111,14 @@
                 "Yes_Image": "IMMAGINE {} TROVATA\n",
                 "No_Desc": "NESSUNA DESCRIZIONE TROVATA",
                 "Protected": "QUESTO ACCOUNT HA I TWEET PROTETTI IMPOSSIBILE EFFETTUARE LO SCRAPING"
+            },
+
+            "TikTok":{
+                "Download_Full": "DOWNLOAD {} TIKTOKS",
+                "Download_Partial": "DOWNLOAD {} PRIMI 12 TIKTOK",
+                "Download":"DOWNLOAD VIDEO NUMERO {}",
+                "FoldFound": "SONO GIA STATI TROVATI DEI VIDEO VUOI CANCELLARLI(SE SI TENGONO I NUOVI VIDEO VERRANNO AGGIUNTI)?(1)YES(2)NO",
+                "NoSong": "NON E STATA TROVATA ALCUNA CANZONE"
             }
         }
     ],

@@ -78,10 +78,14 @@
                 "Details": "WOULD YOU LIKE TO DOWNLOAD POST-DETAILS(1)YES(2)NO\n\n",
                 "TotDetails": "POST DETAILS SAVED ON: {}",
                 "Image": "IMAGES SAVED ON: {}",
+                "Video": "VIDEO SAVED ON: {}",
                 "NoPost": "THIS USER HAS NO POST..CANNOT DOWNLOAD PROFILE PICS",
                 "Check": "CHECKING IF {}.jpg EXIST...",
                 "CheckTrue": "IMAGE EXIST SKIPPING",
                 "CheckFalse": "IMAGE DOESNT EXIST DOWNLOADING...",
+                "VideoCheck": "CHECK IF {} EXIST...",
+                "VideoCheckTrue": "VIDEO EXIST SKIPPING..",
+                "VideoCheckFalse": "VIDEO DOESNT EXIST DOWNLOADING...",
                 "Success": "DOWNLOAD SUCCESSFULL"
             },
             
@@ -95,7 +99,7 @@
                 "Private": "LOOKS LIKE THIS USER IS PRIVATE..CANNOT SCRAPE DATA",
                 "GeoData": "CHECKING POST {} GEODATA (ATTENTION COORDINATES MAY NOT BE 100% ACCURATES)",
                 "NoGeoData": "IMPOSSIBLE CHECKING GEODATA",
-                "FoldFound": "INSTAGRAM POSTS ALREADY FOUND WOULD YOU LIKE TO DELETE THEME?(1)YES(2)NO"
+                "FoldFound": "INSTAGRAM POSTS ALREADY FOUND WOULD YOU LIKE TO DELETE THEM?(1)YES(2)NO(IF YOU KEEP THEM NEW POSTS WILL BE ADDED)"
             },
             
             "Twitter":{
@@ -107,6 +111,14 @@
                 "Yes_Image": "IMAGE {} FOUND\n",
                 "No_Desc": "NO DESCRIPTION HAS BEEN FOUND",
                 "Protected": "THIS ACCOUNT HAS IS TWEET PROTECTED..CANNOT SCRAPE DATA"
+            },
+
+            "TikTok":{
+                "Download_Full": "DOWNLOAD {} TIKTOKS",
+                "Download_Partial": "DOWNLOAD {} PRIMI 12 TIKTOK",
+                "Download":"DOWNLOAD VIDEO NUMBER {}",
+                "FoldFound": "VIDEO HAS BEEN ALREADY FOUND WOULD YOU LIKE TO DELETE THEM?(1)YES(2)NO(IF YOU KEEP THEME NEW VIDEO WILL BE ADDED)",
+                "NoSong": "ANY SONG HAS BEEN FOUND"
             }
         }
     ],
