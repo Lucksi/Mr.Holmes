@@ -115,7 +115,7 @@
 
             "TikTok":{
                 "Download_Full": "DOWNLOAD {} TIKTOKS",
-                "Download_Partial": "DOWNLOAD {} PRIMI 12 TIKTOK",
+                "Download_Partial": "DOWNLOAD {} FIRST 12 TIKTOK",
                 "Download":"DOWNLOAD VIDEO NUMBER {}",
                 "FoldFound": "VIDEO HAS BEEN ALREADY FOUND WOULD YOU LIKE TO DELETE THEM?(1)YES(2)NO(IF YOU KEEP THEME NEW VIDEO WILL BE ADDED)",
                 "NoSong": "ANY SONG HAS BEEN FOUND"
