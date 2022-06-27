@@ -151,6 +151,17 @@ License: GNU General Public License v3.0*/
     animation: joggleImg 2s infinite;
 }
 
+video{
+    display: inline-block;
+    width: 390px;
+    height: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 3px solid;
+    border-radius: 20px;
+    border-color: #ffffff;
+}
+
 #Main_pics{
     display:block;
     margin-left:auto;
@@ -251,6 +262,11 @@ License: GNU General Public License v3.0*/
 
     .Data4 img{
         margin-bottom: 30px;
+        height: 200px;
+        width: 200px;
+    }
+
+    video{
         height: 200px;
         width: 200px;
     }
