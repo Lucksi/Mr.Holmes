@@ -477,7 +477,7 @@ class Downloader:
                         f = open(report, "w", encoding="utf-8")
                         f.write("TITLE: {}\n".format(name))
                         f.write("DETAILS: {}".format(details.replace("\n", "")))
-                        f.write("\nPOSTED ON: {}".format(date))
+                        f.write("\nPOSTED ON: {}\n".format(date))
                         f.write("SONG: {}".format(music.replace("\n", "")))
                         f.close()
                     i = i+1
