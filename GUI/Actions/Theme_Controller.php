@@ -13,9 +13,6 @@
             $Style_name = "../Css/$color/$File_Name";
             if (file_exists($Style_name)) {
                 echo '<link rel = "stylesheet" id = "Theme" href ="'.$Style_name.'">';
-                if ($color == "Uchiha"){
-                    echo ' <script src = "../Script/Audio.js"></script>';
-                }         
             }
             else {
                 echo "<script>
@@ -80,39 +77,39 @@
             }
             else {
                 echo "
-                <img class = 'Mod' src = '../Icon/$color/Username.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Username.png'>
                 <p id = 'Const'>USERNAME</p>
                 <a href = 'Username.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Website'>
-                <img class = 'Mod' src = '../Icon/$color/Website.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Website.png'>
                 <p id = 'Const'>WEBSITE</p>
                 <a href = 'Websites.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Phone'>
-                <img class = 'Mod' src = '../Icon/$color/Phone.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Phone.png'>
                 <p id = 'Const'>Phone</p>
                 <a href = 'Phone.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Ports'>
-                <img class = 'Mod' src = '../Icon/$color/Ports.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Ports.png'>
                 <p id = 'Const'>Ports</p>
                 <a href = 'Ports.php'><button class = But>Search</button></a>
             </div>
             <br>
             <br>
             <div id = 'Username'>
-                <img class = 'Mod'  src = '../Icon/$color/Email.png'onclick='Play()'>
+                <img class = 'Mod'  src = '../Icon/$color/Email.png'>
                 <p id = 'Const' id = But>Email</p>
                 <a href = 'Email.php'><button class = But>Search</button></a>
             </div>
             <div id = 'Website'>
-                <img class = 'Mod' src = '../Icon/$color/User.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/User.png'>
                 <p id = 'Const'>CREATE-USER</p>
                 <a href = 'New_User.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Phone'>
-                <img class = 'Mod' src = '../Icon/$color/Author.png'onclick='Play()'>
+                <img class = 'Mod' src = '../Icon/$color/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>
             </div>";
@@ -165,9 +162,6 @@
             $color = $parser["Color"]["Background"];
             if ($color == "Light" or $color == "Dark" ){
                 echo "<img src = '../Icon/Base/Logo.png'>";
-            }
-            elseif ($color == "Uchiha"){
-                echo "<img id = 'Main_img' src = '../Icon/Uchiha/Logo.png'onclick='Play()'>";
             }
             else {
                 echo "<img id = 'Main_img' src = '../Icon/$color/Logo.png'>";

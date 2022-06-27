@@ -82,81 +82,110 @@
             else{
                 echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_{$profile_pic}.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
             }
-            
-            foreach(array_reverse($image) as $Content1){
-                $i = $i +1;
-                $img1 = $Content1;
-                if (file_exists($img1)){
-                    if(getimagesize($img1) == false){
 
-                    }
-                    else{
-                        echo "\t\t\t<a href = '{$img1}'target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
-                    }
+            if($Folder_name == "TikTok_Posts"){
+                $mp4 = glob($Dir_Name."*.mp4");
+                foreach(array_reverse($mp4) as $Content1){
+                    $i = $i +1;
+                    $img1 = $Content1;
+                    echo "<video src = '$img1'controls></video>\n";
                 }
-                else{
-                    echo "none";
-                }
-            }
-            echo "</div>";
-            echo "<div class = 'Data3'>";
-            echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
-            
-            foreach(array_reverse($fold) as $Content => $value){
-                $b = 0;
-                $data_file = glob("$value/*"."txt");
-                if ($Folder_name == "Instagram_Posts"){
-                    $cut_img = str_replace("$value/","",$data_file[$b]);
-                    $img = str_replace(".txt",".jpg",$cut_img);
-                    $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
-                    echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
-                }
-                $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
-                while(!feof($opener)){
-                    $reader = fgets($opener);
-                    echo "<p>$reader</p>";
-                }                
-                echo "<hr>";
-                $n1 = $n1 +1 ;
-            }
-            echo "</div>";
-            if ($Folder_name == "Instagram_Posts"){
-                echo "<div class = 'Data4'>";
-                echo "<p id = 'Const2'>{$Argument_Name} GEOLOCATION:</p>";
+                echo "</div>\n";
+                echo "<div class = 'Data3'>";
+                echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";    
                 foreach(array_reverse($fold) as $Content => $value){
                     $b = 0;
-                    $data_file = glob("$value/*"."json");
-                    $format_name = str_replace("$Dir_Name","",$data_file);
-                    $complete_name = str_replace(".json","",$format_name);
+                    $data_file = glob("$value/*"."txt");
                     $cut_img = str_replace("$value/","",$data_file[$b]);
-                    if(file_exists($data_file[$b])){
-                        $img = str_replace(".json",".jpg",$cut_img);
-                        $id = str_replace(".jpg","",$img);
-                        $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
-                        echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
-                        $reader = file_get_contents($data_file[$b]);
-                        $parser = json_decode($reader,true);
-                        $Latitude = $parser["Geolocation"]["Latitude"];
-                        $Longitude = $parser["Geolocation"]["Longitude"];
-                        echo "
-                        <div class = 'map' id='map{$g}'></div>
-                        <script>
-                        var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
-                        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                        attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
-                        }).addTo(map);
+                    $img = str_replace(".txt",".mp4",$cut_img);   
+                    $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
+                    echo "<center><video src = '{$Content}' controls></video></center>";
+                    $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
+                    while(!feof($opener)){
+                        $reader = fgets($opener);
+                        echo "<p>$reader</p>";
+                    }                
+                    echo "<hr>";
+                    $n1 = $n1 +1 ;
+                }
+                echo "</div>";
+            }
+            else {
+                foreach(array_reverse($image) as $Content1){
+                    $i = $i +1;
+                    $img1 = $Content1;
+                    if (file_exists($img1)){
+                        if(getimagesize($img1) == false){
     
-                        L.marker([$Latitude,$Longitude]).addTo(map)
-                        .bindPopup('Post id: {$id} is approximatley based in this Area.')
-                        .openPopup();
-                        </script>";
-                        echo "<hr>";
-                        $g = $g +1;
+                        }
+                        else{
+                            echo "\t\t\t<a href = '{$img1}'target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
+                        }
                     }
                     else{
-
+                        echo "none";
                     }
-                    $n = $n + 1;
+                }
+                echo "</div>";
+                echo "<div class = 'Data3'>";
+                echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
+                
+                foreach(array_reverse($fold) as $Content => $value){
+                    $b = 0;
+                    $data_file = glob("$value/*"."txt");
+                    if ($Folder_name == "Instagram_Posts"){
+                        $cut_img = str_replace("$value/","",$data_file[$b]);
+                        $img = str_replace(".txt",".jpg",$cut_img);
+                        $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
+                        echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
+                    }
+                    $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
+                    while(!feof($opener)){
+                        $reader = fgets($opener);
+                        echo "<p>$reader</p>";
+                    }                
+                    echo "<hr>";
+                    $n1 = $n1 +1 ;
+                }
+                echo "</div>";
+                if ($Folder_name == "Instagram_Posts"){
+                    echo "<div class = 'Data4'>";
+                    echo "<p id = 'Const2'>{$Argument_Name} GEOLOCATION:</p>";
+                    foreach(array_reverse($fold) as $Content => $value){
+                        $b = 0;
+                        $data_file = glob("$value/*"."json");
+                        $format_name = str_replace("$Dir_Name","",$data_file);
+                        $complete_name = str_replace(".json","",$format_name);
+                        $cut_img = str_replace("$value/","",$data_file[$b]);
+                        if(file_exists($data_file[$b])){
+                            $img = str_replace(".json",".jpg",$cut_img);
+                            $id = str_replace(".jpg","",$img);
+                            $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
+                            echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
+                            $reader = file_get_contents($data_file[$b]);
+                            $parser = json_decode($reader,true);
+                            $Latitude = $parser["Geolocation"]["Latitude"];
+                            $Longitude = $parser["Geolocation"]["Longitude"];
+                            echo "
+                            <div class = 'map' id='map{$g}'></div>
+                            <script>
+                            var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
+                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                            attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                            }).addTo(map);
+        
+                            L.marker([$Latitude,$Longitude]).addTo(map)
+                            .bindPopup('Post id: {$id} is approximatley based in this Area.')
+                            .openPopup();
+                            </script>";
+                            echo "<hr>";
+                            $g = $g +1;
+                        }
+                        else{
+    
+                        }
+                        $n = $n + 1;
+                    }
                 }
             }
         } 
@@ -165,6 +194,10 @@
         }
         echo"</div>";
         echo "</center>";
+    }
+
+    function GetVideo(){
+        
     }
     
     function Checker() {
@@ -226,6 +259,11 @@
                 echo"</div>";
                 $Folder_name = "Twitter_Posts";
                 $Argument_Name = "TWITTER-POSTS";
+                Get_Posts($File_name,$Folder_name,$Argument_Name);
+                echo"</div>";
+                echo"</div>";
+                $Folder_name = "TikTok_Posts";
+                $Argument_Name = "TIKTOK-POSTS";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
                 $Complete_name = "../Reports/Usernames/Dorks/{$File_name}_Dorks.txt";
