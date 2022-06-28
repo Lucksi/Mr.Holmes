@@ -97,9 +97,17 @@
                     $b = 0;
                     $data_file = glob("$value/*"."txt");
                     $cut_img = str_replace("$value/","",$data_file[$b]);
-                    $img = str_replace(".txt",".mp4",$cut_img);   
-                    $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
-                    echo "<center><video src = '{$Content}' controls></video></center>";
+                    $img = str_replace(".txt",".jpg",$cut_img);
+                    $video = str_replace(".txt",".mp4",$cut_img);   
+                    $poster = "$value/$img";
+                    $watch = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$video";
+                    if (file_exists($poster)){
+                        echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
+                    }
+                    else{
+
+                    }
+                    
                     $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
                     while(!feof($opener)){
                         $reader = fgets($opener);
