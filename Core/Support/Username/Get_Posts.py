@@ -428,6 +428,7 @@ class Downloader:
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
             reader = soup(openurl.content, "html.parser")
+            stats = reader.find_all("div", class_="flex items-center mb-1")
             postsect = reader.find_all("div", class_="info3")
             for video in postsect:
                 try:
@@ -438,6 +439,7 @@ class Downloader:
                         title, headers=headers, allow_redirects=True)
                     reader2 = soup(openurl2.content, "html.parser")
                     video = reader2.find("video")["src"]
+                    poster = reader2.find("video")["poster"]
                     name = title.replace("https://urlebird.com/video/", "")
                     filename = folder + "/" + name.replace("/", ".mp4")
                     foldername = folder + "/" + name.replace("/", "")
@@ -453,19 +455,31 @@ class Downloader:
                             LangFile, "Username", "Default", "VideoCheckFalse"))
                         os.mkdir(foldername)
                         report = foldername + "/" + name.replace("/", ".txt")
+                        reportImage = foldername + "/" + name.replace("/", ".jpg")
                         getter = requests.get(
                             video, headers=headers, allow_redirects=True)
                         open(filename, "wb").write(getter.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
-                      
+                        print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + "DONWLOAD IMAGE POSTER")
+                        getter2 = requests.get(
+                            poster, headers=headers, allow_redirects=True)
+                        open(reportImage, "wb").write(getter2.content)
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                            LangFile, "Username", "Default", "Success"))
                         details = reader2.find("video").text
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +
                               "DETAILS: {}".format(details.replace("\n", "")))
-                        
                         date = reader2.find("h6").text
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
-                         
+                        stats = reader2.find_all("div",class_="info")
+                        for stat in stats:
+                            play = stat.select_one("span[title=Likes]").text
+                            comments = stat.select_one("span[title=Comments]").text
+                            shares = stat.select_one("span[title=Shares]").text
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "PLAYES : {}".format(play))
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "COMMENTS: {}".format(comments))
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SHARES: {}".format(shares))
                         if '<div class="music">' in openurl2.text :
                             music = reader2.find("div", class_="music").text
                             print(
@@ -478,6 +492,9 @@ class Downloader:
                         f.write("TITLE: {}\n".format(name))
                         f.write("DETAILS: {}".format(details.replace("\n", "")))
                         f.write("\nPOSTED ON: {}\n".format(date))
+                        f.write("\nPLAYED: {}".format(play))
+                        f.write("\nCOMMENTS: {}".format(comments))
+                        f.write("\nSHARES: {}\n".format(shares))
                         f.write("SONG: {}".format(music.replace("\n", "")))
                         f.close()
                     i = i+1
