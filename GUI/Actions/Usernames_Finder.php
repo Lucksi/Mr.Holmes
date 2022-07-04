@@ -203,11 +203,7 @@
         echo"</div>";
         echo "</center>";
     }
-
-    function GetVideo(){
-        
-    }
-    
+ 
     function Checker() {
         $File_name = $_POST["Searcher"];;
         if ($File_name == ""){
