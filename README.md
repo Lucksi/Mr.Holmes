@@ -191,6 +191,11 @@ write:François
 
 <br>
 
+# ACTUAL VERSION:
+## Moriarty-1.0.1
+
+<br>
+
 # INTERACTIVE MAP HAS BEEN MADE WITH:
 ## Leaflet: https://leafletjs.com
 
