@@ -180,6 +180,12 @@ write:François
 ```
 <br>
 
+# DEFAULT USERNAME AND PASSWORD:
+    Username:Admin
+    Password:Qwerty123
+
+<br>
+
 # LINGUE DISPONIBILI:
     Italiano 🇮🇹 
     English 🏴󠁧󠁢󠁥󠁮󠁧󠁿
@@ -187,9 +193,9 @@ write:François
 
 <br>
 
-# DEFAULT USERNAME AND PASSWORD:
-    Username:Admin
-    Password:Qwerty123
+
+# VERSIONE ATTUALE:
+## Moriarty-1.0.1
 
 <br>
 
@@ -199,7 +205,7 @@ write:François
 <br>
 
 # USERNAME ENTITIES:
-## Le Icone sulla Cartella /GUI/Icon/Entities/Site_Icon sono state prese da: https://www.iconfinder.com/ tutti i diritti vanno ai loro rispettivi creatori
+## Le Icone sulla Cartella /GUI/Icon/Entities/Site_Icon sono state prese da: https://www.iconfinder.com/ tutti i meriti vanno ai loro rispettivi creatori
 
 <br>
 
