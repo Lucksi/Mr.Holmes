@@ -98,7 +98,7 @@ proot -0 chmod +x install_Termux.sh
     
 <br>
 
-# VERSIONS LIST:
+# LISTA VERSIONI:
     https://lucksi.github.io/Mr.Holmes/Pages/versions.html
 <br>
 
@@ -159,7 +159,7 @@ write:Password=Your Password
 ```
 <br>
 
-# :heavy_check_mark: LANGUAGE SETTINGS:
+# :heavy_check_mark: IMPOSTAZIONI LINGUA:
 ```bash
 cd GUI
 cd Language
@@ -180,7 +180,7 @@ write:François
 ```
 <br>
 
-# DEFAULT USERNAME AND PASSWORD:
+# DEFAULT USERNAME E PASSWORD:
     Username:Admin
     Password:Qwerty123
 
