@@ -202,7 +202,7 @@ write:François
 <br>
 
 # USERNAME ENTITIES:
-## icons on folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credits goes to their respective creators
+## icons on folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credit goes to their respective creators
 
 <br>
 
