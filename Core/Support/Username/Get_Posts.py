@@ -88,6 +88,7 @@ class Downloader:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
+                            sleep(3)
                         i = i+1
                     except ConnectionError:
                         print(
@@ -235,7 +236,6 @@ class Downloader:
                             f.write("POSTED: {}\r\n".format(time.strip()))
                             f.close()
                             t = t+1
-                            sleep(2)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
@@ -246,6 +246,7 @@ class Downloader:
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             t = t+1
                             continue
+                        sleep(2)
                 else:
                     pass
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -305,7 +306,7 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
                             j = j+1
-                            sleep(2)
+                            sleep(5)
                         except ConnectionError:
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
@@ -384,7 +385,7 @@ class Downloader:
                     f.write("QUOTES: {}\r\n".format(quote))
                     f.write("POSTED ON: {}\r\n".format(date))
                     i = i+1
-                    sleep(2)
+                    sleep(3)
                     if i == range_band + 1:
                         break
                 except ConnectionError:
@@ -456,17 +457,20 @@ class Downloader:
                         os.mkdir(foldername)
                         report = foldername + "/" + name.replace("/", ".txt")
                         reportImage = foldername + "/" + name.replace("/", ".jpg")
+                        sleep(2)
                         getter = requests.get(
                             video, headers=headers, allow_redirects=True)
                         open(filename, "wb").write(getter.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
                         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + "DONWLOAD IMAGE POSTER")
+                        sleep(2)
                         getter2 = requests.get(
                             poster, headers=headers, allow_redirects=True)
                         open(reportImage, "wb").write(getter2.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
+                        sleep(2)
                         details = reader2.find("video").text
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +
                               "DETAILS: {}".format(details.replace("\n", "")))
@@ -498,6 +502,7 @@ class Downloader:
                         f.write("SONG: {}".format(music.replace("\n", "")))
                         f.close()
                     i = i+1
+                    sleep(5)
                     if i == range_band + 1:
                         break
         
