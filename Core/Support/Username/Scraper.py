@@ -5,7 +5,6 @@
 
 import json
 import requests
-from stem import Flag
 from Core.Support import Font
 from Core.Support.Username import Get_Posts
 from Core.Support import Language
