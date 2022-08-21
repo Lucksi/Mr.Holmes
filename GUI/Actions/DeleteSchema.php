@@ -17,7 +17,7 @@
         $path = "../Graphs/{$filename}/{$filename}.mh";
         $path2 = "../Graphs/{$filename}/encode.mh";
         if(file_exists($path)){
-            $Message = Get_Message("Errors","Canc");
+            $Message = Get_Message("Positives","Canc");
             unlink($path);
             unlink($path2);
             rmdir("../Graphs/{$filename}");
