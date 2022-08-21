@@ -39,7 +39,8 @@
             "user": "https://disqus.com/{}",
             "user2": "https://disqus.com/{}",
             "exception": [" "],
-            "Scrapable": "False"
+            "Scrapable": "True",
+            "Scrapable_url": "https://disqus.com/api/3.0/users/details?user=username%3A{}&attach=userFlaggedUser&api_key=E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F"
         },
         
         "Pinterest":{
@@ -1459,6 +1460,18 @@
             "user2": "https://heylink.me/{}/",
             "exception": [" ","/"],
             "Scrapable": "False"
+        },
+
+        "Ngl.link":{
+            "Error": "Message",
+            "text": "Could not find user",
+            "name": "Ngl.link",
+            "main": "ngl.link",
+            "user": "https://ngl.link/{}",
+            "user2": "https://ngl.link/{}",
+            "exception": [" ","/"],
+            "Scrapable": "True",
+            "Scrapable_url": "https://ngl.link/{}"
         }
     }
 ]
