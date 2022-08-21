@@ -10,9 +10,9 @@
         return $Message;
     }
 
-    function Toolbar($final,$Mess1){
+    function Toolbar($final,$Mess1,$Mess2){
         require("Builder.php");
-        NewConstructor($final,$Mess1);
+        NewConstructor($final,$Mess1,$Mess2);
     }
 
     function filenae(){
@@ -32,6 +32,9 @@
             $Mess1 = Get_Message("Question","Graph");
             $Msg = '" "';
             $finalMsg = str_replace(" ",$Mess1,$Msg);
+            $Mess2 = Get_Message("Question","Reset");
+            $Msg2 = '" "';
+            $finalMsg2 = str_replace(" ",$Mess2,$Msg2);
             mkdir("../Graphs/{$filename}",0777);
             chmod("../Graphs/{$filename}",0777);
             $tmp = "../Graphs/Temp.txt";
@@ -42,7 +45,7 @@
             $d = fopen($tmp2,"w");
             fwrite($d,$path2);
             fclose($d);
-            Toolbar($final,$finalMsg);
+            Toolbar($final,$finalMsg,$finalMsg2);
         }
     }
     if(isset($_POST["Button"])){

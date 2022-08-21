@@ -143,7 +143,7 @@
     }
 
 
-    function NewConstructor($final,$Mess1){
+    function NewConstructor($final,$Mess1,$Mess2){
         echo "<hr>";
         echo "<div class = 'Toolbar'>";
         echo '<div class = "Params">
@@ -266,9 +266,9 @@
                     <br>
                     <br>
                     <button  width="fit-content" id = "Button2" name = "create" onclick="CreateElement()">Open</button>
-                    <button  width="fit-content" id = "Button2" name = "delete" onclick="DeleteElement()">Delete</button>
-                    <button  width="fit-content" id = "Button2" name = "deleteAll" onclick="DeleteAll()">Reset</button>';
-                    echo "<button  width='fit-content' id = 'Button2' name = 'save' onclick='SaveGraph($final,$Mess1)'>Save</button>         
+                    <button  width="fit-content" id = "Button2" name = "delete" onclick="DeleteElement()">Delete</button>';
+                    echo " <button  width='fit-content' id = 'Button2' name = 'deleteAll' onclick='DeleteAll($Mess2)'>Reset</button>
+                    <button  width='fit-content' id = 'Button2' name = 'save' onclick='SaveGraph($final,$Mess1)'>Save</button>         
                         <a id = 'link3'></a>
                     </div> 
                 </div>
