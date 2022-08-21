@@ -192,7 +192,7 @@ write:François
 <br>
 
 # ACTUAL VERSION:
-## Moriarty-1.0.1
+## Moriarty-1.0.2
 
 <br>
 
@@ -203,6 +203,14 @@ write:François
 
 # USERNAME ENTITIES:
 ## The Icons on Folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credit goes to their respective creators
+
+<br>
+
+# GRAPHS:
+## With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.
+# EXAMPLE:
+
+![Screenshot](Screenshot/Graph_Test.png)
 
 <br>
 
@@ -264,4 +272,4 @@ write:François
 ## <p align = center>  ORIGINAL CREATOR: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
 
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 

@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi
+# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -68,11 +68,21 @@ class Controller:
             print(Font.Color.BLUE +
                   "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Database", "Del_Token", "None"))
             Token = "GUI/Session/Token.txt"
+            Temp = "GUI/Graphs/Temp.txt"
+            Temp2 = Temp.replace("Temp","TempEncode")
             if os.path.isfile(Token):
                 os.remove(Token)
             else:
                 print(Font.Color.BLUE + "\n[I]" +
                       Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Database", "Token", "None"))
+            if os.path.isfile(Temp):
+                os.remove(Temp)
+            else:
+                pass
+            if os.path.isfile(Temp2):
+                os.remove(Temp2)
+            else:
+                pass
             sleep(3)
         else:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +

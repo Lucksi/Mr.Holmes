@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi
+# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import json
@@ -956,4 +956,118 @@ class info:
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+            pass
+
+    @staticmethod
+    def Ngl(report, username, http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "SCRAPING {} NGL.LINK PROFILE...".format(username))
+        url = info.Get_Url(username, "Ngl.link")
+        url
+        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        try:
+            reader = soup(openurl.content, "html.parser")
+            profile_pic = reader.find("img", class_="pfp")["src"]
+            clicks = reader.find("span", class_="clickCount").text
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "USERNAME: {}".format(username))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "CLICKS: {}".format(clicks))
+
+            f = open(report, "a", encoding="utf-8")
+            f.write("\nNGL.LINK DATA:\n")
+            f.write("USERNAME: {}\r\n".format(username))
+            f.write("CLICKS: {}\r\n".format(clicks))
+            f.close()
+
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
+            if download == 1:
+                SiteName = "Ngl.link"
+                info.Profile_Pic(username, profile_pic, SiteName)
+            else:
+                pass
+
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+            pass
+
+    @staticmethod
+    def Disqus(report, username, http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "SCRAPING {} DISQUS PROFILE...".format(username))
+        url = info.Get_Url(username, "Disqus")
+        url
+        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        try:
+            reader = openurl.text
+            converted = json.loads(reader)
+            id_user = converted["response"]["id"]
+            user = converted["response"]["username"]
+            creation = converted["response"]["joinedAt"]
+            location = converted["response"]["location"]
+            private = converted["response"]["isPrivate"]
+            Followers = converted["response"]["numFollowers"]
+            rep = converted["response"]["reputation"]
+            Followed = converted["response"]["numFollowing"]
+            bio = converted["response"]["about"]
+            profile_pic = converted["response"]["avatar"]["permalink"]
+            
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "ID: {}".format(id_user))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "USERNAME: {}".format(user))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "CREATED ON: {}".format(creation))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "LOCATION: {}".format(location))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "PRIVATE: {}".format(private))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "FOLLOWERS: {}".format(Followers))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "FOLLOWED: {}".format(Followed))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "BIO: {}".format(bio))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "REPUTATION: {}".format(rep))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
+            if download == 1:
+                SiteName = "Disqus"
+                info.Profile_Pic(username, profile_pic, SiteName)
+            else:
+                pass
+            f = open(report, "a", encoding="utf-8")
+            f.write("\nDISQUS DATA:\n")
+            f.write("ID: {}\r\n".format(id_user))
+            f.write("USERNAME: {}\r\n".format(user))
+            f.write("CREATED ON: {}\r\n".format(creation))
+            f.write("LOCATION: {}\r\n".format(location))
+            f.write("PRIVATE: {}\r\n".format(private))
+            f.write("FOLLOWERS: {}\r\n".format(Followers))
+            f.write("FOLLOWED: {}\r\n".format(Followed))
+            f.write("BIO: {}\r\n".format(bio))
+            f.write("REPUTATION: {}\r\n".format(rep))
+            f.close()
+
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass

@@ -208,6 +208,14 @@ write:François
 
 <br>
 
+# GRAPHS
+## Avec cette nouvelle version a été ajoutée la possibilité de créer des graphiques a fin de créer un schéma pour planification des informations.
+# EXEMPLE
+
+![Screenshot](../Screenshot/Graph_Test.png)
+
+<br>
+
 # :last_quarter_moon: DARK MODE:
 ![Screenshot](../Screenshot/Dark_Mode.png)
 

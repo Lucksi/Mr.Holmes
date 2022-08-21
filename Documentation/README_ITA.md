@@ -209,6 +209,14 @@ write:François
 
 <br>
 
+# GRAFICO:
+## Con Questa nuova versione è stata aggiunta la possibilità di creare dei Grafici in ordine di schematizzare le informazioni.
+# EXAMPLE:
+
+![Screenshot](../Screenshot/Graph_Test.png)
+
+<br>
+
 # :last_quarter_moon: DARK MODE:
 ![Screenshot](../Screenshot/Dark_Mode.png)
 

@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi
+# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -139,10 +139,6 @@ class MrHolmes:
         subject = "USERNAME"
         nomefile = "Site_lists/Username/site_list.json"
         folder = "GUI/Reports/Usernames/" + username + "/"
-        # if os.path.isdir(folder):
-        #    shutil.rmtree(folder)
-        #    print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
-        #          Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         report = folder + username + ".txt"
         if os.path.exists(report):
             os.remove(report)
@@ -207,12 +203,6 @@ class MrHolmes:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + names)
             if len(ScraperSites):
                 os.chdir("GUI/Reports/Usernames/{}".format(username))
-                # if os.path.isdir("Profile_pics"):
-                #    shutil.rmtree("Profile_pics")
-                #    os.mkdir("Profile_pics")
-                # else:
-                #    os.mkdir("Profile_pics")
-                # os.chdir("../../../../")
                 if os.path.isdir("Profile_pics"):
                     pass
                 else:
@@ -269,6 +259,21 @@ class MrHolmes:
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.TikTok(
+                                report, username, http_proxy)
+                        except Exception as e:
+                            pass
+                    else:
+                        pass
+
+                    if "Disqus" in ScraperSites:
+                        try:
+                            Scraper.info.Disqus(
+                                report, username, http_proxy)
+                        except ConnectionError:
+                            print(
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                            http_proxy = None
+                            Scraper.info.Disqus(
                                 report, username, http_proxy)
                         except Exception as e:
                             pass
@@ -401,6 +406,19 @@ class MrHolmes:
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Minecraft(
+                                report, username, http_proxy)
+                    else:
+                        pass
+                    
+                    if "Ngl.link" in ScraperSites:
+                        try:
+                            Scraper.info.Ngl(
+                                report, username, http_proxy)
+                        except Exception as e:
+                            print(
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                            http_proxy = None
+                            Scraper.info.Ngl(
                                 report, username, http_proxy)
                     else:
                         pass
