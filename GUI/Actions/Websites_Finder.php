@@ -1,10 +1,16 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2021-2022 Lucksi
+    Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
     
     $File_name = $_POST["Searcher"];
+
+    function Get_Message($Type,$Param){
+        require_once ("Language_Controller.php");
+        $Message = Message($Type,$Param);
+        return $Message;
+    }
 
     function Maps_Generator(){
         global $File_name;
@@ -85,17 +91,19 @@
     function Checker() {
         global $File_name;   
         if ($File_name == ""){
+            $Message = Get_Message("NotEntered","Web");
             echo "
             <script>
-            alert('INSERT A WEBSITE');
+            alert('$Message');
             </script>";
         }
         else {
             $Complete_name = "../Reports/Websites/{$File_name}/{$File_name}.txt";
             if(file_exists($Complete_name)){
+                $Message = Get_Message("Positives","Web");
                 echo "
                 <script>
-                alert('WEBSITE FOUND');
+                alert('$Message');
                 </script>";
                 echo "<p id = 'Const'>WEBSITE DATA</p>";
                 echo "<div class = 'Data'>";
@@ -115,9 +123,10 @@
                 echo "</center>";
             }
             else {
+                $Message = Get_Message("NotEntered","Web");
                 echo "
                 <script>
-                alert('OPS WEBSITE NOT FOUND');
+                alert('$Message');
                 </script>";
             }
         }

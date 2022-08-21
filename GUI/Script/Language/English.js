@@ -1,6 +1,6 @@
 /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 AUTHOR: Luca Garofalo (Lucksi)
-Copyright (C) 2021-2022 Lucksi
+Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
 License: GNU General Public License v3.0*/
 
 /*SET LANGUAGE SECTION*/
@@ -85,7 +85,7 @@ function Set_Language_Web_Mobile(list,user,search,Auth){
     Set_Author_Lang_Mobile(Auth);
 }
 
-function Set_Language_Main(list,search,holder,Auth,create,show){
+function Set_Language_Main(list,search,holder,Auth,create,open,show){
     for (i=0;i<list.length;i++){
         document.getElementsByClassName("Cards")[0].getElementsByTagName("p")[i].innerHTML=(list[i]);
         i=i++;
@@ -96,6 +96,7 @@ function Set_Language_Main(list,search,holder,Auth,create,show){
         i=i++;
     }
     document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[5].innerHTML=(create);
+    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[6].innerHTML=(open);
     document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[6].innerHTML=(show);
     Set_Author_Lang(Auth);
 }
@@ -173,12 +174,57 @@ function Set_Language_Email_Mobile(list,user,search,Auth){
     Set_Author_Lang_Mobile(Auth);
 }
 
+function Set_Language_SelectGraph(list,holder,New,Old,Del,Auth){
+    document.getElementById("Current").innerHTML=(holder);
+    document.title=(list[6]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    document.getElementById("New").innerHTML=(New);
+    document.getElementById("Open").innerHTML=(Old);
+    document.getElementById("Del").innerHTML=(Del);
+    Set_Author_Lang(Auth);
+}
+
+function Set_Language_Graph(list,list2,user,search,holder,Auth,Type,Img,Phone,Person,Place,Sepa,Etiq,Create,Delete,DeleteAll,Save){
+    document.getElementById("bar1").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("Current").innerHTML=(holder);
+    document.title=(list[6]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang(Auth);
+    document.getElementById("typ").innerHTML=(Type);
+    document.getElementById("img2").innerHTML=(Img);
+    document.getElementById("nu2").innerHTML=(Phone);
+    document.getElementById("pe2").innerHTML=(Person);
+    document.getElementById("lu2").innerHTML=(Place);
+    document.getElementById("sepa2").innerHTML=(Sepa);
+    document.getElementById("Et2").innerHTML=(Etiq);
+    document.getElementById("name").placeholder= list2[0];
+    document.getElementById("Linkref").placeholder= list2[1];
+    document.getElementById("writeText").placeholder=list2[2];
+    document.getElementById("imageN").placeholder=list2[4];
+    document.getElementById("imageL").placeholder=list2[3];
+    document.getElementById("UsVid").placeholder=list2[4];
+    document.getElementById("Vid").placeholder=list2[5];
+    document.getElementById("Lon").placeholder=list2[6];
+    document.getElementById("Lat").placeholder=list2[7];
+    document.getElementsByName("save")[0].innerHTML=(Save);
+    document.getElementsByName("create")[0].innerHTML=(Create);
+    document.getElementsByName("delete")[0].innerHTML=(Delete);
+    document.getElementsByName("deleteAll")[0].innerHTML=(DeleteAll);
+}
+
 /*END SECTION*/
 
 /*USERNAME*/
 
 function English_Username(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -189,7 +235,7 @@ function English_Username(){
 }
 
 function English_Username_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -201,7 +247,7 @@ function English_Username_Mobile(){
 /*PHONE*/
 
 function English_Phone(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -210,7 +256,7 @@ function English_Phone(){
 }
 
 function English_Phone_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -220,7 +266,7 @@ function English_Phone_Mobile(){
 /*WEB*/
 
 function English_Web(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
@@ -229,7 +275,7 @@ function English_Web(){
 }
 
 function English_Web_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -239,7 +285,7 @@ function English_Web_Mobile(){
 /*PORT*/
 
 function English_Port(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const holder = ("English");
@@ -248,7 +294,7 @@ function English_Port(){
 }
 
 function English_Port_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const Auth = ("javascript:English();")
@@ -258,17 +304,18 @@ function English_Port_Mobile(){
 /*MAIN*/
 
 function English_Main(){
-    const list = new Array ("Username","Website", "Phone", "Port", "E-Mail", "Create User", "Author")
+    const list = new Array ("Username","Website", "Phone", "Port", "E-Mail", "Create User",  "Graph", "Author")
     const search = ("Search");
     const create = ("Create");
+    const open = ("Open");
     const show = ("Show");
     const holder = ("English");
     const Auth = ("javascript:English();")
-    Set_Language_Main(list,search,holder,Auth,create,show);
+    Set_Language_Main(list,search,holder,Auth,create,open,show);
 }
 
 function English_Main_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -291,7 +338,7 @@ function English_Login(){
 /*USER*/
 
 function English_User(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const buttons = new Array("Submit");
     const holder = ("English");
     const Targ = ("CREATE USER");
@@ -300,7 +347,7 @@ function English_User(){
 }
 
 function English_User_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const buttons = new Array("Submit");
     const Targ = ("CREATE USER");
     const Auth = ("javascript:English();");
@@ -310,7 +357,7 @@ function English_User_Mobile(){
 /*EMAIL*/
 
 function English_Email(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
     const user =("Insert a E-Mail...");
     const search = ("Search");
     const holder = ("English");
@@ -319,9 +366,41 @@ function English_Email(){
 }
 
 function English_Email_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Graph", "Author");
     const user =("Insert a E-Mail...");
     const search = ("Search");
     const Auth = ("javascript:English();");
     Set_Language_Email_Mobile(list,user,search,Auth);
+}
+
+function English_SelectGraph(){
+    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente",  "Grafico" , "Autore");
+    const Auth = ("javascript:English();");
+    const New = ("New Graph");
+    const Old = ("Open Graph");
+    const Del = ("Delete Graph");
+    const holder = ("Italiano");
+    Set_Language_SelectGraph(list,holder,New,Old,Del,Auth);
+
+}
+
+function English_Graph(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph" , "Author");
+    const list2 = new Array ("Insert name", "Insert link", "Insert note/comment", "Insert Post Path", "Insert User", "Insert Video Path", "Insert Latitude", "Insert Longitude");
+    const user =("Insert a File...");
+    const search = ("Enter");
+    const Auth = ("javascript:English();");
+    const Type = ("Insert Type");
+    const Img = ("Image");
+    const Phone = ("Phone");
+    const Person = ("Person");
+    const Place = ("Place");
+    const Sepa = ("Separator");
+    const Etiq = ("Label");
+    const Create = ("Create");
+    const Delete = ("Delete");
+    const DeleteAll = ("Reset");
+    const Save = ("Save");
+    const holder = ("English");
+    Set_Language_Graph(list,list2,user,search,holder,Auth,Type,Img,Phone,Person,Place,Sepa,Etiq,Create,Delete,DeleteAll,Save);
 }

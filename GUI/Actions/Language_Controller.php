@@ -1,8 +1,20 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2021-2022 Lucksi
+    Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
+
+    function Message($Type,$Param){
+        $Language_file = "../Language/Language.json";
+        $reader = file_get_contents($Language_file);
+        $Parser = json_decode($reader,true);
+        $Language = $Parser["Language"]["Preference"];
+        $PoPups = "../Language/Messages.json";
+        $reader = file_get_contents($PoPups);
+        $decoder = json_decode($reader,true);
+        $Message = $decoder["{$Type}"][0]["{$Language}"]["{$Param}"];
+        return $Message;
+    }
 
     function Total_Languages(){
         $Dir_Name = "../Script/Language/";
@@ -35,7 +47,7 @@
     }
     
     function Get_Screen_size($Modality,$Lang){
-        if ($Modality == "Login"){
+        if ($Modality == "Login" || $Modality == "SelectGrpah" || $Modality == "Graph"){
             echo "<body onload = {$Lang}_{$Modality}()>\n";
         }
         else{
@@ -78,5 +90,6 @@
             </script>";
             exit(0);
         }
+        return $Language;
     }
 ?>

@@ -1,8 +1,14 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2021-2022 Lucksi
+    Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
+
+    function Get_Message($Type,$Param){
+        require_once ("Language_Controller.php");
+        $Message = Message($Type,$Param);
+        return $Message;
+    }
 
     function get_dorks($Complete_name){
         if(file_exists($Complete_name)){
@@ -105,17 +111,19 @@
     function Checker() {
         $File_name = $_POST["Searcher"];
         if ($File_name == "") {
+            $Message = Get_Message("NotEntered","Phone");
             echo "
             <script>
-            alert('INSERT A NUMBER');
+            alert('$Message');
             </script>";
         }
         else {
             $Complete_name = "../Reports/Phone/{$File_name}/{$File_name}.txt";
             if(file_exists($Complete_name)){
+                $Message = Get_Message("Positives","Phone");
                 echo "
                 <script>
-                alert('NUMBER FOUND');
+                alert('$Message');
                 </script>";
                 echo "<p id = 'Const'>NUMBER DATA</p>";
                 echo "<div class = 'Datap'>";
@@ -138,9 +146,10 @@
                 echo "</center>";
             }
             else {
+                $Message = Get_Message("Errors","Phone");
                 echo "
                 <script>
-                alert('OPS NUMBER NOT FOUND');
+                alert('$Message');
                 </script>";
             }
         }

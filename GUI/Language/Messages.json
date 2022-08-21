@@ -1,0 +1,116 @@
+{
+    "Errors":[
+        {
+            "Italian":{
+                "Username": "Username Non Trovato",
+                "Phone": "Numero Non Trovato",
+                "Web": "Sito Non Trovato",
+                "Email": "Email Non Trovata",
+                "Graph": "Grafico Non Trovato",
+                "Host": "Host Non Trovato"
+            },
+
+            "English":{
+                "Username": "Username Not Found",
+                "Phone": "Number Not Found",
+                "Web": "Website Not Found",
+                "Email": "Email Not Found",
+                "Graph": "Graph Not Found",
+                "Host": "Host Not Found"
+            },
+
+            "French":{
+                "Username": "Username N'Ete Pas Trouvez",
+                "Phone": "Numero N'Ete Pas Trouvez",
+                "Web": "Website N'Ete Pas Trouvez",
+                "Email": "Email N'Ete Pas Trouvez",
+                "Graph": "Graph N'Ete Pas Trouvez",
+                "Host": "Host N'Ete Pas Trouvez"
+            }
+        }
+    ],
+
+    "Positives":[
+        {
+            "Italian":{
+                "Username": "Username Trovato",
+                "Phone": "Numero Trovato",
+                "Web": "Sito Trovato",
+                "Email": "Email Trovata",
+                "Graph": "Grafico Trovato",
+                "Canc": "Grafico Elimato",
+                "Host": "Host Trovato"
+            },
+            
+            "English":{
+                "Username": "Username Found",
+                "Phone": "Number Found",
+                "Web": "Website Found",
+                "Email": "Email Found",
+                "Graph": "Graph Found",
+                "Canc": "Graph Deleted",
+                "Host": "Host Found"
+            },
+
+            "French":{
+                "Username": "Username Ete Trouvez",
+                "Phone": "Numero Ete Trouvez",
+                "Web": "Website Ete Trouvez",
+                "Email": "Email Ete Trouvez",
+                "Graph": "Graph Ete Trouvez",
+                "Canc": "Graph Supprime",
+                "Host": "Host Ete Trouvez"
+            }
+        }
+    ],
+
+    "NotEntered":[
+        {
+            "Italian":{
+                "Username": "Username Non Inserito",
+                "Phone": "Numero Non Inserito",
+                "Web": "Sito Non Inserito",
+                "Email": "Email Non Inserita",
+                "Graph": "Grafico Non Inserito",
+                "Host": "Host Non Inserito"
+            },
+            
+            "English":{
+                "Username": "Username Not Inserted",
+                "Phone": "Number Not Inserted",
+                "Web": "Website Not Inserted",
+                "Email": "Email Not Inserted",
+                "Graph": "Graph Not Inserted",
+                "Host": "Host Not Inserted"
+            },
+
+            "French":{
+                "Username": "Username N'Ete Pas Entrez",
+                "Phone": "Numero N'Ete Pas  Entrez",
+                "Web": "Website N'Ete Pas  Entrez",
+                "Email": "Email N'Ete Pas  Entrez",
+                "Graph": "Graph N'Ete Pas  Entrez",
+                "Host": "Host N'Ete Pas  Entrez"
+            }
+        }
+    ],
+
+    "Question":[
+        {
+            "Italian":{
+                "Graph": "Vuoi effetuare l encoding al grafico? Se hai utilizzato l opzione Luogo e altamente consigliato di non effettuare l encoding",
+                "Reset": "Sei Sicuro? Tutte le Entita verrano cancellate"
+            },
+            
+            "English":{
+                "Graph": "Do you want to encode the graph? If you have used Place Option it is higly raccomented to not Encode the graph",
+                "Reset": "Are You Sure? All your Entities will be deleted"
+            },
+
+            "French":{
+                "Graph": "Est ce que tu voulez effectuer l encode de le graphique? Si tu avez utilize l option Lieu est tres racommentide de ne effectuer pas l encode de le graphique",
+                "Reset": "Etes-vous sur? Toutes les Entites seront supprimees"
+            }
+        }
+    ]
+} 

@@ -1,6 +1,6 @@
 <!--ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 AUTHOR: Luca Garofalo (Lucksi)
-Copyright (C) 2021-2022 Lucksi
+Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
 License: GNU General Public License v3.0-->
 <!DOCTYPE html>
 <html>
@@ -73,6 +73,7 @@ License: GNU General Public License v3.0-->
                 <a href = "Ports.php"></a>
                 <a href = "Email.php"></a>
                 <a href= "New_User.php"></a>
+                <a href="Schema.php"></a>
                 <a id = "change2"></a>
             </div>
         </div>

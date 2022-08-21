@@ -1,7 +1,7 @@
 <?php    
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2021-2022 Lucksi
+    Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
     
     function Body_Theme($File_Name){
@@ -70,6 +70,11 @@
                 <a href = 'New_User.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/Base/Ports.png'>
+                <p id = 'Const'>Graph</p>
+                <a href = 'Schema.php'><button class = But>Create</button></a>
+            </div>
+            <div id = 'Ports'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>

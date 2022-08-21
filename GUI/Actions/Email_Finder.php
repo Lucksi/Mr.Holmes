@@ -1,8 +1,14 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2021-2022 Lucksi
+    Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/
+
+    function Get_Message($Type,$Param){
+        require_once ("Language_Controller.php");
+        $Message = Message($Type,$Param);
+        return $Message;
+    }
     
     function get_dorks(){
         if(file_exists($Complete_name)){
@@ -25,17 +31,19 @@
     function Checker() {
         $File_name = $_POST["Searcher"];
         if ($File_name == "") {
+            $Message = Get_Message("NotEntered","Email");
             echo "
             <script>
-            alert('INSERT A EMAIL-ADDRESS');
+            alert('$Message');
             </script>";
         }
         else {
             $Complete_name = "../Reports/E-Mail/{$File_name}.txt";
             if(file_exists($Complete_name)){
+                $Message = Get_Message("Positives","Email");
                 echo "
                 <script>
-                alert('EMAIL-ADDRESS FOUND');
+                alert('$Message');
                 </script>";
                 echo "<p id = 'Const'>EMAIL DATA</p>";
                 echo "<div class = 'Datap'>";
@@ -52,9 +60,10 @@
                 get_dorks($Complete_name);
             }
             else {
+                $Message = Get_Message("Errors","Email");
                 echo "
                 <script>
-                alert('OPS EMAIL NOT FOUND');
+                alert('$Message');
                 </script>";
             }
         }

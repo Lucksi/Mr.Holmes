@@ -3,6 +3,12 @@
     AUTHOR: Luca Garofalo (Lucksi)
     Copyright 2021-2022 Lucksi
     License: GNU General Public License v3.0*/ 
+
+    function Get_Message($Type,$Param){
+        require_once ("Language_Controller.php");
+        $Message = Message($Type,$Param);
+        return $Message;
+    }
     
     function Get_Dorks($Complete_name){
         if(file_exists($Complete_name)){
@@ -88,7 +94,7 @@
                 foreach(array_reverse($mp4) as $Content1){
                     $i = $i +1;
                     $img1 = $Content1;
-                    echo "<video src = '$img1'controls></video>\n";
+                    echo "<video src = '$img1' controls></video>\n";
                 }
                 echo "</div>\n";
                 echo "<div class = 'Data3'>";
@@ -127,7 +133,7 @@
     
                         }
                         else{
-                            echo "\t\t\t<a href = '{$img1}'target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
+                            echo "\t\t\t<a href = '{$img1}' target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
                         }
                     }
                     else{
@@ -205,19 +211,24 @@
     }
  
     function Checker() {
-        $File_name = $_POST["Searcher"];;
+        $File_name = $_POST["Searcher"];
+        $PoPups = "../Language/Errors.json";
+        $reader = file_get_contents($PoPups);
+        $decoder = json_decode($reader,true);
         if ($File_name == ""){
+            $Message = Get_Message("NotEntered","Username");
             echo "
             <script>
-            alert('INSERT A USERNAME');
+            alert('$Message');
             </script>";
         }
         else {
             $Complete_name = "../Reports/Usernames/{$File_name}/{$File_name}.txt";
             if(file_exists($Complete_name)){
+                $Message = Get_Message("Positives","Username");
                 echo "
                 <script>
-                alert('USERNAME FOUND');
+                alert('$Message');
                 </script>";
                 echo "\n\t<p id = 'Const'>USERNAME DATA</p>";
                 echo "\n\t<div class = 'Wrapper'>";
@@ -274,9 +285,10 @@
                 Get_Dorks($Complete_name);
             }
             else {
+                $Message = Get_Message("Errors","Username");
                 echo "
                 <script>
-                alert('OPS USERNAME NOT FOUND');
+                alert('$Message');
                 </script>";
             }
         }
