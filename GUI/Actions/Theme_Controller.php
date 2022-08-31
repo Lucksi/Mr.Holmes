@@ -114,6 +114,11 @@
                 <a href = 'New_User.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/$color/Graph.png'>
+                <p id = 'Const'>Graph</p>
+                <a href = 'Schema.php'><button class = But>Open</button></a>
+            </div>
+            <div id = 'Ports'>
                 <img class = 'Mod' src = '../Icon/$color/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>
@@ -152,6 +157,11 @@
                 <a href = 'New_User.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Phone'>
+                <img class = 'Mod' src = '../Icon/Base/Ports.png'>
+                <p id = 'Const'>Graph</p>
+                <a href = 'Schema.php'><button class = But>Create</button></a>
+            </div>
+            <div id = 'Ports'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>
