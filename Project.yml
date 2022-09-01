@@ -2,12 +2,12 @@
 
 Name: Mr.Holmes
 Languages: Python,Shell-script,Javascript,Php,Css,Powershell,Batch,C++,Java
-Python-Version: Python3 
+Python-Version: Python 3 
 Original Creator: Luca Garofalo (Lucksi)
 Author: Luca Garofalo (Lucksi)
 Copyright: (C) 2021-2022 Lucksi <lukege287@gmail.com>
 Project-site: https://lucksi.github.io/Mr.Holmes
 Download: git clone https://github.com/Lucksi/Mr.Holmes
 Platforms: Linux/MacOS/Termux/Windows
-Version: Moriarty-1.0.1 
+Version: Moriarty-1.0.2 
 License: GNU General Public License v3.0
