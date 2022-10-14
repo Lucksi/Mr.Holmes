@@ -7,7 +7,8 @@
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
 
         "WhoseNumber":{
@@ -17,7 +18,8 @@
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
 
         "CarteTelefonae":{
@@ -27,7 +29,8 @@
             "main": "carte-telefoane.info",
             "url": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}",
             "url2": "https://www.carte-telefoane.info/cauta.php?nume=&x=47&y=21&judet=&telefon={}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Romania"
         }
     }
 ] 

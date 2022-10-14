@@ -48,9 +48,9 @@ function Preferences(){
     }
 
     Write-Host "`nGUI-LANGUAGE:$mode"
-    $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n(4)UCHIHA`n`n[#MR.HOLMES#]-->"
+    $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n`n[#MR.HOLMES#]-->"
     while($Color -eq ""){
-        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n(4)UCHIHA`n`n[#MR.HOLMES#]-->"
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT THEME`n(1)LIGHT`n(2)DARK`n(3)HIGH-CONTRAST`n`n[#MR.HOLMES#]-->"
     }
     if($Color -eq 1){
         '{
@@ -76,15 +76,6 @@ function Preferences(){
         }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
         $mode = "HIGH-CONTRAST"
     }
-    elseif ($color -eq 4) {
-        '{
-            "Color":{
-                "Background": "Uchiha"
-            }
-        }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
-        $mode = "UCHIHA"
-    }
-
     Write-Host "`nGUI-THEME:$mode"
 }
 

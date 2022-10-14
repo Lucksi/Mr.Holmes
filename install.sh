@@ -64,11 +64,11 @@ function Preference {
 		mode="FRANÇAIS"
 	fi
 	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}$mode\n"
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Theme
 	while [ "$Language" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n(4)UCHIHA\n\n"
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	done
 	if [ $Theme == 1 ];
@@ -95,14 +95,6 @@ function Preference {
     }
 }'>GUI/Theme/Mode.json
 	mode="HIGH-CONTRAST"
-	elif [ $Theme == 4 ];
-	then
-		echo '{
-    "Color":{
-        "Background":"Uchiha"
-    }
-}'>GUI/Theme/Mode.json
-	mode="UCHIHA"
 	fi
 	printf "\n${WHITE}GUI-THEME:${GREEN}$mode\n"
 }

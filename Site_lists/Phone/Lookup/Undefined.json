@@ -6,7 +6,8 @@
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
 
         "WhoseNumber":{
@@ -16,7 +17,8 @@
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         }
     }
 ]

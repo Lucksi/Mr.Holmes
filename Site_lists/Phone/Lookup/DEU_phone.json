@@ -7,7 +7,8 @@
             "main" : "11880.com",
             "url" : "https://www.11880.com/suche/{}/deutschland",
             "url2" : "https://www.11880.com/suche/{}/deutschland",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Deutschland"
             
         },
         
@@ -17,7 +18,8 @@
             "main" : "telefonabc.at",
             "url" : "https://www.telefonabc.at/result.aspx?what={}",
             "url2" : "https://www.telefonabc.at/result.aspx?what={}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Deutschland"
         },
         
         "GoYellow":{
@@ -27,7 +29,8 @@
             "main" : "goyellow.de",
             "url" : "https://www.goyellow.de/suche/{}/-",
             "url2" : "https://www.goyellow.de/suche/{}/-",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Deutschland"
         },
         
         "FreeLookup":{
@@ -36,7 +39,8 @@
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
 
         "WhoseNumber":{
@@ -46,7 +50,8 @@
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         }
     }
 ]

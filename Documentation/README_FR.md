@@ -208,6 +208,14 @@ write:François
 
 <br>
 
+# ENCODING:
+## Avec cette version il est possible de réaliser l'Encoding des Reports
+
+<br>
+
+# HYPOTHESES
+## Avec cette version, vous pouvez générer des "hypotheses" basees sur les informations collectees (les hypothèses peuvent ne pas être fiables à 100 %).
+
 # GRAPHS
 ## Avec cette nouvelle version a été ajoutée la possibilité de créer des graphiques a fin de créer un schéma pour planification des informations.
 # EXEMPLE
@@ -248,17 +256,6 @@ write:François
 <img src="../Screenshot/High-Contrast.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
-
-<br>
-
-# Uchiha MODE:
-![Screenshot](../Screenshot/Uchiha_Mode.png)
-
-<br>
-
-<p align = "center">
-<img src="../Screenshot/Uchiha.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
-</p>
 
 <br>
 

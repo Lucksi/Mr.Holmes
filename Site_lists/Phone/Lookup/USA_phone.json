@@ -6,7 +6,8 @@
             "main": "411.com",
             "url": "https://www.411.com/phone/{}",
             "url2": "https://www.411.com/phone/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "USA"
         },
         
         "WhitePages":{
@@ -15,7 +16,8 @@
             "main": "whitepages.com",
             "url": "https://www.whitepages.com/phone/{}",
             "url2": "https://www.whitepages.com/phone/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "USA"
         },
         
         "FreeLookup":{
@@ -24,7 +26,8 @@
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
         
         "8080":{
@@ -33,7 +36,8 @@
             "main": "800notes.com",
             "url": "https://800notes.com/Phone.aspx/{}",
             "url2": "https://800notes.com/Phone.aspx/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "USA"
         },
 
         "WhoseNumber":{
@@ -43,7 +47,8 @@
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         }
     }
 ] 

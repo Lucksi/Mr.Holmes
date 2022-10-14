@@ -7,7 +7,8 @@
             "main": "PagineBianche.it",
             "url": "https://www.paginebianche.it/cerca-da-numero?qs={}",
             "url2": "https://www.paginebianche.it/cerca-da-numero?qs={}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Italy"
         },
 
         "PaginGialle":{
@@ -17,7 +18,8 @@
             "main": "PagineGialle.it",
             "url": "https://www.paginegialle.it/ricerca/telefono-{}",
             "url2": "https://www.paginegialle.it/ricerca/telefono-{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Italy"
         },
 
         "FreeLookup":{
@@ -26,7 +28,8 @@
             "main": "free-lookup.net",
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         },
 
         "WhoseNumber":{
@@ -36,7 +39,8 @@
             "main": "whosenumber.info",
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
-            "Scrapable": "False"
+            "Scrapable": "False",
+            "Tag": "Generic"
         }
     }
 ] 

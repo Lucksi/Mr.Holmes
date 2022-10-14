@@ -209,6 +209,16 @@ write:François
 
 <br>
 
+# ENCODING
+## Con Questa Versione E Possibile effetuare l'Encoding dei Report
+
+<br>
+
+# IPOTESI
+## Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte (Le Ipotesi Potrebbero non essere affidabili al 100%)
+
+<br>
+
 # GRAFICO:
 ## Con Questa nuova versione è stata aggiunta la possibilità di creare dei Grafici in ordine di schematizzare le informazioni.
 # EXAMPLE:
@@ -252,16 +262,6 @@ write:François
 
 <br>
 
-# Uchiha MODE:
-![Screenshot](../Screenshot/Uchiha_Mode.png)
-
-<br>
-
-<p align = "center">
-<img src="../Screenshot/Uchiha.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
-</p>
-
-<br>
 
 ## <p align = center> STARGAZERS OVER TIME 
 

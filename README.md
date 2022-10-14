@@ -206,6 +206,14 @@ write:François
 
 <br>
 
+# ENCODING:
+## With this version it is Possible to Encode your reports
+
+<br>
+
+# HYPOTHESIS
+## This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media (It may not be a 100% attendible)
+
 # GRAPHS:
 ## With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.
 # EXAMPLE:
@@ -249,16 +257,6 @@ write:François
 
 <br>
 
-# Uchiha MODE:
-![Screenshot](Screenshot/Uchiha_Mode.png)
-
-<br>
-
-<p align = "center">
-<img src="Screenshot/Uchiha.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
-</p>
-
-<br>
 
 ## <p align = center> STARGAZERS OVER TIME 
 

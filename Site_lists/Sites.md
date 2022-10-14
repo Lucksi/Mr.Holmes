@@ -140,6 +140,8 @@
 ## (139) VBOX7: https://www.vbox7.com
 ## (140) BITCHUTE: https://www.bitchute.com
 ## (141) OPENSEA: https://opensea.io
+## (142) HEYLINK: https://heylink.me
+## (143) NGL: https://ngl.link
 
 <br>
 
@@ -198,6 +200,6 @@
 
 <br>
 
-# USERNAME SITES: 149
+# USERNAME SITES: 151
 # PHONE-NUMBER SITES: 14
 # TOTAL: 165 SITES
