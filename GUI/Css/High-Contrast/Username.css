@@ -35,7 +35,7 @@ License: GNU General Public License v3.0*/
     font-size: medium;
 }
 
-.Data2, .Data3, .Data4 {
+.Data2, .Data3, .Data4 , .Data5{
     display:table;
     margin-top: none;
     margin-left: auto;
@@ -47,6 +47,11 @@ License: GNU General Public License v3.0*/
     border-color: #ffffff;
     background-color: #cdd5e618;
     border-radius: 10px;
+}
+
+.Data5{
+    margin-top: 10px;
+    margin-bottom: 40px;
 }
 
 .map{
@@ -62,7 +67,7 @@ License: GNU General Public License v3.0*/
     margin-bottom: 20px
 }
 
-.Data2 p, .Data3 p {
+.Data2 p, .Data3 p, .Data5 p {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: #ffffff;
