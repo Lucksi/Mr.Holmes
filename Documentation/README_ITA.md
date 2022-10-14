@@ -195,7 +195,7 @@ write:François
 
 
 # VERSIONE ATTUALE:
-## Moriarty-1.0.1
+## T.G.D-1.0.1
 
 <br>
 
@@ -247,6 +247,7 @@ write:François
 <img src="../Screenshot/Light.jpg" height ="500px" width = "300px" border = "5px" style="border-color:gray;">
 </p>
 
+
 <br>
 
 # :last_quarter_moon: HIGH-CONTRAST MODE:
@@ -257,6 +258,7 @@ write:François
 <p align = "center">
 <img src="../Screenshot/High-Contrast.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
+
 
 <br>
 
