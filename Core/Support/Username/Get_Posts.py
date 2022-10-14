@@ -74,7 +74,7 @@ class Downloader:
                             Font.Color.GREEN + "[+]" + Font.Color.WHITE + "POST ID: {}".format(name))
                         image = folder + "/{}.jpg".format(name)
                         print(Font.Color.BLUE + "[I]" + Font.Color.WHITE +
-                              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Check").format(name))
+                              Language.Translation.Translate_Language(LangFile, "Username", "Default", "Check").format(name + ".jpg"))
                         sleep(2)
                         if os.path.exists(image):
                             print(

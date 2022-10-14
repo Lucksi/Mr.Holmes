@@ -14,6 +14,7 @@ from Core import Searcher_website
 from Core import Port_Scanner
 from Core import E_Mail
 from Core import Update
+from Core import Dork
 from Core.Support import Database
 from Core.Support import Agree
 from Core.Support import Language
@@ -53,7 +54,7 @@ class Main:
               +
               Font.Color.WHITE + "| A COMPLETE OSINT TOOL:)      " + Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                      |\n|                                                                   |")
         print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version +
-              Font.Color.WHITE + "                                          |")
+              Font.Color.WHITE + "                                             |")
         print(
             Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|EMAIL:lukege287@gmail.com                                          |\n|GIT-HUB:Lucksi                                                     |\n|Twitter:@Lucksi_22                                                 |\n|Linkedin:https://www.linkedin.com/in/Lucksi                        |")
         print(Font.Color.WHITE +
@@ -154,6 +155,13 @@ class Main:
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     E_Mail.Mail_search.Search(username, Mode)
                 elif sce == 9:
+                    username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Param", "None") +
+                                       Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    while username == "":
+                        username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Param", "None") +
+                                       Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Dork.List.Main(username, Mode)
+                elif sce == 10:
                     print(Language.Translation.Translate_Language(
                         filename, "Main", "Exit", "None"))
                     exit()

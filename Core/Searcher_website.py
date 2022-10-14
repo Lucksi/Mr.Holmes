@@ -21,10 +21,10 @@ from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Map
 from Core.Support import Notification
+from Core.Support import Encoding
 from time import sleep
 from datetime import datetime
 from configparser import ConfigParser
-
 
 filename = Language.Translation.Get_Language()
 filename
@@ -634,4 +634,5 @@ class Web:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         Notification.Notifier.Start(Mode)
+        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)

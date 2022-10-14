@@ -11,6 +11,7 @@ from Core.Support import Creds
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
+from Core.Support import Encoding
 from datetime import datetime
 
 filename = Language.Translation.Get_Language()
@@ -48,4 +49,5 @@ class Ports:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         Notification.Notifier.Start(Mode)
+        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)

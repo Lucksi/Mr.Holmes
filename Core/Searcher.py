@@ -17,7 +17,9 @@ from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
+from Core.Support import Recap
 from datetime import datetime
+from Core.Support import Encoding
 from time import sleep
 
 filename = Language.Translation.Get_Language()
@@ -27,7 +29,7 @@ filename
 class MrHolmes:
 
     @staticmethod
-    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice):
+    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags):
         f = open(nomefile,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
@@ -49,6 +51,7 @@ class MrHolmes:
                 error = sites[data1]["Error"]
                 exception_char = sites[data1]["exception"]
                 is_scrapable = sites[data1]["Scrapable"]
+                Tag = sites[data1]["Tag"]
                 print(Font.Color.GREEN +
                       "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Attempt", "None") .format(name))
                 for errors in exception_char:
@@ -63,14 +66,14 @@ class MrHolmes:
                 else:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
@@ -134,19 +137,41 @@ class MrHolmes:
         successfull = []
         successfullName = []
         ScraperSites = []
+        Tags = []
         Writable = True
         MrHolmes.Banner(Mode)
         subject = "USERNAME"
+        found = 0
+        Percent = 0
         nomefile = "Site_lists/Username/site_list.json"
         folder = "GUI/Reports/Usernames/" + username + "/"
         report = folder + username + ".txt"
+        report2 = folder + username + ".mh"
+        Recap1 = folder + "Recap.txt"
+        Recap2 = folder + "Recap.mh"
+        InstagramParams = []
+        TwitterParams = []
         if os.path.exists(report):
             os.remove(report)
             os.remove(folder + "Name.json")
             os.remove(report.replace(".txt", ".json"))
+            if os.path.exists(Recap1):
+                os.remove(Recap1)
+            elif os.path.exists(Recap2):
+                os.remove(Recap2)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
-        else:
+        elif os.path.exists(report2):
+            os.remove(report2)
+            os.remove(folder + "Name.json")
+            os.remove(report2.replace(".mh", ".json"))
+            if os.path.exists(Recap1):
+                os.remove(Recap1)
+            elif os.path.exists(Recap2):
+                os.remove(Recap2)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        else:    
             os.mkdir(folder)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -186,14 +211,16 @@ class MrHolmes:
             filename, "Report", "Username", "Found"))
         f.close()
         MrHolmes.Controll(username, nomefile, identity, report, subject,
-                          successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice)
+                          successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
         Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Nsfw") +
                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Nsfw == 1:
             nomefile = "Site_lists/Username/NSFW_site_list.json"
             MrHolmes.Controll(username, nomefile, identity, report, subject,
-                              successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice)
+                              successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
+            Count = 151
         else:
+            Count = 143
             pass
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Default", "TotFound", "None").format(subject, username))
@@ -201,6 +228,7 @@ class MrHolmes:
         if len(successfull):
             for names in successfull:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + names)
+                found = found + 1
             if len(ScraperSites):
                 os.chdir("GUI/Reports/Usernames/{}".format(username))
                 if os.path.isdir("Profile_pics"):
@@ -211,6 +239,7 @@ class MrHolmes:
                 choice = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                              Font.Color.GREEN + "[*MR.HOLMES*]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
+                    ScrapeOp = "Positive"
                     choice = int(input(
                         Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "choice", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
@@ -238,13 +267,13 @@ class MrHolmes:
                     if "Instagram" in ScraperSites:
                         try:
                             Scraper.info.Instagram(
-                                report, username, http_proxy)
+                                report, username, http_proxy, InstagramParams)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Instagram(
-                                report, username, http_proxy)
+                                report, username, http_proxy, InstagramParams)
                         except Exception as e:
                             pass
                     else:
@@ -328,12 +357,14 @@ class MrHolmes:
 
                     if "Twitter" in ScraperSites:
                         try:
-                            Scraper.info.Twitter(report, username, http_proxy)
+                            Scraper.info.Twitter(
+                                report, username, http_proxy, TwitterParams)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Twitter(report, username, http_proxy)
+                            Scraper.info.Twitter(
+                                report, username, http_proxy, TwitterParams)
                         except Exception as e:
                             print(str(e))
                             pass
@@ -409,7 +440,7 @@ class MrHolmes:
                                 report, username, http_proxy)
                     else:
                         pass
-                    
+
                     if "Ngl.link" in ScraperSites:
                         try:
                             Scraper.info.Ngl(
@@ -422,8 +453,21 @@ class MrHolmes:
                                 report, username, http_proxy)
                     else:
                         pass
+
+                    if "Tellonym" in ScraperSites:
+                        try:
+                            Scraper.info.Tellonym(
+                                report, username, http_proxy)
+                        except Exception as e:
+                            print(
+                                Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                            http_proxy = None
+                            Scraper.info.Tellonym(
+                                report, username, http_proxy)
+                    else:
+                        pass
                 else:
-                    pass
+                    ScrapeOp = "Negative"
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Username", "Default", "NoScrape") + "¯\_(ツ)_/¯")
@@ -431,6 +475,14 @@ class MrHolmes:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Username", "Default", "NoFound") + "¯\_(ツ)_/¯".format(username))
         count = 1
+        Recaps = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+            filename, "Default", "Hypo", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if Recaps == 1:
+            Percent = found/Count*100
+            Recap.Stats.Printer(username, found, Count, Percent, subject,
+                                Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp)
+        else:
+            pass
         if count == 1:
             choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -443,5 +495,6 @@ class MrHolmes:
             f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))
             f.close()
+            Encoding.Encoder.Encode(report)
             Notification.Notifier.Start(Mode)
             Creds.Sender.mail(report, username)

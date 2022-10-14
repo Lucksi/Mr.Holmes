@@ -33,3 +33,25 @@ class Search:
         f.close()
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename,
               "Default", "Report", "None") + report)
+
+    @staticmethod
+    def Generator(Type,nomefile,report,phrase):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              Language.Translation.Translate_Language(filename, "Dorks", "Generation", "None").format(Type))
+        sleep(2)
+        f = open(report, "a")
+        f.write("\n" + Type + "-DORKS:\n\n")
+        f.close()
+        f = open(nomefile, "r")
+        for sites in f:
+            site = sites.rstrip("\n")
+            site = site.replace("{}", phrase)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
+            sleep(2)
+            f = open(report, "a")
+            f.write(site + "\n")
+        f.close()
+        f.close()
+        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename,
+              "Default", "Report", "None") + report)
+

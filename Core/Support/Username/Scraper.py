@@ -282,7 +282,7 @@ class info:
             pass
 
     @staticmethod
-    def Instagram(report, username, http_proxy):
+    def Instagram(report, username, http_proxy, InstagramParams):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} INSTAGRAM PROFILE...".format(username))
         url = info.Get_Url(username, "Instagram")
@@ -312,16 +312,22 @@ class info:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Username", "Instagram", "Private"))
                 Flag = False
+                IsPrivate1 = "True"
+                InstagramParams.append(IsPrivate1)
                 pass
             else:
+                IsPrivate1 = "False"
+                InstagramParams.append(IsPrivate1)
                 Flag = True
                 reader = soup(openurl.content, "html.parser")
                 user = reader.find("h1", class_="profile-name-top").text
                 name = reader.find("h2", class_="profile-name-bottom").text
                 followers = reader.find("span", class_="followed_by").text
+                InstagramParams.append(followers)
                 followed = reader.find("span", class_="follows").text
                 bio = reader.find("div", class_="profile-description").text
                 posts = reader.find("span", class_="total_posts").text
+                InstagramParams.append(posts)
                 profile = reader.find_all("div", class_="profile-avatar")
                 for image in profile:
                     profile_pic = image.find(
@@ -364,11 +370,15 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
+            IsPrivate1 = "True"
+            InstagramParams.append(IsPrivate1)
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
+            IsPrivate1 = "True"
+            InstagramParams.append(IsPrivate1)
             pass
         finally:
             if Flag == True:
@@ -387,7 +397,7 @@ class info:
                     pass
 
     @staticmethod
-    def Twitter(report, username, http_proxy):
+    def Twitter(report, username, http_proxy, TwitterParams):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} TWITTER PROFILE...".format(username))
         url = info.Get_Url(username, "Twitter")
@@ -401,9 +411,13 @@ class info:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Username", "Twitter", "Blocked"))
                 Flag = False
+                IsPrivate = "True"
+                TwitterParams.append(IsPrivate)
                 pass
             else:
                 Flag = True
+                IsPrivate = "False"
+                TwitterParams.append(IsPrivate)
                 reader = soup(openurl.content, "html.parser")
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
@@ -411,20 +425,23 @@ class info:
                 profile_pic = url.replace("/"+username, "") + pic["href"]
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                       "USER: " + user["href"].replace("/", ""))
-
-                post_items = reader.find_all("li", class_="posts")
-                for item in post_items:
-                    posts = item.find("span", class_="profile-stat-num").text
-                    print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
-
                 follower_items = reader.find_all("li", class_="followers")
                 for item in follower_items:
                     follower = item.find(
                         "span", class_="profile-stat-num").text
                     print(Font.Color.YELLOW +
                           "[v]" + Font.Color.WHITE + "FOLLWERS: {}".format(follower))
+                TwitterParams.append(follower)
 
+
+                post_items = reader.find_all("li", class_="posts")
+                for item in post_items:
+                    posts = item.find("span", class_="profile-stat-num").text
+                    print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
+                TwitterParams.append(posts)
+
+               
                 followed_item = reader.find_all("li", class_="following")
                 for item in followed_item:
                     followed = item.find(
@@ -457,11 +474,15 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
+            IsPrivate = "True"
+            TwitterParams[0].append(IsPrivate)
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
+            IsPrivate = "True"
+            TwitterParams[0].append(IsPrivate)
             pass
         finally:
             if Flag == True:
@@ -1020,7 +1041,7 @@ class info:
             Followed = converted["response"]["numFollowing"]
             bio = converted["response"]["about"]
             profile_pic = converted["response"]["avatar"]["permalink"]
-            
+
             print(Font.Color.YELLOW + "[v]" +
                   Font.Color.WHITE + "ID: {}".format(id_user))
             print(Font.Color.YELLOW + "[v]" +
@@ -1062,6 +1083,46 @@ class info:
             f.write("BIO: {}\r\n".format(bio))
             f.write("REPUTATION: {}\r\n".format(rep))
             f.close()
+
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass
+
+    @staticmethod
+    def Tellonym(report, username, http_proxy):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "SCRAPING {} TELLONYM PROFILE...".format(username))
+        url = info.Get_Url(username, "Tellonym")
+        url
+        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        try:
+            reader = soup(openurl.content, "html.parser")
+            profile_pic = reader.find(
+                "meta", attrs={"name": "twitter:image"})["content"]
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "USERNAME: {}".format(username))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+
+            f = open(report, "a", encoding="utf-8")
+            f.write("\nTELLONYM DATA:\n")
+            f.write("USERNAME: {}\r\n".format(username))
+            f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+            f.close()
+
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
+            if download == 1:
+                SiteName = "Tellonym"
+                info.Profile_Pic(username, profile_pic, SiteName)
+            else:
+                pass
 
         except ConnectionError:
             print(Font.Color.RED + "[!]" +

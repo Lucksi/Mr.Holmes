@@ -14,6 +14,7 @@ from Core.Support.Mail import Mail_Validator as mail
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
+from Core.Support import Encoding
 from time import sleep
 from datetime import datetime
 
@@ -103,4 +104,5 @@ class Mail_search:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         Notification.Notifier.Start(Mode)
+        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)

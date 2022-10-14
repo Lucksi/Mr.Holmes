@@ -15,7 +15,7 @@ filename
 class Search:
 
     @staticmethod
-    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2):
+    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags):
         headers = {
             'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
         }
@@ -28,8 +28,12 @@ class Search:
                       Language.Translation.Translate_Language(filename, "Default", "Found", "None").format(subject, username))
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
+                
                 if Writable == True:
                     f.write(site1 + "\r\n")
+                    print(Font.Color.BLUE +
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format(Font.Color.GREEN + Tag + Font.Color.WHITE))
+                    Tags.append(Tag)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -54,6 +58,9 @@ class Search:
                       "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
                 if Writable == True:
                     f.write(site1 + "\r\n")
+                    print(Font.Color.BLUE +
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + Tag + Font.Color.WHITE)))
+                    Tags.append(Tag)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -73,6 +80,9 @@ class Search:
                       "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
                 if Writable == True:
                     f.write(site1 + "\r\n")
+                    print(Font.Color.BLUE +
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + Tag + Font.Color.WHITE)))
+                    Tags.append(Tag)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)

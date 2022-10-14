@@ -19,6 +19,7 @@ from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
+from Core.Support import Encoding
 from time import sleep
 
 filename = Language.Translation.Get_Language()
@@ -162,6 +163,7 @@ class Phone_search:
             successfull = []
             successfullName = []
             ScraperSites = []
+            Tags = []
             Writable = True
             json_file = "GUI/Reports/Phone/{}/{}.json".format(
                 username, username)
@@ -178,12 +180,13 @@ class Phone_search:
                     site2 = sites[data1]["url2"].replace("{}", username)
                     main = sites[data1]["main"]
                     error = sites[data1]["Error"]
+                    Tag =  sites[data1]["Tag"]
                     is_scrapable = sites[data1]["Scrapable"]
                     print(
                         Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Attempt", "None").format(name))
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags)
                     except ConnectionError:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
@@ -248,4 +251,5 @@ class Phone_search:
             filename, "Report", "Default", "By"))
         f.close()
         Notification.Notifier.Start(Mode)
+        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)
