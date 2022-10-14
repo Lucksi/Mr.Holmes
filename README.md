@@ -242,7 +242,6 @@ write:François
 <img src="Screenshot/Light.jpg" height ="500px" width = "300px" border = "5px" style="border-color:gray;">
 </p>
 
-
 <br>
 
 # :last_quarter_moon: HIGH-CONTRAST MODE:
