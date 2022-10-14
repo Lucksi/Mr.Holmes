@@ -146,6 +146,9 @@ function CreateElement(){
                     else if (document.getElementById("Ngl").checked == true){
                         var path = "Profile_pics/Profile_pic_Ngl.link.jpg ";
                     }
+                    else if (document.getElementById("Tellonym").checked == true){
+                        var path = "Profile_pics/Profile_pic_Tellonym.jpg ";
+                    }
                     Final = "../Reports/Usernames/" + user + "/" + path;
                    
                         image = Final + path + "width = 150px style = 'border-radius:20px; margin-top:20px'";
@@ -281,9 +284,9 @@ function DeleteElement(){
         else{
             rem.remove();
         }
-            sec.remove();
-            text.remove();
-            link.remove();
+        sec.remove();
+        text.remove();
+        link.remove();
     }
 }
 

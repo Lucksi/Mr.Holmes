@@ -381,7 +381,7 @@ function French_SelectGraph(){
 
 function French_Graph(){
     const list = new Array ("Username", "Sites-Internet", "Telephoné", "Portes", "E-Mail", "Créér User", "Graphs", "Auteur");
-    const list2 = new Array("Entrez le Nome", "Entrez le Link", "Entre un comment", "Entrez le path de l'immagine", "Entrez an User", "Entrez Video Path", "Entrez Latitude", "Entrez Longitude");
+    const list2 = new Array("Entrez le Nome", "Entrez le Link", "Entre un comment", "Entrez le path de l'immagine", "Entrez an User", "Entrez Video Path", "Entrez Latitude", "Entrez Longitude")
     const user =("Entrez une File...");
     const search = ("Entrer");
     const Auth = ("javascript:French();");

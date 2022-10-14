@@ -374,12 +374,12 @@ function English_Email_Mobile(){
 }
 
 function English_SelectGraph(){
-    const list = new Array ("Username", "Siti-Web", "Telefono", "Porte", "E-Mail", "Crea Utente",  "Grafico" , "Autore");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph" , "Author");
     const Auth = ("javascript:English();");
     const New = ("New Graph");
     const Old = ("Open Graph");
     const Del = ("Delete Graph");
-    const holder = ("Italiano");
+    const holder = ("English");
     Set_Language_SelectGraph(list,holder,New,Old,Del,Auth);
 
 }
