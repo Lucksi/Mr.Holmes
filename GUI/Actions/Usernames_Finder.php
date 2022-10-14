@@ -1,13 +1,47 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright 2021-2022 Lucksi <lukege287@gmail.com> 
+    Copyright 2021-2022 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
 
     function Get_Message($Type,$Param){
         require_once ("Language_Controller.php");
         $Message = Message($Type,$Param);
         return $Message;
+    }
+
+    function GetHypotesi($File_name){
+        $Complete_name = "../Reports/Usernames/{$File_name}/Recap.txt";
+        $Complete_name2 = "../Reports/Usernames/{$File_name}/Recap.mh";
+        if(file_exists($Complete_name)){
+            echo "\n\t\t<div class = 'Data5'>";
+            $data = fopen($Complete_name,"r")or die("Server-Error");
+            echo "\n\t\t\t<p id = Const>HYPOTESYS:</p>\n";
+            while (!feof($data)){
+                $content = fgets($data);
+                echo "\t\t\t<p>".$content."</p>";
+            }
+            fclose($data);
+            echo "</p>";
+            echo "\n\t\t</div>";
+        }
+        else if(file_exists($Complete_name2)){
+            require_once("Decode.php");
+            echo "\n\t\t<div class = 'Data5'>";
+            $data = fopen($Complete_name2,"r")or die("Server-Error");
+            echo "\n\t\t\t<p id = Const>HYPOTESYS:</p>\n";
+            while (!feof($data)){
+                $content = fgets($data);
+                $string = Decode($content);
+                echo "\t\t\t<pre><p>".$string."</p></pre>";
+            }
+            fclose($data);
+            echo "</p>";
+            echo "\n\t\t</div>";
+        }
+        else{
+            echo "\n\t\t\t<p id = 'error' align = 'center'>NOT FIND ANY DORK FOR THIS USER</p>";
+        }
     }
     
     function Get_Dorks($Complete_name){
@@ -224,6 +258,7 @@
         }
         else {
             $Complete_name = "../Reports/Usernames/{$File_name}/{$File_name}.txt";
+            $Complete_name2 = "../Reports/Usernames/{$File_name}/{$File_name}.mh";
             if(file_exists($Complete_name)){
                 $Message = Get_Message("Positives","Username");
                 echo "
@@ -265,6 +300,73 @@
                 }
                 echo "\n\t\t</div>";
                 echo "</div>";
+                GetHypotesi($File_name);
+                $Folder_name = "Instagram_Posts";
+                $Argument_Name = "INSTAGRAM-POSTS";
+                echo "<center>";
+                Get_List($File_name,$Complete_name);
+                echo "</center>";
+                Get_Posts($File_name,$Folder_name,$Argument_Name);
+                echo"</div>";
+                $Folder_name = "Twitter_Posts";
+                $Argument_Name = "TWITTER-POSTS";
+                Get_Posts($File_name,$Folder_name,$Argument_Name);
+                echo"</div>";
+                echo"</div>";
+                $Folder_name = "TikTok_Posts";
+                $Argument_Name = "TIKTOK-POSTS";
+                Get_Posts($File_name,$Folder_name,$Argument_Name);
+                echo"</div>";
+                $Complete_name = "../Reports/Usernames/Dorks/{$File_name}_Dorks.txt";
+                Get_Dorks($Complete_name);
+            }
+            else if(file_exists($Complete_name2)){
+                require_once("Decode.php");
+                $Message = Get_Message("Positives","Username");
+                echo "
+                <script>
+                alert('$Message');
+                </script>";
+                echo "\n\t<p id = 'Const'>USERNAME DATA</p>";
+                echo "\n\t<div class = 'Wrapper'>";
+                echo "\n\t\t<div class = 'Data'>";
+                $data = fopen($Complete_name2,"r")or die("Server-Error");
+                echo "\n\t\t\t<p id = Const>REPORT:</p>\n";
+                $content=  fread($data,filesize($Complete_name2));
+                $string = Decode($content);
+                /*while (!feof($data)){
+                    $content = fgets($data);
+                    $string = Decode($content);
+                    echo "\t\t\t<p>".$string."</p>";
+                }*/
+                fclose($data);
+                echo "<pre><p>.$string</pre>";
+                echo "</p>";
+                echo "\n\t\t</div>";
+                echo "\n\t\t<div class = 'Data_img'>";
+                $Dir_Name = "../Reports/Usernames/{$File_name}/Profile_pics/";
+                if(file_exists($Dir_Name)){
+                    $image = glob($Dir_Name."*.jpg");
+                    echo "\t\t\t<p id = 'Const2'>PROFILE-PICS:$File_name</p>";
+                    foreach($image as $Content) {
+                        $abbr_1 = str_replace("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_","",$Content);
+                        $abbr_2 = str_replace(".jpg","",$abbr_1);
+                        if(getimagesize($Content) == false){
+                            
+                        }
+                        else{
+                            echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$abbr_2'></a>";
+                            echo "<br>";
+                        }
+                    }
+                }
+                else{
+                    echo "\t\t\t<p id = 'Const2'>PROFILE-PICS:$File_name</p>";
+                    echo "\n\t\t\t<p id = 'error'>NOT FIND ANY PROFILE PIC FOR THIS USER</p>";
+                }
+                echo "\n\t\t</div>";
+                echo "</div>";
+                GetHypotesi($File_name);
                 $Folder_name = "Instagram_Posts";
                 $Argument_Name = "INSTAGRAM-POSTS";
                 echo "<center>";

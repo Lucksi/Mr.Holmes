@@ -21,6 +21,7 @@
         }
         else {
             $Complete_name = "../Reports/Ports/{$File_name}.txt";
+            $Complete_name2 = "../Reports/Ports/{$File_name}.mh";
             if(file_exists($Complete_name)){
                 $Message = Get_Message("Positives","Host");
                 echo "
@@ -34,6 +35,26 @@
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;
+                }
+                fclose($data);
+                echo "</p>";
+                echo "\n</div>";     
+            }
+            else if(file_exists($Complete_name2)){
+                require_once("Decode.php");
+                $Message = Get_Message("Positives","Host");
+                echo "
+                <script>
+                alert('$Message');
+                </script>";
+                echo "<p id = 'Const'>HOST-PORT DATA</p>";
+                echo "<div class = 'Data'>";
+                echo "<p id = 'Const'>REPORT:</p>";
+                $data = fopen($Complete_name2,"r")or die("Sever-Error");
+                while (!feof($data)){
+                    $content = fgets($data);
+                    $string = Decode($content);
+                    echo "<pre><p>".$string."</p></pre>";
                 }
                 fclose($data);
                 echo "</p>";

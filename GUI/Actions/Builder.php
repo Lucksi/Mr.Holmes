@@ -85,6 +85,8 @@
                                 <br>
                                 <input type = "radio" class = "imgavalue" id = "Ngl" name = "3" value = "Ngl" onclick="OpenAdvance()">
                                 <p for = "Ngl">Ngl.link</p>
+                                <input type = "radio" class = "imgavalue" id = "Tellonym" name = "3" value = "Tellonym" onclick="OpenAdvance()">
+                                <p for = "Tellonym">Tellonym</p>
                                 <br>
                                 <div class = "Profile_Pics" id = "Profile_Pics">
                                     <br>
@@ -224,6 +226,8 @@
                             <br>
                             <input type = "radio" class = "imgavalue" id = "Ngl" name = "3" value = "Ngl" onclick="OpenAdvance()">
                             <p for = "Ngl">Ngl.link</p>
+                            <input type = "radio" class = "imgavalue" id = "Tellonym" name = "3" value = "Tellonym" onclick="OpenAdvance()">
+                            <p for = "Tellonym">Tellonym</p>
                             <br>
                             <div class = "Profile_Pics" id = "Profile_Pics">
                                 <br>

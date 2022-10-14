@@ -39,6 +39,7 @@
         }
         else {
             $Complete_name = "../Reports/E-Mail/{$File_name}.txt";
+            $Complete_name2 = "../Reports/E-Mail/{$File_name}.mh";
             if(file_exists($Complete_name)){
                 $Message = Get_Message("Positives","Email");
                 echo "
@@ -52,6 +53,28 @@
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;
+                }
+                fclose($data);
+                echo "</p>";
+                echo "\n</div>";
+                $Complete_name = "../Reports/E-Mail/Dorks/{$File_name}_dorks.txt";
+                get_dorks($Complete_name);
+            }
+            else if(file_exists($Complete_name2)){
+                require_once("Decode.php");
+                $Message = Get_Message("Positives","Email");
+                echo "
+                <script>
+                alert('$Message');
+                </script>";
+                echo "<p id = 'Const'>EMAIL DATA</p>";
+                echo "<div class = 'Datap'>";
+                echo "<p id = 'Const'>REPORT:</p>";
+                $data = fopen($Complete_name2,"r")or die("Sever-Error");
+                while (!feof($data)){
+                    $content = fgets($data);
+                    $string = Decode($content);
+                    echo "<pre><p>".$string."</p></pre>";
                 }
                 fclose($data);
                 echo "</p>";

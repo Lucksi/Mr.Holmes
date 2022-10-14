@@ -99,6 +99,7 @@
         }
         else {
             $Complete_name = "../Reports/Websites/{$File_name}/{$File_name}.txt";
+            $Complete_name2 = "../Reports/Websites/{$File_name}/{$File_name}.mh";
             if(file_exists($Complete_name)){
                 $Message = Get_Message("Positives","Web");
                 echo "
@@ -112,6 +113,31 @@
                 while (!feof($data)){
                     $content = fgets($data);
                     echo "<p>".$content;
+                }
+                fclose($data);
+                echo "</p>";
+                echo "\n</div>";
+                Maps_Generator();
+                echo "</div>";
+                echo "<center>";
+                Get_List($File_name,$Complete_name);
+                echo "</center>";
+            }
+            else if(file_exists($Complete_name2)){
+                require_once("Decode.php");
+                $Message = Get_Message("Positives","Web");
+                echo "
+                <script>
+                alert('$Message');
+                </script>";
+                echo "<p id = 'Const'>WEBSITE DATA</p>";
+                echo "<div class = 'Data'>";
+                echo "<p id = 'Const'>REPORT:</p>";
+                $data = fopen($Complete_name2,"r")or die("Server-Error");
+                while (!feof($data)){
+                    $content = fgets($data);
+                    $string = Decode($content);
+                    echo "<pre><p>".$string."</p></pre>";
                 }
                 fclose($data);
                 echo "</p>";
