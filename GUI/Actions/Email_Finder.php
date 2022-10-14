@@ -10,7 +10,7 @@
         return $Message;
     }
     
-    function get_dorks(){
+    function get_dorks($Complete_name){
         if(file_exists($Complete_name)){
             echo "<div class = 'Dataf'>";
             echo "<p id = 'Const'>DORKS:</p>";
