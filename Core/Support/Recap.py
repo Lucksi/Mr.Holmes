@@ -26,7 +26,7 @@ class Stats:
             PostsN = float(Posts.replace(",", ''))
             PostsConv = int(PostsN)
             if FollowConv >= 0 and FollowConv <= 700:
-                if PostsConv >= 0 and PostsConv <= 10:
+                if PostsConv >= 0 and PostsConv <= 30:
                     Hypo = Language.Translation.Translate_Language(
                         filename, "Report", "Specific", "LowLow").format(username, Followers, Posts)
                     print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Report", "Specific", "LowLow").format(
@@ -59,7 +59,7 @@ class Stats:
                         Font.Color.GREEN + username + Font.Color.WHITE, Font.Color.GREEN + Followers + Font.Color.WHITE, Font.Color.GREEN + Posts + Font.Color.WHITE))
 
             elif FollowConv > 150000:
-                if PostsConv >= 0 and PostsConv <= 10:
+                if PostsConv >= 0 and PostsConv <= 30:
                     Hypo = Language.Translation.Translate_Language(
                         filename, "Report", "Specific", "HighLow").format(username + Followers + Posts)
                     print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Report", "Specific", "HighLow").format(
@@ -79,9 +79,12 @@ class Stats:
                 filename, "Report", "Specific", "Blocked")
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                 filename, "Report", "Specific", "Blocked"))
-        f = open(report, "a")
-        f.write("\n\n" + Hypo)
-        f.close()
+        try:
+            f = open(report, "a")
+            f.write("\n\n" + Hypo)
+            f.close()
+        except Exception as e:
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR: {}".format(str(e)))
 
     @staticmethod
     def Printer(username, found, Count, Percent, subject, Tags, InstagramParams, TwitterParamas, ScraperSites, ScrapeOp):
