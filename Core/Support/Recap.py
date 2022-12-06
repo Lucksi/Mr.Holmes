@@ -61,7 +61,7 @@ class Stats:
             elif FollowConv > 150000:
                 if PostsConv >= 0 and PostsConv <= 30:
                     Hypo = Language.Translation.Translate_Language(
-                        filename, "Report", "Specific", "HighLow").format(username + Followers + Posts)
+                        filename, "Report", "Specific", "HighLow").format(username , Followers , Posts)
                     print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Report", "Specific", "HighLow").format(
                         Font.Color.GREEN + username + Font.Color.WHITE, Font.Color.GREEN + Followers + Font.Color.WHITE, Font.Color.GREEN + Posts + Font.Color.WHITE))
                 elif PostsConv > 30 and PostsConv <= 100:
