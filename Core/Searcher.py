@@ -124,14 +124,7 @@ class MrHolmes:
         Type = "YANDEX"
         Dorks.Search.dork(username, report, nomefile, Type)
 
-    @staticmethod
-    def Bing_dork(username):
-        report = "GUI/Reports/Usernames/Dorks/Bing_{}_Dorks.txt".format(
-            username)
-        nomefile = "Site_lists/Username/Bing_dorks.txt"
-        Type = "BING"
-        Dorks.Search.dork(username, report, nomefile, Type)
-
+  
     @staticmethod
     def search(username, Mode):
         successfull = []
