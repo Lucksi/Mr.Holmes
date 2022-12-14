@@ -70,11 +70,18 @@
                 <a href = 'New_User.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Phone'>
-                <img class = 'Mod' src = '../Icon/Base/Ports.png'>
+                <img class = 'Mod' src = '../Icon/Base/Graph.png'>
                 <p id = 'Const'>Graph</p>
                 <a href = 'Schema.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Ports'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>PEOPLE</p>
+                <a href = 'People.php'><button class = But>Show</button></a>
+            </div>
+            <br>
+            <br>
+            <div id = 'Username'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>
@@ -120,6 +127,13 @@
             </div>
             <div id = 'Ports'>
                 <img class = 'Mod' src = '../Icon/$color/Author.png'>
+                <p id = 'Const'>PEOPLE</p>
+                <a href = 'People.php' ><button class = But>Show</button></a>
+            </div>
+            <br>
+            <br>
+            <div id = 'Username'>
+                <img class = 'Mod' src = '../Icon/$color/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>
             </div>";
@@ -162,6 +176,13 @@
                 <a href = 'Schema.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Ports'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>PEOPLE</p>
+                <a href = 'People.php'><button class = But>Show</button></a>
+            </div>
+            <br>
+            <br>
+            <div id = 'USERNAME'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
                 <a id = 'change2'><button class = But>Show</button></a>

@@ -10,6 +10,8 @@ License: GNU General Public License v3.0-->
             require_once("../Actions/Language_Controller.php");
             Total_Languages();
         ?>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.debug.js"></script>
         <script src = "../Script/Author.js"></script>
         <script src = "../Script/Arrow.js"></script>
         <script src = "../Script/Graph/Builder.js"></script>
@@ -52,6 +54,7 @@ License: GNU General Public License v3.0-->
                     <a href ="Ports.php"></a>
                     <a href = "Email.php"></a>
                     <a href="New_User.php"></a>
+                    <a href= "People.php"></a>
                     <a id = "change1"></a>
                     <?php 
                         require_once("../Actions/Language_Controller.php");
@@ -78,6 +81,7 @@ License: GNU General Public License v3.0-->
                 <a href = "Email.php"></a>
                 <a href= "New_User.php"></a>
                 <a href="Schema.php"></a>
+                <a href= "People.php"></a>
                 <a id = "change2"></a>
             </div>
         </div>

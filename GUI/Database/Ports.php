@@ -72,6 +72,7 @@ License: GNU General Public License v3.0-->
                 <a href = "Email.php"></a>
                 <a href="New_User.php"></a>
                 <a href="Schema.php"></a>
+                <a href="People.php"></a>
                 <a id = "change2"></a>
             </div>
         </div>

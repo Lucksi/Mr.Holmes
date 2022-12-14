@@ -97,7 +97,8 @@ function Set_Language_Main(list,search,holder,Auth,create,open,show){
     }
     document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[5].innerHTML=(create);
     document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[6].innerHTML=(open);
-    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[6].innerHTML=(show);
+    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[7].innerHTML=(search);
+    document.getElementsByClassName("Cards")[0].getElementsByTagName("button")[8].innerHTML=(show);
     Set_Author_Lang(Auth);
 }
 
@@ -224,7 +225,7 @@ function Set_Language_Graph(list,list2,user,search,holder,Auth,Type,Img,Phone,Pe
 /*USERNAME*/
 
 function English_Username(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People","Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -235,7 +236,7 @@ function English_Username(){
 }
 
 function English_Username_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User","People", "Author");
     const user =("Insert a Username...");
     const search = ("Search");
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
@@ -247,7 +248,7 @@ function English_Username_Mobile(){
 /*PHONE*/
 
 function English_Phone(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const holder = ("English");
@@ -256,7 +257,7 @@ function English_Phone(){
 }
 
 function English_Phone_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "People", "Author");
     const user =("Insert a PhoneNumber...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -266,7 +267,7 @@ function English_Phone_Mobile(){
 /*WEB*/
 
 function English_Web(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const holder = ("English");
@@ -275,7 +276,7 @@ function English_Web(){
 }
 
 function English_Web_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "People", "Author");
     const user =("Insert a Website...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -285,7 +286,7 @@ function English_Web_Mobile(){
 /*PORT*/
 
 function English_Port(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const holder = ("English");
@@ -294,7 +295,7 @@ function English_Port(){
 }
 
 function English_Port_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User","People", "Author");
     const user =("Insert a Host...");
     const search = ("Search");
     const Auth = ("javascript:English();")
@@ -304,7 +305,7 @@ function English_Port_Mobile(){
 /*MAIN*/
 
 function English_Main(){
-    const list = new Array ("Username","Website", "Phone", "Port", "E-Mail", "Create User",  "Graph", "Author")
+    const list = new Array ("Username","Website", "Phone", "Port", "E-Mail", "Create User",  "Graph", "People", "Author")
     const search = ("Search");
     const create = ("Create");
     const open = ("Open");
@@ -315,7 +316,7 @@ function English_Main(){
 }
 
 function English_Main_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User","People", "Author");
     document.getElementById("change1").setAttribute( "onClick", "javascript: English();" );
     document.title=(list[1]);
     for (i=0;i<list.length;i++){
@@ -338,7 +339,7 @@ function English_Login(){
 /*USER*/
 
 function English_User(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Graph", "People", "Author");
     const buttons = new Array("Submit");
     const holder = ("English");
     const Targ = ("CREATE USER");
@@ -347,7 +348,7 @@ function English_User(){
 }
 
 function English_User_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User","People", "Author");
     const buttons = new Array("Submit");
     const Targ = ("CREATE USER");
     const Auth = ("javascript:English();");
@@ -357,7 +358,7 @@ function English_User_Mobile(){
 /*EMAIL*/
 
 function English_Email(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People", "Author");
     const user =("Insert a E-Mail...");
     const search = ("Search");
     const holder = ("English");
@@ -366,7 +367,7 @@ function English_Email(){
 }
 
 function English_Email_Mobile(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "Graph", "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "People", "Author");
     const user =("Insert a E-Mail...");
     const search = ("Search");
     const Auth = ("javascript:English();");
@@ -374,7 +375,7 @@ function English_Email_Mobile(){
 }
 
 function English_SelectGraph(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph" , "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User","Graph","People","Author");
     const Auth = ("javascript:English();");
     const New = ("New Graph");
     const Old = ("Open Graph");
@@ -385,7 +386,7 @@ function English_SelectGraph(){
 }
 
 function English_Graph(){
-    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph" , "Author");
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph" , "People", "Author");
     const list2 = new Array ("Insert name", "Insert link", "Insert note/comment", "Insert Post Path", "Insert User", "Insert Video Path", "Insert Latitude", "Insert Longitude");
     const user =("Insert a File...");
     const search = ("Enter");
@@ -403,4 +404,25 @@ function English_Graph(){
     const Save = ("Save");
     const holder = ("English");
     Set_Language_Graph(list,list2,user,search,holder,Auth,Type,Img,Phone,Person,Place,Sepa,Etiq,Create,Delete,DeleteAll,Save);
+}
+
+function English_People(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User",  "Graph", "People","Author");
+    const user =("Insert a name...");
+    const search = ("Search");
+    const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
+    const holder = ("English");
+    const photos = ("PROFILE-PICS");
+    const Auth = ("javascript:English();")
+    Set_Language_Username(list,user,search,holder,error,photos,Auth);
+}
+
+function English_People_Mobile(){
+    const list = new Array ("Username", "Websites", "Phone-Numbers", "Port", "E-Mail", "Create User", "People", "Author");
+    const user =("Insert a name...");
+    const search = ("Search");
+    const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
+    const photos = ("PROFILE-PICS");
+    const Auth = ("javascript:English();");
+    Set_Language_Username_Mobile(user,search,list,photos,error,Auth);
 }
