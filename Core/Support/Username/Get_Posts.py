@@ -25,7 +25,7 @@ LangFile
 class Downloader:
 
     @staticmethod
-    def Instagram(url, username, http_proxy, Posts):
+    def Instagram(url, username, http_proxy, Posts, PostLocations, PostGpsCoordinates, Opt,name2):
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -35,8 +35,8 @@ class Downloader:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Download_Partial").format(username))
                 range_band = 12
-            folder = "GUI/Reports/Usernames/{}/Profile_pics/Instagram_Posts".format(
-                username)
+            folder = "GUI/Reports/{}/{}/Profile_pics/Instagram_Posts".format(
+                Opt,name2)
             if os.path.isdir(folder):
                 keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                  Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -134,6 +134,7 @@ class Downloader:
                                 jsonfile = data_fold + \
                                     "/{}.json".format(arr_name[j-1])
                                 final_loc = location.strip()
+                                PostLocations.append(final_loc)
                                 format_loc = final_loc.replace(" ", "+")
                                 req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
                                     format_loc)
@@ -152,6 +153,8 @@ class Downloader:
                                             "Longitude": Lon
                                         }
                                     }
+                                    FormattedGps = "POST N°" + str(j) + ": " + final_loc + ", " + Lat + ", " + Lon
+                                    PostGpsCoordinates.append(FormattedGps)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
                                     sleep(2)
@@ -261,7 +264,7 @@ class Downloader:
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
 
     @staticmethod
-    def Twitter(url, username, http_proxy, Posts):
+    def Twitter(url, username, http_proxy, Posts ,Opt,name2):
         url = url + "/search"
         if Posts > 0:
             if Posts <= 12:
@@ -272,8 +275,8 @@ class Downloader:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Download_Partial").format(username))
                 range_band = 12
-            folder = "GUI/Reports/Usernames/{}/Profile_pics/Twitter_Posts".format(
-                username)
+            folder = "GUI/Reports/{}/{}/Profile_pics/Twitter_Posts".format(
+                Opt,name2)
             if os.path.isdir(folder):
                 shutil.rmtree(folder)
             os.mkdir(folder)
@@ -403,7 +406,7 @@ class Downloader:
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
 
     @staticmethod
-    def TikTok(url, username, http_proxy, Posts):
+    def TikTok(url, username, http_proxy, Posts ,Opt,name2):
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -413,8 +416,8 @@ class Downloader:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "Download_Partial").format(username))
                 range_band = 12
-            folder = "GUI/Reports/Usernames/{}/Profile_pics/TikTok_Posts".format(
-                username)
+            folder = "GUI/Reports/{}/{}/Profile_pics/TikTok_Posts".format(
+                Opt,name2)
             if os.path.isdir(folder):
                 keep = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                  Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "FoldFound") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

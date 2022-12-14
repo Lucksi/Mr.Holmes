@@ -1,14 +1,14 @@
-site:www.{} filetype:txt
-site:www.{} filetype:pdf
-site:www.{} filetype:log
-site:www.{} filetype:doc
-site:www.{} filetype:docx
-site:www.{} filetype:sqlite
-site:www.{} filetype:yaml
-site:www.{} filetype:json
-site:www.{} filetype:md
-site:www.{} intext:admin OR Admin
-site:www.{} intext:emails OR Emails OR EMAILS
-site:www.{} intitle:admin OR Admin
-intext:(www.{} OR {})
-inurl:(www.{} OR {})
+https://www.google.com/search?q=site:(www.{})%29+filetype:txt
+https://www.google.com/search?q=site:(www.{})%29+filetype:pdf
+https://www.google.com/search?q=site:(www.{})%29+filetype:log
+https://www.google.com/search?q=site:(www.{})%29+filetype:doc
+https://www.google.com/search?q=site:(www.{})%29+filetype:docx
+https://www.google.com/search?q=site:(www.{})%29+filetype:sqlite
+https://www.google.com/search?q=site:(www.{})%29+filetype:yaml
+https://www.google.com/search?q=site:(www.{})%29+filetype:json
+https://www.google.com/search?q=site:(www.{})%29+filetype:md
+https://www.google.com/search?q=site:(www.{})%29+intext:admin+OR+Admin
+https://www.google.com/search?q=site:(www.{})%29+intext:emails+OR+Emails+OR+EMAILS
+https://www.google.com/search?q=site:(www.{})%29+intitle:admin+OR+Admin
+https://www.google.com/search?q=intext:(www.{}+OR+{})
+https://www.google.com/search?q=inurl:(www.{}+OR+{})

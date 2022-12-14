@@ -70,11 +70,12 @@ class Sender:
                         inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                                     Language.Translation.Translate_Language(LangFile, "RecapEmail", "NotSent", "None"))
                 elif mail == 2:
-                    inp = input(Language.Translation.Translate_Language(
-                        LangFile, "Default", "Continue", "None"))
+                    pass
+                    #inp = input(Language.Translation.Translate_Language(
+                    #    LangFile, "Default", "Continue", "None"))
             else:
-                inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                     LangFile, "RecapEmail", "NotValid", "None"))
         else:
-            inp = input(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                 LangFile, "RecapEmail", "Disabled", "None"))

@@ -1,10 +1,10 @@
-site:{}
-site:{} mime:txt
-site:{} mime:pdf
-site:{} mime:log
-site:{} mime:doc
-site:{} mime:docx
-site:{} mime:sqlite
-site:{} mime:yaml
-site:{} mime:json
-inurl:{}
+https://yandex.com/search/?text=site:{}
+https://yandex.com/search/?text=site:{}+mime:txt
+https://yandex.com/search/?text=site:{}+mime:pdf
+https://yandex.com/search/?text=site:{}+mime:log
+https://yandex.com/search/?text=site:{}+mime:doc
+https://yandex.com/search/?text=site:{}+mime:docx
+https://yandex.com/search/?text=site:{}+mime:sqlite
+https://yandex.com/search/?text=site:{}+mime:yaml
+https://yandex.com/search/?text=site:{}+mime:json
+https://yandex.com/search/?text=inurl:{}

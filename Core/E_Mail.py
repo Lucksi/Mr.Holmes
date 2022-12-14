@@ -104,5 +104,7 @@ class Mail_search:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         Notification.Notifier.Start(Mode)
-        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)
+        Encoding.Encoder.Encode(report)
+        inp = input(Language.Translation.Translate_Language(
+                        filename, "Default", "Continue", "None"))

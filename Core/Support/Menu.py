@@ -11,6 +11,7 @@ from Core import Searcher
 from Core import config
 from Core import Searcher_phone
 from Core import Searcher_website
+from Core import Searcher_person
 from Core import Port_Scanner
 from Core import E_Mail
 from Core import Update
@@ -162,6 +163,13 @@ class Main:
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Dork.List.Main(username, Mode)
                 elif sce == 10:
+                    username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Param", "None") +
+                                       Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    while username == "":
+                        username = str(input(Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Main", "Param", "None") +
+                                       Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Searcher_person.info.Search(username, Mode)
+                elif sce == 11:
                     print(Language.Translation.Translate_Language(
                         filename, "Main", "Exit", "None"))
                     exit()

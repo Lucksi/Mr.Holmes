@@ -54,7 +54,6 @@ class Web:
 
     @staticmethod
     def Reputation(username, report):
-        #report = "GUI/Reports/Websites/{}/{}.txt".format(username,username)
         subject = "DOMAIN/WEBSITE/IP"
         data = "Site_lists/Websites/Lookup.json"
         f = open(report, "a")
@@ -634,5 +633,7 @@ class Web:
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               os.getcwd() + "/" + report)
         Notification.Notifier.Start(Mode)
-        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)
+        Encoding.Encoder.Encode(report)
+        inp = input(Language.Translation.Translate_Language(
+                        filename, "Default", "Continue", "None"))

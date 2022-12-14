@@ -18,6 +18,7 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Dorks", "Generation", "None").format(Type))
         sleep(2)
+        username = username.replace(" ","+")
         f = open(report, "a")
         f.write(Type + "-DORKS:\n\n")
         f.close()
@@ -39,6 +40,10 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Dorks", "Generation", "None").format(Type))
         sleep(2)
+        """if Type == "YANDEX":
+            phrase = phrase.replace(" ", "%2B")
+        else:"""
+        phrase = phrase.replace(" ","+")
         f = open(report, "a")
         f.write("\n" + Type + "-DORKS:\n\n")
         f.close()

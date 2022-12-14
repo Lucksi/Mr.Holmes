@@ -251,5 +251,7 @@ class Phone_search:
             filename, "Report", "Default", "By"))
         f.close()
         Notification.Notifier.Start(Mode)
-        Encoding.Encoder.Encode(report)
         Creds.Sender.mail(report, username)
+        Encoding.Encoder.Encode(report)
+        inp = input(Language.Translation.Translate_Language(
+                        filename, "Default", "Continue", "None"))

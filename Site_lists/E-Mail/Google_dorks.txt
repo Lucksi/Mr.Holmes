@@ -1,21 +1,21 @@
-intext:{}
-intext:({})filetype:txt
-intext:({})filetype:csv
-intext:({})filetype:pdf
-intext:({})filetype:doc
-intext:({})filetype:docx
-intext:({})filetype:log
-intext:{}(Password OR password OR PASSWORD)
-intext:{}(Password OR password OR PASSWORD)filetype:txt
-intext:{}(Password OR password OR PASSWORD)filetype:csv
-intext:{}(Password OR password OR PASSWORD)filetype:pdf
-intext:{}(Password OR password OR PASSWORD)filetype:doc
-intext:{}(Password OR password OR PASSWORD)filetype:docx
-intext:{}(Password OR password OR PASSWORD)filetype:log
-intitle:({})filetype:txt
-intitle:({})filetype:csv
-intitle:({})filetype:pdf
-intitle:({})filetype:doc
-intitle:({})filetype:docx
-intitle:({})filetype:log
-inurl:{}
+https://www.google.com/search?q=intext:{}
+https://www.google.com/search?q=intext:({})filetype:txt
+https://www.google.com/search?q=intext:({})filetype:csv
+https://www.google.com/search?q=intext:({})filetype:pdf
+https://www.google.com/search?q=intext:({})filetype:doc
+https://www.google.com/search?q=intext:({})filetype:docx
+https://www.google.com/search?q=intext:({})filetype:log
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:txt
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:csv
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:pdf
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:doc
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:docx
+https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:log
+https://www.google.com/search?q=intitle:({})filetype:txt
+https://www.google.com/search?q=intitle:({})filetype:csv
+https://www.google.com/search?q=intitle:({})filetype:pdf
+https://www.google.com/search?q=intitle:({})filetype:doc
+https://www.google.com/search?q=intitle:({})filetype:docx
+https://www.google.com/search?q=intitle:({})filetype:log
+https://www.google.com/search?q=inurl:{}

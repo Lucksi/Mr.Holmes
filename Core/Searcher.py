@@ -124,7 +124,6 @@ class MrHolmes:
         Type = "YANDEX"
         Dorks.Search.dork(username, report, nomefile, Type)
 
-  
     @staticmethod
     def search(username, Mode):
         successfull = []
@@ -144,6 +143,8 @@ class MrHolmes:
         Recap2 = folder + "Recap.mh"
         InstagramParams = []
         TwitterParams = []
+        PostLocations = []
+        PostGpsCoordinates = []
         if os.path.exists(report):
             os.remove(report)
             os.remove(folder + "Name.json")
@@ -164,7 +165,7 @@ class MrHolmes:
                 os.remove(Recap2)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
-        else:    
+        else:
             os.mkdir(folder)
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
@@ -260,13 +261,13 @@ class MrHolmes:
                     if "Instagram" in ScraperSites:
                         try:
                             Scraper.info.Instagram(
-                                report, username, http_proxy, InstagramParams)
+                                report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates,"Usernames",username)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Instagram(
-                                report, username, http_proxy, InstagramParams)
+                                report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates,"Usernames",username)
                         except Exception as e:
                             pass
                     else:
@@ -275,13 +276,13 @@ class MrHolmes:
                     if "TikTok" in ScraperSites:
                         try:
                             Scraper.info.TikTok(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.TikTok(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             pass
                     else:
@@ -290,13 +291,13 @@ class MrHolmes:
                     if "Disqus" in ScraperSites:
                         try:
                             Scraper.info.Disqus(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Disqus(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             pass
                     else:
@@ -304,60 +305,60 @@ class MrHolmes:
 
                     if "Imgur" in ScraperSites:
                         try:
-                            Scraper.info.Imgur(report, username, http_proxy)
+                            Scraper.info.Imgur(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Imgur(report, username, http_proxy)
+                            Scraper.info.Imgur(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Pr0gramm" in ScraperSites:
                         try:
-                            Scraper.info.Pr0gramm(report, username, http_proxy)
+                            Scraper.info.Pr0gramm(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Pr0gramm(report, username, http_proxy)
+                            Scraper.info.Pr0gramm(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "BinarySearch" in ScraperSites:
                         try:
                             Scraper.info.Binarysearch(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Binarysearch(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "MixCloud" in ScraperSites:
                         try:
-                            Scraper.info.MixCloud(report, username, http_proxy)
+                            Scraper.info.MixCloud(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.MixCloud(report, username, http_proxy)
+                            Scraper.info.MixCloud(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Twitter" in ScraperSites:
                         try:
                             Scraper.info.Twitter(
-                                report, username, http_proxy, TwitterParams)
+                                report, username, http_proxy, TwitterParams,"Usernames",username)
                         except ConnectionError:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Twitter(
-                                report, username, http_proxy, TwitterParams)
+                                report, username, http_proxy, TwitterParams,"Usernames",username)
                         except Exception as e:
                             print(str(e))
                             pass
@@ -367,96 +368,96 @@ class MrHolmes:
                     if "DockerHub" in ScraperSites:
                         try:
                             Scraper.info.Dockerhub(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Dockerhub(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Kik" in ScraperSites:
                         try:
-                            Scraper.info.Kik(report, username, http_proxy)
+                            Scraper.info.Kik(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Kik(report, username, http_proxy)
+                            Scraper.info.Kik(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "GitLab" in ScraperSites:
                         try:
-                            Scraper.info.GitLab(report, username, http_proxy)
+                            Scraper.info.GitLab(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.GitLab(report, username, http_proxy)
+                            Scraper.info.GitLab(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Wattpad" in ScraperSites:
                         try:
-                            Scraper.info.Wattpad(report, username, http_proxy)
+                            Scraper.info.Wattpad(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Wattpad(report, username, http_proxy)
+                            Scraper.info.Wattpad(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "GitHub" in ScraperSites:
                         try:
-                            Scraper.info.Github(report, username, http_proxy)
+                            Scraper.info.Github(report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
-                            Scraper.info.Github(report, username, http_proxy)
+                            Scraper.info.Github(report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Minecraft" in ScraperSites:
                         try:
                             Scraper.info.Minecraft(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Minecraft(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Ngl.link" in ScraperSites:
                         try:
                             Scraper.info.Ngl(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Ngl(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                     else:
                         pass
 
                     if "Tellonym" in ScraperSites:
                         try:
                             Scraper.info.Tellonym(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                             http_proxy = None
                             Scraper.info.Tellonym(
-                                report, username, http_proxy)
+                                report, username, http_proxy,"Usernames",username)
                     else:
                         pass
                 else:
@@ -469,13 +470,24 @@ class MrHolmes:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Username", "Default", "NoFound") + "¯\_(ツ)_/¯".format(username))
             ScrapeOp = "Negative"
+        if PostGpsCoordinates == [] and PostLocations == []:
+            pass
+        else:
+            n = 0
+            print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING LATEST POST GEOLOCATION")
+            f = open(report, "a")
+            for Locations in PostGpsCoordinates:
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Locations)
+                f.write(Locations)
+                n = n + 1
         count = 1
         Recaps = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
             filename, "Default", "Hypo", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Recaps == 1:
             Percent = found/Count*100
             Recap.Stats.Printer(username, found, Count, Percent, subject,
-                                Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp)
+                                Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp, PostLocations, PostGpsCoordinates)
         else:
             pass
         if count == 1:
@@ -490,6 +502,8 @@ class MrHolmes:
             f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))
             f.close()
-            Encoding.Encoder.Encode(report)
             Notification.Notifier.Start(Mode)
             Creds.Sender.mail(report, username)
+            Encoding.Encoder.Encode(report)
+            inp = input(Language.Translation.Translate_Language(
+                        filename, "Default", "Continue", "None"))

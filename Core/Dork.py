@@ -36,6 +36,7 @@ class List:
     def YandexDorks(report,phrase):
         Type = "YANDEX"
         nomefile = "Site_lists/Username/Yandex_dorks.txt"
+        phrase = phrase.replace("+","%2B")
         Dorks.Search.Generator(Type,nomefile,report,phrase)
 
 
@@ -62,7 +63,7 @@ class List:
                 while param == "":
                     param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
-                Parameters.append(" + "+param)
+                Parameters.append("+"+param)
                 Start = Start +1
             phrase = username + "".join(Parameters)
         else:
@@ -79,3 +80,5 @@ class List:
         f.close()
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
+        inp = input(Language.Translation.Translate_Language(
+                        filename, "Default", "Continue", "None"))

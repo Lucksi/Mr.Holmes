@@ -21,9 +21,9 @@ filename
 class info:
 
     @staticmethod
-    def Profile_Pic(username, profile_pic, SiteName):
-        image = "GUI/Reports/Usernames/{}/Profile_pics/Profile_pic_{}.jpg".format(
-            username, SiteName)
+    def Profile_Pic(username, profile_pic, SiteName, Opt,name2):
+        image = "GUI/Reports/{}/{}/Profile_pics/Profile_pic_{}.jpg".format(
+        Opt, name2, SiteName)
         getter = requests.get(
             profile_pic, headers=headers, allow_redirects=True)
         try:
@@ -42,7 +42,7 @@ class info:
         return site
 
     @staticmethod
-    def Imgur(report, username, http_proxy):
+    def Imgur(report, username, http_proxy,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} IMGUR PROFILE...".format(username))
         url = info.Get_Url(username, "Imgur")
@@ -79,7 +79,7 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
                 SiteName = "Imgur"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName,Opt,name2)
             else:
                 pass
 
@@ -102,7 +102,7 @@ class info:
             pass
 
     @staticmethod
-    def Pr0gramm(report, username, http_proxy):
+    def Pr0gramm(report, username, http_proxy,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} PR0GRAMM PROFILE...".format(username))
         url = info.Get_Url(username, "Pr0gramm")
@@ -160,7 +160,7 @@ class info:
             pass
 
     @staticmethod
-    def Binarysearch(report, username, http_proxy):
+    def Binarysearch(report, username, http_proxy,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} BINARYSEARCH PROFILE...".format(username))
         url = info.Get_Url(username, "BinarySearch")
@@ -213,7 +213,7 @@ class info:
             pass
 
     @staticmethod
-    def MixCloud(report, username, http_proxy):
+    def MixCloud(report, username, http_proxy,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} MIXCLOUD PROFILE...".format(username))
         url = info.Get_Url(username, "MixCloud")
@@ -256,7 +256,7 @@ class info:
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if download == 1:
                 SiteName = "MixCloud"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName,Opt,name2)
             else:
                 pass
 
@@ -282,7 +282,7 @@ class info:
             pass
 
     @staticmethod
-    def Instagram(report, username, http_proxy, InstagramParams):
+    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} INSTAGRAM PROFILE...".format(username))
         url = info.Get_Url(username, "Instagram")
@@ -306,7 +306,7 @@ class info:
                 if download == 1:
                     SiteName = "Instagram"
                     info.Profile_Pic(username,
-                                     profile_pic, SiteName)
+                                     profile_pic, SiteName,Opt,name2)
                 else:
                     pass
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
@@ -363,7 +363,7 @@ class info:
                 if download == 1:
                     SiteName = "Instagram"
                     info.Profile_Pic(username,
-                                     profile_pic, SiteName)
+                                     profile_pic, SiteName,Opt,name2)
                 else:
                     pass
         except ConnectionError:
@@ -389,7 +389,7 @@ class info:
                     Posts = float(posts.replace(",", ''))
                     try:
                         Get_Posts.Downloader.Instagram(url,
-                                                       username, http_proxy, Posts)
+                                                       username, http_proxy, Posts, PostLocations, PostGpsCoordinates,Opt,name2)
                     except ConnectionError:
                         print(Font.Color.RED +
                               "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
@@ -397,13 +397,13 @@ class info:
                     pass
 
     @staticmethod
-    def Twitter(report, username, http_proxy, TwitterParams):
+    def Twitter(report, username, http_proxy, TwitterParams ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} TWITTER PROFILE...".format(username))
         url = info.Get_Url(username, "Twitter")
         url
         openurl = requests.get(url, proxies=http_proxy,
-                               headers=headers, timeout=15)
+                               headers=headers)
         try:
             Blocked = 'User "{}" has been suspended'.format(username)
             text = openurl.text
@@ -457,7 +457,7 @@ class info:
                 if download == 1:
                     SiteName = "Twitter"
                     info.Profile_Pic(username,
-                                     profile_pic, SiteName)
+                                     profile_pic, SiteName ,Opt,name2)
                 else:
                     pass
 
@@ -484,6 +484,12 @@ class info:
             IsPrivate = "True"
             TwitterParams[0].append(IsPrivate)
             pass
+        except requests.Timeout as err:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            Flag = False
+            IsPrivate = "True"
+            TwitterParams[0].append(IsPrivate)
         finally:
             if Flag == True:
                 Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Pics").format(
@@ -498,7 +504,7 @@ class info:
                         Posts = float(posts.replace(",", ''))
                         try:
                             Get_Posts.Downloader.Twitter(url,
-                                                         username, http_proxy, Posts)
+                                                         username, http_proxy, Posts ,Opt,name2)
                         except ConnectionError:
                             print(Font.Color.RED +
                                   "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
@@ -506,7 +512,7 @@ class info:
                     pass
 
     @staticmethod
-    def Dockerhub(report, username, http_proxy):
+    def Dockerhub(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} DOCKERHUB PROFILE...".format(username))
         url = info.Get_Url(username, "DockerHub")
@@ -544,7 +550,7 @@ class info:
 
             if download == 1:
                 SiteName = "DockerHub"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 
@@ -567,7 +573,7 @@ class info:
             pass
 
     @staticmethod
-    def Kik(report, username, http_proxy):
+    def Kik(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} KIK PROFILE...".format(username))
         url = info.Get_Url(username, "Kik")
@@ -607,7 +613,7 @@ class info:
                 if profile_pic != "None":
                     SiteName = "Kik"
                     info.Profile_Pic(username,
-                                     profile_pic, SiteName)
+                                     profile_pic, SiteName ,Opt,name2)
                 else:
                     pass
             else:
@@ -629,7 +635,7 @@ class info:
             pass
 
     @staticmethod
-    def GitLab(report, username, http_proxy):
+    def GitLab(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} GIT-LAB PROFILE...".format(username))
         url = info.Get_Url(username, "GitLab")
@@ -661,7 +667,7 @@ class info:
 
             if download == 1:
                 SiteName = "GitLab"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 
@@ -684,7 +690,7 @@ class info:
             pass
 
     @staticmethod
-    def Wattpad(report, username, http_proxy):
+    def Wattpad(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} WATTPAD PROFILE...".format(username))
         url = info.Get_Url(username, "Wattpad")
@@ -737,7 +743,7 @@ class info:
 
             if download == 1:
                 SiteName = "Wattpad"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 
@@ -766,7 +772,7 @@ class info:
             pass
 
     @staticmethod
-    def Github(report, username, http_proxy):
+    def Github(report, username, http_proxy ,Opt,name2):
         try:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   "SCRAPING {} GITHUB PROFILE...".format(username))
@@ -831,7 +837,7 @@ class info:
 
             if download == 1:
                 SiteName = "GitHub"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
             f = open(report, "a", encoding="utf-8")
@@ -863,7 +869,7 @@ class info:
             pass
 
     @staticmethod
-    def TikTok(report, username, http_proxy):
+    def TikTok(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} TIKTOK PROFILE...".format(username))
         url = info.Get_Url(username, "TikTok")
@@ -917,7 +923,7 @@ class info:
 
             if download == 1:
                 SiteName = "TikTok"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 
@@ -939,7 +945,7 @@ class info:
                 if Video == 1:
                     try:
                         Get_Posts.Downloader.TikTok(
-                            url, username, http_proxy, Posts)
+                            url, username, http_proxy, Posts ,Opt,name2)
                     except ConnectionError:
                         print(Font.Color.RED +
                               "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
@@ -947,7 +953,7 @@ class info:
                     pass
 
     @staticmethod
-    def Minecraft(report, username, http_proxy):
+    def Minecraft(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} MINECRAFT PROFILE...".format(username))
         url = info.Get_Url(username, "Minecraft")
@@ -980,7 +986,7 @@ class info:
             pass
 
     @staticmethod
-    def Ngl(report, username, http_proxy):
+    def Ngl(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} NGL.LINK PROFILE...".format(username))
         url = info.Get_Url(username, "Ngl.link")
@@ -1008,7 +1014,7 @@ class info:
 
             if download == 1:
                 SiteName = "Ngl.link"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 
@@ -1022,7 +1028,7 @@ class info:
             pass
 
     @staticmethod
-    def Disqus(report, username, http_proxy):
+    def Disqus(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} DISQUS PROFILE...".format(username))
         url = info.Get_Url(username, "Disqus")
@@ -1068,7 +1074,7 @@ class info:
 
             if download == 1:
                 SiteName = "Disqus"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
             f = open(report, "a", encoding="utf-8")
@@ -1094,7 +1100,7 @@ class info:
             pass
 
     @staticmethod
-    def Tellonym(report, username, http_proxy):
+    def Tellonym(report, username, http_proxy ,Opt,name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} TELLONYM PROFILE...".format(username))
         url = info.Get_Url(username, "Tellonym")
@@ -1120,7 +1126,7 @@ class info:
 
             if download == 1:
                 SiteName = "Tellonym"
-                info.Profile_Pic(username, profile_pic, SiteName)
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
             else:
                 pass
 

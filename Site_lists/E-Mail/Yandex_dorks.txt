@@ -1,20 +1,20 @@
-{} mime:txt
-{} mime:pdf
-{} mime:csv
-{} mime:doc
-{} mime:docx
-{} mime:log
-{} && (!Password | !password | !PASSWORD ) && mime:txt
-{} && (!Password | !password | !PASSWORD ) && mime:pdf
-{} && (!Password | !password | !PASSWORD ) && mime:csv
-{} && (!Password | !password | !PASSWORD ) && mime:doc
-{} && (!Password | !password | !PASSWORD ) && mime:docx
-{} && (!Password | !password | !PASSWORD ) && mime:log
-title:{}
-title:{} && mime:txt
-title:{} && mime:pdf
-title:{} && mime:csv
-title:{} && mime:doc
-title:{} && mime:docx
-title:{} && mime:log
-inurl:{}
+https://yandex.com/search/?text={}mime:txt
+https://yandex.com/search/?text={}mime:pdf
+https://yandex.com/search/?text={}mime:csv
+https://yandex.com/search/?text={}mime:doc
+https://yandex.com/search/?text={}mime:docx
+https://yandex.com/search/?text={}mime:log
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:txt
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:pdf
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:csv
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:doc
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:docx
+https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&&mime:log
+https://yandex.com/search/?text=title:{}
+https://yandex.com/search/?text=title:{}&&mime:txt
+https://yandex.com/search/?text=title:{}&&mime:pdf
+https://yandex.com/search/?text=title:{}&&mime:csv
+https://yandex.com/search/?text=title:{}&&mime:doc
+https://yandex.com/search/?text=title:{}&&mime:docx
+https://yandex.com/search/?text=title:{}&&mime:log
+https://yandex.com/search/?text=inurl:{}
