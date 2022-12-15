@@ -32,35 +32,45 @@ class Search:
         url = "https://www.picuki.com/search/{}".format(username)
         req = requests.get(url, timeout=15, proxies=None, headers=headers)
         sleep(4)
-        if req.status_code == 200:
-            reader = soup(req.content, "html.parser")
-            users = reader.find_all("div", class_="profile-result")
-            i = 1
-            f = open(report, "a")
-            f.write(
-                "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
-            for user in users:
-                if i <= 20:
-                    usern = user.find(
-                        "div", class_="result-username").text.replace("@", "")
-                    link = "https://instagram.com/{}".format(usern)
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
-                        Font.Color.GREEN + usern + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
-                        Font.Color.GREEN + link + Font.Color.WHITE))
-                    List.append(usern)
-                    Links.append(link)
-                    f.write("\nUSER FOUND: {}".format(usern))
-                    f.write("\nLINK: {}\n".format(link))
-                    i = i+1
-                else:
-                    break
-            f.close()
-            print(Font.Color.GREEN + "[+]" +
-                  Font.Color.WHITE + "TOTAL USERNAMES FOUND")
+        try:
+            if req.status_code == 200:
+                reader = soup(req.content, "html.parser")
+                users = reader.find_all("div", class_="profile-result")
+                i = 1
+                f = open(report, "a")
+                f.write(
+                    "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
+                for user in users:
+                    if i <= 20:
+                        usern = user.find(
+                            "div", class_="result-username").text.replace("@", "")
+                        link = "https://instagram.com/{}".format(usern)
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
+                            Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
+                            Font.Color.GREEN + link + Font.Color.WHITE))
+                        List.append(usern)
+                        Links.append(link)
+                        f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nLINK: {}\n".format(link))
+                        i = i+1
+                    else:
+                        break
+                f.close()
+                print(Font.Color.GREEN + "[+]" +
+                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")
 
-        else:
-            print("ERROR")
+            else:
+                print("ERROR")
+        
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+            pass
         j = 1
         if len(List):
             for Names in List:
@@ -113,44 +123,54 @@ class Search:
         url = "https://nitter.net/search?f=users&q={}".format(username)
         req = requests.get(url, timeout=15, proxies=None, headers=headers)
         sleep(4)
-        if req.status_code == 200:
-            reader = soup(req.content, "html.parser")
-            users = reader.find_all("div", class_="timeline-item")
-            i = 1
-            f = open(report, "a")
-            f.write(
-                "--------------------------------\nSHOWING TWITTER RESULTS FOR: {}\n".format(username))
-            for user in users:
-                if i <= 20:
-                    usern = user.find(
-                        "a", class_="username").text.replace("@", "")
-                    link = "https://twitter.com/{}".format(usern)
-                    bio = user.find(
-                        "div", class_="tweet-content media-body").text
-                    full_name = user.find(
-                        "a", class_="fullname").text
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
-                        Font.Color.GREEN + usern + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME FOUND: {}".format(
-                        Font.Color.GREEN + full_name + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(
-                        Font.Color.GREEN + bio + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
-                        Font.Color.GREEN + link + Font.Color.WHITE))
-                    List.append(usern)
-                    Links.append(link)
-                    f.write("\nUSER FOUND: {}".format(usern))
-                    f.write("\nFULL-NAME: {}\n".format(full_name))
-                    f.write("\nBIO: {}\n".format(bio))
-                    f.write("\nLINK: {}\n".format(link))
-                    i = i+1
-                else:
-                    break
-            f.close()
-            print(Font.Color.GREEN + "[+]" +
-                  Font.Color.WHITE + "TOTAL USERNAMES FOUND")
-        else:
-            print("ERROR")
+        try:
+            if req.status_code == 200:
+                reader = soup(req.content, "html.parser")
+                users = reader.find_all("div", class_="timeline-item")
+                i = 1
+                f = open(report, "a")
+                f.write(
+                    "--------------------------------\nSHOWING TWITTER RESULTS FOR: {}\n".format(username))
+                for user in users:
+                    if i <= 20:
+                        usern = user.find(
+                            "a", class_="username").text.replace("@", "")
+                        link = "https://twitter.com/{}".format(usern)
+                        bio = user.find(
+                            "div", class_="tweet-content media-body").text
+                        full_name = user.find(
+                            "a", class_="fullname").text
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
+                            Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME FOUND: {}".format(
+                            Font.Color.GREEN + full_name + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(
+                            Font.Color.GREEN + bio + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
+                            Font.Color.GREEN + link + Font.Color.WHITE))
+                        List.append(usern)
+                        Links.append(link)
+                        f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nFULL-NAME: {}\n".format(full_name))
+                        f.write("\nBIO: {}\n".format(bio))
+                        f.write("\nLINK: {}\n".format(link))
+                        i = i+1
+                    else:
+                        break
+                f.close()
+                print(Font.Color.GREEN + "[+]" +
+                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")
+            else:
+                print("ERROR")
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+            pass
+        
         j = 1
         if len(List):
             for Names in List:
@@ -203,39 +223,49 @@ class Search:
         url = "https://urlebird.com/search/?q={}".format(username)
         req = requests.get(url, timeout=15, proxies=None, headers=headers)
         sleep(4)
-        if req.status_code == 200:
-            reader = soup(req.content, "html.parser")
-            users = reader.find_all("div", class_="info text-truncate")
-            i = 1
-            f = open(report, "a")
-            f.write(
-                "--------------------------------\nSHOWING TIKTOK RESULTS FOR: {}\n".format(username))
-            for user in users:
-                if i <= 20:
-                    usern = user.find(
-                        "a", class_="uri").text
-                    link = "https://tiktok.com/{}".format(usern)
-                    followers = user.find(
-                        "span", class_="followers").text
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
-                        Font.Color.GREEN + usern + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(
-                        Font.Color.GREEN + followers + Font.Color.WHITE))
-                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
-                        Font.Color.GREEN + link + Font.Color.WHITE))
-                    List.append(usern)
-                    Links.append(link)
-                    f.write("\nUSER FOUND: {}".format(usern))
-                    f.write("\nFOLLOWERS: {}\n".format(followers))
-                    f.write("\nLINK: {}\n".format(link))
-                    i = i+1
-                else:
-                    break
-            f.close()
-            print(Font.Color.GREEN + "[+]" +
-                  Font.Color.WHITE + "TOTAL USERNAMES FOUND")
-        else:
-            print("ERROR")
+        try:
+            if req.status_code == 200:
+                reader = soup(req.content, "html.parser")
+                users = reader.find_all("div", class_="info text-truncate")
+                i = 1
+                f = open(report, "a")
+                f.write(
+                    "--------------------------------\nSHOWING TIKTOK RESULTS FOR: {}\n".format(username))
+                for user in users:
+                    if i <= 20:
+                        usern = user.find(
+                            "a", class_="uri").text
+                        link = "https://tiktok.com/{}".format(usern)
+                        followers = user.find(
+                            "span", class_="followers").text
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
+                            Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(
+                            Font.Color.GREEN + followers + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
+                            Font.Color.GREEN + link + Font.Color.WHITE))
+                        List.append(usern)
+                        Links.append(link)
+                        f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nFOLLOWERS: {}\n".format(followers))
+                        f.write("\nLINK: {}\n".format(link))
+                        i = i+1
+                    else:
+                        break
+                f.close()
+                print(Font.Color.GREEN + "[+]" +
+                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")
+            else:
+                print("ERROR")
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+            pass
+        
         j = 1
         if len(List):
             for Names in List:
