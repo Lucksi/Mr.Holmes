@@ -7,7 +7,8 @@
                 "Web": "Sito Non Trovato",
                 "Email": "Email Non Trovata",
                 "Graph": "Grafico Non Trovato",
-                "Host": "Host Non Trovato"
+                "Host": "Host Non Trovato",
+                "Person": "Persona Non Trovata"
             },
 
             "English":{
@@ -16,7 +17,8 @@
                 "Web": "Website Not Found",
                 "Email": "Email Not Found",
                 "Graph": "Graph Not Found",
-                "Host": "Host Not Found"
+                "Host": "Host Not Found",
+                "Person": "Person Not Found"
             },
 
             "French":{
@@ -25,7 +27,9 @@
                 "Web": "Website N'Ete Pas Trouvez",
                 "Email": "Email N'Ete Pas Trouvez",
                 "Graph": "Graph N'Ete Pas Trouvez",
-                "Host": "Host N'Ete Pas Trouvez"
+                "Host": "Host N'Ete Pas Trouvez",
+                "Person": "Personne N'Ete Pas Trouvez"
+
             }
         }
     ],
@@ -39,7 +43,8 @@
                 "Email": "Email Trovata",
                 "Graph": "Grafico Trovato",
                 "Canc": "Grafico Elimato",
-                "Host": "Host Trovato"
+                "Host": "Host Trovato",
+                "Person": "Persona Trovata"
             },
             
             "English":{
@@ -49,7 +54,8 @@
                 "Email": "Email Found",
                 "Graph": "Graph Found",
                 "Canc": "Graph Deleted",
-                "Host": "Host Found"
+                "Host": "Host Found",
+                "Person":"Person Found"
             },
 
             "French":{
@@ -59,7 +65,8 @@
                 "Email": "Email Ete Trouvez",
                 "Graph": "Graph Ete Trouvez",
                 "Canc": "Graph Supprime",
-                "Host": "Host Ete Trouvez"
+                "Host": "Host Ete Trouvez",
+                "Person":"Personne Ete Trouvez"
             }
         }
     ],
@@ -72,7 +79,8 @@
                 "Web": "Sito Non Inserito",
                 "Email": "Email Non Inserita",
                 "Graph": "Grafico Non Inserito",
-                "Host": "Host Non Inserito"
+                "Host": "Host Non Inserito",
+                "Person": "Persona Non Inserita"
             },
             
             "English":{
@@ -81,7 +89,8 @@
                 "Web": "Website Not Inserted",
                 "Email": "Email Not Inserted",
                 "Graph": "Graph Not Inserted",
-                "Host": "Host Not Inserted"
+                "Host": "Host Not Inserted",
+                "Person": "Person Not Inserted"
             },
 
             "French":{
@@ -90,7 +99,8 @@
                 "Web": "Website N'Ete Pas  Entrez",
                 "Email": "Email N'Ete Pas  Entrez",
                 "Graph": "Graph N'Ete Pas  Entrez",
-                "Host": "Host N'Ete Pas  Entrez"
+                "Host": "Host N'Ete Pas  Entrez",
+                "Person":"Personne N'Ete Pas Entrez"
             }
         }
     ],
