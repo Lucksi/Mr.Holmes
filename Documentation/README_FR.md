@@ -194,7 +194,7 @@ write:François
 <br>
 
 # VERSION ACTUELLE:
-## T.G.D-1.0.1
+## T.G.D-1.0.2
 
 <br>
 
