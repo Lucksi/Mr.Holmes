@@ -254,7 +254,7 @@ write:François
 <br>
 
 # FILE-TRANSFER:
-## With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code Located on Folder QRCodes
+## With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code
 
 <br>
 
