@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -84,7 +84,7 @@ class Downloader:
                             print(
                                 Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Default", "CheckFalse"))
                             getter = requests.get(
-                                profile_pic, headers=headers, allow_redirects=True)
+                                profile_pic, headers=headers, allow_redirects=False)
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))

@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -24,34 +24,43 @@ filename
 class Search:
 
     @staticmethod
-    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold):
+    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} INSTAGRAM RESULTS...".format(username))
-        url = "https://www.picuki.com/search/{}".format(username)
-        req = requests.get(url, timeout=15, proxies=None, headers=headers)
+        url = "https://www.pixwox.com/search/?q={}".format(username)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
-                users = reader.find_all("div", class_="profile-result")
+                users = reader.find_all("div", class_="item_w be-1")
                 i = 1
                 f = open(report, "a")
                 f.write(
                     "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
                 for user in users:
                     if i <= 20:
-                        usern = user.find(
-                            "div", class_="result-username").text.replace("@", "")
+                        usern1 = user.find(
+                            "a", class_="user_box")["href"].replace("/profile/","")
+                        usern = usern1.replace("/","")
                         link = "https://instagram.com/{}".format(usern)
+                        name = user.find("div",class_="fullname").text
+                        #image = user.find("img",class_="lazyload")["data-src"]
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
+                            Font.Color.GREEN + name + Font.Color.WHITE))
+                        #print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
+                        #    Font.Color.GREEN + image + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
                         Links.append(link)
                         f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nFULL-NAME: {}".format(name))
+                        #f.write("\nPROFILE-PIC: {}".format(image))
                         f.write("\nLINK: {}\n".format(link))
                         i = i+1
                     else:
@@ -77,7 +86,7 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/Insta_Link.json".format(username)
+            json_file = "GUI/Reports/People/{}/Insta_Link.json".format(username2)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -96,7 +105,7 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE DATA(1)YES(2)NO\n\n" +
+            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                             Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if opt == 1:
                 check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
@@ -109,19 +118,19 @@ class Search:
                     else:
                         os.mkdir(imagefold)
                     Scraper.info.Instagram(report, check, http_proxy, InstagramParams,
-                                        PostLocations, PostGpsCoordinates, "People", username)
+                                        PostLocations, PostGpsCoordinates, "People", username2)
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
 
     @staticmethod
-    def Twitter(report, username, http_proxy, TwitterParams, imagefold):
+    def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TWITTER RESULTS...".format(username))
         url = "https://nitter.net/search?f=users&q={}".format(username)
-        req = requests.get(url, timeout=15, proxies=None, headers=headers)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
             if req.status_code == 200:
@@ -177,7 +186,7 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/Twitter_Link.json".format(username)
+            json_file = "GUI/Reports/People/{}/Twitter_Link.json".format(username2)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -196,7 +205,7 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE DATA(1)YES(2)NO\n\n" +
+            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                             Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if opt == 1:
                 check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
@@ -209,19 +218,19 @@ class Search:
                     else:
                         os.mkdir(imagefold)
                     Scraper.info.Twitter(report, check, http_proxy, TwitterParams,
-                                         "People", username)
+                                         "People", username2)
         else:
             print(print(Font.Color.RED +
                   "\n[!]" + Font.Color.WHITE + "NO USER HAS BEEN FOUND"))
 
     @staticmethod
-    def TikTok(report, username, http_proxy, imagefold):
+    def TikTok(report, username, http_proxy, imagefold, username2):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TIKTOK RESULTS...".format(username))
         url = "https://urlebird.com/search/?q={}".format(username)
-        req = requests.get(url, timeout=15, proxies=None, headers=headers)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
             if req.status_code == 200:
@@ -272,7 +281,7 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/TikTok_Link.json".format(username)
+            json_file = "GUI/Reports/People/{}/TikTok_Link.json".format(username2)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -291,7 +300,7 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO SCRAPE DATA(1)YES(2)NO\n\n" +
+            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                             Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if opt == 1:
                 check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
@@ -305,7 +314,7 @@ class Search:
                     else:
                         os.mkdir(imagefold)
                     Scraper.info.TikTok(report, check, http_proxy,
-                                        "People", username)
+                                        "People", username2)
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")

@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -8,6 +8,7 @@ from Core.Support import Font
 from Core.Support import Clear
 from Core.Support.Websites import Scanner
 from Core.Support import Creds
+from Core.Support import FileTransfer
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
@@ -47,9 +48,13 @@ class Ports:
             filename, "Report", "Default", "By"))
         f.close()
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-              os.getcwd() + "/" + report)
+            report)
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
+        choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            FileTransfer.Transfer.File(report,username,".txt") 
         Encoding.Encoder.Encode(report)
         inp = input(Language.Translation.Translate_Language(
                         filename, "Default", "Continue", "None"))

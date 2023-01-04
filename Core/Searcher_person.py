@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 
@@ -18,6 +18,7 @@ from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
 from Core.Support import Recap
+from Core.Support import FileTransfer
 from datetime import datetime
 from Core.Support import Encoding
 
@@ -32,6 +33,12 @@ class info:
     def Google_dork(username):
         report = "GUI/Reports/People/Dorks/{}_Dorks.txt".format(username)
         nomefile = "Site_lists/Username/Google_dorks.txt"
+        if os.path.isfile(report):
+            os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Dorks", "Remove", "None").format(username))
+        else:
+            pass
         Type = "GOOGLE"
         Dorks.Search.dork(username, report, nomefile, Type)
 
@@ -50,44 +57,22 @@ class info:
    
     @staticmethod
     def Search(username, Mode):
-        folder = "GUI/Reports/People/" + username + "/"
-        report = folder + username + ".txt"
-        report2 = folder + username + ".mh"
+        username2 = username.replace(" ","_")
+        folder = "GUI/Reports/People/" + username2 + "/"
+        report = folder + username2 + ".txt"
+        report2 = folder + username2 + ".mh"
         link1 = folder + "Insta_Link.json"
         link2 = folder + "Insta_Link.json"
         link3 = folder + "Insta_Link.json"
         Recap1 = folder + "Recap.txt"
         Recap2 = folder + "Recap.mh"
-        imagefold = "GUI/Reports/People/" + username + "/Profile_pics"
+        imagefold = "GUI/Reports/People/" + username2+ "/Profile_pics"
         InstagramParams = []
         TwitterParams = []
         PostLocations = []
         PostGpsCoordinates = []
         info.Banner(Mode)
         subject = "PERSON"
-        choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "choice", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if choice == 1:
-            http_proxy = Proxies.proxy.final_proxis
-            http_proxy2 = Proxies.proxy.choice3
-            source = "http://ip-api.com/json/" + http_proxy2
-            access = urllib.request.urlopen(source)
-            content = access.read()
-            final = json.loads(content)
-            identity = Language.Translation.Translate_Language(
-                filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
-
-        else:
-            http_proxy = None
-            http_proxy2 = str(http_proxy)
-            identity = "None"
-        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
-              Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
-        if identity != "None":
-            print(Font.Color.GREEN +
-                  "[+]" + Font.Color.WHITE + identity)
-        else:
-            pass
         if os.path.exists(report):
             os.remove(report)
             if os.path.exists(Recap1):
@@ -118,6 +103,29 @@ class info:
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         else:
             os.mkdir(folder)
+        choice = int(input(
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "choice", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            http_proxy = Proxies.proxy.final_proxis
+            http_proxy2 = Proxies.proxy.choice3
+            source = "http://ip-api.com/json/" + http_proxy2
+            access = urllib.request.urlopen(source)
+            content = access.read()
+            final = json.loads(content)
+            identity = Language.Translation.Translate_Language(
+                filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
+
+        else:
+            http_proxy = None
+            http_proxy2 = str(http_proxy)
+            identity = "None"
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
+        if identity != "None":
+            print(Font.Color.GREEN +
+                  "[+]" + Font.Color.WHITE + identity)
+        else:
+            pass
         now = datetime.now()
         dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
         Date = "Date: " + str(dt_string)
@@ -132,10 +140,10 @@ class info:
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
         Scraper.Search.Instagram(report, username, http_proxy, InstagramParams,
-                 PostLocations, PostGpsCoordinates, imagefold)
+                 PostLocations, PostGpsCoordinates, imagefold, username2)
         Scraper.Search.Twitter(report, username, http_proxy, TwitterParams,
-                imagefold)
-        Scraper.Search.TikTok(report, username, http_proxy,imagefold)
+                imagefold,username2)
+        Scraper.Search.TikTok(report, username, http_proxy,imagefold,username2)
         if PostGpsCoordinates == [] and PostLocations == []:
             pass
         else:
@@ -165,6 +173,12 @@ class info:
             info.Yandex_dork(username)
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
+        choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            FileTransfer.Transfer.File(report,username,".txt") 
         Encoding.Encoder.Encode(report)
+        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
+              report)
         inp = input(Language.Translation.Translate_Language(
                         filename, "Default", "Continue", "None"))

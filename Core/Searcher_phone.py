@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -11,6 +11,7 @@ from datetime import datetime
 from Core.Support.Phone import Numbers
 from Core.Support import Font
 from Core.Support import Creds
+from Core.Support import FileTransfer
 from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Clear
@@ -245,13 +246,19 @@ class Phone_search:
         Numbers.Phony.Number(num, report, code, Mode, Type, username)
         Phone_search.lookup(username, report)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-              os.getcwd() + "/" + report)
+         report)
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
             filename, "Report", "Default", "By"))
         f.close()
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
+        choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            FileTransfer.Transfer.File(report,username,".txt") 
         Encoding.Encoder.Encode(report)
+        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
+        report)
         inp = input(Language.Translation.Translate_Language(
                         filename, "Default", "Continue", "None"))
