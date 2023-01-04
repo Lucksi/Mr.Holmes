@@ -241,7 +241,7 @@ write:François
 
 # EXAMPLE:
 
-![Screenshot](Screenshot/Dark_Pdf.png)
+<img src="Screenshot/Dark_Pdf.png" height ="500px" width = "300px" border = "5px" style="border-color:white;">
 
 # AVAILBLE PDF-THEMES:
     Light 🌕
@@ -257,7 +257,7 @@ write:François
 
 # FILE-TRANSFER PAGE:
 
-![Screenshot](Screenshot/File-Transfer.jpg)
+<img src="Screenshot/File-Transfer.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
 
 <br>
 
