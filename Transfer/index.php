@@ -10,7 +10,7 @@ License: GNU General Public License v3.0-->
                     $filename = fopen("file.txt","r") or die("Unable to open file");
                     $reader = fread($filename,filesize("file.txt"));
                     fclose($filename);
-                    echo "<a href = '$reader' download><button id = 'clicker' onsuccess='alert(ciao);'>Download</button></a>";
+                    echo "<a href = '$reader' download><button id = 'clicker'>Download</button></a>";
                 }
             ?>
             <script>
