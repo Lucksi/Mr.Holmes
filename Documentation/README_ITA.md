@@ -243,7 +243,7 @@ write:François
 # EXAMPLE:
 
 <p align = "center">
-<img src="Screenshot/Dark_Pdf.png" height ="400px" width = "400px" border = "5px" style="border-color:white;">
+<img src="../Screenshot/Dark_Pdf.png" height ="400px" width = "400px" border = "5px" style="border-color:white;">
 </p>
 
 <br>
@@ -263,7 +263,7 @@ write:François
 # FILE-TRANSFER PAGE:
 
 <p align = "center">
-<img src="Screenshot/File-Transfer.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
+<img src="../Screenshot/File-Transfer.jpg" height ="500px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
 <br>
