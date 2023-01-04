@@ -9,6 +9,7 @@
   <img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/repo-size/Lucksi/Mr.Holmes">
   <img src= "https://img.shields.io/github/languages/count/Lucksi/Mr.Holmes">
+  <img src = "https://visitor-badge.laobi.icu/badge?page_id=Lucksi.Mr.Holmes">
 </p>
 
 # :mag: Mr.Holmes 
@@ -214,6 +215,11 @@ write:François
 
 <br>
 
+#  DECODING
+## Con Questa Versione E Possibile effetuare Il Decoding dei Report
+
+<br>
+
 # IPOTESI
 ## Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte (Le Ipotesi Potrebbero non essere affidabili al 100%)
 
@@ -224,6 +230,35 @@ write:François
 # EXAMPLE:
 
 ![Screenshot](../Screenshot/Graph_Test.png)
+
+<br>
+
+<br>
+
+# PDF:
+## Con questa versione è possibile convertire i Grafici in PDF.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](Screenshot/Dark_Pdf.png)
+
+# AVAILBLE PDF-THEMES:
+    Light 🌕
+    Dark 🌗
+    High-Contrast 🌗
+
+<br>
+
+# FILE-TRANSFER:
+## Con questa versione è possibile trasferire i tuoi reports/PDF direttamente Sul tuo Telefono Tramite Qr-Code
+
+<br>
+
+# FILE-TRANSFER PAGE:
+
+![Screenshot](Screenshot/File-Transfer.jpg)
 
 <br>
 
@@ -275,4 +310,4 @@ write:François
 ## <p align = center>CREATORE ORIGINALE: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
 
-## <p align = center>LICENZA: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 
+## <p align = center>LICENZA: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2023 Lucksi 

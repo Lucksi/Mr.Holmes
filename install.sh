@@ -1,7 +1,7 @@
 #!/bin/bash
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2022 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 . /etc/os-release
@@ -106,6 +106,7 @@ function Packet_Installer {
 	sudo apt-get install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
 	sudo apt-get install inetutils-traceroute -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
 	sudo apt-get install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
+	sudo apt-get install wkhtmltopdf -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WKHTMLTOPDF"
 	sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }

@@ -2,7 +2,7 @@
     "Copyright-Notices":{
         "Original Creator": "Luca Garofalo (Lucksi)",
         "Author": "Luca Garofalo (Lucksi)",
-        "Copyright": "(C) 2022 Lucksi <lukege287@gmail.com>",
+        "Copyright": "(C) 2022-2023 Lucksi <lukege287@gmail.com>",
         "License": "GPL-3.0 License"
     },
 
@@ -58,8 +58,8 @@
     "Main":{
         "Text": "[INSERISCI UNA OPZIONE 'PREMI 0 PER UNA CITAZIONE RANDOM']",
         "MobileText": "[INSERISCI UNA OPZIONE]",
-        "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ESCI\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURAZIONE\n(5)DATABASE(GUI)\t\t(6)UPDATE\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT",
-        "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURAZIONE\n(5)DATABASE(GUI)\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)DORKS-GENERATOR\n(10)PERSON-OSINT\n(11)ESCI",
+        "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ENCODING/DECODING\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURAZIONE\t\t(12)PDF-GRAPH CONVERTER\n(5)DATABASE(GUI)\t\t(6)UPDATE\t\t\t(13)FILE-TRANSFER\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\t\t\t(14)EXIT\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT",
+        "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURAZIONE\n(5)DATABASE(GUI)\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)DORKS-GENERATOR\n(10)PERSON-OSINT\n(11)ENCODING/DECODING\n(12)PDF-CONVERTER\n(13)FILE-TRANSFER\n(14)EXIT",
         "Alert": "ATTENZIONE ALCUNI RISULTATI POSSO RISULTARE FALSI POSITIVI",
         "Username": "INSERISCI UN USERNAME",
         "Phone": "INSERT UN NUMERO TELEFONICO SENZA(+)",
@@ -333,6 +333,30 @@
         "Delete": "\nSTO ELIMINANDO I VECCHI FILE DI MR.HOLMES",
         "Keep": "\nVECCHI FILE NON ELIMINATI",
         "Success": "\nMR.HOLMES AGGIORNATO CORRETTAMENTE"
+    },
+
+    "Decoding":{
+        "Folder": "INSERISCI LA CARTELLA DEL REPORT PER: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n\n",
+        "Type": "INSERISCI IL TIPO DI REPORT\n(1){}\n(2)Recap\n\n",
+        "Options": "COSA VUOI EFFETTUARE?\n(1)ENCODE\n(2)DECODE\n\n",
+        "Decode": "VUOI DECODIFICARE IL REPORT?(1)YES(2)NO\n\n"
+    },
+
+    "PDF":{
+        "Check": "CONTROLLO L' ENCODING",
+        "Template": "SELEZIONA IL TEMPLATE DA USARE\n(1)LIGHT-THEME\n(2)DARK-THEME\n(3)HIGH-CONTRAST-THEME",
+        "Selected": "TEMPLATE SELEZIONATO: {}",
+        "Creation": "CREAZIONE DEL PDF TEMPLATE...",
+        "WinError": "ERRORE...QUESTA OPZIONE NON È DISPONIBILE SU WINDOWS",
+        "Image": "OTTENIMENTO E ENCODING DELLE IMMAGINI..."
+    },
+
+    "Transfer":{
+        "Folder": "INSERISCI LA CARTELLA DEL REPORT PER: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Exit\n\n",
+        "Question": "VUOI EFFETTUARE UN TRASFERIMENTO FILE?(1)SI(2)NO\n\n",
+        "Generation": "GENERAZIONE DEL QR-CODE...",
+        "Location": "IL QR CODE E STATO SALVATO SU: 'Qr-Codes/QR.png'",
+        "Type": "SELEZIONA IL TIPO DI FILE\n(1).txt\n(2).mh\n\n"
     },
 
     "Report":[

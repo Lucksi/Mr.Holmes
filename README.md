@@ -9,6 +9,8 @@
   <img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/repo-size/Lucksi/Mr.Holmes">
   <img src= "https://img.shields.io/github/languages/count/Lucksi/Mr.Holmes">
+  <img src = "https://visitor-badge.laobi.icu/badge?page_id=Lucksi.Mr.Holmes">
+</p>
 </p>
 
 # :mag: Mr.Holmes 
@@ -211,14 +213,51 @@ write:François
 
 <br>
 
+# DECODING:
+## With this version it is Possible to Decode your reports
+
+<br>
+
 # HYPOTHESIS
 ## This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media (It may not be a 100% attendible)
 
+<br>
+
 # GRAPHS:
 ## With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.
+
+<br>
+
 # EXAMPLE:
 
 ![Screenshot](Screenshot/Graph_Test.png)
+
+<br>
+
+# PDF:
+## With this new version has been added the possibility to converte your Graphs in PDF.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](Screenshot/Dark_Pdf.png)
+
+# AVAILBLE PDF-THEMES:
+    Light 🌕
+    Dark 🌗
+    High-Contrast 🌗
+
+<br>
+
+# FILE-TRANSFER:
+## With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code Located on Folder QRCodes
+
+<br>
+
+# FILE-TRANSFER PAGE:
+
+![Screenshot](Screenshot/File-Transfer.jpg)
 
 <br>
 
@@ -270,4 +309,4 @@ write:François
 ## <p align = center>  ORIGINAL CREATOR: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
 
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2022 Lucksi 
+## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2023 Lucksi 
