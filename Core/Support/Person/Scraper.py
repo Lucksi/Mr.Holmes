@@ -47,20 +47,17 @@ class Search:
                         usern = usern1.replace("/","")
                         link = "https://instagram.com/{}".format(usern)
                         name = user.find("div",class_="fullname").text
-                        #image = user.find("img",class_="lazyload")["data-src"]
+
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
                             Font.Color.GREEN + name + Font.Color.WHITE))
-                        #print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
-                        #    Font.Color.GREEN + image + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
                         Links.append(link)
                         f.write("\nUSER FOUND: {}".format(usern))
                         f.write("\nFULL-NAME: {}".format(name))
-                        #f.write("\nPROFILE-PIC: {}".format(image))
                         f.write("\nLINK: {}\n".format(link))
                         i = i+1
                     else:
