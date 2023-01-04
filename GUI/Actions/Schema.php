@@ -1,7 +1,7 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2022 Lucksi <lukege287@gmail.com>
+    Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/
 
     function Get_Message($Type,$Param){

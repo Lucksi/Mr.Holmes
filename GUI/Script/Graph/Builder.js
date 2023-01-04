@@ -1,6 +1,6 @@
 /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 AUTHOR: Luca Garofalo (Lucksi)
-Copyright (C) 2022 Lucksi <lukege287@gmail.com>
+Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
 License: GNU General Public License v3.0*/
 
 
@@ -107,66 +107,82 @@ function CreateElement(){
             
         }
         else if (document.getElementById("img").checked == true){
-            const user = document.getElementById("imageN").value;
-            var Img = document.getElementById("imageL").value + ".jpg";
+            var user = document.getElementById("imageN").value;
+            var Img = document.getElementById("imageL").value;
             var image = "";
             if (document.getElementById("YesLocal").checked == true){
                 var Final = "";
-                if(document.getElementById("YesPic").checked == true){
-                    if (document.getElementById("Instagram").checked == true){
-                        var path = "Profile_pics/Profile_pic_Instagram.jpg ";
-                    }
-                    else if (document.getElementById("Twitter").checked == true){
-                        var path = "Profile_pics/Profile_pic_Twitter.jpg ";
-                    }
-                    else if (document.getElementById("TikTok").checked == true){
-                        var path = "Profile_pics/Profile_pic_TikTok.jpg ";
-                    }
-                    else if (document.getElementById("Docker").checked == true){
-                        var path = "Profile_pics/Profile_pic_DockerHub.jpg ";
-                    }
-                    else if (document.getElementById("GitHub").checked == true){
-                        var path = "Profile_pics/Profile_pic_GitHub.jpg ";
-                    }
-                    else if (document.getElementById("GitLab").checked == true){
-                        var path = "Profile_pics/Profile_pic_GitLab.jpg ";
-                    }
-                    else if (document.getElementById("Disqus").checked == true){
-                        var path = "Profile_pics/Profile_pic_Disqus.jpg ";
-                    }
-                    else if (document.getElementById("Imgur").checked == true){
-                        var path = "Profile_pics/Profile_pic_Imgur.jpg ";
-                    }
-                    else if (document.getElementById("Wattpad").checked == true){
-                        var path = "Profile_pics/Profile_pic_Wattpad.jpg ";
-                    }
-                    else if (document.getElementById("Kik").checked == true){
-                        var path = "Profile_pics/Profile_pic_Kik.jpg ";
-                    }
-                    else if (document.getElementById("Ngl").checked == true){
-                        var path = "Profile_pics/Profile_pic_Ngl.link.jpg ";
-                    }
-                    else if (document.getElementById("Tellonym").checked == true){
-                        var path = "Profile_pics/Profile_pic_Tellonym.jpg ";
-                    }
-                    Final = "../Reports/Usernames/" + user + "/" + path;
-                   
-                        image = Final + path + "width = 150px style = 'border-radius:20px; margin-top:20px'";
+                var Path = "";
+                var Ok = "False";
+                if (document.getElementById("Use").checked == true){
+                    Path = "../Reports/Usernames/";
+                    Ok = "True"
                 }
-                else{
-                    if (document.getElementById("Instagram").checked == true){
-                        var path = "Profile_pics/Instagram_Posts";
-                    }
-                    else if (document.getElementById("Twitter").checked == true){
-                        var path = "Profile_pics/Twitter_Posts";
+                else if(document.getElementById("Per").checked == true){
+                    Path = "../Reports/People/";
+                    Ok = "True"
+                    user = user.replace(" ","_");
+                }
+                if(Ok == "True"){
+                    if(document.getElementById("YesPic").checked == true){
+                        if (document.getElementById("Instagram").checked == true){
+                            var path = "Profile_pics/Profile_pic_Instagram.jpg";
+                        }
+                        else if (document.getElementById("Twitter").checked == true){
+                            var path = "Profile_pics/Profile_pic_Twitter.jpg ";
+                        }
+                        else if (document.getElementById("TikTok").checked == true){
+                            var path = "Profile_pics/Profile_pic_TikTok.jpg ";
+                        }
+                        else if (document.getElementById("Docker").checked == true){
+                            var path = "Profile_pics/Profile_pic_DockerHub.jpg ";
+                        }
+                        else if (document.getElementById("GitHub").checked == true){
+                            var path = "Profile_pics/Profile_pic_GitHub.jpg ";
+                        }
+                        else if (document.getElementById("GitLab").checked == true){
+                            var path = "Profile_pics/Profile_pic_GitLab.jpg ";
+                        }
+                        else if (document.getElementById("Disqus").checked == true){
+                            var path = "Profile_pics/Profile_pic_Disqus.jpg ";
+                        }
+                        else if (document.getElementById("Imgur").checked == true){
+                            var path = "Profile_pics/Profile_pic_Imgur.jpg ";
+                        }
+                        else if (document.getElementById("Wattpad").checked == true){
+                            var path = "Profile_pics/Profile_pic_Wattpad.jpg ";
+                        }
+                        else if (document.getElementById("Kik").checked == true){
+                            var path = "Profile_pics/Profile_pic_Kik.jpg ";
+                        }
+                        else if (document.getElementById("Ngl").checked == true){
+                            var path = "Profile_pics/Profile_pic_Ngl.link.jpg ";
+                        }
+                        else if (document.getElementById("Tellonym").checked == true){
+                            var path = "Profile_pics/Profile_pic_Tellonym";
+                        }
+                        Final = Path + user + "/" + path;
+                        image = Final + " width = 150px style = 'border-radius:20px; margin-top:20px'";
+                        url1 = Final;
                     }
                     else{
-                        alert("Insert an Option");
+                        if (document.getElementById("Instagram").checked == true){
+                            var path = "Profile_pics/Instagram_Posts";
+                        }
+                        else if (document.getElementById("Twitter").checked == true){
+                            var path = "Profile_pics/Twitter_Posts";
+                        }
+                        else{
+                            alert("Insert an Option");
+                        }
+                        Final = Path + user + "/" + path + "/"
+                        image = Final + Img + " width = 150px style = 'border-radius:20px;margin-top:20px'";
+                        url1 = Final + Img;
                     }
-                    Final = "../Reports/Usernames/" + user + "/" + path + "/"
-                    image = Final + Img + " width = 150px style = 'border-radius:20px;margin-top:20px'";
                 }
-                url1 = Final + Img;
+                else{
+                    alert("Missing Parameter");
+                }
             }
             else if (document.getElementById("NoLocal").checked == true){
                 if(Img != ""){
@@ -176,19 +192,31 @@ function CreateElement(){
                 else{
                     image = "../Icon/Entities/Image.png  width = 100px";
                 }
+                Ok = "True"
             }
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            '<div id = "new">');
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            textbox);
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            "<p class = par id = '" + name + "text'>" + name + "</p>");
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            "<p><a href = " + url1 + " target = blank  id ='" + name + "link'" + "style = 'text-decoration:none;'><img id = '" + name +"' src = " + image + " ></a></p>");
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            '</div>');
-            document.getElementById("add_after_me").setAttribute("id","Past");
-            document.getElementById("new").setAttribute("id","add_after_me");
+            if (Ok == "True"){
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                '<div id = "new">');
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                textbox);
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                "<p class = par id = '" + name + "text'>" + name + "</p>");
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                "<p><a href = " + url1 + " target = blank  id ='" + name + "link'" + "style = 'text-decoration:none;'><img id = '" + name +"_image' src = " + image + " ></a></p>");
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                '</div>');
+                document.getElementById("add_after_me").setAttribute("id","Past");
+                document.getElementById("new").setAttribute("id","add_after_me");
+                var img3 = document.getElementById(name + "_image");
+                img3.addEventListener('error',function handleError(){
+                    img3.src = "../Icon/Entities/Image.png";
+                    img3.style.width = "100px";
+                    alert("Image not found replaced with Default image");
+                });
+            }
+            else{
+                alert("Error");
+            }
         }
         else if (document.getElementById("lu").checked == true){
             var latidue = document.getElementById("Lat").value;
@@ -279,6 +307,10 @@ function DeleteElement(){
         }
         else if(document.getElementById("lu").checked == true){
             var map = document.getElementById("map" + name);
+            map.remove()
+        }
+        else if(document.getElementById("img").checked == true){
+            var map = document.getElementById(name + "_image");
             map.remove()
         }
         else{

@@ -1,7 +1,7 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2022 Lucksi <lukege287@gmail.com>
+    Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/
 
     function OpenConstructor($final,$converted,$Mess1,$Mess2){
@@ -52,6 +52,12 @@
                             <label for = "NoLocal">Link-Image</label>
                             <br>
                             <div class = "LocalParameters" id = "LocalParams">
+                                <br>
+                                <input type = "radio" class = "imgavalue" id = "Use" name = "8" value = "User" onclick="OpenAdvance()">
+                                <p for = "Instagram">Username</p>
+                                <input type = "radio" class = "imgavalue" id = "Per" name = "8" value = "Pers" onclick="OpenAdvance()">
+                                <p for = "DockerHub">Person</p>
+                                <br>
                                 <br>
                                 <input type = "radio" class = "imgavalue" id = "Instagram" name = "3" value = "Insta" onclick="OpenAdvance()">
                                 <p for = "Instagram">Instagram</p>
@@ -193,6 +199,12 @@
                         <label for = "NoLocal">Link-Image</label>
                         <br>
                         <div class = "LocalParameters" id = "LocalParams">
+                            <br>
+                            <input type = "radio" class = "imgavalue" id = "Use" name = "8" value = "User" onclick="OpenAdvance()">
+                            <p for = "Instagram">Username</p>
+                            <input type = "radio" class = "imgavalue" id = "Per" name = "8" value = "Pers" onclick="OpenAdvance()">
+                            <p for = "DockerHub">Person</p>
+                            <br>
                             <br>
                             <input type = "radio" class = "imgavalue" id = "Instagram" name = "3" value = "Insta" onclick="OpenAdvance()">
                             <label for = "Instagram">Instagram</label>

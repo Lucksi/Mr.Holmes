@@ -1,7 +1,7 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright 2021-2022 Lucksi <lukege287@gmail.com>
+    Copyright 2021-2023 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/ 
 
     function Get_Message($Type,$Param){
@@ -117,7 +117,7 @@
             
             $profile_pic = str_replace("_Posts","",$Folder_name);
             if(getimagesize("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg") == false){
-                            
+                      echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'Main_pics' abbr title = '$profile_pic'></a>";       
             }
             else{
                 echo "<a href = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_{$profile_pic}.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
@@ -164,7 +164,7 @@
                     $img1 = $Content1;
                     if (file_exists($img1)){
                         if(getimagesize($img1) == false){
-    
+                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
                         }
                         else{
                             echo "\t\t\t<a href = '{$img1}' target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
@@ -181,11 +181,16 @@
                 foreach(array_reverse($fold) as $Content => $value){
                     $b = 0;
                     $data_file = glob("$value/*"."txt");
-                    if ($Folder_name == "Instagram_Posts"){
+                    if ($Folder_name == "Instagram_Posts" || $Folder_name == "Twitter_Posts"){
                         $cut_img = str_replace("$value/","",$data_file[$b]);
                         $img = str_replace(".txt",".jpg",$cut_img);
                         $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
-                        echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
+                        if(getimagesize($Content) == false){
+                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
+                        }
+                        else{
+                            echo "\t\t\t<a href = '{$img1}' target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
+                        }
                     }
                     $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
                     while(!feof($opener)){
@@ -209,7 +214,12 @@
                             $img = str_replace(".json",".jpg",$cut_img);
                             $id = str_replace(".jpg","",$img);
                             $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
-                            echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
+                            if(getimagesize($img1) == false){
+                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
+                            }
+                            else{
+                                echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n'></a>";
+                            }
                             $reader = file_get_contents($data_file[$b]);
                             $parser = json_decode($reader,true);
                             $Latitude = $parser["Geolocation"]["Latitude"];
@@ -286,7 +296,7 @@
                         $abbr_1 = str_replace("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_","",$Content);
                         $abbr_2 = str_replace(".jpg","",$abbr_1);
                         if(getimagesize($Content) == false){
-                            
+                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
                         }
                         else{
                             echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$abbr_2'></a>";
@@ -352,7 +362,8 @@
                         $abbr_1 = str_replace("../Reports/Usernames/{$File_name}/Profile_pics/Profile_pic_","",$Content);
                         $abbr_2 = str_replace(".jpg","",$abbr_1);
                         if(getimagesize($Content) == false){
-                            
+                            echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
+                            echo "<br>";
                         }
                         else{
                             echo "\t\t\t<a href = '{$Content}'target = 'blank'><img src = '{$Content}' id = 'pics' abbr title = '$abbr_2'></a>";
