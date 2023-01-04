@@ -1,0 +1,43 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Schema.css");
+
+.Metadata{
+    display: block;
+    border: 3px solid;
+    border-color: black;
+    height: fit-content;
+    width: 700px;
+    background-color: rgba(18, 13, 167, 0.423);
+    border-radius: 20px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.Metadata p{
+    font-size:15px;
+    margin-top: 10px;
+    color: black;
+    font-weight: bold;
+}
+
+#Bold{
+    font-size: 20px;
+}
+
+
+p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top:40px;
+    font-size:20px;
+}
+
+.Graph{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
