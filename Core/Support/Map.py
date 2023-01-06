@@ -33,6 +33,14 @@ class Creation:
                 <center>
                     <p id = "Const">POST ID: {}</p>
                     <a href = "../{}.jpg" target = "blank"><img src = "../{}.jpg" height="350px" width="350px" style="border: 3px solid;border-radius:20px;border-color:#ffffff;"></a>
+                    <script>
+                        var image = document.getElementById("Image");
+                        image.addEventListener("error",function handleError(){
+                            image.src="../../../../../../Icon/Entities/Image.png";
+                            image.style.width="250px";
+                            image.style.height="250px";
+                        });
+                    </script>
                 </center>
                 <br>
                 <div class = "map" id="map"></div>
