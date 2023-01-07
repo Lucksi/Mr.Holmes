@@ -35,19 +35,18 @@ class Search:
         try:
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
-                users = reader.find_all("div", class_="item_w be-1")
+                users = reader.find_all("div", class_="item")
                 i = 1
                 f = open(report, "a")
                 f.write(
                     "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
                 for user in users:
                     if i <= 20:
-                        usern1 = user.find(
-                            "a", class_="user_box")["href"].replace("/profile/","")
-                        usern = usern1.replace("/","")
-                        link = "https://instagram.com/{}".format(usern)
+                        usern1 = user.find_all("div",class_="username")
+                        for name in usern1:
+                            usern = name.find("span").text.replace("@","")
                         name = user.find("div",class_="fullname").text
-
+                        link = "https://instagram.com/{}".format(usern)
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
@@ -75,7 +74,7 @@ class Search:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
         j = 1
         if len(List):

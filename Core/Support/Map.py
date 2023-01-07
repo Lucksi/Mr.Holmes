@@ -16,6 +16,7 @@ class Creation:
     def mapPost(data_fold, Lat, Lon, image2):
         map_file = data_fold + \
             "/Map.html"
+        rescue = 'var image = document.getElementById("Image");image.addEventListener("error",function handleError(){image.src="../../../../../../Icon/Entities/Image.png";image.style.width="250px";image.style.height="250px";});'
         content = '''
         <!--{}-->
         <html>
@@ -32,15 +33,8 @@ class Creation:
             <body>
                 <center>
                     <p id = "Const">POST ID: {}</p>
-                    <a href = "../{}.jpg" target = "blank"><img src = "../{}.jpg" height="350px" width="350px" style="border: 3px solid;border-radius:20px;border-color:#ffffff;"></a>
-                    <script>
-                        var image = document.getElementById("Image");
-                        image.addEventListener("error",function handleError(){
-                            image.src="../../../../../../Icon/Entities/Image.png";
-                            image.style.width="250px";
-                            image.style.height="250px";
-                        });
-                    </script>
+                    <a href = "../{}.jpg" target = "blank"><img src = "../{}.jpg" height="350px" width="350px" style="border: 3px solid;border-radius:20px;border-color:#ffffff;" id = "Image"></a>
+                    <script>{}</script>
                 </center>
                 <br>
                 <div class = "map" id="map"></div>
@@ -50,7 +44,7 @@ class Creation:
                     L.marker([{},{}]).addTo(map).bindPopup('Post id {} is approximatley based in this Area.').openPopup();
                 </script>;       
             </body>
-        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, image2, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon, image2)
+        </html>'''.format(Language.Translation.Translate_Language(LangFile, "Default", "Generated", "None"),image2, image2, image2, rescue, Lat, Lon, "{s}", "{z}", "{x}", "{y}", "{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'})", Lat, Lon, image2)
         f = open(map_file, "w", encoding="utf-8")
         f.write(content)
         f.close()
