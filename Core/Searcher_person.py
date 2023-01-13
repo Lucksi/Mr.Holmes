@@ -151,6 +151,7 @@ class info:
             print(Font.Color.GREEN +
                   "\n[+]" + Font.Color.WHITE + "GETTING LATEST POST GEOLOCATION")
             f = open(report, "a")
+            f.write("\nGETTING LATEST POST GEOLOCATION:\n")
             for Locations in PostGpsCoordinates:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Locations)
                 f.write(Locations + "\n")

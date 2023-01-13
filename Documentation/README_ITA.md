@@ -233,6 +233,15 @@ write:François
 
 <br>
 
+# DORKS:
+## Con questa nuova versione è possibile cercare Video/Suoni/Immagini Attraverso i Dorks.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](../Screenshot/Dorks.png)
+
 <br>
 
 # PDF:

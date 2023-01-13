@@ -234,6 +234,18 @@ write:François
 
 <br>
 
+# DORKS:
+## With this new version it is possible to search Video/Sound/Images via Dorks.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](Screenshot/Dorks.png)
+
+<br>
+
+
 # PDF:
 ## With this new version has been added the possibility to converte your Graphs in PDF.
 

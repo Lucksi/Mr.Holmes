@@ -230,6 +230,17 @@ write:François
 
 <br>
 
+# DORKS:
+## Avec cette nouvelle version a été ajoutée la possibilité de chercher Video/Sound/Images via Dorks.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](../Screenshot/Dorks.png)
+
+<br>
+
 # PDF:
 ## Avec cette nouvelle version a été ajoutée la possibilité de convertir vos graphiques en PDF.
 
