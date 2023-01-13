@@ -1,20 +1,29 @@
-https://yandex.com/search/?text={}mime:txt
-https://yandex.com/search/?text={}mime:pdf
-https://yandex.com/search/?text={}mime:csv
-https://yandex.com/search/?text={}mime:doc
-https://yandex.com/search/?text={}mime:docx
-https://yandex.com/search/?text={}mime:log
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:txt
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:pdf
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:csv
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:doc
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:docx
-https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&&mime:log
-https://yandex.com/search/?text=title:{}
-https://yandex.com/search/?text=title:{}&&mime:txt
-https://yandex.com/search/?text=title:{}&&mime:pdf
-https://yandex.com/search/?text=title:{}&&mime:csv
-https://yandex.com/search/?text=title:{}&&mime:doc
-https://yandex.com/search/?text=title:{}&&mime:docx
-https://yandex.com/search/?text=title:{}&&mime:log
-https://yandex.com/search/?text=inurl:{}
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text={}mime:txt
+| https://yandex.com/search/?text={}mime:pdf
+| https://yandex.com/search/?text={}mime:csv
+| https://yandex.com/search/?text={}mime:doc
+| https://yandex.com/search/?text={}mime:docx
+| https://yandex.com/search/?text={}mime:log
+----------------------------------------------------------------------------------------------------------------------
+[PASSWORD-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:txt
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:pdf
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:csv
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:doc
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:docx
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&&mime:log
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:{}
+| https://yandex.com/search/?text=title:{}&&mime:txt
+| https://yandex.com/search/?text=title:{}&&mime:pdf
+| https://yandex.com/search/?text=title:{}&&mime:csv
+| https://yandex.com/search/?text=title:{}&&mime:doc
+| https://yandex.com/search/?text=title:{}&&mime:docx
+| https://yandex.com/search/?text=title:{}&&mime:log
+| https://yandex.com/search/?text=inurl:{}
+----------------------------------------------------------------------------------------------------------------------

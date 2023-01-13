@@ -1,28 +1,80 @@
-https://yandex.com/search/?text={}
-https://yandex.com/search/?text=({})mime:txt
-https://yandex.com/search/?text=({})mime:pdf
-https://yandex.com/search/?text=({})mime:csv
-https://yandex.com/search/?text=({})mime:doc
-https://yandex.com/search/?text=({})mime:docx
-https://yandex.com/search/?text=({})mime:log
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:txt
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:pdf
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:csv
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:doc
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:docx
-https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:log
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:txt
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:pdf
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:csv
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:doc
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:docx
-https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:log
-https://yandex.com/search/?text=title:{}
-https://yandex.com/search/?text=title:({})mime:txt
-https://yandex.com/search/?text=title:({})mime:pdf
-https://yandex.com/search/?text=title:({})mime:csv
-https://yandex.com/search/?text=title:({})mime:doc
-https://yandex.com/search/?text=title:({})mime:docx
-https://yandex.com/search/?text=title:({})mime:log
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text={}
+| https://yandex.com/search/?text=({})mime:txt
+| https://yandex.com/search/?text=({})mime:pdf
+| https://yandex.com/search/?text=({})mime:csv
+| https://yandex.com/search/?text=({})mime:doc
+| https://yandex.com/search/?text=({})mime:docx
+| https://yandex.com/search/?text=({})mime:log
+| https://yandex.com/search/?text=({})mime:json
+| https://yandex.com/search/?text=({})mime:xml
+| https://yandex.com/search/?text=({})mime:xls
+| https://yandex.com/search/?text=({})mime:odt
+| https://yandex.com/search/?text=({})mime:html
+| https://yandex.com/search/?text=({})mime:php
+| https://yandex.com/search/?text=({})mime:asp
+----------------------------------------------------------------------------------------------------------------------
+[IMAGE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/images/search?from=tabbar&text={}
+| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Apng
+| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpg
+| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpeg
+| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Agif
+----------------------------------------------------------------------------------------------------------------------
+[VIDEO/AUDIO-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/video/search?from=tabbar&text={}
+| https://yandex.com/video/search?from=tabbar&text=site:youtube.com+{}
+| https://yandex.com/video/search?from=tabbar&text=site:tiktok.com+{}
+| https://yandex.com/video/search?from=tabbar&text=site:facebook.com+{}
+| https://yandex.com/video/search?from=tabbar&text=site:twitter.com+{}
+| https://yandex.com/video/search?from=tabbar&text=site:twitch.tv+{}
+| https://yandex.com/video/search?from=tabbar&text=site:instagram.com+{}
+----------------------------------------------------------------------------------------------------------------------
+[EMAIL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:txt
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:pdf
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:csv
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:doc
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:docx
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:log
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:json
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:xml
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:xls
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[PASSWORD-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:txt
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:pdf
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:csv
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:doc
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:docx
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:log
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:json
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:xml
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:xls
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:odt
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=title:{}
+| https://yandex.com/search/?text=title:({})mime:txt
+| https://yandex.com/search/?text=title:({})mime:pdf
+| https://yandex.com/search/?text=title:({})mime:csv
+| https://yandex.com/search/?text=title:({})mime:doc
+| https://yandex.com/search/?text=title:({})mime:docx
+| https://yandex.com/search/?text=title:({})mime:log
+| https://yandex.com/search/?text=title:({})mime:json
+| https://yandex.com/search/?text=title:({})mime:xml
+| https://yandex.com/search/?text=title:({})mime:xls
+| https://yandex.com/search/?text=title:({})mime:odt
+| https://yandex.com/search/?text=title:({})mime:html
+| https://yandex.com/search/?text=title:({})mime:php
+| https://yandex.com/search/?text=title:({})mime:asp
+----------------------------------------------------------------------------------------------------------------------

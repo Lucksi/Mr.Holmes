@@ -1,21 +1,30 @@
-https://www.google.com/search?q=intext:{}
-https://www.google.com/search?q=intext:({})filetype:txt
-https://www.google.com/search?q=intext:({})filetype:csv
-https://www.google.com/search?q=intext:({})filetype:pdf
-https://www.google.com/search?q=intext:({})filetype:doc
-https://www.google.com/search?q=intext:({})filetype:docx
-https://www.google.com/search?q=intext:({})filetype:log
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:txt
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:csv
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:pdf
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:doc
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:docx
-https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:log
-https://www.google.com/search?q=intitle:({})filetype:txt
-https://www.google.com/search?q=intitle:({})filetype:csv
-https://www.google.com/search?q=intitle:({})filetype:pdf
-https://www.google.com/search?q=intitle:({})filetype:doc
-https://www.google.com/search?q=intitle:({})filetype:docx
-https://www.google.com/search?q=intitle:({})filetype:log
-https://www.google.com/search?q=inurl:{}
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intext:{}
+| https://www.google.com/search?q=intext:({})filetype:txt
+| https://www.google.com/search?q=intext:({})filetype:csv
+| https://www.google.com/search?q=intext:({})filetype:pdf
+| https://www.google.com/search?q=intext:({})filetype:doc
+| https://www.google.com/search?q=intext:({})filetype:docx
+| https://www.google.com/search?q=intext:({})filetype:log
+----------------------------------------------------------------------------------------------------------------------
+[PASSWORD-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:txt
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:csv
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:pdf
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:doc
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:docx
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:log
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:({})filetype:txt
+| https://www.google.com/search?q=intitle:({})filetype:csv
+| https://www.google.com/search?q=intitle:({})filetype:pdf
+| https://www.google.com/search?q=intitle:({})filetype:doc
+| https://www.google.com/search?q=intitle:({})filetype:docx
+| https://www.google.com/search?q=intitle:({})filetype:log
+| https://www.google.com/search?q=inurl:{}
+----------------------------------------------------------------------------------------------------------------------

@@ -1,12 +1,22 @@
-https://www.google.com/search?q=intext:({})
-https://www.google.com/search?q=intext:({})filetype:txt
-https://www.google.com/search?q=intext:({})filetype:csv
-https://www.google.com/search?q=intext:({})filetype:pdf
-https://www.google.com/search?q=intext:({})filetype:doc
-https://www.google.com/search?q=intext:({})filetype:docx
-https://www.google.com/search?q=intext:({})filetype:log
-https://www.google.com/search?q=intitle:({})filetype:txt
-https://www.google.com/search?q=intitle:({})filetype:csv
-https://www.google.com/search?q=intitle:({})filetype:pdf
-https://www.google.com/search?q=intitle:({})filetype:doc
-https://www.google.com/search?q=intitle:({})filetype:log
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intext:({})
+| https://www.google.com/search?q=intext:({})filetype:txt
+| https://www.google.com/search?q=intext:({})filetype:csv
+| https://www.google.com/search?q=intext:({})filetype:pdf
+| https://www.google.com/search?q=intext:({})filetype:doc
+| https://www.google.com/search?q=intext:({})filetype:docx
+| https://www.google.com/search?q=intext:({})filetype:log
+| https://www.google.com/search?q=intext:({})filetype:xls
+----------------------------------------------------------------------------------------------------------------------
+[INTITLE-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=intitle:({})
+| https://www.google.com/search?q=intitle:({})filetype:txt
+| https://www.google.com/search?q=intitle:({})filetype:csv
+| https://www.google.com/search?q=intitle:({})filetype:pdf
+| https://www.google.com/search?q=intitle:({})filetype:doc
+| https://www.google.com/search?q=intitle:({})filetype:docx
+| https://www.google.com/search?q=intitle:({})filetype:log
+| https://www.google.com/search?q=intitle:({})filetype:xls
+----------------------------------------------------------------------------------------------------------------------
