@@ -220,6 +220,33 @@ function Set_Language_Graph(list,list2,user,search,holder,Auth,Type,Img,Phone,Pe
     document.getElementsByName("deleteAll")[0].innerHTML=(DeleteAll);
 }
 
+function Set_Language_People(list,user,search,holder,error,photos,Auth){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("Current").innerHTML=(holder);
+    document.title=(list[7]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang(Auth);
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
+function Set_Language_People_Mobile(user,search,list,photos,error,Auth){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.title=(list[6]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang_Mobile(Auth);
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
 /*END SECTION*/
 
 /*USERNAME*/
@@ -414,7 +441,7 @@ function Italian_People(){
     const holder = ("Italiano");
     const photos = ("FOTO-PROFILO");
     const Auth = ("javascript:Italiano();")
-    Set_Language_Username(list,user,search,holder,error,photos,Auth);
+    Set_Language_People(list,user,search,holder,error,photos,Auth);
 }
 
 function Italian_People_Mobile(){
@@ -424,5 +451,5 @@ function Italian_People_Mobile(){
     const error = ("NESSUNA FOTO PROFILO TROVATA PER QUESTO USER");
     const photos = ("FOTO-PROFILO");
     const Auth = ("javascript:Italiano();");
-    Set_Language_Username_Mobile(user,search,list,photos,error,Auth);
+    Set_Language_Username_People(user,search,list,photos,error,Auth);
 }

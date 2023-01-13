@@ -110,11 +110,26 @@
             }
 
             if($Folder_name == "TikTok_Posts"){
-                $mp4 = glob($Dir_Name."*.mp4");
+                /*$mp4 = glob($Dir_Name."*.mp4");
                 foreach(array_reverse($mp4) as $Content1){
                     $i = $i +1;
                     $img1 = $Content1;
                     echo "<video src = '$img1' controls></video>\n";
+                }*/
+                foreach(array_reverse($fold) as $Content => $value){
+                    $b = 0;
+                    $data_file = glob("$value/*"."txt");
+                    $cut_img = str_replace("$value/","",$data_file[$b]);
+                    $img = str_replace(".txt",".jpg",$cut_img);
+                    $video = str_replace(".txt",".mp4",$cut_img);   
+                    $poster = "$value/$img";
+                    $watch = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$video";
+                    if (file_exists($poster)){
+                        echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
+                    }
+                    else{
+
+                    }
                 }
                 echo "</div>\n";
                 echo "<div class = 'Data3'>";
@@ -170,6 +185,8 @@
                     if ($Folder_name == "Instagram_Posts"|| $Folder_name == "Twitter_Posts"){
                         $cut_img = str_replace("$value/","",$data_file[$b]);
                         $img = str_replace(".txt",".jpg",$cut_img);
+                        $img = str_replace("_details","",$img);
+                        $img = str_replace("Post","Pic",$img);
                         $Content = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$img";
                         if(getimagesize($Content) == false){
                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
@@ -321,6 +338,7 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                $File_name = str_replace("_"," ",$File_name);
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
                 Get_Dorks($Complete_name);
             }
@@ -389,6 +407,7 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                $File_name = str_replace("_"," ",$File_name);
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
                 Get_Dorks($Complete_name);
             }

@@ -215,6 +215,33 @@ function Set_Language_Graph(list,list2,user,search,holder,Auth,New,Old,Type,Img,
     Set_Author_Lang(Auth);
 }
 
+function Set_Language_People(list,user,search,holder,error,photos,Auth){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.getElementById("Current").innerHTML=(holder);
+    document.title=(list[7]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Link")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang(Auth);
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
+function Set_Language_People_Mobile(user,search,list,photos,error,Auth){
+    document.getElementById("Searcher").placeholder= user
+    document.getElementById("But").innerHTML=(search);
+    document.title=(list[6]);
+    for (i=0;i<list.length;i++){
+        document.getElementsByClassName("Options")[0].getElementsByTagName("a")[i].innerHTML=(list[i]);
+        i=i++;
+    }
+    Set_Author_Lang_Mobile(Auth);
+    document.getElementById("Const2").innerHTML=(photos);
+    document.getElementById("error").innerHTML=(error);
+}
+
 /*END SECTION*/
 
 /*USERNAME*/
@@ -409,7 +436,7 @@ function French_People(){
     const holder = ("Français");
     const photos = ("PHOTO-PROFIL");
     const Auth = ("javascript:French();")
-    Set_Language_Username(list,user,search,holder,error,photos,Auth);
+    Set_Language_People(list,user,search,holder,error,photos,Auth);
 }
 
 function French_People_Mobile(){
@@ -419,5 +446,5 @@ function French_People_Mobile(){
     const error = ("NOT FIND ANY PROFILE PIC FOR THIS USER");
     const photos = ("PHOTO-PROFIL");
     const Auth = ("javascript:French();")
-    Set_Language_Username_Mobile(user,search,list,photos,error,Auth);
+    Set_Language_People_Mobile(user,search,list,photos,error,Auth);
 }

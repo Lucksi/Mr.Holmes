@@ -124,11 +124,30 @@
             }
 
             if($Folder_name == "TikTok_Posts"){
-                $mp4 = glob($Dir_Name."*.mp4");
+                /*$mp4 = glob($Dir_Name."*.mp4");
+                $img = str_replace(".txt",".jpg",$cut_img);
                 foreach(array_reverse($mp4) as $Content1){
                     $i = $i +1;
                     $img1 = $Content1;
-                    echo "<video src = '$img1' controls></video>\n";
+                    $poster= $Content1/$img;
+                    echo $poster;
+                    //echo "<video src = '$img1' controls></video>\n";
+                    echo "<img src = '$poster' controls></img>\n";
+                }*/
+                foreach(array_reverse($fold) as $Content => $value){
+                    $b = 0;
+                    $data_file = glob("$value/*"."txt");
+                    $cut_img = str_replace("$value/","",$data_file[$b]);
+                    $img = str_replace(".txt",".jpg",$cut_img);
+                    $video = str_replace(".txt",".mp4",$cut_img);   
+                    $poster = "$value/$img";
+                    $watch = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$video";
+                    if (file_exists($poster)){
+                        echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
+                    }
+                    else{
+
+                    }
                 }
                 echo "</div>\n";
                 echo "<div class = 'Data3'>";
@@ -164,7 +183,7 @@
                     $img1 = $Content1;
                     if (file_exists($img1)){
                         if(getimagesize($img1) == false){
-                             echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
+                            echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
                         }
                         else{
                             echo "\t\t\t<a href = '{$img1}' target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
@@ -184,12 +203,14 @@
                     if ($Folder_name == "Instagram_Posts" || $Folder_name == "Twitter_Posts"){
                         $cut_img = str_replace("$value/","",$data_file[$b]);
                         $img = str_replace(".txt",".jpg",$cut_img);
+                        $img = str_replace("_details","",$img);
+                        $img = str_replace("Post","Pic",$img);
                         $Content = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$img";
                         if(getimagesize($Content) == false){
                              echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$profile_pic'></a>";
                         }
                         else{
-                            echo "\t\t\t<a href = '{$img1}' target = 'blank'>"."<img src = '{$img1}' id = 'pics' abbr title = 'Post N°$i'></a>";
+                            echo "\t\t\t<a href = '{$Content}' target = 'blank'>"."<img src = '{$Content}' id = 'pics' abbr title = 'Post N°$i'></a>";
                         }
                     }
                     $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
