@@ -270,7 +270,11 @@ video{
     margin-left: 52px;
 }
 
-#Tellonym,#Per{
+#Per{
+    margin-left: 40px;
+}
+
+#Tellonym{
     margin-left: 42px;
 }
 

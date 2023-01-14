@@ -85,7 +85,7 @@
                                 <br>
                                 <input type = "radio" class = "imgavalue" id = "Wattpad" name = "3" value = "Watt" onclick="OpenAdvance()">
                                 <p for = "Wattpad">Wattpad</p>
-                                <input type = "radio" class = "imgavalue" id = "Kik" name = "3" value = "Kik" onclick="OpenAdvance()" style="margin-left:52px">
+                                <input type = "radio" class = "imgavalue" id = "Kik" name = "3" value = "Kik" onclick="OpenAdvance()">
                                 <p for = "Kik">Kik</p>
                                 <br>
                                 <br>
@@ -208,31 +208,31 @@
                             <br>
                             <input type = "radio" class = "imgavalue" id = "Instagram" name = "3" value = "Insta" onclick="OpenAdvance()">
                             <label for = "Instagram">Instagram</label>
-                            <input type = "radio" class = "imgavalue" id = "Docker" name = "3" value = "Doc" onclick="OpenAdvance()"style="margin-left:28px">
+                            <input type = "radio" class = "imgavalue" id = "Docker" name = "3" value = "Doc" onclick="OpenAdvance()">
                             <label for = "DockerHub">DockerHub</label>
                             <br>
                             <br>
                             <input type = "radio" class = "imgavalue" id = "TikTok" name = "3" value = "Tik" onclick="OpenAdvance()">
                             <label for = "TikTok">TikTok</label>
-                            <input type = "radio" class = "imgavalue" id = "Twitter" name = "3" value = "Twitt" onclick="OpenAdvance()"style="margin-left:63px">
+                            <input type = "radio" class = "imgavalue" id = "Twitter" name = "3" value = "Twitt" onclick="OpenAdvance()">
                             <label for = "Twitt">Twitter</label>
                             <br>
                             <br>
                             <input type = "radio" class = "imgavalue" id = "GitHub" name = "3" value = "Hub" onclick="OpenAdvance()">
                             <label for = "GitHub">GitHub</label>
-                            <input type = "radio" class = "imgavalue" id = "GitLab" name = "3" value = "Lab" onclick="OpenAdvance()"style="margin-left:63px">
+                            <input type = "radio" class = "imgavalue" id = "GitLab" name = "3" value = "Lab" onclick="OpenAdvance()">
                             <label for = "GitLab">GitLab</label>
                             <br>
                             <br>
                             <input type = "radio" class = "imgavalue" id = "Disqus" name = "3" value = "Disq" onclick="OpenAdvance()">
                             <label for = "Disqus">Disqus</label>
-                            <input type = "radio" class = "imgavalue" id = "Imgur" name = "3" value = "imgur" onclick="OpenAdvance()"style="margin-left:63px">
+                            <input type = "radio" class = "imgavalue" id = "Imgur" name = "3" value = "imgur" onclick="OpenAdvance()">
                             <label for = "Imgur">Imgur</label>
                             <br>
                             <br>
                             <input type = "radio" class = "imgavalue" id = "Wattpad" name = "3" value = "Watt" onclick="OpenAdvance()">
                             <label for = "Wattpad">Wattpad</label>
-                            <input type = "radio" class = "imgavalue" id = "Kik" name = "3" value = "Kik" onclick="OpenAdvance()"style="margin-left:52px">
+                            <input type = "radio" class = "imgavalue" id = "Kik" name = "3" value = "Kik" onclick="OpenAdvance()">
                             <label for = "Kik">Kik</label>
                             <br>
                             <br>
