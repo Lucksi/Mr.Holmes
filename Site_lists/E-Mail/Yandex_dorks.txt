@@ -15,6 +15,8 @@
 | https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:doc
 | https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:docx
 | https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&&mime:log
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:xls
+| https://yandex.com/search/?text={}&&(!Password|!password|!PASSWORD)&& mime:xlsx
 ----------------------------------------------------------------------------------------------------------------------
 [INTITLE-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
@@ -24,6 +26,8 @@
 | https://yandex.com/search/?text=title:{}&&mime:csv
 | https://yandex.com/search/?text=title:{}&&mime:doc
 | https://yandex.com/search/?text=title:{}&&mime:docx
+| https://yandex.com/search/?text=title:{}&&mime:xls
+| https://yandex.com/search/?text=title:{}&&mime:xlsx
 | https://yandex.com/search/?text=title:{}&&mime:log
 | https://yandex.com/search/?text=inurl:{}
 ----------------------------------------------------------------------------------------------------------------------
