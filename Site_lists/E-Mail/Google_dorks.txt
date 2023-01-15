@@ -7,6 +7,8 @@
 | https://www.google.com/search?q=intext:({})filetype:doc
 | https://www.google.com/search?q=intext:({})filetype:docx
 | https://www.google.com/search?q=intext:({})filetype:log
+| https://www.google.com/search?q=intext:({})filetype:xls
+| https://www.google.com/search?q=intext:({})filetype:xlsx
 ----------------------------------------------------------------------------------------------------------------------
 [PASSWORD-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
@@ -17,6 +19,8 @@
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:doc
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:docx
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:log
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:xls
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:xlsx
 ----------------------------------------------------------------------------------------------------------------------
 [INTITLE-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
@@ -26,5 +30,7 @@
 | https://www.google.com/search?q=intitle:({})filetype:doc
 | https://www.google.com/search?q=intitle:({})filetype:docx
 | https://www.google.com/search?q=intitle:({})filetype:log
+| https://www.google.com/search?q=intitle:({})filetype:xls
+| https://www.google.com/search?q=intitle:({})filetype:xlsx
 | https://www.google.com/search?q=inurl:{}
 ----------------------------------------------------------------------------------------------------------------------

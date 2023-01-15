@@ -9,6 +9,7 @@
 | https://www.google.com/search?q=site:(www.{})%29+filetype:yaml
 | https://www.google.com/search?q=site:(www.{})%29+filetype:json
 | https://www.google.com/search?q=site:(www.{})%29+filetype:xls
+| https://www.google.com/search?q=site:(www.{})%29+filetype:xlsx
 | https://www.google.com/search?q=site:(www.{})%29+filetype:csv
 | https://www.google.com/search?q=site:(www.{})%29+filetype:md
 | https://www.google.com/search?q=site:(www.{})%29+intext:admin+OR+Admin

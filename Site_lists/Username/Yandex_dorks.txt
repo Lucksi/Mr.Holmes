@@ -10,6 +10,7 @@
 | https://yandex.com/search/?text=({})mime:json
 | https://yandex.com/search/?text=({})mime:xml
 | https://yandex.com/search/?text=({})mime:xls
+| https://yandex.com/search/?text=({})mime:xlsx
 | https://yandex.com/search/?text=({})mime:odt
 | https://yandex.com/search/?text=({})mime:html
 | https://yandex.com/search/?text=({})mime:php
@@ -45,6 +46,7 @@
 | https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:json
 | https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:xml
 | https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:xls
+| https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:xlsx
 | https://yandex.com/search/?text={}%2B(!Email|!email|!E-mail|!e-mail)mime:odt
 ----------------------------------------------------------------------------------------------------------------------
 [PASSWORD-DORKS]:
@@ -59,6 +61,7 @@
 | https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:json
 | https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:xml
 | https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:xls
+| https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:xlsx
 | https://yandex.com/search/?text={}%2B(!Password|!password|!PASSWORD)mime:odt
 ----------------------------------------------------------------------------------------------------------------------
 [INTITLE-DORKS]:
@@ -73,6 +76,7 @@
 | https://yandex.com/search/?text=title:({})mime:json
 | https://yandex.com/search/?text=title:({})mime:xml
 | https://yandex.com/search/?text=title:({})mime:xls
+| https://yandex.com/search/?text=title:({})mime:xlsx
 | https://yandex.com/search/?text=title:({})mime:odt
 | https://yandex.com/search/?text=title:({})mime:html
 | https://yandex.com/search/?text=title:({})mime:php

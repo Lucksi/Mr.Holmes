@@ -10,6 +10,7 @@
 | https://www.google.com/search?q=intext:({})filetype:json
 | https://www.google.com/search?q=intext:({})filetype:xml
 | https://www.google.com/search?q=intext:({})filetype:xls
+| https://www.google.com/search?q=intext:({})filetype:xlsx
 | https://www.google.com/search?q=intext:({})filetype:odt
 | https://www.google.com/search?q=intext:({})filetype:html
 | https://www.google.com/search?q=intext:({})filetype:php
@@ -45,6 +46,7 @@
 | https://www.google.com/search?q=intext:{}(Email+OR+E-mail+OR+email+OR+e-mail)filetype:json
 | https://www.google.com/search?q=intext:{}(Email+OR+E-mail+OR+email+OR+e-mail)filetype:xml
 | https://www.google.com/search?q=intext:{}(Email+OR+E-mail+OR+email+OR+e-mail)filetype:xls
+| https://www.google.com/search?q=intext:{}(Email+OR+E-mail+OR+email+OR+e-mail)filetype:xlsx
 | https://www.google.com/search?q=intext:{}(Email+OR+E-mail+OR+email+OR+e-mail)filetype:odt
 ----------------------------------------------------------------------------------------------------------------------
 [PASSWORD-DORKS]:
@@ -59,6 +61,7 @@
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:json
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:xml
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:xls
+| https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:xlsx
 | https://www.google.com/search?q=intext:{}(Password+OR+password+OR+PASSWORD)filetype:odt
 ----------------------------------------------------------------------------------------------------------------------
 [INTITLE-DORKS]:
@@ -72,6 +75,7 @@
 | https://www.google.com/search?q=intitle:({})filetype:json
 | https://www.google.com/search?q=intitle:({})filetype:xml
 | https://www.google.com/search?q=intitle:({})filetype:xls
+| https://www.google.com/search?q=intitle:({})filetype:xlsx
 | https://www.google.com/search?q=intitle:({})filetype:odt
 | https://www.google.com/search?q=intitle:({})filetype:html
 | https://www.google.com/search?q=intitle:({})filetype:php
