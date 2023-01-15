@@ -305,17 +305,17 @@ class info:
                                                       headers=headers, timeout=None)
                 reader = soup(openurl2.content, "html.parser")
                 name = reader.find("h1",class_="fullname").text
-                bio = reader.find("div",class_="sum").text
+                bio = reader.find("div",class_="sum").text.strip()
                 post_n = reader.find_all("div",class_="item item_posts")
                 profile_pic = reader.find("a",class_="downbtn")["href"]
                 for value in post_n:
-                        posts = value.find("div",class_="num").text
+                        posts = value.find("div",class_="num").text.replace("\n","")
                 follow_n = reader.find_all("div",class_="item item_followers")
                 for value in follow_n:
-                        followers = value.find("div",class_="num").text
+                        followers = value.find("div",class_="num").text.replace("\n","")
                 followed_n = reader.find_all("div",class_="item item_following")
                 for value in followed_n:
-                        followed = value.find("div",class_="num").text
+                        followed = value.find("div",class_="num").text.replace("\n","")
                 print(Font.Color.YELLOW + "[v]" +
                       Font.Color.WHITE + "USERNAME: {}".format(username))
                 print(Font.Color.YELLOW + "[v]" +
@@ -341,7 +341,7 @@ class info:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Username", "Instagram", "Private"))
                 Flag = False
-                IsPrivate1 = "False"
+                IsPrivate1 = "True"
                 InstagramParams.append(IsPrivate1)
                 InstagramParams.append(followers)
                 InstagramParams.append(posts)
@@ -399,14 +399,14 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
-            IsPrivate1 = "True"
+            IsPrivate1 = "Undefined"
             InstagramParams.append(IsPrivate1)
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
-            IsPrivate1 = "True"
+            IsPrivate1 = "Undefined"
             InstagramParams.append(IsPrivate1)
             pass
         finally:
@@ -440,13 +440,19 @@ class info:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Username", "Twitter", "Blocked"))
                 Flag = False
-                IsPrivate = "True"
+                IsPrivate = "Undefined"
                 TwitterParams.append(IsPrivate)
                 pass
             else:
+                Private = "This account&#x27;s tweets are protected."
+                text = openurl.text
+                if Private in text:
+                  IsPrivate = "True"
+                  TwitterParams.append(IsPrivate)
+                else:
+                  IsPrivate = "False"
+                  TwitterParams.append(IsPrivate)
                 Flag = True
-                IsPrivate = "False"
-                TwitterParams.append(IsPrivate)
                 reader = soup(openurl.content, "html.parser")
                 user = reader.find(
                     "a", href=True, class_="profile-card-fullname")
@@ -503,21 +509,21 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
-            IsPrivate = "True"
-            TwitterParams[0].append(IsPrivate)
+            IsPrivate = "Undefined"
+            TwitterParams.append(IsPrivate)
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
-            IsPrivate = "True"
-            TwitterParams[0].append(IsPrivate)
+            IsPrivate = "Undefined"
+            TwitterParams.append(IsPrivate)
             pass
         except requests.Timeout as err:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             Flag = False
-            IsPrivate = "True"
+            IsPrivate = "Undefined"
             TwitterParams[0].append(IsPrivate)
         finally:
             if Flag == True:
