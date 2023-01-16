@@ -31,14 +31,14 @@ class Transfer:
             if (os.name != "nt"):
                 if os.getuid() == 0:
                     os.system("php -S" + host +
-                                ":50000 -t Transfer >/dev/null 2>&1 &")
+                                ":5000 -t Transfer >/dev/null 2>&1 &")
                     Req = True
                 else:
                     Req = False
         
             else:
                 os.system("START /B php -S " + host +
-                            ":50000 -t Transfer 2>NUL >NUL")
+                            ":5000 -t Transfer 2>NUL >NUL")
                 Req = True
 
             link = host
@@ -46,7 +46,7 @@ class Transfer:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                         filename, "Transfer", "Generation", "None"))
                 sleep(3)
-                url = pyqrcode.create("http://{}:50000".format(link),version=4)
+                url = pyqrcode.create("http://{}:5000".format(link),version=4)
                 url.eps('QRCodes/QR.png', scale=8)
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                         filename, "Transfer", "Location", "None"))
