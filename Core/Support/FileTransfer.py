@@ -51,7 +51,7 @@ class Transfer:
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                         filename, "Transfer", "Location", "None"))
                 print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
-                    Language.Translation.Translate_Language(filename, "Database", "Link", "None").replace("DATABASE","FILE-TRANSFER") + "http://{}:50000".format(link))
+                    Language.Translation.Translate_Language(filename, "Database", "Link", "None").replace("DATABASE","FILE-TRANSFER") + "http://{}:5000".format(link))
                 inp = input(Font.Color.WHITE + Language.Translation.Translate_Language(
                     filename, "Database", "Quit", "None"))
                 os.remove(new)
