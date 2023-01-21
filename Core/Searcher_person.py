@@ -16,6 +16,7 @@ from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import DateFormat
 from Core.Support import Notification
 from Core.Support import Recap
 from Core.Support import FileTransfer
@@ -73,6 +74,10 @@ class info:
         PostGpsCoordinates = []
         info.Banner(Mode)
         subject = "PERSON"
+        now = datetime.now()
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
+        Date = "Date: " + str(dt_string)
         if os.path.exists(report):
             os.remove(report)
             if os.path.exists(Recap1):
@@ -126,9 +131,6 @@ class info:
                   "[+]" + Font.Color.WHITE + identity)
         else:
             pass
-        now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
-        Date = "Date: " + str(dt_string)
         if os.path.isfile(report):
             os.remove(report)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +

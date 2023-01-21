@@ -20,6 +20,7 @@ from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import DateFormat
 from Core.Support import Map
 from Core.Support import Notification
 from Core.Support import Encoding
@@ -521,7 +522,8 @@ class Web:
         report = "GUI/Reports/Websites/{}/{}.txt".format(username, username)
         report_Ip = "GUI/Reports/Websites/Coordinates/Ip_Geolocation/" + username + ".json"
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
         Date = "Date: " + str(dt_string)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Website", "Default", "Search").format(username))

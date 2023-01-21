@@ -10,6 +10,7 @@ from Core.Support import FileTransfer
 from Core.Support import Banner_Selector as banner
 from Core.Support import Notification
 from Core.Support import Language
+from Core.Support import DateFormat
 from Core.Support import Clear
 from Core.Support import Creds
 from datetime import datetime
@@ -45,7 +46,8 @@ class List:
     def Main(username,Mode):
         List.Banner(Mode)
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
         Date = "Date: " + str(dt_string)
         report = "GUI/Reports/Dorks/{}.txt".format(username)
         if os.path.isfile(report):

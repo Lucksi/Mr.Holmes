@@ -14,6 +14,7 @@ from Core.Support import Dorks
 from Core.Support.Mail import Mail_Validator as mail
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
+from Core.Support import DateFormat
 from Core.Support import Notification
 from Core.Support import Encoding
 from time import sleep
@@ -77,7 +78,8 @@ class Mail_search:
     def Search(username,Mode):
         Mail_search.Banner(Mode)
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
         Date = "Date: " + str(dt_string)
         report = "GUI/Reports/E-Mail/" + username + ".txt"
         if os.path.isfile(report):

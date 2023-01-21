@@ -9,6 +9,7 @@ import base64
 from time import sleep
 from Core.Support import Font
 from Core.Support import Language
+from Core.Support import DateFormat
 from Core.Support import Clear
 from Core.Support import Creds
 from Core.Support import FileTransfer
@@ -30,7 +31,8 @@ class Menu:
     @staticmethod
     def CreateTemplate(Template,Content,filename,htmlcontent,username):
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
         Date = str(dt_string)
         if Template == 1:
             style = '<link rel = "stylesheet" href= "../../Css/Light/Pdf.css">'

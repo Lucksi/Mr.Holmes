@@ -136,6 +136,29 @@ function Options {
 		mode="FRANÇAIS"
 	fi
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
+	printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" DateFormat
+	while [ "$DateFormat" == "" ];
+		do
+		printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)\n\n"
+		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" DateFormat
+	done
+	if [ $DateFormat == 1 ];
+		then
+		Date="eu"
+		mode="EUROPE(EU)"
+
+	elif [ $DateFormat == 2 ];
+		then
+		Date="us"
+		mode="AMERICA(US)" 
+
+	elif [ $DateFormat == 3 ];
+		then
+		Date="as"
+		mode="ASIA(AS)"
+	fi
+	printf "\n${WHITE}DATE-FORMAT:${GREEN}$mode\n"
 	printf "${BLUE}\nCREATING CONFIGURATION FILE"
 	cd Configuration
 	echo ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER">Configuration.ini
@@ -156,6 +179,7 @@ function Options {
 	echo "proxy_list" = $proxies>>Configuration.ini
 	echo "show_logs = $Logs">>Configuration.ini
 	echo "language"= "$Lang">>Configuration.ini
+	echo "date_format"= "$Date">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
 }
 

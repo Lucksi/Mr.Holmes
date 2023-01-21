@@ -19,6 +19,7 @@ from Core.Support import Banner_Selector as banner
 from Core.Support import Language
 from Core.Support import Notification
 from Core.Support import Recap
+from Core.Support import DateFormat
 from datetime import datetime
 from Core.Support import Encoding
 from time import sleep
@@ -169,7 +170,8 @@ class MrHolmes:
         else:
             os.mkdir(folder)
         now = datetime.now()
-        dt_string = now.strftime("%d/%m/%Y %H:%M:%S")
+        dataformat = DateFormat.Get.Format()
+        dt_string = now.strftime(dataformat)
         Date = "Date: " + str(dt_string)
         choice = int(input(
             Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "choice", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

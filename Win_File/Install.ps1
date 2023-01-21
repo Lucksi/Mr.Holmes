@@ -209,6 +209,23 @@ function Options(){
         $Mode = "FRANÇAIS"
     }
     Write-Host "`nCLI-LANGUAGE:$Mode"
+    $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`nAMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+    while($DateFormat -eq ""){
+        $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`nAMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+    }
+    if($DateFormat -eq 1){
+        $Date = "eu"
+        $Mode = "EUROPEAN(EU)"
+    }
+    elseif($DateFormat -eq 2){
+        $Date = "us"
+        $Mode = "AMERICA(US)"
+    }
+    elseif($DateFormat -eq 3){
+        $Date = "as"
+        $Mode = "ASIA(AS)"
+    }
+    Write-Host "`nDATE-FORMAT:$Mode"
     Preferences;
     ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER" | Out-File -FilePath .\Configuration/Configuration.ini -Encoding Ascii
     ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE" | Out-File -FilePath .\Configuration/Configuration.ini -Append -Encoding Ascii
@@ -229,6 +246,7 @@ function Options(){
     "show_logs= $Log_Session" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "database= $Token" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "language= $Cli" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "date_format= $Date" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
 }
 
 function installer(){
