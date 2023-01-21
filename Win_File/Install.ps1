@@ -215,7 +215,7 @@ function Options(){
     }
     if($DateFormat -eq 1){
         $Date = "eu"
-        $Mode = "EUROPEAN(EU)"
+        $Mode = "EUROPE(EU)"
     }
     elseif($DateFormat -eq 2){
         $Date = "us"
