@@ -24,9 +24,9 @@ from Core.Support import DateFormat
 from Core.Support import Map
 from Core.Support import Notification
 from Core.Support import Encoding
+from Core.Support import ApiCheck as Api
 from time import sleep
 from datetime import datetime
-from configparser import ConfigParser
 
 filename = Language.Translation.Get_Language()
 filename
@@ -319,13 +319,11 @@ class Web:
 
     @staticmethod
     def whois_lookup(username, report, Mode):
-        api = "Configuration/Configuration.ini"
-        Parser = ConfigParser()
-        Parser.read(api)
-        Key = Parser["Settings"]["Api_Key"]
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Website", "Default", "Whois").format(username))
         sleep(2)
+        Key = Api.Check.WhoIs()
+        Key
         if Key == "None":
             if (os.name != "nt"):
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
@@ -453,7 +451,8 @@ class Web:
                     sc = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneFound").format(
                         num) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
-                        folder = folder  = "GUI/Reports/Websites/{}/{}".format(username,num)
+                        folder = folder = "GUI/Reports/Websites/{}/{}".format(
+                            username, num)
                         if os.path.exists(folder):
                             shutil.rmtree(folder)
                         os.mkdir(folder)
@@ -462,7 +461,8 @@ class Web:
                         f.write("\nPHONE NUMBER DATA:\n")
                         f.close()
                         code = 0
-                        Numbers.Phony.Number(num, report2, code, Mode, Type, username)
+                        Numbers.Phony.Number(
+                            num, report2, code, Mode, Type, username)
                     else:
                         pass
                 else:
@@ -484,6 +484,44 @@ class Web:
                 f.write("\nWEBSITE DATA:" + "\r\n")
                 f.write(results)
                 f.close()
+            print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING REPUTATION RATING...")
+            try:
+                source = "https://domain-reputation.whoisxmlapi.com/api/v2?apiKey={}&domainName={}".format(
+                    Key2, username)
+                access = urllib.request.urlopen(source)
+                reader = access.read()
+                final = json.loads(reader)
+                repu = final["reputationScore"]
+                tests = final["testResults"]
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "REPUTATION RATING: {}".format(repu))
+                f = open(report, "a")
+                f.write("\n\nREPUTATION RATING: {}\r\n".format(repu))
+                for test1 in tests:
+                    print(Font.Color.GREEN +
+                          "\n[+]" + Font.Color.WHITE + "TEST-NAME: {}".format(test1["test"]))
+                    print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "TEST-CODE: {}".format(test1["testCode"]))
+                    print(Font.Color.GREEN +
+                          "[+]" + Font.Color.WHITE + "WARNING LISTS FOR TEST: {}".format(test1["test"]))
+                    f.write("TEST-NAME: {}".format(test1["test"]) + "\r\n")
+                    f.write("TEST-CODE: {}".format(test1["testCode"]) + "\r\n")
+                    f.write("TEST-NAME: {}".format(test1["test"]) + "\r\n")
+                    f.write("WARNING LISTS FOR TEST: {}".format(
+                        test1["test"]) + "\r\n")
+                    for warning1 in test1["warnings"]:
+                        print(Font.Color.YELLOW +
+                              "[v]" + Font.Color.WHITE + "DESCRIPTION: {}".format(warning1["warningDescription"]))
+                        print(Font.Color.YELLOW +
+                              "[v]" + Font.Color.WHITE + "CODE: {}".format(warning1["warningCode"]))
+                        f.write("DESCRIPTION: {}".format(
+                            warning1["warningDescription"]) + "\r\n")
+                        f.write("CODE: {}".format(
+                            warning1["warningCode"]) + "\r\n")
+                    f.close()
+            except Exception as e:
+                pass
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
@@ -593,7 +631,7 @@ class Web:
 
             with open(report_Ip, "w", encoding='utf-8') as outupt:
                 json.dump(data, outupt, ensure_ascii=False, indent=4)
-            Map.Creation.mapWeb(report_Ip,lat2, lon2, username)
+            Map.Creation.mapWeb(report_Ip, lat2, lon2, username)
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Website", "Default", "NoResponse"))
@@ -634,13 +672,13 @@ class Web:
             filename, "Report", "Default", "By"))
         f.close()
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-            report)
+              report)
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
         choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            FileTransfer.Transfer.File(report,username,".txt") 
+            FileTransfer.Transfer.File(report, username, ".txt")
         Encoding.Encoder.Encode(report)
         inp = input(Language.Translation.Translate_Language(
-                        filename, "Default", "Continue", "None"))
+            filename, "Default", "Continue", "None"))
