@@ -20,7 +20,7 @@ License: GNU General Public License v3.0*/
 .Data{
     display:inline-block;
     justify-content: left;
-    min-width: 758px;
+    min-width: 1310px;
     max-width: fit-content;
     border: 3px solid;
     border-color: #000000;
@@ -40,7 +40,8 @@ License: GNU General Public License v3.0*/
     margin-top: none;
     margin-left: auto;
     margin-right: auto;
-    width: fit-content !important;
+    min-width: 758px;
+    max-width: fit-content;
     border: 3px solid;
     margin-top: 100px;
     border-color: #000000;
@@ -48,9 +49,9 @@ License: GNU General Public License v3.0*/
     border-radius: 10px;
 }
 
-Data5{
-    margin-top: 10px;
-    margin-bottom: 40px;
+.Data5{
+    margin-top: -30px;
+    margin-bottom: 10px;
 }
 
 .map{
@@ -79,12 +80,11 @@ Data5{
 
 .Data_img {
     display: inline-block;
-    position: absolute;
-    margin-top: -2px;
+    margin-top: 50px;
     margin-right: auto;
-    margin-bottom: 500px;
-    margin-left: 100px;
-    width: 300px;
+    margin-bottom: none;
+    margin-left: none;
+    width: 1310px;
     border: 3px solid;
     border-color: #000000;
     background-color: #5983e663;
@@ -109,8 +109,8 @@ Data5{
     display: block;
     margin-left: auto;
     margin-right: auto;
-    height: 200px;
-    width: 200px;
+    height: 300px;
+    width: 300px;
     border: 3px solid;
     border-color: #000000;
     border-radius: 10px;
@@ -121,6 +121,13 @@ Data5{
     margin-bottom: 30px;
     height: 300px;
     width: 300px;
+}
+
+.Data5 img{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 100px;
+    width: 100px;
 }
 
 .Data_img2 img, .Data_img3 img {
@@ -174,7 +181,7 @@ video{
     100%{border-color: #000000;}
 }
 
-@media only screen and (min-width: 200px) and (max-width: 711px) {
+@media only screen and (min-width: 200px) and (max-width: 758px) {
     
     .Wrapper{
         margin-bottom: 200px;
@@ -279,5 +286,26 @@ video{
 
     .Data_img3{
         display: none;
+    }
+}
+@media only screen and (min-width: 780px) and (max-width: 1280px) {
+    .Data{
+        min-width: 758px;
+        max-width: fit-content;
+    }
+    .Data5{
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    .Data_img img, .Data4 img, .Data3 img {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .Data4 img, .Data3 img{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        height: 300px;
+        width: 300px;
     }
 }
