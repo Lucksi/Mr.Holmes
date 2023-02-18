@@ -123,7 +123,7 @@
                     $img = str_replace(".txt",".jpg",$cut_img);
                     $video = str_replace(".txt",".mp4",$cut_img);   
                     $poster = "$value/$img";
-                    $watch = "../Reports/Usernames/{$File_name}/Profile_pics/$Folder_name/$video";
+                    $watch = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$video";
                     if (file_exists($poster)){
                         echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
                     }
