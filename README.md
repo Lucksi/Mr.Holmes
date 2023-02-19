@@ -112,7 +112,6 @@ edit Mode.json
 write:Light=(Light-Mode)
 write:Dark=(Dark-Mode) 
 write:High-Contrast(High-Contrast-Mode)
-write:Uchiha(Uchiha-Mode)
 ```
 <br>
 
