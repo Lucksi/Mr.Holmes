@@ -9,8 +9,6 @@
   <img src = "https://img.shields.io/github/license/Lucksi/Mr.Holmes">
   <img src = "https://img.shields.io/github/repo-size/Lucksi/Mr.Holmes">
   <img src= "https://img.shields.io/github/languages/count/Lucksi/Mr.Holmes">
-  <img src = "https://img.shields.io/github/downloads/Lucksi/Mr.Holmes/total">
-  <img src = "https://img.shields.io/github/downloads/Lucksi/Mr.Holmes/latest/total">
   <img src = "https://visitor-badge.laobi.icu/badge?page_id=Lucksi.Mr.Holmes">
 </p>
 </p>
