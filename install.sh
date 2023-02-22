@@ -334,6 +334,66 @@ function Options {
 	rm UNTILED.txt &> /dev/null
 }
 
+function AutoInstaller {
+	printf "${GREEN}\n[+]${WHITE}AUTO-INSTALLER MODE...\n"
+	Packet_Installer
+	printf "\n\n${BLUE}[+]${WHITE}CREATING CONFIGURATION FILES..."
+	sleep 5
+	echo '{
+	"Database":{
+		"Status": "Deactive"
+	}
+}'>GUI/Credentials/Login.json
+    echo '{
+	"Users":[
+        {
+		"Username": "",
+		"Password": ""
+        }
+    ]
+}'>GUI/Credentials/Users.json
+echo '{
+    "Color":{
+        "Background":"Light"
+    }
+}'>GUI/Theme/Mode.json
+echo '{
+    "Language":{
+        "Preference":"English"
+    }
+}'>GUI/Language/Language.json
+	echo ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER">Configuration/Configuration.ini
+	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">>Configuration/Configuration.ini
+	echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration/Configuration.ini
+	echo "">>Configuration/Configuration.ini
+	echo "[Smtp]">>Configuration/Configuration.ini
+	echo "status" = "Disabled">>Configuration/Configuration.ini
+	echo "email = None">>Configuration/Configuration.ini
+	echo "password = None">>Configuration/Configuration.ini
+	echo "destination = None">>Configuration/Configuration.ini
+	echo "server= None">>Configuration/Configuration.ini
+	echo "port= None">>Configuration/Configuration.ini
+	echo "">>Configuration/Configuration.ini
+	echo "[Settings]">>Configuration/Configuration.ini
+	echo "password = Holmes">>Configuration/Configuration.ini
+	echo "api_key = None">>Configuration/Configuration.ini
+	echo "proxy_list" = "Proxies/Proxy_list.txt">>Configuration/Configuration.ini
+	echo "show_logs = False">>Configuration/Configuration.ini
+	echo "database"= "False">>Configuration/Configuration.ini
+	echo "language"= "english">>Configuration/Configuration.ini
+	echo "date_format"= "eu">>Configuration/Configuration.ini
+	rm Configuration/UNTILED.txt &> /dev/null
+	printf "\n\n${WHITE}EMAIL-SERVER:${GREEN}DISABLED\n"
+	printf "\n${WHITE}SHOW-LOGS:${GREEN}FALSE\n"
+	printf "\n${WHITE}UPDATE-PASSWORD:${GREEN}Holmes\n"
+	printf "\n${WHITE}API-KEY:${GREEN}None\n"
+	printf "\n${WHITE}PROXIES:${GREEN}DEFAULT\n"
+	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH\n"
+	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}ENGLISH\n"
+	printf "\n${WHITE}GUI-THEME:${GREEN}LIGHT\n"
+	printf "\n${WHITE}DATE-FORMAT:${GREEN}EUROPE(EU)"
+}
+
 function installer {
 	banner
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
@@ -348,12 +408,26 @@ function installer {
 	done
 	if [ $confvar == 1 ]; 
 		then
-        Packet_Installer
-		Mail_Options
-		Options
-		cd ../
+		printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
+		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
+		while [ "$selected" == "" ];
+			do
+			printf "${BLUE}\n\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
+			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
+		done
+		if [ $selected == 1 ];
+			then 
+			Packet_Installer
+			Mail_Options
+			Options
+			cd ../
+			
+		elif [ $selected == 2 ];
+			then
+		    AutoInstaller
+		fi
 		cd Core
-		printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
+		printf "${WHITE}\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
 		sudo chmod +x update.sh
 		cd ../
 		cd Launchers

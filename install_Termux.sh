@@ -183,27 +183,81 @@ function Options {
 	rm UNTILED.txt &> /dev/null
 }
 
+function AutoInstaller {
+	printf "${GREEN}\n[+]${WHITE}AUTO-INSTALLER MODE...\n"
+	Packet_Installer
+	sleep 5
+	echo ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER">Configuration/Configuration.ini
+	echo ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE">>Configuration/Configuration.ini
+	echo ";BUT DO NOT CHANGE THE PARAMETERS NAME">>Configuration/Configuration.ini
+	echo "">>Configuration/Configuration.ini
+	echo "[Smtp]">>Configuration/Configuration.ini
+	echo "status" = "Disabled">>Configuration/Configuration.ini
+	echo "email = None">>Configuration/Configuration.ini
+	echo "password = None">>Configuration/Configuration.ini
+	echo "destination = None">>Configuration/Configuration.ini
+	echo "server= None">>Configuration/Configuration.ini
+	echo "port= None">>Configuration/Configuration.ini
+	echo "">>Configuration/Configuration.ini
+	echo "[Settings]">>Configuration/Configuration.ini
+	echo "password = Holmes">>Configuration/Configuration.ini
+	echo "api_key = None">>Configuration/Configuration.ini
+	echo "proxy_list" = "Proxies/Proxy_list.txt">>Configuration/Configuration.ini
+	echo "show_logs = False">>Configuration/Configuration.ini
+	echo "database"= "False">>Configuration/Configuration.ini
+	echo "language"= "english">>Configuration/Configuration.ini
+	echo "date_format"= "eu">>Configuration/Configuration.ini
+	rm Configuration/UNTILED.txt &> /dev/null
+	printf "\n\n${WHITE}EMAIL-SERVER:${GREEN}DISABLED\n"
+	printf "\n${WHITE}SHOW-LOGS:${GREEN}FALSE\n"
+	printf "\n${WHITE}UPDATE-PASSWORD:${GREEN}Holmes\n"
+	printf "\n${WHITE}API-KEY:${GREEN}None\n"
+	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH\n"
+	printf "\n${WHITE}DATA-FORMAT:${GREEN}EUROPE(EU)"
+}
+
 
 function installer {
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	if [ $confvar == 1 ]; 
+		if [ $confvar == 1 ]; 
 		then
-		Packet_Installer
-		Options
-		cd ../
+		printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
+		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
+		while [ "$selected" == "" ];
+			do
+			printf "${BLUE}\n\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
+			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
+		done
+		if [ $selected == 1 ];
+			then 
+			Packet_Installer
+			Mail_Options
+			Options
+			cd ../
+			
+		elif [ $selected == 2 ];
+			then
+		    AutoInstaller
+		fi
 		cd Core
-		printf "\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
-		proot -0 chmod +x update.sh
+		printf "${WHITE}\n\nGIVING PERMISSION TO LUNCH FOR CORE FILES"
+		sudo chmod +x update.sh
+		cd ../
+		cd Launchers
+		sudo chmod +x Launcher.sh
 		cd ../
 		cd ../
 		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
-		echo "Mobile">Mr.Holmes/Display/Display.txt
+		sleep 2
+		printf "\n\nSETTING CLI INTERFACE..."
+		echo "Desktop">Mr.Holmes/Display/Display.txt
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
-		exit 1
-    fi
+		exit 0
+	fi
 	printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
     exit 1
 }

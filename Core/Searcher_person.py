@@ -55,10 +55,10 @@ class info:
         Clear.Screen.Clear()
         Folder = "Banners/Person"
         banner.Random.Get_Banner(Folder, Mode)
-   
+
     @staticmethod
     def Search(username, Mode):
-        username2 = username.replace(" ","_")
+        username2 = username.replace(" ", "_")
         folder = "GUI/Reports/People/" + username2 + "/"
         report = folder + username2 + ".txt"
         report2 = folder + username2 + ".mh"
@@ -67,7 +67,7 @@ class info:
         link3 = folder + "Insta_Link.json"
         Recap1 = folder + "Recap.txt"
         Recap2 = folder + "Recap.mh"
-        imagefold = "GUI/Reports/People/" + username2+ "/Profile_pics"
+        imagefold = "GUI/Reports/People/" + username2 + "/Profile_pics"
         InstagramParams = []
         TwitterParams = []
         PostLocations = []
@@ -142,10 +142,11 @@ class info:
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
         Scraper.Search.Instagram(report, username, http_proxy, InstagramParams,
-                 PostLocations, PostGpsCoordinates, imagefold, username2)
+                                 PostLocations, PostGpsCoordinates, imagefold, username2)
         Scraper.Search.Twitter(report, username, http_proxy, TwitterParams,
-                imagefold,username2)
-        Scraper.Search.TikTok(report, username, http_proxy,imagefold,username2)
+                               imagefold, username2)
+        Scraper.Search.TikTok(
+            report, username, http_proxy, imagefold, username2)
         if PostGpsCoordinates == [] and PostLocations == []:
             pass
         else:
@@ -159,29 +160,32 @@ class info:
                 f.write(Locations + "\n")
                 n = n + 1
             f.close()
+        
         Recaps = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
             filename, "Default", "Hypo", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Recaps == 1:
             if len(InstagramParams):
-                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
+                print(Font.Color.BLUE +
+                      "\n[I]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
                 Recap.Stats.Hypotesys(InstagramParams, username, Recap1)
             if len(TwitterParams):
-                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "TWITTER HYPOTHESIS")
+                print(Font.Color.BLUE + "\n[I]" +
+                      Font.Color.WHITE + "TWITTER HYPOTHESIS")
                 Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
             Encoding.Encoder.Encode(Recap1)
         choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if choice == 1:    
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
             info.Google_dork(username)
             info.Yandex_dork(username)
         Notification.Notifier.Start(Mode)
         Creds.Sender.mail(report, username)
         choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            FileTransfer.Transfer.File(report,username,".txt") 
+            FileTransfer.Transfer.File(report, username, ".txt")
         Encoding.Encoder.Encode(report)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
               report)
         inp = input(Language.Translation.Translate_Language(
-                        filename, "Default", "Continue", "None"))
+            filename, "Default", "Continue", "None"))

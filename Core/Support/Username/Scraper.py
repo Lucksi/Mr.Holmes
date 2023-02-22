@@ -288,7 +288,7 @@ class info:
             pass
 
     @staticmethod
-    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates,Opt,name2):
+    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, Opt, name2):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} INSTAGRAM PROFILE...".format(username))
         url = info.Get_Url(username, "Instagram")
