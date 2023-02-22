@@ -20,12 +20,12 @@ License: GNU General Public License v3.0*/
 .Data{
     display:inline-block;
     justify-content: left;
-    min-width:1310px;
-    max-width: fit-content;
+    width:1310px;
     border: 3px solid;
     border-color: #ffffff;
     background-color: #1a07076c;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .Data p {
@@ -36,17 +36,17 @@ License: GNU General Public License v3.0*/
 }
 
 .Data2, .Data3, .Data4, .Data5{
-    display:table;
+    display:block;
     margin-top: none;
     margin-left: auto;
     margin-right: auto;
-    min-width: 758px;
-    max-width: fit-content;
+    width: 758px;
     border: 3px solid;
     margin-top: 100px;
     border-color: #ffffff;
     background-color: #1a07076c;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .Data5{
@@ -71,7 +71,7 @@ License: GNU General Public License v3.0*/
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     text-align: center;
     color: #ffffff;
-    font-size: medium;
+    font-size: medium;;
 }
 
 #error p {
@@ -103,6 +103,7 @@ License: GNU General Public License v3.0*/
     border-color: #ffffff;
     background-color: #1a07076c;
     border-radius: 10px;
+    word-wrap: break-word;
 }
 
 .Data_img img, .Data4 img, .Data3 img{
