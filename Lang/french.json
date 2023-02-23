@@ -5,7 +5,7 @@
         "Copyright": "(C) 2022-2023 Lucksi <lukege287@gmail.com>",
         "License": "GPL-3.0 License"
     },
-    
+
     "Contributors":{
         "JeroCod": "https://github.com/JeroCod"
     },
@@ -28,7 +28,7 @@
         "Report": "\nRAPPORT CRÉER DANS: ",
         "KeyError": "VOUS ENTREZ UNE OPTION INVALIDE..QUITTER",
         "ValueError": "VOUS ENTREZ UNE KEY INVALIDE..QUITTER  ",
-        "DelÉTÉ ": "SUPPRESSION DE L'ANCIEN FICHIER {}.txt",
+        "Delete ": "SUPPRESSION DE L'ANCIEN FICHIER {}.txt",
         "Attempt": "RECHERCHER SUR: {}",
         "Internal": "ERREUR INTERNE LE MODULE {} N'EST PAS DÉTÉ CTÉ",
         "NoDisplay": "LE FICHIER {} N'A PAS ÉTÉ DÉTÉ CTÉ QUITTER...",
@@ -62,7 +62,7 @@
 
     "Main":{
         "Text": "[VALIDEZ UNE OPTION 'ENTREZ 0 POUR RECOMMENCER']",
-        "MobilÉTÉ xt": "[ENTREZ UNE OPTION]",
+        "MobileText": "[ENTREZ UNE OPTION]",
          "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ENCODING/DECODING\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\t\t(12)PDF-GRAPH CONVERTER\n(5)DATABASE(GUI)\t\t(6)UPDATE\t\t\t(13)FILE-TRANSFER\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\t\t\t(14)EXIT\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT",
         "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)DATABASE(GUI)\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)DORKS-GENERATOR\n(10)PERSON-OSINT\n(11)ENCODING/DECODING\n(12)PDF-CONVERTER\n(13)FILE-TRANSFER\n(14)EXIT",
         "Alert": "ATTENTION CERTAINS RÉSULTATS PEUVENT ÊTRE DES FAUX POSITIFS",
@@ -83,7 +83,7 @@
                 "Nsfw": "VOULEZ VOUS FAIRE UN SCAN SUR DES SITES NSFW?(1)OUI(2)NO\n\n",
                 "Scraper": "VOULEZ VOUS SCRAPER LES DONNÉES?(1)OUI(2)NO\n\n",
                 "TotFound": "USERNAME DÉTÉ CTÉ SUR: ",
-                "PROFIL_Pic": "VOULEZ VOUS TÉLÉCHARGER {} PROFIL IMAGE?(1)OUI(2)NO",
+                "Profile_Pic": "VOULEZ VOUS TÉLÉCHARGER {} PROFIL IMAGE?(1)OUI(2)NO",
                 "Saved": "PROFIL IMAGE ENREGISTRÉ DANS: {}",
                 "NoScrape": "OUPS! IL SEMBLE QU'IL N'Y A AUCUN SITE POUR FAIRE UN SCRAPE...",
                 "NoFound": "OUPS! IL SEMBLE QUE CE USERNAME: {} N'A PAS ÉTÉ TROUVÉ SUR AUCUN WEBSITE..",
@@ -165,7 +165,7 @@
                 "Ports": "VOULEZ VOUS FAIRE UN PORT SCAN?(1)OUI(2)NO\n\n"
             },
 
-            "ParamÉTÉ rs":{
+            "Parameters":{
                 "KeyFound": "API KEY TROUVÉ",
                 "KeyNoFound": "API KEY N'EST PAS TROUVÉ FAIRE CLASSICAL WHOIS",
                 "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)SI(2)NO",
@@ -342,7 +342,7 @@
         "Wrong": "MAUVAIS MOT DE PASSE. TU AS {} TENTATIVES",
         "Failed": "TU AS {} TENTATIVES. TAPEZ ENTRÉE POUR CONTINUER",
         "Choice": "VOULEZ VOUS SUPPRIMER LES ANCIENS FICHIERS?(1)OUI(2)NO\n\n",
-        "DelÉTÉ ": "\nMR.HOLMES: LES ANCIENS FICHIERS ONT ÉTÉ SUPPRIMER",
+        "Delete ": "\nMR.HOLMES: LES ANCIENS FICHIERS ONT ÉTÉ SUPPRIMER",
         "Keep": "\nMR.HOLMES : LES ANCIENS FICHIERS SONT MAINTENUS",
         "Success": "\nMR.HOLMES :  MIS A JOUR OK"
     },
