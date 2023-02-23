@@ -16,7 +16,7 @@
         "Proxy": "TON PROXY IP EST: {}",
         "ProxyLoc": "TON PROXY IP EST SITUÉ DANS: {} ({})",
         "Dorks": "VOULEZ VOUS RECHERCHER SUR GOOGLE ET YANDEX? (1)OUI(2)NO\n\n",
-        "Hypo": "VOULEZ VOUS GÉNERER L'HYPOTHESE? (N'EST PAS 100% PRÉCISE)(1)SI(2)NO\n\n",
+        "Hypo": "VOULEZ VOUS GÉNERER L'HYPOTHESE? (N'EST PAS 100% PRÉCISE)(1)OUI(2)NO\n\n",
         "Encode": "VOULEZ VOUS ENCODER LE RAPPORT?(1)OUI(2)NO",
         "Connection_Error1": "ERREUR DE CONNEXION...J'ESSAIE SANS PROXY",
         "Connection_Error2": "ERREUR DE CONNEXION...",
@@ -168,7 +168,7 @@
             "Parameters":{
                 "KeyFound": "API KEY TROUVÉ",
                 "KeyNoFound": "API KEY N'EST PAS TROUVÉ FAIRE CLASSICAL WHOIS",
-                "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)SI(2)NO",
+                "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NO",
                 "PhoneNotFound": "NUMÉRO N'EST PAS TROUVÉ...",
                 "Error": "OUPS! NE TROUVE AUCUNE INFORMATION. EXECUTE CLASSICAL WHOIS "
             }
