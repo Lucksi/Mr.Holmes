@@ -2,9 +2,12 @@
     "Copyright-Notices":{
         "Original Creator": "Luca Garofalo (Lucksi)",
         "Author": "Luca Garofalo (Lucksi)",
-        "Adjusted by": "JeroCod(https://github.com/JeroCod)",
         "Copyright": "(C) 2022-2023 Lucksi <lukege287@gmail.com>",
         "License": "GPL-3.0 License"
+    },
+    
+    "Contributors":{
+        "JeroCod": "https://github.com/JeroCod"
     },
 
     "Default":{
