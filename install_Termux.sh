@@ -220,9 +220,8 @@ function AutoInstaller {
 function installer {
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
-	if [ $confvar == 1 ]; 
-		if [ $confvar == 1 ]; 
-		then
+	if [ $confvar == 1 ];
+		then 
 		printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
 		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
 		while [ "$selected" == "" ];
@@ -252,14 +251,14 @@ function installer {
 		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
 		sleep 2
 		printf "\n\nSETTING CLI INTERFACE..."
-		echo "Desktop">Mr.Holmes/Display/Display.txt
+		echo "Mobile">Mr.Holmes/Display/Display.txt
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
 		exit 0
 	fi
 	printf "\n${BLUE}INSTALLATION INTERRUPTED EXIT...\n\n"
-    exit 1
+    	exit 1
 }
 banner
 installer
