@@ -10,6 +10,34 @@
         return $Message;
     }
 
+    function GetDetails($Folder,$Name,$User,$img){
+        $Complete = "../Reports/People/$Folder/Profile_pics/$Name/$User";
+        if(file_exists($Complete)){
+            $img2 = str_replace(".png",".jpg",$img);
+            $Image = "../Reports/People/$Folder/Profile_pics/Profile_pic_$img2";
+            $Reader2 = file_get_contents($Complete);
+            $Parser2 = json_decode($Reader2,true);
+            $Name_arr = array();
+            $Link_arr = array();
+            echo "<div class = 'Mini'>";
+            echo "<a href = $Image target = blank><img src = $Image id = 'Main'></a>";
+            foreach($Parser2["List"] as $Data){
+                $Name = $Data["Name"];
+                $Link = $Data["Link"];
+                array_push($Name_arr,$Name);
+                array_push($Link_arr,$Link);
+            }
+            foreach($Name_arr as $Data  => $value){
+                $link2 = $Data["Link"];
+                echo "<a href = '{$Link_arr[$Data]}' target = 'blank'>"."<img src = '../Icon/Entities/Site_Icon/$img' abbr title = '{$Name_arr[$Data]}'></a>";                
+            }
+        }
+        else{
+
+        }
+        echo "</div>";
+    }
+
     function GetHypotesi($File_name){
         $Complete_name = "../Reports/People/{$File_name}/Recap.txt";
         $Complete_name2 = "../Reports/People/{$File_name}/Recap.mh";
@@ -110,12 +138,6 @@
             }
 
             if($Folder_name == "TikTok_Posts"){
-                /*$mp4 = glob($Dir_Name."*.mp4");
-                foreach(array_reverse($mp4) as $Content1){
-                    $i = $i +1;
-                    $img1 = $Content1;
-                    echo "<video src = '$img1' controls></video>\n";
-                }*/
                 foreach(array_reverse($fold) as $Content => $value){
                     $b = 0;
                     $data_file = glob("$value/*"."txt");
@@ -338,6 +360,21 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<hr>";
+                echo "<p id = 'Const2'>TAGGED USERS</p>";
+                echo "<div class = 'Wrapper'>";
+                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png");
+                GetDetails($File_name,"TikTok_Posts","Users.json","TikTok.png");
+                GetDetails($File_name,"Twitter_Posts","Users.json","Twitter.png");
+                echo "<hr>";
+                echo "<p id = 'Const2'>HASHTAGS</p>";
+                GetDetails($File_name,"TikTok_Posts","Hashtags.json","TikTok.png");
+                GetDetails($File_name,"Twitter_Posts","Hashtags.json","Twitter.png");
+                echo "<hr>";
+                echo "<p id = 'Const2'>EXTERNAL LINKS</p>";
+                GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png");
+                echo "<hr>";
+                echo "</div>";
                 $File_name = str_replace("_"," ",$File_name);
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
                 Get_Dorks($Complete_name);
@@ -407,6 +444,9 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<div class = 'Wrapper'>";
+                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png");
+                echo "</div>";
                 $File_name = str_replace("_"," ",$File_name);
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
                 Get_Dorks($Complete_name);

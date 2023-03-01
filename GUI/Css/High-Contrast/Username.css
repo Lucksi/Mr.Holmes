@@ -25,7 +25,9 @@ License: GNU General Public License v3.0*/
     border-color: #ffffff;
     background-color: #cdd5e618;
     border-radius: 10px;
+    height: 400px;
     word-wrap: break-word;
+    overflow: auto;
 }
 
 .Data p {
@@ -51,7 +53,9 @@ License: GNU General Public License v3.0*/
 
 .Data5{
     margin-top: -30px;
-    margin-bottom: 10px;    
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow: auto;
 }
 
 .map{
@@ -164,6 +168,35 @@ video{
     border: 3px solid;
     border-radius: 20px;
     border-color: #ffffff;
+}
+
+.Mini{
+    display: inline-block;
+    margin-left: 30px;
+    width: 400px;
+    height: 400px;
+    background-color:#cdd5e618;
+    border: 3px solid white;
+    border-radius: 20px;
+    overflow:auto;
+}
+
+.Mini img{
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+#Main{
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid white;
+    border-radius: 20px;
 }
 
 #Main_pics{
