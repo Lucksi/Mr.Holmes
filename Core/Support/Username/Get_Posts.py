@@ -284,6 +284,26 @@ class Downloader:
                             str(j)) + User + ": https://instagram.com/{}".format(User) + "\n")
                         j = j + 1
                     f.close()
+                    json_file = "GUI/Reports/{}/{}/Profile_pics/Instagram_Posts/Users.json".format(Opt, name2)
+                    f = open(json_file, "w")
+                    f.write('''{
+                                "List":[
+
+                                ]
+                            }''')
+                    f.close()
+
+                    for User in TaggedUser:
+                        data = {
+                            "Name": "{}".format(User),
+                            "Link": "https://instagram.com/{}".format(User)
+                        }
+                        with open(json_file, 'r+') as file:
+                            file_data = json.load(file)
+                            file_data["List"].append(data)
+                            file.seek(0)
+                            json.dump(file_data, file, indent=4)
+            
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Default", "TotDetails").format(folder))
             else:
@@ -493,6 +513,26 @@ class Downloader:
                         str(j)) + User + ": https://twitter.com/{}".format(User) + "\n")
                     j = j + 1
                 f.close()
+                json_file = "GUI/Reports/{}/{}/Profile_pics/Twitter_Posts/Users.json".format(Opt, name2)
+                f = open(json_file, "w")
+                f.write('''{
+                            "List":[
+
+                            ]
+                        }''')
+                f.close()
+
+                for User in TaggedUser:
+                    data = {
+                        "Name": "{}".format(User),
+                        "Link": "https://twitter.com/{}".format(User)
+                    }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+            
             
             if TaggedHastag == []:
                     pass
@@ -511,6 +551,25 @@ class Downloader:
                         str(x)) + Tag + ": https://twitter.com/hashtag/{}".format(Tag) + "\n")
                     x = x + 1
                 f.close()
+                json_file = "GUI/Reports/{}/{}/Profile_pics/Twitter_Posts/Hashtags.json".format(Opt, name2)
+                f = open(json_file, "w")
+                f.write('''{
+                            "List":[
+
+                            ]
+                        }''')
+                f.close()
+                for Hastag in TaggedHastag:
+                    data = {
+                        "Name": "{}".format(Hastag),
+                        "Link": "https://twitter.com/hashtag/{}".format(Hastag)
+                    }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+                
             
             if TaggedLink == []:
                     pass
@@ -529,6 +588,24 @@ class Downloader:
                         str(x)) + Link + "\n")
                     x = x + 1
                 f.close()
+                json_file = "GUI/Reports/{}/{}/Profile_pics/Twitter_Posts/Links.json".format(Opt, name2)
+                f = open(json_file, "w")
+                f.write('''{
+                            "List":[
+
+                            ]
+                        }''')
+                f.close()
+                for Link in TaggedLink:
+                    data = {
+                        "Link": "{}".format(Link),
+                        "Name": "None"
+                    }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
         else:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "NoPost"))
@@ -703,6 +780,25 @@ class Downloader:
                         str(j)) + User + ": https://tiktok.com/{}".format(User) + "\n")
                     j = j + 1
                 f.close()
+                json_file = "GUI/Reports/{}/{}/Profile_pics/TikTok_Posts/Users.json".format(Opt, name2)
+                f = open(json_file, "w")
+                f.write('''{
+                            "List":[
+
+                            ]
+                        }''')
+                f.close()
+                for User in TaggedUser:
+                    data = {
+                        "Name": "{}".format(User),
+                        "Link": "https://tiktok.com/{}".format(User)
+                    }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+                
             if TaggedHashtag == []:
                     pass
             else:
@@ -718,6 +814,25 @@ class Downloader:
                         str(x)) + Tag + ": https://tiktok.com/tag/{}".format(Tag) + "\n")
                     x = x + 1
                 f.close()
+                json_file = "GUI/Reports/{}/{}/Profile_pics/TikTok_Posts/Hashtags.json".format(Opt, name2)
+                f = open(json_file, "w")
+                f.write('''{
+                            "List":[
+
+                            ]
+                        }''')
+                f.close()
+                for Hastag in TaggedHashtag:
+                    data = {
+                        "Name": "{}".format(Hastag),
+                        "Link": "https://tiktok.com/tag/{}".format(Hastag)
+                    }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+                
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Video").format(folder))
         else:
