@@ -63,8 +63,8 @@ class info:
         report = folder + username2 + ".txt"
         report2 = folder + username2 + ".mh"
         link1 = folder + "Insta_Link.json"
-        link2 = folder + "Insta_Link.json"
-        link3 = folder + "Insta_Link.json"
+        link2 = folder + "Twitter_Link.json"
+        link3 = folder + "TikTok_Link.json"
         Recap1 = folder + "Recap.txt"
         Recap2 = folder + "Recap.mh"
         imagefold = "GUI/Reports/People/" + username2 + "/Profile_pics"
@@ -86,9 +86,9 @@ class info:
                 os.remove(Recap2)
             if os.path.exists(link1):
                 os.remove(link1)
-            elif os.path.exists(link2):
+            if os.path.exists(link2):
                 os.remove(link2)
-            elif os.path.exists(link3):
+            if os.path.exists(link3):
                 os.remove(link3)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
@@ -100,9 +100,9 @@ class info:
                 os.remove(Recap2)
             if os.path.exists(link1):
                 os.remove(link1)
-            elif os.path.exists(link2):
+            if os.path.exists(link2):
                 os.remove(link2)
-            elif os.path.exists(link3):
+            if os.path.exists(link3):
                 os.remove(link3)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
