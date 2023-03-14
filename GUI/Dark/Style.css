@@ -1,0 +1,318 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Main.css");
+@import url("Username.css");
+
+body {
+    background-color: #1a2b34 !important;
+    animation: dissolvent 2s 1;
+}
+
+p {
+    color: #ffffff;  
+}
+
+.Top-bar p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: #ffffff;
+    background-color: transparent;
+    font-size: x-large;
+    margin-top: -7px;
+}
+
+.Top-bar p:hover{
+    animation: joggle 2s infinite;
+}
+
+.Top-bar a {
+    display: inline-block;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    color: #ffffff;
+    margin-top: none;
+    margin-left: -10px;
+    padding: 10px 10px 10px;
+    font-size: x-large;
+    text-decoration: none;
+}
+
+.Top-bar a:hover {
+    animation: joggle 2s infinite;
+}
+
+.Top-bar a:active {
+    animation: act 2s infinite;
+}
+
+.languages {
+    display: block;
+}
+
+.Content {
+    display: none;
+    position: absolute;
+    margin-top: -20px;
+    right: 0px;
+    text-align: center;
+    background-color:#000000;
+    border: 2px solid;
+    border-radius: 10px;
+    border-color: #ffffff;
+    background-color: #1a07076c;
+    animation: opac 1s 1;
+    margin-bottom: 1000px;
+}
+
+.Content a {
+    color: #ffffff;
+    margin-left: 10px;
+    text-decoration: none;
+    display: block;
+    font-size: medium;
+    width: fit-content;
+    background-color: transparent;
+}
+
+.languages button {
+    display: block;
+    margin-top: -45px;
+    float: right;
+    width: fit-content;
+    border:2px solid;
+    border-color: #000000;
+    background-color: #008000;
+    color: #ffffff;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.Upper-card {
+    margin-top: 30px;
+    display: block;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    width: fit-content;
+}
+
+.Upper-card img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 100px;
+    width: 100px;
+}
+
+#Searcher {
+    margin-top: 60px;
+    width: 500px;
+    height: 30px; 
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 5px;
+    font-size: large;
+}
+
+#Searcher::placeholder {
+    color: black;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#Searcher:hover {
+    animation: act_Border 3s infinite;
+}
+
+#Const, #Const2 {
+    font-size: x-large;
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #ffffff;
+}
+
+#Const:hover {
+    animation: joggle,2s,infinite;   
+}
+
+.Upper-card button {
+    margin-bottom: 11px;
+    margin-left:-8px;
+    height: 37px;
+    padding-left: 2px;
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 5px;
+    background-color: #008000;
+    color: #ffffff;
+    font-size: medium;
+}
+
+.Datap {
+    display:table;
+    margin-left: 100px;
+    min-width: 500px;
+    max-width: fit-content;
+    margin-right: auto;
+    border: 3px solid;
+    border-color: #ffffff;
+    background-color: #1a07076c;
+    border-radius: 10px;
+}
+
+.Dataf {
+    display:table;
+    margin-left: 700px;
+    margin-top: -525px;
+    margin-right: auto;
+    border: 3px solid;
+    border-color: #ffffff;
+    background-color: #1a07076c;
+    border-radius: 10px;
+}
+
+.Datap p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    color: #ffffff;
+}
+
+.Dataf p {
+    text-align: center;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: medium;
+    color: #ffffff;
+}
+
+.map {
+    display: block;
+    justify-content: left;
+    border:2px solid;
+    border-color: #ffffff;
+    background-color: #1a07076c;
+    border-radius: 10px;
+    height: 605px;
+    width: 500px;
+}
+
+.Geo {
+    display: inline-block;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: auto;
+    margin-bottom: 500px;
+    margin-left: 100px;
+}
+
+#Alert{
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: x-large;
+    color: #ff0000;
+}
+
+.NoScript p{
+    font-family: Impact,Haettenschweiler,Franklin Gothic Bold,Charcoal,Helvetica Inserat,Bitstream Vera Sans Bold,Arial Black,sans serif;
+    font-size: x-large;
+    color: #ffffff;
+}
+
+@keyframes joggle {
+    0%{color:#ffffff;}
+    50%{color:#7cfc00;}
+    100%{color:#ffffff;}
+}
+
+@keyframes act {
+    0%{color:#7cfc00;}
+    50%{color:#ffa500;}
+    100%{color:#7cfc00;}
+}
+
+@keyframes act_Border {
+    0%{border-color:#7cfc00;}
+    50%{border-color:#ffa500;}
+    100%{border-color:#000000;}
+}
+
+@keyframes dissolvent {
+    0%{opacity: 0;}
+    50%{opacity: 0.5;}
+    100%{opacity: 1;}
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    .Datap {
+        display:table;
+        margin-left:auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+        min-width: fit-content;
+        max-width: 350px;
+    }
+
+    .Datap p {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .Dataf {
+        display:table;
+        margin-top: 100px;
+        margin-left: auto;
+        margin-right: auto;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 10px;
+    }
+
+    .Dataf p {
+        text-align: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+
+    .Top-bar a {
+        display: block;
+        font-size: larger;
+    }
+    
+    .Hidden-bar {
+        display: block;
+    }
+     
+    .languages {
+        display: none;
+    }
+    
+    .Link {
+        display: none;
+    }
+
+    #Searcher {
+        margin-top: 60px;
+        width: 225px;
+        height: 30px; 
+    }
+
+    .Geo {
+        margin-top: 1450px;
+        display: block;
+        height: 200px;
+        min-width: 100px;
+        max-width: 220px;
+    }
+
+    .map {
+        display: block;
+        margin-right: auto;
+        margin-left: -60px;
+        height: 400px;
+        min-width: 150px;
+        max-width: 305px;
+    }
+}

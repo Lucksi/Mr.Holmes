@@ -1,0 +1,555 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+#New, #Open, #Del{
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
+#Hidden{
+    display: none;
+}
+
+#Hidden2{
+    display: none;
+}
+
+#New{
+    display: inline-block;
+}
+
+#Open{
+    display: inline-block;
+}
+
+#bar1, #name, #Linkref, #imageN, #imageL, #Lon, #Lat, #UsVid, #Vid{
+    margin-top: 20px;
+    width: 590px;
+    height: 30px; 
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 5px;
+    font-size: large;
+}
+
+#bar1::placeholder, #name::placeholder, #Linkref::placeholder , #imageN::placeholder, #imageL::placeholder, #Lon::placeholder, #Lat::placeholder, textarea::placeholder, #UsVid::placeholder, #Vid::placeholder {
+    color: black;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+#bar1:hover, #name:hover, #Linkref:hover, #imageN:hover, #imageL:hover, #Lon:hover, #Lat:hover, #UsVid:hover, #Vid:hover{
+    animation: act_Border 3s infinite;
+}
+
+#arrow{
+    display:none;
+    height: 100px;
+    width: 100px;
+}
+
+.Toolbar{
+    display: block;
+    float: right; 
+    height: fit-content;
+    width: fit-content;
+    background-color: #176e71b1;
+    color: black;
+    border:4px solid;
+    border-color:black;
+    border-radius: 20px ;
+}
+
+.Toolbar p{
+    display: inline-block;
+    margin-bottom: -10px;
+    margin-top: -10px;
+}
+
+#typ, #imtool, #pltool, #def, #Option, #vtool{
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.Etiquette{
+    margin-top: 20px;
+    display: block;
+    text-align: center;
+}
+
+.Graph{
+    display: block;
+    float: center; 
+    height: fit-content;
+    width: 700px;
+    height: fit-content;
+    border: 4px solid;
+    border-color: #000000;
+    border-radius: 20px;
+    background-color: #177489b0;
+}
+
+.Graph p{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: medium;
+    margin-left: 10px;
+}
+
+.par{
+    margin-top: 10px;
+    color: #ffffff;
+}
+
+.options{
+    display: block;
+}
+
+.options input{
+    width: 100px;
+    border-color: #000000;
+}
+
+.options p{
+    text-align: center;
+    font-family: 'Courier New', Courier, monospace;
+    color: black;
+    font-size:large;
+}
+
+.options label{
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+}
+
+#data_img, #data_place{
+    display: none;
+}
+
+#data_img p, #data_place p{
+    margin-top: 20px;
+}
+
+.default{
+    margin-top: -40px;
+}
+
+#Button2{
+    display: inline-block;
+    width: 100px;
+    margin-left: 40px;
+    margin-top: 5px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #008000;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+textarea{
+    display: block;
+    height: 80px;
+    width: 590px;
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 10px;
+    margin-top: 30px;
+    color: black;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    resize: none;
+}
+
+.detailbox{
+    height: 50px;
+    width: 100px;
+    color: black;
+    font-size: medium;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.commentBox{
+    display: block;
+    margin-top: -10px;
+    height: 100px;
+    width: 200px;
+    margin-left: 250px;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 0px;
+    background-color: #ffffff;
+    resize: none;
+}
+
+#Arrow2 {
+    margin-top: 10px;
+    width: 0px; 
+    height: 0px; 
+    display: flex;
+    margin-left: auto;
+    margin-right: auto;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-width: 30px;
+    border-bottom: 30px solid #ffffff;
+}
+
+.imgvalue input{
+    display: inline-block;
+    margin-left: 20px;
+    border: 3px solid;
+    border-width: 70px;
+    font-size: large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    margin-top: 20px;
+}
+
+.imgvalue label{
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    margin-left: -100px;
+}
+
+#LocalParams p{
+    display: inline-block;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: larger;
+    margin-top: -10px;
+}
+
+#LocalParams{
+    display: none;
+}
+
+#Profile_Pics{
+    display: none;
+}
+
+#data_video{
+    display: none;
+}
+
+.map {
+    margin-left: 250px;
+    margin-top: 30px;
+    height:200px;
+    width:200px;
+    border:3px solid;
+    border-color:black;
+}
+
+.Geo {
+    display: inline-block;
+    position: absolute;
+    margin-top: -30px;
+    margin-right: auto;
+    margin-bottom: 500px;
+    margin-left: auto;
+}
+
+video{
+    margin-left: -5px;
+    height:200px;
+    width:200px;
+}
+
+#GitLab, #Imgur, #Twitter{
+    margin-left: 63px;
+}
+
+#Kik{
+    margin-left: 52px;
+}
+
+#Per{
+    margin-left: 40px;
+}
+
+#Tellonym{
+    margin-left: 42px;
+}
+
+#Docker{
+    margin-left: 28px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+    
+    #New, #Open, #Del{
+        margin-left: 20px;
+        margin-top: 40px;
+    }
+    
+    #Hidden{
+        display: none;
+    }
+    
+    #Hidden2{
+        display: none;
+    }
+    
+    #New{
+        display: inline-block;
+    }
+    
+    #Open{
+        display: inline-block;
+    }
+    
+    #bar1, #name, #Linkref, #imageN, #imageL, #Lon, #Lat, #UsVid, #Vid{
+        margin-top: 20px;
+        width: 290px;
+        height: 30px; 
+        border: 2px solid;
+        border-color: #000000;
+        border-radius: 5px;
+        font-size: large;
+    }
+    
+    #bar1::placeholder, #name::placeholder, #Linkref::placeholder , #imageN::placeholder, #imageL::placeholder, #Lon::placeholder, #Lat::placeholder, textarea::placeholder, #UsVid::placeholder, #Vid::placeholder {
+        color: black;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    #bar1:hover, #name:hover, #Linkref:hover, #imageN:hover, #imageL:hover, #Lon:hover, #Lat:hover, #UsVid:hover, #Vid:hover{
+        animation: act_Border 3s infinite;
+    }
+    
+    #arrow{
+        display:none;
+        height: 100px;
+        width: 100px;
+    }
+    
+    .Toolbar{
+        display: block;
+        position: absolute;
+        float: right; 
+        height: fit-content;
+        margin-left: 400px;
+        width: 300px;
+        background-color: #176e71b1;
+        color: black;
+        border:4px solid;
+        border-color:black;
+        border-radius: 20px ;
+    }
+    
+    .Toolbar p{
+        display: inline-block;
+        margin-bottom: -10px;
+        margin-top: -10px;
+    }
+    
+    #typ, #imtool, #pltool, #def, #Option, #vtool{
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+        margin-bottom: 20px;
+    }
+    
+    .Etiquette{
+        margin-top: 20px;
+        display: block;
+        text-align: center;
+    }
+    
+    .Graph{
+        display: block;
+        float: center; 
+        height: fit-content;
+        width: 300px;
+        height: fit-content;
+        border: 3px solid;
+        border-color: #ffffff;
+        border-radius: 20px;
+        background-color: #177489b0;
+    }
+    
+    .Graph p{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: medium;
+        margin-left: 10px;
+    }
+    
+    .par{
+        margin-top: 10px;
+        color: #ffffff;
+    }
+    
+    .options{
+        display: block;
+    }
+    
+    .options input{
+        width: 100px;
+        border-color: #000000;
+    }
+    
+    .options p{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size:large;
+    }
+    
+    .options label{
+        display: inline-block;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+    }
+    
+    #data_img, #data_place{
+        display: none;
+    }
+    
+    #data_img p, #data_place p{
+        margin-top: 20px;
+    }
+    
+    .default{
+        margin-top: -40px;
+    }
+    
+    #Button2{
+        display: inline-block;
+        width: 100px;
+        margin-left: 40px;
+        margin-top: 5px;
+        height: 40px;
+        color: #ffffff;
+        background-color: #008000;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+    
+    textarea{
+        display: block;
+        height: 80px;
+        width: 290px;
+        border: 2px solid;
+        border-color: #000000;
+        border-radius: 10px;
+        margin-top: 30px;
+        color: black;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        resize: none;
+    }
+    
+    .detailbox{
+        height: 50px;
+        width: 100px;
+        color: black;
+        font-size: medium;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+    
+    .commentBox{
+        display: block;
+        margin-top: -10px;
+        height: 100px;
+        width: 200px;
+        margin-left: 50px;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 0px;
+        background-color: #ffffff;
+        resize: none;
+    }
+    
+    #Arrow2 {
+        margin-top: 10px;
+        width: 0px; 
+        height: 0px; 
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        border-left: 20px solid transparent;
+        border-right: 20px solid transparent;
+        border-width: 30px;
+        border-bottom: 30px solid #ffffff;
+    }
+    
+    .imgvalue input{
+        display: inline-block;
+        margin-left: 20px;
+        border: 3px solid;
+        border-width: 70px;
+        font-size: large;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        margin-top: 20px;
+    }
+    
+    .imgvalue label{
+        display: inline-block;
+        font-family: 'Courier New', Courier, monospace;
+        font-size: larger;
+        margin-left: -100px;
+    }
+    
+    #LocalParams{
+        display: none;
+    }
+
+    #LocalParams p{
+        text-align: center;
+        font-family: 'Courier New', Courier, monospace;
+        color: black;
+        font-size:large;
+    }
+    
+    #Profile_Pics{
+        display: none;
+    }
+    
+    #data_video{
+        display: none;
+    }
+    
+    .map {
+        margin-left: 50px;
+        margin-top: 30px;
+        height:200px;
+        width:200px;
+        border:3px solid;
+        border-color:black;
+    }
+    
+    .Geo {
+        display: inline-block;
+        position: absolute;
+        margin-top: -30px;
+        margin-right: auto;
+        margin-bottom: 500px;
+        margin-left: auto;
+    }
+    
+    
+    video{
+        margin-left: -5px;
+        height:200px;
+        width:200px;
+    }
+
+    hr{
+        width: 300px;
+    }
+
+    #Docker,#Twitter,#GitLab,#Imgur,#Kik{
+        margin-top: 10px;
+        margin-left: 0px;
+    }
+}

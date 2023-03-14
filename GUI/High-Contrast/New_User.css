@@ -1,0 +1,72 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+.languages {
+    display: block;
+}
+
+.Container form {
+    display: block;
+    border:3px solid;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    border-color: rgba(165, 164, 164, 0.582);
+    background-color: rgba(111, 119, 126, 0.568);
+    width: 400px;
+    border-radius: 10px;
+}
+
+.Container input {
+    display: block;
+    margin-bottom: 40px;
+    height: 30px;
+    width: 300px;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+    font-size: medium;
+}
+
+.Container input::placeholder {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: medium;
+    color: #000000;
+}
+
+.Container button {
+    display: inline-block;
+    margin-right: auto;
+    margin-left: 10px;
+    height: 30px;
+    font-size: medium;
+    background-color: green;
+    border: 3px solid;
+    border-color: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+}
+
+@media only screen and (min-width: 200px) and (max-width: 711px) {
+
+    .Container form {
+        width: fit-content;
+    }
+
+    .languages {
+        display: none;
+    }
+
+    .Hidden_navabar{
+        display: block;
+    }
+
+    .Container input {
+        min-width: 200px;
+        max-width: 300px;
+    }
+}

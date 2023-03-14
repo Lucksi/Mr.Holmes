@@ -265,20 +265,35 @@ function CreateElement(){
         else if (document.getElementById("vid").checked == true){
             var UserVideo = document.getElementById("UsVid").value;
             var VideoName = document.getElementById("Vid").value;
-            var Final2 = "../Reports/Usernames/" + UserVideo + "/" + "Profile_pics/TikTok_Posts/" + VideoName + ".mp4";
-            var image1 = "../Reports/Usernames/" + UserVideo + "/" + "Profile_pics/TikTok_Posts/" + VideoName + "/" + VideoName + ".jpg";
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            '<div id = "new">');
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            textbox);
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            "<p class = par id = '" + name + "text'>" + name + "</p>");
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            "<p><a href = " + Final2 + " target = blank  id ='" + name + "video'" + "><video controls src ='" + Final2 +"' width = 10px height = 100px id ='" + name + "' poster = '" + image1 + "'></a></p>");
-            document.getElementById("add_after_me").insertAdjacentHTML("afterend",
-            '</div>');
-            document.getElementById("add_after_me").setAttribute("id","Past");
-            document.getElementById("new").setAttribute("id","add_after_me");
+            var Ok = "False";
+            if (document.getElementById("Use2").checked == true){
+                Path = "../Reports/Usernames/";
+                Ok = "True"
+            }
+            else if(document.getElementById("Per2").checked == true){
+                Path = "../Reports/People/";
+                Ok = "True"
+                UserVideo = UserVideo.replace(" ","_");
+            }
+            if(Ok == "True"){
+                var Final2 = Path + UserVideo + "/" + "Profile_pics/TikTok_Posts/" + VideoName + ".mp4";
+                var image1 = Path + UserVideo + "/" + "Profile_pics/TikTok_Posts/" + VideoName + "/" + VideoName + ".jpg";
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                '<div id = "new">');
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                textbox);
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                "<p class = par id = '" + name + "text'>" + name + "</p>");
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                "<p><a href = " + Final2 + " target = blank  id ='" + name + "video'" + "><video controls src ='" + Final2 +"' width = 10px height = 100px id ='" + name + "' poster = '" + image1 + "'></a></p>");
+                document.getElementById("add_after_me").insertAdjacentHTML("afterend",
+                '</div>');
+                document.getElementById("add_after_me").setAttribute("id","Past");
+                document.getElementById("new").setAttribute("id","add_after_me");
+            }
+            else{
+                alert("Missing Parameter");
+            }
         }
     }
 }

@@ -10,7 +10,7 @@
         return $Message;
     }
 
-    function GetDetails($Folder,$Name,$User,$img){
+    function GetDetails($Folder,$Name,$User,$img,$Label){
         $Complete = "../Reports/People/$Folder/Profile_pics/$Name/$User";
         if(file_exists($Complete)){
             $img2 = str_replace(".png",".jpg",$img);
@@ -20,6 +20,7 @@
             $Name_arr = array();
             $Link_arr = array();
             echo "<div class = 'Mini'>";
+            echo "<p id = Const >$Label</p>";
             echo "<a href = $Image target = blank><img src = $Image id = 'Main'></a>";
             foreach($Parser2["List"] as $Data){
                 $Name = $Data["Name"];
@@ -146,7 +147,7 @@
                     $video = str_replace(".txt",".mp4",$cut_img);   
                     $poster = "$value/$img";
                     $watch = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$video";
-                    if (file_exists($poster)){
+                    if (getimagesize($poster)){
                         echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
                     }
                     else{
@@ -164,18 +165,17 @@
                     $video = str_replace(".txt",".mp4",$cut_img);   
                     $poster = "$value/$img";
                     $watch = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$video";
-                    if (file_exists($poster)){
+                    if (getimagesize($poster)){
                         echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
+                        $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
+                        while(!feof($opener)){
+                            $reader = fgets($opener);
+                            echo "<p>$reader</p>";
+                        }                
                     }
                     else{
 
                     }
-                    
-                    $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
-                    while(!feof($opener)){
-                        $reader = fgets($opener);
-                        echo "<p>$reader</p>";
-                    }                
                     echo "<hr>";
                     $n1 = $n1 +1 ;
                 }
@@ -361,21 +361,25 @@
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
                 echo "<hr>";
-                echo "<p id = 'Const2'>TAGGED USERS</p>";
+                echo "<p id = 'Const2'>TAGGED USERS:</p>";
                 echo "<div class = 'Wrapper'>";
-                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png");
-                GetDetails($File_name,"TikTok_Posts","Users.json","TikTok.png");
-                GetDetails($File_name,"Twitter_Posts","Users.json","Twitter.png");
+                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"TikTok_Posts","Users.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Users.json","Twitter.png","TWITTER");
                 echo "<hr>";
-                echo "<p id = 'Const2'>HASHTAGS</p>";
-                GetDetails($File_name,"TikTok_Posts","Hashtags.json","TikTok.png");
-                GetDetails($File_name,"Twitter_Posts","Hashtags.json","Twitter.png");
+                echo "<p id = 'Const2'>HASHTAGS:</p>";
+                GetDetails($File_name,"Instagram_Posts","Hashtags.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"TikTok_Posts","Hashtags.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Hashtags.json","Twitter.png","TWITTER");
                 echo "<hr>";
-                echo "<p id = 'Const2'>EXTERNAL LINKS</p>";
-                GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png");
+                echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
+                GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
                 echo "<hr>";
                 echo "</div>";
                 $File_name = str_replace("_"," ",$File_name);
+                echo "<p id = 'Const2'>DORKS:</p>";
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
                 Get_Dorks($Complete_name);
             }
@@ -444,11 +448,27 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<hr>";
+                echo "<p id = 'Const2'>TAGGED USERS:</p>";
                 echo "<div class = 'Wrapper'>";
-                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png");
+                GetDetails($File_name,"Instagram_Posts","Users.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"TikTok_Posts","Users.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Users.json","Twitter.png","TWITTER");
+                echo "<hr>";
+                echo "<p id = 'Const2'>HASHTAGS:</p>";
+                GetDetails($File_name,"Instagram_Posts","Hashtags.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"TikTok_Posts","Hashtags.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Hashtags.json","Twitter.png","TWITTER");
+                echo "<hr>";
+                echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
+                GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
+                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
+                echo "<hr>";
                 echo "</div>";
                 $File_name = str_replace("_"," ",$File_name);
                 $Complete_name = "../Reports/People/Dorks/{$File_name}_Dorks.txt";
+                echo "<p id = 'Const2'>DORKS:</p>";
                 Get_Dorks($Complete_name);
             }
             else {

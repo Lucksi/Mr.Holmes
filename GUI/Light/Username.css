@@ -1,0 +1,344 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Style.css");
+
+.Wrapper {
+    display: inline-block;
+    padding: 10px 12px;
+    margin-bottom: 50px;
+}
+
+.Wrapper2 {
+    display: inline-block;
+    position: static;
+    padding: 10px 12px;
+}
+
+.Data{
+    display:inline-block;
+    justify-content: left;
+    width: 1310px;
+    border: 3px solid;
+    border-color: #000000;
+    background-color: #5983e663;
+    border-radius: 10px;
+    word-wrap: break-word;
+    height: 400px;
+    overflow: auto;
+}
+
+.Data p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #000000;
+    font-size: medium;
+}
+
+.Data2, .Data3, .Data4, .Data5 {
+    display:block;
+    margin-top: none;
+    margin-left: auto;
+    margin-right: auto;
+    width: 758px;
+    border: 3px solid;
+    margin-top: 100px;
+    border-color: #000000;
+    background-color: #5983e663;
+    border-radius: 10px;
+    word-wrap: break-word;
+}
+
+.Data5{
+    margin-top: -30px;
+    margin-bottom: 10px;
+    word-wrap: break-word;
+    overflow: auto;
+}
+
+.map{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border:2px solid;
+    border-color: #000000;
+    background-color:#5983e663;
+    border-radius: 10px;
+    height: 300px;
+    width: 500px;
+    margin-bottom: 20px;
+}
+
+.Data2 p, .Data3 p, .Data5 p {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    text-align: center;
+    color: #000000;
+    font-size: medium;
+}
+
+#error p {
+    text-align: center;
+}
+
+.Data_img {
+    display: inline-block;
+    margin-top: 50px;
+    margin-right: auto;
+    margin-bottom: none;
+    margin-left: none;
+    width: 1310px;
+    border: 3px solid;
+    border-color: #000000;
+    background-color: #5983e663;
+    border-radius: 10px;
+}
+
+.Data_img2, .Data_img3{
+    margin-left: none;
+    margin-right: none;
+    margin-top: 10px;
+    height: fit-content;
+    min-width: 600px;
+    max-width: 1300px;
+    position: static;
+    border: 3px solid;
+    border-color: #000000;
+    background-color: #5983e663;
+    border-radius: 10px;
+}
+
+.Data_img img, .Data4 img, .Data3 img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 300px;
+    width: 300px;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+.Data4 img, .Data3 img{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 300px;
+    width: 300px;
+}
+
+.Data5 img{
+    margin-top: 20px;
+    margin-bottom: 30px;
+    height: 100px;
+    width: 100px;
+}
+
+.Data_img2 img, .Data_img3 img {
+    display: inline-block;
+    margin-left: 100px;
+    margin-right: none;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    height: 200px;
+    width: 200px;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+.Data_img3 img{
+    border-radius: 20px;
+    margin-left: 40px;
+    margin-right: 10px;
+    height: 110px;
+    width: 110px;
+ }
+
+.Data_img2 a :hover, .Data_img a :hover{
+    animation: joggleImg 2s infinite;
+}
+
+video{
+    display: inline-block;
+    width: 390px;
+    height: 350px;
+    margin-left: 20px;
+    margin-top: 20px;
+    border: 3px solid;
+    border-radius: 20px;
+    border-color: #000000;
+}
+
+.Mini{
+    display: inline-block;
+    margin-left: 30px;
+    width: 400px;
+    height: 400px;
+    background-color: #5983e663;
+    border: 3px solid #000000;
+    border-radius: 20px;
+    overflow:auto;
+}
+
+.Mini img{
+    height: 80px;
+    width: 80px;
+    margin-left: 10px;
+}
+
+#Main{
+    display: block;
+    height: 200px;
+    width: 200px;
+    margin-top: 20px;
+    margin-bottom: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 3px solid #000000;
+    border-radius: 20px;
+}
+
+#Main_pics{
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    margin-bottom:50px;
+    height: 250px;
+    width: auto;
+}
+
+@keyframes joggleImg{
+    0%{border-color: #000000;}
+    50%{border-color: rgba(4, 75, 4, 0.815);}
+    100%{border-color: #000000;}
+}
+
+@media only screen and (min-width: 200px) and (max-width: 758px) {
+    
+    .Wrapper{
+        margin-bottom: 200px;
+    }
+
+    
+    .Data {
+        min-width: fit-content;
+        max-width: 350px;
+    }
+    
+    .Data2 {
+        display:table;
+        position: absolute;
+        margin-left: -20px;
+        margin-right: auto;
+        margin-top: 200px;
+        width: fit-content !important;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+
+    .Data2 p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+        
+    .Data p {
+        font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 14px;
+    }
+    
+    .Data_img , .Data_img2 {
+        display: table;
+        height: fit-content;
+        margin-top: none;
+        min-width: 150px;
+        max-width: 300px;
+        margin-right: auto;
+        margin-left: auto;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+        margin-bottom: 200px;
+    }
+
+    .Data3{
+        display: table;
+        margin-top: 4500px;
+    }
+
+    .Data4{
+        display: table;
+        margin-top: 1000px;
+        min-width: 300px;
+        max-width: 400px;
+    }
+
+    .Data_img2{
+        display: table;
+        position: absolute;
+        margin-top: 1300px;
+        min-width: 150px;
+        width: 400px;
+        margin-bottom: 3000px;
+    }
+
+    .Data_img2 img {
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        height: 200px;
+        width: 200px;
+        border: 3px solid;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+
+    .Data4 img{
+        margin-bottom: 30px;
+        height: 200px;
+        width: 200px;
+    }
+
+    video{
+        height: 200px;
+        width: 200px;
+    }
+
+    .map{
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        border:2px solid;
+        border-color: #000000;
+        background-color: #1a07076c;
+        border-radius: 10px;
+        height: 300px;
+        width: 300px;
+    }
+
+    .Data_img3{
+        display: none;
+    }
+}
+@media only screen and (min-width: 780px) and (max-width: 1280px) {
+    .Data{
+        min-width: 758px;
+        max-width: fit-content;
+    }
+    .Data5{
+        margin-top: 10px;
+        margin-bottom: 40px;
+    }
+    .Data_img img, .Data4 img, .Data3 img {
+        height: 200px;
+        width: 200px;
+    }
+    
+    .Data4 img, .Data3 img{
+        margin-top: 20px;
+        margin-bottom: 30px;
+        height: 300px;
+        width: 300px;
+    }
+}

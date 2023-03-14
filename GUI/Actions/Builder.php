@@ -117,6 +117,12 @@
                         </div>
                         <div id = "data_video">
                             <p id = "vtool">VIDEO-TOOLBOX</p>
+                            <br>
+                            <input type = "radio" class = "imgavalue" id = "Use2" name = "5" value = "Local" onclick="OpenLocal()">
+                            <label for = "Username">Username</label>
+                            <input type = "radio" class = "imgavalue" id = "Per2" name = "5" value = "NoLocal" onclick="CloseLocal()">
+                            <label for = "Person">Person</label>
+                            <br>
                             <input type = "text" name = "bar3" id = "UsVid" class = "bar"  placeholder = "Insert User" autocomplete = "off">
                             <br>
                             <input type = "text" name = "bar3" id = "Vid" class = "bar" placeholder = "Insert Video Path" autocomplete = "off">
@@ -264,6 +270,12 @@
                     </div>
                     <div id = "data_video">
                         <p id = "vtool">VIDEO-TOOLBOX</p>
+                        <br>
+                        <input type = "radio" class = "imgavalue" id = "Use2" name = "5" value = "Local" onclick="OpenLocal()">
+                        <label for = "Username">Username</label>
+                        <input type = "radio" class = "imgavalue" id = "Per2" name = "5" value = "NoLocal" onclick="CloseLocal()">
+                        <label for = "Person">Person</label>
+                        <br>
                         <input type = "text" name = "bar3" id = "UsVid" class = "bar"  placeholder = "Insert User" autocomplete = "off">
                         <br>
                         <input type = "text" name = "bar3" id = "Vid" class = "bar" placeholder = "Insert Video Path" autocomplete = "off">
