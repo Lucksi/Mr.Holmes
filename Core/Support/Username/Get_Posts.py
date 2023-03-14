@@ -399,7 +399,7 @@ class Downloader:
                     json_file = "GUI/Reports/{}/{}/Profile_pics/Instagram_Posts/Hashtags.json".format(
                         Opt, name2)
                     Downloader.InsertToFile(
-                        json_file, TaggedHashtag, " https://instagram.com/explore/tags", "TaggedHashtag")
+                        json_file, TaggedHashtag, " https://instagram.com/explore/tags/", "TaggedHashtag")
 
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Default", "TotDetails").format(folder))
