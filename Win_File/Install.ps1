@@ -13,14 +13,12 @@ function Packet_Installer(){
     winget install python3
     Write-Host "`nINSTALLING PHP..."
     winget install ApacheFriends.Xampp.8.2
-    #Write-Host "`nUNPACKING PHP..."
-    #Install-Php -Scope CurrentUser | Out-Null
 }
 
 function Preferences(){
-    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
     while($Language -eq ""){
-        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
     }
     if($Language -eq 1){
         '{
@@ -44,7 +42,7 @@ function Preferences(){
                 "Preference": "French"
             }
         }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
-        $mode = "FRANÇAIS"
+        $mode = "FRANCAIS"
     }
 
     Write-Host "`nGUI-LANGUAGE:$mode"
@@ -192,9 +190,9 @@ function Options(){
             ]
         }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
-    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
     while($Lang -eq ""){
-        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANÇAIS`n`n[#MR.HOLMES#]-->"
+        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
     }
     if($Lang -eq 1){
         $Cli = "english"
@@ -206,7 +204,7 @@ function Options(){
     }
     elseif($Lang -eq 3){
         $Cli = "french"
-        $Mode = "FRANÇAIS"
+        $Mode = "FRANCAIS"
     }
     Write-Host "`nCLI-LANGUAGE:$Mode"
     $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`n(2)AMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
