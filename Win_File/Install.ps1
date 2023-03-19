@@ -10,11 +10,11 @@ function Banner(){
 
 function Packet_Installer(){
     Write-Host "`nINSTALLING PYTHON3..."
-    Install-Module -Name Python3  -Scope CurrentUser | Out-Null
+    winget install python3
     Write-Host "`nINSTALLING PHP..."
-    Install-Package Php -Scope CurrentUser | Out-Null
-    Write-Host "`nUNPACKING PHP..."
-    Install-Php -Scope CurrentUser | Out-Null
+    winget install ApacheFriends.Xampp.8.2
+    #Write-Host "`nUNPACKING PHP..."
+    #Install-Php -Scope CurrentUser | Out-Null
 }
 
 function Preferences(){
@@ -209,9 +209,9 @@ function Options(){
         $Mode = "FRANÇAIS"
     }
     Write-Host "`nCLI-LANGUAGE:$Mode"
-    $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`nAMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+    $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`n(2)AMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
     while($DateFormat -eq ""){
-        $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`nAMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+        $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`n(2)AMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
     }
     if($DateFormat -eq 1){
         $Date = "eu"
@@ -249,13 +249,78 @@ function Options(){
     "date_format= $Date" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
 }
 
+function AutoInstaller(){
+    Write-Host "`nAUTO-INSTALLER MODE...`n";
+    Packet_Installer;
+    '{
+            "Database":{
+                "Status": "Deactive"
+            }
+    }' | Out-File -FilePath .\GUI\Credentials\Login.json -Encoding Ascii
+    '{
+            "Users":[
+                {
+                "Username": "None",
+                "Password": "None"
+                }
+            ]
+    }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
+    '{
+            "Language":{
+                "Preference": "English"
+            }
+        }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
+    '{
+            "Color":{
+                "Background": "Light"
+            }
+    }' | Out-File -FilePath .\GUI\Theme\Mode.json -Encoding Ascii
+    Write-Host "`nCREATING CONFIGURATION FILE...`n";
+    ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER" | Out-File -FilePath .\Configuration/Configuration.ini -Encoding Ascii
+    ";CHANGE THESE VALUE IF YOU WANT TO UPDATE YOUR SETTINGS FROM HERE" | Out-File -FilePath .\Configuration/Configuration.ini -Append -Encoding Ascii
+    ";BUT DO NOT CHANGE THE PARAMETERS NAME" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "[Smtp]" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "status= Disabled" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "email= none" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "password= none" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "destination= none" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "server= none" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "port= none" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "[Settings]" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "password= Holmes" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "api_key= None" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "proxy_list= Proxies/Proxy_list.txt" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "show_logs= False" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "database= False" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "language= english" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "date_format= eu" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    Write-Host "EMAIL-SERVER:DISABLED`n";
+    Write-Host "SHOW-LOGS:FALSE`n";
+    Write-Host "`UPDATE-PASSWORD:Holmes`n";
+    Write-Host "API-KEY:None`n";
+    Write-Host "PROXIES:DEFAULT`n";
+    Write-Host "CLI-LANGUAGE:ENGLISH`n";
+    Write-Host "GUI-LANGUAGE:ENGLISH`n";
+    Write-Host "GUI-THEME:LIGHT`n";
+    Write-Host "DATE-FORMAT:EUROPE(EU)";
+}
+
 function installer(){
     Write-Host "`nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO?" -ForegroundColor Green
     $DECISION = Read-Host -Prompt "`n[#MR.HOLMES#]-->"
     if ( $DECISION -eq 1 ){
-        Packet_Installer;
-        Mail_Options;
-        Options;
+        Write-Host "`nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION?" -ForegroundColor Green
+        $DECISION2 = Read-Host -Prompt "`n[#MR.HOLMES#]-->"
+        if ( $DECISION2 -eq 1 ){
+            Packet_Installer;
+            Mail_Options;
+            Options;
+        }
+        else{
+            AutoInstaller;
+        }
         Write-Host "INSTALLING-PYTHON-REQUIREMENTS..." -ForegroundColor Blue
         Start-Process -FilePath .\Win_File\Req.cmd
         Write-Host "`nTHANK YOU FOR HAVE INSTALLED Mr.Holmes" -ForegroundColor Green

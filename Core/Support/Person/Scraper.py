@@ -37,7 +37,7 @@ class Search:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="item")
                 i = 1
-                f = open(report, "a")
+                f = open(report, "a",encoding="utf-8")
                 f.write(
                     "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
                 for user in users:
@@ -133,7 +133,7 @@ class Search:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="timeline-item")
                 i = 1
-                f = open(report, "a")
+                f = open(report, "a",encoding="utf-8")
                 f.write(
                     "--------------------------------\nSHOWING TWITTER RESULTS FOR: {}\n".format(username))
                 for user in users:
@@ -173,7 +173,7 @@ class Search:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
         
         j = 1
@@ -233,7 +233,7 @@ class Search:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="info text-truncate")
                 i = 1
-                f = open(report, "a")
+                f = open(report, "a",encoding="utf-8")
                 f.write(
                     "--------------------------------\nSHOWING TIKTOK RESULTS FOR: {}\n".format(username))
                 for user in users:

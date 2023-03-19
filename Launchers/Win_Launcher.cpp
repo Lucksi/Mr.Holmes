@@ -45,8 +45,8 @@ int Core(){
 	    else if(option == 2){
 			cout<<blue<<"\n[I]"<<white<<"ACTIVATING DATABASE...";
 			Sleep(2);
-	        system("START /B php -S 127.0.0.1:200 -t ../GUI 2>NUL >NUL");
-	        cout<<blue<<"\n\n[I]"<<white<<"DATABASE STARTED ON: http://127.0.0.1:200\n\nPRESS ANY KEY TO STOP";
+	        system("START /B php -S 127.0.0.1:5001 -t ../GUI 2>NUL >NUL");
+	        cout<<blue<<"\n\n[I]"<<white<<"DATABASE STARTED ON: http://127.0.0.1:5001\n\nPRESS ANY KEY TO STOP";
 	        system("pause 2>NUL >NUL");
 			cout<<blue<<"\n\n[I]"<<white<<"STOPPING DATABASE\n";
 	        system("taskkill /F /IM php.exe 2>NUL >NUL");

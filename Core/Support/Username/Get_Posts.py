@@ -588,12 +588,18 @@ class Downloader:
                     print(Font.Color.RED + "[!]" +
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                     i = i+1
-                    continue
+                    if i < range_band + 1:
+                        continue
+                    else:
+                        break
                 except Exception as e:
                     print(Font.Color.RED + "[!]" +
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                     i = i+1
-                    continue
+                    if i < range_band + 1:
+                        continue
+                    else:
+                        break
             if TaggedUser == []:
                 pass
             else:
@@ -822,12 +828,18 @@ class Downloader:
                     print(Font.Color.RED + "[!]" +
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                     i = i+1
-                    continue
+                    if i < range_band + 1:
+                        continue
+                    else:
+                        break
                 except Exception as e:
                     print(Font.Color.RED + "[!]" +
-                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
+                          Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                     i = i+1
-                    continue
+                    if i < range_band + 1:
+                        continue
+                    else:
+                        break
             report = "GUI/Reports/{}/{}/{}.txt".format(
                 Opt, name2, name2)
             if TaggedUser == []:
@@ -891,27 +903,6 @@ class Downloader:
                     Opt, name2)
                 Downloader.InsertToFile(
                     json_file, TaggedLink, "Link", "TaggedLink", "TaggedLink")
-                """if os.path.exists(json_file):
-                    pass
-                else:
-                    f = open(json_file, "w")
-                    f.write('''{
-                                "List":[
-
-                                ]
-                            }''')
-                    f.close()
-                for Link in TaggedLink:
-                    data = {
-                        "Link": "{}".format(Link),
-                        "Name": "None"
-                    }
-                    with open(json_file, 'r+') as file:
-                        file_data = json.load(file)
-                        file_data["List"].append(data)
-                        file.seek(0)
-                        json.dump(file_data, file, indent=4)"""
-
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Video").format(folder))
         else:
