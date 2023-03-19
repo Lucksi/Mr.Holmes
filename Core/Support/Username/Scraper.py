@@ -918,10 +918,10 @@ class info:
             user = reader.find("h1", class_="user").text
             name = reader.find("h5", class_="text-dark").text
             followers = reader.find(
-                "div", class_="col-7 col-md-auto text-truncate").text
+                "div", class_="col-7 col-md-auto text-truncate").text.replace("🦄","").replace(" ","",1)
             followed = reader.find(
-                "div", class_="col-auto d-none d-sm-block text-truncate").text
-            like = reader.find("div", class_="col-auto").text
+                "div", class_="col-auto d-none d-sm-block text-truncate").text.replace("🏹","").replace(" ","",1)
+            like = reader.find("div", class_="col-auto").text.replace("🧡","").replace(" ","",1)
             profile = reader.find_all(
                 "div", class_="col-md-auto justify-content-center text-center")
             postsect = reader.find_all("div", class_="info3")

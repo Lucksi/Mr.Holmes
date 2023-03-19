@@ -399,7 +399,7 @@ class Downloader:
                     json_file = "GUI/Reports/{}/{}/Profile_pics/Instagram_Posts/Hashtags.json".format(
                         Opt, name2)
                     Downloader.InsertToFile(
-                        json_file, TaggedHashtag, " https://instagram.com/explore/tags/", "TaggedHashtag")
+                        json_file, TaggedHashtag, " https://instagram.com/explore/tags", "TaggedHashtag")
 
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(LangFile, "Username", "Default", "TotDetails").format(folder))
@@ -745,10 +745,10 @@ class Downloader:
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
                         stats = reader2.find_all("div", class_="info")
                         for stat in stats:
-                            play = stat.select_one("span[title=Likes]").text
+                            play = stat.select_one("span[title=Likes]").text.replace("▶️","").replace(" ","",1)
                             comments = stat.select_one(
-                                "span[title=Comments]").text
-                            shares = stat.select_one("span[title=Shares]").text
+                                "span[title=Comments]").text.replace("📑","").replace(" ","",1)
+                            shares = stat.select_one("span[title=Shares]").text.replace("↪️","").replace(" ","",1)
                         print(
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "PLAYES : {}".format(play))
                         print(
@@ -756,7 +756,7 @@ class Downloader:
                         print(
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SHARES: {}".format(shares))
                         if '<div class="music">' in openurl2.text:
-                            music = reader2.find("div", class_="music").text
+                            music = reader2.find("div", class_="music").text.replace("🎵","").replace(" ","",1)
                             print(
                                 Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SONG: {}".format(music.replace("\n", "")))
                         else:
