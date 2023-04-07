@@ -18,7 +18,7 @@
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER
-### Cet Tool n'est pas précis à 100% Par conséquent, il est probable qu'il puisse parfois échouer. De plus, cet outil a été créé à des fins éducatives et de recherche uniquement ... 
+### Cet Outil n'est pas précis à 100% Par conséquent, il est probable qu'il puisse parfois échouer. De plus, cet outil a été créé à des fins éducatives et de recherche uniquement Je n'assume aucune responsabilitè pour toute le utilisation incorrecte de cet outil.
 <br>
 
 #  SCREENSHOT
