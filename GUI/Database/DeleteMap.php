@@ -1,6 +1,6 @@
 <!--ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 AUTHOR: Luca Garofalo (Lucksi)
-Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
+Copyright (C) 2023 Lucksi <lukege287@gmail.com>
 License: GNU General Public License v3.0-->
 <!DOCTYPE HTML>
 <html>
@@ -37,7 +37,7 @@ License: GNU General Public License v3.0-->
     </head>
     <?php
         require_once("../Actions/Language_Controller.php");
-        $Modality = "SelectGraph";
+        $Modality = "Map";
         Get_Language($Modality);
     ?>
         <div class = "Top-bar">
@@ -51,11 +51,10 @@ License: GNU General Public License v3.0-->
                     <a href ="Ports.php"></a>
                     <a href = "Email.php"></a>
                     <a href="New_User.php"></a>
-                    <a href="People.php"></a>
                     <a id = "change1"></a>
                     <?php 
                         require_once("../Actions/Language_Controller.php");
-                        $Modality = "_SelectGraph_Mobile()";
+                        $Modality = "_Username_Mobile()";
                         List_Languages($Modality);
                     ?>
                 </div>
@@ -65,7 +64,7 @@ License: GNU General Public License v3.0-->
                 <div class = "Content" id = "Content">
                     <?php 
                         require_once("../Actions/Language_Controller.php");
-                        $Modality = "_SelectGraph()";
+                        $Modality = "_Map()";
                         List_Languages($Modality);
                     ?>
                 </div>
@@ -91,10 +90,13 @@ License: GNU General Public License v3.0-->
         <div class = "Upper-card">
             <?php require_once("../Actions/Theme_Controller.php");Image();?>
             <div id = "Options">
-                <a href = "NewSchema.php"><button  id = "New" name = "New" type = "button"></button></a>
-                <a href = "OpenSchema.php"><button  id = "Open" name = "Open" type = "button"></button></a>
-                <a href = "DeleteSchema.php"><button  id = "Del" name = "Del" type = "button"></button></a>
+                <form action = "" method = "POST">
+                    <input type = "text" id = "bar1" name = "bar" class = "bar" placeholder = "Insert filename2" autocomplete = "off">
+                    <button  width="fit-content" id = "But" name = "Button"  type = "submit">Open</button>
+                </form>  
             </div>
         </div> 
+        <?php require("../Actions/DeleteMap.php");?>
     </body>
 </html>
+

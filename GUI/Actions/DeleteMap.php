@@ -1,7 +1,7 @@
 <?php
     /*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
     AUTHOR: Luca Garofalo (Lucksi)
-    Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
+    Copyright (C) 2023 Lucksi <lukege287@gmail.com>
     License: GNU General Public License v3.0*/
 
     function Get_Message($Type,$Param){
@@ -14,13 +14,13 @@
         $filename = $_POST["bar"];
         $filename2 = '" "';
         $final = str_replace(" ",$filename,$filename2);
-        $path = "../Graphs/{$filename}/{$filename}.mh";
-        $path2 = "../Graphs/{$filename}/encode.mh";
+        $path = "../Maps/{$filename}/{$filename}.mh";
+        $path2 = "../Maps/{$filename}/encode.mh";
         if(file_exists($path)){
             $Message = Get_Message("Positives","Canc");
             unlink($path);
             unlink($path2);
-            rmdir("../Graphs/{$filename}");
+            rmdir("../Maps/{$filename}");
             echo "<script>
             alert('$Message');
             </script>";

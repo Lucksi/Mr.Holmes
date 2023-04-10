@@ -308,4 +308,73 @@
                 </div>';
         echo ' <a href = "#Opt" id = "Arrow2"></a>';
     }
+    function OpenMapConstructor($final,$converted,$Mess1,$Mess2){
+        echo "<hr>";
+        echo "
+            $converted
+            <hr>";
+    }
+
+
+    function NewMapConstructor($final,$Mess1,$Mess2){
+        echo "<hr>";
+        echo "<div class = 'Toolbar'>";
+        echo '<div class = "Params">
+                <hr>
+                <div class = "options" id = "Opt">
+                <p id = "Option">OPTIONS</p>
+                <p class = "Etiquette" id = "typ">INSERT TYPE</p>
+                    <input type = "radio" id = "pe" value = "person" name = "1" onclick="CloseCustom()">
+                    <p id = "pe2">Person</p>
+                    <br>
+                    <input type = "radio" id = "ev" value = "event" name = "1" onclick="CloseCustom()">
+                    <label for = "social" id = "event2">Event</label>
+                    <br>
+                    <input type = "radio" id = "place" value = "place" name = "1" onclick="CloseCustom()">
+                    <label for = "social" id = "lu2">Place</label>
+                    <br>
+                <hr>
+                    <div id = "extra">
+                        <p id = "pltool">CUSTOM-TOOLBOX</p>
+                        <input type = "radio" id = "local" value = "local" name = "2">
+                        <label for = "social" id = "lu2">Local</label>
+                        <input type = "radio" id = "link" value = "link" name = "2" style="margin-left:200px">
+                        <label for = "social" id = "cu">Link</label>
+                        <br>
+                        <input type = "text" name = "bar3" id = "path" class = "bar" placeholder = "Insert Path" autocomplete = "off">
+                        <br>
+                        <hr>
+                    </div>
+                    <div id = "data_place">
+                        <p id = "pltool">PLACE-TOOLBOX</p>
+                        <input type = "text" name = "bar3" id = "Lat" class = "bar"  placeholder = "" autocomplete = "off">
+                        <br>
+                        <input type = "text" name = "bar3" id = "Lon" class = "bar" placeholder = "" autocomplete = "off">
+                        <br>
+                        <hr>
+                    <div class = "default">
+                    <br>
+                    <br>
+                    <p id = "def">DEFAULT</p>
+                    <textarea id = "writeText" placeholder = "Add a comment"></textarea>
+                    <br>
+                    <br>
+                    <button  width="fit-content" id = "Button2" name = "create" onclick="CreateElement()">Open</button>';
+                    echo " <button  width='fit-content' id = 'Button2' name = 'deleteAll' onclick='DeleteAll($Mess2)'>Reset</button>
+                    <button  width='fit-content' id = 'Button2' name = 'save' onclick='SaveGraph($final,$Mess1)'>Save</button>
+                        <a id = 'link3'></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>";
+        echo "
+        <div class = Graph id = Content20>
+            <div class ='map' id='map'></div>
+            <script>
+            var map = L.map('map').setView([0.0,0.0], 3);
+            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{ attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'}).addTo(map);
+            </script></div>";
+                echo ' <a href = "#map" id = "Arrow2"></a>';
+    }
 ?>

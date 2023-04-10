@@ -75,16 +75,21 @@
                 <a href = 'Schema.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Ports'>
-                <img class = 'Mod' src = '../Icon/Base/Author.png'>
-                <p id = 'Const'>PEOPLE</p>
-                <a href = 'People.php'><button class = But>Show</button></a>
+                <img class = 'Mod' src = '../Icon/Base/Marker.png'>
+                <p id = 'Const'>MAP</p>
+                <a href = 'Map.php'><button class = But>Create</button></a>
             </div>
             <br>
             <br>
             <div id = 'Username'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>PEOPLE</p>
+                <a href = 'People.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
                 <p id = 'Const'>AUTHOR</p>
-                <a id = 'change2'><button class = But>Show</button></a>
+                <a href = 'New_User.php'><button class = But>Show</button></a>
             </div>";
             }
             else {
@@ -126,15 +131,20 @@
                 <a href = 'Schema.php'><button class = But>Open</button></a>
             </div>
             <div id = 'Ports'>
-                <img class = 'Mod' src = '../Icon/$color/Author.png'>
-                <p id = 'Const'>PEOPLE</p>
-                <a href = 'People.php' ><button class = But>Show</button></a>
+                <img class = 'Mod' src = '../Icon/$color/Marker.png'>
+                <p id = 'Const'>Map</p>
+                <a href = 'Map.php' ><button class = But>Open</button></a>
             </div>
             <br>
             <br>
             <div id = 'Username'>
                 <img class = 'Mod' src = '../Icon/$color/Author.png'>
-                <p id = 'Const'>AUTHOR</p>
+                <p id = 'Const'></p>
+                <a href = 'People.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/$color/Author.png'>
+                <p id = 'Const'>Author</p>
                 <a id = 'change2'><button class = But>Show</button></a>
             </div>";
             }
@@ -176,15 +186,20 @@
                 <a href = 'Schema.php'><button class = But>Create</button></a>
             </div>
             <div id = 'Ports'>
-                <img class = 'Mod' src = '../Icon/Base/Author.png'>
-                <p id = 'Const'>PEOPLE</p>
-                <a href = 'People.php'><button class = But>Show</button></a>
+                <img class = 'Mod' src = '../Icon/Base/Marker.png'>
+                <p id = 'Const'>Map</p>
+                <a href = 'Map.php'><button class = But>Create</button></a>
             </div>
             <br>
             <br>
             <div id = 'USERNAME'>
                 <img class = 'Mod' src = '../Icon/Base/Author.png'>
-                <p id = 'Const'>AUTHOR</p>
+                <p id = 'Const'>People</p>
+                <a href = 'People.php'><button class = But>Search</button></a>
+            </div>
+            <div id = 'Website'>
+                <img class = 'Mod' src = '../Icon/Base/Author.png'>
+                <p id = 'Const'>Author</p>
                 <a id = 'change2'><button class = But>Show</button></a>
             </div>";
         }   
