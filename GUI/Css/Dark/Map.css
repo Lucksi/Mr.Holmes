@@ -1,0 +1,57 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Schema.css");
+
+#data_place{
+    display: block;
+}
+
+.map{
+    display:block;
+    height:645px; 
+    width:690px;
+    margin-left:3px;
+    margin-top:2px;
+    margin-bottom: -1px;
+}
+
+#path{
+    margin-top: 20px;
+    height: 30px;
+    width: 590px;
+    border: 2px solid;
+    border-color: #000000;
+    border-radius: 5px;
+    font-size: large;
+}
+
+#extra{
+    display: none;
+}
+
+#Button2{
+    display: inline-block;
+    width: 100px;
+    margin-left: 75px;
+    margin-top: 5px;
+    height: 40px;
+    color: #ffffff;
+    background-color: #008000;
+    border: 3px solid;
+    border-color: #000000;
+    border-radius: 10px;
+}
+
+@-moz-document url-prefix() {
+    .map{
+        display:block;
+        height:680px; 
+        width:690px;
+        margin-left:3px;
+        margin-top:2px;
+        margin-bottom: -1px;
+    }
+}

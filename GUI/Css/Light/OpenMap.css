@@ -1,0 +1,13 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+@import url("Map.css");
+
+#map{
+    height:400px;
+    width:100%;
+    margin-top:-20px;
+    margin-left:-5px;
+}
