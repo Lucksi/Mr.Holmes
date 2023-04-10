@@ -193,7 +193,7 @@ write:François
 <br>
 
 # ACTUAL VERSION:
-## T.G.D-1.0.2
+## T.G.D-1.0.3
 
 <br>
 
@@ -230,6 +230,17 @@ write:François
 # EXAMPLE:
 
 ![Screenshot](Screenshot/Graph_Test.png)
+
+<br>
+
+# MAPS:
+## With this new version has been added the possibility to create Interactive Maps.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](Screenshot/Map_Test.png)
 
 <br>
 

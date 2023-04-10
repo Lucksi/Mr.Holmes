@@ -195,7 +195,7 @@ write:François
 
 
 # VERSIONE ATTUALE:
-## T.G.D-1.0.2
+## T.G.D-1.0.3
 
 <br>
 
@@ -229,6 +229,17 @@ write:François
 # EXAMPLE:
 
 ![Screenshot](../Screenshot/Graph_Test.png)
+
+<br>
+
+# MAPPA:
+## Con Questa nuova versione è stata aggiunta la possibilità di creare delle Mappe Interattive.
+
+<br>
+
+# EXAMPLE:
+
+![Screenshot](../Screenshot/Map_Test.png)
 
 <br>
 
