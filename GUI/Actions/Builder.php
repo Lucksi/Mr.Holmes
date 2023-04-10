@@ -333,18 +333,7 @@
                     <input type = "radio" id = "place" value = "place" name = "1" onclick="CloseCustom()">
                     <label for = "social" id = "lu2">Place</label>
                     <br>
-                <hr>
-                    <div id = "extra">
-                        <p id = "pltool">CUSTOM-TOOLBOX</p>
-                        <input type = "radio" id = "local" value = "local" name = "2">
-                        <label for = "social" id = "lu2">Local</label>
-                        <input type = "radio" id = "link" value = "link" name = "2" style="margin-left:200px">
-                        <label for = "social" id = "cu">Link</label>
-                        <br>
-                        <input type = "text" name = "bar3" id = "path" class = "bar" placeholder = "Insert Path" autocomplete = "off">
-                        <br>
-                        <hr>
-                    </div>
+                    <hr>
                     <div id = "data_place">
                         <p id = "pltool">PLACE-TOOLBOX</p>
                         <input type = "text" name = "bar3" id = "Lat" class = "bar"  placeholder = "" autocomplete = "off">
