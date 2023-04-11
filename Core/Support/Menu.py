@@ -60,7 +60,7 @@ class Main:
         print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version +
               Font.Color.WHITE + "                                             |")
         print(
-            Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|EMAIL:lukege287@gmail.com                                          |\n|GIT-HUB:Lucksi                                                     |\n|Twitter:@Lucksi_22                                                 |\n|Linkedin:https://www.linkedin.com/in/Lucksi                        |")
+            Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|Email:lukege287@gmail.com                                          |\n|GitHub:Lucksi                                                      |\n|Twitter:@Lucksi_22                                                 |\n|Linkedin:https://www.linkedin.com/in/Lucksi                        |")
         print(Font.Color.WHITE +
               "---------------------------------------------------------------------")
 
