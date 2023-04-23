@@ -368,9 +368,6 @@
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
                 echo "<center>";
-                Get_List($File_name,$Complete_name,"TikTok_Link.json","TikTok.png");
-                echo "</center>";
-                Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
                 echo "<hr>";
                 echo "<p id = 'Const2'>TAGGED USERS:</p>";
@@ -386,7 +383,7 @@
                 echo "<hr>";
                 echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
                 GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
-                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"TikTok_Posts","Links.json","TikTok.png","TIK-TOK");
                 GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
                 echo "</div>";
                 echo "<hr>";
@@ -467,7 +464,7 @@
                 echo "<hr>";
                 echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
                 GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
-                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"TikTok_Posts","Links.json","TikTok.png","TIK-TOK");
                 GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
                 echo "<hr>";
                 echo "</div>";

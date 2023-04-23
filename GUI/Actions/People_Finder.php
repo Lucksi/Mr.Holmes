@@ -374,7 +374,7 @@
                 echo "<hr>";
                 echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
                 GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
-                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"TikTok_Posts","Links.json","TikTok.png","TIK-TOK");
                 GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
                 echo "<hr>";
                 echo "</div>";
@@ -462,7 +462,7 @@
                 echo "<hr>";
                 echo "<p id = 'Const2'>EXTERNAL LINKS:</p>";
                 GetDetails($File_name,"Instagram_Posts","Links.json","Instagram.png","INSTAGRAM");
-                GetDetails($File_name,"Instagram_Posts","Links.json","TikTok.png","TIK-TOK");
+                GetDetails($File_name,"TikTok_Posts","Links.json","TikTok.png","TIK-TOK");
                 GetDetails($File_name,"Twitter_Posts","Links.json","Twitter.png","TWITTER");
                 echo "<hr>";
                 echo "</div>";
