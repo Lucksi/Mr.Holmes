@@ -285,11 +285,11 @@ function Options {
 		mode="FRANÇAIS"
 	fi
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
-	printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)\n\n"
+	printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YYYY)\n(2)AMERICA'USA'(MM/DD/YYYY)\n(3)ASIA(YYYY/MM/DD)\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" DateFormat
 	while [ "$DateFormat" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)\n\n"
+		printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YYYY)\n(2)AMERICA'USA'(MM/DD/YYYY)\n(3)ASIA(YYYY/MM/DD)\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" DateFormat
 	done
 	if [ $DateFormat == 1 ];

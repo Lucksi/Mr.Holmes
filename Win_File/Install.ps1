@@ -207,9 +207,9 @@ function Options(){
         $Mode = "FRANCAIS"
     }
     Write-Host "`nCLI-LANGUAGE:$Mode"
-    $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`n(2)AMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+    $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YYYY)`n(2)AMERICA'USA'(MM/DD/YYYY)`n(3)ASIA(YYYY/MM/DD)`n`n[#MR.HOLMES#]-->"
     while($DateFormat -eq ""){
-        $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YY)`n(2)AMERICA'USA'(MM/DD/YY)`n(3)ASIA(YY/MM/DD)`n`n[#MR.HOLMES#]-->"
+        $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YYYY)`n(2)AMERICA'USA'(MM/DD/YYYY)`n(3)ASIA(YYYY/MM/DD)`n`n[#MR.HOLMES#]-->"
     }
     if($DateFormat -eq 1){
         $Date = "eu"

@@ -20,13 +20,13 @@ class Get:
         dataformat = Parser["Settings"]["date_format"]
         if dataformat == "eu":
             dateregex = "%d/%m/%Y %H:%M:%S"
-            localformat = "DD/MM/YY" 
+            localformat = "DD/MM/YYYY" 
         elif dataformat == "us":
             dateregex = "%m/%d/%Y %H:%M:%S"
-            localformat = "MM/DD/YY"
+            localformat = "MM/DD/YYYY"
         elif dataformat == "as":
             dateregex = "%Y/%m/%d %H:%M:%S"
-            localformat = "YY/MM/DD"
+            localformat = "YYYY/MM/DD"
         else:
             dateregex = "%d/%m/%Y %H:%M:%S"
         Zone = dataformat.upper() + ":"+ localformat

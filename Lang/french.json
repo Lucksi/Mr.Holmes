@@ -45,7 +45,14 @@
         "Question": "VOULEZ VOUS ENTRER PLUS PARAMÊTRES(1)OUI(2)NO?",
         "ParamN": "ENTREZ LE NUMÉRO DE TÉLÉPHONE",
         "Param": "ENTREZ AUTRE PARAMÈTRE{}",
-        "Added": "ENTREZ AUTRE PARAMÈTRE: {}"
+        "Added": "ENTREZ AUTRE PARAMÈTRE: {}",
+        "Added2": "DATE AJOUTEE: {}",
+        "Added3":"EVENEMENT AJOUTEE: {}",
+        "Choice": "ENTREZ UN TYPE\n(1)DATE\n(2)DATE DE DÉBUT/DATE DE FIN\n(3)CUSTOM",
+        "Date": "ENTRER LA DATE 'YYYY-MM-DD' YYYY REQUIS",
+        "Event": "ENTRER L'EVENEMENT (1)AVANT(2)APRÈS",
+        "After": "ENTREZ LA DATE DE DEBUT 'YYYY-MM-DD' YYYY REQUIS",
+        "Before": "ENTRER LA DATE FINALE 'YYYY-MM-DD' YYYY REQUIS"
     },
 
     "Logs":{

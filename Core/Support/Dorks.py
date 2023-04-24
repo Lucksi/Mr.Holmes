@@ -36,13 +36,22 @@ class Search:
               "Default", "Report", "None") + report)
 
     @staticmethod
-    def Generator(Type,nomefile,report,phrase):
+    def Generator(Type,nomefile,report,phrase,data,between,seconddata):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Dorks", "Generation", "None").format(Type))
         sleep(2)
-        """if Type == "YANDEX":
-            phrase = phrase.replace(" ", "%2B")
-        else:"""
+        if Type == "YANDEX":
+            if "before:" in data:
+                data = data.replace("before:+","date:<")
+            elif "after" in data:
+                data = data.replace("+after:","date:>")
+            if between == "True":
+                seconddata = seconddata.replace("before","")
+                seconddata = seconddata.replace("+after","")
+                data = "date:"+ seconddata
+            else:
+                pass
+            data = data.replace("/","")
         phrase = phrase.replace(" ","+")
         f = open(report, "a")
         f.write("\n" + Type + "-DORKS:\n\n")
@@ -50,7 +59,7 @@ class Search:
         f = open(nomefile, "r")
         for sites in f:
             site = sites.rstrip("\n")
-            site = site.replace("{}", phrase)
+            site = site.replace("{}", phrase).replace(")","){}".format(data))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             sleep(2)
             f = open(report, "a")

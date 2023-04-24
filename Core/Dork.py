@@ -22,32 +22,38 @@ filename
 class List:
 
     @staticmethod
+    def AddTime():
+        pass
+
+    @staticmethod
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Dorks"
         banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
-    def GoogleDorks(report,phrase):
+    def GoogleDorks(report,phrase,data,between,seconddata):
         nomefile = "Site_lists/Username/Google_dorks.txt"
         Type = "GOOGLE"
-        Dorks.Search.Generator(Type,nomefile,report,phrase)
+        Dorks.Search.Generator(Type,nomefile,report,phrase,data,"None","None")
 
     
     @staticmethod
-    def YandexDorks(report,phrase):
+    def YandexDorks(report,phrase,data,between,seconddata):
         Type = "YANDEX"
         nomefile = "Site_lists/Username/Yandex_dorks.txt"
         phrase = phrase.replace("+","%2B")
-        Dorks.Search.Generator(Type,nomefile,report,phrase)
+        Dorks.Search.Generator(Type,nomefile,report,phrase,data,between,seconddata)
 
 
-    @staticmethod
+    @staticmethod 
     def Main(username,Mode):
         List.Banner(Mode)
         now = datetime.now()
         dataformat = DateFormat.Get.Format()
         dt_string = now.strftime(dataformat)
+        between = "False"
+        seconddata = "None"
         Date = "Date: " + str(dt_string)
         report = "GUI/Reports/Dorks/{}.txt".format(username)
         if os.path.isfile(report):
@@ -55,6 +61,7 @@ class List:
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         add = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Question", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        data = ""
         while add == "" or add == 0:
             number = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "ParamN", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if add == 1:
@@ -62,12 +69,37 @@ class List:
             Parameters = []
             number = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "ParamN", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             for i in range(number):
-                param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                while param == "":
+                type = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Choice", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if type == 1:
+                    data = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Date", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + data + Font.Color.WHITE))
+                    event = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Event", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if event == 1:
+                        data = "+before:{}".format(data)
+                        data2 = "BEFORE"
+                    elif event == 2:
+                        data = "+after:{}".format(data)
+                        data2 = "AFTER"
+                    else:
+                        pass
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added3", "None").format(Font.Color.GREEN + data2 + Font.Color.WHITE))
+                elif type == 2 :
+                    after = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "After", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + after + Font.Color.WHITE))
+                    begin = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Before", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE+ Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + begin + Font.Color.WHITE))
+                    after = "+after:{}".format(after)
+                    begin = "before:{}+".format(begin)
+                    data = after + "+" + begin
+                    seconddata = after.replace(":","") +".."+begin.replace(":","")
+                    between = "True"
+                else:
                     param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
-                Parameters.append("+"+param)
-                Start = Start +1
+                    while param == "":
+                        param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
+                    Parameters.append("+"+param)
+                    Start = Start +1
             phrase = username + "".join(Parameters)
         else:
             phrase = username
@@ -75,8 +107,8 @@ class List:
         f.write(Language.Translation.Translate_Language(
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
-        List.GoogleDorks(report,phrase)
-        List.YandexDorks(report,phrase)
+        List.GoogleDorks(report,phrase,data,between="None",seconddata="None")
+        List.YandexDorks(report,phrase,data,between,seconddata)
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))
