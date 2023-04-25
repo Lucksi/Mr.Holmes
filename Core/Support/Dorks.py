@@ -42,7 +42,7 @@ class Search:
         sleep(2)
         if Type == "YANDEX":
             if "before:" in data:
-                data = data.replace("before:+","date:<")
+                data = data.replace("+before:","date:<")
             elif "after" in data:
                 data = data.replace("+after:","date:>")
             if between == "True":

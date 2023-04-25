@@ -22,10 +22,6 @@ filename
 class List:
 
     @staticmethod
-    def AddTime():
-        pass
-
-    @staticmethod
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Dorks"
@@ -33,15 +29,15 @@ class List:
 
     @staticmethod
     def GoogleDorks(report,phrase,data,between,seconddata):
-        nomefile = "Site_lists/Username/Google_dorks.txt"
+        nomefile = "Site_lists/Dorks/Google_dorks.txt"
         Type = "GOOGLE"
-        Dorks.Search.Generator(Type,nomefile,report,phrase,data,"None","None")
+        Dorks.Search.Generator(Type,nomefile,report,phrase,data,between,seconddata)
 
     
     @staticmethod
     def YandexDorks(report,phrase,data,between,seconddata):
         Type = "YANDEX"
-        nomefile = "Site_lists/Username/Yandex_dorks.txt"
+        nomefile = "Site_lists/Dorks/Yandex_dorks.txt"
         phrase = phrase.replace("+","%2B")
         Dorks.Search.Generator(Type,nomefile,report,phrase,data,between,seconddata)
 
@@ -52,6 +48,7 @@ class List:
         now = datetime.now()
         dataformat = DateFormat.Get.Format()
         dt_string = now.strftime(dataformat)
+        check = "False"
         between = "False"
         seconddata = "None"
         Date = "Date: " + str(dt_string)
@@ -71,28 +68,37 @@ class List:
             for i in range(number):
                 type = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Choice", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if type == 1:
-                    data = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Date", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + data + Font.Color.WHITE))
-                    event = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Event", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    if event == 1:
-                        data = "+before:{}".format(data)
-                        data2 = "BEFORE"
-                    elif event == 2:
-                        data = "+after:{}".format(data)
-                        data2 = "AFTER"
+                    if check == "False":
+                        data = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Date", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + data + Font.Color.WHITE))
+                        event = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Event", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        if event == 1:
+                            data = "+before:{}".format(data)
+                            data2 = "BEFORE"
+                            check = "True"
+                        elif event == 2:
+                            data = "+after:{}".format(data)
+                            data2 = "AFTER"
+                            check = "True"
+                        else:
+                            pass
                     else:
-                        pass
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "DATE ALREADY SEATTED CANNOT USE THIS OPTION")
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added3", "None").format(Font.Color.GREEN + data2 + Font.Color.WHITE))
                 elif type == 2 :
-                    after = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "After", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + after + Font.Color.WHITE))
-                    begin = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Before", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE+ Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + begin + Font.Color.WHITE))
-                    after = "+after:{}".format(after)
-                    begin = "before:{}+".format(begin)
-                    data = after + "+" + begin
-                    seconddata = after.replace(":","") +".."+begin.replace(":","")
-                    between = "True"
+                    if check == "False":
+                        after = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "After", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + after + Font.Color.WHITE))
+                        begin = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Before", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE+ Language.Translation.Translate_Language(filename, "Dorks", "Added2", "None").format(Font.Color.GREEN + begin + Font.Color.WHITE))
+                        after = "+after:{}".format(after)
+                        begin = "before:{}".format(begin)
+                        data = after + "+" + begin
+                        seconddata = after.replace(":","") +".."+begin.replace(":","")
+                        between = "True"
+                        check = "True"
+                    else:
+                       print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "DATE ALREADY SEATTED CANNOT USE THIS OPTION")
                 else:
                     param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     while param == "":
