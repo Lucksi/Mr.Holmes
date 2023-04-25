@@ -1,6 +1,6 @@
 [GENERAL-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://yandex.com/search/?text={}
+| https://yandex.com/search/?text=({})
 | https://yandex.com/search/?text=({})mime:txt
 | https://yandex.com/search/?text=({})mime:pdf
 | https://yandex.com/search/?text=({})mime:csv
@@ -18,21 +18,21 @@
 ----------------------------------------------------------------------------------------------------------------------
 [IMAGE-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://yandex.com/images/search?from=tabbar&text={}
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Apng
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpg
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpeg
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Agif
+| https://yandex.com/images/search?from=tabbar&text=({})
+| https://yandex.com/images/search?from=tabbar&text=({})%2Bmime%3Apng
+| https://yandex.com/images/search?from=tabbar&text=({})%2Bmime%3Ajpg
+| https://yandex.com/images/search?from=tabbar&text=({})%2Bmime%3Ajpeg
+| https://yandex.com/images/search?from=tabbar&text=({})%2Bmime%3Agif
 ----------------------------------------------------------------------------------------------------------------------
 [VIDEO/AUDIO-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://yandex.com/video/search?from=tabbar&text={}
-| https://yandex.com/video/search?from=tabbar&text=site:youtube.com+{}
-| https://yandex.com/video/search?from=tabbar&text=site:tiktok.com+{}
-| https://yandex.com/video/search?from=tabbar&text=site:facebook.com+{}
-| https://yandex.com/video/search?from=tabbar&text=site:twitter.com+{}
-| https://yandex.com/video/search?from=tabbar&text=site:twitch.tv+{}
-| https://yandex.com/video/search?from=tabbar&text=site:instagram.com+{}
+| https://yandex.com/video/search?from=tabbar&text=({})
+| https://yandex.com/video/search?from=tabbar&text=site:youtube.com+({})
+| https://yandex.com/video/search?from=tabbar&text=site:tiktok.com+({})
+| https://yandex.com/video/search?from=tabbar&text=site:facebook.com+({})
+| https://yandex.com/video/search?from=tabbar&text=site:twitter.com+({})
+| https://yandex.com/video/search?from=tabbar&text=site:twitch.tv+({})
+| https://yandex.com/video/search?from=tabbar&text=site:instagram.com+({})
 ----------------------------------------------------------------------------------------------------------------------
 [EMAIL-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
@@ -66,7 +66,7 @@
 ----------------------------------------------------------------------------------------------------------------------
 [INTITLE-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://yandex.com/search/?text=title:{}
+| https://yandex.com/search/?text=title:({})
 | https://yandex.com/search/?text=title:({})mime:txt
 | https://yandex.com/search/?text=title:({})mime:pdf
 | https://yandex.com/search/?text=title:({})mime:csv
