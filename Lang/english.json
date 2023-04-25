@@ -44,7 +44,7 @@
         "Added": "PARAMETER ADDED: {}",
         "Added2": "DATE ADDED: {}",
         "Added3":"EVENT ADDED: {}",
-        "Choice": "INSERT A TYPE\n(1)DATE\n(2)FROM A DATE TO A DATE\n(3)CUSTOM",
+        "Choice": "INSERT A TYPE\n(1)DATE\n(2)DATE RANGE\n(3)CUSTOM",
         "Date": "INSERT A DATE 'YYYY-MM-DD' YYYY REQUIRED",
         "Event": "INSERT EVENT (1)BEFORE(2)AFTER",
         "After": "INSERT THE AFTER DATE 'YYYY-MM-DD' YYYY REQUIRED",
