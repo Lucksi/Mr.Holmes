@@ -50,7 +50,7 @@
         "Added3":"EVENEMENT AJOUTEE: {}",
         "Choice": "ENTREZ UN TYPE\n(1)DATE\n(2)PLAGE DE DATE\n(3)CUSTOM",
         "Date": "ENTRER LA DATE 'YYYY-MM-DD' YYYY REQUIS",
-        "Event": "ENTRER L'EVENEMENT (1)AVANT(2)APRÈS",
+        "Event": "ENTRER L'EVENEMENT(1)AVANT(2)APRÈS",
         "After": "ENTREZ LA DATE DE DEBUT 'YYYY-MM-DD' YYYY REQUIS",
         "Before": "ENTRER LA DATE FINALE 'YYYY-MM-DD' YYYY REQUIS"
     },

@@ -23,6 +23,11 @@
 | https://www.google.com/search?q=intext:({})filetype:jpg&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
 | https://www.google.com/search?q=intext:({})filetype:jpeg&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
 | https://www.google.com/search?q=intext:({})filetype:gif&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
+| https://www.google.com/search?q=intext:({})filetype:raw&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
+| https://www.google.com/search?q=intext:({})filetype:ico&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
+| https://www.google.com/search?q=intext:({})filetype:bmp&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
+| https://www.google.com/search?q=intext:({})filetype:svg&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
+| https://www.google.com/search?q=intext:({})filetype:webp&hl=&tbm=isch&source=hp&biw=&bih=&sclient=img
 ----------------------------------------------------------------------------------------------------------------------
 [VIDEO/AUDIO-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------

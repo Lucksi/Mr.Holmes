@@ -19,10 +19,9 @@
 [IMAGE-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
 | https://yandex.com/images/search?from=tabbar&text={}
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Apng
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpg
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Ajpeg
-| https://yandex.com/images/search?from=tabbar&text={}%2Bmime%3Agif
+| https://yandex.com/images/search?from=tabbar&text={}&itype=jpg
+| https://yandex.com/images/search?from=tabbar&text={}&itype=png
+| https://yandex.com/images/search?from=tabbar&text={}&itype=gifan
 ----------------------------------------------------------------------------------------------------------------------
 [VIDEO/AUDIO-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
