@@ -241,13 +241,19 @@ write:François
 <br>
 
 # DORKS:
-## Avec cette nouvelle version a été ajoutée la possibilité de chercher Video/Sound/Images via Dorks.
+## Avec cette nouvelle version a été ajoutée la possibilité de chercher Video/Sound/Images via Dorks (1) et effectuer des recherches spécifiques en saisissant une date ex '1998/01/1' ou une plage de dates par ex '1998/01/01-2020/31/12' (2).
 
 <br>
 
-# EXAMPLE:
+# EXAMPLE (1):
 
 ![Screenshot](../Screenshot/Dorks.png)
+
+<br>
+
+# EXAMPLE (2):
+
+![Screenshot](../Screenshot/Dorks2.png)
 
 <br>
 

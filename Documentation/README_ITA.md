@@ -244,13 +244,19 @@ write:François
 <br>
 
 # DORKS:
-## Con questa nuova versione è possibile cercare Video/Suoni/Immagini Attraverso i Dorks.
+## Con questa nuova versione è possibile cercare Video/Suoni/Immagini Attraverso i Dorks (1) e effettuare delle ricerche specifiche inserendo una data es '1998/01/1' o un intervallo di date es '1998/01/01-2020/31/12' (2).
 
 <br>
 
-# EXAMPLE:
+# EXAMPLE (1):
 
 ![Screenshot](../Screenshot/Dorks.png)
+
+<br>
+
+# EXAMPLE (2):
+
+![Screenshot](../Screenshot/Dorks2.png)
 
 <br>
 
