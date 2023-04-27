@@ -40,35 +40,38 @@ class Downloader:
         opener = open(json_file, "r")
         reader = json.load(opener)
         v = 0
-        for Parameter in Tagged:
-            if exist == "True":
-                for Data in reader:
-                    ParamIn = reader[Data][v]["Name"]
-                    if ParamIn == Parameter:
-                        Ok = "False"
-                    else:
-                        Ok = "True"
+        try:
+            for Parameter in Tagged:
+                if exist == "True":
+                    for Data in reader:
+                        ParamIn = reader[Data][v]["Name"]
+                        if ParamIn == Parameter:
+                            Ok = "False"
+                        else:
+                            Ok = "True"
                     v = v+1
-            else:
-                Ok = "True"
-            if Ok == "True":
-                if Type == "TaggedLink":
-                    data = {
-                        "Name": "None",
-                        "Link": "{}".format(Parameter)
-                    }
                 else:
-                    data = {
-                        "Name": "{}".format(Parameter),
-                        "Link": "{}{}".format(Link, Parameter)
-                    }
-                with open(json_file, 'r+') as file:
-                    file_data = json.load(file)
-                    file_data["List"].append(data)
-                    file.seek(0)
-                    json.dump(file_data, file, indent=4)
-            else:
-                pass
+                    Ok = "True"
+                if Ok == "True":
+                    if Type == "TaggedLink":
+                        data = {
+                            "Name": "None",
+                            "Link": "{}".format(Parameter)
+                        }
+                    else:
+                        data = {
+                            "Name": "{}".format(Parameter),
+                            "Link": "{}{}".format(Link, Parameter)
+                        }
+                    with open(json_file, 'r+') as file:
+                        file_data = json.load(file)
+                        file_data["List"].append(data)
+                        file.seek(0)
+                        json.dump(file_data, file, indent=4)
+                else:
+                    pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "A ERROR OCCURRED {}".format(str(e)))
 
     @staticmethod
     def Instagram(url, username, http_proxy, Posts, PostLocations, PostGpsCoordinates, Opt, name2):
@@ -414,7 +417,7 @@ class Downloader:
 
     @staticmethod
     def Twitter(url, username, http_proxy, Posts, Opt, name2):
-        url = url + "/search"
+        url = url + "/media"
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -438,8 +441,7 @@ class Downloader:
             TaggedUser = []
             TaggedHastag = []
             TaggedLink = []
-            profile = reader.find_all("div", class_="timeline-item")
-
+            profile = reader.find_all("div", class_="tweet-body")
             for info in profile:
                 try:
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -452,7 +454,7 @@ class Downloader:
                         print(
                             Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                         profile_pic = url.replace(
-                            username+"/search", "") + post.replace("/pic/", "pic/")
+                            username+"/media", "") + post.replace("/pic/", "pic/")
                         image = folder + "/Pic_{}.jpg".format(str(j))
                         getter = requests.get(
                             profile_pic, headers=headers, allow_redirects=False)
@@ -479,7 +481,7 @@ class Downloader:
                                     Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                                 post = data.find("img")["src"]
                                 profile_pic = url.replace(
-                                    username + "/search", "") + post.replace("/pic/", "pic/")
+                                    username + "/media", "") + post.replace("/pic/", "pic/")
                                 image = folder + "/Pic_{}.jpg".format(str(j))
                                 getter = requests.get(
                                     profile_pic, headers=headers, allow_redirects=False)
