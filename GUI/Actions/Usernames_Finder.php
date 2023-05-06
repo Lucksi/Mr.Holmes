@@ -92,48 +92,53 @@
     }
 
     function Get_List($File_name,$Complete_name){
-        echo "<div class = 'Wrapper2'>";
-        echo "\n\t\t<div class = 'Data_img3'>";
-        echo "<p id = 'Const2'>SOCIALS:</p>";
         $Json_file = str_replace(".txt",".json",$Complete_name);
         $Json_file2 = str_replace("{$File_name}.json","Name.json",$Json_file);
-        $Reader2 = file_get_contents($Json_file2);
-        $Parser2 = json_decode($Reader2,true);
-        $Reader = file_get_contents($Json_file);
-        $Parser = json_decode($Reader,true);
-        $Name_arr = array();
-        $Image_arr = array();
-        $Placeholder = array();
-        foreach($Parser["List"] as $Data){
-            $link = $Data["site"];
-            array_push($Name_arr,$Data["site"]);
-        }
-        foreach($Parser2["Names"] as $Data){
-            $link2 = $Data["name"];
-            $Complete_image = "../Icon/Entities/Site_Icon/{$link2}.png";
-            array_push($Placeholder,$link2);
-            if(file_exists($Complete_image)){
-                $image = $Complete_image;
+        if(file_exists($Json_file2)){
+            echo "<div class = 'Wrapper2'>";
+            echo "\n\t\t<div class = 'Data_img3'>";
+            echo "<p id = 'Const2'>SOCIALS:</p>";
+            $Reader2 = file_get_contents($Json_file2);
+            $Parser2 = json_decode($Reader2,true);
+            $Reader = file_get_contents($Json_file);
+            $Parser = json_decode($Reader,true);
+            $Name_arr = array();
+            $Image_arr = array();
+            $Placeholder = array();
+            foreach($Parser["List"] as $Data){
+                $link = $Data["site"];
+                array_push($Name_arr,$Data["site"]);
             }
-            else{
-                $image =  "../Icon/Entities/Social.png";
+            foreach($Parser2["Names"] as $Data){
+                $link2 = $Data["name"];
+                $Complete_image = "../Icon/Entities/Site_Icon/{$link2}.png";
+                array_push($Placeholder,$link2);
+                if(file_exists($Complete_image)){
+                    $image = $Complete_image;
+                }
+                else{
+                    $image =  "../Icon/Entities/Social.png";
+                }
+                array_push($Image_arr,$image);
             }
-            array_push($Image_arr,$image);
-            }
-        foreach($Name_arr as $Data  => $value){
+            foreach($Name_arr as $Data  => $value){
                 $link2 = $Data["name"];
                 echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '{$Image_arr[$Data]}'abbr title = '{$Placeholder[$Data]}'></a>";                
             }
+        }
+        else{
+
+        }
         echo "</div>";
     }
 
     function Get_Posts($File_name,$Folder_name,$Argument_Name){
-        echo "<center>";
-        echo "<div class = 'Wrapper2'>";
-        echo "\n\t\t<div class = 'Data_img2'>";
-        echo "<p id = 'Const2'>$Argument_Name:</p>";
         $Dir_Name = "../Reports/Usernames/{$File_name}/Profile_pics/{$Folder_name}/";
         if(file_exists($Dir_Name)){
+            echo "<center>";
+            echo "<div class = 'Wrapper2'>";
+            echo "\n\t\t<div class = 'Data_img2'>";
+            echo "<p id = 'Const2'>$Argument_Name:</p>";
             $image = glob($Dir_Name."*.jpg");
             $details = glob($Dir_Name."*.txt");
             $geo = glob($Dir_Name."*.json");
@@ -288,7 +293,7 @@
             }
         } 
         else{
-            echo "\n\t\t\t<p align = 'center' id = 'error'>NOT FIND ANY $Argument_Name FOR THIS USER</p>";
+
         }
         echo"</div>";
         echo "</center>";
@@ -450,6 +455,7 @@
                 $Argument_Name = "TIKTOK-POSTS";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<center>";
                 echo "<hr>";
                 echo "<p id = 'Const2'>TAGGED USERS:</p>";
                 echo "<div class = 'Wrapper'>";

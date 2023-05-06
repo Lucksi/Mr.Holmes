@@ -92,32 +92,37 @@
     }
 
     function Get_List($File_name,$Complete_name,$Name,$ImageName){
-        echo "<div class = 'Wrapper2'>";
-        echo "\n\t\t<div class = 'Data_img3'>";
-        echo "<p id = 'Const2'>RESULTS:</p>";
         $Json_file = str_replace(".txt",".json",$Complete_name);
         $Json_file2 = str_replace("{$File_name}.json",$Name,$Json_file);
-        $Reader2 = file_get_contents($Json_file2);
-        $Parser2 = json_decode($Reader2,true);
-        $Name_arr = array();
-        foreach($Parser2["List"] as $Data){
-            $link = $Data["site"];
-            array_push($Name_arr,$Data["site"]);
+        if(file_exists($Json_file2)){
+            echo "<div class = 'Wrapper2'>";
+            echo "\n\t\t<div class = 'Data_img3'>";
+            echo "<p id = 'Const2'>RESULTS:</p>";
+            $Reader2 = file_get_contents($Json_file2);
+            $Parser2 = json_decode($Reader2,true);
+            $Name_arr = array();
+            foreach($Parser2["List"] as $Data){
+                $link = $Data["site"];
+                array_push($Name_arr,$Data["site"]);
+            }
+            foreach($Name_arr as $Data  => $value){
+                $link2 = $Data["name"];
+                echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";                
+            }
+            echo "</div>";
         }
-        foreach($Name_arr as $Data  => $value){
-            $link2 = $Data["name"];
-            echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";                
+        else{
+
         }
-        echo "</div>";
     }
 
     function Get_Posts($File_name,$Folder_name,$Argument_Name){
-        echo "<center>";
-        echo "<div class = 'Wrapper2'>";
-        echo "\n\t\t<div class = 'Data_img2'>";
-        echo "<p id = 'Const2'>$Argument_Name:</p>";
         $Dir_Name = "../Reports/People/{$File_name}/Profile_pics/{$Folder_name}/";
         if(file_exists($Dir_Name)){
+            echo "<center>";
+            echo "<div class = 'Wrapper2'>";
+            echo "\n\t\t<div class = 'Data_img2'>";
+            echo "<p id = 'Const2'>$Argument_Name:</p>";
             $image = glob($Dir_Name."*.jpg");
             $details = glob($Dir_Name."*.txt");
             $geo = glob($Dir_Name."*.json");
@@ -127,17 +132,17 @@
             $n = 1;
             $n1 = 1;
             $j = 0;
-            
+                
             $profile_pic = str_replace("_Posts","",$Folder_name);
             if(getimagesize("../Reports/People/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg") == false){
-               
+                   
                 echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'Main_pics' abbr title = '$profile_pic.jpg'></a>";
-               
+                   
             }
             else{
                 echo "<a href = '../Reports/People/{$File_name}/Profile_pics/Profile_pic_$profile_pic.jpg' target = 'blank'><img src = '../Reports/People/{$File_name}/Profile_pics/Profile_pic_{$profile_pic}.jpg' id = 'Main_pics' abbr title = '$profile_pic'></a>";
             }
-
+    
             if($Folder_name == "TikTok_Posts"){
                 foreach(array_reverse($fold) as $Content => $value){
                     $b = 0;
@@ -151,7 +156,7 @@
                         echo "<a href = '$watch' target = 'blank'><img src = '{$poster}'></a>";
                     }
                     else{
-
+    
                     }
                 }
                 echo "</div>\n";
@@ -174,7 +179,7 @@
                         }                
                     }
                     else{
-
+    
                     }
                     echo "<hr>";
                     $n1 = $n1 +1 ;
@@ -200,7 +205,7 @@
                 echo "</div>";
                 echo "<div class = 'Data3'>";
                 echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
-                
+                    
                 foreach(array_reverse($fold) as $Content => $value){
                     $b = 0;
                     $data_file = glob("$value/*"."txt");
@@ -211,7 +216,7 @@
                         $img = str_replace("Post","Pic",$img);
                         $Content = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$img";
                         if(getimagesize($Content) == false){
-                            echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
+                                echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
                         }
                         else{
                             echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
@@ -250,22 +255,22 @@
                             $Latitude = $parser["Geolocation"]["Latitude"];
                             $Longitude = $parser["Geolocation"]["Longitude"];
                             echo "
-                            <div class = 'map' id='map{$g}'></div>
-                            <script>
-                            var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
-                            L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-                            attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
-                            }).addTo(map);
-        
-                            L.marker([$Latitude,$Longitude]).addTo(map)
-                            .bindPopup('Post id: {$id} is approximatley based in this Area.')
-                            .openPopup();
-                            </script>";
-                            echo "<hr>";
-                            $g = $g +1;
+                                <div class = 'map' id='map{$g}'></div>
+                                <script>
+                                var map = L.map('map{$g}').setView([$Latitude,$Longitude], 14);
+                                L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+                                attribution: '&copy; <a href= https://www.openstreetmap.org/copyright >OpenStreetMap</a> contributors'
+                                }).addTo(map);
+            
+                                L.marker([$Latitude,$Longitude]).addTo(map)
+                                .bindPopup('Post id: {$id} is approximatley based in this Area.')
+                                .openPopup();
+                                </script>";
+                                echo "<hr>";
+                                $g = $g +1;
                         }
                         else{
-    
+        
                         }
                         $n = $n + 1;
                     }
@@ -273,7 +278,6 @@
             }
         } 
         else{
-            echo "\n\t\t\t<p align = 'center' id = 'error'>NOT FIND ANY $Argument_Name FOR THIS USER</p>";
         }
         echo"</div>";
         echo "</center>";
@@ -360,6 +364,7 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<center>";
                 echo "<hr>";
                 echo "<p id = 'Const2'>TAGGED USERS:</p>";
                 echo "<div class = 'Wrapper'>";
@@ -448,6 +453,7 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<center>";
                 echo "<hr>";
                 echo "<p id = 'Const2'>TAGGED USERS:</p>";
                 echo "<div class = 'Wrapper'>";
