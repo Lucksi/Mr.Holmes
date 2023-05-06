@@ -49,7 +49,7 @@ class Downloader:
                             Ok = "False"
                         else:
                             Ok = "True"
-                    v = v+1
+                        v = v+1
                 else:
                     Ok = "True"
                 if Ok == "True":
