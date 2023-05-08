@@ -45,6 +45,7 @@
         "Added2": "DATA AGGIUNTA: {}",
         "Added3":"EVENTO AGGIUNTO: {}",
         "Choice": "INSERISCI IL TIPO\n(1)DATA\n(2)INTERVALLO DI DATE\n(3)CUSTOM",
+        "Choice2":"SELEZIONA IL TIPO\n(1)Username\t(2)PhoneNumber\n(3)Websites\t(4)Persons",
         "Date": "INSERISCI LA DATA 'YYYY-MM-DD' YYYY RICHIESTO",
         "Event": "INSERISCI L'EVENTO(1)PRIMA(2)DOPO",
         "After": "INSERISCI LA DATA INIZIALE 'YYYY-MM-DD' YYYY RICHIETO",

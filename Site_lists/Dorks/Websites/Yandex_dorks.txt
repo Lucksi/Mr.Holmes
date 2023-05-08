@@ -1,0 +1,16 @@
+[GENERAL-DORKS]:
+----------------------------------------------------------------------------------------------------------------------
+| https://yandex.com/search/?text=site:({})
+| https://yandex.com/search/?text=site:({})+mime:txt
+| https://yandex.com/search/?text=site:({})+mime:pdf
+| https://yandex.com/search/?text=site:({})+mime:log
+| https://yandex.com/search/?text=site:({})+mime:doc
+| https://yandex.com/search/?text=site:({})+mime:docx
+| https://yandex.com/search/?text=site:({})+mime:sqlite
+| https://yandex.com/search/?text=site:({})+mime:yaml
+| https://yandex.com/search/?text=site:({})+mime:json
+| https://yandex.com/search/?text=site:({})+mime:xls
+| https://yandex.com/search/?text=site:({})+mime:xlsx
+| https://yandex.com/search/?text=site:({})+mime:csv
+| https://yandex.com/search/?text=inurl:({})
+----------------------------------------------------------------------------------------------------------------------
