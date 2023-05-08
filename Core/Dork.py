@@ -28,18 +28,16 @@ class List:
         banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
-    def GoogleDorks(report,phrase,data,between,seconddata):
-        nomefile = "Site_lists/Dorks/Google_dorks.txt"
+    def GoogleDorks(report,phrase,data,DorksList,between,seconddata):
         Type = "GOOGLE"
-        Dorks.Search.Generator(Type,nomefile,report,phrase,data,between,seconddata)
+        Dorks.Search.Generator(Type,DorksList,report,phrase,data,between,seconddata)
 
     
     @staticmethod
-    def YandexDorks(report,phrase,data,between,seconddata):
+    def YandexDorks(report,phrase,data,DorksList,between,seconddata):
         Type = "YANDEX"
-        nomefile = "Site_lists/Dorks/Yandex_dorks.txt"
         phrase = phrase.replace("+","%2B")
-        Dorks.Search.Generator(Type,nomefile,report,phrase,data,between,seconddata)
+        Dorks.Search.Generator(Type,DorksList,report,phrase,data,between,seconddata)
 
 
     @staticmethod 
@@ -57,6 +55,18 @@ class List:
             os.remove(report)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        type = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Choice2", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if(type == 1 or type == 4):
+            DorksList = "Site_lists/Dorks/Usernames/Google_dorks.txt"
+            DorksList2 = "Site_lists/Dorks/Usernames/Yandex_dorks.txt"
+        elif(type == 2):
+            DorksList = "Site_lists/Dorks/Phone/Google_dorks.txt"
+            DorksList2 = "Site_lists/Dorks/Phone/Yandex_dorks.txt"
+            DorksList3 = "Site_lists/Dorks/Phone/Fingerprints.txt"
+            DorksList4 = "Site_lists/Dorks/Phone/Yandex_Fingerprints.txt"
+        elif(type == 3):
+            DorksList = "Site_lists/Dorks/Websites/Google_dorks.txt"
+            DorksList2 = "Site_lists/Dorks/Websites/Yandex_dorks.txt"
         add = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Question", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         data = ""
         while add == "" or add == 0:
@@ -113,8 +123,14 @@ class List:
         f.write(Language.Translation.Translate_Language(
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
-        List.GoogleDorks(report,phrase,data,between="None",seconddata="None")
-        List.YandexDorks(report,phrase,data,between,seconddata)
+        if type == 2:
+            List.GoogleDorks(report,phrase,data,DorksList,between="None",seconddata="None")
+            List.GoogleDorks(report,phrase,data,DorksList3,between="None",seconddata="None")
+            List.YandexDorks(report,phrase,data,DorksList2,between,seconddata)
+            List.YandexDorks(report,phrase,data,DorksList4,between,seconddata)
+        else:
+            List.GoogleDorks(report,phrase,data,DorksList,between="None",seconddata="None")
+            List.YandexDorks(report,phrase,data,DorksList2,between,seconddata)
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))
