@@ -51,9 +51,6 @@ class Search:
                     else:
                         break
                 f.close()
-                """print(Font.Color.GREEN + "[+]" +
-                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")"""
-
             else:
                 print("ERROR")
         
