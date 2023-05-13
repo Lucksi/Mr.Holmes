@@ -22,6 +22,49 @@ filename
 
 
 class Search:
+    @staticmethod
+    def InstagramResc(report, username,List,Links):
+        url = "https://www.picuki.com/search/{}".format(username)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers)
+        sleep(4)
+        try:
+            if req.status_code == 200:
+                reader = soup(req.content, "html.parser")
+                users = reader.find_all("div", class_="profile-result")
+                i = 1
+                f = open(report, "a",encoding="utf-8")
+                f.write(
+                    "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
+                for user in users:
+                    if i <= 20:
+                        usern = user.find("div",class_="result-username").text.replace("@","")
+                        link = "https://instagram.com/{}".format(usern)
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
+                            Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
+                            Font.Color.GREEN + link + Font.Color.WHITE))
+                        List.append(usern)
+                        Links.append(link)
+                        f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nLINK: {}\n".format(link))
+                        i = i+1
+                    else:
+                        break
+                f.close()
+                """print(Font.Color.GREEN + "[+]" +
+                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")"""
+
+            else:
+                print("ERROR")
+        
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass
 
     @staticmethod
     def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2):
@@ -62,21 +105,17 @@ class Search:
                     else:
                         break
                 f.close()
-                print(Font.Color.GREEN + "[+]" +
-                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")
-
+                if i == 1:
+                    Search.InstagramResc(report,username,List,Links)
             else:
-                print("ERROR")
-        
+                Search.InstagramResc(report,username,List,Links)
         except ConnectionError:
-            print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
-            pass
+            Search.InstagramResc(report, username,List,Links)
         except Exception as e:
-            print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
-            pass
+            Search.InstagramResc(report, username,List,Links)
         j = 1
+        print(Font.Color.GREEN + "[+]" +
+                    Font.Color.WHITE + "TOTAL USERNAMES FOUND")
         if len(List):
             for Names in List:
                 print(Font.Color.YELLOW +
