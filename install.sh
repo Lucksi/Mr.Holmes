@@ -398,6 +398,7 @@ function installer {
 	banner
 	printf "${BLUE}\n\nCHECKING LINUX DISTRIBUTION..."
 	sleep 2
+	Fold=${PWD##*/}
 	printf "${GREEN}\n\n[+]${WHITE}LINUX DISTRIBUTION FOUND:$DIST${GREEN}[+]"
 	printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 	read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
@@ -434,10 +435,10 @@ function installer {
 		sudo chmod +x Launcher.sh
 		cd ../
 		cd ../
-		echo "path = `pwd`">>Mr.Holmes/Configuration/Configuration.ini
+		echo "path = `pwd`">>$Fold/Configuration/Configuration.ini
 		sleep 2
 		printf "\n\nSETTING CLI INTERFACE..."
-		echo "Desktop">Mr.Holmes/Display/Display.txt
+		echo "Desktop">$Fold/Display/Display.txt
 		sleep 2
 		printf "${GREEN}\n\n[+]${WHITE}PROGRAM INSTALLED CORRECTLY${GREEN}[+]"
 		printf "${LIGHTGREEN}\n\nTHANK YOU FOR HAVE INSTALLED Mr.Holmes\n\n"
