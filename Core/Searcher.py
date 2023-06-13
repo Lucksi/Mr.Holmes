@@ -539,7 +539,6 @@ class MrHolmes:
                     print(Font.Color.BLUE + "\n[I]" +
                         Font.Color.WHITE + "TWITTER HYPOTHESIS")
                     Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
-            Encoding.Encoder.Encode(Recap1)
         else:
             pass
         if count == 1:

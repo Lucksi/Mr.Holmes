@@ -199,9 +199,6 @@ class Downloader:
                                         else:
                                             TaggedHashtag.append(
                                                 tag.replace("\n", ""))
-                                # print(text2)
-                                    # print(text2)
-                                    #n = n + 1
                             tagg = info.find_all("u")
                             for user in tagg:
                                 tagged = user.text.replace("@", "")

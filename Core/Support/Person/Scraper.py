@@ -24,28 +24,40 @@ filename
 class Search:
     @staticmethod
     def InstagramResc(report, username,List,Links):
-        url = "https://www.picuki.com/search/{}".format(username)
+        url = "https://www.pixwox.com/search/?q={}".format(username)
         req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
-                users = reader.find_all("div", class_="profile-result")
+                users = reader.find_all("div", class_="item")
                 i = 1
                 f = open(report, "a",encoding="utf-8")
                 f.write(
                     "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
                 for user in users:
                     if i <= 20:
-                        usern = user.find("div",class_="result-username").text.replace("@","")
+                        usern1 = user.find_all("div",class_="username")
+                        for name in usern1:
+                            usern = name.find("span").text.replace("@","")
+                        pic = user.find_all("div",class_="ava")
+                        for image in pic:
+                            profilepic = image.find("img",class_="lazyload")["data-src"] 
+                        name = user.find("div",class_="fullname").text
                         link = "https://instagram.com/{}".format(usern)
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
+                            Font.Color.GREEN + name + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
+                            Font.Color.GREEN + profilepic + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
                         Links.append(link)
                         f.write("\nUSER FOUND: {}".format(usern))
+                        f.write("\nFULL-NAME: {}".format(name))
+                        f.write("\nPROFILE-PIC FOUND: {}".format(profilepic))
                         f.write("\nLINK: {}\n".format(link))
                         i = i+1
                     else:
@@ -69,34 +81,37 @@ class Search:
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} INSTAGRAM RESULTS...".format(username))
-        url = "https://www.pixwox.com/search/?q={}".format(username)
+        url = "https://www.picuki.com/search/{}".format(username)
         req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
+           
+            req = requests.get(url, timeout=None, proxies=None, headers=headers)
+            sleep(4)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
-                users = reader.find_all("div", class_="item")
+                users = reader.find_all("div", class_="profile-result")
                 i = 1
                 f = open(report, "a",encoding="utf-8")
                 f.write(
                     "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
                 for user in users:
                     if i <= 20:
-                        usern1 = user.find_all("div",class_="username")
-                        for name in usern1:
-                            usern = name.find("span").text.replace("@","")
-                        name = user.find("div",class_="fullname").text
+                        usern = user.find("div",class_="result-username").text.replace("@","")
+                        pic = user.find_all("div",class_="result-ava")
+                        for image in pic:
+                            profilepic = image.find("img")["src"] 
                         link = "https://instagram.com/{}".format(usern)
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
-                            Font.Color.GREEN + name + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
+                            Font.Color.GREEN + profilepic + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
                         Links.append(link)
                         f.write("\nUSER FOUND: {}".format(usern))
-                        f.write("\nFULL-NAME: {}".format(name))
+                        f.write("\nPROFILE-PIC FOUND: {}".format(profilepic))
                         f.write("\nLINK: {}\n".format(link))
                         i = i+1
                     else:
@@ -176,6 +191,8 @@ class Search:
                     if i <= 20:
                         usern = user.find(
                             "a", class_="username").text.replace("@", "")
+                        pic = user.find("img",class_="avatar round")["src"]
+                        profilepic = "https://nitter.net" + pic
                         link = "https://twitter.com/{}".format(usern)
                         bio = user.find(
                             "div", class_="tweet-content media-body").text
@@ -187,6 +204,8 @@ class Search:
                             Font.Color.GREEN + full_name + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(
                             Font.Color.GREEN + bio + Font.Color.WHITE))
+                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
+                            Font.Color.GREEN + profilepic + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
@@ -194,6 +213,7 @@ class Search:
                         f.write("\nUSER FOUND: {}".format(usern))
                         f.write("\nFULL-NAME: {}\n".format(full_name))
                         f.write("\nBIO: {}\n".format(bio))
+                        f.write("\nPROFILE-PIC FOUND: {}".format(profilepic))
                         f.write("\nLINK: {}\n".format(link))
                         i = i+1
                     else:
