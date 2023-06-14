@@ -172,14 +172,11 @@ class Downloader:
                                 "div", class_="photo-description").text
                             if "#" in descr:
                                 count = descr.count("#")
-                                # for n in range(count):
                                 text = str(descr.split("#", 1)[1])
                                 """if " " in text or "\n" in text:
                                     text = text.split("\n",1)[-1]"""
                                 text2 = text.split("#")
                                 for tag in text2:
-                                    #print(tag + "\n")
-                                    #tag = tag.replace(" ", "")
                                     if "\n" in tag:
                                         tag = tag.split("\n", 1)[0]
                                     if " " in tag:
@@ -414,7 +411,7 @@ class Downloader:
 
     @staticmethod
     def Twitter(url, username, http_proxy, Posts, Opt, name2):
-        url = url + "/media"
+        url = url + "/search"
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
