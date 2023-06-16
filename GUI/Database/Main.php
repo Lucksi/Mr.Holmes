@@ -75,6 +75,7 @@ License: GNU General Public License v3.0-->
                 <?php require_once("../Actions/Theme_Controller.php");Cards()?>
             </div>
         </div>
+        <?php require_once ("../Actions/Theme_Controller.php");Image2()?>
         <a href = "#Footer" id = "Arrow" onclick="Active()"></a>
         <div class = "Footer" id = "Footer" name = "Footer">
             <p id = "Const">MY-CONTACTS</p>
