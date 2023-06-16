@@ -222,5 +222,33 @@
             echo "<img id = 'Main_img' src = '../Icon/Base/Logo.png'>";
         }   
     }
+
+    function Image2(){
+        $mode_file = "../Theme/Mode.json";
+        if (file_exists($mode_file)) {
+            $reader = file_get_contents($mode_file);
+            $parser = json_decode($reader,true); 
+            $color = $parser["Color"]["Background"];
+            if ($color == "Light" or $color == "Dark" ){
+                $Folder = "../Icon/Base/Companies/";
+            }
+            else {
+                $Folder = "../Icon/High-Contrast/Companies/";
+            }
+        }
+        else {
+            $Folder = "../Icon/Base/Companies/";
+        }
+        $image = glob($Folder."*.png");
+        echo "<center>
+        <div class = 'part'>
+        <p>PARTNERSHIPS</p>";
+        foreach($image as $Content => $pic){
+            $name = str_replace(".png","",$pic);
+            $name2 = str_replace($Folder,"",$name);
+            echo "<img src = '$pic' abbr title = '$name2'";
+        }
+        echo "</div></center>";   
+    }
    
 ?>

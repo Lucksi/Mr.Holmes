@@ -136,6 +136,30 @@ License: GNU General Public License v3.0*/
     border-top: 30px solid #ffffff;
 }
 
+.part {
+    margin-top: 5px;
+    margin-left: -4px;
+    display: inline-block;
+    background-color: #846e6e5e;
+    border: 3px solid black;
+    width: 100%;
+    border-radius: 20px;
+}
+
+.part p{
+    font-family: 'Courier New', Courier, monospace;
+    font-weight: bold;
+    color: #ffffff;
+    font-size: x-large;
+}
+
+.part img{
+    height: 130px;
+    width: auto;
+    border-radius: 30px;
+    border: 3px solid #ffffff;
+}
+
 #Arrow:hover {
    animation: arrow 2s infinite;
 }
@@ -186,5 +210,11 @@ License: GNU General Public License v3.0*/
 
     .languages {
         display: none;
+    }
+
+    .part img{
+        height: 90px;
+        width: auto;
+        border-radius: 30px;
     }
 }
