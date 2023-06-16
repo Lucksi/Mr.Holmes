@@ -220,10 +220,11 @@
                 echo "</div>";
                 echo "<div class = 'Data3'>";
                 echo "<p id = 'Const2'>{$Argument_Name} DATAS:</p>";
-                
+                $i = 0;
                 foreach(array_reverse($fold) as $Content => $value){
+                    $i = $i +1;
                     $b = 0;
-                    $data_file = glob("$value/*"."txt");
+                    $data_file = glob("{$value}/*"."txt");
                     if ($Folder_name == "Instagram_Posts" || $Folder_name == "Twitter_Posts"){
                         $cut_img = str_replace("$value/","",$data_file[$b]);
                         $img = str_replace(".txt",".jpg",$cut_img);
@@ -237,13 +238,12 @@
                             echo "\t\t\t<a href = '{$Content}' target = 'blank'>"."<img src = '{$Content}' id = 'pics' abbr title = 'Post N°$i'></a>";
                         }
                     }
-                    $opener = fopen($data_file[$j],"r") or die("$php_errormsg");
+                    $opener = fopen($data_file[0],"r") or die("$php_errormsg");
                     while(!feof($opener)){
                         $reader = fgets($opener);
                         echo "<p>$reader</p>";
                     }                
                     echo "<hr>";
-                    $n1 = $n1 +1 ;
                 }
                 echo "</div>";
                 if ($Folder_name == "Instagram_Posts"){
