@@ -36,6 +36,7 @@
     },
 
     "Dorks":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO CREATE DORKS THAT MAY HELP YOU ON SEARCHING INFORMATION",
         "Remove": "REMOVE OLD {}_Dorks.txt",
         "Generation": "GENERATING POSSIBLE {} DORKS LINK...",
         "Question": "WOULD YOU LIKE TO ADD MORE PARAMETERS(1)YES(2)NO?",
@@ -67,7 +68,7 @@
     "Main":{
         "Text": "[INSERT AN OPTION 'PRESS 0 TO REFRESH THE QUOTE']",
         "MobileText": "[INSERT AN OPTION]",
-         "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ENCODING/DECODING\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\t\t(12)PDF-GRAPH CONVERTER\n(5)DATABASE(GUI)\t\t(6)UPDATE\t\t\t(13)FILE-TRANSFER\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\t\t\t(14)EXIT\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT",
+        "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ENCODING/DECODING\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\t\t(12)PDF-GRAPH CONVERTER\n(5)DATABASE(GUI)\t\t(6)UPDATE\t\t\t(13)FILE-TRANSFER\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\t\t\t(14)EXIT\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT",
         "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)DATABASE(GUI)\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)DORKS-GENERATOR\n(10)PERSON-OSINT\n(11)ENCODING/DECODING\n(12)PDF-CONVERTER\n(13)FILE-TRANSFER\n(14)EXIT",
         "Alert": "ATTENTION SOME OF THE RESULTS MAY BE FALSE POSITIVES",
         "Username": "INSERT THE USERNAME",
@@ -83,6 +84,8 @@
     "Username":[
         {
             "Default":{
+                "Explanation": "THIS MODULE ALLOWS YOU TO SEARCH A USERNAME ON DIFFERENT WEBSITES AND/OR GAIN INFORMATION",
+                "ExplanationP": "THIS MODULE ALLOWS YOU TO LIST THE FIRST 20 USERS THAT MATCH WITH THE PARAMETER GIVEN IN INPUT",
                 "Not_Valid": "USERNAME FORMAT NOT VALID..SKIPPING",
                 "Nsfw": "WOULD YOU LIKE TO SCAN ON NSFW SITES?(1)YES(2)NO\n\n",
                 "Scraper": "WOULD YOU LIKE TO SCRAPE USER DATA?(1)YES(2)NO\n\n",
@@ -103,7 +106,9 @@
                 "VideoCheck": "CHECK IF {} EXIST...",
                 "VideoCheckTrue": "VIDEO EXIST SKIPPING..",
                 "VideoCheckFalse": "VIDEO DOESNT EXIST DOWNLOADING...",
-                "Success": "DOWNLOAD SUCCESSFULL"
+                "Success": "DOWNLOAD SUCCESSFULL",
+                "PostImg": "IMAGE SAVED CORRECTLY,FILE DIMENSION: {} BYTE",
+                "PostVid": "VIDEO SAVED CORRECTLY,FILE DIMENSION: {} BYTE"
             },
             
             "Instagram":{
@@ -124,8 +129,9 @@
                 "Details": "CHECKING TWEEET N {}...",
                 "Download_Full": "DOWNLOAD {} TWITTES",
                 "Download_Partial": "DOWNLOAD {} FIRST 12 TWITTES",
-                "No_Image": "NO IMAGE HAS BEEN FOUND\n",
-                "Yes_Image": "IMAGE {} FOUND\n",
+                "MediaOnly": "WOULD YOU LIKE TO DOWNLOAD ONLY MEDIA TWEETS(MEDIA TWEETS CONTAINS IMAGE OR VIDEOS)?(1)YES(2)NO",
+                "No_Image": "NO IMAGE HAS BEEN FOUND",
+                "Yes_Image": "IMAGE {} FOUND",
                 "No_Desc": "NO DESCRIPTION HAS BEEN FOUND",
                 "Protected": "THIS ACCOUNT HAS IS TWEET PROTECTED..CANNOT SCRAPE DATA"
             },
@@ -143,6 +149,7 @@
     "Website":[
         {
             "Default":{
+                "Explanation": "THIS MODULE ALLOWS YOU TO SEARCH INFORMATIONS ABOUT A DOMAIN SUCH AS ISP AND ORGANIZATION",
                 "Search": "SEARCH INFORMATION FOR: {}",
                 "ServerError": "OPS LOOKS LIKE SERVER DOES NOT RESPONDING SKIPPING...",
                 "Robots": "ROBOTS SAVED ON: {}",
@@ -180,6 +187,7 @@
     ],
        
     "Phone":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO SEARCH INFORMATION ABOUT A PHONE NUMBERS SUCH AS CARRIER",
         "Error": "NUMBER NOT FOUND...PRESS ENTER TO CONTINUE",
         "Scan": "SCANNING NUMBER: {}...",
         "Real": "THIS IS PROBABLY A REAL PHONE NUMBER",
@@ -201,6 +209,7 @@
     },
 
     "Ports":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO CONTROL OPEN PORTS REGARDING A WEBSITES ",
         "Text": "INSERT AN OPTION\n(1)SET A FROM/TO PORTS\n(2)SCANNING ALL POSSIBILE PORTS\n(3)SCANNING SPECIFIC PORTS\n(4)MAIN-MENU\n\n",
         "Host": "CHECKING PORTS OF: {}",
         "Check": "CHECKING PORT:{}",
@@ -218,6 +227,7 @@
     },
 
     "Email":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO SEARCH INFORMATIONS ABOUT EMAILS",
         "Check": "CHECKING IF {} IS A VALID EMAIL",
         "Valid": "THIS EMAIL IS VALID",
         "NotValid": "THIS EMAIL IS NOT VALID",
@@ -246,6 +256,7 @@
     "Configuration":[
         {
             "Main":{
+                "Explanation": "THIS MODULE ALLOWS YOU TO MODIFY YOUR SETTINGS IN A WAY THAT YOU LIKE THE MOST",
                 "Text":"[INSERT AN OPTION]",
                 "Options": "\n(1)MODIFY-SENDER-MAIL\t\t\t(2)MODIFY-DESTINATION-MAIL\n(3)MODIFY-PASSWORD-MAIL\t\t\t(4)MODIFY-SMTP-SERVER\n(5)MODIFY-SMTP-PORT\t\t\t(6)MODIFY-UPDATE-PASSWORD\n(7)MODIFY-UPDATE-PATH\t\t\t(8)MODIFY-API-KEY\n(9)MODIFY-PROXY-LIST-PATH\t\t(10)MODIFY-LOGS\n(11)MODIFY-DATABASE\t\t\t(12)MODIFY-LANGUAGE\n(13)MODIFY-EMAIL-SERVER-STATUS\t\t(14)MODIFY-DATE-FORMAT\n(15)MAIN-MENU",
                 "Error": "FILE NOT FOUND\n\nPRESS ENTER TO CONTINUE",
@@ -352,6 +363,7 @@
     },
 
     "Decoding":{
+        "Explanation": "THIS MODULE ALLOWS YOU DECODE/ENCODE FILES IN ORDER TO MAKE THEM DIFFICULT TO READ",
         "Folder": "INSERT THE REPORT FOLDER FOR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n\n",
         "Type": "INSERT THE REPORT TYPE\n(1){}\n(2)Recap\n\n",
         "Options": "WOULD YOU LIKE TO\n(1)ENCODE\n(2)DECODE\n\n",
@@ -359,6 +371,7 @@
     },
 
     "PDF":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO CRETE PDF FROM A GRAPH",
         "Check": "CHECKING ENCODING",
         "Template": "SELECT THE TEMPLATE TO USE\n(1)LIGHT-THEME\n(2)DARK-THEME\n(3)HIGH-CONTRAST-THEME",
         "Selected": "TEMPLATE SELECTED: {}",
@@ -368,6 +381,7 @@
     },
 
     "Transfer":{
+        "Explanation": "THIS MODULE ALLOWS YOU TO TRANSFER YOUR REPORTS DIRECTLY TO YOUR PHONE",
         "Folder": "INSERT THE REPORT FOLDER FOR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Exit\n\n",
         "Question": "WOULD YOU LIKE TO TRANSFER THIS FILE?(1)YES(2)NO\n\n",
         "Generation": "GENERATING QR-CODE...",

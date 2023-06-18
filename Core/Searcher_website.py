@@ -551,6 +551,7 @@ class Web:
     def search(username, Mode):
         os.system("cls" if os.name == "nt" else "clear")
         Web.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Website","Default","Explanation") + Font.Color.WHITE) )
         folder = "GUI/Reports/Websites/" + username + "/"
         if os.path.isdir(folder):
             shutil.rmtree(folder)

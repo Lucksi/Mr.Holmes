@@ -25,6 +25,7 @@ class Menu:
     @staticmethod
     def Main(username,Mode):
         Menu.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Decoding","Explanation","None") + Font.Color.WHITE))
         folder = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                         filename, "Decoding", "Folder", "None").format(Font.Color.GREEN + username + Font.Color.WHITE)  + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if folder == 1:

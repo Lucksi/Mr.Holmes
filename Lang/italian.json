@@ -36,6 +36,7 @@
     },
 
     "Dorks":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI CREARE DELLE DORKS CHE POTREBBERO AIUTARTI NEL CERCARE INFORMAZIONI",
         "Remove": "RIMOZIONE DEL VECCHIO {}_Dorks.txt",
         "Generation": "GENERAZIONE DI POSSIBILI {} DORKS LINK",
         "Question": "VUOI AGGIUNGERE DEI PARAMETRI AGGIUNTIVI(1)SI(2)NO?",
@@ -83,6 +84,8 @@
     "Username":[
         {
             "Default":{
+                "Explanation": "QUESTO MODULO TI PERMETTE DI CERCARE UN USERNAME SU DIVERSE PIATTAFORME E/OPPURE OTTENERE INFORMAZIONI",
+                "ExplanationP": "QUESTO MODULO TI PERMETTE DI ELENCARE I PRIMI 20 PROFILI CHE COMBACIANO CON IL PARAMETRO DATO IN INPUT",
                 "Not_Valid": "USERNAME FORMAT NON VALIDO..SKIPPING",
                 "Nsfw": "VUOI EFFETTUARE UNO SCAN NEI SITI NSFW?(1)SI(2)NO\n\n",
                 "Scraper": "VUOI EFFETUARE UNO SCRAPE DEI DATI?(1)SI(2)NO\n\n",
@@ -103,7 +106,9 @@
                 "VideoCheck": "CONTROLLO SE {} ESISTE...",
                 "VideoCheckTrue": "IL VIDEO ESISTE SKIPPO..",
                 "VideoCheckFalse": "IL VIDEO NON ESISTE ESEGUO IL DOWNLOAD...",
-                "Success": "DOWNLOAD EFFETTUATO CON SUCCESSO"
+                "Success": "DOWNLOAD EFFETTUATO CON SUCCESSO",
+                "PostImg": "IMMAGINE SALVATA CORRETTAMENTE, DIMENSIONE DEL FILE: {} BYTE",
+                "PostVid": "VIDEO SALVATO CORRETTAMENTE, DIMENSIONE DEL FILE: {} BYTE "
             },
         
             "Instagram":{
@@ -116,7 +121,7 @@
                 "Private": "SEMBRA CHE QUESTO PROFILO SIA PRIVATO IMPOSSIBILE EFFETTUARE LO SCRAPING",
                 "GeoData": "PRENDO I GEODATA DEL POST {} (ATTENZIONE LE COORDINATE POTREBBERO NON ESSERE PRECISE AL 100%)",
                 "NoGeoData": "IMPOSSIBILE PRENDERE I GEODATA",
-                "FoldFound": "SONO GIA STATI TROVATI DEI POST VUOI CANCELLARLI(SE SI TENGONO I NUOVI POST VERRANNO AGGIUNTI)?(1)YES(2)NO"
+                "FoldFound": "SONO GIA STATI TROVATI DEI POST VUOI CANCELLARLI(SE SI TENGONO I NUOVI POST VERRANNO AGGIUNTI)?(1)SI(2)NO"
             },
 
             "Twitter":{
@@ -124,8 +129,9 @@
                 "Details": "CERCO IL TWEEET N {}...",
                 "Download_Full": "DOWNLOAD {} TWITTES",
                 "Download_Partial": "DOWNLOAD {} PRIMI 12 TWITTES",
-                "No_Image": "NESSUNA IMMAGINE TROVATA\n",
-                "Yes_Image": "IMMAGINE {} TROVATA\n",
+                "MediaOnly": "VUOI SCARICARE SOLO I MEDIA TWEET?(MEDIA TWEET CONTENGONO IMMAGINI O VIDEO)?(1)SI(2)NO",
+                "No_Image": "NESSUNA IMMAGINE TROVATA",
+                "Yes_Image": "IMMAGINE {} TROVATA",
                 "No_Desc": "NESSUNA DESCRIZIONE TROVATA",
                 "Protected": "QUESTO ACCOUNT HA I TWEET PROTETTI IMPOSSIBILE EFFETTUARE LO SCRAPING"
             },
@@ -134,7 +140,7 @@
                 "Download_Full": "DOWNLOAD {} TIKTOKS",
                 "Download_Partial": "DOWNLOAD {} PRIMI 12 TIKTOK",
                 "Download":"DOWNLOAD VIDEO NUMERO {}",
-                "FoldFound": "SONO GIA STATI TROVATI DEI VIDEO VUOI CANCELLARLI(SE SI TENGONO I NUOVI VIDEO VERRANNO AGGIUNTI)?(1)YES(2)NO",
+                "FoldFound": "SONO GIA STATI TROVATI DEI VIDEO VUOI CANCELLARLI(SE SI TENGONO I NUOVI VIDEO VERRANNO AGGIUNTI)?(1)SI(2)NO",
                 "NoSong": "NON E STATA TROVATA ALCUNA CANZONE"
             }
         }
@@ -143,6 +149,7 @@
     "Website":[
         {
             "Default":{
+                "Explanation": "QUESTO MODULO TI PERMETTE DI CERCARE INFORMAZIONI SU UN DOMINIO COME L'ISP E L'ORGANIZAZZIONE",
                 "Search": "RICERCA DI INFORMAZIONI PER: {}",
                 "ServerError": "OPS SEMBRA CHE IL SERVER NON STIA RISPONDENDO...",
                 "Robots": "ROBOTS SALVATO IN: {}",
@@ -180,6 +187,7 @@
     ],
 
     "Phone":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI CERCARE INFORMAZIONI SUI NUMERI DI TELEFONO COME AD ESEMPIO L'OPERATORE",
         "Error": "NUMERO NON TROVATO...PREMI INVIO PER CONTINUARE",
         "Scan": "SCANNING DEL NUMERO: {}...",
         "Real": "QUESTO E PROBABILMENTE UN VERO NUMERO DI TELEFONO",
@@ -201,6 +209,7 @@
     },
 
     "Ports":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI EFFETTUARE UNA SCANSIONE E DI INDIVIDUARE LE PORTE APERTE DI UN SITO WEB",
         "Text": "INSERISCI UNA OPZIONE\n(1)SETTA UN DA PORTA/A PORTA\n(2)SCANNING DI TUTTE LE POSSIBILI PORTE\n(3)SCANNING DI PORTE SPECIFICHE\n(4)MAIN-MENU\n\n",
         "Host": "CONTROLLO PORTE DI: {}",
         "Check": "CONTROLLO LA PORTA:{}",
@@ -218,6 +227,7 @@
     },
 
     "Email":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI CERCARE INFORMAZIONI SU UNA EMAIL",
         "Check": "CONTROLLO SE {} E UNA MAIL VALIDA",
         "Valid": "QUESTA EMAIL E VALIDA",
         "NotValid": "QUESTA EMAIL NON E VALIDA",
@@ -246,6 +256,7 @@
     "Configuration":[
         {
             "Main":{
+                "Explanation": "QUESTO MODULO TI PERMETTE DI MODIFICARE LE IMPOSTAZIONI A TUO PIACIMENTO",
                 "Text": "[INSERISCI UN OPZIONE]",
                 "Options": "\n(1)MODIFICA-SENDER-MAIL\t\t\t(2)MODIFICA-DESTINATION-MAIL\n(3)MODIFICA-PASSWORD-MAIL\t\t(4)MODIFICA-SMTP-SERVER\n(5)MODIFICA-SMTP-PORT\t\t\t(6)MODIFICA-UPDATE-PASSWORD\n(7)MODIFICA-UPDATE-PATH\t\t\t(8)MODIFICA-API-KEY\n(9)MODIFICA-PROXY-LIST-PATH\t\t(10)MODIFICA-LOGS\n(11)MODIFICA-DATABASE\t\t\t(12)MODIFICA-LINGUA\n(13)MODIFICA-EMAIL-SERVER-STATUS\t(14)MODIFICA-FORMATO-ORARIO\n(15)MAIN-MENU",
                 "Error": "FILE NON TROVATO\n\nPREMI INVIO PER CONTINUARE",
@@ -352,6 +363,7 @@
     },
 
     "Decoding":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI CODIFICARE O DECODIFICARE UN FILE PER RENDERLO ILLEGGIBILE",
         "Folder": "INSERISCI LA CARTELLA DEL REPORT PER: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n\n",
         "Type": "INSERISCI IL TIPO DI REPORT\n(1){}\n(2)Recap\n\n",
         "Options": "COSA VUOI EFFETTUARE?\n(1)ENCODE\n(2)DECODE\n\n",
@@ -359,6 +371,7 @@
     },
 
     "PDF":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI CONVERTIRE DEI GRAFICI IN PDF",
         "Check": "CONTROLLO L' ENCODING",
         "Template": "SELEZIONA IL TEMPLATE DA USARE\n(1)LIGHT-THEME\n(2)DARK-THEME\n(3)HIGH-CONTRAST-THEME",
         "Selected": "TEMPLATE SELEZIONATO: {}",
@@ -368,6 +381,7 @@
     },
 
     "Transfer":{
+        "Explanation": "QUESTO MODULO TI PERMETTE DI TRASFERIRE I TUOI REPORT DIRETTAMENTE SUL CELLULARE",
         "Folder": "INSERISCI LA CARTELLA DEL REPORT PER: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Exit\n\n",
         "Question": "VUOI EFFETTUARE UN TRASFERIMENTO FILE?(1)SI(2)NO\n\n",
         "Generation": "GENERAZIONE DEL QR-CODE...",

@@ -40,6 +40,7 @@
     },
 
     "Dorks":{
+        "Explanation":"CE MODULE VOUS PERMET DE CREER DES DORKS QUI POURRAIENT VOUS AIDER A RECHERCHER DES INFORMATIONS",
         "Remove": "SUPPRESSION DE L'ANCIEN FICHIER {}_Dorks.txt",
         "Generation": "GÉNERER POSSIBLE {} DORKS LINK...",
         "Question": "VOULEZ VOUS ENTRER PLUS PARAMÊTRES(1)OUI(2)NO?",
@@ -87,6 +88,8 @@
     "Username":[
         {
             "Default":{
+                "Explanation": "CE MODULE VOUS PERMET DE RECHERCHER UN NOM D'UTILISATEUR SUR DIFFERENTES PLATEFORMES ET/OU D'OBTENIR DES INFORMATIONS",
+                "ExplanationP": "CE MODULE VOUS PERMET DE LISTEZ LES 20 PREMIERS PROFILS QUI CORRESPONDENT AU PARAMÈTRE DONNE DANS L'ENTREE",
                 "Not_Valid": "USERNAME FORMAT N'EST PAS VALIDE",
                 "Nsfw": "VOULEZ VOUS FAIRE UN SCAN SUR DES SITES NSFW?(1)OUI(2)NO\n\n",
                 "Scraper": "VOULEZ VOUS SCRAPER LES DONNÉES?(1)OUI(2)NO\n\n",
@@ -107,7 +110,9 @@
                 "VideoCheck": "VÉRIFIER SI {} ÉXISTE...",
                 "VideoCheckTrue": "VIDEO DÉTÉ CTÉE..",
                 "VideoCheckFalse": "VIDEO NON ÉXISTANTE...",
-                "Success": "TÉLÉCHARGEMENT RÉUSSI!"
+                "Success": "TÉLÉCHARGEMENT RÉUSSI!",
+                "PostImg": "IMAGE ENREGISTRÉ AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE",
+                "PostVid": "VIDEO ENREGISTRÉ AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE"
             },
 
             "Instagram":{
@@ -128,10 +133,11 @@
                 "Details": "CHERCHER TWEET N {}...",
                 "Download_Full": "TÉLÉCHARGE {} TWEET",
                 "Download_Partial": "TÉLÉCHARGE {} 12 PREMIERS TWEETS",
-                "No_Image": "IMAGE NON ÉXISTANT\n",
-                "Yes_Image": "IMAGE {} TROUVÉE\n",
-                "No_Desc": "PAS DE DESCRIPTION TROUVÉE",
-                "Protected": "CET USER A DES TWEETS SÉCURISÉS..IMPOSSIBLE DE FAIRE UNE DATA SCRAPE"
+                "MediaOnly": "VOULEZ-VOUS TELECHARGER UNIQUEMENT LES TWEETS MEDIA?(LES TWEETS MEDIA CONTIENNENT DES IMAGES OU DES VIDEOS)?(1)OUI(2)NO",
+                "No_Image": "IMAGE NON ÉXISTANT",
+                "Yes_Image": "IMAGE {} TROUVÉE",
+                "No_Desc": "PAS DE DESCRIPTION TROUVEE",
+                "Protected": "CET USER A DES TWEETS SÉCURISES..IMPOSSIBLE DE FAIRE UNE DATA SCRAPE"
             },
 
             "TikTok":{
@@ -147,6 +153,7 @@
     "Website":[
         {
             "Default":{
+                "Explanation": "CE MODULE VOUS PERMET DE TROUVER DES INFORMATIONS SUR UN DOMAINE TEL QUE ISP ET L'ORGANISATION",
                 "Search": "RECHERCHER INFORMATION POUR: {}",
                 "ServerError": "OUPS! LE SERVEUR NE RÉPOND PAS...",
                 "Robots": "ROBOTS ENREGISTRÉ DANS: {}",
@@ -184,6 +191,7 @@
     ],
 
     "Phone":{
+        "Explanation": "CE MODULE VOUS PERMET DE RECHERCHER DES INFORMATIONS SUR DES NUMEROS DE TELEPHONE TELS QUE L'OPERATEUR",
         "Error": "NUMÉRO N'EST PAS TROUVÉ...ENTREZ ENVOI POUR CONTINUER",
         "Scan": "SCANNING NUMÉRO: {}...",
         "Real": "C'EST PROBABLEMENT UN VRAI NUMÉRO ",
@@ -205,6 +213,7 @@
     },
 
     "Ports":{
+        "Explanation": "CE MODULE VOUS PERMET DE SCANNER ET D'IDENTIFIER LES PORTS OUVERTS D'UN SITE WEB",
         "Text": "ENTREZ UNE OPTION\n(1)SET A FROM/TO PORTS\n(2)SCANNING TOUTES POSSIBILITÉES PORTS\n(3)SCANNING SPECIFIC PORTS\n(4)MAIN-MENU\n\n",
         "Host": "VÉRIFICATION DES PORTS POUR: {}",
         "Check": "VERIFICATION DU PORT:{}",
@@ -222,6 +231,7 @@
     },
 
     "Email":{
+        "Explanation":"CE MODULE VOUS PERMET DE RECHERCHER DES INFORMATIONS SUR UN EMAIL",
         "Check": "VÉRIFIER SI {} EST UNE VALID EMAIL",
         "Valid": "CETTE EMAIL EST VALIDE",
         "NotValid": "CETTE EMAIL N'A PAS VALIDE",
@@ -250,6 +260,7 @@
     "Configuration":[
         {
             "Main":{
+                "Explanation": "CE MODULE VOUS PERMET DE CHANGER LES PARAMETRES A VOTRE MESURE",
                 "Text":"[ENTREZ UNE OPTION]",
                 "Options": "\n(1)MODIFIEE-SENDER-MAIL\t\t\t(2)MODIFIEE-DESTINATION-MAIL\n(3)MODIFIEE-PASSWORD-MAIL\t\t(4)MODIFIEE-SMTP-SERVER\n(5)MODIFIEE-SMTP-PORT\t\t\t(6)MODIFIEE-UPDATE-PASSWORD\n(7)MODIFIEE-UPDATE-PATH\t\t\t(8)MODIFIEE-API-KEY\n(9)MODIFIEE-PROXY-LIST-PATH\t\t(10)MODIFIEE-LOGS\n(11)MODIFIEE-DATABASE\t\t\t(12)MODIFIEE-LANG\n(13)MODIFIEE EMAIL-SERVER-STATUS\t(14)MODIFIEE LE FORMAT-DE-DATE\n(15)MAIN-MENU ",
                 "Error": "FICHIER N'EST PAS TROUVÉ\n\nAPPUYER SUR ENTRÉE POUR CONTINUER",
@@ -356,6 +367,7 @@
     },
 
     "Decoding":{
+        "Explanation": "CE MODULE PERMET D'ENCODER OU DE DECODER UNE FILE POUR LE RENDRE ILLISIBLE",
         "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n\n",
         "Type": "ENTREZ LE TYPE DE RAPPORT \n(1){}\n(2)Recap\n\n",
         "Options": "VOULEZ VOUS?\n(1)ENCODER\n(2)DÉCODER\n\n",
@@ -363,6 +375,7 @@
     },
 
     "PDF":{
+        "Explanation": "CE MODULE VOUS PERMET DE CONVERTIR DES GRAPHIQUES EN PDF",
         "Check": "CONTRÔLE DE L'ENCODING",
         "Template": "CHOISISSEZ LE TEMPLATE QUE VOUS VOULEZ UTILISER\n(1)LIGHT-THEME\n(2)DARK-THEME\n(3)HIGH-CONTRAST-THEME",
         "Selected": "TEMPLATE CHOISI: {}",
@@ -372,6 +385,7 @@
     },
 
     "Transfer":{
+        "Explanation":"CE MODULE VOUS PERMET DE TRANSFERER VOS RAPPORTS DIRECTEMENT SUR VOTRE TELEPHONE MOBILE",
         "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Exit\n\n",
         "Question": "VOULEZ VOUS TRANSFÉRER CE FICHIER?(1)OUI(2)NO\n\n",
         "Generation": "GÉNÉRATION DU QR-CODE...",

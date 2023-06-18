@@ -38,6 +38,7 @@ class info:
         f = open(image,"rb")
         reader = f.read()
         f.close()
+        Get_Posts.Downloader.checkFile(image,"Image")
 
     @staticmethod
     def Get_Url(username, Name):

@@ -31,6 +31,7 @@ class Ports:
     @staticmethod
     def Main(username, Mode):
         Ports.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Ports","Explanation","None") + Font.Color.WHITE) )
         now = datetime.now()
         dataformat = DateFormat.Get.Format()
         dt_string = now.strftime(dataformat)

@@ -173,6 +173,7 @@ class Mail_search:
     @staticmethod
     def Search(username, Mode):
         Mail_search.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Email","Explanation","None") + Font.Color.WHITE) )
         now = datetime.now()
         dataformat = DateFormat.Get.Format()
         dt_string = now.strftime(dataformat)

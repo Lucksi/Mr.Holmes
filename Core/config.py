@@ -514,6 +514,7 @@ class Config:
         if Conf == True:
             while True:
                 Config.Banner(Mode)
+                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Explanation") + Font.Color.WHITE) )
                 option = Language.Translation.Translate_Language(
                     filename, "Configuration", "Main", "Options")
                 options = str(option)

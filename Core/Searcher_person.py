@@ -73,6 +73,7 @@ class info:
         PostLocations = []
         PostGpsCoordinates = []
         info.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Username","Default","ExplanationP") + Font.Color.WHITE) )
         subject = "PERSON"
         now = datetime.now()
         dataformat = DateFormat.Get.Format()

@@ -127,6 +127,7 @@ class Menu:
                         langfile, "PDF", "WinError", "None"))
         else:
             Menu.Banner(Mode)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(langfile,"PDF","Explanation","None") + Font.Color.WHITE) )
             username2 = username.replace(" ","_")
             encoded = "GUI/Graphs/{}/encode.mh".format(username2)
             filename = "GUI/Graphs/{}/{}.mh".format(username2,username)

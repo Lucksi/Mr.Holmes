@@ -25,13 +25,16 @@ LangFile
 class Downloader:
 
     @staticmethod
-    def checkFile(filename):
+    def checkFile(filename,type):
         with open(filename,"rb") as check:
             content = check.read()
             if len(content):
-                print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "IMAGE SAVED CORRECTLY WITH LENGHT OF {} BYTE".format(len(content)))
+                if type == "Image":
+                    print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile,"Username","Default","PostImg").format(len(content)))
+                else:
+                     print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile,"Username","Default","PostVid").format(len(content)))
             else:
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG")
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile,"Default","Error","None"))
     
     @staticmethod
     def InsertToFile(json_file, Tagged, Link, Type):
@@ -149,7 +152,7 @@ class Downloader:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
-                            Downloader.checkFile(image)
+                            Downloader.checkFile(image,"Image")
                             sleep(3)
                         i = i+1
                     except ConnectionError:
@@ -422,7 +425,6 @@ class Downloader:
 
     @staticmethod
     def Twitter(url, username, http_proxy, Posts, Opt, name2):
-        url = url + "/search"
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -437,6 +439,11 @@ class Downloader:
             if os.path.isdir(folder):
                 shutil.rmtree(folder)
             os.mkdir(folder)
+            medias = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile,"Username","Twitter","MediaOnly") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if medias == 1:
+                url = url + "/media"
+            else:
+                url = url + "/search"
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
             if "No items found" in openurl.text:
@@ -458,7 +465,7 @@ class Downloader:
                         post = info.find(
                             "a", class_="still-image")["href"]
                         print(
-                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
+                            Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                         profile_pic = url.replace(
                             username+"/search", "") + post.replace("/pic/", "pic/")
                         image = folder + "/Pic_{}.jpg".format(str(i))
@@ -468,7 +475,7 @@ class Downloader:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
-                            Downloader.checkFile(image)
+                            Downloader.checkFile(image,"Image")
                             j = j+1
                             sleep(5)
                         except ConnectionError:
@@ -497,7 +504,7 @@ class Downloader:
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "DOWNLOAD SUCCESSFULL..")
                                     j = j+1
-                                    Downloader.checkFile(image)
+                                    Downloader.checkFile(image,"Image")
                                     sleep(5)
                                 except ConnectionError:
                                     print(Font.Color.RED + "[!]" +
@@ -744,7 +751,7 @@ class Downloader:
                         open(filename, "wb").write(getter.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
-                        Downloader.checkFile(filename)
+                        Downloader.checkFile(filename,"Video")
                         print(Font.Color.BLUE +
                               "[I]" + Font.Color.WHITE + "DONWLOAD IMAGE POSTER")
                         sleep(2)
@@ -753,7 +760,7 @@ class Downloader:
                         open(reportImage, "wb").write(getter2.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
-                        Downloader.checkFile(reportImage)
+                        Downloader.checkFile(reportImage,"Image")
                         sleep(2)
                         details = reader2.find("video").text
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +

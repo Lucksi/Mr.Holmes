@@ -148,6 +148,7 @@ class MrHolmes:
         Tags = []
         Writable = True
         MrHolmes.Banner(Mode)
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Username","Default","Explanation") + Font.Color.WHITE) )
         subject = "USERNAME"
         found = 0
         Percent = 0
