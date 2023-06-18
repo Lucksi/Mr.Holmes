@@ -331,7 +331,7 @@ write:François
 
 # PARTNERSHIP:
 <p align = "center">
-<a href = "https://cybernitewatch.com/"> <img src = "../Icon/Companies/cybernite_dark.png" height = "150px"></a>
+<a href = "https://cybernitewatch.com/"> <img src = "../Icon/Companies/cybernitewatch.png" height = "150px"></a>
 </p>
 
 <hr>
