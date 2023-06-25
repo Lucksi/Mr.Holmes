@@ -454,9 +454,11 @@ class info:
                 Private = "This account&#x27;s tweets are protected."
                 text = openurl.text
                 if Private in text:
+                  Private = "TRUE"
                   IsPrivate = "True"
                   TwitterParams.append(IsPrivate)
                 else:
+                  Private = "FALSE"
                   IsPrivate = "False"
                   TwitterParams.append(IsPrivate)
                 Flag = True
@@ -490,9 +492,10 @@ class info:
                         "span", class_="profile-stat-num").text
                     print(Font.Color.YELLOW +
                           "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(followed))
-                    print(Font.Color.YELLOW +
+                print(Font.Color.YELLOW +
                           "[v]" + Font.Color.WHITE + "PROFILE-PIC: " + profile_pic)
-
+                print(Font.Color.YELLOW +
+                          "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: " + Private)
                 download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
@@ -510,6 +513,7 @@ class info:
                 f.write("POSTS: {}\r\n".format(posts))
                 f.write("FOLLOWERS: {}\r\n".format(follower))
                 f.write("FOLLOWING: {}\r\n".format(followed))
+                f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
                 f.close()
 
         except ConnectionError:
