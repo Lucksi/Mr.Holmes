@@ -461,8 +461,11 @@ class Web:
                         f.write("\nPHONE NUMBER DATA:\n")
                         f.close()
                         code = 0
-                        Numbers.Phony.Number(
-                            num, report2, code, Mode, Type, username)
+                        try:
+                            Numbers.Phony.Number(
+                                num, report2, code, Mode, Type, username)
+                        except Exception as e:
+                            print("SOMETHING WENT WRONG")
                     else:
                         pass
                 else:

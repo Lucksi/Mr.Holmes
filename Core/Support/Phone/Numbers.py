@@ -57,6 +57,7 @@ class Phony:
         except Exception as e:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                 filename, "Phone", "NoGeo", "None") + str(e))
+            pass
 
     @staticmethod
     def Number(num, report, code, Mode, Type, username):
@@ -129,7 +130,11 @@ class Phony:
                     zone = location
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "Area", "None"))
-                Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
+                try:
+                    Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
+                except Exception as e:
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG")
+                    pass
             else:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Phone", "NoArea", "None"))

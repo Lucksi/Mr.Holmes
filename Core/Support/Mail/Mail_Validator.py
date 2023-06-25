@@ -29,9 +29,20 @@ class Validator:
                   f.write("Is-Valid")
                   f.close()
             else:
-                  print(Font.Color.RED +
-                        "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "NotValid", "None"))
-                  f = open(report, "a")
-                  f.write("\n\nTHIS EMAIL IS NOT VALID")
-                  f.close()
-                  inp = input(Language.Translation.Translate_Language(filename, "Default", "Continue", "None"))
+                  simbols = r'/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;'
+                  if Regex.fullmatch(simbols, username):
+                        print(Font.Color.YELLOW + "[v]" +
+                              Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Valid", "None"))
+                        f = open(report, "a")
+                        f.write("\n\nTHIS EMAIL IS VALID")
+                        f.close
+                        f = open("Temp/E-Mail/Code.txt", "w")
+                        f.write("Is-Valid")
+                        f.close()
+                  else:
+                        print(Font.Color.RED +
+                              "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "NotValid", "None"))
+                        f = open(report, "a")
+                        f.write("\n\nTHIS EMAIL IS NOT VALID")
+                        f.close()
+                        inp = input(Language.Translation.Translate_Language(filename, "Default", "Continue", "None"))

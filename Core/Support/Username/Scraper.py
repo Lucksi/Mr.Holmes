@@ -300,7 +300,7 @@ class info:
             Blocked = 'Profile is private.'.format(username)
             text = openurl.text
             if Blocked in text:
-
+                Private = "TRUE"
                 url = "https://www.pixwox.com/it/profile/{}/".format(username)
                 openurl2 = requests.get(url, proxies=http_proxy,
                                                       headers=headers, timeout=None)
@@ -331,6 +331,8 @@ class info:
                       "[v]" + Font.Color.WHITE + "FOLLOWED: {}".format(followed.replace("\n","")))
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: {}".format(Private))
                 download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if download == 1:
@@ -347,6 +349,7 @@ class info:
                 InstagramParams.append(followers)
                 InstagramParams.append(posts)
             else:
+                Private = "FALSE"
                 IsPrivate1 = "False"
                 InstagramParams.append(IsPrivate1)
                 Flag = True
@@ -376,6 +379,8 @@ class info:
                       "[v]" + Font.Color.WHITE + "FOLLOWED: {}".format(followed))
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: {}".format(Private))
 
                 f = open(report, "a", encoding="utf-8")
                 f.write("\nINSTAGRAM DATA:\n")
@@ -385,6 +390,7 @@ class info:
                 f.write("POSTS: {}\r\n".format(posts))
                 f.write("FOLLOWED: {}\r\n".format(followed))
                 f.write("FOLLOWERS: {}\r\n".format(followers))
+                f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
                 f.close()
 
                 download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(

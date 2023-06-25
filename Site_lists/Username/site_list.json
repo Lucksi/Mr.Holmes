@@ -624,11 +624,12 @@
         },
 
         "Medium": {
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "PAGE NOT FOUND",
             "name": "Medium",
             "main": "medium.com",
-            "user": "https://{}.medium.com",
-            "user2": "https://{}.medium.com",
+            "user": "https://medium.com/@{}",
+            "user2": "https://medium.com/@{}",
             "exception": [" ",".","_"],
             "Scrapable": "False",
             "Tag": "Blog"
