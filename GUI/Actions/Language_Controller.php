@@ -72,7 +72,6 @@
             $LangFile = "../Script/Language/{$Language}.js";
             if($Language == "Browser"){
                 $Lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
-                echo "<script>alert('$Lang')</script>";
                 if($Lang == "it"){
                     Get_Screen_size($Modality,"Italian");
                 }
