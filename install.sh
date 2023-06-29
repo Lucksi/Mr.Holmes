@@ -31,11 +31,11 @@ function banner {
 }
 
 function Preference {
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)BROWSER-LANGUAGE\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ "$Language" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)BROWSER-LANGUAGE\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	done
 	if [ $Language == 1 ];
@@ -62,6 +62,14 @@ function Preference {
 	}
 }'>GUI/Language/Language.json
 		mode="FRANÇAIS"
+	elif [ $Language == 4 ];
+	then
+		echo '{
+	"Language":{
+		"Preference":"Browser"
+	}
+}'>GUI/Language/Language.json
+		mode="BROWSER"
 	fi
 	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}$mode\n"
 	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT THEME\n(1)LIGHT\n(2)DARK\n(3)HIGH-CONTRAST\n\n"
@@ -359,7 +367,7 @@ echo '{
 }'>GUI/Theme/Mode.json
 echo '{
     "Language":{
-        "Preference":"English"
+        "Preference":"Browser"
     }
 }'>GUI/Language/Language.json
 	echo ";THIS FILE HAS BEEN GENERATE BY MR.HOLMES INSTALLER">Configuration/Configuration.ini
