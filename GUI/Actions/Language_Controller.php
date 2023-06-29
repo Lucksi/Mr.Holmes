@@ -70,18 +70,34 @@
             $Parser = json_decode($reader,true);
             $Language = $Parser["Language"]["Preference"];
             $LangFile = "../Script/Language/{$Language}.js";
-            if (file_exists($LangFile)){
-                $Lang = $Language;
+            if($Language == "Browser"){
+                $Lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+                echo "<script>alert('$Lang')</script>";
+                if($Lang == "it"){
+                    Get_Screen_size($Modality,"Italian");
+                }
+                else if($Lang == "fr"){
+                    Get_Screen_size($Modality,"French");
+                }
+                else{
+                    Get_Screen_size($Modality,"English");
+                }
                 Get_Screen_size($Modality,$Lang);
             }
-            else {
-                $Lang = "English";
-                Get_Screen_size($Modality,$Lang);
-                echo "
-                <script>
-                    alert('LANGUAGE NOT FOUND SET ENGLISH BY DEFAULT...');
-                </script>";
-                echo "\n";
+            else{
+                if (file_exists($LangFile)){
+                    $Lang = $Language;
+                    Get_Screen_size($Modality,$Lang);
+                }
+                else {
+                    $Lang = "English";
+                    Get_Screen_size($Modality,$Lang);
+                    echo "
+                    <script>
+                        alert('LANGUAGE NOT FOUND SET ENGLISH BY DEFAULT...');
+                    </script>";
+                    echo "\n";
+                }
             }
         }  
         else {
