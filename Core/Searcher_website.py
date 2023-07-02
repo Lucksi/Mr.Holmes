@@ -380,7 +380,10 @@ class Web:
                 if "street1" in  final["WhoisRecord"]["registrant"]:
                     street = "STREET: " + \
                         final["WhoisRecord"]["registrant"]["street1"].replace("\n"," ")
-                    street2 = str(final["WhoisRecord"]["registrant"]["street1"].replace("\n"," ").split(".com",1)[1])
+                    if ".com" in street:
+                        street2 = str(final["WhoisRecord"]["registrant"]["street1"].replace("\n"," ").split(".com",1)[1])
+                    else:
+                        street2 = str(final["WhoisRecord"]["registrant"]["street1"].replace("\n"," "))
                 else:
                     street = "STREET: NONE"
                 if "email" in final["WhoisRecord"]["registrant"]:
