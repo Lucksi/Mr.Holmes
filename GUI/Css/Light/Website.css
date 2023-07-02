@@ -8,11 +8,14 @@ License: GNU General Public License v3.0*/
 .Data {
     display:inline-block;
     justify-content: left;
-    width: fit-content !important;
+    width: 750px !important;
     border: 3px solid;
     border-color: #000000;
     background-color: #5983e663;
     border-radius: 10px;
+    overflow:hidden;
+    word-wrap: normal;
+    height:fit-content;
 }
 
 .Data p {
@@ -47,7 +50,7 @@ License: GNU General Public License v3.0*/
     border-color: #000000;
     background-color: #5983e663;
     border-radius: 10px;
-    height: 605px;
+    height: 475px;
     width: 500px;
 }
 
