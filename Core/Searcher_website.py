@@ -368,18 +368,37 @@ class Web:
                     final["WhoisRecord"]["registrant"]["country"]
                 nationCode = "NATION-CODE: " + \
                     final["WhoisRecord"]["registrant"]["countryCode"]
-                state = "STATE: " + final["WhoisRecord"]["registrant"]["state"]
-                city = "CITY: " + final["WhoisRecord"]["registrant"]["city"]
-                street = "STREET: " + \
-                    final["WhoisRecord"]["registrant"]["street1"]
-                email = "EMAIL: " + final["WhoisRecord"]["registrant"]["email"]
-                telephone = "TELEPHONE: " + \
-                    final["WhoisRecord"]["registrant"]["telephone"]
-                telephone2 = final["WhoisRecord"]["registrant"]["telephone"]
-                street2 = str(final["WhoisRecord"]["registrant"]["street1"])
-                city2 = str(final["WhoisRecord"]["registrant"]["city"])
-                link = "https://www.google.com/maps/place/{} {}".format(
+                if "state"  in final["WhoisRecord"]["registrant"]:
+                    state = "STATE: " + final["WhoisRecord"]["registrant"]["state"]
+                else:
+                    state = "STATE: NONE"
+                if "city" in final["WhoisRecord"]["registrant"]:
+                    city = "CITY: " + final["WhoisRecord"]["registrant"]["city"]
+                    city2 = str(final["WhoisRecord"]["registrant"]["city"])
+                else:
+                    city = "CITY: NONE"
+                if "street1" in  final["WhoisRecord"]["registrant"]:
+                    street = "STREET: " + \
+                        final["WhoisRecord"]["registrant"]["street1"].replace("\n"," ")
+                    street2 = str(final["WhoisRecord"]["registrant"]["street1"].replace("\n"," ").split(".com",1)[1])
+                else:
+                    street = "STREET: NONE"
+                if "email" in final["WhoisRecord"]["registrant"]:
+                    email = "EMAIL: " + final["WhoisRecord"]["registrant"]["email"]
+                else:
+                    email = "EMAIL: NONE"
+                if "telephone" in final["WhoisRecord"]["registrant"]:
+                    telephone = "TELEPHONE: " + \
+                        final["WhoisRecord"]["registrant"]["telephone"]
+                    telephone2 = final["WhoisRecord"]["registrant"]["telephone"]
+                else:
+                    telephone = "TELEPHONE: NONE"
+                    telephone2 = ""
+                if "street1" in final["WhoisRecord"]["registrant"] and "city" in final["WhoisRecord"]["registrant"]:                
+                    link = "https://www.google.com/maps/place/{} {}".format(
                     street2, city2)
+                else:
+                    link = "None"
                 sleep(2)
                 print(Font.Color.YELLOW + "\n[v]" + Font.Color.WHITE + created)
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + modified)
