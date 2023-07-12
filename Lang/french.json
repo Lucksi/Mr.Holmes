@@ -169,6 +169,7 @@
                 "Geo": "OBTENTION DES GÉODATA DE LOCALISATION..",
                 "NoGeo": "OUPS! IMPOSSIBLE D'OBTENIR DES GÉODONNÉES DE LOCALISATION",
                 "Phone": "GENERATION LINK POUR: {} NUMÉRO DE TÉLÉPHONE: {}",
+                "Email": "GENERATION LINK POUR :{} EMAIL: {}",
                 "NoResponse": "OUPS! SERVEUR NE REPOND PAS..."
             },
 
@@ -177,6 +178,7 @@
                 "Whois": "VOULEZ VOUS FAIRE UNE WHOIS LOOKUP?(1)OUI(2)NO\n\n",
                 "Repu": "VOULEZ VOUS FAIRE UNE RÉPUTATION SCAN?(1)OUI(2)NO\n\n",
                 "Robots": "VOULEZ VOUS DOWNLOAD ROBOTS.TXT?(1)OUI(2)NO\n\n",
+                "Soc": "VOULEZ VOUS FAIRE UNE SOCIAL MEDIA SCAN?(1)OUI(2)NO\n\n",
                 "Ports": "VOULEZ VOUS FAIRE UN PORT SCAN?(1)OUI(2)NO\n\n"
             },
 
@@ -185,6 +187,8 @@
                 "KeyNoFound": "API KEY N'EST PAS TROUVÉ FAIRE CLASSICAL WHOIS",
                 "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NO",
                 "PhoneNotFound": "NUMÉRO N'EST PAS TROUVÉ...",
+                "EmailFound": "EMAIL DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NO",
+                "EmailNotFound": "EMAIL N'EST PAS TROUVÉ...",
                 "Error": "OUPS! NE TROUVE AUCUNE INFORMATION. EXECUTE CLASSICAL WHOIS "
             }
         }

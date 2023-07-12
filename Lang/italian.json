@@ -165,6 +165,7 @@
                 "Geo": "OTTENENDO I DATI DI GEOLOCALIZZAZIONE...",
                 "NoGeo": "OPS QUALCOSA E ANDATO STORTO IMPOSSIBILE OTTENERE GEOLOCALIZZAZIONE",
                 "Phone": "GENERO I LINK PER IL NUMERO DI {}: {}",
+                "Email": "GENERO I LINK PER L'EMAIL DI {}: {}",
                 "NoRespone": "OPS SEMBRA CHE IL SERVER NON STIA RISPONDENDO..."
             },
 
@@ -172,6 +173,7 @@
                 "Traceroute": "VUOI ESEGUIRE UN TRACEROUTE SCAN?(1)SI(2)NO\n\n",
                 "Whois": "VUOI ESEGUIRE UN WHOIS LOOKUP?(1)SI(2)NO\n\n",
                 "Repu": "VUOI ESEGUIRE UN REPUTATION SCAN?(1)SI(2)NO\n\n",
+                "Soc": "VUOI ESEGUIRE UNA RICERCA SUI SOCIAL?(1)SI(2)NO\n\n",
                 "Robots": "VUOI ESEGUIRE UN DOWNLOAD DEL ROBOTS.TXT?(1)SI(2)NO\n\n",
                 "Ports": "VUOI ESEGUIRE UN PORT SCAN?(1)SI(2)NO\n\n"
             },
@@ -181,6 +183,8 @@
                 "KeyNoFound": "API KEY NON TROVATO ESEGUO IL CLASSICO WHOIS LOOKUP",
                 "PhoneFound": "NUMERO TELEFONICO TROVATO: {} VUOI ESEGUIRE UNO SCAN?(1)SI(2)NO",
                 "PhoneNotFound": "NUMERO TELEFONICO NON TROVATO...",
+                "EmailFound": "EMAIL TROVATA: {} VUOI ESEGUIRE UNO SCAN?(1)SI(2)NO",
+                "EmailNotFound": "EMAIL NON TROVATA...",
                 "Error": "OPS SEMBRA CHE ALCUNE INFORMAZIONI NON SIANO DISPONIBILI ESEGUO IL CLASSICO WHOIS "
             }
         }

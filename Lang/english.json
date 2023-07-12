@@ -165,15 +165,17 @@
                 "Geo": "GETTING LOCATION GEODATA...",
                 "NoGeo": "OPS SOMETHING WENT WRONG IMPOSSIBLE GETTING LOCATION GEODATA",
                 "Phone": "GENERATING LINK FOR: {} PHONE NUMBER: {}",
+                "Email": "GENERATING LINK FOR: {} EMAIL: {}",
                 "NoResponse": "OPS LOOKS LIKE SERVER IS NOT RESPONDING..."
             },
 
             "Questions":{
-                "Traceroute": "WOULD YOU LIKE TO EXECUTE A TRACEROUTE SCAN?(1)SI(2)NO\n\n",
-                "Whois": "WOULD YOU LIKE TO PERFORM A WHOIS LOOKUP?(1)SI(2)NO\n\n",
-                "Repu": "WOULD YOU LIKE TO EXECUTE A REPUTATION SCAN?(1)SI(2)NO\n\n",
-                "Robots": "WOULD YOU LIKE TO DOWNLOAD ROBOTS.TXT?(1)SI(2)NO\n\n",
-                "Ports": "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)SI(2)NO\n\n"
+                "Traceroute": "WOULD YOU LIKE TO EXECUTE A TRACEROUTE SCAN?(1)YES(2)NO\n\n",
+                "Whois": "WOULD YOU LIKE TO PERFORM A WHOIS LOOKUP?(1)YES(2)NO\n\n",
+                "Repu": "WOULD YOU LIKE TO EXECUTE A REPUTATION SCAN?(1)YES(2)NO\n\n",
+                "Soc": "WOULD YOU LIKE TO EXECUTE A SCAN ON SOCIAL MEDIA??(1)YES(2)NO\n\n",
+                "Robots": "WOULD YOU LIKE TO DOWNLOAD ROBOTS.TXT?(1)YES(2)NO\n\n",
+                "Ports": "WOULD YOU LIKE TO PERFORM A PORT SCAN?(1)YES(2)NO\n\n"
             },
 
             "Parameters":{
@@ -181,6 +183,8 @@
                 "KeyNoFound": "API KEY NOT FOUND DOING CLASSICAL WHOIS",
                 "PhoneFound": "PHONE NUMBER FOUND: {} WOULD YOU LIKE TO EXECUTE A SCAN?(1)SI(2)NO",
                 "PhoneNotFound": "PHONE NUMBER NOT FOUND...",
+                "EmailFound": "EMAIL FOUND: {} WOULD YOU LIKE TO EXECUTE A SCAN?(1)SI(2)NO",
+                "EmailNotFound": "EMAIL NOT FOUND...",
                 "Error": "OPS LOOKS LIKE SOME INFORMATION ARE NOT AVAIABLE DOING CLASSICAL WHOIS "
             }
         }
