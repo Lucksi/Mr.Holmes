@@ -19,6 +19,17 @@
             "url2": "https://whosenumber.info/{}",
             "Scrapable": "False",
             "Tag": "Generic"
+        },
+
+        "SpamCalls":{
+            "Error": "Message",
+            "text": "User reports for the phone number are not (no longer) available.",
+            "name": "SpamCalls",
+            "main": "spamcalls.net",
+            "url": "https://spamcalls.net/en/number/{}",
+            "url2": "https://spamcalls.net/en/number/{}",
+            "Scrapable": "False",
+            "Tag": "Generic"
         }
     }
 ]
