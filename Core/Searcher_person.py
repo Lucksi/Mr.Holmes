@@ -143,9 +143,9 @@ class info:
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
         Scraper.Search.Instagram(report, username, http_proxy, InstagramParams,
-                                 PostLocations, PostGpsCoordinates, imagefold, username2)
+                                 PostLocations, PostGpsCoordinates, imagefold, username2,"People")
         Scraper.Search.Twitter(report, username, http_proxy, TwitterParams,
-                               imagefold, username2)
+                               imagefold, username2,"People")
         Scraper.Search.TikTok(
             report, username, http_proxy, imagefold, username2)
         if PostGpsCoordinates == [] and PostLocations == []:

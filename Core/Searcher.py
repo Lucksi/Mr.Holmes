@@ -42,7 +42,12 @@ class MrHolmes:
                                  PostLocations, PostGpsCoordinates, "Usernames", username)
         Scraper.info.Twitter(report, username, http_proxy, TwitterParams,
                                "Usernames", username)
-        Scraper.info.TikTok(
+        Scraper.info.TikTok(report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Github(
+            report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.GitLab(
             report, username, http_proxy, "Usernames", username)
     @staticmethod
     def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags):

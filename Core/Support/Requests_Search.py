@@ -45,7 +45,7 @@ class Search:
                       Language.Translation.Translate_Language(filename, "Default", "NotFound", "None").format(subject, username))
             else:
                 print(Font.Color.BLUE + "[N]" +
-                      Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+                      Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None") + searcher.status_code)
         elif error == "Message":
             text = sites[data1]["text"]
             if text in searcher.text:

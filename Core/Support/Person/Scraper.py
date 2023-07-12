@@ -76,7 +76,7 @@ class Search:
             pass
 
     @staticmethod
-    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2):
+    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -133,7 +133,13 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/Insta_Link.json".format(username2)
+            if fold == "People":
+                json_file = "GUI/Reports/People/{}/Insta_Link.json".format(username2)
+            else:
+                if username2 != "None":
+                    json_file = "GUI/Reports/{}/{}/InstaName_Link.json".format(fold,username2)
+                else:
+                    json_file = "GUI/Reports/{}/{}/Insta_Link.json".format(fold,username)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -152,26 +158,27 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
-                            Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if opt == 1:
-                check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+            if fold == "People":
+                opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
                                 Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                if check not in List:
-                    pass
-                else:
-                    if os.path.isdir(imagefold):
+                if opt == 1:
+                    check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+                                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if check not in List:
                         pass
                     else:
-                        os.mkdir(imagefold)
-                    Scraper.info.Instagram(report, check, http_proxy, InstagramParams,
-                                        PostLocations, PostGpsCoordinates, "People", username2)
+                        if os.path.isdir(imagefold):
+                            pass
+                        else:
+                            os.mkdir(imagefold)
+                        Scraper.info.Instagram(report, check, http_proxy, InstagramParams,
+                                            PostLocations, PostGpsCoordinates, "People", username2)
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
 
     @staticmethod
-    def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2):
+    def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2,fold):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -238,7 +245,13 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/Twitter_Link.json".format(username2)
+            if fold == "People":
+                json_file = "GUI/Reports/People/{}/Twitter_Link.json".format(username2)
+            else:
+                if username2 != "None":
+                    json_file = "GUI/Reports/{}/{}/TwitterName_Link.json".format(fold,username2)
+                else:
+                    json_file = "GUI/Reports/{}/{}/Twitter_Link.json".format(fold,username)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -257,20 +270,21 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
-                            Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if opt == 1:
-                check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
-                                  Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                if check not in List:
-                    pass
-                else:
-                    if os.path.isdir(imagefold):
+            if fold == "People":
+                opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
+                                Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if opt == 1:
+                    check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+                                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if check not in List:
                         pass
                     else:
-                        os.mkdir(imagefold)
-                    Scraper.info.Twitter(report, check, http_proxy, TwitterParams,
-                                         "People", username2)
+                        if os.path.isdir(imagefold):
+                            pass
+                        else:
+                            os.mkdir(imagefold)
+                        Scraper.info.Twitter(report, check, http_proxy, TwitterParams,
+                                            "People", username2)
         else:
             print(print(Font.Color.RED +
                   "\n[!]" + Font.Color.WHITE + "NO USER HAS BEEN FOUND"))

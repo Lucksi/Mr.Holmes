@@ -12,10 +12,12 @@ from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import FileTransfer
 from Core.Support.Phone import Numbers
+from Core import E_Mail as Mail
 from Core.Support import Proxies
 from Core.Support import Requests_Search
 from Core.Support import Clear
 from Core.Support.Websites import Scanner
+from Core.Support.Person import Scraper
 from Core.Support import Dorks
 from Core.Support import Logs
 from Core.Support import Banner_Selector as banner
@@ -35,6 +37,37 @@ Type = "Web"
 
 
 class Web:
+
+    @staticmethod
+    def Profiles(username,report):
+        print(Font.Color.WHITE + "----------------------------------------------------------INSTAGRAM------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILES THAT CONTAINS: {}".format(username))
+        username_2 = username.split(".", 1)[0]
+        Scraper.Search.Instagram(report, username, "None", "None", "None", "None", "None", "None","Websites")
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILE FOR: {}".format(username_2))
+        sleep(5)
+        Scraper.Search.Instagram(report, username_2, "None", "None", "None", "None", "None", username,"Websites")
+        print(Font.Color.WHITE + "---------------------------------------------------------TWITTER---------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES THAT CONTAINS: {}".format(username))
+        Scraper.Search.Twitter(report, username, "None", "None", "None","None","Websites")
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES FOR: {}".format(username_2))
+        sleep(5)
+        Scraper.Search.Twitter(report, username_2, "None", "None", "None",username,"Websites")
+        print("-------------------------------------------------------------------------------------------------------------------------------------")
+        choice = int(input(
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            Web.Robots(username, report)
+        else:
+            choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                Web.Ports(username, report)
+            else:
+                choice = int(input(
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                Web.trace(username, report)
+
+
 
     @staticmethod
     def Ports(username, report):
@@ -153,19 +186,24 @@ class Web:
                     f.write(site1+"\n")
             f.close()
             choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Soc") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.Robots(username, report)
+                    Web.Profiles(username, report)
             else:
                 choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.Ports(username, report)
+                    Web.Robots(username, report)
                 else:
                     choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.trace(username, report)
+                        Web.Ports(username, report)
+                    else:
+                        choice = int(input(
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        if choice == 1:
+                            Web.trace(username, report)
 
     @staticmethod
     def Robots(username, report):
@@ -258,7 +296,7 @@ class Web:
         f.close()
 
     @staticmethod
-    def google_dork(username, number, num):
+    def google_dork(username, number, num, email, email2):
         report = "GUI/Reports/Websites/Dorks/{}_dorks.txt".format(username)
         if os.path.isfile(report):
             os.remove(report)
@@ -277,11 +315,28 @@ class Web:
             f.close()
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Website", "Default", "Phone").format(username, num))
-            phonen = "Site_lists/Websites/phoneNumbers_dork.txt"
+            phonen = "Site_lists/Websites/ExtraDorks.txt"
             f = open(phonen, "r")
             for sites in f:
                 site = sites.rstrip("\n")
                 site = site.replace("{}", num)
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
+                f = open(report, "a")
+                f.write(site + "\n")
+                f.close()
+                sleep(2)
+            f.close()
+        if email == True:
+            f = open(report, "a")
+            f.write("\nGENERATING LINK FOR {} EMAIL {}...\n".format(
+                username, email2))
+            f.close()
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Website", "Default", "Email").format(username, email2))
+            f = open(phonen, "r")
+            for sites in f:
+                site = sites.rstrip("\n")
+                site = site.replace("{}", email2)
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
                 f = open(report, "a")
                 f.write(site + "\n")
@@ -297,19 +352,24 @@ class Web:
             Web.Reputation(username, report)
         else:
             choice = int(input(
-                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Soc") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.Robots(username, report)
+                    Web.Profiles(username, report)
             else:
                 choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.Ports(username, report)
+                    Web.Robots(username, report)
                 else:
                     choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.trace(username, report)
+                        Web.Ports(username, report)
+                    else:
+                        choice = int(input(
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        if choice == 1:
+                            Web.trace(username, report)
 
     @staticmethod
     def yandex_dork(username, report):
@@ -339,11 +399,15 @@ class Web:
                 f.close()
                 num = None
                 number = False
+                em = None
+                email2 = None
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Website", "Default", "NoWhois"))
                 num = None
                 number = False
+                email = None
+                email2 = None
         else:
             try:
                 print(Font.Color.GREEN + "[+]" +
@@ -388,8 +452,10 @@ class Web:
                     street = "STREET: NONE"
                 if "email" in final["WhoisRecord"]["registrant"]:
                     email = "EMAIL: " + final["WhoisRecord"]["registrant"]["email"]
+                    email2 = final["WhoisRecord"]["registrant"]["email"]
                 else:
                     email = "EMAIL: NONE"
+                    email2 = ""
                 if "telephone" in final["WhoisRecord"]["registrant"]:
                     telephone = "TELEPHONE: " + \
                         final["WhoisRecord"]["registrant"]["telephone"]
@@ -473,7 +539,7 @@ class Web:
                     sc = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneFound").format(
                         num) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if sc == 1:
-                        folder = folder = "GUI/Reports/Websites/{}/{}".format(
+                        folder = "GUI/Reports/Websites/{}/{}".format(
                             username, num)
                         if os.path.exists(folder):
                             shutil.rmtree(folder)
@@ -494,10 +560,31 @@ class Web:
                     print(Font.Color.RED +
                           "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "PhoneNotFound"))
                     number = False
+                if email2 != "":
+                    email = True
+                    sc = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "EmailFound").format(
+                        email2) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if sc == 1:
+                        folder = folder = "GUI/Reports/Websites/{}/{}".format(
+                                username, email2)
+                        os.mkdir(folder)
+                        report2 = folder + "/{}.txt".format(email2)
+                        try:
+                            Mail.Mail_search.Lookup(email2,report2)
+                        except Exception as e:
+                                print("SOMETHING WENT WRONG")
+                    else:
+                        pass
+                else:
+                    print(Font.Color.RED +
+                          "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "EmailNotFound"))
+                    email = False
             except Exception as e:
                 print(str(e))
                 num = None
                 number = False
+                email = False
+                email2 = None
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Website", "Parameters", "Error"))
                 command = ("whois " + username)
@@ -550,7 +637,7 @@ class Web:
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            Web.google_dork(username, number, num)
+            Web.google_dork(username, number, num,email,email2)
         else:
             choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -558,19 +645,24 @@ class Web:
                 Web.Reputation(username, report)
             else:
                 choice = int(input(
-                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Soc") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if choice == 1:
-                    Web.Robots(username, report)
+                    Web.Profiles(username, report)
                 else:
                     choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.Ports(username, report)
+                        Web.Robots(username, report)
                     else:
                         choice = int(input(
-                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                         if choice == 1:
-                            Web.trace(username, report)
+                            Web.Ports(username, report)
+                        else:
+                            choice = int(input(
+                                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            if choice == 1:
+                                Web.trace(username, report)
 
     @staticmethod
     def search(username, Mode):
@@ -668,10 +760,12 @@ class Web:
         else:
             num = None
             number = False
+            email = None
+            email2 = False
             choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if choice == 1:
-                Web.google_dork(username, number, num)
+                Web.google_dork(username, number, num,email,email2)
             else:
                 choice = int(input(
                     Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Repu") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -679,19 +773,24 @@ class Web:
                     Web.Reputation(username, report)
                 else:
                     choice = int(input(
-                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                        Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Soc") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     if choice == 1:
-                        Web.Robots(username, report)
+                        Web.Profiles(username, report)
                     else:
                         choice = int(input(
-                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                         if choice == 1:
-                            Web.Ports(username, report)
+                            Web.Robots(username, report)
                         else:
                             choice = int(input(
-                                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Ports") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                             if choice == 1:
-                                Web.trace(username, report)
+                                Web.Ports(username, report)
+                            else:
+                                choice = int(input(
+                                    Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Traceroute") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                                if choice == 1:
+                                    Web.trace(username, report)
 
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
