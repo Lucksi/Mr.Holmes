@@ -12,6 +12,18 @@
         $PoPups = "../Language/Messages.json";
         $reader = file_get_contents($PoPups);
         $decoder = json_decode($reader,true);
+        if($Language == "Browser"){
+            $Lang = substr($_SERVER['HTTP_ACCEPT_LANGUAGE'],0,2);
+            if($Lang == "it"){
+                $Language = "Italian";
+            }
+            else if($Lang == "fr"){
+                $Language = "French";
+            }
+            else{
+                $Language = "English";
+            }
+        }
         $Message = $decoder["{$Type}"][0]["{$Language}"]["{$Param}"];
         return $Message;
     }
