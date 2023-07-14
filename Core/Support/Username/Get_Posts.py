@@ -442,8 +442,10 @@ class Downloader:
             medias = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile,"Username","Twitter","MediaOnly") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if medias == 1:
                 url = url + "/media"
+                param = "/media"
             else:
                 url = url + "/search"
+                param = "/search"
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
             if "No items found" in openurl.text:
@@ -467,7 +469,7 @@ class Downloader:
                         print(
                             Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                         profile_pic = url.replace(
-                            username+"/search", "") + post.replace("/pic/", "pic/")
+                            username+ param, "") + post.replace("/pic/", "pic/")
                         image = folder + "/Pic_{}.jpg".format(str(i))
                         getter = requests.get(
                             profile_pic, headers=headers, allow_redirects=False)
@@ -495,7 +497,7 @@ class Downloader:
                                     Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Yes_Image").format(str(j)))
                                 post = data.find("img")["src"]
                                 profile_pic = url.replace(
-                                    username + "/search", "") + post.replace("/pic/", "pic/")
+                                    username + param, "") + post.replace("/pic/", "pic/")
                                 image = folder + "/Pic_{}.jpg".format(str(i))
                                 getter = requests.get(
                                     profile_pic, headers=headers, allow_redirects=False)
