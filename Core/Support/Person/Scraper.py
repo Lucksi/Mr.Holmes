@@ -23,7 +23,7 @@ filename
 
 class Search:
     @staticmethod
-    def InstagramResc(report, username,List,Links):
+    def InstagramResc(report, username,List,Links,Pics):
         url = "https://www.pixwox.com/search/?q={}".format(username)
         req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
@@ -42,7 +42,8 @@ class Search:
                             usern = name.find("span").text.replace("@","")
                         pic = user.find_all("div",class_="ava")
                         for image in pic:
-                            profilepic = image.find("img",class_="lazyload")["data-src"] 
+                            profilepic = image.find("img",class_="lazyload")["data-src"]
+                            Pics.append(profilepic) 
                         name = user.find("div",class_="fullname").text
                         link = "https://instagram.com/{}".format(usern)
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
@@ -79,6 +80,7 @@ class Search:
     def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
         List = []
         Links = []
+        Pics = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} INSTAGRAM RESULTS...".format(username))
         url = "https://www.picuki.com/search/{}".format(username)
@@ -100,7 +102,8 @@ class Search:
                         usern = user.find("div",class_="result-username").text.replace("@","")
                         pic = user.find_all("div",class_="result-ava")
                         for image in pic:
-                            profilepic = image.find("img")["src"] 
+                            profilepic = image.find("img")["src"]
+                            Pics.append(profilepic) 
                         link = "https://instagram.com/{}".format(usern)
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
                             Font.Color.GREEN + usern + Font.Color.WHITE))
@@ -118,13 +121,13 @@ class Search:
                         break
                 f.close()
                 if i == 1:
-                    Search.InstagramResc(report,username,List,Links)
+                    Search.InstagramResc(report,username,List,Links,Pics)
             else:
-                Search.InstagramResc(report,username,List,Links)
+                Search.InstagramResc(report,username,List,Links,Pics)
         except ConnectionError:
-            Search.InstagramResc(report, username,List,Links)
+            Search.InstagramResc(report, username,List,Links,Pics)
         except Exception as e:
-            Search.InstagramResc(report, username,List,Links)
+            Search.InstagramResc(report, username,List,Links,Pics)
         j = 1
         print(Font.Color.GREEN + "[+]" +
                     Font.Color.WHITE + "TOTAL USERNAMES FOUND")
@@ -143,20 +146,32 @@ class Search:
             f = open(json_file, "w")
             f.write('''{
                         "List":[
-
                         ]
                     }''')
             f.close()
 
-            for link in Links:
+            """for link in Links:
                 data = {
                     "site": "{}".format(link)
+                    #"image": "{}".format(Pics)
                 }
                 with open(json_file, 'r+') as file:
                     file_data = json.load(file)
                     file_data["List"].append(data)
                     file.seek(0)
+                    json.dump(file_data, file, indent=4)"""
+            i = 0
+            for image in Pics:
+                data2 = {
+                    "site": "{}".format(Links[i]),
+                    "image": "{}".format(image)
+                }
+                with open(json_file, 'r+') as file:
+                    file_data = json.load(file)
+                    file_data["List"].append(data2)
+                    file.seek(0)
                     json.dump(file_data, file, indent=4)
+                i = i +1
             
             if fold == "People":
                 opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
@@ -181,6 +196,7 @@ class Search:
     def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2,fold):
         List = []
         Links = []
+        Pics = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TWITTER RESULTS...".format(username))
         url = "https://nitter.net/search?f=users&q={}".format(username)
@@ -200,6 +216,7 @@ class Search:
                             "a", class_="username").text.replace("@", "")
                         pic = user.find("img",class_="avatar round")["src"]
                         profilepic = "https://nitter.net" + pic
+                        Pics.append(profilepic)
                         link = "https://twitter.com/{}".format(usern)
                         bio = user.find(
                             "div", class_="tweet-content media-body").text
@@ -260,7 +277,7 @@ class Search:
                     }''')
             f.close()
 
-            for link in Links:
+            """for link in Links:
                 data = {
                     "site": "{}".format(link)
                 }
@@ -268,7 +285,19 @@ class Search:
                     file_data = json.load(file)
                     file_data["List"].append(data)
                     file.seek(0)
+                    json.dump(file_data, file, indent=4)"""
+            i = 0
+            for image in Pics:
+                data2 = {
+                    "site": "{}".format(Links[i]),
+                    "image": "{}".format(image)
+                }
+                with open(json_file, 'r+') as file:
+                    file_data = json.load(file)
+                    file_data["List"].append(data2)
+                    file.seek(0)
                     json.dump(file_data, file, indent=4)
+                i = i +1
             
             if fold == "People":
                 opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
