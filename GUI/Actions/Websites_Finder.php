@@ -12,6 +12,28 @@
         return $Message;
     }
 
+    function Get_List($File_name,$Complete_name,$Name,$ImageName,$extension,$Arg){
+        $Json_file = str_replace($extension,".json",$Complete_name);
+        $Json_file2 = str_replace("{$File_name}.json",$Name,$Json_file);
+        if(file_exists($Json_file2)){
+            echo "<div class = 'Wrapper2'>";
+            echo "\n\t\t<div class = 'Data_img3'>";
+            echo "<p id = 'Const2'>$Arg :</p>";
+            $Reader2 = file_get_contents($Json_file2);
+            $Parser2 = json_decode($Reader2,true);
+            foreach($Parser2["List"] as $Data){
+                $link = $Data["site"];
+                $image = $Data["image"];
+                echo "<a href = '$link' target = blank><img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";
+            }
+            echo "</div>";
+        }
+        else{
+
+        }
+    }
+
+
     function Maps_Generator(){
         global $File_name;
         echo "<div class = 'Geo'>";
@@ -58,36 +80,6 @@
         }
     }
 
-    function Get_List($File_name,$Complete_name){
-        echo "<div class = 'Wrapper2'>";
-        echo "\n\t\t<div class = 'Data_img3'>";
-        echo "<p id = 'Const2'>ENTITIES:</p>";
-        $Json_file = str_replace(".txt",".json",$Complete_name);
-        $Json_file2 = str_replace("{$File_name}.json","Name.json",$Json_file);
-        $Reader2 = file_get_contents($Json_file2);
-        $Parser2 = json_decode($Reader2,true);
-        $Reader = file_get_contents($Json_file);
-        $Parser = json_decode($Reader,true);
-        $Name_arr = array();
-        $Image_arr = array();
-        $Placeholder = array();
-        foreach($Parser["List"] as $Data){
-            $link = $Data["site"];
-            array_push($Name_arr,$Data["site"]);
-        }
-        foreach($Parser2["Names"] as $Data){
-            $link2 = $Data["name"];
-            array_push($Placeholder,$link2);
-            $image =  "../Icon/Entities/Web.png";
-            array_push($Image_arr,$image);
-        }
-        foreach($Name_arr as $Data  => $value){
-                $link2 = $Data["name"];
-                echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '{$Image_arr[$Data]}'abbr title = '{$Placeholder[$Data]}'></a>";                
-            }
-        echo "</div>";
-    }
-    
     function Checker() {
         global $File_name;   
         if ($File_name == ""){
@@ -106,6 +98,10 @@
                 <script>
                 alert('$Message');
                 </script>";
+                Get_List($File_name,$Complete_name,"Insta_Link.json","Instagram.png",".txt","DOMAIN RESULTS ON INSTAGRAM");
+                Get_List($File_name,$Complete_name,"InstaName_Link.json","Instagram.png",".txt","NAME RESULTS ON INSTAGRAM");
+                Get_List($File_name,$Complete_name,"Twitter_Link.json","Twitter.png",".txt","DOMAIN RESULTS ON TWITTER");
+                Get_List($File_name,$Complete_name,"TwitterName_Link.json","Twitter.png",".txt","NAME RESULTS ON TWITTER");
                 echo "<p id = 'Const'>WEBSITE DATA</p>";
                 echo "<div class = 'Data'>";
                 echo "<p id = 'Const'>REPORT:</p>";
@@ -130,6 +126,10 @@
                 <script>
                 alert('$Message');
                 </script>";
+                Get_List($File_name,$Complete_name2,"Insta_Link.json","Instagram.png",".mh","DOMAIN RESULTS ON INSTAGRAM");
+                Get_List($File_name,$Complete_name2,"InstaName_Link.json","Instagram.png",".mh","NAME RESULTS ON INSTAGRAM");
+                Get_List($File_name,$Complete_name2,"Twitter_Link.json","Twitter.png",".mh","DOMAIN RESULTS ON TWITTER");
+                Get_List($File_name,$Complete_name2,"TwitterName_Link.json","Twitter.png",".mh","NAME RESULTS ON TWITTER");
                 echo "<p id = 'Const'>WEBSITE DATA</p>";
                 echo "<div class = 'Data'>";
                 echo "<p id = 'Const'>REPORT:</p>";
