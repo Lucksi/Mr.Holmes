@@ -12,6 +12,18 @@
             "Tag": "Social, Photo, Video, Chatting"
         },
 
+        "Threads":{
+            "Error": "Message",
+            "text": "<title>Threads</title>",
+            "name": "Threads",
+            "main": "threads.net",
+            "user": "https://threads.net/@{}",
+            "user2": "https://threads.net/@{}",
+            "exception": [" "],
+            "Scrapable": "False",
+            "Tag": "Social, Photo, Video, Chatting"
+        },
+
         "GitHub":{
             "Error": "Status-Code",
             "name": "GitHub",
