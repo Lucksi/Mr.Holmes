@@ -23,7 +23,6 @@
             $Parser2 = json_decode($Reader2,true);
             foreach($Parser2["List"] as $Data){
                 $link = $Data["site"];
-                $image = $Data["image"];
                 echo "<a href = '$link' target = blank><img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";
             }
             echo "</div>";
