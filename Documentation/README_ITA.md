@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="200" height="200" src="../Icon/Mr.Holmes.png">
+  <img width="200" height="200" src="../Icon/Banner.png">
 </p>
 
 <p align = "center">
