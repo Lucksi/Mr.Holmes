@@ -395,7 +395,7 @@
         "Explanation": "THIS MODULE ALLOWS YOU TO TRANSFER YOUR REPORTS DIRECTLY TO YOUR PHONE",
         "Folder": "INSERT THE REPORT FOLDER FOR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Maps\n(9)Graphs\t\t(10)Exit\n\n",
         "Question": "WOULD YOU LIKE TO TRANSFER THIS FILE?(1)YES(2)NO\n\n",
-        "Wan": "WOULD YOU LIKE TO ENABLE OVER WAN SERVICE?(1)YES(2)NO\n\n",
+        "Wan": "WOULD YOU LIKE TO ENABLE OVER WAN SERVICE(YOU CAN SHARE THE FILE OUTSIDE YOUR NETWORK)?(1)YES(2)NO\n\n",
         "Pwd": "WOULD YOU LIKE TO SET A PASS-CODE FOR ACCESS THE FILE TRANSFER?(1)YES(2)NO\n\n",
         "PwdIns": "INSERT YOUR PASS-CODE MIN 8 CHARACTERS\n\n",
         "Generation": "GENERATING QR-CODE...",
