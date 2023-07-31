@@ -1,0 +1,84 @@
+/*ORIGINAL CREATOR: Luca Garofalo (Lucksi)
+AUTHOR: Luca Garofalo (Lucksi)
+Copyright (C) 2023 Lucksi <lukege287@gmail.com>
+License: GNU General Public License v3.0*/
+
+body{
+    background-color: #1a2b34;                
+}
+.Bolder{
+    font-size: 20px;
+    font-weight:bold;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top:30px
+}
+#Main {
+    margin-top:none;
+    font-weight:bold;
+    color: white;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size:23px;
+    margin-top:-5px;
+    margin-left:-5px;
+}
+button{
+    border: 3px solid black;
+    background-color: #ff4500;
+    height: 40px;
+    width: fit-content;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 20px;
+    font-weight: bold;
+    color: #f0f8ff;
+}
+button:hover{
+    animation:click 2s infinite;
+}
+.Content{
+    margin-top:100px;
+}
+img{
+    margin-top:-50px; 
+    height:80px;
+    width:80px;
+}
+#pass{
+    margin-top:20px;
+}
+input{
+    margin-top:10px;
+    height:32px;
+    width:450px;
+    border:3px solid black;
+    margin-left:-55px;
+    font-size:20px;
+}
+#pass button{
+    display:inline-block;
+    position: absolute;
+    height:40px;
+    margin-top:10px;
+}
+::placeholder{
+    font-size:20px;
+    color:black;
+    font-weight: bold;
+}
+@keyframes click {
+    0%{color: #f0f8ff; background-color: #ff4500;}
+    50%{color: #000000; background-color: #f0f8ff;}
+    100%{color: #f0f8ff; background-color: #ff4500;}
+}
+@media only screen and (min-width: 200px) and (max-width: 711px)  {
+    input{
+        width:250px;
+        margin-left: -80px;
+    }
+    #pass button{
+        display:inline-block;
+        position: absolute;
+        margin-top:10px;
+    }
+    
+}
