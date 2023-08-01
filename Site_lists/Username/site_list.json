@@ -1372,7 +1372,7 @@
 
         "Mastodon":{
             "Error": "Status-Code",
-            "name": "Masotodn",
+            "name": "Mastodon",
             "main": "mastodon.social",
             "user": "https://mastodon.social/@{}",
             "user2": "https://mastodon.social/@{}",
