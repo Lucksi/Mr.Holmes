@@ -51,6 +51,12 @@ class Menu:
             fold = "PDF"
             secondFold = "Exception"
         elif folder == 8:
+            fold = "Maps"
+            secondFold = "True"
+        elif folder == 9:
+            fold = "Graphs"
+            secondFold = "True"
+        elif folder == 8:
             inp = input(Language.Translation.Translate_Language(
                         filename, "Configuration", "Main", "Exit"))
             holmes.Main.Menu(Mode)
@@ -70,7 +76,10 @@ class Menu:
             report = username
             name2 = username
         if secondFold == "True":
-            Report = "GUI/Reports/{}/{}/{}".format(fold,username,report)
+            if fold == "Graphs" or fold == "Maps":
+                Report = "GUI/{}/{}/{}".format(fold,username,report)
+            else:
+               Report = "GUI/Reports/{}/{}/{}".format(fold,username,report)
         elif secondFold == "False":
             Report = "GUI/Reports/{}/{}".format(fold,report)
         else:
@@ -86,7 +95,6 @@ class Menu:
                 report = Report + ".mh"
                 extension = ".mh"
                 name = name2
-            
         else:
             report = Report + ".pdf"
             extension = ".pdf"

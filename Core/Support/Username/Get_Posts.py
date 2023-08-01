@@ -115,7 +115,6 @@ class Downloader:
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
             reader = soup(openurl.content, "html.parser")
             profile = reader.find_all("div", class_="photo")
-
             i = 1
             j = 1
             d = 1
@@ -444,8 +443,8 @@ class Downloader:
                 url = url + "/media"
                 param = "/media"
             else:
-                url = url + "/search"
-                param = "/search"
+                url = url + "/with_replies"
+                param = "/with_replies"
             openurl = requests.get(
                 url, proxies=http_proxy, headers=headers, allow_redirects=True)
             if "No items found" in openurl.text:
@@ -462,6 +461,21 @@ class Downloader:
                     print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                           Language.Translation.Translate_Language(LangFile, "Username", "Twitter", "Details").format(str(i)))
                     image_try = info.find("a", class_="still-image")
+                    retweet2 = info.find("div",class_="retweet-header")
+                    replayed = info.find("div",class_="replying-to")
+                    if replayed != None:
+                        replayed = "TRUE"
+                        userRep = info.find_all("div",class_="replying-to")
+                        for user in userRep:
+                            repUser = user.find("a")["href"].replace("/","")
+                    else:
+                        replayed = "FALSE"
+                    if retweet2 != None:
+                        retweet2 = "TRUE"
+                        nameOrig = info.find("a",class_="fullname")["title"]
+                        userOrig = info.find("a",class_="username")["title"]
+                    else:
+                        retweet2 = "FALSE"
                     sleep(2)
                     if image_try != None:
                         post = info.find(
@@ -566,6 +580,18 @@ class Downloader:
                     retweet = footer[2].get_text()
                     quote = footer[3].get_text()
                     print(
+                        Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "IS A RETWEET: {}".format(retweet2))
+                    print(
+                        Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "IS A REPLY: {}".format(replayed))
+                    if retweet2 == "TRUE":
+                        print(
+                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL-NAME:{}".format(Font.Color.WHITE + "[" + Font.Color.GREEN + nameOrig + Font.Color.WHITE + "]"))
+                        print(
+                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME:{}".format(Font.Color.WHITE + "[" + Font.Color.GREEN + userOrig + Font.Color.WHITE + "]"))
+                    if replayed == "TRUE":
+                        print(
+                            Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "REPLAYED TO:{}".format(Font.Color.WHITE + "[" + Font.Color.GREEN + repUser + Font.Color.WHITE + "]"))
+                    print(     
                         Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "COMMENTS: {}".format(comment))
                     print(Font.Color.YELLOW +
                           "[v]" + Font.Color.WHITE + "LIKES: {}".format(likes))
@@ -588,6 +614,13 @@ class Downloader:
                         "/Post_{}_details.txt".format(str(i))
                     f = open(filename, "w", encoding="utf-8")
                     f.write("POST N°{} DATA:\n".format(str(i)))
+                    f.write("IS A RETWEET: {}\r\n".format(text))
+                    if retweet2 == "TRUE":
+                        f.write("FULL-NAME: {}\r\n".format(nameOrig))
+                        f.write("DESCRIPTION: {}\r\n".format(userOrig))
+                    f.write("IS A REPLY: {}\r\n".format(comment))
+                    if replayed == "TRUE":
+                        f.write("DESCRIPTION: {}\r\n".format(repUser))
                     f.write("DESCRIPTION: {}\r\n".format(text))
                     f.write("COMMENTS: {}\r\n".format(comment))
                     f.write("LIKES: {}\r\n".format(likes))

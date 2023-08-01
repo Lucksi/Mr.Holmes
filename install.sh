@@ -115,6 +115,8 @@ function Packet_Installer {
 	sudo apt-get install inetutils-traceroute -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
 	sudo apt-get install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
 	sudo apt-get install wkhtmltopdf -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WKHTMLTOPDF"
+	apt-get install snapd  -y &> /dev/null | printf "${WHITE}\n\nINSTALLING SNAPD"
+	snap install ngrok &> /dev/null | printf "${WHITE}\n\nINSTALLING NGROK"
 	sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }
@@ -340,6 +342,17 @@ function Options {
 	echo "language"= "$Lang">>Configuration.ini
 	echo "date_format"= "$Date">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
+	printf "\n\n${WHITE}INSERT YOUR NGROK AUTHTOKEN(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" token
+	if [ "$token" != "" ];
+		then
+		ngrok authtoken $token
+		sleep 3
+		printf "\n\n${WHITE}NGROK CONFIGURATED SUCCESSFULLY"
+	elif [ "$token" == "" ];
+		then
+		printf "\n\n${WHITE}NGROK NOT CONFIGURATED"
+	fi
 }
 
 function AutoInstaller {
@@ -441,6 +454,13 @@ function installer {
 		cd ../
 		cd Launchers
 		sudo chmod +x Launcher.sh
+		cd ../
+		cd Core
+		cd Support
+		cd Tunnel
+		sudo chmod +x Starter.sh
+		cd ../
+		cd ../
 		cd ../
 		cd ../
 		echo "path = `pwd`">>$Fold/Configuration/Configuration.ini

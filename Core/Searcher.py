@@ -22,6 +22,7 @@ from Core.Support import Recap
 from Core.Support import DateFormat
 from datetime import datetime
 from Core.Support import Encoding
+from Core.Support import Site_Counter as CO
 from time import sleep
 
 filename = Language.Translation.Get_Language()
@@ -233,17 +234,19 @@ class MrHolmes:
         f.close()
         opt = int(input(Font.Color.BLUE + "\n[+]" + Font.Color.GREEN + "[INSERT AN OPTION]:" +  Font.Color.WHITE + "\n(1)USERNAME-RESEARCH (SEARCH USERNAME ON DIFFERENT WEBSITES)\n(2)PROFILE-SCRAPING (SCRAPE USERNAME PROFILE DIRECTLY)" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if opt == 1:
+            i1 = CO.Counter.Site(nomefile)
             MrHolmes.Controll(username, nomefile, identity, report, subject,
                             successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
             Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Nsfw") +
                     Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if Nsfw == 1:
                 nomefile = "Site_lists/Username/NSFW_site_list.json"
+                i2 = CO.Counter.Site(nomefile)
                 MrHolmes.Controll(username, nomefile, identity, report, subject,
                                 successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
-                Count = 151
+                Count = i1 + i2
             else:
-                Count = 143
+                Count = i1
                 pass
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                 Language.Translation.Translate_Language(filename, "Default", "TotFound", "None").format(subject, username))
