@@ -1370,11 +1370,11 @@
             "Tag": "Programming, Npm"
         },
 
-        "Mstdn":{
+        "Mastodon":{
             "Error": "Status-Code",
-            "name": "Mstdn",
-            "main": "mstdn.io",
-            "user": "https://ma.social/@{}",
+            "name": "Masotodn",
+            "main": "mastodon.social",
+            "user": "https://mastodon.social/@{}",
             "user2": "https://mastodon.social/@{}",
             "exception": [" ","/"],
             "Scrapable": "False",
