@@ -1374,8 +1374,8 @@
             "Error": "Status-Code",
             "name": "Mstdn",
             "main": "mstdn.io",
-            "user": "https://mstdn.io/@{}",
-            "user2": "https://mstdn.io/@{}",
+            "user": "https://ma.social/@{}",
+            "user2": "https://mastodon.social/@{}",
             "exception": [" ","/"],
             "Scrapable": "False",
             "Tag": "Social"
@@ -1641,6 +1641,17 @@
             "exception": [" ","/"],
             "Scrapable": "False",
             "Tag": "Questions, Forum"
+        },
+
+        "ColorLovers":{
+            "Error":"Status-Code",
+            "name":"ColourLovers",
+            "main":"https://www.colourlovers.com",
+            "user":"https://www.colourlovers.com/lover/{}",
+            "user2":"https://www.colourlovers.com/lover/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False",
+            "Tag": "Forum,Colors"
         }
     }
 ]
