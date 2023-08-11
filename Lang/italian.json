@@ -352,13 +352,6 @@
                 "Modify": "\nSELEZIONA IL FORMATO-DATA\n(1)EUROPA(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)",
                 "NotChanged": "\nIL FORMATO-DATA NON E STATA CAMBIATA PREMI INVIO PER USCIRE",
                 "Changed": "\nFORMATO-DATA MODIFICATO CON SUCCESSO"
-            },
-
-            "Ngrok":{
-                "Choice": "SEI SICURO DI VOLER INSERIRE UN NUOVO NGROK TOKEN",
-                "Modify": "\nINSERISCI IL TOKEN",
-                "NotChanged": "\nIL TOKEN NON E STATA INSERITO PREMI INVIO PER USCIRE",
-                "Changed": "\nTOKEN INSERITO CON SUCCESSO"
             }
         }
     ],
@@ -392,12 +385,9 @@
     },
 
     "Transfer":{
-        "Explanation": "QUESTO MODULO TI PERMETTE DI TRASFERIRE I TUOI REPORT DIRETTAMENTE SUL CELLULARE",
+        "Explanation": "QUESTO MODULO TI PERMETTE DI TRASFERIRE I TUOI REPORT DIRETTAMENTE SU UN ALTRO DISPOSITIVO",
         "Folder": "INSERISCI LA CARTELLA DEL REPORT PER: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDF\t\t\t(8)Maps\n(9)Graphs\t\t(10)Esci\n\n",
         "Question": "VUOI EFFETTUARE UN TRASFERIMENTO FILE?(1)SI(2)NO\n\n",
-        "Wan": "VUOI ATTIVARE IL SERVIZIO OVER WAN(PUOI CONDIVIDERE IL FILE FUORI DALLA TUA RETE)?(1)SI(2)NO\n\n",
-        "Pwd": "VUOI SETTARE UNA PASS-CODE PER ACCEDERE AL FILE TRANSFER?(1)SI(2)NO\n\n",
-        "PwdIns": "INSERISCI LA TUA PASS-CODE MIN 8 CARATTERI\n\n",
         "Generation": "GENERAZIONE DEL QR-CODE...",
         "Location": "IL QR CODE E STATO SALVATO SU: 'Qr-Codes/QR.png'",
         "Type": "SELEZIONA IL TIPO DI FILE\n(1).txt\n(2).mh\n\n"

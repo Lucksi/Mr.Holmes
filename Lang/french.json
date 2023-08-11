@@ -356,13 +356,6 @@
                 "Modify": "\nENTREZ LE FORMAT-DE-DATE(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)",
                 "NotChanged": "\nFORMAT-DE-DATE N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
                 "Changed": "\nFORMAT-DE-DATE MODIFICATION OK"
-            },
-
-            "Ngrok":{
-                "Choice": "VOULEZ VOUS ENTRER UNE NOUVEAU NGROK TOKEN(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE TOKEN",
-                "NotChanged": "\nTOKEN N'EST PAS ENTREZ ENVOI POUR SORTIR ",
-                "Changed": "\nTOKEN ENTREZ"
             }
         }
     ],
@@ -399,9 +392,6 @@
         "Explanation":"CE MODULE VOUS PERMET DE TRANSFERER VOS RAPPORTS DIRECTEMENT SUR VOTRE TELEPHONE MOBILE",
         "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDFt\t\t(8)Maps\n(9)Graphs\t\t(10)Exit\n\n",
         "Question": "VOULEZ VOUS TRANSFÉRER CE FICHIER?(1)OUI(2)NO\n\n",
-        "Wan": "EST CE QUE TU VOULEZ ACTIVE LE OVER WAN SERVICE(TU PEAUX TRANSFERER FILE EN DEHORS DE VOTRE RESEAU)?(1)OUI(2)NO\n\n",
-        "Pwd": "EST CE QUE TU VOULEZ CREER UNE PASS-CODE POUR ACCEDER LE FILE TRANSFER?(1)OUI(2)NO\n\n",
-        "PwdIns": "ENTREZ LA PASS-CODE MIN 8 CARACTERES\n\n",
         "Generation": "GÉNÉRATION DU QR-CODE...",
         "Location": "LE QR CODE EST ENREGISTRÉ DANS: 'Qr-Codes/QR.png'",
         "Type": "ENTREZ LA TYPOLOGIE DU FICHIER\n(1).txt\n(2).mh\n\n"
