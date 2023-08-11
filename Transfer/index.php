@@ -13,30 +13,6 @@ License: GNU General Public License v3.0-->
             <meta name="theme-color" content="#000000">
             <title>File-Transfer</title>
             <?php
-                function GetLogin(){
-                    $filePassw = "Logpass.txt";
-                    if(file_exists($filePassw)){
-                        $opener = fopen("Logpass.txt","r") or die("Unable to open file");
-                        $reader = fread($opener,filesize("Logpass.txt"));
-                        fclose($opener);
-                        echo "<form method = 'POST' id = 'pass'><input type = 'password' required placeholder = 'Insert the Passcode' name = 'code'><button  type = 'submit' name = 'sub'>Submit</button></form>";
-                        if(isset($_POST["sub"])){
-                            $codeinput = $_POST["code"];
-                            $codeinput64 = base64_encode($codeinput);
-                            if($codeinput64 == $reader){
-                                echo "<script>alert('Passcode correct')</script>";
-                                echo "<script>(function(){document.getElementById('pass').style.display='none';})();</script>";
-                                Content();
-                            }
-                            else{
-                                echo "<script>alert('Passcode incorrect')</script>";
-                            }
-                        }
-                    }
-                    else{
-                        Content();
-                    }
-                }
                 function Content(){
                     echo '
                     <p class = "Bolder" id = "Download"></p>
@@ -59,7 +35,7 @@ License: GNU General Public License v3.0-->
                 <div class = "Content">
                     <img src = "Images/Download.png">
                     <?php
-                        GetLogin();
+                        Content();
                     ?>
                 </div>
             </center>

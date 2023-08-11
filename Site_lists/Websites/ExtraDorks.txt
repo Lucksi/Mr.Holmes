@@ -1,8 +1,8 @@
 [GOOGLE-FINGERPRINTS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://www.google.com/search?q=intext:{}
-| https://www.google.com/search?q=intitle:{}
-| https://www.google.com/search?q=inurl:{}
+| https://www.google.com/search?q=intext:"{}"
+| https://www.google.com/search?q=intitle:"{}"
+| https://www.google.com/search?q=inurl:"{}"
 ----------------------------------------------------------------------------------------------------------------------
 [YANDEX-FINGERPRINTS]:
 ----------------------------------------------------------------------------------------------------------------------

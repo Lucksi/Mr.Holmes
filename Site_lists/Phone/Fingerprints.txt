@@ -1,8 +1,8 @@
 [FINGER-PRINTS-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://www.google.com/search?q=site:www.instagram.com+intext:{}
-| https://www.google.com/search?q=site:www.twitter.com+intext:{}
-| https://www.google.com/search?q=site:www.facebook.com+intext:{}
-| https://www.google.com/search?q=site:www.vk.com+intext:{}
-| https://www.google.com/search?q=site:www.linkedin.com+intext:{}
+| https://www.google.com/search?q=site:www.instagram.com+intext:""{}""
+| https://www.google.com/search?q=site:www.twitter.com+intext:""{}""
+| https://www.google.com/search?q=site:www.facebook.com+intext:""{}""
+| https://www.google.com/search?q=site:www.vk.com+intext:""{}""
+| https://www.google.com/search?q=site:www.linkedin.com+intext:""{}""
 ----------------------------------------------------------------------------------------------------------------------
