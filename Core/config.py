@@ -500,22 +500,6 @@ class Config:
         else:
             os.chdir("../")
     
-    @staticmethod
-    def modify_Ngrok():
-        alert = int(input(
-            Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename2, "Configuration", "Ngrok", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if alert == 1:
-            Key = str(input(
-                    Font.Color.WHITE + Language.Translation.Translate_Language(filename2, "Configuration", "Ngrok", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if Key != "":
-                os.system("ngrok authtoken {}".format(Key))
-                print(Font.Color.WHITE + Language.Translation.Translate_Language(filename2, "Configuration", "Ngrok", "Changed") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")  
-            else:
-                print(Font.Color.WHITE + Language.Translation.Translate_Language(filename2, "Configuration", "Ngrok", "NotChanged") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")  
-            out = input(Language.Translation.Translate_Language(
-                        filename2, "Configuration", "Main", "Exit"))
-        else:
-            pass
 
     @staticmethod
     def main(Mode):
@@ -531,7 +515,7 @@ class Config:
         if Conf == True:
             while True:
                 Config.Banner(Mode)
-                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Explanation") + Font.Color.WHITE) )
+                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]\n".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Configuration","Main","Explanation") + Font.Color.WHITE) )
                 option = Language.Translation.Translate_Language(
                     filename, "Configuration", "Main", "Options")
                 options = str(option)
@@ -569,11 +553,6 @@ class Config:
                 elif sce == 14:
                     Config.modify_Date()
                 elif sce == 15:
-                    if (os.name != "nt"):
-                        Config.modify_Ngrok()
-                    else:
-                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "OPTION NOT AVAILABLE FOR WINDOWS YET")
-                elif sce == 16:
                     inp = input(Language.Translation.Translate_Language(
                         filename, "Configuration", "Main", "Exit"))
                     holmes.Main.Menu(Mode)
