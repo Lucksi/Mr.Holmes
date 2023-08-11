@@ -389,7 +389,7 @@
     },
 
     "Transfer":{
-        "Explanation":"CE MODULE VOUS PERMET DE TRANSFERER VOS RAPPORTS DIRECTEMENT SUR VOTRE TELEPHONE MOBILE",
+        "Explanation":"CE MODULE VOUS PERMET DE TRANSFERER VOS RAPPORTS DIRECTEMENT SUR UN AUTRE APPAREIL",
         "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDFt\t\t(8)Maps\n(9)Graphs\t\t(10)Exit\n\n",
         "Question": "VOULEZ VOUS TRANSFÉRER CE FICHIER?(1)OUI(2)NO\n\n",
         "Generation": "GÉNÉRATION DU QR-CODE...",
