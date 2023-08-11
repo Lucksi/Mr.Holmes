@@ -1651,7 +1651,18 @@
             "user2":"https://www.colourlovers.com/lover/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum,Colors"
+            "Tag": "Forum, Colors"
+        },
+
+        "21Buttons":{
+            "Error":"Status-Code",
+            "name": "21Buttons",
+            "main": "https://www.21buttons.com",
+            "user": "https://www.21buttons.com/buttoner/{}",
+            "user2": "https://www.21buttons.com/buttoner/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False",
+            "Tag": "Social, Dressing, Fashion, Shopping"
         }
     }
 ]
