@@ -36,7 +36,7 @@ class Search:
               "Default", "Report", "None") + report)
 
     @staticmethod
-    def Generator(Type,nomefile,report,phrase,data,between,seconddata):
+    def Generator(Type,nomefile,report,phrase,exclusion,data,between,seconddata):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Dorks", "Generation", "None").format(Type))
         sleep(2)
@@ -59,7 +59,10 @@ class Search:
         f = open(nomefile, "r")
         for sites in f:
             site = sites.rstrip("\n")
-            site = site.replace("{}", phrase).replace(")","){}".format(data))
+            if exclusion and data == "None":
+                site = site.replace("{}", phrase)
+            else:
+                site = site.replace("{}", phrase).replace(")","){}".format(data) + "".join(exclusion))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
             sleep(2)
             f = open(report, "a")

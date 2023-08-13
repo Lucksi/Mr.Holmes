@@ -49,7 +49,7 @@
         "Added": "ENTREZ AUTRE PARAMÈTRE: {}",
         "Added2": "DATE AJOUTEE: {}",
         "Added3":"EVENEMENT AJOUTEE: {}",
-        "Choice": "ENTREZ UN TYPE\n(1)DATE\n(2)PLAGE DE DATE\n(3)CUSTOM",
+        "Choice": "ENTREZ UN TYPE\n(1)DATE\t\t\t(2)PLAGE DE DATE\n(3)EXCLUDE PARAMETRE\t(4)AJOUTER PARAMETRE",
         "Choice2":"ENTREZ UN TYPE\n(1)Username\t(2)PhoneNumber\n(3)Websites\t(4)Persons",
         "Date": "ENTRER LA DATE 'YYYY-MM-DD' YYYY REQUIS",
         "Event": "ENTRER L'EVENEMENT(1)AVANT(2)APRÈS",

@@ -22,22 +22,61 @@ filename
 class List:
 
     @staticmethod
+    def entities(Lists,Mode,Start,Lists2,type1):
+        entity = int(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "SELECT ENTITY:\n(1)PHONE NUMBER\n(2)WEBSITE\n(3)CUSTOM"+ Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if entity == 1:
+            param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            while param == "":
+                param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
+            param = param + " OR +" + param
+        elif entity == 2:
+            if type1 != 3:
+                param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                while param == "":
+                    param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
+                param = "site:" + param + " OR site:www." + param
+            else:
+                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "YOU HAVE SELECTED A WEBSITE TYPE BEFORE, CANNOT ADD ANOTHER WEBSITE")
+                param = ""
+        elif entity == 3:
+            param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            while param == "":
+                param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
+        if param != "":
+            if Mode == "Exclude":
+                if entity == 2:
+                    Lists.append("+-"+ param)
+                    pass
+                else:
+                    Lists.append("+-"+'"'+ param + '"')
+            else:
+                if entity == 2:
+                    Lists2.append("+"+ param)
+                else:
+                    Lists.append(" "+'"'+ param)
+        else:
+            pass
+
+    @staticmethod
     def Banner(Mode):
         Clear.Screen.Clear()
         Folder = "Banners/Dorks"
         banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
-    def GoogleDorks(report,phrase,data,DorksList,between,seconddata):
+    def GoogleDorks(report,phrase,exclusion,data,DorksList,between,seconddata):
         Type = "GOOGLE"
-        Dorks.Search.Generator(Type,DorksList,report,phrase,data,between,seconddata)
+        Dorks.Search.Generator(Type,DorksList,report,phrase,exclusion,data,between,seconddata)
 
     
     @staticmethod
-    def YandexDorks(report,phrase,data,DorksList,between,seconddata):
+    def YandexDorks(report,phrase,exclusion,data,DorksList,between,seconddata):
         Type = "YANDEX"
         phrase = phrase.replace("+","%2B")
-        Dorks.Search.Generator(Type,DorksList,report,phrase,data,between,seconddata)
+        Dorks.Search.Generator(Type,DorksList,report,phrase,exclusion,data,between,seconddata)
 
 
     @staticmethod 
@@ -75,6 +114,7 @@ class List:
         if add == 1:
             Start = 1
             Parameters = []
+            Parameters2 = []
             number = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "ParamN", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             for i in range(number):
                 type = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Choice", "None") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
@@ -110,14 +150,15 @@ class List:
                         check = "True"
                     else:
                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "DATE ALREADY SEATTED CANNOT USE THIS OPTION")
+                elif type == 3:
+                    List.entities(Parameters2,"Exclude",Start,Parameters,type1)
                 else:
-                    param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    while param == "":
-                        param = str(input(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Param", "None").format(str(Start)) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                    print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Dorks", "Added", "None").format(Font.Color.GREEN + param + Font.Color.WHITE))
-                    Parameters.append("+"+param)
-                    Start = Start +1
-            phrase = username + "".join(Parameters)
+                    List.entities(Parameters,"Include",Start,Parameters2,type1)
+                Start = Start +1
+            if len(Parameters):
+                phrase = username + '"' + "".join(Parameters)
+            else:
+                phrase = username
         else:
             phrase = username
         f = open(report, "a")
@@ -125,13 +166,23 @@ class List:
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
         f.close()
         if type1 == 2:
-            List.GoogleDorks(report,phrase,data,DorksList,between="None",seconddata="None")
-            List.GoogleDorks(report,phrase,data,DorksList3,between="None",seconddata="None")
-            List.YandexDorks(report,phrase,data,DorksList2,between,seconddata)
-            List.YandexDorks(report,phrase,data,DorksList4,between,seconddata)
+            if add == 1:
+                List.GoogleDorks(report,phrase,Parameters2,data,DorksList,between="None",seconddata="None")
+                List.GoogleDorks(report,phrase,Parameters2,data,DorksList3,between="None",seconddata="None")
+                List.YandexDorks(report,phrase,Parameters2,data,DorksList2,between,seconddata)
+                List.YandexDorks(report,phrase,Parameters2,data,DorksList4,between,seconddata)
+            else:
+                List.GoogleDorks(report,phrase,"None","None",DorksList,between="None",seconddata="None")
+                List.GoogleDorks(report,phrase,"None","None",DorksList3,between="None",seconddata="None")
+                List.YandexDorks(report,phrase,"None","None",DorksList2,between,seconddata)
+                List.YandexDorks(report,phrase,"None","None",DorksList4,between,seconddata)
         else:
-            List.GoogleDorks(report,phrase,data,DorksList,between="None",seconddata="None")
-            List.YandexDorks(report,phrase,data,DorksList2,between,seconddata)
+            if add == 1:
+                List.GoogleDorks(report,phrase,Parameters2,data,DorksList,between="None",seconddata="None")
+                List.YandexDorks(report,phrase,Parameters2,data,DorksList2,between,seconddata)
+            else:
+                List.GoogleDorks(report,phrase,"None","None",DorksList,between="None",seconddata="None")
+                List.YandexDorks(report,phrase,"None","None",DorksList2,between,seconddata)
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))

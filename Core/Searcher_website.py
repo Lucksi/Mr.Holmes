@@ -42,6 +42,7 @@ class Web:
     def Profiles(username,report):
         print(Font.Color.WHITE + "----------------------------------------------------------INSTAGRAM------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILES THAT CONTAINS: {}".format(username))
         username_2 = username.split(".", 1)[0]
+        username_3 = "www." + username
         Scraper.Search.Instagram(report, username, "None", "None", "None", "None", "None", "None","Websites")
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILE FOR: {}".format(username_2))
         sleep(5)

@@ -45,7 +45,7 @@
         "Added": "PARAMETRO AGGIUNTO: {}",
         "Added2": "DATA AGGIUNTA: {}",
         "Added3":"EVENTO AGGIUNTO: {}",
-        "Choice": "INSERISCI IL TIPO\n(1)DATA\n(2)INTERVALLO DI DATE\n(3)CUSTOM",
+        "Choice": "SELEZIONA IL TIPO\n(1)DATA\t\t\t(2)INTERVALLO DI DATE\n(3)ESCLUDI PARAMETRO\t(4)AGGIUNGI PARAMETRO",
         "Choice2":"SELEZIONA IL TIPO\n(1)Username\t(2)PhoneNumber\n(3)Websites\t(4)Persons",
         "Date": "INSERISCI LA DATA 'YYYY-MM-DD' YYYY RICHIESTO",
         "Event": "INSERISCI L'EVENTO(1)PRIMA(2)DOPO",
