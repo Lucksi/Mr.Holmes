@@ -455,14 +455,6 @@ function installer {
 		cd Launchers
 		sudo chmod +x Launcher.sh
 		cd ../
-		cd Core
-		cd Support
-		cd Tunnel
-		sudo chmod +x Starter.sh
-		cd ../
-		cd ../
-		cd ../
-		cd ../
 		echo "path = `pwd`">>$Fold/Configuration/Configuration.ini
 		sleep 2
 		printf "\n\nSETTING CLI INTERFACE..."
