@@ -14,7 +14,7 @@ RED=$(tput setaf 1)
 ROOT=$(id -u)
 
 function Check_Root {
-	if [ $ROOT -ne 0 ]; 
+	if [ $ROOT -ne 0 ];
 		then
 	 	clear
 		banner
@@ -110,13 +110,11 @@ function Preference {
 function Packet_Installer {
 	sudo apt-get install git -y &> /dev/null | printf "${WHITE}\nINSTALLING GIT\n"
 	sudo apt-get install python3 -y &> /dev/null | printf "${WHITE}\nINSTALLING PYTHON3\n"
-    sudo apt-get install python3-pip -y &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
+    	sudo apt-get install python3-pip -y &> /dev/null | printf "${WHITE}\nINSTALLING PIP"
 	sudo apt-get install whois -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WHOIS"
 	sudo apt-get install inetutils-traceroute -y &> /dev/null | printf "${WHITE}\n\nINSTALLING TRACEROUTE"
 	sudo apt-get install php -y &> /dev/null | printf "${WHITE}\n\nINSTALLING PHP"
 	sudo apt-get install wkhtmltopdf -y &> /dev/null | printf "${WHITE}\n\nINSTALLING WKHTMLTOPDF"
-	apt-get install snapd  -y &> /dev/null | printf "${WHITE}\n\nINSTALLING SNAPD"
-	snap install ngrok &> /dev/null | printf "${WHITE}\n\nINSTALLING NGROK"
 	sudo pip3 install -r requirements.txt &> /dev/null | printf "${BLUE}\n\nINSTALLING-PYTHON-REQUIREMENTS..."
 	printf "${GREEN}\n\n[+]${WHITE}REQUIREMENTS INSTALLED SUCCESFULLY${GREEN}[+]"
 }
@@ -287,7 +285,7 @@ function Options {
 	elif [ $Language == 2 ];
 		then
 		Lang="italian"
-		mode="ITALIANO" 
+		mode="ITALIANO"
 
 	elif [ $Language == 3 ];
 		then
@@ -310,7 +308,7 @@ function Options {
 	elif [ $DateFormat == 2 ];
 		then
 		Date="us"
-		mode="AMERICA(US)" 
+		mode="AMERICA(US)"
 
 	elif [ $DateFormat == 3 ];
 		then
@@ -342,17 +340,6 @@ function Options {
 	echo "language"= "$Lang">>Configuration.ini
 	echo "date_format"= "$Date">>Configuration.ini
 	rm UNTILED.txt &> /dev/null
-	printf "\n\n${WHITE}INSERT YOUR NGROK AUTHTOKEN(LEAVE EMPTY IF YOU HAVENT ONE)\n\n"
-	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" token
-	if [ "$token" != "" ];
-		then
-		ngrok authtoken $token
-		sleep 3
-		printf "\n\n${WHITE}NGROK CONFIGURATED SUCCESSFULLY"
-	elif [ "$token" == "" ];
-		then
-		printf "\n\n${WHITE}NGROK NOT CONFIGURATED"
-	fi
 }
 
 function AutoInstaller {
@@ -428,7 +415,7 @@ function installer {
 		printf "${BLUE}\n\nWELCOME TO THE INSTALLATION MANAGER WOULD YOU LIKE TO BEGIN(1)YES(2)NO\n\n"
 		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" confvar
 	done
-	if [ $confvar == 1 ]; 
+	if [ $confvar == 1 ];
 		then
 		printf "${BLUE}\nWOULD YOU LIKE TO SET(1)MANUAL-INSTALLATION(2)AUTO-INSTALLATION\n\n"
 		read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
@@ -438,12 +425,12 @@ function installer {
 			read -p "$GREEN[#MR.HOLMES#]$WHITE-->" selected
 		done
 		if [ $selected == 1 ];
-			then 
+			then
 			Packet_Installer
 			Mail_Options
 			Options
 			cd ../
-			
+
 		elif [ $selected == 2 ];
 			then
 		    AutoInstaller
@@ -455,6 +442,7 @@ function installer {
 		cd Launchers
 		sudo chmod +x Launcher.sh
 		cd ../
+  		cd ../
 		echo "path = `pwd`">>$Fold/Configuration/Configuration.ini
 		sleep 2
 		printf "\n\nSETTING CLI INTERFACE..."
