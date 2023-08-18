@@ -197,11 +197,17 @@ class Stats:
                 if "Instagram" in ScraperSites:
                     print(Font.Color.GREEN +
                         "\n[+]" + Font.Color.WHITE + "INSTAGRAM HYPOTESIS...")
-                    Stats.Hypotesys(InstagramParams, username, report)
+                    try:
+                        Stats.Hypotesys(InstagramParams, username, report)
+                    except Exception as e:
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
                 if "Twitter" in ScraperSites:
                     print(Font.Color.GREEN +
                         "\n[+]" + Font.Color.WHITE + "TWITTER HYPOTESIS...")
-                    Stats.Hypotesys(TwitterParamas, username, report)
+                    try:
+                        Stats.Hypotesys(TwitterParamas, username, report)
+                    except Exception as e:
+                        print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
             else:
                 pass
         Encoding.Encoder.Encode(report)
