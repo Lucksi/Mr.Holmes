@@ -8,7 +8,6 @@ from Core.Support import Font
 from Core.Support import Dorks
 from Core.Support import FileTransfer
 from Core.Support import Banner_Selector as banner
-from Core.Support.Mail import Mail_Validator as mail
 from Core.Support import Notification
 from Core.Support import Language
 from Core.Support import DateFormat
