@@ -530,6 +530,14 @@ class MrHolmes:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Locations)
                 f.write(Locations+"\n")
                 n = n + 1
+            print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING LATEST PLACE VISITED")
+            f = open(report, "a")
+            f.write("\nGETTING LATEST PLACE VISITED:\n")
+            for Locations in PostLocations:
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Locations)
+                f.write(Locations+"\n")
+            f.close()
         
         count = 1
         Recaps = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
@@ -538,16 +546,19 @@ class MrHolmes:
             if opt == 1:
                 Percent = found/Count*100
                 Recap.Stats.Printer(username, found, Count, Percent, subject,
-                                        Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp, PostLocations, PostGpsCoordinates)
+                                        Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp)
             else:
                 if len(InstagramParams):
-                    print(Font.Color.BLUE +
-                        "\n[I]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
+                    print(Font.Color.GREEN +
+                        "\n[+]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
                     Recap.Stats.Hypotesys(InstagramParams, username, Recap1)
                 if len(TwitterParams):
-                    print(Font.Color.BLUE + "\n[I]" +
-                        Font.Color.WHITE + "TWITTER HYPOTHESIS")
+                    print(Font.Color.GREEN + "\n[+]" +
+                       Font.Color.WHITE + "TWITTER HYPOTHESIS")
                     Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
+            report = "GUI/Reports/Usernames/{}/Recap.txt".format(username)
+            Recap.Stats.Places(PostLocations,report,InstagramParams,username)
+            Encoding.Encoder.Encode(report)
         else:
             pass
         if count == 1:

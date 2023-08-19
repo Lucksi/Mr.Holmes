@@ -247,7 +247,6 @@ class Downloader:
                                 jsonfile = data_fold + \
                                     "/{}.json".format(arr_name[j-1])
                                 final_loc = location.strip()
-                                PostLocations.append(final_loc)
                                 format_loc = final_loc.replace(" ", "+")
                                 req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
                                     format_loc)
@@ -267,9 +266,13 @@ class Downloader:
                                         }
                                     }
                                     FormattedGps = "POST N°" + \
-                                        str(j) + ": " + final_loc + \
-                                        ", " + Lat + ", " + Lon
+                                        str(j) + ": " + final_loc + ": https://www.google.it/maps/place/{},{}".format(Lat, Lon)
+                                    EntryGps = final_loc + ": https://www.google.it/maps/place/{},{}".format(Lat, Lon)
                                     PostGpsCoordinates.append(FormattedGps)
+                                    if EntryGps in PostLocations:
+                                        pass
+                                    else:
+                                        PostLocations.append(EntryGps)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                           "LATITUDE:" + Font.Color.GREEN + " {}".format(Lat))
                                     sleep(2)
@@ -284,6 +287,7 @@ class Downloader:
                                     image2 = arr_name[j-1]
                                     Map.Creation.mapPost(
                                         data_fold, Lat, Lon, image2)
+                                    #", " + Lat + ", " + Lon
                                 except Exception as e:
                                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                                         LangFile, "Username", "Instagram", "NoGeoData") + str(e))

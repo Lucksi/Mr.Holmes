@@ -15,6 +15,34 @@ filename
 class Stats:
 
     @staticmethod
+    def Places(PostLocations,report,Params,username):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GETTING GEOLOCATION HYPOTHESIS...")
+        try:
+            sleep(3)
+            getPost = float(Params[2].replace(",", ''))
+            if getPost <= 12:
+                numP = getPost
+            else:
+                numP = 12
+            percentage = round((len(PostLocations)/numP*100),1)
+            num = len(PostLocations)
+            if num >= 1 and num <=3:
+                geo = Language.Translation.Translate_Language(
+                    filename, "Report", "Geo", "Low").format(username,str(num),str(numP),str(percentage))
+            elif num > 3 and num <=6:
+                geo = Language.Translation.Translate_Language(
+                    filename, "Report", "Geo", "Medium").format(username,str(num),str(numP),str(percentage))
+            elif num > 6 and num == 12:
+                geo = Language.Translation.Translate_Language(
+                    filename, "Report", "Geo", "High").format(username,str(num),str(numP),str(percentage))
+            print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + geo)
+            f = open(report, "a")
+            f.write("\n\n" + geo)
+            f.close()
+        except Exception as e:
+            print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+    
+    @staticmethod
     def Hypotesys(Params, username, report):
         sleep(2)
         try:
@@ -138,7 +166,7 @@ class Stats:
                     filename, "Report", "Specific", "Blocked"))
             try:
                 f = open(report, "a")
-                f.write("\n\n" + Hypo)
+                f.write(Hypo + "\n\n")
                 f.close()
             except Exception as e:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + "ERROR: {}".format(str(e)))
@@ -146,7 +174,7 @@ class Stats:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
 
     @staticmethod
-    def Printer(username, found, Count, Percent, subject, Tags, InstagramParams, TwitterParamas, ScraperSites, ScrapeOp, PostLocations, PostGpsCoordinates):
+    def Printer(username, found, Count, Percent, subject, Tags, InstagramParams, TwitterParamas, ScraperSites, ScrapeOp):
         report = "GUI/Reports/Usernames/{}/Recap.txt".format(username)
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + "GENERATING SUMMARY REPORT...")
@@ -213,4 +241,4 @@ class Stats:
                         print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
             else:
                 pass
-        Encoding.Encoder.Encode(report)
+        #Encoding.Encoder.Encode(report)

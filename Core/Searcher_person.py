@@ -153,7 +153,7 @@ class info:
         else:
             n = 0
             print(Font.Color.GREEN +
-                  "\n[+]" + Font.Color.WHITE + "GETTING LATEST POST GEOLOCATION")
+                  "\n[+]" + Font.Color.WHITE + "GETTING LATEST POST GEOLOCATION:")
             f = open(report, "a")
             f.write("\nGETTING LATEST POST GEOLOCATION:\n")
             for Locations in PostGpsCoordinates:
@@ -161,18 +161,27 @@ class info:
                 f.write(Locations + "\n")
                 n = n + 1
             f.close()
-        
+            
+            print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING LATEST PLACE VISITED:")
+            f = open(report, "a")
+            f.write("\nGETTING LATEST PLACE VISITED:\n")
+            for Locations in PostLocations:
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Locations)
+                f.write(Locations+"\n")
+            f.close()
         Recaps = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(
             filename, "Default", "Hypo", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if Recaps == 1:
             if len(InstagramParams):
-                print(Font.Color.BLUE +
-                      "\n[I]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
+                print(Font.Color.GREEN +
+                      "\n[+]" + Font.Color.WHITE + "INSTAGRAM HYPOTHESIS")
                 Recap.Stats.Hypotesys(InstagramParams, username, Recap1)
             if len(TwitterParams):
-                print(Font.Color.BLUE + "\n[I]" +
+                print(Font.Color.GREEN + "\n[+]" +
                       Font.Color.WHITE + "TWITTER HYPOTHESIS")
                 Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
+            Recap.Stats.Places(PostLocations,Recap1,InstagramParams,username)
             Encoding.Encoder.Encode(Recap1)
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

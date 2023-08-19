@@ -187,8 +187,8 @@ class Mail_search:
         f.write("SCANNING EXECUTED ON:\n" + Date + "\n")
         f.close()
         mail.Validator.Mail(username, report)
-        Mail_search.searcher(username, report, Mode)
         Mail_search.Lookup(username, report)
+        Mail_search.searcher(username, report, Mode)
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
