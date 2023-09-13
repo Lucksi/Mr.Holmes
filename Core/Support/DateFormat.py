@@ -32,3 +32,35 @@ class Get:
         Zone = dataformat.upper() + ":"+ localformat
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "DateFormat", "None").format("[" + Font.Color.GREEN + Zone + Font.Color.WHITE + "]")) 
         return dateregex  
+    
+    @staticmethod
+    def Format2():
+        Config_file = "Configuration/Configuration.ini"
+        Parser = ConfigParser()
+        Parser.read(Config_file)
+        dataformat = Parser["Settings"]["date_format"]
+        if dataformat == "eu":
+            dateregex = "%d/%m/%Y"
+        elif dataformat == "us":
+            dateregex = "%m/%d/%Y"
+        elif dataformat == "as":
+            dateregex = "%Y/%m/%d"
+        else:
+            dateregex = "%d/%m/%Y"
+        return dateregex
+
+    @staticmethod
+    def Continent():
+        Config_file = "Configuration/Configuration.ini"
+        Parser = ConfigParser()
+        Parser.read(Config_file)
+        dataformat = Parser["Settings"]["date_format"]
+        if dataformat == "eu":
+            continent = "EUROPE         |"
+        elif dataformat == "us":
+            continent = "AMERICA        |"
+        elif dataformat == "as":
+            continent = "ASIA           |"
+        else:
+            continent = "EUROPE         |"
+        return continent   

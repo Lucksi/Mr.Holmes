@@ -10,13 +10,12 @@ import json
 import shutil
 from Core.Support import Font
 from Core.Support import Language
+from Core.Support import Headers
 from bs4 import BeautifulSoup as soup
 from time import sleep
 from Core.Support import Map
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-}
+headers = Headers.Get.classic()
 
 LangFile = Language.Translation.Get_Language()
 LangFile
@@ -152,7 +151,7 @@ class Downloader:
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
                             Downloader.checkFile(image,"Image")
-                            sleep(3)
+                            sleep(5)
                         i = i+1
                     except ConnectionError:
                         print(
@@ -428,6 +427,7 @@ class Downloader:
 
     @staticmethod
     def Twitter(url, username, http_proxy, Posts, Opt, name2):
+        headers = Headers.Get.Twitter()
         if Posts > 0:
             if Posts <= 12:
                 print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -879,7 +879,7 @@ class Downloader:
                         TempTag.clear()
                         TempUser.clear()
                     i = i+1
-                    sleep(5)
+                    sleep(13)
                     if i == range_band + 1:
                         break
                 except ConnectionError:

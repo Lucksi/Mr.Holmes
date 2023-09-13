@@ -9,16 +9,14 @@ import json
 from bs4 import BeautifulSoup as soup
 from Core.Support import Font
 from Core.Support.Username import Scraper
+from Core.Support import Headers
 from Core.Support import Language
 from time import sleep
 
-
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-}
-
 filename = Language.Translation.Get_Language()
 filename
+
+headers = Headers.Get.classic()
 
 
 class Search:
@@ -194,13 +192,14 @@ class Search:
 
     @staticmethod
     def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2,fold):
+        headers = Headers.Get.Twitter()
         List = []
         Links = []
         Pics = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TWITTER RESULTS...".format(username))
         url = "https://nitter.net/search?f=users&q={}".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers, allow_redirects=True)
         sleep(4)
         try:
             if req.status_code == 200:
@@ -253,7 +252,7 @@ class Search:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
             pass
         
         j = 1
@@ -367,7 +366,7 @@ class Search:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
         
         j = 1
@@ -413,3 +412,97 @@ class Search:
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
+    @staticmethod
+    def Github(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
+        List = []
+        Links = []
+        Pics = []
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "SCANNING FOR {} GITHUB RESULTS...".format(username))
+        url = "https://api.github.com/search/users?q={}+in:text".format(username)
+        req = requests.get(url, timeout=None, proxies=None, headers=headers)
+        sleep(4)
+        i = 0
+        req = requests.get(url,headers=headers).text
+        try:
+            parser = json.loads(req)
+            output = parser["total_count"]
+            if output == 0:
+                pass
+            else:
+                for i in range(output):
+                    usern = parser["items"][i]["login"]
+                    link = parser["items"][i]["html_url"]
+                    profile_pic = parser["items"][i]["avatar_url"]
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(Font.Color.GREEN + usern + Font.Color.WHITE))
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(Font.Color.GREEN + profile_pic + Font.Color.WHITE))
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(Font.Color.GREEN + link + Font.Color.WHITE))
+                    List.append(usern)
+                    Links.append(link)
+                    Pics.append(profile_pic)
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass
+        j = 1
+        if len(List):
+            for Names in List:
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
+                j = j+1
+            if fold == "People":
+                json_file = "GUI/Reports/People/{}/Github_Link.json".format(username2)
+            else:
+                if username2 != "None":
+                    json_file = "GUI/Reports/{}/{}/GithubName_Link.json".format(fold,username2)
+                else:
+                    json_file = "GUI/Reports/{}/{}/Github_Link.json".format(fold,username)
+            f = open(json_file, "w")
+            f.write('''{
+                        "List":[
+
+                        ]
+                    }''')
+            f.close()
+
+            """for link in Links:
+                data = {
+                    "site": "{}".format(link)
+                }
+                with open(json_file, 'r+') as file:
+                    file_data = json.load(file)
+                    file_data["List"].append(data)
+                    file.seek(0)
+                    json.dump(file_data, file, indent=4)"""
+            i = 0
+            for image in Pics:
+                data2 = {
+                    "site": "{}".format(Links[i]),
+                    "image": "{}".format(image)
+                }
+                with open(json_file, 'r+') as file:
+                    file_data = json.load(file)
+                    file_data["List"].append(data2)
+                    file.seek(0)
+                    json.dump(file_data, file, indent=4)
+                i = i +1
+            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
+                            Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if opt == 1:
+                check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+                                  Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if check not in List:
+                    pass
+                else:
+                    check = check.replace("@", "")
+                    if os.path.isdir(imagefold):
+                        pass
+                    else:
+                        os.mkdir(imagefold)
+                    Scraper.info.Github(report, check, http_proxy,
+                                        "People", username2)
+            

@@ -7,12 +7,11 @@ import json
 import requests
 from Core.Support import Font
 from Core.Support.Username import Get_Posts
+from Core.Support import Headers
 from Core.Support import Language
 from bs4 import BeautifulSoup as soup
 
-headers = {
-    'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-}
+headers = Headers.Get.classic()
 
 filename = Language.Translation.Get_Language()
 filename
@@ -434,6 +433,7 @@ class info:
 
     @staticmethod
     def Twitter(report, username, http_proxy, TwitterParams ,Opt,name2):
+        headers = Headers.Get.Twitter()
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCRAPING {} TWITTER PROFILE...".format(username))
         url = info.Get_Url(username, "Twitter")

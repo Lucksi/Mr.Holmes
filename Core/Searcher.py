@@ -50,6 +50,12 @@ class MrHolmes:
         
         Scraper.info.GitLab(
             report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Ngl(
+            report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Tellonym(
+            report, username, http_proxy, "Usernames", username)
     @staticmethod
     def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags):
         f = open(nomefile,)

@@ -11,6 +11,7 @@ import shutil
 from Core.Support import Font
 from Core.Support import Creds
 from Core.Support import FileTransfer
+from Core.Support import Headers
 from Core.Support.Phone import Numbers
 from Core import E_Mail as Mail
 from Core.Support import Proxies
@@ -207,9 +208,7 @@ class Web:
 
     @staticmethod
     def Robots(username, report):
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-        }
+        headers = Headers.Get.classic()
         name = "Site_lists/Websites/Robots.json"
         f = open(name,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +

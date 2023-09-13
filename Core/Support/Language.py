@@ -27,8 +27,33 @@ class Translation:
     def Translate_Language(filename, List, Row, SubRow):
         reader = open(filename, )
         parser = json.loads(reader.read())
-        if List == "Configuration" or List == "Username" or List == "Website" or List == "Report":
-            Phrase = parser[List][0][Row][SubRow]
+        try:
+            if List == "Configuration" or List == "Username" or List == "Website" or List == "Report":
+                Phrase = parser[List][0][Row][SubRow]
+            else:
+                Phrase = parser[List][Row]
+            return Phrase
+        except Exception as e:
+            filename = "Lang/english.json"
+            reader = open(filename, )
+            parser = json.loads(reader.read())
+            if List == "Configuration" or List == "Username" or List == "Website" or List == "Report":
+                Phrase = parser[List][0][Row][SubRow]
+            else:
+                Phrase = parser[List][Row]
+            return Phrase
+    
+    @staticmethod
+    def Get_Language2():
+        Config_file = "Configuration/Configuration.ini"
+        Parser = ConfigParser()
+        Parser.read(Config_file)
+        Lang = Parser["Settings"]["language"]
+        filename = "Lang/{}.json".format(Lang)
+        if os.path.isfile(filename):
+            Lang = Lang.upper()
+            if Lang == "FRENCH":
+                Lang = Lang + " "
         else:
-            Phrase = parser[List][Row]
-        return Phrase
+            Lang = "ENGLISH"
+        return Lang

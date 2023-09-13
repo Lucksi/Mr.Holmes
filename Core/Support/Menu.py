@@ -5,6 +5,7 @@
 
 import os
 import random
+import socket 
 from Core.Support import Font
 from Core.Support import Clear
 from Core import Searcher
@@ -12,6 +13,7 @@ from Core import config
 from Core import Searcher_phone
 from Core import Searcher_website
 from Core import Searcher_person
+from Core.Support import DateFormat
 from Core import Port_Scanner
 from Core import E_Mail
 from Core import Update
@@ -19,9 +21,11 @@ from Core import Dork
 from Core import Decoder
 from Core import PDF_Converter as Pdf
 from Core import Transfer
+from Core import Session
 from Core.Support import Database
 from Core.Support import Agree
 from Core.Support import Language
+from datetime import datetime
 
 
 class Main:
@@ -49,7 +53,13 @@ class Main:
         choice = random.choice(Quotes)
         f = open("Quotes/" + choice, "r", newline=None)
         text = f.read()
-        f.close()
+        f.close() 
+        now = datetime.now()
+        dataformat = DateFormat.Get.Format2()
+        dt_string = now.strftime(dataformat)
+        Date1 = str(dt_string)
+        Country = DateFormat.Get.Continent()
+        Lang = Language.Translation.Get_Language2()
         u = "|\t\t\t    MR.HOLMES\t\t\t\t    |"
         print(Font.Color.WHITE +
               "---------------------------------------------------------------------")
@@ -57,10 +67,10 @@ class Main:
         print(Font.Color.GREEN + text
               +
               Font.Color.WHITE + "| A COMPLETE OSINT TOOL:)      " + Font.Color.BANNER + "CODED BY LUCKSI" + Font.Color.RESET + Font.Color.WHITE + "                      |\n|                                                                   |")
-        print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version +
-              Font.Color.WHITE + "                                             |")
+        print(Font.Color.WHITE + "|[+]" + Font.Color.GREEN + "VERSION:" + version +      Font.Color.WHITE +  "\t\t\tCURRENT-DATE: {}".format(Font.Color.GREEN + Date1) + 
+              Font.Color.WHITE + "    |")
         print(
-            Font.Color.YELLOW + "|Instagram:lucks_022                                                |\n|Email:lukege287@gmail.com                                          |\n|GitHub:Lucksi                                                      |\n|Twitter:@Lucksi_22                                                 |\n|Linkedin:https://www.linkedin.com/in/Lucksi                        |")
+            Font.Color.YELLOW + "|Instagram:lucks_022 " + Font.Color.WHITE + "\t\t\tDATE-FORMAT: {}".format(Font.Color.GREEN + Country + Font.Color.YELLOW) + "          \n|Email:lukege287@gmail.com" + Font.Color.WHITE + "\t\tCLI-LANGUAGE: {}".format(Font.Color.GREEN + Lang + Font.Color.YELLOW) + "       |\n|GitHub:Lucksi                                                      |\n|Twitter:@Lucksi_22                                                 |\n|Linkedin:https://www.linkedin.com/in/Lucksi                        |")
         print(Font.Color.WHITE +
               "---------------------------------------------------------------------")
 
@@ -194,6 +204,8 @@ class Main:
                                        Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                     Transfer.Menu.Main(username, Mode)
                 elif sce == 14:
+                    Session.Options.View()
+                elif sce == 15:
                     print(Language.Translation.Translate_Language(
                         filename, "Main", "Exit", "None"))
                     exit()

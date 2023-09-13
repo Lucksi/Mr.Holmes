@@ -1,4 +1,4 @@
-#!/bin/bash
+# #!/bin/bash
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
@@ -200,6 +200,12 @@ function Options {
 		then
 		proxies="Proxies/Proxy_list.txt"
 	fi
+	printf "${WHITE}\n\nINSERT YOUR USERAGENT_LIST FULL-PATH(LEAVE EMPTY IF YOU WANT THE DEFAULT LIST)\n\n"
+	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" useragent
+	if [ "$useragent" == "" ];
+		then
+		proxies="Useragents/Useragent.txt"
+	fi
 	printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
 	while [ "$Logs" == "" ];
@@ -335,6 +341,7 @@ function Options {
 	echo "password = $up_pass">>Configuration.ini
 	echo "api_key = $key">>Configuration.ini
 	echo "proxy_list" = $proxies>>Configuration.ini
+	echo "useragent_list" = $useragent>>Configuration.ini
 	echo "show_logs = $Logs">>Configuration.ini
 	echo "database"= "$Token">>Configuration.ini
 	echo "language"= "$Lang">>Configuration.ini
@@ -386,6 +393,7 @@ echo '{
 	echo "password = Holmes">>Configuration/Configuration.ini
 	echo "api_key = None">>Configuration/Configuration.ini
 	echo "proxy_list" = "Proxies/Proxy_list.txt">>Configuration/Configuration.ini
+	echo "useragent_list" = "Useragents/Useragent.txt">>Configuration.ini
 	echo "show_logs = False">>Configuration/Configuration.ini
 	echo "database"= "False">>Configuration/Configuration.ini
 	echo "language"= "english">>Configuration/Configuration.ini
@@ -396,6 +404,7 @@ echo '{
 	printf "\n${WHITE}UPDATE-PASSWORD:${GREEN}Holmes\n"
 	printf "\n${WHITE}API-KEY:${GREEN}None\n"
 	printf "\n${WHITE}PROXIES:${GREEN}DEFAULT\n"
+	printf "\n${WHITE}USERAGENTS:${GREEN}DEFAULT\n"
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}ENGLISH\n"
 	printf "\n${WHITE}GUI-LANGUAGE:${GREEN}ENGLISH\n"
 	printf "\n${WHITE}GUI-THEME:${GREEN}LIGHT\n"

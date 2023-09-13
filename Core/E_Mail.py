@@ -13,6 +13,7 @@ from Core.Support import FileTransfer
 from Core.Support import Clear
 from Core.Support import Dorks
 from Core.Support.Mail import Mail_Validator as mail
+from Core.Support.Mail import Lookup
 from Core.Support import ApiCheck as Api
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
@@ -188,6 +189,9 @@ class Mail_search:
         f.close()
         mail.Validator.Mail(username, report)
         Mail_search.Lookup(username, report)
+        lookup = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO CHECK IF THIS EMAIL IS USED ON SOME SOCIAL MEDIA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if lookup == 1:
+            Lookup.List.Main(report,username)
         Mail_search.searcher(username, report, Mode)
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

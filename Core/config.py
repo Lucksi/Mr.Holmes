@@ -500,6 +500,39 @@ class Config:
         else:
             os.chdir("../")
     
+    @staticmethod
+    def modify_Useragent():
+        os.chdir(dest)
+        alert = int(input(
+            Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Useragent", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if alert == 1:
+            if os.path.isfile(nomefile):
+                Parser = ConfigParser()
+                Parser.read(nomefile)
+                proxy_path = str(input(
+                    Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Useragent", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                while proxy_path == "":
+                    proxy_path = str(input(
+                        Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Useragent", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if proxy_path == "None":
+                    out = input(Language.Translation.Translate_Language(
+                        filename, "Configuration", "Useragent", "NotChanged"))
+                    os.chdir("../")
+                else:
+                    Parser.set("Settings", "useragent_list", proxy_path)
+                    with open(nomefile, 'w') as configfile:
+                        Parser.write(configfile)
+                    print(Language.Translation.Translate_Language(
+                        filename, "Configuration", "Useragent", "Changed"))
+                    out = input(Language.Translation.Translate_Language(
+                        filename, "Configuration", "Main", "Exit"))
+                    os.chdir("../")
+            else:
+                inp = input(
+                    Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
+                os.chdir("../")
+        else:
+            os.chdir("../")
 
     @staticmethod
     def main(Mode):
@@ -553,6 +586,8 @@ class Config:
                 elif sce == 14:
                     Config.modify_Date()
                 elif sce == 15:
+                    Config.modify_Useragent()
+                elif sce == 16:
                     inp = input(Language.Translation.Translate_Language(
                         filename, "Configuration", "Main", "Exit"))
                     holmes.Main.Menu(Mode)

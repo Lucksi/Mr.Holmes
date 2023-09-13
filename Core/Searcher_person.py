@@ -148,6 +148,8 @@ class info:
                                imagefold, username2,"People")
         Scraper.Search.TikTok(
             report, username, http_proxy, imagefold, username2)
+        Scraper.Search.Github(report, username, http_proxy, InstagramParams,
+                                 PostLocations, PostGpsCoordinates, imagefold, username2,"People")
         if PostGpsCoordinates == [] and PostLocations == []:
             pass
         else:

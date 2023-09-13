@@ -132,6 +132,10 @@ function Options(){
     if($Proxy_List -eq ""){
         $Proxy_List = "Proxies/Proxy_list.txt"
     }
+    $Useragent_List = Read-Host -Prompt "`nINSERT YOUR USERAGENT-LIST 'LEAVE EMPTY FOR USE THE DEFAULT ONE'`n`n[#MR.HOLMES#]-->"
+    if($Useragent_List -eq ""){
+        $Useragent_List = "Useragents/Useragent.txt"
+    }
     $Log_Session = Read-Host -Prompt "`nWOULD YOU LIKE TO SAVE YOUR LOG SESSION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
     while ($Log_Session -eq ""){
         $Log_Session = Read-Host -Prompt "`nWOULD YOU LIKE TO SAVE YOUR LOG SESSION(1)YES(2)NO`n`n[#MR.HOLMES#]-->"
@@ -241,6 +245,7 @@ function Options(){
     "password= $Update_Password" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "api_key= $Api" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "proxy_list= $Proxy_List" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "useragent_list= $Useragent_List" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "show_logs= $Log_Session" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "database= $Token" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "language= $Cli" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
@@ -290,6 +295,7 @@ function AutoInstaller(){
     "password= Holmes" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "api_key= None" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "proxy_list= Proxies/Proxy_list.txt" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
+    "useragent_list= Useragents/Useragent.txt" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "show_logs= False" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "database= False" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii
     "language= english" | Out-File -FilePath .\Configuration\Configuration.ini -Append -Encoding Ascii

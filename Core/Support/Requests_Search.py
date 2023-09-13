@@ -7,6 +7,7 @@ import requests
 import json
 from Core.Support import Font
 from Core.Support import Language
+from Core.Support import Headers
 
 filename = Language.Translation.Get_Language()
 filename
@@ -16,9 +17,9 @@ class Search:
 
     @staticmethod
     def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags):
-        headers = {
-            'User-Agent': 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36'
-        }
+        headers = Headers.Get.classic()
+        if name == "Twitter":
+            headers = Headers.Get.Twitter()
         searcher = requests.get(
             url=site2, headers=headers, proxies=http_proxy, timeout=10, allow_redirects=True)
         f = open(report, "a")
