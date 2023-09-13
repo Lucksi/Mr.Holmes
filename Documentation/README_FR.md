@@ -165,9 +165,6 @@ write:Password=Your Password
 cd GUI
 cd Language
 edit Language.json
-write:Italian
-write:English 
-write:François
 ```
 <br>
 
@@ -191,11 +188,10 @@ write:François
     Italiano 🇮🇹 
     English 🏴󠁧󠁢󠁥󠁮󠁧󠁿
     Français 🇫🇷
-
 <br>
 
 # VERSION ACTUELLE:
-## T.G.D-1.0.3
+## T.G.D-1.0.4
 
 <br>
 

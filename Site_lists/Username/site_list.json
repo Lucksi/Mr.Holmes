@@ -36,6 +36,17 @@
             "Tag": "Programming, OpenSource"
         },
 
+        "YouTube":{
+            "Error": "Status-Code",
+            "name": "YouTube",
+            "main": "youtube.com",
+            "user": "https://youtube.com/@{}",
+            "user2": "https://www.youtube.com/feeds/videos.xml?user={}",
+            "exception": [" "],
+             "Scrapable": "False",
+            "Tag": "Video, Sharing"
+        },
+
         "Facebook":{
             "Error": "Status-Code",
             "name": "Facebook",

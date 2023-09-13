@@ -1,21 +1,21 @@
 [GENERAL-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
-| https://www.google.com/search?q=site:(www."{}")
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:txt
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:pdf
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:log
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:doc
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:docx
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:sqlite
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:yaml
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:json
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:xls
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:xlsx
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:csv
-| https://www.google.com/search?q=site:(www."{}")%29+filetype:md
-| https://www.google.com/search?q=site:(www."{}")%29+intext:admin+OR+Admin
-| https://www.google.com/search?q=site:(www."{}"%29+intext:emails+OR+Emails+OR+EMAILS
-| https://www.google.com/search?q=site:(www."{}")%29+intitle:admin+OR+Admin
-| https://www.google.com/search?q=intext:(www."{}"+OR+"{}")
-| https://www.google.com/search?q=inurl:(www."{}"+OR+"{}")
+| https://www.google.com/search?q=site:(www.%22{}%22)
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:txt
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:pdf
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:log
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:doc
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:docx
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:sqlite
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:yaml
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:json
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:xls
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:xlsx
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:csv
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+filetype:md
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+intext:admin+OR+Admin
+| https://www.google.com/search?q=site:(www.%22{}%22%29+intext:emails+OR+Emails+OR+EMAILS
+| https://www.google.com/search?q=site:(www.%22{}%22)%29+intitle:admin+OR+Admin
+| https://www.google.com/search?q=intext:(www.%22{}%22+OR+%22{}%22)
+| https://www.google.com/search?q=inurl:(www.%22{}%22+OR+%22{}%22)
 ----------------------------------------------------------------------------------------------------------------------
