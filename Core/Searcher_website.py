@@ -52,6 +52,11 @@ class Web:
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES FOR: {}".format(username_2))
         sleep(5)
         Scraper.Search.Twitter(report, username_2, "None", "None", "None",username,"Websites")
+        print(Font.Color.WHITE + "---------------------------------------------------------GIT-HUB---------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES THAT CONTAINS: {}".format(username))
+        Scraper.Search.Github(report, username, "None", "None","None","Websites")
+        print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 GIT-HUB PROFILES FOR: {}".format(username_2))
+        sleep(5)
+        Scraper.Search.Github(report, username_2, "None", "None",username,"Websites")
         print("-------------------------------------------------------------------------------------------------------------------------------------")
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

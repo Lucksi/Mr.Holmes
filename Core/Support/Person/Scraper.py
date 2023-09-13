@@ -413,7 +413,7 @@ class Search:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
     @staticmethod
-    def Github(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
+    def Github(report, username, http_proxy,imagefold, username2,fold):
         List = []
         Links = []
         Pics = []
@@ -424,12 +424,18 @@ class Search:
         sleep(4)
         i = 0
         req = requests.get(url,headers=headers).text
+        f = open(report, "a",encoding="utf-8")
+        f.write( "--------------------------------\nSHOWING GITHUB RESULTS FOR: {}\n".format(username))
         try:
             parser = json.loads(req)
             output = parser["total_count"]
             if output == 0:
                 pass
             else:
+                if output <= 20:
+                    output = output
+                else:
+                    output = 20
                 for i in range(output):
                     usern = parser["items"][i]["login"]
                     link = parser["items"][i]["html_url"]
@@ -440,6 +446,9 @@ class Search:
                     List.append(usern)
                     Links.append(link)
                     Pics.append(profile_pic)
+                    f.write("\nUSER FOUND: {}".format(usern))
+                    f.write("\nPROFILE-PIC: {}".format(profile_pic))
+                    f.write("\nLINK: {}\n".format(link))
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
@@ -490,19 +499,22 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
                 i = i +1
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
-                            Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if opt == 1:
-                check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
-                                  Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                if check not in List:
-                    pass
-                else:
-                    check = check.replace("@", "")
-                    if os.path.isdir(imagefold):
+            if fold == "People":
+                opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
+                                Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if opt == 1:
+                    check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+                                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if check not in List:
                         pass
                     else:
-                        os.mkdir(imagefold)
-                    Scraper.info.Github(report, check, http_proxy,
-                                        "People", username2)
+                        check = check.replace("@", "")
+                        if os.path.isdir(imagefold):
+                            pass
+                        else:
+                            os.mkdir(imagefold)
+                        Scraper.info.Github(report, check, http_proxy,
+                                            "People", username2)
+            else:
+                pass
             
