@@ -8,7 +8,7 @@
             "user2": "https://xhamster.com/users/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Porn"
+            "Tag": ["Porn"]
         },
 
         "PornHub":{
@@ -19,7 +19,7 @@
             "user2": "https://pornhub.com/users/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Porn"
+            "Tag": ["Porn"]
         },
 
         "YouPorn":{
@@ -30,7 +30,7 @@
             "user2": "https://youporn.com/uservids/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Porn"
+            "Tag": ["Porn"]
         },
 
         "XVideos":{
@@ -41,7 +41,7 @@
             "user2": "https://xvideos.com/profiles/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Porn, Video"
+            "Tag": ["Porn-Video"]
         },
 
         "ChaturBate":{
@@ -52,7 +52,7 @@
             "user2": "https://chaturbate.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Porn, Chat"
+            "Tag": ["Porn-Chat"]
         },
 
         "BongaCams":{
@@ -63,7 +63,7 @@
             "user2": "https://pt.bongacams.com/profile/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Chatcam"       
+            "Tag": ["Chatcam"]
         },
 
         "Tinder":{
@@ -75,7 +75,7 @@
             "user2": "https://tinder.com/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Appointment, Chat, Social"
+            "Tag": ["Appointment", "Chat", "Social"]
         },
 
         "LiveJasmin":{
@@ -87,7 +87,7 @@
             "user2": "https://www.livejasmin.com/en/girls/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Live, Porn"
+            "Tag": ["Live-Porn"]
         },
 
         "LiveJasmin2":{
@@ -99,7 +99,7 @@
             "user2": "https://www.livejasmin.com/en/boys/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Live, Porn"
+            "Tag": ["Live-Porn"]
         }
     }
 ]

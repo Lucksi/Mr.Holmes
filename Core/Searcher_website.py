@@ -73,8 +73,6 @@ class Web:
             if choice == 1:
                 Web.trace(username, report)
 
-
-
     @staticmethod
     def Ports(username, report):
         f = open(report, "a")

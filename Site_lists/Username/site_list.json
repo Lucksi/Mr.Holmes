@@ -9,7 +9,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://www.picuki.com/profile/{}",
-            "Tag": "Social, Photo, Video, Chatting"
+            "Tag": ["Social", "Photo", "Video", "Chatting"]
         },
 
         "Threads":{
@@ -21,7 +21,7 @@
             "user2": "https://threads.net/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social, Photo, Video, Chatting"
+            "Tag": ["Social", "Photo", "Video", "Chatting"]
         },
 
         "GitHub":{
@@ -33,7 +33,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://api.github.com/users/{}",
-            "Tag": "Programming, OpenSource"
+            "Tag": ["Programming","OpenSource"]
         },
 
         "YouTube":{
@@ -43,8 +43,8 @@
             "user": "https://youtube.com/@{}",
             "user2": "https://www.youtube.com/feeds/videos.xml?user={}",
             "exception": [" "],
-             "Scrapable": "False",
-            "Tag": "Video, Sharing"
+            "Scrapable": "False",
+            "Tag": ["Video","Sharing","Youtube"]
         },
 
         "Facebook":{
@@ -55,7 +55,7 @@
             "user2": "https://facebook.com/{}",
             "exception": [".","_"],
             "Scrapable": "False",
-            "Tag": "Social, Chatting"
+            "Tag": ["Social","Chatting"]
         },
 
         "Disqus":{
@@ -67,7 +67,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://disqus.com/api/3.0/users/details?user=username%3A{}&attach=userFlaggedUser&api_key=E8Uh5l5fHZ6gD8U3KycjAIAk46f68Zw7C6eW8WSjZvCLXebZ7p0r1yrYDrLilk2F",
-            "Tag": "Chatting"
+            "Tag": ["Chatting"]
         },
 
         "Pinterest":{
@@ -78,7 +78,7 @@
             "user2": "https://pinterest.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image, Social, Photo"
+            "Tag": ["Image","Social","Photo"]
         },
 
         "Imgur":{
@@ -90,7 +90,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://api.imgur.com/account/v1/accounts/{}?client_id=546c25a59c58ad7",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "MySpace":{
@@ -101,7 +101,7 @@
             "user2": "https://myspace.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social, Chatting"
+            "Tag": ["Social","Chatting"]
         },
 
         "Tellonym":{
@@ -113,7 +113,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://tellonym.me/{}",
-            "Tag": "Questions, Chatting"
+            "Tag": ["Questions","Chatting"]
         },
 
         "Twitch":{
@@ -124,7 +124,7 @@
             "user2": "https://m.twitch.tv/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Live, Streaming, Gaming, Chatting"
+            "Tag": ["Streaming","Gaming","Chatting"]
         },
 
         "Wattpad":{
@@ -136,7 +136,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://www.wattpad.com/api/v3/users/{}/",
-            "Tag": "Book, Writing"
+            "Tag": ["Writing","Stories"]
         },
 
         "FortniteTracker":{
@@ -147,7 +147,7 @@
             "user2": "https://fortnitetracker.com/profile/all/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming, Fortnite"
+            "Tag": ["Gaming","Fortnite"]
         },
 
         "HackTheBox":{
@@ -158,7 +158,7 @@
             "user2": "https://forum.hackthebox.eu/profile/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Programming, Hacking"
+            "Tag": ["Hacking"]
         },
 
         "MyAnimeList":{
@@ -169,7 +169,7 @@
             "user2": "https://myanimelist.net/profile/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Anime"
+            "Tag": ["Anime"]
         },
 
         "Oracle":{
@@ -180,7 +180,7 @@
             "user2": "https://community.oracle.com/people/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Forum, Programming"
+            "Tag": ["Forum-Programming"]
         },
 
         "SoundCloud":{
@@ -191,7 +191,7 @@
             "user2": "https://soundcloud.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "Vimeo":{
@@ -202,7 +202,7 @@
             "user2": "https://vimeo.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Video"
+            "Tag": ["Video"]
         },
 
         "Youpic":{
@@ -213,7 +213,7 @@
             "user2": "https://youpic.com/photographer/{}/",
             "exception": ["/"," "],
             "Scrapable": "False",
-            "Tag": "Image, Photo"
+            "Tag": ["Image","Photo"]
         },
 
         "Gfycat":{
@@ -224,7 +224,7 @@
             "user2": "https://gfycat.com/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gyf"
+            "Tag": ["Gyf"]
         },
 
         "Flickr":{
@@ -235,7 +235,7 @@
             "user2": "https://www.flickr.com/photos/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image, Photo"
+            "Tag": ["Image","Photo"]
         },
 
         "DeviantArt":{
@@ -246,7 +246,7 @@
             "user2": "https://www.deviantart.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Art, Photo"
+            "Tag": ["Art","Photo"]
         },
 
         "VKontakte":{
@@ -257,7 +257,7 @@
             "user2" : "https://vk.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social, Chatting"
+            "Tag": ["Social","Chatting"]
         },
 
         "9GAG":{
@@ -268,7 +268,7 @@
             "user2": "https://9gag.com/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Meme"
+            "Tag": ["Meme"]
         },
 
         "Daylimotion":{
@@ -279,7 +279,7 @@
             "user2": "https://www.dailymotion.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Video"
+            "Tag": ["Video"]
         },
 
         "Tumblr":{
@@ -290,7 +290,7 @@
             "user2": "https://{}.tumblr.com/",
             "exception": [" ","."],
             "Scrapable": "False",
-            "Tag": "Video"
+            "Tag": ["Blog","Social"]
         },
 
         "SourceForge":{
@@ -301,7 +301,7 @@
             "user2": "https://sourceforge.net/u/{}",
             "exception": " ",
             "Scrapable": "False",
-            "Tag": "Video"
+            "Tag": ["Programming"]
         },
 
         "PyPi":{
@@ -312,7 +312,7 @@
             "user2": "https://pypi.org/user/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Programming, OpenSource, Python"
+            "Tag": ["Programming", "OpenSource", "Python"]
         },
 
         "GooglePlay":{
@@ -323,7 +323,7 @@
             "user2": "https://play.google.com/store/apps/developer?id={}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Store, Gaming, Programming"
+            "Tag": ["Store", "Gaming", "Programming"]
         },
 
         "About.Me":{
@@ -334,7 +334,7 @@
             "user2": "https://about.me/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Blog"
+            "Tag": ["Blog"]
         },
 
         "PokemonShowdown":{
@@ -345,7 +345,7 @@
             "user2": "https://pokemonshowdown.com/users/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming , Pokemon"
+            "Tag": ["Gaming","Pokemon"]
         },
 
         "LolProfiles":{
@@ -357,7 +357,7 @@
             "user2": "https://lolprofile.net/search/world/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming, LoL"
+            "Tag": ["Gaming","LoL"]
         },
 
         "Twitter":{
@@ -370,7 +370,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://nitter.net/{}",
-            "Tag": "Social, Chatting, Twitter"
+            "Tag": ["Social","Chatting","Twitter"]
         },
 
         "PsnProfiles":{
@@ -382,7 +382,7 @@
             "user2": "https://psnprofiles.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming, PlayStation"
+            "Tag": ["Gaming","PlayStation"]
         },
 
         "7Cups":{
@@ -393,7 +393,7 @@
             "user2": "https://www.7cups.com/@",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "AskFM":{
@@ -405,7 +405,7 @@
             "user2": "https://ask.fm/{}",
             "exception": [" ","."],
             "Scrapable": "False",
-            "Tag": "Questions"
+            "Tag": ["Questions"]
         },
 
         "TwitchTracker":{
@@ -416,7 +416,7 @@
             "user2": "https://twitchtracker.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming, Stream"
+            "Tag": ["Streaming","Gaming","Chatting"]
         },
 
         "LinkTree":{
@@ -428,7 +428,7 @@
             "exception": [" "],
             "Scrapable": "True", 
             "Scrapable_url" : "https://linktr.ee/{}",
-            "Tag": "Link"
+            "Tag": ["Link"]
         },
 
         "Patreon":{
@@ -439,7 +439,7 @@
             "user2": "https://patreon.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Donations"
+            "Tag": ["Donations"]
         },
 
         "Flipboard":{
@@ -450,7 +450,7 @@
             "user2": "https://flipboard.com/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image, Blog, Article"
+            "Tag": ["Image","Blog","Article"]
         },
 
         "BuyMeACoffee":{
@@ -461,7 +461,7 @@
             "user2": "https://www.buymeacoffee.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Donations"
+            "Tag": ["Donations"]
         },
 
         "Interpals":{
@@ -473,7 +473,7 @@
             "user2": "https://www.interpals.net/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Social"]
         },
 
         "TryHackMe":{
@@ -484,7 +484,7 @@
             "user2": "https://tryhackme.com/p/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Programming, Hacking"
+            "Tag": ["Hacking"]
         },
 
         "SteamCommunity":{
@@ -496,7 +496,7 @@
             "user2": "https://steamcommunity.com/id/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming, Steam"
+            "Tag": ["Gaming, Steam"]
         },
 
         "BitcoinForum":{
@@ -508,7 +508,7 @@
             "user2": "https://bitcoinforum.com/profile/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Forum, BitCoin"
+            "Tag": ["BitCoin-Forum", "BitCoin"]
         },
 
         "BitBucket":{
@@ -519,7 +519,7 @@
             "user2": "https://bitbucket.org/{}/",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Programming, OpenSource"
+            "Tag": ["Programming","OpenSource"]
         },
 
         "ClubHouse":{
@@ -530,7 +530,7 @@
             "user2": "https://joinclubhouse.com/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "Bandcamp":{
@@ -541,7 +541,7 @@
             "user2": "https://www.bandcamp.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "Bookcrossing":{
@@ -552,7 +552,7 @@
             "user2": "https://www.bookcrossing.com/mybookshelf/{}/",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Books"
+            "Tag": ["Books"]
         },
 
         "Chess":{
@@ -564,7 +564,7 @@
             "user2": "https://www.chess.com/member/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming , Chess"
+            "Tag": ["Chess"]
         },
 
         "Fandom":{
@@ -575,7 +575,7 @@
             "user2": "https://www.fandom.com/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Social","Forum"]
         },
 
         "Freesound":{
@@ -586,7 +586,7 @@
             "user2": "https://freesound.org/people/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "Pubg":{
@@ -598,7 +598,7 @@
             "user2": "https://pubg.op.gg/user/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming"
+            "Tag": ["Gaming"]
         },
 
         "Euw":{
@@ -610,7 +610,7 @@
             "user2": "https://euw.op.gg/summoner/userName={}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Gaming"
+            "Tag": ["Gaming"]
         },
 
         "Quora":{
@@ -621,7 +621,7 @@
             "user2": "https://www.quora.com/profile/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Questions"
+            "Tag": ["Questions"]
         },
 
         "Wikipedia":{
@@ -632,7 +632,7 @@
             "user2": "https://wikipedia.org/wiki/User:{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Informations"
+            "Tag": ["Informations"]
         },
 
         "AllMyLinks":{
@@ -643,7 +643,7 @@
             "user2": "https://allmylinks.com/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Links"
+            "Tag": ["Links"]
         },
 
         "Medium": {
@@ -655,7 +655,7 @@
             "user2": "https://medium.com/@{}",
             "exception": [" ",".","_"],
             "Scrapable": "False",
-            "Tag": "Blog"
+            "Tag": ["Blog"]
         },
 
         "SkillShare":{
@@ -666,7 +666,7 @@
             "user2": "https://www.skillshare.com/user/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "Pr0gramm":{
@@ -679,7 +679,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://pr0gramm.com/api/profile/info?name={}",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "BinarySearch":{
@@ -692,7 +692,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://binarysearch.com/api/users/{}/profile",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "MixCloud":{
@@ -704,7 +704,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://api.mixcloud.com/{}/",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "Archive.org":{
@@ -716,7 +716,7 @@
             "user2": "https://archive.org/details/@{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Archieve"]
         },
 
         "Blogger":{
@@ -727,7 +727,7 @@
             "user2": "https://{}.blogspot.com",
             "exception": [" ",".","/"],
             "Scrapable": "False",
-            "Tag": "Blog"
+            "Tag": ["Blog"]
         },
 
         "AudioJungle":{
@@ -738,7 +738,7 @@
             "user2": "https://audiojungle.net/user/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "DockerHub":{
@@ -751,7 +751,7 @@
             "exception": [" ",".","/","_"],
             "Scrapable": "True",
             "Scrapable_url": "https://hub.docker.com/v2/users/{}/",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "AminoApps":{
@@ -762,7 +762,7 @@
             "user2": "https://aminoapps.com/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "SublimeForum":{
@@ -773,7 +773,7 @@
             "user2": "https://forum.sublimetext.com/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "Kik":{
@@ -786,19 +786,19 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://ws2.kik.com/user/{}",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
-        "Signal":{
+        "Signal-Community":{
             "Error": "Status-Code",
             "text": "Oops! That page doesn’t exist or is private.",
-            "name": "Signal",
+            "name": "Signal-Community",
             "main": "community.signalusers.org",
             "user": "https://community.signalusers.org/u/{}",
             "user2": "https://community.signalusers.org/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social", "Chatting"]
         },
 
         "GitLab":{
@@ -811,7 +811,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://gitlab.com/api/v4/users?username={}",
-            "Tag":"Programming, OpenSource"
+            "Tag":["Programming","OpenSource"]
         },
 
         "Wix":{
@@ -822,7 +822,7 @@
             "user2": "https://{}.wix.com",
             "exception": [" ",".","/"],
             "Scrapable": "False",
-            "Tag": "Website"
+            "Tag": ["Website"]
         },
 
         "UnSplash":{
@@ -833,7 +833,7 @@
             "user2": "https://unsplash.com/@{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "FacciaBuco":{
@@ -844,7 +844,7 @@
             "user2": "https://www.facciabuco.com/vaccheca/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "Behance":{
@@ -855,7 +855,7 @@
             "user2": "https://www.behance.net/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Portfolio"]
         },
 
         "Hackaday":{
@@ -866,7 +866,7 @@
             "user2": "https://hackaday.io/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming, Hacking"
+            "Tag": ["Programming, Hacking"]
         },
 
         "Ello":{
@@ -877,7 +877,7 @@
             "user2": "https://ello.co/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Market"]
         },
 
         "Jimdo":{
@@ -888,7 +888,7 @@
             "user2": "https://{}.jimdosite.com",
             "exception": [" ",".","/"],
             "Scrapable": "False",
-            "Tag": "Website"
+            "Tag": ["Website"]
         },
 
         "Keybase":{
@@ -899,7 +899,7 @@
             "user2": "https://keybase.io/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Key"
+            "Tag": ["Key"]
         },
 
         "Slack":{
@@ -910,7 +910,7 @@
             "user2": "https://{}.slack.com",
             "exception": [" ",".","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Team"]
         },
 
         "Camfrog":{
@@ -922,7 +922,7 @@
             "user2": "https://profiles.camfrog.com/en/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Video"
+            "Tag": ["Video"]
         },
 
         "YouNow":{
@@ -934,7 +934,7 @@
             "user2": "https://api.younow.com/php/api/broadcast/info/user={}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Streaming"]
         },
 
         "ShitpostBot5000":{
@@ -945,7 +945,7 @@
             "user2": "https://www.shitpostbot.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Meme"
+            "Tag": ["Meme"]
         },
 
         "Smule":{
@@ -957,7 +957,7 @@
             "user2": "https://www.smule.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Sing","Music"]
         },
 
         "OurDjTalk":{
@@ -969,7 +969,7 @@
             "user2": "https://ourdjtalk.com/djs/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "NICommunityForum":{
@@ -981,7 +981,7 @@
             "user2": "https://www.native-instruments.com/forum/members/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "BuzzFeed":{
@@ -992,7 +992,7 @@
             "user2": "https://buzzfeed.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Feed"
+            "Tag": ["Feed"]
         },
 
         "House-Mixes":{
@@ -1004,7 +1004,7 @@
             "user2": "https://www.house-mixes.com/profile/{}",
             "exception": [" ","/",".","_","-"],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "Osu!":{
@@ -1015,7 +1015,7 @@
             "user2": "https://osu.ppy.sh/users/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Gaming","OSU"]
         },
 
         "Dribble":{
@@ -1027,7 +1027,7 @@
             "user2": "https://dribbble.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Portfolio"]
         },
 
         "TikTok":{
@@ -1039,7 +1039,7 @@
             "exception": [" ","/"],
             "Scrapable": "True",
             "Scrapable_url": "https://urlebird.com/user/{}/",
-            "Tag": "Social, Video, TikTok"
+            "Tag": ["Social","Video","TikTok"]
         },
 
        "TheHandbook":{
@@ -1050,7 +1050,7 @@
            "user2": "https://www.thehandbook.com/influencer/{}",
            "exception": [" ","/"],
            "Scrapable": "False",
-           "Tag": "Social"
+           "Tag": ["Social"]
         },
 
         "Lookbook.nu":{
@@ -1062,7 +1062,7 @@
             "user2": "https://lookbook.nu/search/users?q={}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Fashion","Modelling"]
         },
 
         "CodeAccademy":{
@@ -1074,7 +1074,7 @@
             "user2": "https://www.codecademy.com/profiles/{}",
             "exception": [" ","/","_","."],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "DevCommunity":{
@@ -1085,7 +1085,7 @@
             "user2": "https://dev.to/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "CodeWars":{
@@ -1096,7 +1096,7 @@
             "user2": "https://www.codewars.com/users/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming","Challange"]
         },
 
         "Drupal":{
@@ -1107,7 +1107,7 @@
             "user2": "https://www.drupal.org/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Website"]
         },
 
         "Seaport":{
@@ -1118,7 +1118,7 @@
             "user2": "https://forum.pixelfederation.com/seaport/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "DiggysAdventure":{
@@ -1129,7 +1129,7 @@
             "user2": "https://forum.pixelfederation.com/diggysadventure/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "Trainstation":{
@@ -1140,7 +1140,7 @@
             "user2": "https://forum.pixelfederation.com/trainstation/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "Trainstation2":{
@@ -1151,7 +1151,7 @@
             "user2": "https://forum.pixelfederation.com/trainstation2/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "Emporea":{
@@ -1162,7 +1162,7 @@
             "user2": "https://forum.pixelfederation.com/emporea/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "PortCity":{
@@ -1173,7 +1173,7 @@
             "user2": "https://forum.pixelfederation.com/portcity/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum"
+            "Tag": ["Forum"]
         },
 
         "Venmo":{
@@ -1185,7 +1185,7 @@
             "user2": "https://venmo.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Payment"
+            "Tag": ["Payment"]
         },
 
         "ThemeForest":{
@@ -1197,7 +1197,7 @@
             "user2": "https://themeforest.net/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Gaming, ThemeForest"
+            "Tag": ["Gaming, ThemeForest"]
         },
 
         "CbtNuggets":{
@@ -1208,7 +1208,7 @@
             "user2": "https://www.cbtnuggets.com/trainers/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming","Training"]
         },
 
         "Periscope":{
@@ -1220,19 +1220,19 @@
             "user2": "https://www.pscp.tv/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
-        "LiveStream":{
+        "LiveStreaming":{
             "Error": "Message",
             "text": "Page Not Found (404)",
-            "name":"LiveStream",
-            "main": "livestream.com",
-            "user": "https://livestream.com/{}",
-            "user2": "https://livestream.com/{}",
+            "name":"LiveStreaming",
+            "main": "liveStreaming.com",
+            "user": "https://liveStreaming.com/{}",
+            "user2": "https://liveStreaming.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Live, Streaming"
+            "Tag": ["Streaming"]
         },
 
         "Minecraft":{
@@ -1244,7 +1244,7 @@
             "exception": [" ","/"],
             "Scrapable": "True",
             "Scrapable_url": "https://api.mojang.com/users/profiles/minecraft/{}",
-            "Tag": "Gaming, Minecraft"
+            "Tag": ["Gaming","Minecraft"]
         },
 
         "Ko-Fi":{
@@ -1256,7 +1256,7 @@
             "user2": "https://ko-fi.com/{}",
             "exception": [" ","/","."],
             "Scrapable": "False",
-            "Tag": "Donations"
+            "Tag": ["Donations"]
         },
 
         "LinkGenie":{
@@ -1267,7 +1267,7 @@
             "user2": "https://linkgenie.co/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Link"
+            "Tag": ["Link"]
         },
 
         "Vsco":{
@@ -1278,7 +1278,7 @@
             "user2": "https://vsco.co/{}/gallery",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image, Photo"
+            "Tag": ["Image","Photo"]
         },
 
         "Pastebin":{
@@ -1289,7 +1289,7 @@
             "user2": "https://pastebin.com/u/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "RubyGems":{
@@ -1300,7 +1300,7 @@
             "user2": "https://rubygems.org/profiles/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Programming","Ruby"]
         },
 
         "Asciinema":{
@@ -1311,7 +1311,7 @@
             "user2": "https://asciinema.org/~{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Video, Clip-Sharing"
+            "Tag": ["Video, Clip-Sharing"]
         },
 
         "Milkshake":{
@@ -1322,7 +1322,7 @@
             "user2": "https://msha.ke/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Blog"
+            "Tag": ["Website"]
         },
 
         "MyMonat":{
@@ -1333,7 +1333,7 @@
             "user2": "https://{}.mymonat.com/",
             "exception": [" ","/",".","_"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Health"]
         },
 
         "WordPress":{
@@ -1345,7 +1345,7 @@
             "user2": "https://{}.wordpress.com",
             "exception": [" ","/","_","."],
             "Scrapable": "False",
-            "Tag": "Website"
+            "Tag": ["Website"]
         },
 
         "Gitee":{
@@ -1356,7 +1356,7 @@
             "user2": "https://gitee.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming, OpenSource"
+            "Tag": ["Programming","OpenSource"]
         },
 
         "Scratch":{
@@ -1367,7 +1367,7 @@
             "user2": "https://scratch.mit.edu/users/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "Npm":{
@@ -1378,7 +1378,7 @@
             "user2": "https://www.npmjs.com/~{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming, Npm"
+            "Tag": ["Programming","Npm"]
         },
 
         "Mastodon":{
@@ -1389,7 +1389,7 @@
             "user2": "https://mastodon.social/@{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "Splits.io":{
@@ -1400,7 +1400,7 @@
             "user2": "https://splits.io/users/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Gaming"
+            "Tag": ["Gaming"]
         },
 
         "Speedrun":{
@@ -1411,7 +1411,7 @@
             "user2": "https://www.speedrun.com/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Speedrun"
+            "Tag": ["Speedrun"]
         },
 
         "GameSpot":{
@@ -1422,7 +1422,7 @@
             "user2": "https://www.gamespot.com/profile/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Gaming"
+            "Tag": ["Gaming"]
         },
 
         "HubPages":{
@@ -1433,7 +1433,7 @@
             "user2": "https://hubpages.com/@{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Blog"
+            "Tag": ["Blog"]
         },
 
         "Opensource":{
@@ -1444,7 +1444,7 @@
             "user2": "https://opensource.com/users/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "OpenSource"
+            "Tag": ["OpenSource"]
         },
 
         "OpenStreetMap":{
@@ -1455,7 +1455,7 @@
             "user2": "https://www.openstreetmap.org/user/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Map"
+            "Tag": ["Map"]
         },
 
         "SlideShare":{
@@ -1466,7 +1466,7 @@
             "user2": "https://slideshare.net/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "File-Sharing"
+            "Tag": ["File-Sharing"]
         },
 
         "RateYourMusic":{
@@ -1477,7 +1477,7 @@
             "user2": "https://rateyourmusic.com/~{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Music"
+            "Tag": ["Music"]
         },
 
         "NotABug.org":{
@@ -1488,7 +1488,7 @@
             "user2": "https://notabug.org/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming"
+            "Tag": ["Programming"]
         },
 
         "Moikrug":{
@@ -1500,7 +1500,7 @@
             "user2": "https://career.habr.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "NewGrounds":{
@@ -1511,7 +1511,7 @@
             "user2": "https://{}.newgrounds.com",
             "exception": [" ",".","_"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "Roblox":{
@@ -1523,7 +1523,7 @@
             "user2": "https://www.roblox.com/user.aspx?username={}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Gaming, Roblox"
+            "Tag": ["Gaming, Roblox"]
         },
 
         "Listal":{
@@ -1535,7 +1535,7 @@
             "user2": "https://{}.listal.com",
             "exception": [" ",".","_"],
             "Scrapable": "False",
-            "Tag": "Image"
+            "Tag": ["Image"]
         },
 
         "HackerOne":{
@@ -1546,7 +1546,7 @@
             "user2": "https://hackerone.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Programming, Hacking"
+            "Tag": ["Hacking"]
         },
 
         "BugCrowd":{
@@ -1557,7 +1557,7 @@
             "user2": "https://bugcrowd.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["BugBounty","Hacking"]
         },
 
         "Quotev":{
@@ -1568,7 +1568,7 @@
             "user2": "https://www.quotev.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "JoinRoll":{
@@ -1580,7 +1580,7 @@
             "user2": "https://creators.joinroll.com/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Gallery"
+            "Tag": ["Gallery"]
         },
 
         "Vbox7":{
@@ -1592,7 +1592,7 @@
             "user2": "https://www.vbox7.com/user:{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "Bitchute":{
@@ -1604,7 +1604,7 @@
             "user2": "https://www.bitchute.com/channel/{}/",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social"
+            "Tag": ["Social"]
         },
 
         "OpenSea":{
@@ -1615,7 +1615,7 @@
             "user2": "https://opensea.io/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Crypto"
+            "Tag": ["Crypto"]
         },
 
         "HeyLink.me":{
@@ -1626,7 +1626,7 @@
             "user2": "https://heylink.me/{}/",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Link"
+            "Tag": ["Link"]
         },
 
         "Ngl.link":{
@@ -1639,7 +1639,7 @@
             "exception": [" ","/"],
             "Scrapable": "True",
             "Scrapable_url": "https://ngl.link/{}",
-            "Tag": "Questions"
+            "Tag": ["Questions"]
         },
 
         "Quizsilo":{
@@ -1651,7 +1651,7 @@
             "user2": "https://quizsilo.com/profile/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Questions, Forum"
+            "Tag": ["Questions, Forum"]
         },
 
         "ColorLovers":{
@@ -1662,7 +1662,7 @@
             "user2":"https://www.colourlovers.com/lover/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Forum, Colors"
+            "Tag": ["Forum","Colors"]
         },
 
         "21Buttons":{
@@ -1673,7 +1673,7 @@
             "user2": "https://www.21buttons.com/buttoner/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": "Social, Dressing, Fashion, Shopping"
+            "Tag": ["Social","Dressing", "Fashion", "Shopping"]
         }
     }
 ]

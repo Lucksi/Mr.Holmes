@@ -21,6 +21,7 @@ from Core.Support import Notification
 from Core.Support import Recap
 from Core.Support import FileTransfer
 from datetime import datetime
+from time import sleep
 from Core.Support import Encoding
 
 
@@ -72,6 +73,7 @@ class info:
         TwitterParams = []
         PostLocations = []
         PostGpsCoordinates = []
+        MostTags = []
         info.Banner(Mode)
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Username","Default","ExplanationP") + Font.Color.WHITE) )
         subject = "PERSON"
@@ -182,7 +184,16 @@ class info:
                 print(Font.Color.GREEN + "\n[+]" +
                       Font.Color.WHITE + "TWITTER HYPOTHESIS")
                 Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
-            Recap.Stats.Places(PostLocations,Recap1,InstagramParams,username)
+            Recap.Stats.Places(PostLocations,Recap1,InstagramParams,username,MostTags)
+            if len(MostTags):
+                print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING POSSIBLE HOBBIES/INTERESTS:")
+                f = open(Recap1, "a")
+                f.write("\nGETTING POSSIBLE HOBBIES/INTERESTS:\n")
+                sleep(3)
+                for PossibleHobby in MostTags:
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + PossibleHobby)
+                    f.write(PossibleHobby+"\n")
             Encoding.Encoder.Encode(Recap1)
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))

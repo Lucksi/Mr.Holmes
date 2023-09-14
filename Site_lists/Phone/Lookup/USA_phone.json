@@ -7,7 +7,7 @@
             "url": "https://www.411.com/phone/{}",
             "url2": "https://www.411.com/phone/{}",
             "Scrapable": "False",
-            "Tag": "USA"
+            "Tag": ["USA"]
         },
         
         "WhitePages":{
@@ -17,7 +17,7 @@
             "url": "https://www.whitepages.com/phone/{}",
             "url2": "https://www.whitepages.com/phone/{}",
             "Scrapable": "False",
-            "Tag": "USA"
+            "Tag": ["USA"]
         },
         
         "FreeLookup":{
@@ -27,7 +27,7 @@
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["USA"]
         },
         
         "8080":{
@@ -37,7 +37,7 @@
             "url": "https://800notes.com/Phone.aspx/{}",
             "url2": "https://800notes.com/Phone.aspx/{}",
             "Scrapable": "False",
-            "Tag": "USA"
+            "Tag": ["USA"]
         },
 
         "WhoseNumber":{
@@ -48,7 +48,7 @@
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["Generic"]
         },
 
         "SpamCalls":{
@@ -59,7 +59,7 @@
             "url": "https://spamcalls.net/en/number/{}",
             "url2": "https://spamcalls.net/en/number/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["Generic"]
         }
     }
 ] 

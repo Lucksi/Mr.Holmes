@@ -5,6 +5,7 @@
 
 import os
 import random
+import socket 
 from Core.Support import Font
 from Core.Support import Clear
 from Core import Searcher

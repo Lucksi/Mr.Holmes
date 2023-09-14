@@ -15,7 +15,7 @@ filename
 class Stats:
 
     @staticmethod
-    def Places(PostLocations,report,Params,username):
+    def Places(PostLocations,report,Params,username,Hobby):
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "GETTING GEOLOCATION HYPOTHESIS...")
         try:
             sleep(3)
@@ -32,9 +32,11 @@ class Stats:
             elif num > 3 and num <=6:
                 geo = Language.Translation.Translate_Language(
                     filename, "Report", "Geo", "Medium").format(username,str(num),str(numP),str(percentage))
+                Hobby.append("Travelling")
             elif num > 6 and num == 12:
                 geo = Language.Translation.Translate_Language(
                     filename, "Report", "Geo", "High").format(username,str(num),str(numP),str(percentage))
+                Hobby.append("Travelling")
             print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + geo)
             f = open(report, "a")
             f.write("\n\n" + geo)
@@ -174,7 +176,7 @@ class Stats:
             print(Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
 
     @staticmethod
-    def Printer(username, found, Count, Percent, subject, Tags, InstagramParams, TwitterParamas, ScraperSites, ScrapeOp):
+    def Printer(username, found, Count, Percent, subject, Tags, InstagramParams, TwitterParamas, ScraperSites, ScrapeOp, MostTags):
         report = "GUI/Reports/Usernames/{}/Recap.txt".format(username)
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + "GENERATING SUMMARY REPORT...")
@@ -196,8 +198,12 @@ class Stats:
                 filename, "Report", "Recap", "Tags").format(', '.join(Tags))
             print(Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                 filename, "Report", "Recap", "Tags").format(Font.Color.WHITE + "[" + Font.Color.GREEN + ', '.join(Tags) + Font.Color.WHITE + "]"))
+            Mtag = Language.Translation.Translate_Language(
+                filename, "Report", "Recap", "MTags").format(', '.join(MostTags))
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
+                filename, "Report", "Recap", "MTags").format(Font.Color.WHITE + "[" + Font.Color.GREEN + ', '.join(MostTags) + Font.Color.WHITE + "]"))
             f = open(report, "a")
-            f.write("\nGENERATING TAGS REPORT\n\n" + "[" + Tag + "]")
+            f.write("\nGENERATING TAGS REPORT\n\n" + "[" + Tag + "]" + "\n\n" + Mtag)
             f.close()
             print(Font.Color.GREEN +
                   "\n[+]" + Font.Color.WHITE + "GENERATING GENERAL HYPOTESY REPORT...")

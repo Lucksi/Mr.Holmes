@@ -57,7 +57,7 @@ class MrHolmes:
         Scraper.info.Tellonym(
             report, username, http_proxy, "Usernames", username)
     @staticmethod
-    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags):
+    def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags):
         f = open(nomefile,)
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
@@ -94,14 +94,14 @@ class MrHolmes:
                 else:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags)
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None
                         try:
                             Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags)
+                                                          subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags)
                         except Exception as e:
                             print(
                                 Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Site_Error", "None"))
@@ -158,6 +158,7 @@ class MrHolmes:
         successfullName = []
         ScraperSites = []
         Tags = []
+        MostTags = []
         Writable = True
         MrHolmes.Banner(Mode)
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "INFO:" + "[{}]".format(Font.Color.GREEN + Language.Translation.Translate_Language(filename,"Username","Default","Explanation") + Font.Color.WHITE) )
@@ -242,14 +243,14 @@ class MrHolmes:
         if opt == 1:
             i1 = CO.Counter.Site(nomefile)
             MrHolmes.Controll(username, nomefile, identity, report, subject,
-                            successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
+                            successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags)
             Nsfw = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Nsfw") +
                     Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if Nsfw == 1:
                 nomefile = "Site_lists/Username/NSFW_site_list.json"
                 i2 = CO.Counter.Site(nomefile)
                 MrHolmes.Controll(username, nomefile, identity, report, subject,
-                                successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags)
+                                successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags)
                 Count = i1 + i2
             else:
                 Count = i1
@@ -552,7 +553,7 @@ class MrHolmes:
             if opt == 1:
                 Percent = found/Count*100
                 Recap.Stats.Printer(username, found, Count, Percent, subject,
-                                        Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp)
+                                        Tags, InstagramParams, TwitterParams, ScraperSites, ScrapeOp, MostTags)
             else:
                 if len(InstagramParams):
                     print(Font.Color.GREEN +
@@ -563,7 +564,26 @@ class MrHolmes:
                        Font.Color.WHITE + "TWITTER HYPOTHESIS")
                     Recap.Stats.Hypotesys(TwitterParams, username, Recap1)
             report = "GUI/Reports/Usernames/{}/Recap.txt".format(username)
-            Recap.Stats.Places(PostLocations,report,InstagramParams,username)
+            if len(PostLocations):
+                Recap.Stats.Places(PostLocations,report,InstagramParams,username,MostTags)
+            if len(MostTags):
+                Hobby2 = MostTags
+            else:
+                if len(Tags):
+                    Hobby2 = Tags
+                else:
+                    Hobby2 = "False"
+            if Hobby2 != "False":
+                print(Font.Color.GREEN +
+                  "\n[+]" + Font.Color.WHITE + "GETTING POSSIBLE HOBBIES/INTERESTS:")
+                f = open(report, "a")
+                f.write("\nGETTING POSSIBLE HOBBIES/INTERESTS:\n")
+                sleep(3)
+                for PossibleHobby in Hobby2:
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + PossibleHobby)
+                    f.write(PossibleHobby+"\n")
+                f.close()
+    
             Encoding.Encoder.Encode(report)
         else:
             pass

@@ -16,7 +16,8 @@ filename
 class Search:
 
     @staticmethod
-    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags):
+    def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags):
+        Unique = ["Chess","Books","Pokemon","Lol","Minecraft","Roblox","Modelling","Anime","Shopping","Writing","Stories","OSU","ThemeForest"]
         headers = Headers.Get.classic()
         if name == "Twitter":
             headers = Headers.Get.Twitter()
@@ -29,12 +30,20 @@ class Search:
                       Language.Translation.Translate_Language(filename, "Default", "Found", "None").format(subject, username))
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "LINK: {}".format(site1))
-                
                 if Writable == True:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
-                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format(Font.Color.GREEN + Tag + Font.Color.WHITE))
-                    Tags.append(Tag)
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format(Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE))
+                    for tags in Tag:
+                        if tags in Unique:
+                            MostTags.append(tags)
+                        if tags in Tags:
+                            if tags in MostTags:
+                                pass
+                            else:
+                                MostTags.append(tags)
+                        else:
+                            Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -60,8 +69,17 @@ class Search:
                 if Writable == True:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
-                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + Tag + Font.Color.WHITE)))
-                    Tags.append(Tag)
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE)))
+                    for tags in Tag:
+                        if tags in Unique:
+                            MostTags.append(tags)
+                        if tags in Tags:
+                            if tags in MostTags:
+                                pass
+                            else:
+                                MostTags.append(tags)
+                        else:
+                            Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -82,8 +100,17 @@ class Search:
                 if Writable == True:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
-                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + Tag + Font.Color.WHITE)))
-                    Tags.append(Tag)
+                      "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE)))
+                    for tags in Tag:
+                        if tags in Unique:
+                            MostTags.append(tags)
+                        if tags in Tags:
+                            if tags in MostTags:
+                                pass
+                            else:
+                                MostTags.append(tags)
+                        else:
+                            Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)

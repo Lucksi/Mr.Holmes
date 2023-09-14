@@ -515,6 +515,6 @@ class Search:
                             os.mkdir(imagefold)
                         Scraper.info.Github(report, check, http_proxy,
                                             "People", username2)
-            else:
-                pass
-            
+        else:
+            print(print(Font.Color.RED +
+                  "\n[!]" + Font.Color.WHITE + "NO USER HAS BEEN FOUND"))    

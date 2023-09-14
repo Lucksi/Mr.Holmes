@@ -8,7 +8,7 @@
             "url": "https://www.local.ch/en/q/switzerland/{}",
             "url2": "https://www.local.ch/en/q/switzerland/{}",
             "Scrapable": "False",
-            "Tag": "Switzerland"
+            "Tag": ["Switzerland"]
         },
 
         "FreeLookup":{
@@ -18,7 +18,7 @@
             "url": "https://free-lookup.net/{}",
             "url2": "https://free-lookup.net/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["Generic"]
         },
 
         "WhoseNumber":{
@@ -29,7 +29,7 @@
             "url": "https://whosenumber.info/{}",
             "url2": "https://whosenumber.info/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["Generic"]
         },
 
         "SpamCalls":{
@@ -40,7 +40,7 @@
             "url": "https://spamcalls.net/en/number/{}",
             "url2": "https://spamcalls.net/en/number/{}",
             "Scrapable": "False",
-            "Tag": "Generic"
+            "Tag": ["Generic"]
         }
     }
 ]
