@@ -210,7 +210,7 @@ function AutoInstaller {
 	echo "password = Holmes">>Configuration/Configuration.ini
 	echo "api_key = None">>Configuration/Configuration.ini
 	echo "proxy_list" = "Proxies/Proxy_list.txt">>Configuration/Configuration.ini
-	echo "useragent_list" = "Useragents/Useragent.txt">>Configuration.ini
+	echo "useragent_list" = "Useragents/Useragent.txt">>Configuration/Configuration.ini
 	echo "show_logs = False">>Configuration/Configuration.ini
 	echo "database"= "False">>Configuration/Configuration.ini
 	echo "language"= "english">>Configuration/Configuration.ini
