@@ -109,7 +109,10 @@ class Menu:
         with open(filename, "w+") as file:
             file.write(str(html).replace("[","").strip("]"))
         pdf_name = "GUI/PDF/{}.pdf".format(username)
-        pdfkit.from_file(filename, pdf_name)
+        try:
+            pdfkit.from_file(filename, pdf_name)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG PDF TEMPLETE MAY BE INCOMPLETE: " + str(e))
         print(Font.Color.WHITE + Language.Translation.Translate_Language(langfile, "Default", "Report", "None") +
               pdf_name)
         Creds.Sender.mail(pdf_name, username)
