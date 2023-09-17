@@ -38,7 +38,7 @@ git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
 sudo apt-get update
 sudo chmod +x install.sh
-sudo ./install.sh
+sudo bash install.sh
 ```
 <br>
 
@@ -216,7 +216,14 @@ edit Language.json
 <br>
 
 # HYPOTHESES
-## Avec cette version, vous pouvez générer des "hypotheses" basees sur les informations collectees (les hypothèses peuvent ne pas être fiables à 100 %).
+## Avec cette version, vous pouvez générer des "hypotheses" basees sur les informations collectees compris les hobby/interests possibles (les hypothèses peuvent ne pas être fiables à 100 %).
+
+<br>
+
+# EMAIL-LOOKUP:
+## Avec cette nouvelle version, il est possible de vérifier si un e-mail est connecté à certains réseaux sociaux/services spécifiques sans que le target le sache.
+
+<br>
 
 # GRAPHS
 ## Avec cette nouvelle version a été ajoutée la possibilité de créer des graphiques a fin de créer un schéma pour planification des informations.

@@ -39,7 +39,7 @@ git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
 sudo apt-get update
 sudo chmod +x install.sh
-sudo ./install.sh
+sudo bash install.sh
 ```
 <br>
 
@@ -216,7 +216,12 @@ edit Language.json
 <br>
 
 # HYPOTHESIS
-## This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media (It may not be a 100% attendible)
+## This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media including possible hobbies/interests (It may not be a 100% attendible)
+
+<br>
+
+# EMAIL-LOOKUP:
+## With this new version is possible to check if an email is connected to some specific socials/services without letting the target know it.
 
 <br>
 

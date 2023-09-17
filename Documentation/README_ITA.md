@@ -38,7 +38,7 @@ git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
 sudo apt-get update
 sudo chmod +x install.sh
-sudo ./install.sh
+sudo bash install.sh
 ```
 <br>
 
@@ -217,7 +217,12 @@ edit Language.json
 <br>
 
 # IPOTESI
-## Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte (Le Ipotesi Potrebbero non essere affidabili al 100%)
+## Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte ciò comprende possibili hobby/interessi (Le Ipotesi Potrebbero non essere affidabili al 100%)
+
+<br>
+
+# EMAIL-LOOKUP:
+## Con questa nuova versione è possible verificare se una email è collegata con alcuni social/servizi senza notificare il target.
 
 <br>
 
