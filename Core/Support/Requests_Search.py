@@ -34,16 +34,17 @@ class Search:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
                       "[I]" + Font.Color.WHITE + "TAGS:[{}]".format(Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE))
-                    for tags in Tag:
-                        if tags in Unique:
-                            MostTags.append(tags)
-                        if tags in Tags:
-                            if tags in MostTags:
-                                pass
-                            else:
+                    if subject != "PHONE-NUMBER":
+                        for tags in Tag:
+                            if tags in Unique:
                                 MostTags.append(tags)
-                        else:
-                            Tags.append(tags)
+                            if tags in Tags:
+                                if tags in MostTags:
+                                    pass
+                                else:
+                                    MostTags.append(tags)
+                            else:
+                                Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -70,16 +71,17 @@ class Search:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
                       "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE)))
-                    for tags in Tag:
-                        if tags in Unique:
-                            MostTags.append(tags)
-                        if tags in Tags:
-                            if tags in MostTags:
-                                pass
-                            else:
+                    if subject != "PHONE-NUMBER":
+                        for tags in Tag:
+                            if tags in Unique:
                                 MostTags.append(tags)
-                        else:
-                            Tags.append(tags)
+                            if tags in Tags:
+                                if tags in MostTags:
+                                    pass
+                                else:
+                                    MostTags.append(tags)
+                            else:
+                                Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
@@ -101,16 +103,17 @@ class Search:
                     f.write(site1 + "\r\n")
                     print(Font.Color.BLUE +
                       "[I]" + Font.Color.WHITE + "TAGS:[{}]".format((Font.Color.GREEN + ",".join(Tag) + Font.Color.WHITE)))
-                    for tags in Tag:
-                        if tags in Unique:
-                            MostTags.append(tags)
-                        if tags in Tags:
-                            if tags in MostTags:
-                                pass
-                            else:
+                    if subject != "PHONE-NUMBER":
+                        for tags in Tag:
+                            if tags in Unique:
                                 MostTags.append(tags)
-                        else:
-                            Tags.append(tags)
+                            if tags in Tags:
+                                if tags in MostTags:
+                                    pass
+                                else:
+                                    MostTags.append(tags)
+                            else:
+                                Tags.append(tags)
                 else:
                     f.write("{}:{}\r\n".format(name, main))
                 successfull.append(site1)
