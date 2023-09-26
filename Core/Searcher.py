@@ -56,6 +56,9 @@ class MrHolmes:
         
         Scraper.info.Tellonym(
             report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Gravatar(
+            report, username, http_proxy, "Usernames", username)
     @staticmethod
     def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags):
         f = open(nomefile,)
@@ -475,6 +478,19 @@ class MrHolmes:
                         else:
                             pass
 
+                        if "Gravatar" in ScraperSites:
+                            try:
+                                Scraper.info.Gravatar(
+                                    report, username, http_proxy, "Usernames", username)
+                            except Exception as e:
+                                print(
+                                    Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                                http_proxy = None
+                                Scraper.info.Gravatar(
+                                    report, username, http_proxy, "Usernames", username)
+                        else:
+                            pass
+
                         if "Minecraft" in ScraperSites:
                             try:
                                 Scraper.info.Minecraft(
@@ -595,6 +611,7 @@ class MrHolmes:
                 MrHolmes.Yandex_dork(username)
             print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
                   report)
+            report = "GUI/Reports/Usernames/{}/{}.txt".format(username,username)
             f = open(report, "a")
             f.write(Language.Translation.Translate_Language(
                 filename, "Report", "Default", "By"))

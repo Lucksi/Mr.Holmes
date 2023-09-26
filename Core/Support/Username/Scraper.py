@@ -1184,3 +1184,79 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
+
+    @staticmethod
+    def Gravatar(report, username, http_proxy ,Opt,name2):
+         try:
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                  "SCRAPING {} GRAVATAR PROFILE...".format(username))
+            url = info.Get_Url(username, "Gravatar")
+            url
+            openurl = requests.get(url, proxies=http_proxy,
+                                   headers=headers, timeout=15)
+            reader = openurl.text
+            converted = json.loads(reader)
+            hashid = converted["entry"][0]["hash"]
+            user = converted["entry"][0]["preferredUsername"]
+            displayname = converted["entry"][0]["displayName"]
+            profile_pic = converted["entry"][0]["thumbnailUrl"]
+            if "aboutMe" in reader:
+                  bio = converted["entry"][0]["aboutMe"]
+            else:
+                bio = ""
+            if "formatted" in reader:
+                name = converted["entry"][0]["name"]["formatted"]
+            else:
+                name = "None"
+            urls = converted["entry"][0]["urls"]
+            if "last_profile_edit" in reader:
+                modification = converted["entry"][0]["last_profile_edit"]
+            else:
+                modification = "None"
+            f = open(report, "a", encoding="utf-8")
+            f.write("\nGRAVATAR DATA:\n")
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "HASH: {}".format(hashid))
+            f.write("HASH: {}\r\n".format(hashid))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
+            f.write("USERNAME: {}\r\n".format(user))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "DISPLAY-NAME: {}".format(displayname))
+            f.write("DISPLAY-NAME: {}\r\n".format(displayname))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME: {}".format(name))
+            f.write("NAME: {}\r\n".format(name))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "BIO: {}".format(bio))
+            f.write("BIO: {}\r\n".format(bio))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "UPADTED ON: {}".format(modification))
+            f.write("UPDATED-ON: {}\r\n".format(modification))
+            i = 1
+            for url in urls:
+                print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +  "LINK N°{}: {}".format(i,url["value"]))
+                f.write("LINK N°{}: {}\r\n".format(i,url["value"]))
+                i = i +1
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+            f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+            f.close()
+            
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+
+            if download == 1:
+                SiteName = "Gravatar"
+                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
+            else:
+                pass
+
+         except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+         except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass

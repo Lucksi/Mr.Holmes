@@ -61,6 +61,7 @@ class Phony:
 
     @staticmethod
     def Number(num, report, code, Mode, Type, username):
+        phoneList=[]
         print(Font.Color.GREEN +
               "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Phone", "Scan", "None").format(num))
         sleep(4)
@@ -177,3 +178,13 @@ class Phony:
                 f = open("Temp/Phone/Code.txt", "w")
                 f.write(numberNation)
                 f.close()
+            formatted2 = str(international).replace(numberCode,"").replace(" ","-")
+            formatted3 = formatted2.replace("-","",1)
+            formatted1 = "(%2{}){}".format(numberCode,str(formatted2).replace("-","",1))
+            phoneList.append(formatted1)
+            phoneList.append(formatted2)
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "FORMATTING PHONE NUMBER...")
+            sleep(2)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "INTERNATIONAL-FORMAT: "+ formatted1)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LOCAL-FORMAT: " + formatted3)
+            return phoneList

@@ -95,7 +95,7 @@ class Phone_search:
         f.close()
 
     @staticmethod
-    def lookup(username, report):
+    def lookup(username, report, international):
         f = open(report, "a")
         f.write("\nPHONE NUMBER FOUND ON:\n")
         f.close()
@@ -222,6 +222,11 @@ class Phone_search:
         if dork == 1:
             Phone_search.Google_dork(username)
             Phone_search.Yandex_dork(username)
+            #international = international.replace(" ","-")
+            Phone_search.Google_dork(international[0])
+            Phone_search.Yandex_dork(international[0])
+            Phone_search.Google_dork(international[1])
+            Phone_search.Yandex_dork(international[1])
         else:
             pass
 
@@ -246,8 +251,8 @@ class Phone_search:
         f.close()
         num = username
         code = 1
-        Numbers.Phony.Number(num, report, code, Mode, Type, username)
-        Phone_search.lookup(username, report)
+        international = Numbers.Phony.Number(num, report, code, Mode, Type, username)
+        Phone_search.lookup(username, report, international)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
          report)
         f = open(report, "a")
