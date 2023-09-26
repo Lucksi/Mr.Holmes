@@ -33,6 +33,18 @@
             "Tag": ["Porn"]
         },
 
+        "LiveStreaming":{
+            "Error": "Message",
+            "text": "Page Not Found (404)",
+            "name":"LiveStreaming",
+            "main": "liveStreaming.com",
+            "user": "https://liveStreaming.com/{}",
+            "user2": "https://liveStreaming.com/{}",
+            "exception": [" ","/"],
+            "Scrapable": "False",
+            "Tag": ["Streaming","Porn"]
+        },
+
         "XVideos":{
             "Error": "Status-Code",
             "name": "XVideos",

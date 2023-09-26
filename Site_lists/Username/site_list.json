@@ -426,7 +426,7 @@
             "user": "https://linktr.ee/{}",
             "user2": "https://linktr.ee/{}",
             "exception": [" "],
-            "Scrapable": "True", 
+            "Scrapable": "True",
             "Scrapable_url" : "https://linktr.ee/{}",
             "Tag": ["Link"]
         },
@@ -477,7 +477,8 @@
         },
 
         "TryHackMe":{
-            "Error": "Status-Code",
+            "Error": "Response-Url",
+            "response": "https://tryhackme.com/r/not-found",
             "name": "TryHackMe",
             "main": "tryhackme.com",
             "user": "https://tryhackme.com/p/{}",
@@ -633,6 +634,18 @@
             "exception": [" "],
             "Scrapable": "False",
             "Tag": ["Informations"]
+        },
+
+        "Gravatar":{
+            "Error": "Status-Code",
+            "name": "Gravatar",
+            "main": "gravater.com",
+            "user": "https://gravatar.com/{}",
+            "user2": "https://gravatar.com/{}",
+            "exception": [" "],
+            "Scrapable": "True",
+            "Scrapable_url": "https://gravatar.com/{}.json",
+            "Tag": ["Avatar","Social"]
         },
 
         "AllMyLinks":{
@@ -974,11 +987,11 @@
 
         "NICommunityForum":{
             "Error": "Message",
-            "text": "The requested page could not be found.",
+            "text": "User Not Found",
             "name": "NICommunityForum",
             "main": "native-instruments.com",
-            "user": "https://www.native-instruments.com/forum/members/{}",
-            "user2": "https://www.native-instruments.com/forum/members/{}",
+            "user": "https://www.native-instruments.com/profile/{}",
+            "user2": "https://www.native-instruments.com/profile/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
             "Tag": ["Forum"]
@@ -1223,16 +1236,16 @@
             "Tag": ["Social"]
         },
 
-        "LiveStreaming":{
+        "CouchSurfing":{
             "Error": "Message",
-            "text": "Page Not Found (404)",
-            "name":"LiveStreaming",
-            "main": "liveStreaming.com",
-            "user": "https://liveStreaming.com/{}",
-            "user2": "https://liveStreaming.com/{}",
+            "text": "Venmo | Page Not Found",
+            "name": "CouchSurfing",
+            "main": "couchsurfing.com",
+            "user": "https://www.couchsurfing.com/people/{}",
+            "user2": "https://www.couchsurfing.com/people/{}",
             "exception": [" ","/"],
             "Scrapable": "False",
-            "Tag": ["Streaming"]
+            "Tag": ["Coaching","Meeting","Social"]
         },
 
         "Minecraft":{
