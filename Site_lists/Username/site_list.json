@@ -1238,7 +1238,7 @@
 
         "CouchSurfing":{
             "Error": "Message",
-            "text": "Entity not found.",
+            "text": "Venmo | Page Not Found",
             "name": "CouchSurfing",
             "main": "couchsurfing.com",
             "user": "https://www.couchsurfing.com/people/{}",
