@@ -39,16 +39,17 @@ class Phone_search:
         banner.Random.Get_Banner(Folder, Mode)
 
     @staticmethod
-    def Google_dork(username):
-        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(username)
+    def Google_dork(username,rep):
+        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(rep)
         nomefile = "Site_lists/Phone/Google_dorks.txt"
         fingerprints = "Site_lists/Phone/Fingerprints.txt"
-        if os.path.isfile(report):
-            os.remove(report)
-            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
-                  Language.Translation.Translate_Language(filename, "Dorks", "Remove", "None").format(username))
-        else:
-            pass
+        if rep == username:
+            if os.path.isfile(report):
+                os.remove(report)
+                print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                    Language.Translation.Translate_Language(filename, "Dorks", "Remove", "None").format(rep))
+            else:
+                pass
         Type = "GOOGLE"
         Dorks.Search.dork(username, report, nomefile, Type)
         f = open(report, "a")
@@ -70,8 +71,8 @@ class Phone_search:
         f.close()
 
     @staticmethod
-    def Yandex_dork(username):
-        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(username)
+    def Yandex_dork(username,rep):
+        report = "GUI/Reports/Phone/Dorks/{}_dorks.txt".format(rep)
         nomefile = "Site_lists/Phone/Yandex_dorks.txt"
         fingerprints = "Site_lists/Phone/Yandex_Fingerprints.txt"
         Type = "YANDEX"
@@ -220,13 +221,14 @@ class Phone_search:
         dork = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") +
                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if dork == 1:
-            Phone_search.Google_dork(username)
-            Phone_search.Yandex_dork(username)
-            #international = international.replace(" ","-")
-            Phone_search.Google_dork(international[0])
-            Phone_search.Yandex_dork(international[0])
-            Phone_search.Google_dork(international[1])
-            Phone_search.Yandex_dork(international[1])
+            Phone_search.Google_dork(username,username)
+            Phone_search.Yandex_dork(username,username)
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "NATIONAL FORMAT:")
+            Phone_search.Google_dork(international[1].replace("-","",1),username)
+            Phone_search.Yandex_dork(international[1].replace("-","",1),username)
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "INTERNATIONAL FORMAT:")
+            Phone_search.Google_dork(international[0].replace("+",""),username)
+            Phone_search.Yandex_dork(international[0].replace("+",""),username)
         else:
             pass
 
