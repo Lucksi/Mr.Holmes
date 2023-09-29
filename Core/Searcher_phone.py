@@ -226,6 +226,10 @@ class Phone_search:
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "NATIONAL FORMAT:")
             Phone_search.Google_dork(international[1].replace("-","",1),username)
             Phone_search.Yandex_dork(international[1].replace("-","",1),username)
+            Phone_search.Google_dork(international[2],username)
+            Phone_search.Yandex_dork(international[2],username)
+            Phone_search.Google_dork(international[3],username)
+            Phone_search.Yandex_dork(international[3],username)
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "INTERNATIONAL FORMAT:")
             Phone_search.Google_dork(international[0].replace("+",""),username)
             Phone_search.Yandex_dork(international[0].replace("+",""),username)
@@ -266,7 +270,7 @@ class Phone_search:
         choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:
-            FileTransfer.Transfer.File(report,username,".txt") 
+            FileTransfer.Transfer.File(report,username,".txt")
         Encoding.Encoder.Encode(report)
         print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
         report)
