@@ -9,6 +9,8 @@ from Core.Support import Font
 from Core.Support import Language
 from Core.Support import Headers
 from time import sleep
+import hashlib
+
 
 filename = Language.Translation.Get_Language()
 filename
@@ -64,8 +66,9 @@ class List:
 
     @staticmethod
     def Gravatar(report,email,name):
+        hashedemail= hashlib.md5(email.encode()).hexdigest()
         print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
-        url = "https://en.gravatar.com/{}.json".format(email)
+        url = "https://en.gravatar.com/{}.json".format(hashedemail)
         try:
             req = requests.get(url,headers=headers)
             if "User not found" in req.text:
