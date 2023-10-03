@@ -221,6 +221,7 @@ class Phone_search:
         dork = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") +
                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if dork == 1:
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "NORMAL FORMAT:")
             Phone_search.Google_dork(username,username)
             Phone_search.Yandex_dork(username,username)
             print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + "NATIONAL FORMAT:")

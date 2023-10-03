@@ -1260,3 +1260,172 @@ class info:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
+
+    @staticmethod
+    def Joinroll(report, username, http_proxy ,Opt,name2):
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+              "SCRAPING {} JOINROLL PROFILE...".format(username))
+        url = info.Get_Url(username, "JoinRoll")
+        url
+        openurl = requests.get(url, proxies=http_proxy,
+                               headers=headers, timeout=15)
+        try:
+            reader = openurl.text
+            converted = json.loads(reader)
+            id_user = converted["id"]
+            user = converted["username"]
+            bio = converted["bio"]
+            subscribed = converted["isSubscribed"]
+            id_roll = converted["roll"]["id"]
+            price = converted["roll"]["subscriptionPriceCent"]
+            messageA = converted["conversation"]["messaging"]["isActive"]
+            messageE = converted["conversation"]["messaging"]["isEnabled"]
+            messageF = converted["conversation"]["messaging"]["isFree"]
+            
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "ID: {}".format(id_user))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "USERNAME: {}".format(user))
+            print(Font.Color.YELLOW + "[v]" +
+                  Font.Color.WHITE + "BIO: {}".format(bio))
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "ROLL-ID: {}".format(id_roll))
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "SUBSCRIPTION-PRICE: {}".format(price))
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "MESSAGE-AVAILABLE: {}".format(messageA))
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "MESSAGE-ENABLED: {}".format(messageE))
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "MESSAGE-FREE: {}".format(messageF))
+            
+
+            f = open(report, "a", encoding="utf-8")
+
+            f.write("\nJOINROLL DATA:\n")
+            f.write("ID: {}\r\n".format(id_user))
+            f.write("USERNAME: {}\r\n".format(user))
+            f.write("BIO: {}\r\n".format(bio))
+            f.write("ROLL-ID: {}\r\n".format(id_roll))
+            f.write("SUBSCRIPTION-PRICE: {}\r\n".format(price))
+            f.write("MESSAGE-AVAILABLE: {}\r\n".format(messageA))
+            f.write("MESSAGE-ENABLED: {}\r\n".format(messageE))
+            f.write("MESSAGE-FREE: {}\r\n".format(messageF))
+            f.close()
+
+        except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+        except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass
+        
+    @staticmethod
+    def Chess(report, username, http_proxy ,Opt,name2):
+         try:
+            print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                  "SCRAPING {} CHESS.COM PROFILE...".format(username))
+            url = info.Get_Url(username, "Chess")
+            url
+            openurl = requests.get(url, proxies=http_proxy,
+                                   headers=headers, timeout=15)
+            reader = openurl.text
+            converted = json.loads(reader)
+            profile_id = converted["player_id"]
+            user = converted["username"]
+            if '"name"' in reader:
+                  name = converted["name"]
+                  
+            else:
+                name = "None"
+            if "avatar" in reader:
+                  profile_pic = converted["avatar"]
+            else:
+                profile_pic = "None"
+            if "title" in reader:
+                  title = converted["title"]
+            else:
+                title = "None"
+            if "location" in reader:
+                  location = converted["location"]
+            else:
+                location = "None"
+            if "twitch_url" in reader:
+                  twitch_link = converted["twitch_url"]
+            else:
+                twitch_link = "NONE"
+            followers = converted["followers"]
+            status = converted["status"]
+            streamer = converted["is_streamer"]
+            verified = converted["verified"]
+            if "league" in reader:
+                  league = converted["league"]
+            else:
+                league = "None"
+            country = converted["country"].replace("https://api.chess.com/pub/country/","")
+
+
+            f = open(report, "a", encoding="utf-8")
+            f.write("\nCHESS.COM DATA:\n")
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "ID: {}".format(profile_id))
+            f.write("ID: {}\r\n".format(profile_id))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USERNAME: {}".format(user))
+            f.write("USERNAME: {}\r\n".format(user))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "NAME: {}".format(name))
+            f.write("NAME: {}\r\n".format(name))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(followers))
+            f.write("FOLLOWERS: {}\r\n".format(followers))
+            
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "STATUS: {}".format(status))
+            f.write("STATUS: {}\r\n".format(status))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LOCATION: {}".format(location))
+            f.write("LOCATION: {}\r\n".format(location))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "TITLE: {}".format(title))
+            f.write("TITLE: {}\r\n".format(title))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "STREAMER: {}".format(streamer))
+            f.write("STREAMER: {}\r\n".format(streamer))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "TWITCH LINK: {}".format(twitch_link))
+            f.write("TWITCH LINK: {}\r\n".format(twitch_link))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "VERIFIED: {}".format(verified))
+            f.write("VERIFIED: {}\r\n".format(verified))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LEAGUE: {}".format(league))
+            f.write("LEAGUE: {}\r\n".format(league))
+
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "COUNTRY: {}".format(country))
+            f.write("COUNTRY: {}\r\n".format(country))
+            
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
+            f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+
+            f.close()
+            
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if profile_pic != "NONE":
+                  if download == 1:
+                        SiteName = "Chess"
+                        info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
+                  else:
+                     pass
+
+         except ConnectionError:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
+         except Exception as e:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass

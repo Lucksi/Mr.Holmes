@@ -43,7 +43,7 @@ class MrHolmes:
                                  PostLocations, PostGpsCoordinates, "Usernames", username)
         Scraper.info.Twitter(report, username, http_proxy, TwitterParams,
                                "Usernames", username)
-        Scraper.info.TikTok(report, username, http_proxy, "Usernames", username)
+        Scraper.info.TikTok(report, username, http_proxy, "Usernames", username)  
         
         Scraper.info.Github(
             report, username, http_proxy, "Usernames", username)
@@ -59,6 +59,13 @@ class MrHolmes:
         
         Scraper.info.Gravatar(
             report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Joinroll(
+            report, username, http_proxy, "Usernames", username)
+        
+        Scraper.info.Chess(
+            report, username, http_proxy, "Usernames", username)
+    
     @staticmethod
     def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags):
         f = open(nomefile,)
@@ -491,6 +498,17 @@ class MrHolmes:
                         else:
                             pass
 
+                        if "Chess" in ScraperSites:
+                            try:
+                                Scraper.info.Chess(
+                                    report, username, http_proxy, "Usernames", username)
+                            except Exception as e:
+                                print(
+                                    Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                                http_proxy = None
+                                Scraper.info.Chess(
+                                    report, username, http_proxy, "Usernames", username)
+
                         if "Minecraft" in ScraperSites:
                             try:
                                 Scraper.info.Minecraft(
@@ -503,6 +521,17 @@ class MrHolmes:
                                     report, username, http_proxy, "Usernames", username)
                         else:
                             pass
+                        
+                        if "JoinRoll" in ScraperSites:
+                            try:
+                                Scraper.info.Joinroll(
+                                    report, username, http_proxy, "Usernames", username)
+                            except Exception as e:
+                                print(
+                                    Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
+                                http_proxy = None
+                                Scraper.info.Joinroll(
+                                    report, username, http_proxy, "Usernames", username)
 
                         if "Ngl.link" in ScraperSites:
                             try:
