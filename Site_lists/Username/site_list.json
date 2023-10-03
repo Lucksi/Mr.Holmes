@@ -370,7 +370,7 @@
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://nitter.net/{}",
-            "Tag": ["Social","Chatting","Twitter"]
+            "Tag": ["Social","Chatting"]
         },
 
         "PsnProfiles":{
@@ -564,8 +564,9 @@
             "user": "https://www.chess.com/member/{}",
             "user2": "https://www.chess.com/member/{}",
             "exception": [" "],
-            "Scrapable": "False",
-            "Tag": ["Chess"]
+            "Scrapable": "True",
+            "Scrapable_url": "https://api.chess.com/pub/player/{}",
+            "Tag": ["Chess","Chess.com"]
         },
 
         "Fandom":{
@@ -756,7 +757,7 @@
 
         "DockerHub":{
             "Error": "Message",
-            "text": "Not Found",
+            "text": "User not found",
             "name": "DockerHub",
             "main": "hub.docker.com",
             "user": "https://hub.docker.com/u/{}/",
@@ -764,7 +765,7 @@
             "exception": [" ",".","/","_"],
             "Scrapable": "True",
             "Scrapable_url": "https://hub.docker.com/v2/users/{}/",
-            "Tag": ["Programming"]
+            "Tag": ["Programming","Docker"]
         },
 
         "AminoApps":{
@@ -786,7 +787,7 @@
             "user2": "https://forum.sublimetext.com/u/{}",
             "exception": [" "],
             "Scrapable": "False",
-            "Tag": ["Forum"]
+            "Tag": ["Forum","Sublimetext"]
         },
 
         "Kik":{
@@ -987,7 +988,7 @@
 
         "NICommunityForum":{
             "Error": "Message",
-            "text": "User Not Found",
+            "text": "PAGE NOT FOUND",
             "name": "NICommunityForum",
             "main": "native-instruments.com",
             "user": "https://www.native-instruments.com/profile/{}",
@@ -1238,7 +1239,7 @@
 
         "CouchSurfing":{
             "Error": "Message",
-            "text": "Venmo | Page Not Found",
+            "text": "404: not found",
             "name": "CouchSurfing",
             "main": "couchsurfing.com",
             "user": "https://www.couchsurfing.com/people/{}",
@@ -1585,14 +1586,15 @@
         },
 
         "JoinRoll":{
-            "Error": "Response-Url",
-            "response": "https://joinroll.com",
+            "Error": "Message",
+            "text": "We could not find your account.",
             "name": "JoinRoll",
             "main": "joinroll.com",
-            "user": "https://creators.joinroll.com/{}",
-            "user2": "https://creators.joinroll.com/{}",
+            "user": "https://app.joinroll.com/{}",
+            "user2": "https://gw.api.prod.joinroll.com/creators/unknown/public?username={}",
             "exception": [" ","/"],
-            "Scrapable": "False",
+            "Scrapable": "True",
+            "Scrapable_url": "https://gw.api.prod.joinroll.com/creators/unknown/public?username={}",
             "Tag": ["Gallery"]
         },
 

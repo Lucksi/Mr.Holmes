@@ -2,6 +2,7 @@
     {
         "Xhamster":{
             "Error": "Status-Code",
+            "text": "User not found",
             "name": "XHamester",
             "main": "https://xhamster.com",
             "user": "https://xhamster.com/users/{}",
@@ -31,18 +32,6 @@
             "exception": [" "],
             "Scrapable": "False",
             "Tag": ["Porn"]
-        },
-
-        "LiveStreaming":{
-            "Error": "Message",
-            "text": "Page Not Found (404)",
-            "name":"LiveStreaming",
-            "main": "liveStreaming.com",
-            "user": "https://liveStreaming.com/{}",
-            "user2": "https://liveStreaming.com/{}",
-            "exception": [" ","/"],
-            "Scrapable": "False",
-            "Tag": ["Streaming","Porn"]
         },
 
         "XVideos":{
