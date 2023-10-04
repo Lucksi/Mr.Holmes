@@ -93,7 +93,7 @@
 
         "LiveJasmin2":{
             "Error": "Response-Url",
-            "response": "https://www.livejasmin.com/en/girls/",
+            "response": "https://www.livejasmin.com/en/boys/",
             "name": "LiveJasmin(BOYS)",
             "main": "livejasmin.com",
             "user": "https://www.livejasmin.com/en/boys/{}",

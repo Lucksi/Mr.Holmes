@@ -48,7 +48,8 @@
         },
 
         "Facebook":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text": "You must log in to continue.",
             "name": "Facebook",
             "main": "facebook.com",
             "user": "https://facebook.com/{}",
@@ -195,7 +196,8 @@
         },
 
         "Vimeo":{
-            "Error": "Status-Code",
+            "Error": "Message",
+            "text":"Sorry, we couldn’t find that page",
             "name": "Vimeo",
             "main": "vimeo.com",
             "user": "https://vimeo.com/{}",
@@ -556,10 +558,10 @@
             "Tag": ["Books"]
         },
 
-        "Chess":{
+        "Chess.com":{
             "Error": "Message",
             "text": "The page you are looking for doesn’t exist",
-            "name": "Chess",
+            "name": "Chess.com",
             "main": "chess.com",
             "user": "https://www.chess.com/member/{}",
             "user2": "https://www.chess.com/member/{}",
