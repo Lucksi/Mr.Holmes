@@ -1327,7 +1327,7 @@ class info:
          try:
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                   "SCRAPING {} CHESS.COM PROFILE...".format(username))
-            url = info.Get_Url(username, "Chess")
+            url = info.Get_Url(username, "Chess.com")
             url
             openurl = requests.get(url, proxies=http_proxy,
                                    headers=headers, timeout=15)
@@ -1414,9 +1414,9 @@ class info:
             
             download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
                 username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if profile_pic != "NONE":
+            if profile_pic != "None":
                   if download == 1:
-                        SiteName = "Chess"
+                        SiteName = "Chess.com"
                         info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
                   else:
                      pass

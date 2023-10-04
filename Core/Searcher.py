@@ -498,7 +498,7 @@ class MrHolmes:
                         else:
                             pass
 
-                        if "Chess" in ScraperSites:
+                        if "Chess.com" in ScraperSites:
                             try:
                                 Scraper.info.Chess(
                                     report, username, http_proxy, "Usernames", username)
