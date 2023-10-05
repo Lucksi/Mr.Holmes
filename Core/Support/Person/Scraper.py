@@ -318,7 +318,7 @@ class Search:
                   "\n[!]" + Font.Color.WHITE + "NO USER HAS BEEN FOUND"))
 
     @staticmethod
-    def TikTok(report, username, http_proxy, imagefold, username2):
+    def TikTok(report, username, http_proxy, imagefold, username2,fold):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -342,12 +342,12 @@ class Search:
                         followers = user.find(
                             "span", class_="followers").text
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
-                            Font.Color.GREEN + usern + Font.Color.WHITE))
+                            Font.Color.GREEN + usern.replace("@","") + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(
                             Font.Color.GREEN + followers + Font.Color.WHITE))
                         print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
                             Font.Color.GREEN + link + Font.Color.WHITE))
-                        List.append(usern)
+                        List.append(usern.replace("@",""))
                         Links.append(link)
                         f.write("\nUSER FOUND: {}".format(usern))
                         f.write("\nFOLLOWERS: {}\n".format(followers))
@@ -375,7 +375,13 @@ class Search:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "USERNAME N°{}: {}".format(j, Names))
                 j = j+1
-            json_file = "GUI/Reports/People/{}/TikTok_Link.json".format(username2)
+                if fold == "People":
+                    json_file = "GUI/Reports/People/{}/TikTok_Link.json".format(username2)
+                else:
+                    if username2 != "None":
+                        json_file = "GUI/Reports/{}/{}/TikTokName_Link.json".format(fold,username2)
+                    else:
+                        json_file = "GUI/Reports/{}/{}/TikTok_Link.json".format(fold,username)
             f = open(json_file, "w")
             f.write('''{
                         "List":[
@@ -383,7 +389,7 @@ class Search:
                         ]
                     }''')
             f.close()
-
+            i = 0
             for link in Links:
                 data = {
                     "site": "{}".format(link)
@@ -394,21 +400,22 @@ class Search:
                     file.seek(0)
                     json.dump(file_data, file, indent=4)
             
-            opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
-                            Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if opt == 1:
-                check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
-                                  Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                if check not in List:
-                    pass
-                else:
-                    check = check.replace("@", "")
-                    if os.path.isdir(imagefold):
+            if fold == "People":
+                opt = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Scraper") +
+                                Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                if opt == 1:
+                    check = str(input(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "INSERT THE USERNANE TO CHECK\n\n" +
+                                    Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+                    if check not in List:
                         pass
                     else:
-                        os.mkdir(imagefold)
-                    Scraper.info.TikTok(report, check, http_proxy,
-                                        "People", username2)
+                        check = check.replace("@", "")
+                        if os.path.isdir(imagefold):
+                            pass
+                        else:
+                            os.mkdir(imagefold)
+                        Scraper.info.TikTok(report, check, http_proxy,
+                                            "People", username2)
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")

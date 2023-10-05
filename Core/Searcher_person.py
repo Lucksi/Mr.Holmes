@@ -149,7 +149,7 @@ class info:
         Scraper.Search.Twitter(report, username, http_proxy, TwitterParams,
                                imagefold, username2,"People")
         Scraper.Search.TikTok(
-            report, username, http_proxy, imagefold, username2)
+            report, username, http_proxy, imagefold, username2,"People")
         Scraper.Search.Github(report, username, http_proxy,imagefold, username2,"People")
         if PostGpsCoordinates == [] and PostLocations == []:
             pass
