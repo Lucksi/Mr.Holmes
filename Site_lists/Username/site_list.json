@@ -403,8 +403,8 @@
             "Error": "Status-Code",
             "name": "7Cups",
             "main": "7cups.com",
-            "user": "https://www.7cups.com/@",
-            "user2": "https://www.7cups.com/@",
+            "user": "https://www.7cups.com/@{}",
+            "user2": "https://www.7cups.com/@{}",
             "exception": [" "],
             "Scrapable": "False",
             "Tag": ["Image"]
