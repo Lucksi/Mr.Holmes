@@ -12,6 +12,18 @@
             "Tag": ["Porn"]
         },
 
+        "Sharesome":{
+            "Error": "Response-Url",
+            "response": "https://sharesome.com/404/",
+            "name": "Sharesome",
+            "main": "sharesome.com",
+            "user": "https://sharesome.com/{}",
+            "user2": "https://sharesome.com/{}",
+            "exception": [" "],
+            "Scrapable": "False",
+            "Tag": ["Porn"]
+        },
+
         "PornHub":{
             "Error": "Status-Code",
             "name": "PornHub",

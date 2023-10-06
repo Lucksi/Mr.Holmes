@@ -72,7 +72,8 @@
         },
 
         "Pinterest":{
-            "Error": "Status-Code",
+            "Error": "Response-Url",
+            "response": "https://pinterest.com/",
             "name": "Pinterest",
             "main": "pinterest.com",
             "user": "https://pinterest.com/{}",
