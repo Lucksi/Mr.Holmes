@@ -82,6 +82,18 @@
             "Tag": ["Image","Social","Photo"]
         },
 
+        "Passes":{
+            "Error": "Message",
+            "text": "{}},",
+            "name": "Passes",
+            "main": "passes.com",
+            "user": "https://passes.com/{}",
+            "user2": "https://passes.com/{}",
+            "exception": [" "],
+            "Scrapable": "False",
+            "Tag": ["Image","Social","Photo"]
+        },
+
         "Imgur":{
             "Error": "Status-Code",
             "name": "Imgur",
