@@ -148,19 +148,10 @@ class Search:
                     }''')
             f.close()
 
-            """for link in Links:
-                data = {
-                    "site": "{}".format(link)
-                    #"image": "{}".format(Pics)
-                }
-                with open(json_file, 'r+') as file:
-                    file_data = json.load(file)
-                    file_data["List"].append(data)
-                    file.seek(0)
-                    json.dump(file_data, file, indent=4)"""
             i = 0
             for image in Pics:
                 data2 = {
+                    "username": "{}".format(List[i]),
                     "site": "{}".format(Links[i]),
                     "image": "{}".format(image)
                 }
@@ -196,6 +187,7 @@ class Search:
         List = []
         Links = []
         Pics = []
+        Names = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TWITTER RESULTS...".format(username))
         url = "https://nitter.net/search?f=users&q={}".format(username)
@@ -233,6 +225,7 @@ class Search:
                             Font.Color.GREEN + link + Font.Color.WHITE))
                         List.append(usern)
                         Links.append(link)
+                        Names.append(full_name)
                         f.write("\nUSER FOUND: {}".format(usern))
                         f.write("\nFULL-NAME: {}\n".format(full_name))
                         f.write("\nBIO: {}\n".format(bio))
@@ -276,18 +269,11 @@ class Search:
                     }''')
             f.close()
 
-            """for link in Links:
-                data = {
-                    "site": "{}".format(link)
-                }
-                with open(json_file, 'r+') as file:
-                    file_data = json.load(file)
-                    file_data["List"].append(data)
-                    file.seek(0)
-                    json.dump(file_data, file, indent=4)"""
             i = 0
             for image in Pics:
                 data2 = {
+                    "username": "{}".format(List[i]),
+                    "full-name": "{}".format(Names[i]),
                     "site": "{}".format(Links[i]),
                     "image": "{}".format(image)
                 }
@@ -392,6 +378,7 @@ class Search:
             i = 0
             for link in Links:
                 data = {
+                    "username": "{}".format(List[i]),
                     "site": "{}".format(link)
                 }
                 with open(json_file, 'r+') as file:
@@ -485,18 +472,10 @@ class Search:
                     }''')
             f.close()
 
-            """for link in Links:
-                data = {
-                    "site": "{}".format(link)
-                }
-                with open(json_file, 'r+') as file:
-                    file_data = json.load(file)
-                    file_data["List"].append(data)
-                    file.seek(0)
-                    json.dump(file_data, file, indent=4)"""
             i = 0
             for image in Pics:
                 data2 = {
+                    "username":"{}".format(List[i]),
                     "site": "{}".format(Links[i]),
                     "image": "{}".format(image)
                 }

@@ -38,7 +38,7 @@ class MrHolmes:
         else:
             os.mkdir("Profile_pics")
         os.chdir("../../../../")
-        http_proxy = None
+        #http_proxy = None
         Scraper.info.Instagram(report, username, http_proxy, InstagramParams,
                                  PostLocations, PostGpsCoordinates, "Usernames", username)
         Scraper.info.Twitter(report, username, http_proxy, TwitterParams,
@@ -65,6 +65,7 @@ class MrHolmes:
         
         Scraper.info.Chess(
             report, username, http_proxy, "Usernames", username)
+        
     
     @staticmethod
     def Controll(username, nomefile, identity, report, subject, successfull, ScraperSites, Writable, http_proxy2, successfullName, http_proxy, choice, Tags, MostTags):

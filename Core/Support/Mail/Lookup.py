@@ -42,6 +42,9 @@ class List:
     
     @staticmethod
     def Github(report,email,name):
+        Image = []
+        username = []
+        Link = []
         print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
         url = "https://api.github.com/search/users?q={}+in:email%22".format(email)
         sleep(3)
@@ -85,12 +88,43 @@ class List:
                 f.write("\nUSER FOUND: {}".format(usern))
                 f.write("\nPROFILE-PIC: {}".format(profile_pic))
                 f.write("\nLINK: {}\n".format(link))
+                Image.append(profile_pic)
+                username.append(usern)
+                Link.append(link)
                 f.close()
+                if len(username):
+                    json_file = "GUI/Reports/E-Mail/{}/Github.json".format(email)
+                    f = open(json_file, "w")
+                    f.write('''{
+                                "List":[
+                                ]
+                            }''')
+                    f.close()
+
+                    i = 0
+                    for image in Image:
+                        data2 = {
+                            "username": "{}".format(username[i]),
+                            "site": "{}".format(Link[i]),
+                            "image": "{}".format(image)
+                        }
+                        with open(json_file, 'r+') as file:
+                            file_data = json.load(file)
+                            file_data["List"].append(data2)
+                            file.seek(0)
+                            json.dump(file_data, file, indent=4)
+                        i = i +1
+                else:
+                    pass
         except Exception as e:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
 
     @staticmethod
     def Gravatar(report,email,name):
+        Image = []
+        username = []
+        Link = []
+        Names = []
         hashedemail= hashlib.md5(email.encode()).hexdigest()
         print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
         url = "https://en.gravatar.com/{}.json".format(hashedemail)
@@ -112,6 +146,7 @@ class List:
                 converted = json.loads(reader)
                 hashid = converted["entry"][0]["hash"]
                 user = converted["entry"][0]["preferredUsername"]
+                link = converted["entry"][0]["profileUrl"]
                 displayname = converted["entry"][0]["displayName"]
                 profile_pic = converted["entry"][0]["thumbnailUrl"]
                 if "aboutMe" in reader:
@@ -154,7 +189,39 @@ class List:
                     i = i +1
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
                 f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-LINK: {}".format(link))
+                f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
                 f.close()
+                Image.append(profile_pic)
+                username.append(user)
+                Link.append(link)
+                Names.append(name)
+                f.close()
+                if len(username):
+                    json_file = "GUI/Reports/E-Mail/{}/Gravatar.json".format(email)
+                    f = open(json_file, "w")
+                    f.write('''{
+                                "List":[
+                                ]
+                            }''')
+                    f.close()
+
+                    i = 0
+                    for image in Image:
+                        data2 = {
+                            "username": "{}".format(username[i]),
+                            "name": "{}".format(Names[i]),
+                            "site": "{}".format(Link[i]),
+                            "image": "{}".format(image)
+                        }
+                        with open(json_file, 'r+') as file:
+                            file_data = json.load(file)
+                            file_data["List"].append(data2)
+                            file.seek(0)
+                            json.dump(file_data, file, indent=4)
+                        i = i +1
+                else:
+                    pass
         except Exception as e:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
 

@@ -179,11 +179,14 @@ class Mail_search:
         dataformat = DateFormat.Get.Format()
         dt_string = now.strftime(dataformat)
         Date = "Date: " + str(dt_string)
-        report = "GUI/Reports/E-Mail/" + username + ".txt"
+        folder = "GUI/Reports/E-Mail/" + username
+        report = "GUI/Reports/E-Mail/{}/{}.txt".format(username,username)
         if os.path.isfile(report):
-            os.remove(report)
+            os.remove(folder)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        else:
+            os.mkdir(folder)
         f = open(report, "w")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\n")
         f.close()
