@@ -282,6 +282,10 @@ video{
     margin-left: 28px;
 }
 
+#Gravatar{
+    margin-left: 30px;
+}
+
 @media only screen and (min-width: 200px) and (max-width: 711px) {
     
     #New, #Open, #Del{

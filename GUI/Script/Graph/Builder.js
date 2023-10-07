@@ -159,7 +159,13 @@ function CreateElement(){
                             var path = "Profile_pics/Profile_pic_Ngl.link.jpg ";
                         }
                         else if (document.getElementById("Tellonym").checked == true){
-                            var path = "Profile_pics/Profile_pic_Tellonym";
+                            var path = "Profile_pics/Profile_pic_Tellonym.jpg";
+                        }
+                        else if (document.getElementById("Chess.com").checked == true){
+                            var path = "Profile_pics/Profile_pic_Chess.com.jpg";
+                        }
+                        else if (document.getElementById("Gravatar").checked == true){
+                            var path = "Profile_pics/Profile_pic_Gravatar.jpg";
                         }
                         Final = Path + user + "/" + path;
                         image = Final + " width = 150px style = 'border-radius:20px; margin-top:20px'";
