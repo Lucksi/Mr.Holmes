@@ -102,13 +102,18 @@
             $Parser2 = json_decode($Reader2,true);
             $Name_arr = array();
             foreach($Parser2["List"] as $Data){
+                $user = $Data["username"];
+                $link = $Data["site"];
+                echo "<a href = '$link' target = blank><img src = '../Icon/Entities/Site_Icon/{$ImageName}' abbr title=$user></a>";
+            }
+            /*foreach($Parser2["List"] as $Data){
                 $link = $Data["site"];
                 array_push($Name_arr,$Data["site"]);
             }
             foreach($Name_arr as $Data  => $value){
                 $link2 = $Data["name"];
                 echo "<a href = '{$Name_arr[$Data]}' target = 'blank'>"."<img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";                
-            }
+            }*/
             echo "</div>";
         }
         else{
@@ -217,7 +222,7 @@
                         $img = str_replace("Post","Pic",$img);
                         $Content = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$img";
                         if(getimagesize($Content) == false){
-                                echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
+                                echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2' style = 'border-radius:300px;border-height:10px;'></a>";
                         }
                         else{
                             echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$i'></a>";
@@ -246,7 +251,7 @@
                             $id = str_replace(".jpg","",$img);
                             $Content = "../Reports/People/{$File_name}/Profile_pics/$Folder_name/$img";
                             if(getimagesize($Content) == false){
-                                echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2'></a>";
+                                echo "<a href = '../Icon/Entities/Image.png' target = 'blank'><img src = '../Icon/Entities/Image.png' id = 'pics' abbr title = '$abbr_2' style = 'border-radius:50px;'></a>";
                             }
                             else{
                                 echo "<a href = '{$Content}' target = blank><img src = '{$Content}' id = 'pics' abbr title = 'Post N°$n1'></a>";
@@ -365,6 +370,9 @@
                 echo "</center>";
                 Get_Posts($File_name,$Folder_name,$Argument_Name);
                 echo"</div>";
+                echo "<center>";
+                Get_List($File_name,$Complete_name,"Github_Link.json","GitHub.png");
+                echo "</center>";
                 echo "<center>";
                 echo "<hr>";
                 echo "<p id = 'Const2'>TAGGED USERS:</p>";

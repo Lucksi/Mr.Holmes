@@ -94,6 +94,12 @@
                                 <input type = "radio" class = "imgavalue" id = "Tellonym" name = "3" value = "Tellonym" onclick="OpenAdvance()">
                                 <p for = "Tellonym">Tellonym</p>
                                 <br>
+                                <br>
+                                <input type = "radio" class = "imgavalue" id = "Chess.com" name = "3" value = "Chess.com" onclick="OpenAdvance()">
+                                <p for = "Chess.com">Chess.com</p>
+                                <input type = "radio" class = "imgavalue" id = "Gravatar" name = "3" value = "Gravatar" onclick="OpenAdvance()">
+                                <p for = "Gravatar">Gravatar</p>
+                                <br>
                                 <div class = "Profile_Pics" id = "Profile_Pics">
                                     <br>
                                     <input type = "radio" class = "imgvalue" id = "YesPic" name = "4" value = "PicPro">
@@ -246,6 +252,12 @@
                             <p for = "Ngl">Ngl.link</p>
                             <input type = "radio" class = "imgavalue" id = "Tellonym" name = "3" value = "Tellonym" onclick="OpenAdvance()">
                             <p for = "Tellonym">Tellonym</p>
+                            <br>
+                            <br>
+                            <input type = "radio" class = "imgavalue" id = "Chess.com" name = "3" value = "Chess.com" onclick="OpenAdvance()">
+                            <p for = "Chess.com">Chess.com</p>
+                            <input type = "radio" class = "imgavalue" id = "Gravatar" name = "3" value = "Gravatar" onclick="OpenAdvance()">
+                            <p for = "Gravatar">Gravatar</p>
                             <br>
                             <div class = "Profile_Pics" id = "Profile_Pics">
                                 <br>

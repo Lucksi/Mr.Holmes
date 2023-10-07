@@ -22,8 +22,9 @@
             $Reader2 = file_get_contents($Json_file2);
             $Parser2 = json_decode($Reader2,true);
             foreach($Parser2["List"] as $Data){
+                $user = $Data["username"];
                 $link = $Data["site"];
-                echo "<a href = '$link' target = blank><img src = '../Icon/Entities/Site_Icon/{$ImageName}'></a>";
+                echo "<a href = '$link' target = blank><img src = '../Icon/Entities/Site_Icon/{$ImageName}' abbr title=$user></a>";
             }
             echo "</div>";
         }
@@ -97,10 +98,16 @@
                 <script>
                 alert('$Message');
                 </script>";
+                echo "<center>";
                 Get_List($File_name,$Complete_name,"Insta_Link.json","Instagram.png",".txt","DOMAIN RESULTS ON INSTAGRAM");
                 Get_List($File_name,$Complete_name,"InstaName_Link.json","Instagram.png",".txt","NAME RESULTS ON INSTAGRAM");
                 Get_List($File_name,$Complete_name,"Twitter_Link.json","Twitter.png",".txt","DOMAIN RESULTS ON TWITTER");
                 Get_List($File_name,$Complete_name,"TwitterName_Link.json","Twitter.png",".txt","NAME RESULTS ON TWITTER");
+                Get_List($File_name,$Complete_name,"TikTok_Link.json","TikTok.png",".txt","DOMAIN RESULTS ON TIKTOK");
+                Get_List($File_name,$Complete_name,"TikTokName_Link.json","TikTok.png",".txt","NAME RESULTS ON TIKTOK");
+                Get_List($File_name,$Complete_name,"Github_Link.json","GitHub.png",".txt","DOMAIN RESULTS ON GITHUB");
+                Get_List($File_name,$Complete_name,"GithubName_Link.json","GitHub.png",".txt","NAME RESULTS ON GITHUB");
+                echo "</center>";
                 echo "<p id = 'Const'>WEBSITE DATA</p>";
                 echo "<div class = 'Data'>";
                 echo "<p id = 'Const'>REPORT:</p>";
