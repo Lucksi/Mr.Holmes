@@ -190,7 +190,7 @@ class List:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
                 f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-LINK: {}".format(link))
-                f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
+                f.write("PROFILE-LINK: {}\r\n".format(link))
                 f.close()
                 Image.append(profile_pic)
                 username.append(user)
