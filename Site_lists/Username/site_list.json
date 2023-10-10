@@ -35,6 +35,18 @@
             "Scrapable_url": "https://api.github.com/users/{}",
             "Tag": ["Programming","OpenSource"]
         },
+        
+        "Holopin":{
+            "Error": "Message",
+            "text": "Not found",
+            "name": "Holopin",
+            "main": "holopin.io",
+            "user": "https://holopin.io/@{}",
+            "user2": "https://holopin.io/@{}",
+            "exception": [" "],
+            "Scrapable": "False",
+            "Tag": ["Badge"]
+        },
 
         "YouTube":{
             "Error": "Status-Code",
