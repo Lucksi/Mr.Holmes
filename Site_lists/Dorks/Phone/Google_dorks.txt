@@ -1,5 +1,6 @@
 [GENERAL-DORKS]:
 ----------------------------------------------------------------------------------------------------------------------
+| https://www.google.com/search?q=inurl:%22{}%22
 | https://www.google.com/search?q=intext:(%22{}%22)
 | https://www.google.com/search?q=intext:(%22{}%22)+filetype:txt
 | https://www.google.com/search?q=intext:(%22{}%22)+filetype:csv
