@@ -189,8 +189,10 @@ class Phony:
             phoneList.append(formatted5)
             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "FORMATTING PHONE NUMBER...")
             sleep(2)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "INTERNATIONAL-FORMAT: "+ formatted1.replace("%2B",""))
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "INTERNATIONAL-FORMAT: "+ international)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "RFC3966-FORMAT: "+ formatted1.replace("%2B",""))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LOCAL-FORMAT: " + formatted3)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "OTHER-FORMAT: " + formatted4)
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "OTHER-FORMAT: " + formatted5)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LOCAL-FORMAT(2): " + formatted4)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
+            "LOCAL-FORMAT(3): " + formatted5)
             return phoneList
