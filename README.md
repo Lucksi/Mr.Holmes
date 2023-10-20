@@ -43,9 +43,19 @@ sudo bash install.sh
 ```
 <br>
 
-# :heavy_check_mark: INSTALLATION WINDOWS:
-```bash
+# :heavy_check_mark: INSTALLATION WINDOWS (1°WAY)
+### If you have git installed on your windows machine you can do the following commands:
+```cmd
 git clone https://github.com/Lucksi/Mr.Holmes
+cd Mr.Holmes
+Install.cmd
+```
+<br>
+
+# :heavy_check_mark: INSTALLATION WINDOWS (2° WAY):
+### If you download the zip file of Mr.Holmes you should first unzip it and after that do the following commands:
+```cmd
+ren Mr.Holmes-master Mr.Holmes
 cd Mr.Holmes
 Install.cmd
 ```
