@@ -540,14 +540,14 @@ class Downloader:
 
                     text = info.find(
                         "div", class_="tweet-content media-body").text
+                    TempUser = []
+                    TempHashtag = []
+                    TempLinks = []
                     if text:
                         desc = info.find(
                             "div", class_="tweet-content media-body").text
                         print(
                             Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "DESCRIPTION: {}".format(desc))
-                        TempUser = []
-                        TempHashtag = []
-                        TempLinks = []
                         taggedArea = info.find_all(
                             "div", class_="tweet-content media-body")
                         for Tag in taggedArea:
