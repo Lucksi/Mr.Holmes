@@ -17,7 +17,7 @@ class Search:
 
     @staticmethod
     def search(error, report, site1, site2, http_proxy, sites, data1, username, subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags):
-        Unique = ["Chess","Books","Pokemon","Lol/League of Legends","Minecraft","Roblox","Modelling","Anime","Shopping","Writing","Stories","OSU","ThemeForest","Meme","Python","Ruby","Npm","Health","Map","File-Sharing","Colors","Crypto","Speedrun","Steam","BitCoin","Playstation","Gallery","Chess.com"]
+        Unique = ["Chess","Books","Pokemon","Lol/League of Legends","Minecraft","Roblox","Modelling","Anime","Shopping","Writing","Stories","OSU","ThemeForest","Meme","Python","Ruby","Npm","Health","Map","File-Sharing","Colors","Crypto","Speedrun","Steam","BitCoin","Playstation","Gallery","Chess.com","Badge"]
         headers = Headers.Get.classic()
         if name == "Twitter":
             headers = Headers.Get.Twitter()
