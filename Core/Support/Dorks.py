@@ -22,12 +22,12 @@ class Search:
         f = open(report, "a")
         f.write(Type + "-DORKS:\n\n")
         f.close()
+        sleep(3)
         f = open(nomefile, "r")
         for sites in f:
             site = sites.rstrip("\n")
             site = site.replace("{}", username)
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            sleep(2)
             f = open(report, "a")
             f.write(site + "\n")
         f.close()
@@ -56,6 +56,7 @@ class Search:
         f = open(report, "a")
         f.write("\n" + Type + "-DORKS:\n\n")
         f.close()
+        sleep(3)
         f = open(nomefile, "r")
         for sites in f:
             site = sites.rstrip("\n")
@@ -64,7 +65,6 @@ class Search:
             else:
                 site = site.replace("{}", phrase).replace(")","){}".format(data) + "".join(exclusion))
             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + site)
-            sleep(2)
             f = open(report, "a")
             f.write(site + "\n")
         f.close()
