@@ -14,11 +14,11 @@
 
 # :mag: Mr.Holmes 
 
-### Mr.Holmes est un outil de collecte d'informations (OSINT). Dont le but principal est d'obtenir des informations sur les domaines, les noms d'utilisateur, les e-mails et les numéros de téléphone à l'aide de ressources publiques disponibles sur le net, en utilisant également des techniques telles que Google / Yandex dorks pour des recherches encore plus spécifiques.certains proxies pour faire vos demandes anonyme et utilisez une API WhoIs pour obtenir plus d'informations sur un domaine.
+***Mr.Holmes est un outil de collecte d'informations (OSINT). Dont le but principal est d'obtenir des informations sur les domaines, les noms d'utilisateur, les e-mails et les numéros de téléphone à l'aide de ressources publiques disponibles sur le net, en utilisant également des techniques telles que Google / Yandex dorks pour des recherches encore plus spécifiques.certains proxies pour faire vos demandes anonyme et utilisez une API WhoIs pour obtenir plus d'informations sur un domaine.***
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER
-### Cet Outil n'est pas précis à 100% Par conséquent, il est probable qu'il puisse parfois échouer. De plus, cet outil a été créé à des fins éducatives et de recherche uniquement Je n'assume aucune responsabilitè pour toute le utilisation incorrecte de cet outil.
+***Cet Outil n'est pas précis à 100% Par conséquent, il est probable qu'il puisse parfois échouer. De plus, cet outil a été créé à des fins éducatives et de recherche uniquement Je n'assume aucune responsabilitè pour toute le utilisation incorrecte de cet outil.***
 <br>
 
 #  SCREENSHOT
@@ -43,7 +43,7 @@ sudo bash install.sh
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS(1°WAY):
-### Si git est installé sur votre ordinateur Windows, vous pouvez exécuter les commandes suivantes :
+***Si git est installé sur votre ordinateur Windows, vous pouvez exécuter les commandes suivantes:***
 ```cmd
 git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
@@ -52,7 +52,7 @@ Install.cmd
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS(2°WAY):
-### Si vous téléchargez le fichier zip de Mr.Holmes, vous devez d'abord le décompresser, puis exécuter les commandes suivantes:
+***Si vous téléchargez le fichier zip de Mr.Holmes, vous devez d'abord le décompresser, puis exécuter les commandes suivantes:***
 ```cmd
 ren Mr.Holmes-master Mr.Holmes
 cd Mr.Holmes
@@ -102,11 +102,11 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENTION
-### DATABASE N'EST PAS DISPONIBILE SUR TERMUX
+***DATABASE N'EST PAS DISPONIBILE SUR TERMUX.***
 <br>
 
 # :heavy_exclamation_mark: ATTENTION SUR WINDOWS
-### SI PYTHON OU PHP NE S'INSTALLE PAS, VOUS DEVEZ LES INSTALLER MANUELLEMENT:
+***SI PYTHON OU PHP NE S'INSTALLE PAS, VOUS DEVEZ LES INSTALLER MANUELLEMENT:***
     
 <br>
 
@@ -201,42 +201,42 @@ edit Language.json
 <br>
 
 # VERSION ACTUELLE:
-## T.G.D-1.0.4
+***T.G.D-1.0.4***
 
 <br>
 
 # CARTE INTERACTIVE FAITE AVEC:
-## Leaflet: https://leafletjs.com
+***Leaflet: https://leafletjs.com***
 
 <br>
 
 # USERNAME ENTITIES:
-## Les icônes sur le dossier GUI/Icon/Entities/Site_Icon proviennent de : https://www.iconfinder.com/ tout les crédit reviennent à leurs créateurs respectifs
+***Les icônes sur le dossier GUI/Icon/Entities/Site_Icon proviennent de : https://www.iconfinder.com/ tout les crédit reviennent à leurs créateurs respectifs***
 
 <br>
 
 # ENCODING:
-## Avec cette version il est possible de réaliser l'Encoding des Reports
+***Avec cette version il est possible de réaliser l'Encoding des Reports***
 
 <br>
 
 # DECODING:
-## Avec cette version il est possible de réaliser le Decoding des Reports
+***Avec cette version il est possible de réaliser le Decoding des Reports***
 
 <br>
 
 # HYPOTHESES
-## Avec cette version, vous pouvez générer des "hypotheses" basees sur les informations collectees compris les hobby/interests possibles (les hypothèses peuvent ne pas être fiables à 100 %).
+***Avec cette version, vous pouvez générer des "hypotheses" basees sur les informations collectees compris les hobby/interests possibles (les hypothèses peuvent ne pas être fiables à 100 %).***
 
 <br>
 
 # EMAIL-LOOKUP:
-## Avec cette nouvelle version, il est possible de vérifier si un e-mail est connecté à certains réseaux sociaux/services spécifiques sans que le target le sache.
+***Avec cette nouvelle version, il est possible de vérifier si un e-mail est connecté à certains réseaux sociaux/services spécifiques sans que le target le sache.***
 
 <br>
 
 # GRAPHS
-## Avec cette nouvelle version a été ajoutée la possibilité de créer des graphiques a fin de créer un schéma pour planification des informations.
+***Avec cette nouvelle version a été ajoutée la possibilité de créer des graphiques a fin de créer un schéma pour planification des informations.***
 # EXEMPLE
 
 ![Screenshot](../Screenshot/Graph_Test.png)
@@ -244,7 +244,7 @@ edit Language.json
 <br>
 
 # CARTE:
-## Cette nouvelle version a ajouté la possibilité de créer des cartes interactives.
+***Cette nouvelle version a ajouté la possibilité de créer des cartes interactives.***
 
 <br>
 
@@ -255,7 +255,7 @@ edit Language.json
 <br>
 
 # DORKS:
-## Avec cette nouvelle version a été ajoutée la possibilité de chercher Video/Sound/Images via Dorks (1) et effectuer des recherches spécifiques en saisissant une date ex '1998/01/1' ou une plage de dates par ex '1998/01/01-2020/12/31' (2).
+***Avec cette nouvelle version a été ajoutée la possibilité de chercher Video/Sound/Images via Dorks (1) et effectuer des recherches spécifiques en saisissant une date ex '1998/01/1' ou une plage de dates par ex '1998/01/01-2020/12/31' (2).***
 
 <br>
 
@@ -272,7 +272,7 @@ edit Language.json
 <br>
 
 # PDF:
-## Avec cette nouvelle version a été ajoutée la possibilité de convertir vos graphiques en PDF.
+***Avec cette nouvelle version a été ajoutée la possibilité de convertir vos graphiques en PDF.***
 
 <br>
 
@@ -292,7 +292,7 @@ edit Language.json
 <br>
 
 # FILE-TRANSFER:
-## Avec cette version, il est possible de transferer vos rapports directement sur votre telephone via Qr-Code
+***Avec cette version, il est possible de transferer vos rapports directement sur votre telephone via Qr-Code.***
 
 <br>
 
