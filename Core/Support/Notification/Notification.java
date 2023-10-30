@@ -25,7 +25,7 @@ public class Notification{
 
     public Notification(){
         int Width,Height ;
-        JOptionPane a = new JOptionPane("MR.HOLMES SCAN COMPLETED",JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane a = new JOptionPane("MR.HOLMES SCAN TERMINATED",JOptionPane.INFORMATION_MESSAGE);
         JDialog d =  a.createDialog(null);
         Width = GetWidht();
         Height = GetHight();

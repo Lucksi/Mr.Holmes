@@ -181,8 +181,13 @@ class Mail_search:
         Date = "Date: " + str(dt_string)
         folder = "GUI/Reports/E-Mail/" + username
         report = "GUI/Reports/E-Mail/{}/{}.txt".format(username,username)
+        report2 = "GUI/Reports/E-Mail/{}/{}.mh".format(username,username)
         if os.path.isfile(report):
-            os.remove(folder)
+            os.remove(report)
+            print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
+                  Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
+        elif os.path.isfile(report2):
+            os.remove(report2)
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         else:

@@ -42,6 +42,7 @@ class Search:
                                 if tags in MostTags:
                                     pass
                                 else:
+                                    print(tags)
                                     MostTags.append(tags)
                             else:
                                 Tags.append(tags)
@@ -79,6 +80,7 @@ class Search:
                                 if tags in MostTags:
                                     pass
                                 else:
+                                    print(tags)
                                     MostTags.append(tags)
                             else:
                                 Tags.append(tags)
@@ -111,6 +113,7 @@ class Search:
                                 if tags in MostTags:
                                     pass
                                 else:
+                                    print(tags)
                                     MostTags.append(tags)
                             else:
                                 Tags.append(tags)
