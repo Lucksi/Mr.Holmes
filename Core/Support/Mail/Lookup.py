@@ -41,6 +41,21 @@ class List:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
     
     @staticmethod
+    def Gmail(report,email,name):
+        url = "https://mail.google.com/mail/gxlu?email={}".format(email)
+        req = requests.get(url,headers)
+        sleep(3)
+        if 'Set-Cookie' in req.headers:
+            response = Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name))
+        else:
+            response = Language.Translation.Translate_Language(filename, "Email", "FalseRes", "None").format(name)
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "FalseRes", "None").format(name))
+        f = open(report,"a")
+        f.write("\n"+ response)
+        f.close()
+    
+    @staticmethod
     def Github(report,email,name):
         Image = []
         username = []
@@ -252,6 +267,7 @@ class List:
     @staticmethod
     def Main(report,email):
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Lookup", "None"))
+        List.Gmail(report,email,"GMAIL/G-SUITE")
         List.Twitter(report,email,"TWITTER")
         List.Github(report,email,"GITHUB")
         List.Gravatar(report,email,"GRAVATAR")
