@@ -337,7 +337,7 @@ edit Language.json
 <img src="../Screenshot/High-Contrast.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
-
+<hr>
 <br>
 
 
