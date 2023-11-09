@@ -336,16 +336,6 @@ edit Language.json
 <img src="../Screenshot/High-Contrast.jpg" height ="490px" width = "300px" border = "5px" style="border-color:white;">
 </p>
 
-
-<br>
-
-# PARTNERSHIP:
-<p align = "center">
-<a href = "https://cybernitewatch.com/"> <img src = "../Icon/Companies/cybernitewatch.png" height = "150px"></a>
-</p>
-
-<hr>
-
 <br>
 
 ## <p align = center> STARGAZERS OVER TIME 
