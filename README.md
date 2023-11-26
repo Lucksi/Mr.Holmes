@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="400" height="auto" src="Icon/Banner.png">
+  <img width="500px" height="100px" src="Icon/Banner.png">
 </p>
 
 <p align = "center">
@@ -10,7 +10,6 @@
   <img src = "https://img.shields.io/github/repo-size/Lucksi/Mr.Holmes">
   <img src= "https://img.shields.io/github/languages/count/Lucksi/Mr.Holmes">
   <img src = "https://visitor-badge.laobi.icu/badge?page_id=Lucksi.Mr.Holmes">
-</p>
 </p>
 
 # :mag: Mr.Holmes 
