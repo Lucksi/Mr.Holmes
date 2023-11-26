@@ -14,11 +14,11 @@
 
 # :mag: Mr.Holmes 
 
-### Mr.Holmes is a information gathering tool (OSINT). The main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.
+**Mr.Holmes is a information gathering tool (OSINT). The main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.**
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER
-### This Tool is Not 100% Accurate so it can fail somtimes. Also this tool is made for educational and research purposes only, i do not assume any kind of responsibility for any imprope use of this tool.
+**This Tool is Not 100% Accurate so it can fail somtimes. Also this tool is made for educational and research purposes only, i do not assume any kind of responsibility for any imprope use of this tool.**
 <br>
 
 #  SCREENSHOT
@@ -43,7 +43,7 @@ sudo bash install.sh
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS (1°WAY)
-### If you have git installed on your windows machine you can do the following commands:
+**If you have git installed on your windows machine you can do the following commands:**
 ```cmd
 git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
@@ -52,7 +52,7 @@ Install.cmd
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS (2° WAY):
-### If you download the zip file of Mr.Holmes you should first unzip it and after that do the following commands:
+**If you download the zip file of Mr.Holmes you should first unzip it and after that do the following commands:**
 ```cmd
 ren Mr.Holmes-master Mr.Holmes
 cd Mr.Holmes
@@ -100,11 +100,11 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENTION
-### DATABASE NOT AVAIABLE ON TERMUX
+**DATABASE NOT AVAIABLE ON TERMUX**
 <br>
 
 # :heavy_exclamation_mark: ATTENTION ON WINDOWS
-### IF PYTHON AND PHP WONT INSTALL YOU HAVE TO DOWNLOAD THEM MANUALLY:
+**IF PYTHON AND PHP WONT INSTALL YOU HAVE TO DOWNLOAD THEM MANUALLY:**
     
 <br>
 
@@ -205,37 +205,37 @@ edit Language.json
 <br>
 
 # INTERACTIVE MAP HAS BEEN MADE WITH:
-## Leaflet: https://leafletjs.com
+**Leaflet: https://leafletjs.com**
 
 <br>
 
 # USERNAME ENTITIES:
-## The Icons on Folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credit goes to their respective creators
+**The Icons on Folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credit goes to their respective creators**
 
 <br>
 
 # ENCODING:
-## With this version it is Possible to Encode your reports
+**With this version it is Possible to Encode your reports**
 
 <br>
 
 # DECODING:
-## With this version it is Possible to Decode your reports
+**With this version it is Possible to Decode your reports**
 
 <br>
 
 # HYPOTHESIS
-## This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media including possible hobbies/interests (It may not be a 100% attendible)
+**This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media including possible hobbies/interests (It may not be a 100% attendible)**
 
 <br>
 
 # EMAIL-LOOKUP:
-## With this new version is possible to check if an email is connected to some specific socials/services without letting the target know it.
+**With this new version is possible to check if an email is connected to some specific socials/services without letting the target know it.**
 
 <br>
 
 # GRAPHS:
-## With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.
+**With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.**
 
 <br>
 
@@ -246,7 +246,7 @@ edit Language.json
 <br>
 
 # MAPS:
-## With this new version has been added the possibility to create Interactive Maps.
+**With this new version has been added the possibility to create Interactive Maps.**
 
 <br>
 
@@ -257,7 +257,7 @@ edit Language.json
 <br>
 
 # DORKS:
-## With this new version it is possible to search Video/Sound/Images via Dorks (1) and to effectuate specific research adding date ex '1998/01/1' or date range ex '1998/01/01-2020/12/31' (2).
+**With this new version it is possible to search Video/Sound/Images via Dorks (1) and to effectuate specific research adding date ex '1998/01/1' or date range ex '1998/01/01-2020/12/31' (2).**
 
 <br>
 
@@ -274,7 +274,7 @@ edit Language.json
 <br>
 
 # PDF:
-## With this new version has been added the possibility to converte your Graphs in PDF.
+**With this new version has been added the possibility to converte your Graphs in PDF.**
 
 <br>
 
@@ -293,7 +293,7 @@ edit Language.json
 <br>
 
 # FILE-TRANSFER:
-## With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code
+**With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code**
 
 <br>
 

@@ -1,5 +1,5 @@
 <p align="center">
-  <img width="500px" height="100px" src="../Icon/Banner.png">
+  <img width="600px" height="100px" src="../Icon/Banner.png">
 </p>
 
 <p align = "center">
@@ -14,11 +14,11 @@
 
 # :mag: Mr.Holmes 
 
-***Mr.Holmes è un information gathering tool (OSINT). Il cui principale scopo è quello di ottenere informazioni riguardo a domini,username,email e numeri di telefono con l'aiuto di risorse pubbliche disponibili in rete.Utilizzando anche tecniche come i Google/Yandex dorks per ricerche ancora piu specifiche.Inoltre possono essere utilizzati dei proxy per rendere le tue richieste anonime e utilizza una WhoIs Api per avere più informazioni riguardo a un dominio.***
+**Mr.Holmes è un information gathering tool (OSINT). Il cui principale scopo è quello di ottenere informazioni riguardo a domini,username,email e numeri di telefono con l'aiuto di risorse pubbliche disponibili in rete.Utilizzando anche tecniche come i Google/Yandex dorks per ricerche ancora piu specifiche.Inoltre possono essere utilizzati dei proxy per rendere le tue richieste anonime e utilizza una WhoIs Api per avere più informazioni riguardo a un dominio.**
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER
-***Questo Tool non è preciso al 100% Perciò è probabile che talvolta possa fallire,Inoltre questo Tool è stato creato solo a scopo educativo e di Ricerca non mi assumo alcun tipo di responsabilità per qualunque uso improprio di questo tool.***
+**Questo Tool non è preciso al 100% Perciò è probabile che talvolta possa fallire,Inoltre questo Tool è stato creato solo a scopo educativo e di Ricerca non mi assumo alcun tipo di responsabilità per qualunque uso improprio di questo tool.**
 <br>
 
 #  SCREENSHOT
@@ -43,7 +43,7 @@ sudo bash install.sh
 <br>
 
 # :heavy_check_mark: INSTALLAZIONE WINDOWS (1°MODO):
-***Se hai installato sulla tua macchina windows git puoi eseguire i seguenti comandi:***
+**Se hai installato sulla tua macchina windows git puoi eseguire i seguenti comandi:**
 ```cmd
 git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
@@ -52,7 +52,7 @@ Install.cmd
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS (2°MODO):
-***Se Hai scaricato il file di zip di Mr.Holmes devi prima unzipparlo e successivamente eseguire i seguenti comandi:***
+**Se Hai scaricato il file di zip di Mr.Holmes devi prima unzipparlo e successivamente eseguire i seguenti comandi:**
 ```cmd
 ren Mr.Holmes-master Mr.Holmes
 cd Mr.Holmes
@@ -102,11 +102,11 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENZIONE
-***DATABASE NON DISPONIBILE SU TERMUX***
+**DATABASE NON DISPONIBILE SU TERMUX**
 <br>
 
 # :heavy_exclamation_mark: ATTENTION SU WINDOWS
-***SE PYTHON O PHP NON SI INSTALLANO DEVI INSTALLARLI MANUALMENTE.***
+**SE PYTHON O PHP NON SI INSTALLANO DEVI INSTALLARLI MANUALMENTE.**
     
 <br>
 
@@ -202,42 +202,42 @@ edit Language.json
 
 
 # VERSIONE ATTUALE:
-***T.G.D-1.0.4***
+**T.G.D-1.0.4**
 
 <br>
 
 # MAPPA INTERATTIVA REALIZZATA CON:
-***Leaflet: https://leafletjs.com***
+**Leaflet: https://leafletjs.com**
 
 <br>
 
 # USERNAME ENTITIES:
-***Le Icone sulla Cartella /GUI/Icon/Entities/Site_Icon sono state prese da: https://www.iconfinder.com/ tutti i meriti vanno ai loro rispettivi creatori.***
+**Le Icone sulla Cartella /GUI/Icon/Entities/Site_Icon sono state prese da: https://www.iconfinder.com/ tutti i meriti vanno ai loro rispettivi creatori.**
 
 <br>
 
 # ENCODING
-***Con Questa Versione E Possibile effetuare l'Encoding dei Report.***
+**Con Questa Versione E Possibile effetuare l'Encoding dei Report.**
 
 <br>
 
 #  DECODING
-***Con Questa Versione E Possibile effetuare Il Decoding dei Report.***
+**Con Questa Versione E Possibile effetuare Il Decoding dei Report.**
 
 <br>
 
 # IPOTESI
-***Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte ciò comprende possibili hobby/interessi (Le Ipotesi Potrebbero non essere affidabili al 100%)***
+**Con Questa Versione Si Possono generare delle "Ipotesi" Basate sulle informazioni raccolte ciò comprende possibili hobby/interessi (Le Ipotesi Potrebbero non essere affidabili al 100%)**
 
 <br>
 
 # EMAIL-LOOKUP:
-***Con questa nuova versione è possible verificare se una email è collegata con alcuni social/servizi senza notificare il target.***
+**Con questa nuova versione è possible verificare se una email è collegata con alcuni social/servizi senza notificare il target.**
 
 <br>
 
 # GRAFICO:
-***Con Questa nuova versione è stata aggiunta la possibilità di creare dei Grafici in ordine di schematizzare le informazioni.***
+**Con Questa nuova versione è stata aggiunta la possibilità di creare dei Grafici in ordine di schematizzare le informazioni.**
 # EXAMPLE:
 
 ![Screenshot](../Screenshot/Graph_Test.png)
@@ -245,7 +245,7 @@ edit Language.json
 <br>
 
 # MAPPA:
-***Con Questa nuova versione è stata aggiunta la possibilità di creare delle Mappe Interattive.***
+**Con Questa nuova versione è stata aggiunta la possibilità di creare delle Mappe Interattive.**
 
 <br>
 
@@ -256,7 +256,7 @@ edit Language.json
 <br>
 
 # DORKS:
-***Con questa nuova versione è possibile cercare Video/Suoni/Immagini Attraverso i Dorks (1) e effettuare delle ricerche specifiche inserendo una data es '1998/01/1' o un intervallo di date es '1998/01/01-2020/12/31' (2).***
+**Con questa nuova versione è possibile cercare Video/Suoni/Immagini Attraverso i Dorks (1) e effettuare delle ricerche specifiche inserendo una data es '1998/01/1' o un intervallo di date es '1998/01/01-2020/12/31' (2).**
 
 <br>
 
@@ -273,7 +273,7 @@ edit Language.json
 <br>
 
 # PDF:
-***Con questa versione è possibile convertire i Grafici in PDF.***
+**Con questa versione è possibile convertire i Grafici in PDF.**
 
 <br>
 
