@@ -204,7 +204,7 @@ function Options {
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" useragent
 	if [ "$useragent" == "" ];
 		then
-		proxies="Useragents/Useragent.txt"
+		useragent="Useragents/Useragent.txt"
 	fi
 	printf "${WHITE}\n\nWOULD YOU LIKE TO SAVE YOUR LOG SESSIONS(1)YES(2)NO\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Logs
