@@ -585,11 +585,11 @@
 
         "Chess.com":{
             "Error": "Message",
-            "text": "The page you are looking for doesn’t exist",
+            "text": "not found",
             "name": "Chess.com",
             "main": "chess.com",
             "user": "https://www.chess.com/member/{}",
-            "user2": "https://www.chess.com/member/{}",
+            "user2": "https://api.chess.com/pub/player/{}",
             "exception": [" "],
             "Scrapable": "True",
             "Scrapable_url": "https://api.chess.com/pub/player/{}",
