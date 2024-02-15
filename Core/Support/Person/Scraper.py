@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2022-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -23,9 +23,9 @@ class Search:
     @staticmethod
     def InstagramResc(report, username,List,Links,Pics):
         url = "https://www.pixwox.com/search/?q={}".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
+            req = requests.get(url, timeout=None, proxies=None, headers=headers)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="item")
@@ -191,9 +191,9 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TWITTER RESULTS...".format(username))
         url = "https://nitter.net/search?f=users&q={}".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers, allow_redirects=True)
         sleep(4)
         try:
+            req = requests.get(url, timeout=None, proxies=None, headers=headers, allow_redirects=True)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="timeline-item")
@@ -310,9 +310,9 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} TIKTOK RESULTS...".format(username))
         url = "https://urlebird.com/search/?q={}".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         try:
+            req = requests.get(url, timeout=None, proxies=None, headers=headers)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="info text-truncate")
@@ -414,13 +414,13 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} GITHUB RESULTS...".format(username))
         url = "https://api.github.com/search/users?q={}+in:text".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers)
         sleep(4)
         i = 0
         req = requests.get(url,headers=headers).text
         f = open(report, "a",encoding="utf-8")
         f.write( "--------------------------------\nSHOWING GITHUB RESULTS FOR: {}\n".format(username))
         try:
+            req = requests.get(url, timeout=None, proxies=None, headers=headers)
             parser = json.loads(req)
             output = parser["total_count"]
             if output == 0:
