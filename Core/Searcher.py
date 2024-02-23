@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -39,32 +39,61 @@ class MrHolmes:
             os.mkdir("Profile_pics")
         os.chdir("../../../../")
         #http_proxy = None
-        Scraper.info.Instagram(report, username, http_proxy, InstagramParams,
+        try:
+            Scraper.info.Instagram(report, username, http_proxy, InstagramParams,
                                  PostLocations, PostGpsCoordinates, "Usernames", username)
-        Scraper.info.Twitter(report, username, http_proxy, TwitterParams,
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
+        try:
+            Scraper.info.Twitter(report, username, http_proxy, TwitterParams,
                                "Usernames", username)
-        Scraper.info.TikTok(report, username, http_proxy, "Usernames", username)  
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
+        try:
+            Scraper.info.TikTok(report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
         
-        Scraper.info.Github(
+        try:
+            Scraper.info.Github(
             report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
+
+        try:
+            Scraper.info.GitLab(
+            report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
         
-        Scraper.info.GitLab(
+        try:
+            Scraper.info.Ngl(
             report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
+        try:
+            Scraper.info.Tellonym(
+                report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
         
-        Scraper.info.Ngl(
+        try:
+            Scraper.info.Gravatar(
+                report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
+
+        try:
+            Scraper.info.Joinroll(
             report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
         
-        Scraper.info.Tellonym(
-            report, username, http_proxy, "Usernames", username)
-        
-        Scraper.info.Gravatar(
-            report, username, http_proxy, "Usernames", username)
-        
-        Scraper.info.Joinroll(
-            report, username, http_proxy, "Usernames", username)
-        
-        Scraper.info.Chess(
-            report, username, http_proxy, "Usernames", username)
+        try:
+            Scraper.info.Chess(
+                report, username, http_proxy, "Usernames", username)
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "Something went wrong")
         
     
     @staticmethod
