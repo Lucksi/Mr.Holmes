@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -303,9 +303,10 @@ class Downloader:
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None") + str(e))
                             j = j+1
                             continue
-                footer = reader.find_all(
-                    "div", class_="likes_comments_photo")
-                while d <= range_band:
+                """footer = reader.find_all(
+                    "span", class_="icon-thumbs-up-alt")
+                print(footer)"""
+                """while d <= range_band:
                     for info in footer:
                         try:
                             data_fold = folder + "/" + arr_name[d-1]
@@ -313,9 +314,9 @@ class Downloader:
                                 "/{}.txt".format(arr_name[d-1])
                             print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Instagram", "Likes/Comments").format(str(d)))
-                            likes = info.find("div", class_="likes_photo").text
+                            likes = info.find("span")[0].text
                             comments = info.find(
-                                "div", class_="comments_photo").text
+                                "span")[1].text
                             time = info.find()
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   "LIKES: {}".format(likes.strip()))
@@ -339,7 +340,7 @@ class Downloader:
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Error", "None"))
                             d = d+1
                             continue
-
+                """
                 Time = reader.find_all("div", class_="time")
                 while t <= range_band:
                     for info in Time:
@@ -807,18 +808,20 @@ class Downloader:
                         date = reader2.find("h6").text
                         print(
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "POSTED ON: {}".format(date))
-                        stats = reader2.find_all("div", class_="info")
+                        stats = reader2.find_all("div", class_="row mt-3 mb-1 stats")
                         for stat in stats:
-                            play = stat.select_one("span[title=Likes]").text.replace("▶️","").replace(" ","",1)
-                            comments = stat.select_one(
-                                "span[title=Comments]").text.replace("📑","").replace(" ","",1)
-                            shares = stat.select_one("span[title=Shares]").text.replace("↪️","").replace(" ","",1)
-                        print(
+                            pass
+                            #play = stat.find("div",class_="col-md-3 col-6")[1].text.replace("▶️","").replace(" ","",1)
+                            #print(play)
+                            #comments = stat.find(
+                            #    "div",class_="col-md-3 col-6")[2].text.replace("📑","").replace(" ","",1)
+                            #shares = stat.find("div",class_="col-md-3 col-6")[3].text.replace("↪️","").replace(" ","",1)
+                        """print(
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "PLAYES : {}".format(play))
                         print(
                             Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "COMMENTS: {}".format(comments))
                         print(
-                            Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SHARES: {}".format(shares))
+                            Font.Color.YELLOW + "[V]" + Font.Color.WHITE + "SHARES: {}".format(shares))"""
                         if '<div class="music">' in openurl2.text:
                             music = reader2.find("div", class_="music").text.replace("🎵","").replace(" ","",1)
                             print(
@@ -869,9 +872,9 @@ class Downloader:
                         f.write("DETAILS: {}".format(
                             details.replace("\n", "")))
                         f.write("\nPOSTED ON: {}\n".format(date))
-                        f.write("\nPLAYED: {}".format(play))
+                        """f.write("\nPLAYED: {}".format(play))
                         f.write("\nCOMMENTS: {}".format(comments))
-                        f.write("\nSHARES: {}\n".format(shares))
+                        f.write("\nSHARES: {}\n".format(shares))"""
                         f.write("SONG: {}\r\n".format(music.replace("\n", "")))
                         f.write("TAGGED-USERS: {}\n".format(", ".join(TempUser)))
                         f.write("TAGGED-HASHTAG: {}".format(", ".join(TempTag)))
