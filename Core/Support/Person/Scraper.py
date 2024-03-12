@@ -21,11 +21,11 @@ headers = Headers.Get.classic()
 
 class Search:
     @staticmethod
-    def InstagramResc(report, username,List,Links,Pics):
+    def InstagramResc(report, username,List,Links,Pics,http_proxy):
         url = "https://www.pixwox.com/search/?q={}".format(username)
+        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=None, headers=headers)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="item")
@@ -82,10 +82,9 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} INSTAGRAM RESULTS...".format(username))
         url = "https://www.picuki.com/search/{}".format(username)
-        req = requests.get(url, timeout=None, proxies=None, headers=headers)
+        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
         sleep(4)
         try:
-           
             req = requests.get(url, timeout=None, proxies=None, headers=headers)
             sleep(4)
             if req.status_code == 200:
@@ -119,13 +118,13 @@ class Search:
                         break
                 f.close()
                 if i == 1:
-                    Search.InstagramResc(report,username,List,Links,Pics)
+                    Search.InstagramResc(report,username,List,Links,Pics,http_proxy)
             else:
-                Search.InstagramResc(report,username,List,Links,Pics)
+                Search.InstagramResc(report,username,List,Links,Pics,http_proxy)
         except ConnectionError:
-            Search.InstagramResc(report, username,List,Links,Pics)
+            Search.InstagramResc(report, username,List,Links,Pics,http_proxy)
         except Exception as e:
-            Search.InstagramResc(report, username,List,Links,Pics)
+            Search.InstagramResc(report, username,List,Links,Pics,http_proxy)
         j = 1
         print(Font.Color.GREEN + "[+]" +
                     Font.Color.WHITE + "TOTAL USERNAMES FOUND")
@@ -193,7 +192,7 @@ class Search:
         url = "https://nitter.net/search?f=users&q={}".format(username)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=None, headers=headers, allow_redirects=True)
+            req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers, allow_redirects=True)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="timeline-item")
@@ -312,7 +311,7 @@ class Search:
         url = "https://urlebird.com/search/?q={}".format(username)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=None, headers=headers)
+            req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="info text-truncate")
@@ -414,13 +413,13 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} GITHUB RESULTS...".format(username))
         url = "https://api.github.com/search/users?q={}+in:text".format(username)
+        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
         sleep(4)
         i = 0
         req = requests.get(url,headers=headers).text
         f = open(report, "a",encoding="utf-8")
         f.write( "--------------------------------\nSHOWING GITHUB RESULTS FOR: {}\n".format(username))
         try:
-            req = requests.get(url, timeout=None, proxies=None, headers=headers)
             parser = json.loads(req)
             output = parser["total_count"]
             if output == 0:
