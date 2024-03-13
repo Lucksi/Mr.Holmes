@@ -43,6 +43,7 @@ sudo bash install.sh
 <br>
 
 # :heavy_check_mark: INSTALLATION LINUX/MAC (Venv Enviroment):
+**if you encounter some errors in the python libraries installation use this method**
 ```bash
 git clone https://github.com/Lucksi/Mr.Holmes
 sudo apt-get update
