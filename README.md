@@ -51,9 +51,9 @@ cd Mr.Holmes
 python3 -m venv .lib_venv
 sudo chmod +x install.sh
 sudo bash install.sh
-source .lib_venv/bin/active
+source .lib_venv/bin/activate
 pip3 install -r requirements.txt
-deactivate
+python3 MrHolmes.py
 ```
 <br>
 
