@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import json
@@ -295,74 +295,30 @@ class info:
         url
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=None)
+        Flag = False
         try:
             Blocked = 'Profile is private.'.format(username)
             text = openurl.text
             if Blocked in text:
                 Private = "TRUE"
-                url = "https://www.pixwox.com/it/profile/{}/".format(username)
-                openurl2 = requests.get(url, proxies=http_proxy,
-                                                      headers=headers, timeout=None)
-                reader = soup(openurl2.content, "html.parser")
-                name = reader.find("h1",class_="fullname").text
-                bio = reader.find("div",class_="sum").text.strip()
-                post_n = reader.find_all("div",class_="item item_posts")
-                profile_pic = reader.find("a",class_="downbtn")["href"]
-                for value in post_n:
-                        posts = value.find("div",class_="num").text.replace("\n","")
-                follow_n = reader.find_all("div",class_="item item_followers")
-                for value in follow_n:
-                        followers = value.find("div",class_="num").text.replace("\n","")
-                followed_n = reader.find_all("div",class_="item item_following")
-                for value in followed_n:
-                        followed = value.find("div",class_="num").text.replace("\n","")
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "USERNAME: {}".format(username))
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "NAME: {}".format(name))
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "BIO: {}".format(bio.strip()))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts.replace("\n","")))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(followers.replace("\n","")))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "FOLLOWED: {}".format(followed.replace("\n","")))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: {}".format(Private))
-                download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
-                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-                if download == 1:
-                    SiteName = "Instagram"
-                    info.Profile_Pic(username,
-                                     profile_pic, SiteName,Opt,name2)
-                else:
-                    pass
-                print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Username", "Instagram", "Private"))
                 Flag = False
                 IsPrivate1 = "True"
-                InstagramParams.append(IsPrivate1)
-                InstagramParams.append(followers)
-                InstagramParams.append(posts)
             else:
                 Private = "FALSE"
                 IsPrivate1 = "False"
-                InstagramParams.append(IsPrivate1)
-                Flag = True
-                reader = soup(openurl.content, "html.parser")
-                name = reader.find("h2", class_="profile-name-bottom").text
-                followers = reader.find("span", class_="followed_by").text
-                InstagramParams.append(followers)
-                followed = reader.find("span", class_="follows").text
-                bio = reader.find("div", class_="profile-description").text
-                posts = reader.find("span", class_="total_posts").text
-                InstagramParams.append(posts)
-                profile = reader.find_all("div", class_="profile-avatar")
-                for image in profile:
-                    profile_pic = image.find(
+            InstagramParams.append(IsPrivate1)
+            Flag = True
+            reader = soup(openurl.content, "html.parser")
+            name = reader.find("h2", class_="profile-name-bottom").text
+            followers = reader.find("span", class_="followed_by").text
+            InstagramParams.append(followers)
+            followed = reader.find("span", class_="follows").text
+            bio = reader.find("div", class_="profile-description").text
+            posts = reader.find("span", class_="total_posts").text
+            InstagramParams.append(posts)
+            profile = reader.find_all("div", class_="profile-avatar")
+            for image in profile:
+                profile_pic = image.find(
                         "a", class_="profile-hd-link launchLightbox")["data-video-poster"]
                 print(Font.Color.YELLOW + "[v]" +
                       Font.Color.WHITE + "USERNAME: {}".format(username))
@@ -377,9 +333,9 @@ class info:
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "FOLLOWED: {}".format(followed))
                 print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
-                print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: {}".format(Private))
+                print(Font.Color.YELLOW +
+                      "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
 
                 f = open(report, "a", encoding="utf-8")
                 f.write("\nINSTAGRAM DATA:\n")
@@ -392,15 +348,15 @@ class info:
                 f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
                 f.close()
 
-                download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
+            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
                     username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
 
-                if download == 1:
+            if download == 1:
                     SiteName = "Instagram"
                     info.Profile_Pic(username,
                                      profile_pic, SiteName,Opt,name2)
-                else:
-                    pass
+            else:
+                pass
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
