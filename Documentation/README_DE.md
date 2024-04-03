@@ -14,11 +14,11 @@
 
 # :mag: Mr.Holmes 
 
-**Mr.Holmes is a information gathering tool (OSINT). The main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.**
+**Mr.Holmes ist ein Tool zum Sammeln von Informationen (OSINT). Der Hauptzweck besteht darin, mithilfe öffentlicher Quellen im Internet Informationen über Domänen, Benutzernamen und Telefonnummern zu erhalten. Außerdem wird der Google-Dorks-Angriff für bestimmte Forscher genutzt. Es verwendet außerdem Proxys, um Ihre Anfragen vollständig anonym zu machen, und eine WhoIS-API, um weitere Informationen über eine Domain zu erhalten.**
 <br>
 
-# :heavy_exclamation_mark: DISCLAIMER
-**This Tool is Not 100% Accurate so it can fail somtimes. Also this tool is made for educational and research purposes only, i do not assume any kind of responsibility for any imprope use of this tool.**
+# :heavy_exclamation_mark: HAFTUNGSAUSSCHLUSS
+**Dieses Tool ist nicht 100 % genau und kann daher manchmal ausfallen. Außerdem dient dieses Tool nur zu Bildungs- und Forschungszwecken. Ich übernehme keinerlei Verantwortung für eine unsachgemäße Verwendung dieses Tools.**
 <br>
 
 #  SCREENSHOT
@@ -43,7 +43,7 @@ sudo bash install.sh
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS (1°WAY)
-**If you have git installed on your windows machine you can do the following commands:**
+**Wenn Sie Git auf Ihrem Windows-Rechner installiert haben, können Sie die folgenden Befehle ausführen:**
 ```cmd
 git clone https://github.com/Lucksi/Mr.Holmes
 cd Mr.Holmes
@@ -52,7 +52,7 @@ Install.cmd
 <br>
 
 # :heavy_check_mark: INSTALLATION WINDOWS (2° WAY):
-**If you download the zip file of Mr.Holmes you should first unzip it and after that do the following commands:**
+**Wenn Sie die ZIP-Datei von Mr.Holmes herunterladen, sollten Sie diese zunächst entpacken und anschließend die folgenden Befehle ausführen:**
 ```cmd
 ren Mr.Holmes-master Mr.Holmes
 cd Mr.Holmes
@@ -100,11 +100,11 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 # :heavy_exclamation_mark: ATTENTION
-**DATABASE NOT AVAIABLE ON TERMUX**
+**DATENBANK NICHT AUF TERMUX VERFÜGBAR**
 <br>
 
 # :heavy_exclamation_mark: ATTENTION ON WINDOWS
-**IF PYTHON AND PHP WONT INSTALL YOU HAVE TO DOWNLOAD THEM MANUALLY:**
+**WENN PYTHON UND PHP NICHT INSTALLIERT WERDEN, MÜSSEN SIE SIE MANUELL HERUNTERLADEN:**
     
 <br>
 
@@ -206,37 +206,37 @@ edit Language.json
 <br>
 
 # INTERACTIVE MAP HAS BEEN MADE WITH:
-**Leaflet: https://leafletjs.com**
+**Broschüre: https://leafletjs.com**
 
 <br>
 
 # USERNAME ENTITIES:
-**The Icons on Folder: /GUI/Icon/Entities/Site_Icon have been taken from: https://www.iconfinder.com/ all credit goes to their respective creators**
+**Die Symbole im Ordner: /GUI/Icon/Entities/Site_Icon stammen von: https://www.iconfinder.com/. Alle Quellenangabe geht an die jeweiligen Ersteller**
 
 <br>
 
 # ENCODING:
-**With this version it is Possible to Encode your reports**
+**Mit dieser Version ist es möglich, Ihre Berichte zu verschlüsseln**
 
 <br>
 
 # DECODING:
-**With this version it is Possible to Decode your reports**
+**Mit dieser Version ist es möglich, Ihre Berichte zu entschlüsseln**
 
 <br>
 
 # HYPOTHESIS
-**This new version Permits to generate some "Hypothesis" on the subject in base of their numbers on varios social media including possible hobbies/interests (It may not be a 100% attendible)**
+**Diese neue Version ermöglicht es, auf der Grundlage ihrer Zahlen in verschiedenen sozialen Medien, einschließlich möglicher Hobbys/Interessen, einige „Hypothesen“ zu diesem Thema zu erstellen (diese sind möglicherweise nicht zu 100 % zugänglich)**
 
 <br>
 
 # EMAIL-LOOKUP:
-**With this new version is possible to check if an email is connected to some specific socials/services without letting the target know it.**
+**Mit dieser neuen Version ist es möglich, zu überprüfen, ob eine E-Mail mit bestimmten sozialen Netzwerken/Diensten verbunden ist, ohne dass die Zielperson dies bemerkt.**
 
 <br>
 
 # GRAPHS:
-**With this new version has been added the possibility to create Graphs in order to create a schema for information scheduling.**
+**Mit dieser neuen Version wurde die Möglichkeit hinzugefügt, Diagramme zu erstellen, um ein Schema für die Informationsplanung zu erstellen.**
 
 <br>
 
@@ -247,7 +247,7 @@ edit Language.json
 <br>
 
 # MAPS:
-**With this new version has been added the possibility to create Interactive Maps.**
+**Mit dieser neuen Version wurde die Möglichkeit hinzugefügt, interaktive Karten zu erstellen.**
 
 <br>
 
@@ -258,7 +258,7 @@ edit Language.json
 <br>
 
 # DORKS:
-**With this new version it is possible to search Video/Sound/Images via Dorks (1) and to effectuate specific research adding date ex '1998/01/1' or date range ex '1998/01/01-2020/12/31' (2).**
+**Mit dieser neuen Version ist es möglich, Video/Ton/Bilder über Dorks (1) zu durchsuchen und spezifische Recherchen durchzuführen, indem das Datum „1998/01/1“ oder der Datumsbereich „1998/01/01-2020/12“ hinzugefügt wird /31' (2).**
 
 <br>
 
@@ -275,7 +275,7 @@ edit Language.json
 <br>
 
 # PDF:
-**With this new version has been added the possibility to converte your Graphs in PDF.**
+**Mit dieser neuen Version wurde die Möglichkeit hinzugefügt, Ihre Diagramme in PDF zu konvertieren.**
 
 <br>
 
@@ -294,7 +294,7 @@ edit Language.json
 <br>
 
 # FILE-TRANSFER:
-**With this version it is Possible to Transfer your reports directly to Your Phone Via Qr-Code**
+**Mit dieser Version ist es möglich, Ihre Berichte per QR-Code direkt auf Ihr Telefon zu übertragen**
 
 <br>
 
@@ -350,7 +350,7 @@ edit Language.json
 
 ## <p align= center>MADE WITH :heart: BY LUCKSI IN :it:</p>
 
-## <p align = center>  ORIGINAL CREATOR: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
+## <p align = center>  URSPRÜNGLICHER ERSTELLER: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
 
-## <p align = center>LICENSE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2024 Lucksi
+## <p align = center>LIZENZ: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2023 Lucksi 

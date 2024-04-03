@@ -20,6 +20,9 @@
             else if($Lang == "fr"){
                 $Language = "French";
             }
+            else if($Lang == "de"){
+                $Language = "Deutsch";
+            }
             else{
                 $Language = "English";
             }
@@ -48,6 +51,9 @@
             }
             else if ($name == "French"){
                 $finalname = "Français";
+            }
+            else if ($name == "Deutsch"){
+                $finalname = "Deutsch";
             }
             else{
                 $finalname = $name;
@@ -89,6 +95,9 @@
                 }
                 else if($Lang == "fr"){
                     Get_Screen_size($Modality,"French");
+                }
+                else if($Lang == "de"){
+                    Get_Screen_size($Modality,"Deutsch");
                 }
                 else{
                     Get_Screen_size($Modality,"English");
