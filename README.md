@@ -42,6 +42,21 @@ sudo bash install.sh
 ```
 <br>
 
+# :heavy_check_mark: INSTALLATION LINUX/MAC (Venv Enviroment):
+**if you encounter some errors in the python libraries installation use this method**
+```bash
+git clone https://github.com/Lucksi/Mr.Holmes
+sudo apt-get update
+cd Mr.Holmes
+python3 -m venv .lib_venv
+sudo chmod +x install.sh
+sudo bash install.sh
+source .lib_venv/bin/activate
+pip3 install -r requirements.txt
+python3 MrHolmes.py
+```
+<br>
+
 # :heavy_check_mark: INSTALLATION WINDOWS (1°WAY)
 **If you have git installed on your windows machine you can do the following commands:**
 ```cmd
