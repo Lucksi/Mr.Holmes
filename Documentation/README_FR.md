@@ -350,5 +350,4 @@ edit Language.json
 
 ## <p align = center>CRÉATEUR ORIGINAL: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
-
 ## <p align = center>LICENCE: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2024 Lucksi
