@@ -86,10 +86,19 @@ proot -0 chmod +x install_Termux.sh
 <br>
 
 #  USAGE LINUX/MAC:
+    cd Mr.Holmes
     sudo python3 MrHolmes.py
     OR:
+    cd Mr.Holmes
     cd Launchers
     Execute Launcher.sh
+
+<br>
+    
+#  USAGE LINUX/MAC(Venv Enviroment):
+    cd Mr.Holmes
+    source .lib_venv/bin/activate
+    python3 MrHolmes.py
 
 <br>
 
