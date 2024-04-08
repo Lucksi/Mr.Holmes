@@ -41,27 +41,79 @@ class Web:
 
     @staticmethod
     def Profiles(username,report):
+        choice = int(input(
+            Font.Color.BLUE + "\n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "choice", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            http_proxy = Proxies.proxy.final_proxis
+            http_proxy2 = Proxies.proxy.choice3
+            source = "http://ip-api.com/json/" + http_proxy2
+            access = urllib.request.urlopen(source)
+            try:
+                content = access.read()
+                final = json.loads(content)
+                identity = Language.Translation.Translate_Language(
+                    filename, "Default", "ProxyLoc", "None").format(final["regionName"], final["country"])
+            except Exception as e:
+                print("SOMETHING WENT WRONG SORRY")
+                http_proxy = None
+                http_proxy2 = str(http_proxy)
+                identity = "None"
+
+        else:
+            http_proxy = None
+            http_proxy2 = str(http_proxy)
+            identity = "None"
+        print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
+                            Language.Translation.Translate_Language(filename, "Default", "Proxy", "None").format(http_proxy2))
+        if identity != "None":
+            print(Font.Color.GREEN + "[+]" + Font.Color.WHITE + identity)
+        else:
+            pass
         print(Font.Color.WHITE + "----------------------------------------------------------INSTAGRAM------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILES THAT CONTAINS: {}".format(username))
         username_2 = username.split(".", 1)[0]
-        Scraper.Search.Instagram(report, username, "None", "None", "None", "None", "None", "None","Websites")
+        try:
+            Scraper.Search.Instagram(report, username, http_proxy, "None", "None", "None", "None", "None","Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 INSTAGRAM PROFILE FOR: {}".format(username_2))
         sleep(5)
-        Scraper.Search.Instagram(report, username_2, "None", "None", "None", "None", "None", username,"Websites")
+        try:
+            Scraper.Search.Instagram(report, username_2, http_proxy, "None", "None", "None", "None", username,"Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.WHITE + "---------------------------------------------------------TWITTER---------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES THAT CONTAINS: {}".format(username))
-        Scraper.Search.Twitter(report, username, "None", "None", "None","None","Websites")
+        try:
+            Scraper.Search.Twitter(report, username, http_proxy, "None", "None","None","Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES FOR: {}".format(username_2))
         sleep(5)
-        Scraper.Search.Twitter(report, username_2, "None", "None", "None",username,"Websites")
+        try:
+            Scraper.Search.Twitter(report, username_2, http_proxy, "None", "None",username,"Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.WHITE + "---------------------------------------------------------TIKTOK---------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TIKTOK PROFILES THAT CONTAINS: {}".format(username))
-        Scraper.Search.TikTok(report, username, "None", "None", "None","Websites")
+        try:
+            Scraper.Search.TikTok(report, username, http_proxy, "None", "None","Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TIKTOK PROFILES FOR: {}".format(username_2))
         sleep(5)
-        Scraper.Search.TikTok(report, username_2, "None", "None",username,"Websites")
+        try:
+            Scraper.Search.TikTok(report, username_2, http_proxy, "None",username,"Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.WHITE + "---------------------------------------------------------GIT-HUB---------------------------------------------------------------------\n" + Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 TWITTER PROFILES THAT CONTAINS: {}".format(username))
-        Scraper.Search.Github(report, username, "None", "None","None","Websites")
+        try:
+            Scraper.Search.Github(report, username, http_proxy, "None","None","Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + "CHECKING FIRST 20 GIT-HUB PROFILES FOR: {}".format(username_2))
         sleep(5)
-        Scraper.Search.Github(report, username_2, "None", "None",username,"Websites")
+        try:
+            Scraper.Search.Github(report, username_2, http_proxy, "None",username,"Websites")
+        except Exception as e:
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG" + str(e))
         print("-------------------------------------------------------------------------------------------------------------------------------------")
         choice = int(input(
             Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Robots") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
