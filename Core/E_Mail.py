@@ -70,7 +70,7 @@ class Mail_search:
                 print(Font.Color.GREEN + "[+]" +
                       Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Parameters", "KeyFound"))
                 Key2 = str(Key)
-                source = "https://emailverification.whoisxmlapi.com/api/v2?apiKey={}&emailAddress={}".format(
+                source = "https://emailverification.whoisxmlapi.com/api/v3?apiKey={}&emailAddress={}".format(
                     Key2, username)
                 access = urllib.request.urlopen(source)
                 reader = access.read()
