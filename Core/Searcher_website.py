@@ -305,6 +305,7 @@ class Web:
                     open(robot, 'wb').write(dork.content)
                     print(Font.Color.YELLOW +
                           "[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Default", "Robots").format(robot))
+                    print(dork.text)
                 else:
                     print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                           Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
@@ -319,6 +320,7 @@ class Web:
                         open(robot, 'wb').write(dork.content)
                         print(Font.Color.YELLOW +
                               "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Default", "Robots").format(robot))
+                        print(dork.text)
                     else:
                         print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                               Language.Translation.Translate_Language(filename, "Website", "Default", "NoRobots").format(username))
