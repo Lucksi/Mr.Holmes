@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2023-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0 
 
 import json
@@ -18,6 +18,22 @@ filename
 headers = Headers.Get.classic()
 
 class List:
+
+    @staticmethod
+    def Spotify(report,email,name):
+        print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
+        url = "https://spclient.wg.spotify.com/signup/public/v1/account?validate=1&email={}".format(email)
+        req = requests.get(url=url,headers=headers)
+        sleep(3)
+        if 'errors' in req.text:
+            response = Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name)
+            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name))
+        else:
+            response = Language.Translation.Translate_Language(filename, "Email", "FalseRes", "None").format(name)
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "FalseRes", "None").format(name))
+        f = open(report,"a")
+        f.write("\n"+ response)
+        f.close()
 
     @staticmethod
     def Twitter(report,email,name):
@@ -269,6 +285,7 @@ class List:
         print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Lookup", "None"))
         List.Gmail(report,email,"GMAIL/G-SUITE")
         List.Twitter(report,email,"TWITTER")
+        List.Spotify(report,email,"SPOTIFY")
         List.Github(report,email,"GITHUB")
         List.Gravatar(report,email,"GRAVATAR")
         List.Imgur(report,email,"IMGUR")
