@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import re as Regex
@@ -24,10 +24,9 @@ class Validator:
                         Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Valid", "None"))
                   f = open(report, "a")
                   f.write("\n\nTHIS EMAIL IS VALID")
-                  f.close
-                  f = open("Temp/E-Mail/Code.txt", "w")
-                  f.write("Is-Valid")
                   f.close()
+                  Valid = True
+
             else:
                   simbols = r'/^(([^<>()[\].,;:\s@"]+(\.[^<>()[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;'
                   if Regex.fullmatch(simbols, username):
@@ -35,10 +34,8 @@ class Validator:
                               Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Valid", "None"))
                         f = open(report, "a")
                         f.write("\n\nTHIS EMAIL IS VALID")
-                        f.close
-                        f = open("Temp/E-Mail/Code.txt", "w")
-                        f.write("Is-Valid")
                         f.close()
+                        Valid = True
                   else:
                         print(Font.Color.RED +
                               "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "NotValid", "None"))
@@ -46,3 +43,5 @@ class Validator:
                         f.write("\n\nTHIS EMAIL IS NOT VALID")
                         f.close()
                         inp = input(Language.Translation.Translate_Language(filename, "Default", "Continue", "None"))
+                        Valid = False
+            return Valid

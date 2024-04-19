@@ -1,6 +1,6 @@
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
-# Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
+# Copyright (C) 2021-2024 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
 import os
@@ -195,33 +195,34 @@ class Mail_search:
         f = open(report, "w")
         f.write("SCANNING EXECUTED ON:\n" + Date + "\n")
         f.close()
-        mail.Validator.Mail(username, report)
-        Mail_search.Lookup(username, report)
-        lookup = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO CHECK IF THIS EMAIL IS USED ON SOME SOCIAL MEDIA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if lookup == 1:
-            Lookup.List.Main(report,username)
-        Mail_search.searcher(username, report, Mode)
-        choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if choice == 1:
-            Mail_search.Google_dork(username)
-            Mail_search.Yandex_dork(username)
-        else:
-            pass
-        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-              os.getcwd() + "/" + report)
-        f = open(report, "a")
-        f.write(Language.Translation.Translate_Language(
-            filename, "Report", "Default", "By"))
-        f.close()
-        print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
-              report)
-        Notification.Notifier.Start(Mode)
-        Creds.Sender.mail(report, username)
-        choice = int(input(
-            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-        if choice == 1:
-            FileTransfer.Transfer.File(report, username, ".txt")
-        Encoding.Encoder.Encode(report)
-        inp = input(Language.Translation.Translate_Language(
-            filename, "Default", "Continue", "None"))
+        isvalid = mail.Validator.Mail(username, report)
+        if isvalid:
+            Mail_search.Lookup(username, report)
+            lookup = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO CHECK IF THIS EMAIL IS USED ON SOME SOCIAL MEDIA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if lookup == 1:
+                Lookup.List.Main(report,username)
+            Mail_search.searcher(username, report, Mode)
+            choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                Mail_search.Google_dork(username)
+                Mail_search.Yandex_dork(username)
+            else:
+                pass
+            print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
+                os.getcwd() + "/" + report)
+            f = open(report, "a")
+            f.write(Language.Translation.Translate_Language(
+                filename, "Report", "Default", "By"))
+            f.close()
+            print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Report", "None") +
+                report)
+            Notification.Notifier.Start(Mode)
+            Creds.Sender.mail(report, username)
+            choice = int(input(
+                Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Transfer", "Question", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+            if choice == 1:
+                FileTransfer.Transfer.File(report, username, ".txt")
+            Encoding.Encoder.Encode(report)
+            inp = input(Language.Translation.Translate_Language(
+                filename, "Default", "Continue", "None"))
