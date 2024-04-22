@@ -20,62 +20,8 @@ headers = Headers.Get.classic()
 
 
 class Search:
-    @staticmethod
-    def InstagramResc(report, username,List,Links,Pics,http_proxy):
-        url = "https://www.pixwox.com/search/?q={}".format(username)
-        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
-        sleep(4)
-        try:
-            if req.status_code == 200:
-                reader = soup(req.content, "html.parser")
-                users = reader.find_all("div", class_="item")
-                i = 1
-                f = open(report, "a",encoding="utf-8")
-                f.write(
-                    "\n\n--------------------------------\nSHOWING INSTAGRAM RESULTS FOR: {}\n".format(username))
-                for user in users:
-                    if i <= 20:
-                        usern1 = user.find_all("div",class_="username")
-                        for name in usern1:
-                            usern = name.find("span").text.replace("@","")
-                        pic = user.find_all("div",class_="ava")
-                        for image in pic:
-                            profilepic = image.find("img",class_="lazyload")["data-src"]
-                            Pics.append(profilepic) 
-                        name = user.find("div",class_="fullname").text
-                        link = "https://instagram.com/{}".format(usern)
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "USER FOUND: {}".format(
-                            Font.Color.GREEN + usern + Font.Color.WHITE))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "FULL NAME: {}".format(
-                            Font.Color.GREEN + name + Font.Color.WHITE))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(
-                            Font.Color.GREEN + profilepic + Font.Color.WHITE))
-                        print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "LINK: {}\n".format(
-                            Font.Color.GREEN + link + Font.Color.WHITE))
-                        List.append(usern)
-                        Links.append(link)
-                        f.write("\nUSER FOUND: {}".format(usern))
-                        f.write("\nFULL-NAME: {}".format(name))
-                        f.write("\nPROFILE-PIC FOUND: {}".format(profilepic))
-                        f.write("\nLINK: {}\n".format(link))
-                        i = i+1
-                    else:
-                        break
-                f.close()
-            else:
-                print("ERROR")
-        
-        except ConnectionError:
-            print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
-            pass
-        except Exception as e:
-            print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
-            pass
-
-    @staticmethod
-    def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
+   @staticmethod
+   def Instagram(report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, imagefold, username2,fold):
         List = []
         Links = []
         Pics = []
@@ -117,14 +63,14 @@ class Search:
                     else:
                         break
                 f.close()
-                if i == 1:
-                    Search.InstagramResc(report,username,List,Links,Pics,http_proxy)
-            else:
-                Search.InstagramResc(report,username,List,Links,Pics,http_proxy)
         except ConnectionError:
-            Search.InstagramResc(report, username,List,Links,Pics,http_proxy)
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
+            pass
         except Exception as e:
-            Search.InstagramResc(report, username,List,Links,Pics,http_proxy)
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
+            pass
         j = 1
         print(Font.Color.GREEN + "[+]" +
                     Font.Color.WHITE + "TOTAL USERNAMES FOUND")
