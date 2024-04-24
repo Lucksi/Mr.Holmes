@@ -126,8 +126,8 @@ class Search:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
 
-    @staticmethod
-    def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2,fold):
+   @staticmethod
+   def Twitter(report, username, http_proxy, TwitterParams, imagefold,username2,fold):
         headers = Headers.Get.Twitter()
         List = []
         Links = []
@@ -248,8 +248,8 @@ class Search:
             print(print(Font.Color.RED +
                   "\n[!]" + Font.Color.WHITE + "NO USER HAS BEEN FOUND"))
 
-    @staticmethod
-    def TikTok(report, username, http_proxy, imagefold, username2,fold):
+   @staticmethod
+   def TikTok(report, username, http_proxy, imagefold, username2,fold):
         List = []
         Links = []
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
@@ -351,8 +351,8 @@ class Search:
         else:
             print(Font.Color.RED + "\n[!]" +
                   Font.Color.WHITE + "NO USER HAS BEEN FOUND")
-    @staticmethod
-    def Github(report, username, http_proxy,imagefold, username2,fold):
+   @staticmethod
+   def Github(report, username, http_proxy,imagefold, username2,fold):
         List = []
         Links = []
         Pics = []
