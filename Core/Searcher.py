@@ -592,11 +592,11 @@ class MrHolmes:
                         ScrapeOp = "Negative"
                 else:
                     print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
-                        Language.Translation.Translate_Language(filename, "Username", "Default", "NoScrape") + "¯\_(ツ)_/¯")
+                        Language.Translation.Translate_Language(filename, "Username", "Default", "NoScrape"))
                     ScrapeOp = "Negative"
             else:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                    Language.Translation.Translate_Language(filename, "Username", "Default", "NoFound") + "¯\_(ツ)_/¯".format(username))
+                    Language.Translation.Translate_Language(filename, "Username", "Default", "NoFound").format(username))
                 ScrapeOp = "Negative"
         else:
             MrHolmes.Scraping(report,username,http_proxy,InstagramParams,PostLocations, PostGpsCoordinates,TwitterParams)
