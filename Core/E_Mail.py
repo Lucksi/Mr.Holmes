@@ -149,8 +149,8 @@ class Mail_search:
 
     @staticmethod
     def searcher(username, report, Mode):
-        nomefile = "Temp/E-Mail/Code.txt"
-        if os.path.isfile(nomefile):
+        #nomefile = "Temp/E-Mail/Code.txt"
+        #if os.path.isfile(nomefile):
             list_file = "Site_lists/E-Mail/Lists.json"
             reader = open(list_file,)
             data = json.loads(reader.read())
@@ -167,9 +167,9 @@ class Mail_search:
                     f.write("\n{}".format(url))
                 f.close()
             f.close()
-            os.remove(nomefile)
-        else:
-            holmes.Main.Menu(Mode)
+            #os.remove(nomefile)
+        #else:
+        #    holmes.Main.Menu(Mode)
 
     @staticmethod
     def Search(username, Mode):
