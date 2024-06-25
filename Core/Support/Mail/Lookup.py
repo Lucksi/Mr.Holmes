@@ -188,7 +188,10 @@ class List:
                     name = converted["entry"][0]["name"]["formatted"]
                 else:
                     name = "None"
-                urls = converted["entry"][0]["urls"]
+                if "urls" in reader:
+                    urls = converted["entry"][0]["urls"]
+                else:
+                    urls = "None"
                 if "last_profile_edit" in reader:
                     modification = converted["entry"][0]["last_profile_edit"]
                 else:
@@ -214,10 +217,11 @@ class List:
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "UPADTED ON: {}".format(modification))
                 f.write("UPDATED-ON: {}\r\n".format(modification))
                 i = 1
-                for url in urls:
-                    print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +  "LINK N°{}: {}".format(i,url["value"]))
-                    f.write("LINK N°{}: {}\r\n".format(i,url["value"]))
-                    i = i +1
+                if urls != "None":
+                    for url in urls:
+                        print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE +  "LINK N°{}: {}".format(i,url["value"]))
+                        f.write("LINK N°{}: {}\r\n".format(i,url["value"]))
+                        i = i +1
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
                 f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
                 print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "PROFILE-LINK: {}".format(link))
