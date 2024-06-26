@@ -198,6 +198,7 @@ edit Language.json
     Italiano 🇮🇹 
     English 🏴󠁧󠁢󠁥󠁮󠁧󠁿
     Français 🇫🇷
+    Deutsch 🇩🇪
 <br>
 
 
@@ -352,5 +353,4 @@ edit Language.json
 
 ## <p align = center>CREATORE ORIGINALE: <a href = "https://github.com/Lucksi">LUCA GAROFALO (Lucksi)</a></p>
 
-
-## <p align = center>LICENZA: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2024 Lucksi
+## <p align = center>LICENZA: GPL-3.0 License <br>COPYRIGHT: (C) 2021-2024 Lucksi 
