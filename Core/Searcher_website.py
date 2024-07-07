@@ -462,6 +462,7 @@ class Web:
                 number = False
                 em = None
                 email2 = None
+                email = False
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
                       Language.Translation.Translate_Language(filename, "Website", "Default", "NoWhois"))
@@ -821,7 +822,7 @@ class Web:
         else:
             num = None
             number = False
-            email = None
+            email = False
             email2 = False
             choice = int(input(
                 Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Dorks", "None") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
