@@ -31,6 +31,6 @@ class One_time:
                     Font.Color.RED + Language.Translation.Translate_Language(filename, "Eula", "Alert", "None"))
                 exit()
             else:
-                One_time.Agreement
+                One_time.Agreement()
         except ValueError:
             One_time.Agreement()
