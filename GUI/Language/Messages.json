@@ -21,6 +21,16 @@
                 "Person": "Person Not Found"
             },
 
+            "Deutsch":{
+                "Username": "Username nicht gefunden",
+                "Phone": "Nummer nicht gefunden",
+                "Web": "Website nicht gefunden",
+                "Email": "Email nicht gefunden",
+                "Graph": "Graph nicht gefunden",
+                "Host": "Host nicht gefunden",
+                "Person": "Person nicht gefunden"               
+            },
+
             "French":{
                 "Username": "Username N'Ete Pas Trouvez",
                 "Phone": "Numero N'Ete Pas Trouvez",
@@ -57,6 +67,17 @@
                 "Host": "Host Found",
                 "Person":"Person Found"
             },
+            
+            "Deutsch":{
+                "Username": "Username gefunden",
+                "Phone": "Nummer gefunden",
+                "Web": "Website gefunden",
+                "Email": "Email gefunden",
+                "Graph": "Graph gefunden",
+                "Canc": "Graph gelöscht",
+                "Host": "Host gefunden",
+                "Person":"Person gefunden"           
+            },
 
             "French":{
                 "Username": "Username Ete Trouvez",
@@ -92,6 +113,16 @@
                 "Host": "Host Not Inserted",
                 "Person": "Person Not Inserted"
             },
+            
+            "Deutsch":{
+                "Username": "Username nicht eingefügt",
+                "Phone": "Nummer nicht eingefügt",
+                "Web": "Website nicht eingefügt",
+                "Email": "Email nicht eingefügt",
+                "Graph": "Graph nicht eingefügt",
+                "Host": "Host nicht eingefügt",
+                "Person": "Person nicht eingefügt"
+            },            
 
             "French":{
                 "Username": "Username N'Ete Pas Entrez",
@@ -115,6 +146,11 @@
             "English":{
                 "Graph": "Do you want to encode the graph? If you have used Place Option it is higly raccomented to not Encode the graph",
                 "Reset": "Are You Sure? All your Entities will be deleted"
+            },
+            
+            "Deutsch":{
+                "Graph": "Möchtest Du das Diagramm kodieren? Wenn Du die Option „Platzieren“ verwendet hast, wird dringend empfohlen, das Diagramm nicht zu kodieren",
+                "Reset": "Bist du sicher? Alle Entitäten werden gelöscht"
             },
 
             "French":{

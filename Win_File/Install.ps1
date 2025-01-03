@@ -16,9 +16,9 @@ function Packet_Installer(){
 }
 
 function Preferences(){
-    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
+    $Language = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n(4)DEUTSCH`n`n[#MR.HOLMES#]-->"
     while($Language -eq ""){
-        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
+        $Color = Read-Host -Prompt "`nSELECT YOUR GUI-DEFAULT LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n(4)DEUTSCH`n`n[#MR.HOLMES#]-->"
     }
     if($Language -eq 1){
         '{
@@ -43,6 +43,14 @@ function Preferences(){
             }
         }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
         $mode = "FRANCAIS"
+    }
+    elseif ($Language -eq 4) {
+        '{
+            "Language":{
+                "Preference": "Deutsch"
+            }
+        }' | Out-File -FilePath .\GUI\Language\Language.json -Encoding Ascii
+        $mode = "DEUTSCH"
     }
 
     Write-Host "`nGUI-LANGUAGE:$mode"
@@ -194,9 +202,9 @@ function Options(){
             ]
         }' | Out-File -FilePath .\GUI\Credentials\Users.json -Encoding Ascii
     }
-    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
+    $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n(4)DEUTSCH`n`n[#MR.HOLMES#]-->"
     while($Lang -eq ""){
-        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n`n[#MR.HOLMES#]-->"
+        $Lang = Read-Host -Prompt "`nINSERT YOUR CLI-LANGUAGE`n(1)ENGLISH`n(2)ITALIANO`n(3)FRANCAIS`n(4)DEUTSCH`n`n[#MR.HOLMES#]-->"
     }
     if($Lang -eq 1){
         $Cli = "english"
@@ -209,6 +217,10 @@ function Options(){
     elseif($Lang -eq 3){
         $Cli = "french"
         $Mode = "FRANCAIS"
+    }
+    elseif($Lang -eq 4){
+        $Cli = "deutsch"
+        $Mode = "DEUTSCH"
     }
     Write-Host "`nCLI-LANGUAGE:$Mode"
     $DateFormat = Read-Host -Prompt "`nSELECT YOUR DATE-FORMAT`n(1)EUROPE(DD/MM/YYYY)`n(2)AMERICA'USA'(MM/DD/YYYY)`n(3)ASIA(YYYY/MM/DD)`n`n[#MR.HOLMES#]-->"

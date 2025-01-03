@@ -119,11 +119,11 @@ function Options {
 		then
 		Logs="True"
 	fi
-	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ "$Language" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	done
 	if [ $Language == 1 ];
@@ -140,6 +140,11 @@ function Options {
 		then
 		Lang="French"
 		mode="FRANÇAIS"
+		
+	elif [ $Language == 4 ];
+		then
+		Lang="Deutsch"
+		mode="DEUTSCH"
 	fi
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
 	printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YYYY)\n(2)AMERICA'USA'(MM/DD/YYYY)\n(3)ASIA(YYYY/MM/DD)\n\n"

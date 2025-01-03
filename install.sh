@@ -31,11 +31,11 @@ function banner {
 }
 
 function Preference {
-	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)BROWSER-LANGUAGE\n\n"
+	printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n(5)BROWSER-LANGUAGE\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ "$Language" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)BROWSER-LANGUAGE\n\n"
+		printf "${WHITE}\nSELECT YOUR GUI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n(5)BROWSER-LANGUAGE\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	done
 	if [ $Language == 1 ];
@@ -57,12 +57,20 @@ function Preference {
 	elif [ $Language == 3 ];
 	then
 		echo '{
-	"Language":{
-		"Preference":"French"
+    "Language":{
+	"Preference":"French"
 	}
 }'>GUI/Language/Language.json
-		mode="FRANÇAIS"
+	mode="FRANÇAIS"
 	elif [ $Language == 4 ];
+	then
+		echo '{
+    "Language":{
+        "Preference":"Deutsch"
+    }
+}'>GUI/Language/Language.json
+	mode="DEUTSCH"
+	elif [ $Language == 5 ];
 	then
 		echo '{
 	"Language":{
@@ -276,11 +284,11 @@ function Options {
     ]
 }'>GUI/Credentials/Users.json
 	fi
-	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+	printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n\n"
 	read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	while [ "$Language" == "" ];
 		do
-		printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n\n"
+		printf "${WHITE}\nSELECT YOUR CLI-DEFAULT LANGUAGE\n(1)ENGLISH\n(2)ITALIANO\n(3)FRANÇAIS\n(4)DEUTSCH\n\n"
 		read -p"$GREEN[#MR.HOLMES#]$WHITE-->" Language
 	done
 	if [ $Language == 1 ];
@@ -297,6 +305,10 @@ function Options {
 		then
 		Lang="french"
 		mode="FRANÇAIS"
+	elif [ $Language == 4 ];
+		then
+		Lang="deutsch"
+		mode="DEUTSCH"
 	fi
 	printf "\n${WHITE}CLI-LANGUAGE:${GREEN}$mode\n"
 	printf "${WHITE}\nSELECT YOUR DATE-FORMAT\n(1)EUROPE(DD/MM/YYYY)\n(2)AMERICA'USA'(MM/DD/YYYY)\n(3)ASIA(YYYY/MM/DD)\n\n"
