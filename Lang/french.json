@@ -8,143 +8,144 @@
 
     "Contributors":{
         "JeroCod": "https://github.com/JeroCod"
+		"MATAR0U": "https://github.com/MATAR0U"
     },
 
     "Default":{
         "Continue": "\nAPPUIYEZ SUR ENTRÉE POUR CONTINUER",
-        "choice": "VOULEZ VOUS UTILISER UN PROXY? (CELA PEUT CAUSER DES PROBLÈMES ET RALENTIR LE PROCESSUS) (1)OUI(2)NO\n\n",
-        "Proxy": "TON PROXY IP EST: {}",
-        "ProxyLoc": "TON PROXY IP EST SITUÉ DANS: {} ({})",
-        "Dorks": "VOULEZ VOUS RECHERCHER SUR GOOGLE ET YANDEX? (1)OUI(2)NO\n\n",
-        "Hypo": "VOULEZ VOUS GÉNERER L'HYPOTHESE? (N'EST PAS 100% PRÉCISE)(1)OUI(2)NO\n\n",
-        "Encode": "VOULEZ VOUS ENCODER LE RAPPORT?(1)OUI(2)NO",
-        "Connection_Error1": "ERREUR DE CONNEXION...J'ESSAIE SANS PROXY",
+        "choice": "VOULEZ-VOUS UTILISER UN PROXY? (CELA PEUT CAUSER DES PROBLÈMES ET RALENTIR LE PROCESSUS) (1)OUI(2)NON\n\n",
+        "Proxy": "L'IP DU PROXY EST: {}",
+        "ProxyLoc": "L'IP DU PROXY EST SITUÉE DANS: {} ({})",
+        "Dorks": "VOULEZ-VOUS FAIRE UNE RECHECHE GOOGLE DORK SUR GOOGLE/YANDEX? (1)OUI(2)NON\n\n",
+        "Hypo": "VOULEZ-VOUS GÉNERER L'HYPOTHESE? (L'HYPOTHESE N'EST PAS 100% PRÉCISE)(1)OUI(2)NON\n\n",
+        "Encode": "VOULEZ-VOUS ENCODER LE RAPPORT?(1)OUI(2)NON",
+        "Connection_Error1": "ERREUR DE CONNEXION... NOUVEL ESSAI SANS PROXY",
         "Connection_Error2": "ERREUR DE CONNEXION...",
         "Error": "QUELQUE CHOSE S'EST MAL PASSÉ...",
-        "Site_Error": "IMPOSSIBLE D'ACCEDER AU SITE ...",
-        "TotFound": "{}: {} REPERÉ SUR:",
+        "Site_Error": "IMPOSSIBLE D'ACCÉDER AU SITE ...",
+        "TotFound": "{}: {} REPÉRÉ SUR:",
         "Found": "{} {} TROUVÉ",
         "NotFound": "{} {} AUCUN RESULAT",
-        "Report": "\nRAPPORT CRÉER DANS: ",
-        "KeyError": "VOUS ENTREZ UNE OPTION INVALIDE..QUITTER",
-        "ValueError": "VOUS ENTREZ UNE KEY INVALIDE..QUITTER",
+        "Report": "\nRAPPORT CRÉÉ DANS: ",
+        "KeyError": "L'OPTION INDIQUÉ EST INVALIDE..FIN",
+        "ValueError": "LA CLÉ INDIQUÉ EST INVALIDE..FIN",
         "Delete": "SUPPRESSION DE L'ANCIEN FICHIER {}.txt",
-        "Attempt": "RECHERCHER SUR: {}",
-        "Internal": "ERREUR INTERNE LE MODULE {} N'EST PAS DÉTÉ CTÉ",
-        "NoDisplay": "LE FICHIER {} N'A PAS ÉTÉ DÉTÉ CTÉ QUITTER...",
-        "KeyC": "IL SEMBLE QUE VOUS AVEZ APPUYÉ SUR CTRL-C QUITTER...",
+        "Attempt": "RECHERCHE SUR: {}",
+        "Internal": "ERREUR INTERNE, MODULE {} INTROUVABLE",
+        "NoDisplay": "LE FICHIER {} N'A PAS ÉTÉ DÉTÉCTÉ..FIN",
+        "KeyC": "IL SEMBLE QUE VOUS AYEZ APPUYÉ SUR CTRL-C..FIN",
         "Map": "MAP ENREGISTRÉE DANS: {}",
-        "DateFormat": "FORMAT-DE-DATE:{}",
+        "DateFormat": "FORMAT DE DATE:{}",
         "Generated": "MAP GENERÉE PAR MR.HOLMES",
-        "DisplayError": "OPTION INVALIDE DANS Display/UNTILED.txt // SPÉCIFIEZ 'Desktop' OU 'Mobile'\n\nQUITTER..."
+        "DisplayError": "IL SEMBLE QU'IL Y AI UNE OPTION INVALIDE // SPÉCIFIEZ 'Desktop' OU 'Mobile'\n\nFIN..."
     },
 
     "Dorks":{
-        "Explanation":"CE MODULE VOUS PERMET DE CREER DES DORKS QUI POURRAIENT VOUS AIDER A RECHERCHER DES INFORMATIONS",
+        "Explanation":"CE MODULE PERMET DE CRÉER DES DORKS QUI POURRAIENT AIDER À RECHERCHER DES INFORMATIONS",
         "Remove": "SUPPRESSION DE L'ANCIEN FICHIER {}_Dorks.txt",
-        "Generation": "GÉNERER POSSIBLE {} DORKS LINK...",
-        "Question": "VOULEZ VOUS ENTRER PLUS PARAMÊTRES(1)OUI(2)NO?",
-        "ParamN": "ENTREZ LE NUMÉRO DE TÉLÉPHONE",
-        "Param": "ENTREZ AUTRE PARAMÈTRE{}",
-        "Added": "ENTREZ AUTRE PARAMÈTRE: {}",
-        "Added2": "DATE AJOUTEE: {}",
-        "Added3":"EVENEMENT AJOUTEE: {}",
-        "Choice": "ENTREZ UN TYPE\n(1)DATE\t\t\t(2)PLAGE DE DATE\n(3)EXCLUDE PARAMETRE\t(4)AJOUTER PARAMETRE",
-        "Choice2":"ENTREZ UN TYPE\n(1)Username\t(2)PhoneNumber\n(3)Websites\t(4)Persons",
-        "Date": "ENTRER LA DATE 'YYYY-MM-DD' YYYY REQUIS",
-        "Event": "ENTRER L'EVENEMENT(1)AVANT(2)APRÈS",
+        "Generation": "GÉNÉRATION DES DORKS LINK {} POSSIBLE...",
+        "Question": "VOULEZ-VOUS ENTRER PLUS DE PARAMÊTRES ? (1)OUI (2)NON",
+        "ParamN": "AJOUTER UN PARAMĖTRE NUMÉRO",
+        "Param": "AJOUTER LE PARAMÈTRE N'{}",
+        "Added": "PARAMÈTRE AJOUTÉ: {}",
+        "Added2": "DATE AJOUTÉE: {}",
+        "Added3": "ÉVÈNEMENT AJOUTÉ: {}",
+        "Choice": "SÉLÉCTIONNEZ UN TYPE\n(1)DATE\t\t\t(2)PLAGE DE DATE\n(3)EXCLURE UN PARAMETRE\t(4)AJOUTER UN PARAMЀTRE",
+        "Choice2":"ENTREZ UN TYPE\n(1)Nom d'utilisateur\t(2)Numéro de téléphone\n(3)Site web\t(4)Personne",
+        "Date": "ENTREZ LA DATE 'YYYY-MM-DD' YYYY REQUIS",
+        "Event": "ENTREZ L'ÉVĖNEMENT (1)AVANT(2)APRÈS",
         "After": "ENTREZ LA DATE DE DEBUT 'YYYY-MM-DD' YYYY REQUIS",
-        "Before": "ENTRER LA DATE FINALE 'YYYY-MM-DD' YYYY REQUIS"
+        "Before": "ENTREZ LA DATE DE FIN 'YYYY-MM-DD' YYYY REQUIS"
     },
 
     "Logs":{
-        "Enabled": "LOGS ACTIVÉE.. FICHIER ENREGISTRÉE DANS: {}",
-        "Disabled": "LOGS DESACTIVÉE"
+        "Enabled": "LOGS ACTIVÉS.. FICHIER ENREGISTRÉ DANS: {}",
+        "Disabled": "LOGS DÉSACTIVÉS"
     },
 
     "Eula":{
-        "Text": "\nCET OUTILS A ÉTÉ CRÉER À DES FINS D'ENSEIGNEMENT ET DE RECHERCHES. JE N'ASSUME \nAUCUNE RESPONSABILITÉ POUR TOUTE UTILISATION INCORRECTE DE CET OUTILS. UTILISEZ CET OUTILS AVEC BON SENS\n\nENTRÉE",
+        "Text": "\nCET OUTIL A ÉTÉ CRÉÉ À DES FINS D'ENSEIGNEMENT ET DE RECHERCHES. JE N'ASSUME \nAUCUNE RESPONSABILITÉE POUR TOUTE UTILISATION INCORRECTE DE CET OUTILS. UTILISEZ CET OUTILS AVEC BON SENS\n\nENTRÉE",
         "Agree": "POUR ACCEPTER OU",
-        "Disagree": "POUR REJÉTER R\n\n",
-        "Alert": "\nTU DOIS ACCEPTER CE TERME POUR UTILISER CET OUTILS\n"
+        "Disagree": "POUR REJETER R\n\n",
+        "Alert": "\nVOUS DEVEZ ACCEPTER CE TERME POUR UTILISER CET OUTILS\n"
     },
 
     "Main":{
         "Text": "[VALIDEZ UNE OPTION 'ENTREZ 0 POUR RECOMMENCER']",
         "MobileText": "[ENTREZ UNE OPTION]",
-        "Options": "(1)SOCIAL-ACCOUNT-OSINT\t\t(2)PHONE-NUMBER-OSINT\t\t(11)ENCODING/DECODING\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\t\t(12)PDF-GRAPH CONVERTER\n(5)DATABASE(GUI)\t\t(6)UPDATE\t\t\t(13)FILE-TRANSFER\n(7)PORT-SCANNER\t\t\t(8)E-MAIL\t\t\t(14)SESSION-OPTIONS\n(9)DORKS-GENERATOR\t\t(10)PEOPLE-OSINT\t\t(15)EXIT",
-        "MobileOptions": "(1)SOCIAL-ACCOUNT-OSINT\n(2)PHONE-NUMBER-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)DATABASE(GUI)\n(6)UPDATE\n(7)PORT-SCANNER\n(8)E-MAIL\n(9)DORKS-GENERATOR\n(10)PERSON-OSINT\n(11)ENCODING/DECODING\n(12)PDF-CONVERTER\n(13)FILE-TRANSFER\n(14)SESSION-OPTIONS\n(15)EXIT",
-        "Alert": "ATTENTION CERTAINS RÉSULTATS PEUVENT ÊTRE DES FAUX POSITIFS",
-        "Username": "ENTREZ UN USERNAME",
+        "Options": "(1)RÉSEAUX-SOCIAUX-OSINT\t\t(2)NUMÉRO-DE-TÉLÉPHONE-OSINT\t\t(11)ENCODAGE/DECODAGE\n(3)DOMAIN/IP-OSINT\t\t(4)CONFIGURATION\t\t(12)PDF-GRAPH CONVERTISSEUR\n(5)BASE-DE-DONNÉES(GUI)\t\t(6)MISE-À-JOURt\t\t(13)TRANSFЀRE-DE-FICHIER\n(7)SCANNER-DE-PORT\t\t\t(8)E-MAIL\t\t\t(14)OPTIONS-DE-SESSIONS\n(9)GÉNÉRATEUR-DE-DORKS\t\t(10)PERSONNE-OSINT\t\t(15)QUITTER",
+        "MobileOptions": "(1)RÉSEAUX-SOCIAUX-OSINT\n(2)NUMÉRO-DE-TÉLÉPHONE-OSINT\n(3)DOMAIN/IP-OSINT\n(4)CONFIGURATION\n(5)BASE-DE-DONNÉES(GUI)\n(6)MISE-À-JOUR\n(7)SCANNER-DE-PORT\n(8)E-MAIL\n(9)GÉNÉRATEUR-DE-DORKS\n(10)PERSONNE-OSINT\n(11)ENCODAGE/DÉCODAGE\n(12)CONVERTISSEUR-PDF\n(13)TRANSFЀRE-DE-FICHIER\n(14)OPTIONS-DE-SESSIONS\n(15)QUITTER",
+        "Alert": "ATTENTION, CERTAINS RÉSULTATS PEUVENT-ÊTRE DE FAUX POSITIFS",
+        "Username": "ENTREZ UN NOM D'UTILISATEUR",
         "Phone": "ENTREZ UN NUMÉRO DE TÉLÉPHONE SANS(+)",
-        "Site": "ENTREZ UN DOMAINE O A IP ADDRESS(IPv4/IPv6)",
+        "Site": "ENTREZ UN DOMAINE OU UNE ADDRESSE IP (IPv4/IPv6)",
         "Port": "ENTREZ UN HOST A SCANNER",
         "Email": "ENTREZ UN E-MAIL",
         "Param": "ENTREZ UN PARAMETRE",
-        "Exit": "\nMERCI BEAUCOUP POUR AVOIR UTILISER MR.HOLMES.. BYE:)\n",
-        "Value_Error": "OUPS! VOUS AVEZ CHOISI UNE MAUVAISE OPTION EXIT..."
+        "Exit": "\nMERCI BEAUCOUP D'AVOIR UTILISER MR.HOLMES.. BYE:)\n",
+        "Value_Error": "OUPS! VOUS AVEZ CHOISI UNE MAUVAISE OPTION... FIN"
     },
 
     "Username":[
         {
             "Default":{
                 "Explanation": "CE MODULE VOUS PERMET DE RECHERCHER UN NOM D'UTILISATEUR SUR DIFFERENTES PLATEFORMES ET/OU D'OBTENIR DES INFORMATIONS",
-                "ExplanationP": "CE MODULE VOUS PERMET DE LISTEZ LES 20 PREMIERS PROFILS QUI CORRESPONDENT AU PARAMÈTRE DONNE DANS L'ENTREE",
-                "Not_Valid": "USERNAME FORMAT N'EST PAS VALIDE",
-                "Nsfw": "VOULEZ VOUS FAIRE UN SCAN SUR DES SITES NSFW?(1)OUI(2)NO\n\n",
-                "Scraper": "VOULEZ VOUS SCRAPER LES DONNÉES?(1)OUI(2)NO\n\n",
-                "TotFound": "USERNAME DÉTÉ CTÉ SUR: ",
-                "Profile_Pic": "VOULEZ VOUS TÉLÉCHARGER {} PROFIL IMAGE?(1)OUI(2)NO",
-                "Saved": "PROFIL IMAGE ENREGISTRÉ DANS: {}",
+                "ExplanationP": "CE MODULE VOUS PERMET DE LISTEZ LES 20 PREMIERS PROFILS QUI CORRESPONDENT AU PARAMÈTRE INDIQUÉ AU DÉBUT",
+                "Not_Valid": "LE FORMAT DU NOM D'UTILISATEUR N'EST PAS VALIDE",
+                "Nsfw": "VOULEZ VOUS FAIRE UN SCAN SUR DES SITES NSFW?(1)OUI(2)NON\n\n",
+                "Scraper": "VOULEZ VOUS SCRAPER LES DONNÉES?(1)OUI(2)NON\n\n",
+                "TotFound": "NOM D'UTILISATEUR DÉTÉCTÉ SUR: ",
+                "Profile_Pic": "VOULEZ VOUS TÉLÉCHARGER L'IMAGE DE PROFIL {}?(1)OUI(2)NO",
+                "Saved": "IMAGE DE PROFIL ENREGISTRÉE DANS: {}",
                 "NoScrape": "OUPS! IL SEMBLE QU'IL N'Y A AUCUN SITE POUR FAIRE UN SCRAPE...",
-                "NoFound": "OUPS! IL SEMBLE QUE CE USERNAME: {} N'A PAS ÉTÉ TROUVÉ SUR AUCUN WEBSITE..",
-                "Pics": "VOULEZ VOUS TÉLÉCHARGER {} POST?(1)OUI(2)NO",
-                "Details": "VOULEZ VOUS TÉLÉCHARGER DES POST-DETAILS(1)OUI(2)NO\n\n",
-                "TotDetails": "POST DETAILS ENREGISTRÉS DANS: {}",
-                "Image": "IMAGES ENREGISTRÉ DANS: {}",
-                "Video": "VIDEO ENREGISTRÉ DANS: {}",
-                "NoPost": "CET USER N'A AUCUN POST..IMPOSSIBLE DE TÉLÉCHARGER LE PROFIL PICS",
-                "Check": "VÉRIFIER SI {} ÉXISTE...",
+                "NoFound": "OUPS! IL SEMBLE QUE CE NOM D'UTILISATEUR: {} N'AI PAS ÉTÉ TROUVÉ SUR AUCUN WEBSITE..",
+                "Pics": "VOULEZ VOUS TÉLÉCHARGER LES PUBLICATIONS {} ?(1)OUI(2)NON",
+                "Details": "VOULEZ VOUS TÉLÉCHARGER LES DÉTAILS DES PUBLICATIONS (1)OUI(2)NON\n\n",
+                "TotDetails": "DETAILS DES PUBLICATIONS ENREGISTRÉS DANS: {}",
+                "Image": "IMAGES ENREGISTRÉES DANS: {}",
+                "Video": "VIDÉOS ENREGISTRÉES DANS: {}",
+                "NoPost": "CET UTILISATEUR N'A AUCUNE PUBLICATION.. IMPOSSIBLE DE TÉLÉCHARGER L'IMAGE DE PROFIL",
+                "Check": "VÉRIFICATION SI {} ÉXISTE...",
                 "CheckTrue": "IMAGE DÉTÉCTÉE...",
-                "CheckFalse": "IMAGE NON ÉXISTANT...",
-                "VideoCheck": "VÉRIFIER SI {} ÉXISTE...",
-                "VideoCheckTrue": "VIDEO DÉTÉ CTÉE..",
+                "CheckFalse": "IMAGE NON ÉXISTANTE...",
+                "VideoCheck": "VÉRIFICATION SI {} ÉXISTE...",
+                "VideoCheckTrue": "VIDEO DÉTÉCTÉE..",
                 "VideoCheckFalse": "VIDEO NON ÉXISTANTE...",
                 "Success": "TÉLÉCHARGEMENT RÉUSSI!",
-                "PostImg": "IMAGE ENREGISTRÉ AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE",
-                "PostVid": "VIDEO ENREGISTRÉ AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE"
+                "PostImg": "IMAGE ENREGISTRÉE AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE",
+                "PostVid": "VIDEO ENREGISTRÉE AVEC SUCCÈS, TAILLE DU FICHIER : {} BYTE"
             },
 
             "Instagram":{
-                "Download_Full": "TÉLÉCHARGER {} INSTAGRAM POST",
-                "Download_Partial": "TÉLÉCHARGE {} 12 PREMIERS POST INSTAGRAM",
-                "Download": "TÉLÉCHARGE POST NUMÉRO {}",
-                "Details": "CHERCHER POST {} DETAILS...",
-                "Likes/Comments": "CHERCHER POST {} LIKES AND COMMENT...",
-                "Data": "CHERCHER POST {} DATE DE PUBLICATION...",
-                "Private": "CET USER EST PRIVÉE..IMPOSSIBLE DE FAIRE UNE DATA SCRAPE",
-                "GeoData": "CHERCHER POST {} GEODATA (ATTENTION LES COORDONNÉES PEUVENT NE PAS ÊTRE EXACTES A 100 %)",
+                "Download_Full": "TÉLÉCHARGEMENT DES PUBLICATIONS INSTAGRAM DE {}",
+                "Download_Partial": "TÉLÉCHARGEMENT DES 12 PREMIЀRES PUBLICATIONS INSTAGRAM DE {}",
+                "Download": "TÉLÉCHARGEMENT DE LA PUBLICATION {}",
+                "Details": "RÉCUPÉRATION DE LA DESCRIPTION DE LA PUBLICATION {}...",
+                "Likes/Comments": "RÉCUPÉRATION DES LIKES ET COMMENTAIRES DE LA PUBLICATION {}...",
+                "Data": "RÉCUPÉRATION DE LA DATE DE MISE EN LIGNE DE LA PUBLICATION {}...",
+                "Private": "CET UTILISATEUR EST PRIVÉE... IMPOSSIBLE DE FAIRE UN SCRAPE DES DONNÉES",
+                "GeoData": "RÉCUPÉRATION DES GEODATA DE LA PUBLICATION {} (ATTENTION LES COORDONNÉES PEUVENT NE PAS ÊTRE EXACTES À 100 %)",
                 "NoGeoData": "IMPOSSIBLE DE RÉCUPERER LES GEODATA",
-                "FoldFound": "INSTAGRAM POST A ÉTÉ TROUVÉS. VOULEZ VOUS SUPPRIMER LES POST?(1)OUI(2)NO"
+                "FoldFound": "PUBLICATION INSTAGRAM DÉJÀ TROUVÉ, VOULEZ VOUS LES SUPPRIMER? (1)OUI(2)NON"
             },
 
             "Twitter":{
-                "Blocked": "CET USER A ÉTÉ BANNI..IMPOSSIBLE DE FAIRE UNE DATA SCRAPE",
-                "Details": "CHERCHER TWEET N {}...",
-                "Download_Full": "TÉLÉCHARGE {} TWEET",
-                "Download_Partial": "TÉLÉCHARGE {} 12 PREMIERS TWEETS",
-                "MediaOnly": "VOULEZ-VOUS TELECHARGER UNIQUEMENT LES TWEETS MEDIA?(LES TWEETS MEDIA CONTIENNENT DES IMAGES OU DES VIDEOS)?(1)OUI(2)NO",
-                "No_Image": "IMAGE NON ÉXISTANT",
+                "Blocked": "CET UTILISATEUR A ÉTÉ BANNI.. IMPOSSIBLE DE FAIRE UN SCRAPE DES DONNÉES",
+                "Details": "RECHERCHE DE TWEET N {}...",
+                "Download_Full": "TÉLÉCHARGEMENT DES TWEET DE {}",
+                "Download_Partial": "TÉLÉCHARGEMENT DES 12 PREMIERS TWEETS DE {}",
+                "MediaOnly": "VOULEZ-VOUS TÉLÉCHARGER UNIQUEMENT LES TWEETS MEDIA? (LES TWEETS MEDIA CONTIENNENT DES IMAGES OU DES VIDEOS)?(1)OUI(2)NON",
+                "No_Image": "IMAGE NON ÉXISTANTE",
                 "Yes_Image": "IMAGE {} TROUVÉE",
-                "No_Desc": "PAS DE DESCRIPTION TROUVEE",
-                "Protected": "CET USER A DES TWEETS SÉCURISES..IMPOSSIBLE DE FAIRE UNE DATA SCRAPE"
+                "No_Desc": "PAS DE DESCRIPTION TROUVÉE",
+                "Protected": "CET UTILISATEUR A DES TWEETS SÉCURISÉS.. IMPOSSIBLE DE FAIRE UN SCRAPE DES DONNÉES"
             },
 
             "TikTok":{
-                "Download_Full": "TÉLÉCHARGER {} TIKTOKS",
-                "Download_Partial": "TÉLÉCHARGEZ {} 12 PREMIERS TIKTOK",
-                "Download":"TÉLÉCHARGEMENT VIDEO NUMÉRO {}",
-                "FoldFound": "VIDEO DÉTÉCTÉE. VOULEZ VOUS SUPPRIMER LES VIDEOS?(1)OUI(2)NO",
+                "Download_Full": "TÉLÉCHARGEMENT DES TIKTOKS DE {}",
+                "Download_Partial": "TÉLÉCHARGEMENT DES 12 PREMIERS TIKTOK DE {}",
+                "Download":"TÉLÉCHARGEMENT DE LA VIDÉO NUMÉRO {}",
+                "FoldFound": "VIDÉO DÉJÀ TROUVÉES, VOULEZ VOUS LES SUPPRIMER?(1)OUI(2)NON",
                 "NoSong": "AUCUNE CHANSON DETECTÉE"
             }
         }
@@ -153,196 +154,208 @@
     "Website":[
         {
             "Default":{
-                "Explanation": "CE MODULE VOUS PERMET DE TROUVER DES INFORMATIONS SUR UN DOMAINE TEL QUE ISP ET L'ORGANISATION",
-                "Search": "RECHERCHER INFORMATION POUR: {}",
+                "Explanation": "CE MODULE VOUS PERMET DE TROUVER DES INFORMATIONS SUR UN DOMAINE TEL QUE FAI ET ORGANISATION",
+                "Search": "RECHERCHE D'INFORMATIONS POUR: {}",
                 "ServerError": "OUPS! LE SERVEUR NE RÉPOND PAS...",
                 "Robots": "ROBOTS ENREGISTRÉ DANS: {}",
-                "NoRobots": "OUPS! IMPOSSIBLE DE TÉLÉCHARGER {} ROBOTS.TXT..SKIPPING",
-                "Secure": "TRÈS BIEN. CE SITE WEB/DOMAIN {} EST SAFE :",
-                "Unsecure": "ATTENTION! CE SITE WEB/DOMAIN {} PEUT ÊTRE DANGEREUX!",
-                "Info": "POUR PLUS INFORMATIONS, CONSULTEZ CES LIENS...",
-                "Traceroute": "FAIRE UN TRACEROUTE POUR: {}...",
-                "Research": "RECHERCHER {} SUR PLUS DE SITES",
-                "Whois": "RECHERCHER WHOIS INFORMATION POUR {}",
-                "NoWhois": "API KEY NE TROUVE PAS DE CLASSICAL WHOIS LOOKUP (NOT AVAIBLE ON WINDOWS)",
-                "Maps": "GÉNÉRATION DE GOOGLE MAPS LINK...",
-                "Geo": "OBTENTION DES GÉODATA DE LOCALISATION..",
-                "NoGeo": "OUPS! IMPOSSIBLE D'OBTENIR DES GÉODONNÉES DE LOCALISATION",
-                "Phone": "GENERATION LINK POUR: {} NUMÉRO DE TÉLÉPHONE: {}",
-                "Email": "GENERATION LINK POUR :{} EMAIL: {}",
-                "NoResponse": "OUPS! SERVEUR NE REPOND PAS..."
+                "NoRobots": "OUPS! IMPOSSIBLE DE TÉLÉCHARGER ROBOTS.TXT POUR {}.. PASSE",
+                "Secure": "TRÈS BIEN. LE SITE WEB/DOMAIN {} EST SAIN :",
+                "Unsecure": "ATTENTION! LE SITE WEB/DOMAIN {} PEUT ÊTRE DANGEREUX!",
+                "Info": "POUR PLUS D'INFORMATIONS, CONSULTEZ CES LIENS...",
+                "Traceroute": "TRACEROUTE POUR: {}...",
+                "Research": "RECHERCHE DE {} SUR PLUS DE SITES",
+                "Whois": "RECHERCHE DU WHOIS POUR {}",
+                "NoWhois": "LA CLÉ API NE TROUVE PAS DE WHOIS CLASSIQUE (NON DISPONIBLE SOUS WINDOWS)",
+                "Maps": "GÉNÉRATION DE LIENS GOOGLE MAPS...",
+                "Geo": "OBTENTION DES GÉODATA..",
+                "NoGeo": "OUPS! IMPOSSIBLE D'OBTENIR DES GÉODATA",
+                "Phone": "GENERATION DE LIEN POUR: {} NUMÉRO DE TÉLÉPHONE: {}",
+                "Email": "GENERATION DE LIEN POUR :{} EMAIL: {}",
+                "NoResponse": "OUPS! LE SERVEUR NE REPOND PAS..."
             },
 
             "Questions":{
-                "Traceroute": "VOULEZ VOUS FAIRE UNE TRACEROUTE SCAN?(1)OUI(2)NO\n\n",
-                "Whois": "VOULEZ VOUS FAIRE UNE WHOIS LOOKUP?(1)OUI(2)NO\n\n",
-                "Repu": "VOULEZ VOUS FAIRE UNE RÉPUTATION SCAN?(1)OUI(2)NO\n\n",
-                "Robots": "VOULEZ VOUS DOWNLOAD ROBOTS.TXT?(1)OUI(2)NO\n\n",
-                "Soc": "VOULEZ VOUS FAIRE UNE SOCIAL MEDIA SCAN?(1)OUI(2)NO\n\n",
-                "Ports": "VOULEZ VOUS FAIRE UN PORT SCAN?(1)OUI(2)NO\n\n"
+                "Traceroute": "VOULEZ VOUS FAIRE UN TRACEROUTE?(1)OUI(2)NON\n\n",
+                "Whois": "VOULEZ VOUS FAIRE UNE VÉRIFICATION DU WHOIS?(1)OUI(2)NON\n\n",
+                "Repu": "VOULEZ VOUS FAIRE UN SCAN DE RÉPUTATION?(1)OUI(2)NON\n\n",
+				"Soc": "VOULEZ VOUS FAIRE UN SCAN DE RÉSEAUX SOCIAUX?(1)OUI(2)NON\n\n",
+                "Robots": "VOULEZ VOUS RÉCUPÉRER LE ROBOTS.TXT?(1)OUI(2)NON\n\n",
+                "Ports": "VOULEZ VOUS FAIRE UN SCAN DE PORT?(1)OUI(2)NON\n\n"
             },
 
             "Parameters":{
                 "KeyFound": "API KEY TROUVÉ",
-                "KeyNoFound": "API KEY N'EST PAS TROUVÉ FAIRE CLASSICAL WHOIS",
-                "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NO",
-                "PhoneNotFound": "NUMÉRO N'EST PAS TROUVÉ...",
-                "EmailFound": "EMAIL DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NO",
-                "EmailNotFound": "EMAIL N'EST PAS TROUVÉ...",
-                "Error": "OUPS! NE TROUVE AUCUNE INFORMATION. EXECUTE CLASSICAL WHOIS "
+                "KeyNoFound": "API KEY INTROUVABLE LANCEMENT D'UN WHOIS CLASSIQUE",
+                "PhoneFound": "NUMÉRO DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NON",
+                "PhoneNotFound": "NUMÉRO INTROUVABLE...",
+                "EmailFound": "EMAIL DÉTÉCTÉ: {} VOULEZ VOUS FAIRE UN SCAN?(1)OUI(2)NON",
+                "EmailNotFound": "EMAIL INTROUVABLE...",
+                "Error": "OUPS! AUCUNE INFORMATION TROUVÉE. EXÉCUTION D'UN WHOIS CLASSIQUE"
             }
         }
     ],
 
     "Phone":{
-        "Explanation": "CE MODULE VOUS PERMET DE RECHERCHER DES INFORMATIONS SUR DES NUMEROS DE TELEPHONE TELS QUE L'OPERATEUR",
-        "Error": "NUMÉRO N'EST PAS TROUVÉ...ENTREZ ENVOI POUR CONTINUER",
-        "Scan": "SCANNING NUMÉRO: {}...",
-        "Real": "C'EST PROBABLEMENT UN VRAI NUMÉRO ",
+        "Explanation": "CE MODULE VOUS PERMET DE RECHERCHER DES INFORMATIONS SUR DES NUMEROS DE TÉLÉPHONE TELS QUE L'OPERATEUR",
+        "Error": "NUMÉRO INTROUVABLE...ENTRÉE POUR CONTINUER",
+        "Scan": "SCAN DU NUMÉRO: {}...",
+        "Real": "CE N'EST PROBABLEMENT PAS UN VRAI NUMÉRO ",
         "NoReal": "CE NE PAS UN VRAI NUMÉRO",
-        "Affidability": "RECHERCHER NUMBER AFFIDABILITE",
+        "Affidability": "RECHERCHE DE LA FIABILITÉE DU NUMÉRO",
         "Exist": "CE NUMÉRO ÉXISTE OU EST UN NUMÉRO VOIP",
         "NoExist": "CE NUMÉRO N'ÉXISTE PAS.",
-        "NotFound": "OUPS! CE NUMÉRO N'A PAS ÉTÉ TROUVÉE",
-        "NotFound2": "NUMÉRO N'EST PAS DETECTÉ...APPUIYEZ ENTRER POUR CONTINUER",
-        "FingerPrints": "GÉNÉRATION DE POSSIBILE PHONE-FINGERPRINTS LINK SUR LE SOCIAL MEDIAS...",
-        "Search": "RECHERCHER NUMÉRO {} SUR PLUS SITES",
-        "Country": "NUMÉRO NATIONALITÉ:{}",
-        "Area": "AREA DETECTÉ",
+        "NotFound": "OUPS! CE NUMÉRO N'A PAS ÉTÉ TROUVÉ",
+        "NotFound2": "LE NUMÉRO N'EST PAS DETECTÉ...APPUYEZ SUR ENTRÉE POUR CONTINUER",
+        "FingerPrints": "GÉNÉRATION DE POSSIBILE LIEN SUR LES RÉSEAUX SOCIAUX...",
+        "Search": "RECHERCHE DU NUMÉRO {} SUR PLUS DE SITES",
+        "Country": "NUMÉRO DE NATIONALITÉE:{}",
+        "Area": "ZONE DETECTÉ",
         "Zone": "TIMEZONE DETECTÉ",
-        "NoArea": "AREA N'A PAS ÉTÉ TROUVÉ",
-        "NoZone": "TIMEZONE N'A PAS ÉTÉ TROUVÉ",
-        "Geo": "PRENANT LA GÉOLOCALOISATION APPROXIMATIVE DU NUMÉRO {}",
+        "NoArea": "LA ZONE N'A PAS ÉTÉ TROUVÉ",
+        "NoZone": "LA TIMEZONE N'A PAS ÉTÉ TROUVÉ",
+        "Geo": "RÉCUPÉRATION DE LA GÉOLOCALOISATION APPROXIMATIVE DU NUMÉRO {}",
         "NoGeo":"IMPOSSIBLE D'OBTENIR LA GÉOLOCALOISATION APPROXIMATIVE DU NUMÉRO {}"
     },
 
     "Ports":{
         "Explanation": "CE MODULE VOUS PERMET DE SCANNER ET D'IDENTIFIER LES PORTS OUVERTS D'UN SITE WEB",
-        "Text": "ENTREZ UNE OPTION\n(1)SET A FROM/TO PORTS\n(2)SCANNING TOUTES POSSIBILITÉES PORTS\n(3)SCANNING SPECIFIC PORTS\n(4)MAIN-MENU\n\n",
+        "Text": "ENTREZ UNE OPTION\n(1)DÉFINIR UN PORT SOURCE/DESTINATION\n(2)SCANNER TOUS LES PORTS\n(3)SCANNER UN PORT SPÉCIFIQUE\n(4)MENU PRINCIPAL\n\n",
         "Host": "VÉRIFICATION DES PORTS POUR: {}",
         "Check": "VERIFICATION DU PORT:{}",
-        "Port": "CE PORT {} EST: ",
+        "Port": "LE PORT {} EST: ",
         "Open": "OUVERT",
-        "Closed": "CLOS",
-        "Pstart": "ENTREZ LE NUMÉRO DE PORT POUR COMMENCER AVEC\n\n",
-        "Pfinish": "ENTREZ LE NUMÉRO DE PORT POUR TERMINER AVEC\n\n",
+        "Closed": "FERMÉ",
+        "Pstart": "ENTREZ LE NUMÉRO DE PORT DE DÉBUT\n\n",
+        "Pfinish": "ENTREZ LE NUMÉRO DE PORT DE FIN\n\n",
         "Amounts": "ENTREZ LA FOURCHETTE DES PORTS\n\n",
         "Number": "ENTREZ LE NUMÉRO DE PORT\n\n",
-        "HostPort": "VÉRIFIER PORTS DE: {}",
-        "OpenPorts": "OUVERTURE DES PORTS POUR: {}",
+        "HostPort": "VÉRIFICATION DES PORTS DE: {}",
+        "OpenPorts": "AFFICHAGE DES PORTS OUVERT POUR: {}",
         "NoPorts": "OUPS! IL N'YA AUCUN PORT OUVERT POUR: {}",
-        "Error": "IMPOSSIBLE DE DIALOGUER AVEC LE HOST"
+        "Error": "IMPOSSIBLE DE DIALOGUER AVEC L'HOST"
     },
 
     "Email":{
         "Explanation":"CE MODULE VOUS PERMET DE RECHERCHER DES INFORMATIONS SUR UN EMAIL",
-        "Check": "VÉRIFIER SI {} EST UNE VALID EMAIL",
+        "Check": "VÉRIFICATION SI {} EST UN EMAIL VALIDE",
         "Valid": "CETTE EMAIL EST VALIDE",
-        "NotValid": "CETTE EMAIL N'A PAS VALIDE",
-        "Link": "GÉNÉRATION {} LINK"
+        "NotValid": "CETTE EMAIL N'EST PAS VALIDE",
+        "Link": "GÉNÉRATION DU LIEN {} "
+		"Question": "VOULEZ-VOUS VÉRIFIER SI L'EMAIL EST UTILISÉ SUR CERTAINS SITE WEB? (1)YES(2)NON\n\n",
+        "Lookup": "VÉRIFICATION SI L'EMAIL EST UTILISÉ SUR CERTAINS SITES WEB...",
+        "Check2": "VÉRIFICATION SI {} EST LIÉ À UN COMPTE {}",
+        "TrueRes": "CET EMAIL EST LIÉ À UN COMPTE {}",
+        "FalseRes": "CET EMAIL N'EST PAS LIÉ À UN COMPTE {}",
+        "MultipleRes": "CET EMAIL EST LIÉ AU COMPTE {} {}"
     },
 
     "RecapEmail":{
         "Disabled": "REPORT-EMAIL OPTION EST DÉSACTIVÉ. IMPOSSIBLE D'ENVOYER L'EMAIL",
-        "Sender": "VOULEZ VOUS RECEVOIR UNE DATA-EMAIL?(1)YES(2)NO",
+        "Sender": "VOULEZ VOUS RECEVOIR UN DATA-EMAIL? (1)YES(2)NON",
         "InProgress": "ENVOI DE L'EMAIL..",
         "Sent": "EMAIL ENVOI OK..",
         "NotSent": "OUPS! EMAIL NON ENVOYÉ..\nAPPUYZE ENTRÉE POUR CONTINUER",
-        "NotValid": "DESTINATAIRE OU DESTINATION EMAIL FORMAT N'EST PAS VALIDE. IMPOSSIBLE D'ENVOYER EMAIL"
+        "NotValid": "LE DESTINATAIRE OU LE FORMAT EMAIL DU DESTINATAIRE N'EST PAS VALIDE. IMPOSSIBLE D'ENVOYER L'EMAIL"
     },
 
     "Database":{
-        "Active": "ACTIVATION DE LA DATABASE...",
-        "Link": "DATABASE INITIALISÉE DANS: ",
+        "Active": "ACTIVATION DE LA BASE DE DONNÉES...",
+        "Link": "BASE DE DONNÉES INITIALISÉE DANS: ",
         "Quit": "\nAPPUYEZ SUR ENTRÉE POUR FERMER",
-        "Stop": "FERMER DATABASE",
-        "Del_Token": "SUPRESSION DU TOKEN SESSION FILE",
-        "Token": "TOKEN N'EST PAS TROUVÉ",
+        "Stop": "FERMETURE DE LA BASE DE DONNÉES",
+        "Del_Token": "SUPRESSION DU FICHIER TOKEN DE SESSION",
+        "Token": "LE TOKEN N'EST PAS TROUVÉ",
         "NoRoot": "VOUS DEVEZ ÊTRE ROOT POUR ACTIVER LA BASE DE DONNÉES"
+    },
+
+    "Session":{
+        "Question": "VOULEZ-VOUS CHANGER VOS OPTIONS DE SESSION? (1)YES(2)NON\n\n",
+        "Changed": "APPUYEZ SUR ENTRÉE POUR MODIFIER VOS OPTIONS DE SESSION",
+        "Printing": "AFFICHAGE DES OPTIONS DE SESSION"
     },
 
     "Configuration":[
         {
             "Main":{
-                "Explanation": "CE MODULE VOUS PERMET DE CHANGER LES PARAMETRES A VOTRE MESURE",
+                "Explanation": "CE MODULE VOUS PERMET DE CHANGER LES PARAMĖTRES A VOTRE GUISE",
                 "Text":"[ENTREZ UNE OPTION]",
-                "Options": "\n(1)MODIFIEE-SENDER-MAIL\t\t\t(2)MODIFIEE-DESTINATION-MAIL\n(3)MODIFIEE-PASSWORD-MAIL\t\t(4)MODIFIEE-SMTP-SERVER\n(5)MODIFIEE-SMTP-PORT\t\t\t(6)MODIFIEE-UPDATE-PASSWORD\n(7)MODIFIEE-UPDATE-PATH\t\t\t(8)MODIFIEE-API-KEY\n(9)MODIFIEE-PROXY-LIST-PATH\t\t(10)MODIFIEE-LOGS\n(11)MODIFIEE-DATABASE\t\t\t(12)MODIFIEE-LANG\n(13)MODIFIEE EMAIL-SERVER-STATUS\t(14)MODIFIEE LE FORMAT-DE-DATE\n(15)MAIN-MENU",
-                "Error": "FICHIER N'EST PAS TROUVÉ\n\nAPPUYER SUR ENTRÉE POUR CONTINUER",
+                "Options": "\n(1)MODIFIER L EXPEDITEUR DE MAIL\t\t\t(2)MODIFIER LE DESTINATAIRE DE MAIL\n(3)MODIFIER LE MOT DE PASSE DE MAIL\t\t(4)MODIFIER LE SERVEUR SMTP\n(5)MODIFIER LE PORT SMTP\t\t\t(6)MODIFIER LE MOT DE PASSE DE MISE À JOURt\n(7)MODIFIER LE CHEMIN DE MISE À JOUR\t\t\t(8)MODIFIER LA CLÉ API\n(9)MODIFIER LE FICHIER DE LISTE DE PROXY\t\t(10)MODIFIER LES LOGS\n(11)MODIFIER LA BASE DE DONNÉES\t\t\t(12)MODIFIER LA LANGUE\n(13)MODIFIER LE STATUS DU SERVEUR DE MAILS\t(14)MODIFIR LE FORMAT DE DATE\n(15)MENU PRINCIPAL",
+                "Error": "LE FICHIER N'EST PAS TROUVÉ\n\nAPPUYER SUR ENTRÉE POUR CONTINUER",
                 "Exit": "APPUYER SUR ENTRÉE POUR CONTINUER",
-                "NoRoot":"VOUS DEVEZ ÊTRE ROOT POUR MODIFIER LE FILE DE CONFIGURATION...\n\nAPPUYER SUR ENTRÉE POUR CONTINUER"
+                "NoRoot":"VOUS DEVEZ ÊTRE ROOT POUR MODIFIER LE FICHIER DE CONFIGURATION...\n\nAPPUYER SUR ENTRÉE POUR CONTINUER"
             },
 
             "Email":{
-                "Choice": "VOULEZ VOUS MODIFIER LE DESTINATAIRE-EMAIL?(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE DESTINATAIRE-EMAIL(TAPEZ NONE POUR SORTIR)",
-                "NotChanged": " \nDESTINATAIRE-EMAIL N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nEMAIL MODIFIFICATION OK",
-                "Choice2": "VOULEZ VOUS MODIFIER L'EMAIL DE DESTINATION?(1)OUI(2)NO",
-                "Modify2": "\nENTREZ L'EMAIL DE DESTINATION(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER LE RECIPIENT-EMAIL? (1)OUI(2)NON",
+                "Modify": "\nENTREZ LE RECIPIENT-EMAIL (TAPEZ NONE POUR QUITTER)",
+                "NotChanged": "\nRECIPIENT-EMAIL N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
+                "Changed": "\nMODIFICATION DU DESTINATAIRE-EMAIL ENREGISTRÉE",
+                "Choice2": "VOULEZ VOUS MODIFIER L'EMAIL DE DESTINATION? (1)OUI(2)NON",
+                "Modify2": "\nENTREZ L'EMAIL DE DESTINATION(TAPEZ NONE POUR QUITTER)",
                 "NotChanged2": " \nL'EMAIL DE DESTINATION N'EST PAS MODIFIÉ. APPUYEZ SUR ENTRÉE POUR COUNTINUER",
-                "Changed2": "\nEMAIL MODIFICATION OK"
+                "Changed2": "\nMODIFICATION DE L'EMAIL DE DESTINATION ENREGISTRÉE"
             },
 
             "Password":{
-                "Choice": "VOULEZ VOUS MODIFIER LE DESTINATAIRE EMAIL-PASSWORD?(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE DESTINATAIRE EMAIL-PASSWORD(TAPEZ NONE POUR SORTIR)",
-                "NotChanged": " \nDESTINATAIRE-EMAIL-PASSWORD N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nDESTINATAIRE-EMAIL-PASSWORD MODIFICATION OK",
-                "Choice2": "VOULEZ VOUS MODIFIER MOT DE PASSE?(1)OUI(2)NO",
-                "Modify2": "\nENTREZ LE NOUVEAU MOT DE PASSE(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER VOTRE RECIPIENT-EMAIL-PASSWORD? (1)OUI(2)NON",
+                "Modify": "\nENTREZ LE NOUVEAU RECIPIENT-EMAIL-PASSWORD (TAPEZ NONE POUR QUITTER)",
+                "NotChanged": " \nRECIPIENT-EMAIL-PASSWORD N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
+                "Changed": "\nMODIFICATION DE RECIPIENT-EMAIL-PASSWORD ENREGISTRÉE",
+                "Choice2": "VOULEZ VOUS MODIFIER VOTRE MOT DE PASSE? (1)OUI(2)NON",
+                "Modify2": "\nENTREZ LE NOUVEAU MOT DE PASSE (TAPEZ NONE POUR QUITTER)",
                 "NotChanged2": " \nLE MOT DE PASSE N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed2": "\nMOT DE PASSE MODIFICATION OK"
+                "Changed2": "\nMODIFICATION DU MOT DE PASSE ENREGISTRÉE"
             },
 
             "Smtp":{
-                "Choice": "VOULEZ VOUS MODIFIER LE SMTP-SERVER?(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE SMTP-SERVER(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER LE SMTP-SERVER? (1)OUI(2)NON",
+                "Modify": "\nENTREZ LE SMTP-SERVER(TAPEZ NONE POUR QUITTER)",
                 "NotChanged": "\nSMTP-SERVER N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nSMTP-SERVER MODIFICATION OK",
-                "Choice2": "VOULEZ VOUS MODIFIER LE SMTP-PORT?(1)OUI(2)NO",
-                "Modify2": "\nENTREZ LE SMTP-PORT(TAPEZ NONE POUR SORTIR)",
+                "Changed": "\nMODIFICATION DU SMTP-SERVER ENREGISTRÉE",
+                "Choice2": "VOULEZ-VOUS MODIFIER LE SMTP-PORT? (1)OUI(2)NON",
+                "Modify2": "\nENTREZ LE SMTP-PORT(TAPEZ NONE POUR QUITTER)",
                 "NotChanged2": "\nSMTP-PORT N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed2": "\nSMTP-PORT MODIFICATION OK"
+                "Changed2": "\nMODIFICATION DE SMTP-PORT ENREGISTRÉE"
             },
 
             "Update-Path":{
-                "Choice": "VOULEZ VOUS MODIFIER L'UPDATE-PATH?(1)YES(2)NO",
-                "Modify": "\nENTREZ LE NOUVEAU CHEMIN D'ACCÈS(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER L'UPDATE-PATH? (1)YES(2)NON",
+                "Modify": "\nENTREZ LE NOUVEAU CHEMIN D'ACCÈS (TAPEZ NONE POUR QUITTER)",
                 "NotChanged": "\nL'UPDATE-PATH N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nUPDATE-PATH MODIFICATION OK"
+                "Changed": "\nMODIFICATION DE L'UPDATE-PATH ENREGISTRÉE"
             },
 
             "Api":{
-                "Choice": "VOULEZ VOUS MODIFIER LE WHO-IS-XMLAPI-KEY?(1)YES(2)NO",
-                "Modify": "\nENTREZ LE NOUVEL API-KEY(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER LE WHO-IS-XMLAPI-KEY? (1)YES(2)NON",
+                "Modify": "\nENTREZ LE NOUVEL API-KEY (TAPEZ NONE POUR QUITTER)",
                 "NotChanged": "\nAPI-KEY N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nAPI-KEY MODIFICATION OK"
+                "Changed": "\nMODIFICATION DE L'API-KEY ENREGISTRÉE"
             },
 
             "Proxy":{
-                "Choice": "VOULEZ VOUS MODIFIER LE PROXY-LIST-PATH?(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE NOUVEAU CHEMIN D'ACCÈS(TAPEZ NONE POUR SORTIR)",
+                "Choice": "VOULEZ VOUS MODIFIER LE PROXY-LIST-PATH? (1)OUI(2)NON",
+                "Modify": "\nENTREZ LE NOUVEAU CHEMIN D'ACCÈS (TAPEZ NONE POUR QUITTER)",
                 "NotChanged": "\nPROXY-LIST N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nPROXY-LIST MODIFICATION OK"
+                "Changed": "\nMODIFICATION DE PROXY-LIST ENREGISTRÉE"
             },
 
             "Logs":{
-                "Choice": "VOULEZ VOUS MODIFIER LE LOGS OPTION?(1)OUI(2)NO",
-                "Modify": "\nVOULEZ VOUS ACTIVER LE LOGS OPTION(1)OUI(2)NO",
-                "Changed": "\nLOGS OPTION MODIFICATION OK"
+                "Choice": "VOULEZ VOUS MODIFIER LES OPTIONS DES LOGS? (1)OUI(2)NON",
+                "Modify": "\nVOULEZ VOUS ACTIVER LES OPTIONS DES LOGS ? (1)OUI(2)NON",
+                "Changed": "\nOPTIONS DES LOGS MODIFIÉES"
             },
 
             "Database":{
-                "Choice": "VOULEZ VOUS MODIFIER LA DATABASE?(1)OUI(2)NO",
-                "Modify": "\nVOULEZ VOUS ACTIVER LA DATABASE SUR D'AUTRES APPAREILS(CONNECTÉ SUR VOTRE RÉSEAU)?(1)OUI(2)NO",
-                "Changed": "\nDATABASE OPTION MODIFICATION OK"
+                "Choice": "VOULEZ VOUS MODIFIER LA BASE DE DONNÉES? (1)OUI(2)NON",
+                "Modify": "\nVOULEZ VOUS ACTIVER LA BASE DE DONNÉES SUR D'AUTRES APPAREILS (CONNECTÉ SUR VOTRE RÉSEAU)? (1)OUI(2)NON",
+                "Changed": "\nOPTIONS DE LA BASE DE DONNÉES MISE À JOUR"
             },
 
             "Lang":{
-                "Choice": "VOULEZ VOUS MODIFIER LA LANGUE PAR DÉFAUT?(1)OUI(2)NO",
-                "Modify": "\nENTREZ LE NOUVEAU CLI-LANG(INSERT NONE FOR QUITTING)",
-                "NotChanged": "\nDEFAULT-LANG N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
-                "Changed": "\nDEFAULT-LANG MODIFICATION OK"
+                "Choice": "VOULEZ VOUS MODIFIER LA LANGUE PAR DÉFAUT?(1)OUI(2)NON",
+                "Modify": "\nENTREZ LE NOUVEAU CLI-LANG(TAPEZ NONE POUR QUITTER)",
+                "NotChanged": "\nLA LANGUE PAR DÉFAUT N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
+                "Changed": "\nLA LANGUE PAR DÉFAUT A BIEN ÉTÉ MODIFIÉ"
             },
 
             "Mail_Status":{
@@ -356,45 +369,52 @@
                 "Modify": "\nENTREZ LE FORMAT-DE-DATE(1)EUROPE(DD/MM/YY)\n(2)AMERICA'USA'(MM/DD/YY)\n(3)ASIA(YY/MM/DD)",
                 "NotChanged": "\nFORMAT-DE-DATE N'EST PAS MODIFIÉ. APPUYER SUR ENTRÉE POUR CONTINUER",
                 "Changed": "\nFORMAT-DE-DATE MODIFICATION OK"
+			},
+
+            "Useragent":{
+                "Choice": "ÊTES-VOUS SÛR DE MODIFIER LE CHEMIN DE LA LISTE DES USER-AGENTS? (1)OUI(2)NON",
+                "Modify": "\nINDIQUEZ LE CHEMIN DE LA LISTE DES USER-AGENTS (TAPEZ NONE POUR QUITTER)",
+                "NotChanged": "\nLISTE DES USER-AGENTS INCHANGÉ. APPUYEZ SUR ENTRÉE POUR QUITTER",
+                "Changed": "\nLISTE DES USER-AGENTS CHANGÉE. APPUYEZ SUR ENTRÉE POUR QUITTER"
             }
         }
     ],
 
     "Update":{
-        "Insert": "ENTREZ LE MOT DE PASSE. TU AS {} TENTATIVES",
-        "Wrong": "MAUVAIS MOT DE PASSE. TU AS {} TENTATIVES",
-        "Failed": "TU AS {} TENTATIVES. TAPEZ ENTRÉE POUR CONTINUER",
-        "Choice": "VOULEZ VOUS SUPPRIMER LES ANCIENS FICHIERS?(1)OUI(2)NO\n\n",
-        "Delete": "\nMR.HOLMES: LES ANCIENS FICHIERS ONT ÉTÉ SUPPRIMER",
-        "Keep": "\nMR.HOLMES : LES ANCIENS FICHIERS SONT MAINTENUS",
-        "Success": "\nMR.HOLMES :  MIS A JOUR OK"
+        "Insert": "ENTREZ LE MOT DE PASSE. VOUS AVEZ {} TENTATIVES",
+        "Wrong": "MAUVAIS MOT DE PASSE. IL RESTE {} TENTATIVES",
+        "Failed": "VOUS AVEZ {} TENTATIVES. TAPEZ ENTRÉE POUR CONTINUER",
+        "Choice": "VOULEZ VOUS SUPPRIMER LES ANCIENS FICHIERS?(1)OUI(2)NON\n\n",
+        "Delete": "\nMR.HOLMES: LES ANCIENS FICHIERS ONT ÉTÉ SUPPRIMÉS",
+        "Keep": "\nMR.HOLMES : LES ANCIENS FICHIERS SONT SAUVEGARDÉS",
+        "Success": "\nMR.HOLMES :  MISE À JOUR OK"
     },
 
     "Decoding":{
-        "Explanation": "CE MODULE PERMET D'ENCODER OU DE DECODER UNE FILE POUR LE RENDRE ILLISIBLE",
-        "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n\n",
+        "Explanation": "CE MODULE PERMET D'ENCODER OU DE DECODER UN FICHIER POUR LE RENDRE ILLISIBLE",
+        "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Nom d'utilisateur\t\t(2)Téléphone\n(3)Sites Web\t\t(4)Personnes\n(5)E-Mail\t\t(6)Ports\n\n",
         "Type": "ENTREZ LE TYPE DE RAPPORT \n(1){}\n(2)Recap\n\n",
-        "Options": "VOULEZ VOUS?\n(1)ENCODER\n(2)DÉCODER\n\n",
-        "Decode": "VOULEZ VOUS DÉCODER LE RAPPORT?(1)OUI(2)NO\n\n"
+        "Options": "VOULEZ VOUS:\n(1)ENCODER\n(2)DÉCODER\n\n",
+        "Decode": "VOULEZ VOUS DÉCODER LE RAPPORT?(1)OUI(2)NON\n\n"
     },
 
     "PDF":{
         "Explanation": "CE MODULE VOUS PERMET DE CONVERTIR DES GRAPHIQUES EN PDF",
-        "Check": "CONTRÔLE DE L'ENCODING",
-        "Template": "CHOISISSEZ LE TEMPLATE QUE VOUS VOULEZ UTILISER\n(1)LIGHT-THEME\n(2)DARK-THEME\n(3)HIGH-CONTRAST-THEME",
-        "Selected": "TEMPLATE CHOISI: {}",
-        "Creation": "CRÉATION DU PDF TEMPLATE...",
+        "Check": "CONTRÔLE DE L'ENCODAGE",
+        "Template": "CHOISISSEZ LE THEME QUE VOUS VOULEZ UTILISER\n(1)CLAIR\n(2)SOMBRE\n(3)CONTRASTE ÉLEVÉ",
+        "Selected": "THEME CHOISI: {}",
+        "Creation": "CRÉATION DU THEME DU PDF...",
         "WinError": "ERREUR...CET OPTION N'EST PAS DISPONIBLE SUR WINDOWS",
-        "Image": "OBTENIR ET ENCODER LES IMAGES..."
+        "Image": "OBTENSION ET ENCODAGE DES IMAGES..."
     },
 
     "Transfer":{
         "Explanation":"CE MODULE VOUS PERMET DE TRANSFERER VOS RAPPORTS DIRECTEMENT SUR UN AUTRE APPAREIL",
-        "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Usernames\t\t(2)Phone\n(3)Websites\t\t(4)People\n(5)E-Mail\t\t(6)Ports\n(7)PDFt\t\t(8)Maps\n(9)Graphs\t\t(10)Exit\n\n",
-        "Question": "VOULEZ VOUS TRANSFÉRER CE FICHIER?(1)OUI(2)NO\n\n",
+        "Folder": "ENTREZ LE NOM DU RAPPORT POUR: {}\n(1)Nom d'utilisateur\t\t(2)Téléphone\n(3)Sites Web\t\t(4)Personnes\n(5)E-Mail\t\t(6)Ports\n(7)PDFt\t\t(8)Maps\n(9)Graphs\t\t(10)Quitter\n\n",
+        "Question": "VOULEZ VOUS TRANSFÉRER CE FICHIER? (1)OUI(2)NON\n\n",
         "Generation": "GÉNÉRATION DU QR-CODE...",
         "Location": "LE QR CODE EST ENREGISTRÉ DANS: 'Qr-Codes/QR.png'",
-        "Type": "ENTREZ LA TYPOLOGIE DU FICHIER\n(1).txt\n(2).mh\n\n"
+        "Type": "ENTREZ L'EXTENSION DU FICHIER\n(1).txt\n(2).mh\n\n"
     },
 
     "Report":[
@@ -405,7 +425,7 @@
             },
 
             "Username":{
-                "Found": "\nUSERNAME TROUVÉ SUR:\r\n"
+                "Found": "\nNOM D'UTILISATEUR TROUVÉ SUR:\r\n"
             },
 
             "Phone":{
@@ -414,8 +434,8 @@
             },
 
             "Website":{
-                "Malicious": "\nMALICIOUS/FAUX LIEN TROUVÉ SUR:\n",
-                "Safe": "WEBSITE/DOMAIN OK ET SECURISÉ :-)\r\n",
+                "Malicious": "\nLIEN MALICIEUX/FAUX TROUVÉ SUR:\n",
+                "Safe": "SITE WEB/DOMAIN OK ET SECURISÉ :-)\r\n",
                 "Info": "POUR PLUS D'INFORMATIONS, CONSULTEZ CES LIENS...\n",
                 "PhoneLink": "\nGÉNÉRATION DE LIEN POUR {} NUMÉRO {}...\n",
                 "Ports": "\r\nPORTS OUVERT:\r\n"
@@ -430,37 +450,38 @@
             "Recap":{
                 "Summary": "RÉSUMÉ: {} A ÉTÉ  TROUVÉ SUR {} SITES. SUR {}, {} PRÉSENT DANS TOUS LES SITES : {} ",
                 "Tags": "TAGS TROUVÉ:{}",
-                "Percentual_Low": "POURCENTAGE FAIBLE: IL SEMBLE QUE LE POURCENTAGE EST FIABLE : {}. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE ET NE PARTAGE PAS D'INFORMATIONS CONCERNANT SA VIE PERSONNELLE",
-                "Percentual_Mid": "POURCENTAGE MOYEN: IL SEMBLE QUE LE POURCENTAGE EST MOYEN : {}. CELA PEUT SIGNIFIER QU'IL/ELLE AIME PARTAGER DES INFORMATIONS AVEC D'AUTRES OU EST SIMPLEMENT PRÉSENTE DANS UN CERTAIN TYPE DE RÉSEAUX SOCIAUX",
-                "Percentual_High": "POURCENTAGE FORT: IL SEMBLE QUE LE POURCENTAGE EST ÉLEVÉ : {}. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE QUI AIME INTÉRAGIR AVEC LES AUTRES ET AIME PARTAGER BEAUCOUP D'INFORMATIONS.  "
+				"MTags": "TAGS LES PLUS RELEVÉS:{}",
+                "Percentual_Low": "POURCENTAGE FAIBLE: IL SEMBLE QUE LE POURCENTAGE SOIT FAIBLE : {}. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE ET QUI NE PARTAGE PAS D'INFORMATIONS CONCERNANT SA VIE PERSONNELLE",
+                "Percentual_Mid": "POURCENTAGE MOYEN: IL SEMBLE QUE LE POURCENTAGE SOIT MOYEN : {}. CELA PEUT SIGNIFIER QU'IL/ELLE AIME PARTAGER DES INFORMATIONS AVEC D'AUTRES OU EST SIMPLEMENT PRÉSENT(E) SUR UN CERTAIN TYPE DE RÉSEAUX SOCIAUX",
+                "Percentual_High": "POURCENTAGE FORT: IL SEMBLE QUE LE POURCENTAGE SOIT ÉLEVÉ : {}. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE QUI AIME INTÉRAGIR AVEC LES AUTRES ET AIME PARTAGER BEAUCOUP D'INFORMATIONS.  "
             },
 
             "Specific":{
-                "Blocked": "OUPS! SEMBLE QUE L'USER A UN PROFIL PRIVÉ. IMPOSSIBLE DE GÉNÉRER L'HYPOTESE",
-                "LowLow": "LOW-LOW: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET N'A PAS BEAUCOUP DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE PRIVÉE, MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME",
-                "LowMid": "LOW-MID: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET A UN PETIT NOMBRE DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES ",
-                "LowHigh": "LOW-HIGH: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} MAIS A UN NOMBRE DE POST CONVENABLE :{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC D'AUTRES SANS SE SOUCIER DE SON SUCCÈS SUR CETTE PLATEFORME",
-                "MidLow": "MEDIUM-LOW: REGARDEZ : LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS RESPECTABLE:{} MAIS N'A PAS BEAUCOUP DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE EST PRIVÉE OU MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME",
-                "MidMid": "MEDIUM-MEDIUM: REGARDEZ : LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS RAISONABLE:{} ET A UN PETIT NOMBRE DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES,",
-                "MidHigh": "MEDIUM-HIGH:  REGARDEZ : LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS SATISFAISANT:{} ET A UN NOMBRE DE POST CONVENABLE:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES MONTRE UN MOYEN INTERÊT POUR CETTE PLATEFORME",
-                "HighLow": "HIGH-LOW: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} MAIS A UN FAIBLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME",
-                "HighMid": "HIGH-MEDIUM: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET UN PETIT NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME",
-                "HighHigh": "HIGH-HIGH: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET A UN NOMBRE DE POST TRÈS SATISFAISANT:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME TRÈS INFLUANTE SUR CETTE PLATEFORME",
-                "LowLowPriv": "LOW-LOW: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET N'A PAS BEAUCOUP DE POSTE:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
-                "LowMidPriv": "LOW-MID: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET A UN PETIT NOMBRE DE POST:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRES ",
-                "LowHighPriv": "LOW-HIGH: REGARDEZ : LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} MAIS A UN NOMBRE DE POST CONVENABLE :{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC D'AUTRES SANS SE SOUCIER DU SUCCÈS SUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
-                "MidLowPriv": "MEDIUM-LOW: REGARDEZ : LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS SATISFAISANT:{} MAIS N'A PAS BEAUCOUP DE POST:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE OU MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
-                "MidMidPriv": "MEDIUM-MEDIUM: REGARDEZ : LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS CORRECT:{} ET A UN PETIT NOMBRE DE POST:{} LE PROFIL EST PRIVÉ CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRE. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
-                "MidHighPriv": "MEDIUM-HIGH:  REGARDEZ : LE PROFIL DE {} A N:{} ET A UN NOMBRE DE POST CORRECT:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRES MONTRE UN MOYEN INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
-                "HighLowPriv": "HIGH-LOW: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} MAIS A UN FAIBLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME. MAIS LE PROFIL EST PRIVÉ, CE QUI POURRAIT SIGNIFIER QUE C'EST UNE PERSONNE PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE",
-                "HighMidPriv": "HIGH-MEDIUM: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET UN PETIT NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME TRÈS INFLUANTE SUR CETTE PLATEFORME. MAIS LE PROFIL EST PRIVÉ, CE QUI POURRAIT SIGNIFIER QUE C'EST UNE PERSONNE PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE",
-                "HighHighPriv": "HIGH-HIGH: REGARDEZ : LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET A UN RESPECTABLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME UNE PERSONNE TRÈS INFLUANTE SUR CETTE PLATFORME. MAIS LE PROFIL EST PRIVE, CE QUI POURRAIT SIGNIFIER QUE CETTE PERSONNE EST PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE"
+                "Blocked": "OUPS! IL SEMBLERAIS QUE L'UTILISATEUR A UN PROFIL PRIVÉ. IMPOSSIBLE DE GÉNÉRER L'HYPOTESE",
+                "LowLow": "LOW-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET N'A PAS BEAUCOUP DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE PRIVÉE MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME",
+                "LowMid": "LOW-MID: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET A UN PETIT NOMBRE DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES ",
+                "LowHigh": "LOW-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} MAIS A UN NOMBRE DE POST CONVENABLE :{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC D'AUTRES SANS SE SOUCIER DE SON SUCCÈS SUR CETTE PLATEFORME",
+                "MidLow": "MEDIUM-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS RESPECTABLE:{} MAIS N'A PAS BEAUCOUP DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE EST PRIVÉE OU MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME",
+                "MidMid": "MEDIUM-MEDIUM: IL SEMBLERAIS QUE LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS RAISONABLE:{} ET A UN PETIT NOMBRE DE POST:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES,",
+                "MidHigh": "MEDIUM-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS SATISFAISANT:{} ET A UN NOMBRE DE POST CONVENABLE:{} CELA PEUT SIGNIFIER QUE CETTE PERSONNE AIME PARTAGER DES MOMENTS AVEC LES AUTRES MONTRE UN MOYEN INTERÊT POUR CETTE PLATEFORME",
+                "HighLow": "HIGH-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} MAIS A UN FAIBLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME",
+                "HighMid": "HIGH-MEDIUM: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET UN PETIT NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME",
+                "HighHigh": "HIGH-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET A UN NOMBRE DE POST TRÈS SATISFAISANT:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME TRÈS INFLUANTE SUR CETTE PLATEFORME",
+                "LowLowPriv": "LOW-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET N'A PAS BEAUCOUP DE POSTE:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
+                "LowMidPriv": "LOW-MID: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} ET A UN PETIT NOMBRE DE POST:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRES ",
+                "LowHighPriv": "LOW-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} N'A PAS BEAUCOUP DE FOLLOWERS :{} MAIS A UN NOMBRE DE POST CONVENABLE :{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC D'AUTRES SANS SE SOUCIER DU SUCCÈS SUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
+                "MidLowPriv": "MEDIUM-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS SATISFAISANT:{} MAIS N'A PAS BEAUCOUP DE POST:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE OU MONTRE UN FAIBLE INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
+                "MidMidPriv": "MEDIUM-MEDIUM: IL SEMBLERAIS QUE LE PROFIL DE {} A UN NOMBRE DE FOLLOWERS CORRECT:{} ET A UN PETIT NOMBRE DE POST:{} LE PROFIL EST PRIVÉ CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRE. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
+                "MidHighPriv": "MEDIUM-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} A N:{} ET A UN NOMBRE DE POST CORRECT:{} LE PROFIL EST PRIVÉ. CELA PEUT SIGNIFIER QUE C'EST UNE PERSONNE PRIVÉE QUI AIME PARTAGER DES MOMENTS AVEC LES AUTRES MONTRE UN MOYEN INTERÊT POUR CETTE PLATEFORME. POURRAIT ÊTRE UNE PERSONNE PRUDENTE CAR IL SE SOUCIE PARTICULIÈREMENT DE SA VIE PRIVÉE",
+                "HighLowPriv": "HIGH-LOW: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} MAIS A UN FAIBLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME INFLUANTE SUR CETTE PLATEFORME. MAIS LE PROFIL EST PRIVÉ, CE QUI POURRAIT SIGNIFIER QUE C'EST UNE PERSONNE PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE",
+                "HighMidPriv": "HIGH-MEDIUM: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET UN PETIT NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME TRÈS INFLUANTE SUR CETTE PLATEFORME. MAIS LE PROFIL EST PRIVÉ, CE QUI POURRAIT SIGNIFIER QUE C'EST UNE PERSONNE PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE",
+                "HighHighPriv": "HIGH-HIGH: IL SEMBLERAIS QUE LE PROFIL DE {} A BEAUCOUP DE FOLLOWERS:{} ET A UN RESPECTABLE NOMBRE DE POST:{} MAIS PEUT ÊTRE CONSIDÉRÉE COMME UNE PERSONNE TRÈS INFLUANTE SUR CETTE PLATFORME. MAIS LE PROFIL EST PRIVE, CE QUI POURRAIT SIGNIFIER QUE CETTE PERSONNE EST PRUDENTE ET SE SOUCIE BEAUCOUP DE SA VIE PRIVÉE"
             },
 
             "Geo":{
-                "Low": "LOW: {} SEMBLE AVOIR VISITE {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}% LE SUJET PEUT OCCASIONNELLEMENT VOYAGER.",
-                "Medium": "MEDIUM: {} SEMBLE AVOIR VISITE {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}%. COMPTE TENU DU BON NOMBRE DE LIEUX VISITES,PEUT-ETRE QUE LE SUJET PEUT VOYAGER BEAUCOUP ET IL EST PROBABLE D'AVOIR UN PASSE-TEMPS POUR VOYAGER",
-                "High": "HIGH: {} SEMBLE AVOIR VISITE {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}%. COMPTE TENU DU NOMBRE ELEVE DE LIEUX VISITES,PEUT-ETRE QUE LE SUJET PEUT PEUT VOYAGER BEAUCOUP ET IL EST HAUTEMENT PROBABLE D'AVOIR UN PASSE-TEMPS POUR VOYAGER"
+                "Low": "LOW: {} SEMBLE AVOIR VISITÉ {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}% LE SUJET PEUT OCCASIONNELLEMENT VOYAGER.",
+                "Medium": "MEDIUM: {} SEMBLE AVOIR VISITÉ {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}%. COMPTE TENU DU BON NOMBRE DE LIEUX VISITÉS,PEUT-ÊTRE QUE LE SUJET PEUT VOYAGER BEAUCOUP ET IL EST PROBABLE QU'IL AI UN PASSE-TEMPS POUR VOYAGER",
+                "High": "HIGH: {} SEMBLE AVOIR VISITÉ {} LIEUX SUR {} POSTES AVEC UN POURCENTAGE DE:{}%. COMPTE TENU DU NOMBRE ELEVE DE LIEUX VISITES,PEUT-ÊTRE QUE LE SUJET PEUT PEUT VOYAGER BEAUCOUP ET IL EST HAUTEMENT PROBABLE QU'IL AI UN PASSE-TEMPS POUR VOYAGER"
             }
         }
     ]
