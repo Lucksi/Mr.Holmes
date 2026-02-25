@@ -1,4 +1,4 @@
-# #!/bin/bash
+#!/bin/bash
 # ORIGINAL CREATOR: Luca Garofalo (Lucksi)
 # AUTHOR: Luca Garofalo (Lucksi)
 # Copyright (C) 2021-2023 Lucksi <lukege287@gmail.com>
