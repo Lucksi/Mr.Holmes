@@ -56,47 +56,8 @@ class info:
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
-            reader = openurl.text
-            converted = json.loads(reader)
-            id_user = converted["id"]
-            user = converted["username"]
-            bio = converted["bio"]
-            reputation = converted["reputation_count"]
-            profile_pic = converted["avatar_url"]
-            cover_url = converted["cover_url"]
-            creation = converted["created_at"]
-
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "ID: {}".format(id_user))
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "USERNAME: {}".format(user))
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "BIO: {}".format(bio))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "REPUTATION: {}".format(reputation))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "AVATAR-IMAGE: {}".format(profile_pic))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "COVER-IMAGE: {}".format(cover_url))
-            print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                  "ACCOUNT-CREATED ON: {}".format(creation))
-
-            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
-                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-            if download == 1:
-                SiteName = "Imgur"
-                info.Profile_Pic(username, profile_pic, SiteName,Opt,name2)
-            else:
-                pass
-
-            f = open(report, "a", encoding="utf-8")
-            f.write("\nIMGUR DATA:\n")
-            f.write("ID: {}\r\n".format(id_user))
-            f.write("USERNAME: {}\r\n".format(user))
-            f.write("BIO: {}\r\n".format(bio))
-            f.write("REPUTATION: {}\r\n".format(reputation))
-            f.write("ACCOUNT-CREATED ON: {}\r\n".format(creation))
-            f.close()
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                  "JOINROLL SCRAPING UNAVAILABLE: The Joinroll public API now returns HTTP 500 and requires authentication. Profile scraping is no longer possible.")
 
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
@@ -297,66 +258,11 @@ class info:
                                headers=headers, timeout=None)
         Flag = False
         try:
-            Blocked = 'Profile is private.'.format(username)
-            text = openurl.text
-            if Blocked in text:
-                Private = "TRUE"
-                Flag = False
-                IsPrivate1 = "True"
-            else:
-                Private = "FALSE"
-                IsPrivate1 = "False"
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                  "INSTAGRAM SCRAPING UNAVAILABLE: Picuki.com redirected to a Cloudflare-protected TikTok viewer. Instagram scraping is no longer possible via this route.")
+            Flag = False
+            IsPrivate1 = "Unavailable"
             InstagramParams.append(IsPrivate1)
-            Flag = True
-            reader = soup(openurl.content, "html.parser")
-            name = reader.find("h2", class_="profile-name-bottom").text
-            followers = reader.find("span", class_="followed_by").text
-            InstagramParams.append(followers)
-            followed = reader.find("span", class_="follows").text
-            bio = reader.find("div", class_="profile-description").text
-            posts = reader.find("span", class_="total_posts").text
-            InstagramParams.append(posts)
-            profile = reader.find_all("div", class_="profile-avatar")
-            for image in profile:
-                profile_pic = image.find(
-                        "a", class_="profile-hd-link launchLightbox")["data-video-poster"]
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "USERNAME: {}".format(username))
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "NAME: {}".format(name))
-                print(Font.Color.YELLOW + "[v]" +
-                      Font.Color.WHITE + "BIO: {}".format(bio.strip()))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "FOLLOWERS: {}".format(followers))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "FOLLOWED: {}".format(followed))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: {}".format(Private))
-                print(Font.Color.YELLOW +
-                      "[v]" + Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
-
-                f = open(report, "a", encoding="utf-8")
-                f.write("\nINSTAGRAM DATA:\n")
-                f.write("USERNAME: {}\r\n".format(username))
-                f.write("NAME: {}\r\n".format(name))
-                f.write("BIO: {}\r\n".format(bio.strip()))
-                f.write("POSTS: {}\r\n".format(posts))
-                f.write("FOLLOWED: {}\r\n".format(followed))
-                f.write("FOLLOWERS: {}\r\n".format(followers))
-                f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
-                f.close()
-
-            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
-                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-
-            if download == 1:
-                    SiteName = "Instagram"
-                    info.Profile_Pic(username,
-                                     profile_pic, SiteName,Opt,name2)
-            else:
-                pass
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
@@ -397,80 +303,11 @@ class info:
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers)
         try:
-            Blocked = 'User "{}" has been suspended'.format(username)
-            text = openurl.text
-            if Blocked in text:
-                print(Font.Color.RED + "[!]" + Font.Color.WHITE +
-                      Language.Translation.Translate_Language(filename, "Username", "Twitter", "Blocked"))
-                Flag = False
-                IsPrivate = "Undefined"
-                TwitterParams.append(IsPrivate)
-                pass
-            else:
-                Private = "This account&#x27;s tweets are protected."
-                text = openurl.text
-                if Private in text:
-                  Private = "TRUE"
-                  IsPrivate = "True"
-                  TwitterParams.append(IsPrivate)
-                else:
-                  Private = "FALSE"
-                  IsPrivate = "False"
-                  TwitterParams.append(IsPrivate)
-                Flag = True
-                reader = soup(openurl.content, "html.parser")
-                user = reader.find(
-                    "a", href=True, class_="profile-card-fullname")
-                pic = reader.find("a", href=True, class_="profile-card-avatar")
-                profile_pic = url.replace("/"+username, "") + pic["href"]
-                print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
-                      "USER: " + user["href"].replace("/", ""))
-                follower_items = reader.find_all("li", class_="followers")
-                for item in follower_items:
-                    follower = item.find(
-                        "span", class_="profile-stat-num").text
-                    print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "FOLLWERS: {}".format(follower))
-                TwitterParams.append(follower)
-
-
-                post_items = reader.find_all("li", class_="posts")
-                for item in post_items:
-                    posts = item.find("span", class_="profile-stat-num").text
-                    print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "POSTS: {}".format(posts))
-                TwitterParams.append(posts)
-
-               
-                followed_item = reader.find_all("li", class_="following")
-                for item in followed_item:
-                    followed = item.find(
-                        "span", class_="profile-stat-num").text
-                    print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "FOLLOWING: {}".format(followed))
-                print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "PROFILE-PIC: " + profile_pic)
-                print(Font.Color.YELLOW +
-                          "[v]" + Font.Color.WHITE + "PRIVATE-ACCOUNT: " + Private)
-                download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
-                    username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-
-                if download == 1:
-                    SiteName = "Twitter"
-                    info.Profile_Pic(username,
-                                     profile_pic, SiteName ,Opt,name2)
-                else:
-                    pass
-
-                f = open(report, "a", encoding="utf-8")
-                f.write("\nTWITTER DATA:\n")
-                f.write("USERNAME: {}\r\n".format(
-                    user["href"].replace("/", "")))
-                f.write("POSTS: {}\r\n".format(posts))
-                f.write("FOLLOWERS: {}\r\n".format(follower))
-                f.write("FOLLOWING: {}\r\n".format(followed))
-                f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
-                f.close()
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                  "TWITTER SCRAPING UNAVAILABLE: nitter.net now returns an empty response body. Twitter/X profile scraping is no longer possible via Nitter.")
+            Flag = False
+            IsPrivate = "Unavailable"
+            TwitterParams.append(IsPrivate)
 
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
@@ -647,6 +484,10 @@ class info:
         try:
             reader = openurl.text
             converted = json.loads(reader)
+            if not converted:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "GITLAB: User '{}' not found.".format(username))
+                pass
+                return
             id_user = converted[0]["id"]
             name = converted[0]["name"]
             user = converted[0]["username"]
@@ -867,7 +708,7 @@ class info:
             pass
         except Exception as e:
             print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
             pass
 
     @staticmethod
@@ -882,21 +723,22 @@ class info:
         Flag = True
         try:
             reader = soup(openurl.content, "html.parser")
-            user = reader.find("h1", class_="user").text
-            name = reader.find("h5", class_="text-dark").text
-            followers = reader.find(
-                "div", class_="col-7 col-md-auto text-truncate").text.replace("🦄","").replace(" ","",1)
-            followed = reader.find(
-                "div", class_="col-auto d-none d-sm-block text-truncate").text.replace("🏹","").replace(" ","",1)
-            like = reader.find("div", class_="col-auto").text.replace("🧡","").replace(" ","",1)
-            profile = reader.find_all(
-                "div", class_="col-md-auto justify-content-center text-center")
-            postsect = reader.find_all("div", class_="info3")
-            for post in postsect:
-                Posts = Posts + 1
-
-            for image in profile:
-                profile_pic = image.find("img")["src"]
+            user_tag = reader.find("h2", class_="text-dark")
+            name_tag = reader.find("h1")
+            user = user_tag.text.strip().lstrip("@") if user_tag else username
+            name = name_tag.text.strip() if name_tag else "None"
+            profile_pic_tag = reader.find("img", class_="u-image")
+            profile_pic = profile_pic_tag["src"] if profile_pic_tag else "None"
+            stats_header = reader.find("div", class_="stats-header")
+            b_tags = stats_header.find_all("b") if stats_header else []
+            span_tags = stats_header.find_all("span", class_="user") if stats_header else []
+            stat_map = {}
+            for b_tag, span_tag in zip(b_tags, span_tags):
+                stat_map[span_tag.text.strip().lower()] = b_tag.text.strip()
+            followers = stat_map.get("followers", "N/A")
+            followed = stat_map.get("following", "N/A")
+            like = stat_map.get("hearts", "N/A")
+            Posts = 0
 
             print(Font.Color.YELLOW + "[v]" +
                   Font.Color.WHITE + "USERNAME: {}".format(user))
@@ -1109,28 +951,8 @@ class info:
         url
         openurl = requests.get(url, proxies=http_proxy, headers=headers)
         try:
-            reader = soup(openurl.content, "html.parser")
-            profile_pic = reader.find(
-                "meta", attrs={"name": "twitter:image"})["content"]
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "USERNAME: {}".format(username))
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "PROFILE-PIC: {}".format(profile_pic))
-
-            f = open(report, "a", encoding="utf-8")
-            f.write("\nTELLONYM DATA:\n")
-            f.write("USERNAME: {}\r\n".format(username))
-            f.write("PROFILE-PIC: {}\r\n".format(profile_pic))
-            f.close()
-
-            download = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Profile_Pic").format(
-                username) + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
-
-            if download == 1:
-                SiteName = "Tellonym"
-                info.Profile_Pic(username, profile_pic, SiteName ,Opt,name2)
-            else:
-                pass
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                  "TELLONYM SCRAPING UNAVAILABLE: Tellonym.me is protected by Cloudflare (HTTP 403) and cannot be scraped with standard requests.")
 
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
@@ -1150,21 +972,23 @@ class info:
             url
             openurl = requests.get(url, proxies=http_proxy,
                                    headers=headers, timeout=15)
+            if openurl.status_code == 404:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "GRAVATAR: No profile found for username '{}'.".format(username))
+                return
             reader = openurl.text
             converted = json.loads(reader)
+            if not isinstance(converted, dict) or "entry" not in converted:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "GRAVATAR: Unexpected response format.")
+                return
             hashid = converted["entry"][0]["hash"]
             user = converted["entry"][0]["preferredUsername"]
             displayname = converted["entry"][0]["displayName"]
             profile_pic = converted["entry"][0]["thumbnailUrl"]
-            if "aboutMe" in reader:
-                  bio = converted["entry"][0]["aboutMe"]
-            else:
-                bio = ""
-            if "formatted" in reader:
-                name = converted["entry"][0]["name"]["formatted"]
-            else:
-                name = "None"
-            urls = converted["entry"][0]["urls"]
+            bio = converted["entry"][0].get("aboutMe", "")
+            name_obj = converted["entry"][0].get("name", {})
+            name = name_obj.get("formatted", "None") if isinstance(name_obj, dict) else "None"
+            modification = converted["entry"][0].get("last_profile_edit", "None")
+            urls = converted["entry"][0].get("urls", [])
             if "last_profile_edit" in reader:
                 modification = converted["entry"][0]["last_profile_edit"]
             else:
@@ -1226,48 +1050,8 @@ class info:
         openurl = requests.get(url, proxies=http_proxy,
                                headers=headers, timeout=15)
         try:
-            reader = openurl.text
-            converted = json.loads(reader)
-            id_user = converted["id"]
-            user = converted["username"]
-            bio = converted["bio"]
-            subscribed = converted["isSubscribed"]
-            id_roll = converted["roll"]["id"]
-            price = converted["roll"]["subscriptionPriceCent"]
-            messageA = converted["conversation"]["messaging"]["isActive"]
-            messageE = converted["conversation"]["messaging"]["isEnabled"]
-            messageF = converted["conversation"]["messaging"]["isFree"]
-            
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "ID: {}".format(id_user))
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "USERNAME: {}".format(user))
-            print(Font.Color.YELLOW + "[v]" +
-                  Font.Color.WHITE + "BIO: {}".format(bio))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "ROLL-ID: {}".format(id_roll))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "SUBSCRIPTION-PRICE: {}".format(price))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "MESSAGE-AVAILABLE: {}".format(messageA))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "MESSAGE-ENABLED: {}".format(messageE))
-            print(Font.Color.YELLOW +
-                  "[v]" + Font.Color.WHITE + "MESSAGE-FREE: {}".format(messageF))
-            
-
-            f = open(report, "a", encoding="utf-8")
-
-            f.write("\nJOINROLL DATA:\n")
-            f.write("ID: {}\r\n".format(id_user))
-            f.write("USERNAME: {}\r\n".format(user))
-            f.write("BIO: {}\r\n".format(bio))
-            f.write("ROLL-ID: {}\r\n".format(id_roll))
-            f.write("SUBSCRIPTION-PRICE: {}\r\n".format(price))
-            f.write("MESSAGE-AVAILABLE: {}\r\n".format(messageA))
-            f.write("MESSAGE-ENABLED: {}\r\n".format(messageE))
-            f.write("MESSAGE-FREE: {}\r\n".format(messageF))
-            f.close()
+            print(Font.Color.RED + "[!]" + Font.Color.WHITE +
+                  "JOINROLL SCRAPING UNAVAILABLE: The Joinroll public API now requires authentication (returns HTTP 500). Profile scraping is no longer possible.")
 
         except ConnectionError:
             print(Font.Color.RED + "[!]" +
@@ -1287,6 +1071,9 @@ class info:
             url
             openurl = requests.get(url, proxies=http_proxy,
                                    headers=headers, timeout=15)
+            if openurl.status_code != 200:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "CHESS.COM: No data returned for '{}' (HTTP {}).".format(username, openurl.status_code))
+                return
             reader = openurl.text
             converted = json.loads(reader)
             profile_id = converted["player_id"]
