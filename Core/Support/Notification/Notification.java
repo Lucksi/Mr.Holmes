@@ -29,7 +29,7 @@ public class Notification{
         JDialog d =  a.createDialog(null);
         Width = GetWidht();
         Height = GetHight();
-        d.setLocation(Width,Height);
+        d.setLocation(Width / 2, Height / 2);
         d.setVisible(true);
         d.setTitle("MR.HOLMES");
         d.setResizable(false);
