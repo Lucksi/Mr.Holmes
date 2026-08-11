@@ -12,8 +12,30 @@ from configparser import ConfigParser
 from Core.Support import Clear
 from Core.Support import Language
 
-dest = "Configuration"
-nomefile = "Configuration.ini"
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+CONFIG_DIR = os.path.join(BASE_DIR, "Configuration")
+CONFIG_FILE = os.path.join(CONFIG_DIR, "Configuration.ini")
+
+
+class ConfigStore:
+    @staticmethod
+    def config_path():
+        return CONFIG_FILE
+
+    @staticmethod
+    def load_parser():
+        parser = ConfigParser()
+        parser.read(ConfigStore.config_path())
+        return parser
+
+    @staticmethod
+    def save_parser(parser):
+        with open(ConfigStore.config_path(), "w") as configfile:
+            parser.write(configfile)
+
+dest = CONFIG_DIR
+nomefile = os.path.basename(CONFIG_FILE)
 filename = "../" + Language.Translation.Get_Language()
 filename
 filename2 = filename.replace("../","")
@@ -34,8 +56,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 recipient = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while recipient == "":
@@ -47,8 +68,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Smtp", "email", recipient)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Email", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -68,8 +88,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Password", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 passw = getpass.getpass(Font.Color.WHITE + Language.Translation.Translate_Language(
                     filename, "Configuration", "Password", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")
                 while passw == "":
@@ -81,8 +100,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Smtp", "password", passw)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Password", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -102,8 +120,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Choice2") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 destination = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Modify2") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while destination == "":
@@ -115,8 +132,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Smtp", "destination", destination)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration",
                           "Email", "Modify2") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")
                     out = input(Language.Translation.Translate_Language(
@@ -136,8 +152,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Smtp", "Choice2") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 port = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Smtp", "Modify2") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while port == "":
@@ -149,8 +164,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Smtp", "port", port)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Smtp", "Changed2"))
                     out = input(Language.Translation.Translate_Language(
@@ -170,8 +184,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 server = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Email", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while server == "":
@@ -183,8 +196,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Smtp", "server", server)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Email", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -203,9 +215,8 @@ class Config:
         alert = int(input(
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Update-Path", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
-            if os.path.isfile:
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+            if os.path.isfile(nomefile):
+                Parser = ConfigStore.load_parser()
                 path = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Update-Path", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while path == "":
@@ -217,10 +228,9 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "path", path)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Update-Path", "NotChanged"))
+                        filename, "Configuration", "Update-Path", "Changed"))
                     out = input(Language.Translation.Translate_Language(
                         filename, "Configuration", "Main", "Exit"))
                     os.chdir("../")
@@ -237,9 +247,8 @@ class Config:
         alert = int(input(
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Password", "Choice2") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
-            if os.path.isfile:
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+            if os.path.isfile(nomefile):
+                Parser = ConfigStore.load_parser()
                 passw = getpass.getpass(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Password", "Modify2") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->")
                 while passw == "":
@@ -251,12 +260,11 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "password", passw)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
-                        print("\n")
-                        out = input(Language.Translation.Translate_Language(
-                            filename, "Configuration", "Main", "Exit"))
-                        os.chdir("../")
+                    ConfigStore.save_parser(Parser)
+                    print("\n")
+                    out = input(Language.Translation.Translate_Language(
+                        filename, "Configuration", "Main", "Exit"))
+                    os.chdir("../")
             else:
                 inp = input(
                     Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
@@ -271,8 +279,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Api", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 key = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Api", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while key == "":
@@ -284,8 +291,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "api_key", key)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Api", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -305,8 +311,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Proxy", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 proxy_path = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Proxy", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while proxy_path == "":
@@ -318,8 +323,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "proxy_list", proxy_path)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Proxy", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -339,8 +343,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Logs", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 Logs = int(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Logs", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if Logs == 1:
@@ -351,13 +354,12 @@ class Config:
                     os.chdir("../")
                     Config.main()
                 Parser.set("Settings", "show_logs", Logs)
-                with open(nomefile, 'w') as configfile:
-                    Parser.write(configfile)
-                    print(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Logs", "Changed"))
-                    out = input(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Main", "Exit"))
-                    os.chdir("../")
+                ConfigStore.save_parser(Parser)
+                print(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Logs", "Changed"))
+                out = input(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Main", "Exit"))
+                os.chdir("../")
             else:
                 inp = input(
                     Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
@@ -372,8 +374,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Database", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 Data = int(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Database", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if Data == 1:
@@ -384,13 +385,12 @@ class Config:
                     os.chdir("../")
                     Config.main()
                 Parser.set("Settings", "database", Data)
-                with open(nomefile, 'w') as configfile:
-                    Parser.write(configfile)
-                    print(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Database", "Changed"))
-                    out = input(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Main", "Exit"))
-                    os.chdir("../")
+                ConfigStore.save_parser(Parser)
+                print(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Database", "Changed"))
+                out = input(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Main", "Exit"))
+                os.chdir("../")
             else:
                 inp = input(
                     Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
@@ -405,8 +405,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Lang", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 Lang = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Lang", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while Lang == "":
@@ -418,8 +417,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "language", Lang)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Lang", "Changed"))
                     out = input(Language.Translation.Translate_Language(
@@ -439,8 +437,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Mail_Status", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 Enabled = int(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Mail_Status", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if Enabled == 1:
@@ -451,13 +448,12 @@ class Config:
                     os.chdir("../")
                     Config.main()
                 Parser.set("Smtp", "status", Data)
-                with open(nomefile, 'w') as configfile:
-                    Parser.write(configfile)
-                    print(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Mail_Status", "Changed"))
-                    out = input(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Main", "Exit"))
-                    os.chdir("../")
+                ConfigStore.save_parser(Parser)
+                print(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Mail_Status", "Changed"))
+                out = input(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Main", "Exit"))
+                os.chdir("../")
             else:
                 inp = input(
                     Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
@@ -472,8 +468,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "DateFormat", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 Format = int(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "DateFormat", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 if Format == 1:
@@ -486,13 +481,12 @@ class Config:
                     os.chdir("../")
                     Config.main()
                 Parser.set("Settings", "date_format", Date)
-                with open(nomefile, 'w') as configfile:
-                    Parser.write(configfile)
-                    print(Language.Translation.Translate_Language(
-                        filename, "Configuration", "DateFormat", "Changed"))
-                    out = input(Language.Translation.Translate_Language(
-                        filename, "Configuration", "Main", "Exit"))
-                    os.chdir("../")
+                ConfigStore.save_parser(Parser)
+                print(Language.Translation.Translate_Language(
+                    filename, "Configuration", "DateFormat", "Changed"))
+                out = input(Language.Translation.Translate_Language(
+                    filename, "Configuration", "Main", "Exit"))
+                os.chdir("../")
             else:
                 inp = input(
                     Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Main", "Error"))
@@ -507,8 +501,7 @@ class Config:
             Font.Color.RED + "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Useragent", "Choice") + Font.Color.RED + "[!]" + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if alert == 1:
             if os.path.isfile(nomefile):
-                Parser = ConfigParser()
-                Parser.read(nomefile)
+                Parser = ConfigStore.load_parser()
                 proxy_path = str(input(
                     Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Configuration", "Useragent", "Modify") + Font.Color.GREEN + "\n\n[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
                 while proxy_path == "":
@@ -520,8 +513,7 @@ class Config:
                     os.chdir("../")
                 else:
                     Parser.set("Settings", "useragent_list", proxy_path)
-                    with open(nomefile, 'w') as configfile:
-                        Parser.write(configfile)
+                    ConfigStore.save_parser(Parser)
                     print(Language.Translation.Translate_Language(
                         filename, "Configuration", "Useragent", "Changed"))
                     out = input(Language.Translation.Translate_Language(

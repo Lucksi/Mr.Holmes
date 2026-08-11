@@ -20,6 +20,7 @@ from Core.Support import Language
 from Core.Support import Notification
 from Core.Support import Recap
 from Core.Support import DateFormat
+from Core.Support import Privacy
 from datetime import datetime
 from Core.Support import Encoding
 from Core.Support import Site_Counter as CO
@@ -273,9 +274,17 @@ class MrHolmes:
                   Language.Translation.Translate_Language(filename, "Default", "Delete", "None").format(username))
         folder = "Username"
         Logs.Log.Checker(username, folder)
+        public_ip = Privacy.Privacy.public_ip()
+        geo = Privacy.Privacy.geo_ip(public_ip)
         f = open(report, "a")
         f.write(Language.Translation.Translate_Language(
             filename, "Report", "Default", "Date").format(Date) + "\r\n")
+        f.write("PUBLIC-IP: {}\r\n".format(public_ip))
+        f.write("PUBLIC-GEO: {}/{}/{}\r\n".format(
+            geo.get("city", "Unknown"),
+            geo.get("region", "Unknown"),
+            geo.get("country", "Unknown")
+        ))
         f.write(Language.Translation.Translate_Language(
             filename, "Report", "Username", "Found"))
         f.close()

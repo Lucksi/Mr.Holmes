@@ -14,7 +14,22 @@
 
 # :mag: Mr.Holmes 
 
-**Mr.Holmes is a information gathering tool (OSINT). The main purpose is to gain information about domains,username and phone numbers with the help of public source avaiable on the internet also it use the google dorks attack for specific researchers. It also use proxies for make your requests completley anonymous and a WhoIS Api for getting more information about a domain.**
+**Mr.Holmes is an OSINT information gathering platform focused on public-source investigations. Its current strengths include domain discovery, username lookups, phone research, Google Dorks, maps, reports, and graphical summaries.**
+
+## :sparkles: Modernization vision
+The project already has a solid foundation for open-source intelligence workflows. The next step is to make it feel more like a professional investigation platform through a modern interface, clearer reporting, modular architecture, and better documentation.
+
+### Priority areas
+- Modern user experience with a dashboard-style workflow
+- Clearer investigation timelines and confidence scoring
+- More structured reports and export options
+- Plugin-based architecture for future expansion
+- Better documentation and onboarding for contributors
+
+### Documentation
+- [Documentation/ROADMAP.md](Documentation/ROADMAP.md)
+- [Documentation/ARCHITECTURE.md](Documentation/ARCHITECTURE.md)
+
 <br>
 
 # :heavy_exclamation_mark: DISCLAIMER

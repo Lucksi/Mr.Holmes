@@ -3,6 +3,7 @@
 # Copyright (C) 2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
+import os
 from configparser import ConfigParser
 from Core.Support import Font
 from Core.Support import Language
@@ -13,11 +14,16 @@ filename
 class Get:
 
     @staticmethod
+    def _data_format():
+        base_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+        config_file = os.path.join(base_dir, "Configuration", "Configuration.ini")
+        parser = ConfigParser()
+        parser.read(config_file)
+        return parser.get("Settings", "date_format", fallback="eu")
+
+    @staticmethod
     def Format():
-        Config_file = "Configuration/Configuration.ini"
-        Parser = ConfigParser()
-        Parser.read(Config_file)
-        dataformat = Parser["Settings"]["date_format"]
+        dataformat = Get._data_format()
         if dataformat == "eu":
             dateregex = "%d/%m/%Y %H:%M:%S"
             localformat = "DD/MM/YYYY" 
@@ -35,10 +41,7 @@ class Get:
     
     @staticmethod
     def Format2():
-        Config_file = "Configuration/Configuration.ini"
-        Parser = ConfigParser()
-        Parser.read(Config_file)
-        dataformat = Parser["Settings"]["date_format"]
+        dataformat = Get._data_format()
         if dataformat == "eu":
             dateregex = "%d/%m/%Y"
         elif dataformat == "us":
@@ -51,10 +54,7 @@ class Get:
 
     @staticmethod
     def Continent():
-        Config_file = "Configuration/Configuration.ini"
-        Parser = ConfigParser()
-        Parser.read(Config_file)
-        dataformat = Parser["Settings"]["date_format"]
+        dataformat = Get._data_format()
         if dataformat == "eu":
             continent = "EUROPE         |"
         elif dataformat == "us":

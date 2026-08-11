@@ -16,11 +16,11 @@ class Main:
 
     @staticmethod
     def Controll_Display():
-        Interface_file = "Display/Display.txt"
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        Interface_file = os.path.join(base_dir, "Display", "Display.txt")
         if os.path.isfile(Interface_file):
-            d = open(Interface_file,"r",newline=None)
-            conf = d.read().strip("\n")
-            d.close()
+            with open(Interface_file, "r", newline=None) as display_file:
+                conf = display_file.read().strip()
             if conf == "Desktop":
                 pass
             elif conf == "Mobile":
@@ -29,7 +29,7 @@ class Main:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE +  Language.Translation.Translate_Language(filename, "Default", "DisplayError", "None"))
                 exit()
         else:
-             print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "NoDisplay", "None") .format(Interface_file))
+            conf = "Desktop"
         return conf
 
     def Menu(Mode):

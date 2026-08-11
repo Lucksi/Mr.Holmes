@@ -11,11 +11,17 @@ from configparser import ConfigParser
 class Translation:
 
     @staticmethod
+    def _config_path():
+        return os.path.join("Configuration", "Configuration.ini")
+
+    @staticmethod
     def Get_Language():
-        Config_file = "Configuration/Configuration.ini"
         Parser = ConfigParser()
-        Parser.read(Config_file)
-        Lang = Parser["Settings"]["language"]
+        Parser.read(Translation._config_path())
+        try:
+            Lang = Parser["Settings"]["language"]
+        except (KeyError, TypeError, ValueError):
+            Lang = "english"
         filename = "Lang/{}.json".format(Lang)
         if os.path.isfile(filename):
             filename = filename
@@ -45,10 +51,12 @@ class Translation:
     
     @staticmethod
     def Get_Language2():
-        Config_file = "Configuration/Configuration.ini"
         Parser = ConfigParser()
-        Parser.read(Config_file)
-        Lang = Parser["Settings"]["language"]
+        Parser.read(Translation._config_path())
+        try:
+            Lang = Parser["Settings"]["language"]
+        except (KeyError, TypeError, ValueError):
+            Lang = "english"
         filename = "Lang/{}.json".format(Lang)
         if os.path.isfile(filename):
             Lang = Lang.upper()

@@ -3,6 +3,8 @@
 # Copyright (C) 2022-2023 Lucksi <lukege287@gmail.com>
 # License: GNU General Public License v3.0
 
+from collections import Counter
+
 from Core.Support import Font
 from Core.Support import Language
 from Core.Support import Encoding
@@ -13,6 +15,21 @@ filename
 
 
 class Stats:
+
+    @staticmethod
+    def Platform_Summary(ScraperSites, Tags, MostTags):
+        summary = []
+        if ScraperSites:
+            summary.extend(ScraperSites)
+        if Tags:
+            summary.extend(Tags)
+        if MostTags:
+            summary.extend(MostTags)
+        if not summary:
+            return {}, 0
+        counter = Counter([item.strip() for item in summary if item])
+        top = counter.most_common(5)
+        return dict(top), len(counter)
 
     @staticmethod
     def Places(PostLocations,report,Params,username,Hobby):
@@ -202,8 +219,16 @@ class Stats:
                 filename, "Report", "Recap", "MTags").format(', '.join(MostTags))
             print(Font.Color.BLUE + "\n[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                 filename, "Report", "Recap", "MTags").format(Font.Color.WHITE + "[" + Font.Color.GREEN + ', '.join(MostTags) + Font.Color.WHITE + "]"))
+            summary, total_platforms = Stats.Platform_Summary(ScraperSites, Tags, MostTags)
+            if summary:
+                print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE + "PLATFORM SUMMARY:")
+                for platform, count in summary.items():
+                    print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE + "{}: {}".format(platform, count))
             f = open(report, "a")
             f.write("\nGENERATING TAGS REPORT\n\n" + "[" + Tag + "]" + "\n\n" + Mtag)
+            f.write("\n\nPLATFORM SUMMARY: {} UNIQUE PLATFORMS FOUND\n".format(total_platforms))
+            for platform, count in summary.items():
+                f.write("{}: {}\n".format(platform, count))
             f.close()
             print(Font.Color.GREEN +
                   "\n[+]" + Font.Color.WHITE + "GENERATING GENERAL HYPOTESY REPORT...")

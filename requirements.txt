@@ -1,6 +1,7 @@
 PyQRCode==1.2.1
 phonenumbers==8.12.25
-requests>=2.31.0
+requests>=2.32.3
 pdfkit==1.0.0
-beautifulsoup4==4.9.3
+beautifulsoup4==4.13.3
 stem>=1.4.0
+ipapi==1.0.4
