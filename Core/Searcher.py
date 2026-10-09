@@ -12,6 +12,7 @@ from Core.Support import Creds
 from Core.Support import FileTransfer
 from Core.Support import Proxies
 from Core.Support import Requests_Search
+from Core.Support import Http
 from Core.Support.Username import Scraper
 from Core.Support import Clear
 from Core.Support import Dorks
@@ -111,6 +112,17 @@ class MrHolmes:
         json_file2 = "GUI/Reports/Usernames/{}/{}.json".format(
             username, "Name")
         data = json.loads(f.read())
+        f.close()
+        # Fetch every site concurrently up front; results are then processed in order.
+        jobs = []
+        for sites in data:
+            for data1 in sites:
+                if not any(c in username for c in sites[data1]["exception"]):
+                    jobs.append((data1, sites[data1]["user2"].replace("{}", username),
+                                 Requests_Search.Search.headers_for(sites[data1]["name"])))
+        print(Font.Color.GREEN + "[+]" + Font.Color.WHITE +
+              "CHECKING {} SITES IN PARALLEL...".format(len(jobs)))
+        prefetched = Http.fetch_many(jobs, proxies=http_proxy, allow_redirects=True)
         for sites in data:
             for data1 in sites:
                 site1 = sites[data1]["user"].replace("{}", username)
@@ -135,7 +147,8 @@ class MrHolmes:
                 else:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
-                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags)
+                                                      subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags,
+                                                      response=prefetched.get(data1))
                     except Exception as e:
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
