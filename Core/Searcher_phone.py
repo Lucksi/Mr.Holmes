@@ -4,6 +4,7 @@
 # License: GNU General Public License v3.0
 
 import os
+import requests
 import urllib
 import json
 import shutil
@@ -190,7 +191,7 @@ class Phone_search:
                     try:
                         Requests_Search.Search.search(error, report, site1, site2, http_proxy, sites, data1, username,
                                                       subject, successfull, name, successfullName, is_scrapable, ScraperSites, Writable, main, json_file, json_file2, Tag, Tags, MostTags=[])
-                    except ConnectionError:
+                    except (ConnectionError, requests.exceptions.ConnectionError):
                         print(
                             Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                         http_proxy = None

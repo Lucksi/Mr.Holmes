@@ -9,6 +9,8 @@ import json
 import requests
 import shutil
 from Core.Support import Font
+from Core.Support import Http
+from Core.Support.Websites import Recon
 from Core.Support import Creds
 from Core.Support import FileTransfer
 from Core.Support import Headers
@@ -300,7 +302,7 @@ class Web:
             try:
                 url = sites["Robots"]["url"].replace("{}", username)
                 dork = requests.get(
-                    url, headers=headers, proxies=http_proxy, timeout=None, allow_redirects=True)
+                    url, headers=headers, proxies=http_proxy, timeout=15, allow_redirects=True)
                 if dork.status_code == 200:
                     open(robot, 'wb').write(dork.content)
                     print(Font.Color.YELLOW +
@@ -315,7 +317,7 @@ class Web:
                           Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                     url = sites["Robots"]["url"].replace("{}", username)
                     dork = requests.get(
-                        url, headers=headers, proxies=None, timeout=None, allow_redirects=True)
+                        url, headers=headers, proxies=None, timeout=15, allow_redirects=True)
                     if dork.status_code == 200:
                         open(robot, 'wb').write(dork.content)
                         print(Font.Color.YELLOW +
@@ -747,10 +749,8 @@ class Web:
               Language.Translation.Translate_Language(filename, "Website", "Default", "Search").format(username))
         sleep(3)
         source = "http://ip-api.com/json/" + username
-        access = urllib.request.urlopen(source)
-        content = access.read()
-        final = json.loads(content)
-        status = final["status"]
+        final = Http.get_json(source) or {"status": "fail"}
+        status = final.get("status", "fail")
         if status != "fail":
             ip = "IP: " + final["query"]
             country = "NATION: " + final["country"]
@@ -815,6 +815,10 @@ class Web:
         else:
             print(Font.Color.RED + "[!]" + Font.Color.WHITE +
                   Language.Translation.Translate_Language(filename, "Website", "Default", "NoResponse"))
+        choice = int(input(
+            Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "RUN EXTENDED TECHNICAL RECON (DNS, RDAP, TLS, SUBDOMAINS, HEADERS, TECH, WAYBACK)?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
+        if choice == 1:
+            Recon.run(username, report)
         choice = int(input(
             Font.Color.BLUE + " \n[+]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Website", "Questions", "Whois") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
         if choice == 1:

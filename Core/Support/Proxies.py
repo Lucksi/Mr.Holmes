@@ -12,15 +12,19 @@ class proxy:
     nomefile = "Configuration/Configuration.ini"
     Parser = ConfigParser()
     Parser.read(nomefile)
-    Proxy_file = Parser["Settings"]["Proxy_List"]
-    f = open(Proxy_file, "r")
-    value = f.readlines()
-    f.close()
-    choice1 = random.choice(value)
+    Proxy_file = Parser.get("Settings", "Proxy_List", fallback="Proxies/Proxy_list.txt")
+    try:
+        with open(Proxy_file, "r") as f:
+            value = [line.strip() for line in f.readlines() if line.strip()]
+    except OSError:
+        value = []
+    choice1 = random.choice(value) if value else ""
     choice2 = choice1.split(":", 1)
     choice3 = choice2[0]
 
+    # requests needs a scheme; the old "//host:port\n" value was never a valid proxy URL
+    proxy_url = choice1 if "://" in choice1 else "http://" + choice1
     final_proxis = {
-        'http': "//" + choice1,
-        'https': "//" + choice1,
-    }
+        'http': proxy_url,
+        'https': proxy_url,
+    } if choice1 else None
