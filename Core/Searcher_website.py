@@ -300,7 +300,7 @@ class Web:
             try:
                 url = sites["Robots"]["url"].replace("{}", username)
                 dork = requests.get(
-                    url, headers=headers, proxies=http_proxy, timeout=None, allow_redirects=True)
+                    url, headers=headers, proxies=http_proxy, timeout=15, allow_redirects=True)
                 if dork.status_code == 200:
                     open(robot, 'wb').write(dork.content)
                     print(Font.Color.YELLOW +
@@ -315,7 +315,7 @@ class Web:
                           Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                     url = sites["Robots"]["url"].replace("{}", username)
                     dork = requests.get(
-                        url, headers=headers, proxies=None, timeout=None, allow_redirects=True)
+                        url, headers=headers, proxies=None, timeout=15, allow_redirects=True)
                     if dork.status_code == 200:
                         open(robot, 'wb').write(dork.content)
                         print(Font.Color.YELLOW +

@@ -111,7 +111,7 @@ class Downloader:
             details = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE +
                                 Language.Translation.Translate_Language(LangFile, "Username", "Default", "Details") + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             openurl = requests.get(
-                url, proxies=http_proxy, headers=headers, allow_redirects=True)
+                url, proxies=http_proxy, headers=headers, allow_redirects=True, timeout=15)
             reader = soup(openurl.content, "html.parser")
             profile = reader.find_all("div", class_="photo")
             i = 1
@@ -146,14 +146,14 @@ class Downloader:
                             print(
                                 Font.Color.BLUE + "[I]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Username", "Default", "CheckFalse"))
                             getter = requests.get(
-                                profile_pic, headers=headers, allow_redirects=False)
+                                profile_pic, headers=headers, allow_redirects=False, timeout=15)
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
                                   Language.Translation.Translate_Language(LangFile, "Username", "Default", "Success"))
                             Downloader.checkFile(image,"Image")
                             sleep(5)
                         i = i+1
-                    except ConnectionError:
+                    except (ConnectionError, requests.exceptions.ConnectionError):
                         print(
                             Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                         i = i+1
@@ -293,7 +293,7 @@ class Downloader:
                             f.close()
                             j = j+1
                             sleep(2)
-                        except ConnectionError:
+                        except (ConnectionError, requests.exceptions.ConnectionError):
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             j = j+1
@@ -330,7 +330,7 @@ class Downloader:
                             f.close()
                             d = d+1
                             sleep(2)
-                        except ConnectionError:
+                        except (ConnectionError, requests.exceptions.ConnectionError):
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             d = d+1
@@ -358,7 +358,7 @@ class Downloader:
                             f.write("POSTED: {}\r\n".format(time.strip()))
                             f.close()
                             t = t+1
-                        except ConnectionError:
+                        except (ConnectionError, requests.exceptions.ConnectionError):
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             t = t+1
@@ -451,7 +451,7 @@ class Downloader:
                 url = url + "/with_replies"
                 param = "/with_replies"
             openurl = requests.get(
-                url, proxies=http_proxy, headers=headers, allow_redirects=True)
+                url, proxies=http_proxy, headers=headers, allow_redirects=True, timeout=15)
             if "No items found" in openurl.text:
                 print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG...")
             reader = soup(openurl.content, "html.parser")
@@ -491,7 +491,7 @@ class Downloader:
                             username+ param, "") + post.replace("/pic/", "pic/")
                         image = folder + "/Pic_{}.jpg".format(str(i))
                         getter = requests.get(
-                            profile_pic, headers=headers, allow_redirects=False)
+                            profile_pic, headers=headers, allow_redirects=False, timeout=15)
                         try:
                             open(image, "wb").write(getter.content)
                             print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
@@ -499,7 +499,7 @@ class Downloader:
                             Downloader.checkFile(image,"Image")
                             j = j+1
                             sleep(5)
-                        except ConnectionError:
+                        except (ConnectionError, requests.exceptions.ConnectionError):
                             print(Font.Color.RED + "[!]" +
                                   Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                             continue
@@ -519,7 +519,7 @@ class Downloader:
                                     username + param, "") + post.replace("/pic/", "pic/")
                                 image = folder + "/Pic_{}.jpg".format(str(i))
                                 getter = requests.get(
-                                    profile_pic, headers=headers, allow_redirects=False)
+                                    profile_pic, headers=headers, allow_redirects=False, timeout=15)
                                 try:
                                     open(image, "wb").write(getter.content)
                                     print(Font.Color.YELLOW + "[v]" + Font.Color.WHITE +
@@ -527,7 +527,7 @@ class Downloader:
                                     j = j+1
                                     Downloader.checkFile(image,"Image")
                                     sleep(5)
-                                except ConnectionError:
+                                except (ConnectionError, requests.exceptions.ConnectionError):
                                     print(Font.Color.RED + "[!]" +
                                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                                     continue
@@ -641,7 +641,7 @@ class Downloader:
                     if i == range_band + 1:
                         break
 
-                except ConnectionError:
+                except (ConnectionError, requests.exceptions.ConnectionError):
                     print(Font.Color.RED + "[!]" +
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                     i = i+1
@@ -754,7 +754,7 @@ class Downloader:
             TaggedHashtag = []
             TaggedLink = []
             openurl = requests.get(
-                url, proxies=http_proxy, headers=headers, allow_redirects=True)
+                url, proxies=http_proxy, headers=headers, allow_redirects=True, timeout=15)
             reader = soup(openurl.content, "html.parser")
             stats = reader.find_all("div", class_="flex items-center mb-1")
             postsect = reader.find_all("div", class_="info3")
@@ -764,7 +764,7 @@ class Downloader:
                           Language.Translation.Translate_Language(LangFile, "Username", "TikTok", "Download").format(str(i)))
                     title = video.find_all("a")[1]["href"]
                     openurl2 = requests.get(
-                        title, headers=headers, allow_redirects=True)
+                        title, headers=headers, allow_redirects=True, timeout=15)
                     reader2 = soup(openurl2.content, "html.parser")
                     video = reader2.find("video")["src"]
                     poster = reader2.find("video")["poster"]
@@ -787,7 +787,7 @@ class Downloader:
                             name.replace("/", ".jpg")
                         sleep(2)
                         getter = requests.get(
-                            video, headers=headers, allow_redirects=True)
+                            video, headers=headers, allow_redirects=True, timeout=15)
                         open(filename, "wb").write(getter.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
@@ -796,7 +796,7 @@ class Downloader:
                               "[I]" + Font.Color.WHITE + "DONWLOAD IMAGE POSTER")
                         sleep(2)
                         getter2 = requests.get(
-                            poster, headers=headers, allow_redirects=True)
+                            poster, headers=headers, allow_redirects=True, timeout=15)
                         open(reportImage, "wb").write(getter2.content)
                         print(Font.Color.YELLOW + "[V]" + Font.Color.WHITE + Language.Translation.Translate_Language(
                             LangFile, "Username", "Default", "Success"))
@@ -885,7 +885,7 @@ class Downloader:
                     sleep(13)
                     if i == range_band + 1:
                         break
-                except ConnectionError:
+                except (ConnectionError, requests.exceptions.ConnectionError):
                     print(Font.Color.RED + "[!]" +
                           Font.Color.WHITE + Language.Translation.Translate_Language(LangFile, "Default", "Connection_Error2", "None"))
                     i = i+1

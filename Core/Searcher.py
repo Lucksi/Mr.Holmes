@@ -4,6 +4,7 @@
 # License: GNU General Public License v3.0
 
 import os
+import requests
 import urllib
 import json
 from Core.Support import Font
@@ -341,7 +342,7 @@ class MrHolmes:
                             try:
                                 Scraper.info.Instagram(
                                     report, username, http_proxy, InstagramParams, PostLocations, PostGpsCoordinates, "Usernames", username)
-                            except ConnectionError:
+                            except (ConnectionError, requests.exceptions.ConnectionError):
                                 print(
                                     Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                                 http_proxy = None
@@ -356,7 +357,7 @@ class MrHolmes:
                             try:
                                 Scraper.info.TikTok(
                                     report, username, http_proxy, "Usernames", username)
-                            except ConnectionError:
+                            except (ConnectionError, requests.exceptions.ConnectionError):
                                 print(
                                     Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                                 http_proxy = None
@@ -371,7 +372,7 @@ class MrHolmes:
                             try:
                                 Scraper.info.Disqus(
                                     report, username, http_proxy, "Usernames", username)
-                            except ConnectionError:
+                            except (ConnectionError, requests.exceptions.ConnectionError):
                                 print(
                                     Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                                 http_proxy = None
@@ -438,7 +439,7 @@ class MrHolmes:
                             try:
                                 Scraper.info.Twitter(
                                     report, username, http_proxy, TwitterParams, "Usernames", username)
-                            except ConnectionError:
+                            except (ConnectionError, requests.exceptions.ConnectionError):
                                 print(
                                     Font.Color.BLUE + "\n[N]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error1", "None"))
                                 http_proxy = None

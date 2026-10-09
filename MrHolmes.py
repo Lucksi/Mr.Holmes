@@ -30,6 +30,7 @@ class Main:
                 exit()
         else:
              print(Font.Color.RED + "[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "NoDisplay", "None") .format(Interface_file))
+             conf = "Desktop"
         return conf
 
     def Menu(Mode):

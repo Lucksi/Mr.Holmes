@@ -24,7 +24,7 @@ class info:
         image = "GUI/Reports/{}/{}/Profile_pics/Profile_pic_{}.jpg".format(
         Opt, name2, SiteName)
         getter = requests.get(
-            profile_pic, headers=headers, allow_redirects=True)
+            profile_pic, headers=headers, allow_redirects=True, timeout=15)
         try:
             try:
                   open(image, "wb+").write(getter.content)
@@ -98,7 +98,7 @@ class info:
             f.write("ACCOUNT-CREATED ON: {}\r\n".format(creation))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -156,7 +156,7 @@ class info:
             f.write("LIKES: {}\r\n".format(likes))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -171,7 +171,7 @@ class info:
               "SCRAPING {} BINARYSEARCH PROFILE...".format(username))
         url = info.Get_Url(username, "BinarySearch")
         url
-        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        openurl = requests.get(url, proxies=http_proxy, headers=headers, timeout=15)
         try:
             reader = openurl.text
             converted = json.loads(reader)
@@ -209,7 +209,7 @@ class info:
             f.write("MAJOR: {}\r\n".format(major))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -278,7 +278,7 @@ class info:
             f.write("CREATED-ON: {}\r\n".format(created))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -294,7 +294,7 @@ class info:
         url = info.Get_Url(username, "Instagram")
         url
         openurl = requests.get(url, proxies=http_proxy,
-                               headers=headers, timeout=None)
+                               headers=headers, timeout=15)
         Flag = False
         try:
             Blocked = 'Profile is private.'.format(username)
@@ -357,7 +357,7 @@ class info:
                                      profile_pic, SiteName,Opt,name2)
             else:
                 pass
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
@@ -381,7 +381,7 @@ class info:
                     try:
                         Get_Posts.Downloader.Instagram(url,
                                                        username, http_proxy, Posts, PostLocations, PostGpsCoordinates,Opt,name2)
-                    except ConnectionError:
+                    except (ConnectionError, requests.exceptions.ConnectionError):
                         print(Font.Color.RED +
                               "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
                 else:
@@ -395,7 +395,7 @@ class info:
         url = info.Get_Url(username, "Twitter")
         url
         openurl = requests.get(url, proxies=http_proxy,
-                               headers=headers)
+                               headers=headers, timeout=15)
         try:
             Blocked = 'User "{}" has been suspended'.format(username)
             text = openurl.text
@@ -472,13 +472,19 @@ class info:
                 f.write("PRIVATE-ACCOUNT: {}\r\n".format(Private))
                 f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
             IsPrivate = "Undefined"
             TwitterParams.append(IsPrivate)
             pass
+        except requests.Timeout as err:
+            print(Font.Color.RED + "[!]" +
+                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(err))
+            Flag = False
+            IsPrivate = "Undefined"
+            TwitterParams.append(IsPrivate)
         except Exception as e:
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
@@ -486,12 +492,6 @@ class info:
             IsPrivate = "Undefined"
             TwitterParams.append(IsPrivate)
             pass
-        except requests.Timeout as err:
-            print(Font.Color.RED + "[!]" +
-                  Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None") + str(e))
-            Flag = False
-            IsPrivate = "Undefined"
-            TwitterParams[0].append(IsPrivate)
         finally:
             if Flag == True:
                 Photos = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Username", "Default", "Pics").format(
@@ -507,7 +507,7 @@ class info:
                         try:
                             Get_Posts.Downloader.Twitter(url,
                                                          username, http_proxy, Posts ,Opt,name2)
-                        except ConnectionError:
+                        except (ConnectionError, requests.exceptions.ConnectionError):
                             print(Font.Color.RED +
                                   "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
                 else:
@@ -565,7 +565,7 @@ class info:
             f.write("CREATED-ON: {}\r\n".format(profile_creation))
             f.write("ACCOUNT-TYPE: {}\r\n".format(account_type))
             f.close()
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -626,7 +626,7 @@ class info:
             f.write("FIRST-NAME: {}\r\n".format(target[0]))
             f.write("LAST-NAME: {}\r\n".format(target[1]))
             f.close()
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -682,7 +682,7 @@ class info:
             f.write("STATUS: {}\r\n".format(status))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -764,7 +764,7 @@ class info:
             f.write("PRIVATE: {}\r\n".format(isPrivate))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -861,7 +861,7 @@ class info:
             f.write("COMPANY: {}\r\n".format(company))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -929,7 +929,7 @@ class info:
             else:
                 pass
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             Flag = False
@@ -948,7 +948,7 @@ class info:
                     try:
                         Get_Posts.Downloader.TikTok(
                             url, username, http_proxy, Posts ,Opt,name2)
-                    except ConnectionError:
+                    except (ConnectionError, requests.exceptions.ConnectionError):
                         print(Font.Color.RED +
                               "\n[!]" + Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Error", "None"))
                 else:
@@ -960,7 +960,7 @@ class info:
               "SCRAPING {} MINECRAFT PROFILE...".format(username))
         url = info.Get_Url(username, "Minecraft")
         url
-        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        openurl = requests.get(url, proxies=http_proxy, headers=headers, timeout=15)
         try:
             reader = openurl.text
             converted = json.loads(reader)
@@ -978,7 +978,7 @@ class info:
             f.write("USERNAME: {}\r\n".format(user))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -993,7 +993,7 @@ class info:
               "SCRAPING {} NGL.LINK PROFILE...".format(username))
         url = info.Get_Url(username, "Ngl.link")
         url
-        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        openurl = requests.get(url, proxies=http_proxy, headers=headers, timeout=15)
         try:
             reader = soup(openurl.content, "html.parser")
             profile_pic = reader.find("img", class_="pfp")["src"]
@@ -1020,7 +1020,7 @@ class info:
             else:
                 pass
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -1035,7 +1035,7 @@ class info:
               "SCRAPING {} DISQUS PROFILE...".format(username))
         url = info.Get_Url(username, "Disqus")
         url
-        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        openurl = requests.get(url, proxies=http_proxy, headers=headers, timeout=15)
         try:
             reader = openurl.text
             converted = json.loads(reader)
@@ -1092,7 +1092,7 @@ class info:
             f.write("REPUTATION: {}\r\n".format(rep))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -1107,7 +1107,7 @@ class info:
               "SCRAPING {} TELLONYM PROFILE...".format(username))
         url = info.Get_Url(username, "Tellonym")
         url
-        openurl = requests.get(url, proxies=http_proxy, headers=headers)
+        openurl = requests.get(url, proxies=http_proxy, headers=headers, timeout=15)
         try:
             reader = soup(openurl.content, "html.parser")
             profile_pic = reader.find(
@@ -1132,7 +1132,7 @@ class info:
             else:
                 pass
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -1208,7 +1208,7 @@ class info:
             else:
                 pass
 
-         except ConnectionError:
+         except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -1269,7 +1269,7 @@ class info:
             f.write("MESSAGE-FREE: {}\r\n".format(messageF))
             f.close()
 
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -1377,7 +1377,7 @@ class info:
                   else:
                      pass
 
-         except ConnectionError:
+         except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass

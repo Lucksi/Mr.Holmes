@@ -28,10 +28,10 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} INSTAGRAM RESULTS...".format(username))
         url = "https://www.picuki.com/search/{}".format(username)
-        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
+        req = requests.get(url, timeout=15, proxies=http_proxy, headers=headers)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=None, headers=headers)
+            req = requests.get(url, timeout=15, proxies=None, headers=headers)
             sleep(4)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
@@ -63,7 +63,7 @@ class Search:
                     else:
                         break
                 f.close()
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -138,7 +138,7 @@ class Search:
         url = "https://nitter.net/search?f=users&q={}".format(username)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers, allow_redirects=True)
+            req = requests.get(url, timeout=15, proxies=http_proxy, headers=headers, allow_redirects=True)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="timeline-item")
@@ -184,7 +184,7 @@ class Search:
                     Font.Color.WHITE + "TOTAL USERNAMES FOUND")
             else:
                 print("ERROR")
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -257,7 +257,7 @@ class Search:
         url = "https://urlebird.com/search/?q={}".format(username)
         sleep(4)
         try:
-            req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
+            req = requests.get(url, timeout=15, proxies=http_proxy, headers=headers)
             if req.status_code == 200:
                 reader = soup(req.content, "html.parser")
                 users = reader.find_all("div", class_="info text-truncate")
@@ -291,7 +291,7 @@ class Search:
                     Font.Color.WHITE + "TOTAL USERNAMES FOUND")
             else:
                 print("ERROR")
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass
@@ -359,10 +359,10 @@ class Search:
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               "SCANNING FOR {} GITHUB RESULTS...".format(username))
         url = "https://api.github.com/search/users?q={}+in:text".format(username)
-        req = requests.get(url, timeout=None, proxies=http_proxy, headers=headers)
+        req = requests.get(url, timeout=15, proxies=http_proxy, headers=headers)
         sleep(4)
         i = 0
-        req = requests.get(url,headers=headers).text
+        req = requests.get(url,headers=headers, timeout=15).text
         f = open(report, "a",encoding="utf-8")
         f.write( "--------------------------------\nSHOWING GITHUB RESULTS FOR: {}\n".format(username))
         try:
@@ -388,7 +388,7 @@ class Search:
                     f.write("\nUSER FOUND: {}".format(usern))
                     f.write("\nPROFILE-PIC: {}".format(profile_pic))
                     f.write("\nLINK: {}\n".format(link))
-        except ConnectionError:
+        except (ConnectionError, requests.exceptions.ConnectionError):
             print(Font.Color.RED + "[!]" +
                   Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Default", "Connection_Error2", "None"))
             pass

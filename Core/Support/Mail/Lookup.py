@@ -23,7 +23,7 @@ class List:
     def Spotify(report,email,name):
         print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
         url = "https://spclient.wg.spotify.com/signup/public/v1/account?validate=1&email={}".format(email)
-        req = requests.get(url=url,headers=headers)
+        req = requests.get(url=url,headers=headers, timeout=15)
         sleep(3)
         if 'errors' in req.text:
             response = Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name)
@@ -41,7 +41,7 @@ class List:
         url = "https://api.twitter.com/i/users/email_available.json?email={}".format(email)
         sleep(3)
         try:
-            req = requests.get(url,headers=headers).text
+            req = requests.get(url,headers=headers, timeout=15).text
             parser = json.loads(req)
             output = parser["taken"]
             if output == False:
@@ -59,7 +59,7 @@ class List:
     @staticmethod
     def Gmail(report,email,name):
         url = "https://mail.google.com/mail/gxlu?email={}".format(email)
-        req = requests.get(url,headers)
+        req = requests.get(url, headers=headers, timeout=15)
         sleep(3)
         if 'Set-Cookie' in req.headers:
             response = Language.Translation.Translate_Language(filename, "Email", "TrueRes", "None").format(name)
@@ -80,7 +80,7 @@ class List:
         url = "https://api.github.com/search/users?q={}+in:email%22".format(email)
         sleep(3)
         try:
-            req = requests.get(url,headers=headers).text
+            req = requests.get(url,headers=headers, timeout=15).text
             parser = json.loads(req)
             output = parser["total_count"]
             if output == 0:
@@ -160,7 +160,7 @@ class List:
         print(Font.Color.GREEN + "\n[+]"+ Font.Color.WHITE + Language.Translation.Translate_Language(filename, "Email", "Check2", "None").format(email,name))
         url = "https://en.gravatar.com/{}.json".format(hashedemail)
         try:
-            req = requests.get(url,headers=headers)
+            req = requests.get(url,headers=headers, timeout=15)
             if "User not found" in req.text:
                 response = Language.Translation.Translate_Language(filename, "Email", "FalseRes", "None").format(name)
                 f = open(report,"a")
@@ -269,7 +269,7 @@ class List:
         url = "https://imgur.com/signin/ajax_email_available"
         sleep(3)
         try:
-            req = requests.post(url,headers=headers,data = data).text
+            req = requests.post(url,headers=headers,data = data, timeout=15).text
             parser = json.loads(req)
             output = parser["data"]["available"]
             if output == True:
