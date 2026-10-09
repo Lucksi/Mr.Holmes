@@ -14,6 +14,7 @@ from Core.Support import Clear
 from Core.Support import Dorks
 from Core.Support.Mail import Mail_Validator as mail
 from Core.Support.Mail import Lookup
+from Core.Support.Mail import Domain
 from Core.Support import ApiCheck as Api
 from Core.Support import Banner_Selector as banner
 from Core.Support import Language
@@ -198,6 +199,10 @@ class Mail_search:
         isvalid = mail.Validator.Mail(username, report)
         if isvalid:
             Mail_search.Lookup(username, report)
+            try:
+                Domain.run(username, report)
+            except Exception as e:
+                print(Font.Color.RED + "[!]" + Font.Color.WHITE + "MAIL DOMAIN ANALYSIS FAILED: {}".format(e))
             lookup = int(input(Font.Color.BLUE + "\n[?]" + Font.Color.WHITE + "WOULD YOU LIKE TO CHECK IF THIS EMAIL IS USED ON SOME SOCIAL MEDIA?(1)YES(2)NO\n\n" + Font.Color.GREEN + "[#MR.HOLMES#]" + Font.Color.WHITE + "-->"))
             if lookup == 1:
                 Lookup.List.Main(report,username)

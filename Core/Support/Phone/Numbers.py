@@ -116,6 +116,10 @@ class Phony:
                   "[v]" + Font.Color.WHITE + "AREA/ZONE: {}".format(location))
             print(Font.Color.YELLOW +
                   "[v]" + Font.Color.WHITE + "CARRIER/ISP: {}".format(carrierName))
+            lineTypes = {v: k for k, v in vars(phonenumbers.PhoneNumberType).items() if k.isupper()}
+            lineType = lineTypes.get(phonenumbers.number_type(Phone), "UNKNOWN")
+            print(Font.Color.YELLOW +
+                  "[v]" + Font.Color.WHITE + "LINE TYPE: {}".format(lineType))
             i = 1
             for timezoneResult in timezone.time_zones_for_number(Phone):
                 print(Font.Color.YELLOW +
@@ -163,6 +167,7 @@ class Phony:
 
             f = open(report, "a")
             f.write("INTERNATIONAL NUMBER: " + international + "\n")
+            f.write("LINE TYPE: " + lineType + "\n")
             f.write("LOCAL NUMBER: " + localNumber + "\n")
             f.write("COUNTRY PREFIX: " + numberCode + "\n")
             f.write("COUNTRY CODE: " + numberNation + "\n")
