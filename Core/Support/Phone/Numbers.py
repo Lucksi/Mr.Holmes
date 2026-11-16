@@ -6,7 +6,8 @@
 import phonenumbers
 import MrHolmes as holmes
 import json
-import urllib
+import urllib.request
+import urllib.parse
 from phonenumbers import carrier
 from phonenumbers import geocoder
 from phonenumbers import timezone
@@ -23,13 +24,16 @@ class Phony:
 
     @staticmethod
     def Get_GeoLocation(zone, param1, param2, jsonfile, num, Type):
-        req = "https://nominatim.openstreetmap.org/search.php?q={}&format=json".format(
-            zone)
+        req = urllib.request.Request(
+            "https://nominatim.openstreetmap.org/search?q={}&format=json".format(
+                urllib.parse.quote(zone)),
+            headers={"User-Agent": "MrHolmes-local/1.0"}
+        )
         print(Font.Color.GREEN + "\n[+]" + Font.Color.WHITE +
               Language.Translation.Translate_Language(filename, "Phone", "Geo", "None").format(num))
         sleep(2)
-        url = urllib.request.urlopen(req)
         try:
+            url = urllib.request.urlopen(req, timeout=15)
             Reader = url.read()
             parser = json.loads(Reader)
             Lat = parser[0]["lat"]
@@ -117,6 +121,7 @@ class Phony:
             print(Font.Color.YELLOW +
                   "[v]" + Font.Color.WHITE + "CARRIER/ISP: {}".format(carrierName))
             i = 1
+            timezoneResult = "Unknown"
             for timezoneResult in timezone.time_zones_for_number(Phone):
                 print(Font.Color.YELLOW +
                       "[v]" + Font.Color.WHITE + "TIMEZONE N°{}: {}".format(i, timezoneResult))
@@ -146,7 +151,10 @@ class Phony:
                       Language.Translation.Translate_Language(filename, "Phone", "Zone", "None"))
                 jsonfile = report.replace(
                     num + ".txt", "Zone_GeoLocation.json")
-                Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
+                try:
+                    Phony.Get_GeoLocation(zone, "Lat", "Long", jsonfile, num, Type)
+                except Exception as e:
+                    print(Font.Color.RED + "[!]" + Font.Color.WHITE + "SOMETHING WENT WRONG")
 
             else:
                 print(Font.Color.RED + "\n[!]" + Font.Color.WHITE +
